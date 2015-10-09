@@ -1,0 +1,33 @@
+.\:clickable{
+  cursor: pointer;
+}
+
+.\:unselectable{
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.\:hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+.\:hidden-visually{
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.\:invisible {
+  visibility: hidden;
+}
+
+

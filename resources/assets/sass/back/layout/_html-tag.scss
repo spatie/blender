@@ -1,0 +1,218 @@
+*{
+  position: relative;
+  box-sizing: border-box;
+}
+
+html{
+  background: $white;
+}
+
+body {
+
+  @include antialiasing(subpixel);
+  @include font(sans, normal);
+
+  font-size: 1.2rem; //scales everything on very large displays
+  line-height: $line-height;
+  color: $text-color;
+
+  @include mq(l) {
+    font-size: font-size(default);
+  }
+}
+
+/* Frequent used tags */
+
+h1,
+h2,
+h3{
+  line-height: 1.2; //smaller line height for titles
+  margin-top: 0;
+  @include hyphens(false);
+
+  p + &,
+  ul + &,
+  ol + &{
+    margin-top: 2em; //margin-top after a text block
+  }
+
+  a{ //reset links in titles
+    color: inherit !important;
+    border-color: transparent !important;
+  }
+}
+
+h1{
+  @include font(sans, extrabold);
+  @include font-size(xl);
+}
+
+h2{
+  @include font(sans, light);
+  @include font-size(l);
+  text-transform: uppercase;
+}
+
+h3{
+  @include font(sans, bold);
+  @include font-size(m);
+}
+
+a {
+  color: color($link, default);
+  text-decoration: none;
+  border-bottom: solid 1px rgba( color($link, default) , 0.5) ;
+
+  &:hover{
+    color: color($link, hover);
+  }
+}
+
+p,
+ul,
+ol{
+  margin-top: 0;
+  margin-bottom: $line-height;
+}
+
+
+strong,
+b {
+  font-weight: font-weight(bold);
+
+  em,
+  i,
+  i &,
+  em &{
+    font-style: italic;
+  }
+}
+
+ol,
+ul {
+  padding-left: 1.5em;
+
+  & ul,
+  & ol{
+    margin-bottom: 0.5em;
+  }
+}
+
+li{
+  line-height: $line-height;
+}
+
+img,
+object{
+  max-width: 100%;
+}
+
+
+/* Less used tags */
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted color($gray);
+  cursor: help;
+}
+address {
+  display: inline-block;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  background: color($gray,lightest);
+}
+blockquote {
+  display: inline-block;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  p {
+    margin-bottom: 0;
+  }
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+code,
+kbd,
+samp,
+var {
+  @include font(fixed, normal);
+  background: color($gray, darkest);
+  color: $white;
+  border-radius: border-radius(s);
+  padding: 0.05em 0.5em;
+  display: inline-block;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  border-bottom: dotted 1px color($gray, darkest);
+  padding-bottom: 0.75em;
+  margin-bottom: 0.75em;
+}
+
+em,
+i,
+q,
+cite{
+  font-style: italic;
+}
+
+hr {
+  border-top: 1px solid color($gray, lighter);
+  margin: 1em 0;
+}
+
+ins,
+mark{
+  @include tag( color($yellow, darkest) , color($yellow, lightest) );
+  text-decoration: none;
+}
+
+pre {
+  border-top: 1px dotted color($gray, darkest);
+  border-bottom: 1px dotted color($gray, darkest);
+  padding: 1.5em;
+}
+
+small {
+  font-size: font-size(s);
+}
+
+sub,
+sup {
+  font-size: font-size(xs);
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  top: .5ex;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+time{
+  @include tag( $text-color , color($yellow, lightest) );
+}
+
+
+

@@ -1,0 +1,45 @@
+/// Font-families
+/// @group typography
+/// @type Map
+/// @prop {String} key - key
+/// @prop {String} value - font family
+$font-families: (
+        sans : "Lato, sans-serif",
+        fixed : "Consolas, 'courier new', courier, monospace",
+        icons: "Fontawesome"
+);
+
+/// Font-weights
+/// @group typography
+/// @type Map
+/// @prop {String} key - Weight key
+/// @prop {String} value - Weight value
+$font-weights: (
+        thin : 100,
+        light: 200,
+        normal: 300,
+        medium: 400,
+        bold: 700,
+        extrabold: 900,
+);
+
+/// Font-sizes
+/// @group Typography
+/// @type Map
+/// @prop {String} key - Size key
+/// @prop {String} value - Size value
+$font-sizes: (
+        xxs : 0.65rem,
+        xs : 0.75rem,
+        s: 0.85rem,
+        default: 1rem,
+        m: 1.2rem,
+        l: 1.8rem,
+        xl: 2.5rem,
+        xxl: 4rem,
+);
+
+/// Line-height
+/// @group Typography
+/// @type Number
+$line-height: 1.5;

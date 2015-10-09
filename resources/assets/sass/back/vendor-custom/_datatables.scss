@@ -1,0 +1,82 @@
+/*
+  Overrides on default datatables styles via Node
+  camelCase, not standard Blender style
+*/
+
+
+[data-datatable]{
+  display: none; //hide before load
+}
+
+.dataTables_wrapper{
+  margin: 1em 0;
+  @include mq(s){
+    margin: 1em 0;
+  }
+
+  [data-datatable]{
+    display: table; //loaded
+  }
+}
+
+table.dataTable{
+
+  thead{
+
+    .sorting:after,
+    .sorting_desc:after,
+    .sorting_asc:after{
+      position: absolute;
+      font-size: font-size(xs);
+      left: 0;
+      @include position-center-vertical;
+      font-family: font-family(icons);
+    }
+
+    .sorting {
+
+      background-image: none !important;
+
+      &:after {
+        content: "\f0dc";
+        color: color($gray, lighter);
+      }
+    }
+
+    .sorting_desc{
+      font-weight: font-weight(bold);
+      background-image: none !important;
+      &:after{
+        content: "\f0dd";
+      }
+    }
+
+    .sorting_asc{
+      font-weight: font-weight(bold);
+      background-image: none !important;
+      &:after{
+        content: "\f0de";
+      }
+    }
+
+  }
+
+}
+
+.dataTables_info{
+  font-size: font-size(s);
+  color: color($gray, light) !important;
+  text-align: left !important;
+}
+
+.dataTables_filter{
+  font-size: font-size(s);
+  padding-bottom: 1em;
+  float: right !important;
+
+  input[type=search]{
+     border-radius: 1.5em;
+  }
+}
+
+

@@ -1,0 +1,107 @@
+.\+auth{
+    @include background-image-tinted('/images/auth-background.jpg' , rgba( color($blue,darkest), 0.75), top center);
+    color: $white;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+
+  a:hover{
+    color: $white;
+  }
+}
+
+.\+auth_card {
+  padding-top: 15vh;
+
+  @include mq(s){
+    padding-top: 10vh;
+  }
+}
+
+.\+auth_gravatar{
+  position: absolute;
+  top: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: sepia(1) hue-rotate(170deg) saturate(0.5);
+  opacity: 0.25;
+
+}
+
+.\+auth_logo{
+  width: auto;
+  height: 1em;
+  top: -0.1em;
+  vertical-align: middle;
+}
+
+.\+auth_title{
+  font-size: 4vw;
+  max-width: 10em;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: font-weight(thin);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+
+
+  @include mq(s){
+    font-size: 8vw;
+  }
+
+  &.-small{
+    font-size: font-size(l);
+    max-width: none;
+  }
+}
+
+.\+auth_form{
+  padding: 3em 6em;
+  max-width: 32em;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(color($blue,darkest) , 0.15);
+  border-radius: border-radius(m);
+
+  [disabled]{
+    color: $white;
+  }
+}
+
+
+.\+auth_lang{
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: z-index(toolbar);
+  font-size: font-size(xs);
+
+  ul{
+    @include ul_horizontal;
+  }
+
+  a{
+    color: $white;
+    border-bottom: none;
+    padding: 0 0.25em;
+    text-transform: uppercase;
+  }
+
+  .active{
+    font-weight: font-weight(bold);
+  }
+}
+
+.\+auth_credit{
+  position: fixed;
+  bottom: 3px;
+  left: 3px;
+  opacity: 0.15;
+  color: $white;
+  z-index: z-index(above);
+  transform: rotate(-90deg);
+  transform-origin: 0 0 ;
+  font-size: font-size(xs);
+  font-weight: font-weight(medium);
+
+}

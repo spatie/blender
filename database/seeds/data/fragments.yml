@@ -1,0 +1,120 @@
+brand:
+  longname:
+    desc: Volledige naam van het bedrijf of merk
+    name: Spatie
+  address:
+    street:
+      desc: Adres: straat
+      name: Samberstraat 69D
+    city:
+      desc: Adres: plaats
+      name: Antwerpen
+    postal:
+      desc: Adres: postcode
+      name: 2060
+  email:
+    desc: E-mailadres
+    name: info@spatie.be
+  phone:
+    desc: Telefoonnummer
+    name: +32 3 292 56 79
+  fax:
+    desc: Faxnummer
+    name: +32 3 292 56 79
+brand.name:
+  desc: Naam van het bedrijf of merk
+  name: Spatie
+contact:
+  remarks:
+    desc: Contactformulier opmerkingen
+    text: Hebt u nog specifieke vragen voor ons? Stel ze hier
+  button:
+    desc: Contactformulier knop
+    text: 'Ja, contacteer mij'
+  response:
+    desc: Contactformulier verzonden
+    text: Bedankt! We hebben uw antwoord goed ontvangen.
+
+navigation:
+  backToList:
+    desc: Terug naar overzicht link tekst
+    text: 
+      nl: Terug naar overzicht
+      fr: Retourner au sommaire
+
+newsletter:
+  subscription:
+    error.invalidEmail:
+      desc: De boodschap die verschijnt als er geen geldig e-mailadres was opgegeven bij het inschrijven op de nieuwsbrief.
+      text: Dit is geen correct e-mailadres.
+    result:
+      alreadySubscribed:
+        desc: De boodschap die verschijnt als je al was ingeschreven op de nieuwsbrief.
+        text: Je was al ingeschreven.
+      error:
+        desc: De melding die verschijnt als er iets misliep bij het inschrijven op de nieuwsbrief.
+        text: Er liep iets mis met je inschrijving. Probeer het later nog eens.
+      ok:
+        desc: De boodschap die verschijnt als iemand zich heeft ingeschreven op de nieuwsbrief.
+        text: Je bent nu ingeschreven.
+  form:
+    title:
+      desc: De titel bij de nieuwsbrief inschrijving.
+      text: Nieuwsbrief
+    description:
+      desc: De beschrijving bij de nieuwsbrief inschrijving.
+      text: Schrijf je in op onze nieuwsbrief 4x per jaar alle nieuws te ontvangen.
+    button:
+      desc: De tekst op de knop bij de nieuwsbrief inschrijving.
+      text: Schrijf je in
+
+form:
+  telephone:
+    desc: Algemene velden formulier: Telefoon
+    text:
+      nl: Telefoon
+      en: Telephone
+  email:
+    desc: Algemene velden formulier: E-mail
+    text:
+      nl: E-mail
+      en: E-mail
+  address:
+    desc: Algemene velden formulier: Adres
+    text:
+      nl: Adres
+      en: Address
+  postal:
+    desc: Algemene velden formulier: Postcode
+    text:
+      nl: Postcode
+      en: Zipcode
+  city:
+    desc: Algemene velden formulier: Stad
+    text:
+      nl: Stad
+      en: City
+  remarks:
+    desc: Algemene velden formulier: Opmerkingen
+    text:
+      nl: Opmerkingen
+      en: Remarks
+  submit:
+    desc: Algemene velden formulier: Verzenden
+    text:
+      nl: Verzenden
+      en: Send
+  fieldsAreRequired:
+    desc: Algemene velden formulier: Deze velden zijn verplicht
+    text:
+      nl: Deze velden zijn verplicht
+      en: These fields are required
+form.name:
+  desc: Algemene velden formulier: Naam
+  text:
+    nl: Naam
+    en: Name
+
+deprecatedBrowser:
+  desc: Melding verouderde browser
+  html: <p>Je gebruikt een <strong>verouderde</strong> browser. <a href="http://browsehappy.com/">Upgrade je browser</a> om vlotter te werken met sites als deze.</p>'

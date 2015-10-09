@@ -1,0 +1,241 @@
+/// Red colors
+/// @group Colors
+/// @type Map
+/// @prop {Color} lightest [#fcebec]
+/// @prop {Color} lighter [#e69a9c]
+/// @prop {Color} light [#f76b6e]
+/// @prop {Color} default [#e83134]
+/// @prop {Color} dark [#a32324]
+/// @prop {Color} darker [#63010e]
+/// @prop {Color} darkest [#3d0109]
+/// @see {mixin} color
+$red: (
+  lightest: #fcebec,
+  lighter: #e69a9c,
+  light: #f76b6e,
+  default: #e83134,
+  dark: #a32324,
+  darker: #63010e,
+  darkest: #3d0109,
+);
+
+/// Orange colors
+/// @group Colors
+/// @type Map
+/// @prop {Color} lightest [#ffe5ca]
+/// @prop {Color} lighter [#f5b180]
+/// @prop {Color} light [#e77636]
+/// @prop {Color} default [#e13400]
+/// @prop {Color} dark [#711f03]
+/// @prop {Color} darker [#581902]
+/// @prop {Color} darkest [#391102]
+/// @see {mixin} color
+$orange: (
+  lightest: #ffe5ca,
+  lighter: #f5b180,
+  light: #e77636,
+  default: #e14a0c,
+  dark: #711f03,
+  darker: #581902,
+  darkest: #391102,
+);
+
+/// Yellow colors
+/// @group Colors
+/// @type Map
+/// @prop {Color} lightest [#f7e8d4]
+/// @prop {Color} lighter [#f7d1a1]
+/// @prop {Color} light [#f6d169]
+/// @prop {Color} default [#fbbd1a]
+/// @prop {Color} dark [#b06f1c]
+/// @prop {Color} darker [#734d00]
+/// @prop {Color} darkest [#422c00]
+/// @see {mixin} color
+$yellow: (
+  lightest: #f7e8d4,
+  lighter: #f7d1a1,
+  light: #f6d169,
+  default: #fbbd1a,
+  dark: #b06f1c,
+  darker: #734d00,
+  darkest: #422c00,
+);
+
+/// Blue colors
+/// @group Colors
+/// @type Map
+/// @prop {Color} lightest [#e5f4f8]
+/// @prop {Color} lighter [#a7dceb]
+/// @prop {Color} light [#73c7de]
+/// @prop {Color} default [#13869e]
+/// @prop {Color} dark [#11727f]
+/// @prop {Color} darker [#00194d]
+/// @prop {Color} darkest [#262835]
+/// @see {mixin} color
+$blue: (
+        lightest: #e5f4f8,
+        lighter: #a7dceb,
+        light: #73c7de,
+        default: #13869e,
+        dark: #11727f,
+        darker: #20365a,
+        darkest: #262835,
+);
+
+/// Green colors
+/// @group Colors
+/// @type Map
+/// @prop {Color} lightest [#cce9e5]
+/// @prop {Color} lighter [#bfe3de]
+/// @prop {Color} light [#a9d6d0]
+/// @prop {Color} default [#5ebbae]
+/// @prop {Color} dark [#40988c]
+/// @prop {Color} darker [#287368]
+/// @prop {Color} darkest [#13463f]
+/// @see {mixin} color
+$green: (
+        lightest: #cce9e5,
+        lighter: #bfe3de,
+        light: #a9d6d0,
+        default: #5ebbae,
+        dark: #40988c,
+        darker: #287368,
+        darkest: #13463f,
+);
+
+/// Gray colors
+/// @group Colors
+/// @type Map
+/// @prop {Color} lightest [#f5f5f6]
+/// @prop {Color} lighter [#d8d8da]
+/// @prop {Color} light [#B8B9B6]
+/// @prop {Color} default [#9699a1]
+/// @prop {Color} dark [#676970]
+/// @prop {Color} darker [#3c3c3c]
+/// @prop {Color} darkest [#444]
+/// @see {mixin} color
+$gray: (
+        lightest: #f5f5f6,
+        lighter: #d8d8da,
+        light: #B8B9B6,
+        default: #9699a1,
+        dark: #676970,
+        darker: #3c3c3c,
+        darkest: #444,
+);
+
+/// Link colors
+/// @group Colors
+/// @type Map
+/// @prop {String} key - color name
+/// @prop {Color} value - color
+/// @see {mixin} color
+$link: (
+        default: #13869e,
+        hover: #20365a,
+        active: #13869e,
+        visited: #13869e
+);
+
+/// Black
+/// @group Colors
+/// @type Color
+$black: #222;
+
+/// White
+/// @group Colors
+/// @type Color
+$white: #fff;
+
+/// Text color
+/// @group Colors
+/// @type Color
+$text-color: map_get($green, darker);
+
+/// Twitter blue
+/// @group Colors
+/// @type Color
+$twitter-blue: #55acee;
+
+/// Facebook blue
+/// @group Colors
+/// @type Color
+$facebook-blue: #3b5999;
+
+/// Youtube red
+/// @group Colors
+/// @type Color
+$youtube-red: #cd201f;
+
+/// Pinterest red
+/// @group Colors
+/// @type Color
+$pinterest-red: #c92228;
+
+/// Flickr pink
+/// @group Colors
+/// @type Color
+$flickr-pink: #ff0084;
+
+
+
+/// Susy grid settings
+/// @group layout
+/// @type Map
+/// @prop {String} key - Settings key
+/// @prop {String} value - Setting value
+$susy: (
+        flow: ltr,
+        math: fluid,
+        output: float,
+        gutter-position: after,
+        container: 75em,
+        container-position: center,
+        columns: 12,
+        gutters: 0.25,
+        column-width: false,
+        global-box-sizing: border-box,
+        last-flow: to,
+);
+
+/// Breakpoint map, horizontal and vertical
+/// @group layout
+/// @type Map
+/// @prop {String} key - Breakpoint key. Use -v for vertical keys
+/// @prop {String} value - Media Query rule
+$breakpoints: (
+        s: (max-width: 640px),
+        m: (max-width: 960px),
+        l: (max-width: 1280px),
+        s-v: (max-height: 640px),
+        m-v: (max-height: 960px),
+        l-v: (max-height: 1280px),
+);
+
+/// Z-indexes map, gathering all Z layers of the application
+/// @group layout
+/// @type Map
+/// @prop {String} key - Layer key
+/// @prop {Number} value - Z value
+$z-indexes: (
+        'modal': 5000,
+        'toolbar': 2000,
+        'fixed': 500,
+        'above': 10,
+        'default': 1,
+        'below': -1,
+);
+
+/// Border radius map
+/// @group layout
+/// @type Map
+/// @prop {String} key - Radius key
+/// @prop {Number} value - Radius value
+$border-radius: (
+        s: 3px,
+        m: 7px,
+        l: 15px,
+        xl: 21px,
+);
+
+

@@ -1,0 +1,23 @@
+# DEV
+.env
+.idea
+_ide_helper*.php
+
+# BACK END
+/vendor
+/storage/glide/cache
+/storage/tempSeeder
+/storage/database.sqlite
+
+# FRONT END
+/node_modules
+/npm-debug.log
+/public/build
+/resources/assets/css
+/public/css
+/public/js
+/public/doc/sass
+/public/media
+
+#REMOVE THIS LINE IN PROJECTS
+/public/redactor

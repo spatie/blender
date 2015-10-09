@@ -1,0 +1,11 @@
+environment:
+  test: testing
+  production: production
+since: since
+change: Change
+name: Name
+addImage: Add image
+addFile: Add file
+locationpicker:
+  search: search address
+  submit: Search

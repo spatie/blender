@@ -1,0 +1,26 @@
+.breadcrumbs{
+  min-height: 1.5em;
+}
+
+.breadcrumb{
+  list-style: none;
+  @include ul-horizontal;
+  font-size: font-size(xs);
+  color: color($gray);
+  margin-bottom: 2em;
+
+  li{
+    padding-right: 0.5em;
+
+    &:before{
+      content: ">"; //angle-right
+      display: inline-block;
+      padding-right: 0.5em;
+      opacity: 0.5;
+    }
+
+    &:first-child:before{
+      display: none;
+    }
+  }
+}

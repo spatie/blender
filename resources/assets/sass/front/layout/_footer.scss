@@ -1,0 +1,6 @@
+.footer{
+
+  @include mq(s){
+    text-align: center;
+  }
+}
