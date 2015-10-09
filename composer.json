@@ -93,9 +93,6 @@
 	]
   },
   "config": {
-	"preferred-install": "dist",
-	"github-oauth": {
-	  "github.com": ""
-	}
+	"preferred-install": "dist"
   }
 }
