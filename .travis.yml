@@ -7,11 +7,11 @@ php:
 before_script:
   - travis_retry composer self-update
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
+  - npm install
+  - gulp
+  - gulp --back
 
 script:
- - npm install
- - gulp
- - gulp --back
  - phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
