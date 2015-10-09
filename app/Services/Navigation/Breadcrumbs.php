@@ -81,7 +81,7 @@ class Breadcrumbs
 
         BreadCrumbsManager::register(
             "{$singular}ListBack",
-            function ($breadcrumbs) use ($singular, $ucname, $plural) {
+            function ($breadcrumbs) use ($ucname, $plural) {
                 $breadcrumbs->push(
                     trans("back-{$plural}.title"),
                     action("Back\\{$ucname}Controller@index")

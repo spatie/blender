@@ -4,7 +4,6 @@ namespace App\Repositories\Database;
 
 use App\Models\Person;
 use App\Repositories\PersonRepository;
-use Illuminate\Database\Eloquent\Collection;
 
 class PersonDbRepository extends DbRepository implements PersonRepository
 {

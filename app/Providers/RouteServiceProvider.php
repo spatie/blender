@@ -139,7 +139,7 @@ class RouteServiceProvider extends ServiceProvider
 
             $articles = app(ArticleRepository::class)->getWithTechnicalNameLike($technicalNamePrefix);
 
-            $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"),  function () use ($articles, $technicalNamePrefix) {
+            $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"),  function () use ($articles) {
                 return redirect(route("{$articles->first()->technical_name}"));
             })->name($technicalNamePrefix);
 

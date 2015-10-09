@@ -10,7 +10,6 @@ use Log;
 use Spatie\Newsletter\Exceptions\AlreadySubscribed;
 use Spatie\Newsletter\Exceptions\ServiceRefusedSubscription;
 use Spatie\Newsletter\Interfaces\NewsletterInterface;
-use Spatie\Newsletter\Newsletter;
 use String;
 
 class NewsletterApiController extends ApiController

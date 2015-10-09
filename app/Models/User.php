@@ -79,7 +79,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         $this->country = (isset($attributes['country']) ? $attributes['country'] : '');
         $this->telephone = (isset($attributes['telephone']) ? $attributes['telephone'] : '');
 
-        if (isset($attributes['password']) and $attributes['password'] != '') {
+        if (isset($attributes['password']) && $attributes['password'] != '') {
             $this->password = $attributes['password'];
         }
     }

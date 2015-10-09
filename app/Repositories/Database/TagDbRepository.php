@@ -77,7 +77,7 @@ class TagDbRepository extends DbRepository implements TagRepository
 
         return $this->model
             ->where('type', $type)
-            ->whereHas('translations', function ($q) use ($name, $type, $locale) {
+            ->whereHas('translations', function ($q) use ($name, $locale) {
                 $q
                     ->where('name', $name)
                     ->where('locale', $locale);

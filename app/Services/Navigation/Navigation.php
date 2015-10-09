@@ -25,12 +25,9 @@ class Navigation
 
     public function getFrontMainMenu()
     {
-        $contactArticle = $this->articleRepository->findByTechnicalName('contact');
 
         $menu = Menu::handler('main', ['class' => 'nav navbar-nav'])
-            ->add('/', 'Home')
-            //->add(action('Front\ContactController@index'), $contactArticle->name)
-            ;
+            ->add('/', 'Home');
 
         return $menu;
     }

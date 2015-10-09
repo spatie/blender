@@ -5,7 +5,6 @@ namespace App\Services\Html;
 use Illuminate\Html\HtmlBuilder as BaseHtmlBuilder;
 use Form;
 use Session;
-use URL;
 
 class HtmlBuilder extends BaseHtmlBuilder
 {

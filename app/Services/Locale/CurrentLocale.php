@@ -60,7 +60,7 @@ class CurrentLocale
 
         if ($this->currentSection() === 'back') {
             // User might not be set yet if called in a service provider so a fallback is provided
-            if ($this->app->auth->user() != null) {
+            if ($this->app->auth->user() !== null) {
                 return $this->app->auth->user()->locale;
             }
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Auth;
 
 use Activity;
 use App\Http\Controllers\Controller;
-use App\Models\User;
 use App\Repositories\UserRepository;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;

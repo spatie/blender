@@ -2,7 +2,6 @@
 
 use App\Models\NewsItem;
 use App\Models\Translations\NewsItemTranslation;
-use function spatie\array_rand_value;
 
 class NewsItemSeeder extends DatabaseSeeder
 {
