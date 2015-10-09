@@ -6,7 +6,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:spatie/blender5.spatie.be.git"
+    "url": "git@github.com:spatie-custom/blender.git"
   },
   "devDependencies": {
     "browserify": "^11.0.1",
