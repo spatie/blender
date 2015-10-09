@@ -20,13 +20,13 @@ class ArticleSeeder extends DatabaseSeeder
         foreach (config('app.locales') as $locale) {
             $article->translate($locale)->name = $name;
             $article->translate($locale)->text =
-                '<p class="intro">'.$this->faker->paragraph($nbSentences = 6).'</p>'.
-                '<h3>'.$this->faker->sentence($nbWords = 6).'</h3>'.
-                '<p>'.$this->faker->paragraph($nbSentences = 9).'</p>'.
-                '<blockquote>'.$this->faker->paragraph($nbSentences = 7).'</blockquote>'.
-                '<h3>'.$this->faker->sentence($nbWords = 6).'</h3>'.
-                '<p>'.$this->faker->paragraph($nbSentences = 10).'</p>'.
-                '<p>'.$this->faker->paragraph($nbSentences = 8).'</p>';
+                '<p class="intro">'.$this->faker->paragraph(6).'</p>'.
+                '<h3>'.$this->faker->sentence(6).'</h3>'.
+                '<p>'.$this->faker->paragraph(9).'</p>'.
+                '<blockquote>'.$this->faker->paragraph(7).'</blockquote>'.
+                '<h3>'.$this->faker->sentence(6).'</h3>'.
+                '<p>'.$this->faker->paragraph(10).'</p>'.
+                '<p>'.$this->faker->paragraph(8).'</p>';
         }
 
         $article->publish_date = new Carbon();
