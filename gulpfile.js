@@ -15,7 +15,6 @@ if (config.disableNotifier) process.env.DISABLE_NOTIFIER = true;
 /* Require npm modules */
 var elixir = require('laravel-elixir');
 var gutil = require('gulp-util');
-require('laravel-elixir-browser-sync');
 
 
 /* Proccess settings */
