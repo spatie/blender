@@ -13,14 +13,4 @@ class ActivityLogTest extends BackTestCase
             ->visit(action('Back\ActivitylogController@index'))
             ->see('Log');
     }
-
-    /**
-     * @test
-     */
-    public function it_can_display_the_statistics()
-    {
-        $this
-            ->visit(action('Back\StatisticsController@index'))
-            ->see(trans('back-statistics.title'));
-    }
 }
