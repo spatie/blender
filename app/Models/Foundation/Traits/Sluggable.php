@@ -38,7 +38,7 @@ trait Sluggable
 
         $config = $this->getSluggableConfig();
 
-        while ($record = $instance
+        while ($instance
             ::where($config['save_to'], '=', $slug)
             ->where('locale', '=', $this->locale)
             ->where('id', '<>', ($this->exists ? $this->id : 0))
