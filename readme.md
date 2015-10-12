@@ -11,6 +11,10 @@ You may use our template but please notice that we offer no support whatsoever. 
 follow semver. We do not guarantee that the code is stable. In short: when using this
 you're on your own.
 
+###Contributing
+
+Generally We won't accept any PR requests to Blender. If you feel that you have discovered a bug or have an idea to improve the code, contact us first before your start coding.
+
 ### License
 
 Blender and The Laravel framework are open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
