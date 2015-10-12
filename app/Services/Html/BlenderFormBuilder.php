@@ -78,6 +78,25 @@ class BlenderFormBuilder
      *
      * @return string
      */
+    public function textarea($name, $required = false, $locale = null)
+    {
+        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+
+        $label = $this->label($name, $required);
+        $text = $this->form()->textarea($fieldName, $this->form()->useInitialValue($this->model, $name, $locale), ['data-autosize' => true]);
+        $errors = $this->error($fieldName, $this->errors);
+
+        return $this->wrapInFormGroup($label, $text, $errors);
+    }
+
+
+    /**
+     * @param string $name
+     * @param bool   $required
+     * @param string $locale
+     *
+     * @return string
+     */
     public function redactor($name, $required = false, $locale = null)
     {
         $options = [
