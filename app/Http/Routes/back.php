@@ -1,12 +1,12 @@
 <?php
 
 // Default
-Route::get('/', ['uses' => 'DashboardController@index', 'as' => 'dashboard']);
+Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::get('log', 'ActivitylogController@index');
 Route::resource('fragment', 'FragmentController');
 Route::get('formresponses/', 'FormResponseController@showDownloadButton');
 Route::post('formresponses/', 'FormResponseController@download');
-Route::get('statistics', ['as' => 'statistics', 'uses' => 'StatisticsController@index']);
+Route::get('statistics','StatisticsController@index')->name('statistics');
 
 Route::pattern('role', App\Models\Enums\UserRole::allAsRegex());
 Route::group(['prefix' => 'user'], function () {
