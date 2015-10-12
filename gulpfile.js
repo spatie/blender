@@ -26,6 +26,13 @@ elixir.config.sourcemaps = false;
 /* Custom extensions */
 var extensions = require("./resources/gulp/extend.js");
 
+/* Set up Browserify */
+elixir.config.js.browserify.options.extensions = ['.jsx'];
+elixir.config.js.browserify.transformers.push({
+    name: 'reactify',
+    options: {}
+});
+
 /* Elixir main function */
 elixir(function (mix) {
 

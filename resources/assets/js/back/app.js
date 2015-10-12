@@ -9,7 +9,7 @@
 /* ---------- jQuery */
 
 var $ = require('jquery');
-global.jQuery = global.$ = $; //expose jQuery for redactor :(
+global.jQuery = global.$ = $; // expose jQuery for redactor :(
 
 /* ---------- Webfont Loader */
 
@@ -28,16 +28,18 @@ webfont.load({
 
 /* ---------- blender.js modules */
 
-require("blender.js/modules/ajax.csrf");
+require('blender.js/modules/ajax.csrf');
 
-require("blender.js/modules/interface.confirm");
+require('blender.js/modules/interface.confirm');
 
-require("blender.js/modules/form.autosave"); //do this first
-require("blender.js/modules/form.input.datetimepicker");
-require("blender.js/modules/form.select");
-require("blender.js/modules/form.textarea.autosize");
-require("blender.js/modules/form.textarea.parts");
-require("blender.js/modules/form.locationpicker");
+require('blender.js/modules/form.autosave'); // do this first
+require('blender.js/modules/form.input.datetimepicker');
+require('blender.js/modules/form.select');
+require('blender.js/modules/form.textarea.autosize');
+// require('blender.js/modules/form.textarea.parts');
+require('blender.js/modules/form.locationpicker');
 
-require("blender.js/modules/table.datatables");
-require("blender.js/modules/table.sortable");
+require('blender.js/modules/table.datatables');
+require('blender.js/modules/table.sortable');
+
+require('./media');

@@ -43,7 +43,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         // Don't use cache repositories in the back end
-        if ($this->app->make(CurrentSection::class)->determine() === 'back') {
+        if ($this->app->make(CurrentSection::class)->determine() === 'blender') {
             $this->dbRepositories = array_merge($this->dbRepositories, $this->cacheRepositories);
             $this->cacheRepositories = [];
         }
