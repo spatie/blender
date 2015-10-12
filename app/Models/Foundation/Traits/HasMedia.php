@@ -3,9 +3,10 @@
 namespace App\Models\Foundation\Traits;
 
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Media;
 
 /**
- * Note: don't forget to set protected $mediaLibraryCollections.
+ * Don't forget to set protected $mediaLibraryCollections.
  */
 trait HasMedia
 {
@@ -23,7 +24,7 @@ trait HasMedia
         foreach ($this->mediaLibraryCollections as $collectionName) {
             if (array_key_exists($collectionName, $attributes)) {
                 $updatedMedia = $this->updateMedia(json_decode($attributes[$collectionName], true), $collectionName);
-                foreach ($updatedMedia as $mediaItem) {
+                foreach($updatedMedia as $mediaItem) {
                     $customProperties = $mediaItem->custom_properties;
                     $customProperties['temp'] = false;
                     $mediaItem->custom_properties = $customProperties;
@@ -32,5 +33,14 @@ trait HasMedia
                 }
             }
         }
+    }
+
+    public function clearTemporaryMedia()
+    {
+        $this->media()->get()->each(function (Media $media) {
+            if ($media->getCustomProperty('temp', false) === true) {
+                $media->delete();
+            }
+        });
     }
 }

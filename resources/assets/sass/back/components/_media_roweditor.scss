@@ -1,0 +1,71 @@
+.media .row_editor {
+
+  /* Grid
+  ********************************************************/
+
+  $columns: 12;
+  @for $i from 1 through $columns {
+    .columns_#{$i} {
+      display: inline-block;
+      width: percentage(1 / $columns * $i);
+    }
+
+    .columns_offset_#{$i} {
+      margin-left: percentage(1 / $columns * $i);
+    }
+  }
+
+  /* Fields
+  ********************************************************/
+
+  .text {
+    padding: .5em;
+    box-shadow: 0 0 0 3px transparent;
+    transition: border .1s ease-out, box-shadow .1s ease-out;
+
+    &:after {
+      content: '\f040'; // Pencil
+      font-family: font-family(icons);
+      font-size: font-size(s);
+      margin-left: 0.5em;
+      display: inline-block;
+      color: rgba(color($gray), .3);
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 3px color($blue, light);
+      outline: none;
+
+      &:after{
+        display: none;
+      }
+    }
+  }
+
+  .toggle {
+    display: inline-block;
+    width: 2em;
+    margin-right: 4px;
+    border-radius: 2px;
+    font-weight: 600;
+    color: $white;
+    text-align: center;
+    background-color: color($gray, lighter);
+    cursor: pointer;
+
+    &.-active {
+      background-color: color($green);
+    }
+  }
+  
+  /* Align
+  ********************************************************/
+
+  .align_left {
+    text-align: left;
+  }
+
+  .align_right {
+    text-align: right;
+  }
+}

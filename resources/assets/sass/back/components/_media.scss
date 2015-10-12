@@ -1,0 +1,131 @@
+.media {
+
+  border: solid 2px color($gray, light);
+  box-shadow: 0 3px rgba(34, 34, 34, 0.05);
+  border-radius: border-radius(s);
+  font-size: font-size(s);
+  background: lighten(color($gray, lightest) , 1%);
+  margin: 2em 0 1em;
+  
+  table {
+    margin: 0;
+  }
+
+  td {
+    border: none;
+  }
+
+  /* Rows
+  ********************************************************/
+
+  .row {
+    background-color: color($gray, lightest);
+    border-bottom: 1px solid color($gray, lighter);
+
+    &.ui-sortable-helper {
+      box-shadow: 0 0 10px rgba($black, .1);
+      border-top: 1px solid color($gray, lighter);
+    }
+  }
+
+  .row_order {
+    width: 27px;
+    padding-right: 0;
+    text-align: center;
+    cursor: grab;
+    color: color($gray);
+  }
+
+  .row_thumb {
+    width: calc(64px + 2px + 2em);
+    height: calc(64px + 2px + .5em);
+
+    .image,
+    .icon {
+      display: block;
+      width: 100%;
+    }
+
+    .image {
+      height: auto;
+      max-width: 64px + 2px;
+      max-height: 64px + 2px;
+      border: 1px solid color($gray, light);
+      border-radius: border-radius(s);
+    }
+
+    .icon {
+      width: 64px + 2px;
+      height: 64px + 2px;
+      line-height: 64px + 2px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 2em;
+      color: color($gray, light);
+    }
+  }
+
+  .row_actions {
+    text-align: right;
+    width: 60px;
+  }
+
+  /* Uploader
+  ********************************************************/
+
+  .upload {
+    border-top: 2px solid color($gray, ligher);
+    margin-top: -1px; // Offset for last row border
+  }
+
+  .upload_dropzone {
+    &.dz-drag-hover {
+      background: color($blue, lightest);
+      border-color: color($blue, light);
+      border-style: dashed;
+      opacity: 0.8;
+
+      tr, td {
+        background: color($blue, lightest) !important;
+      }
+    }
+  }
+
+  .upload_add {
+    padding: 1em;
+    font-size: 0.75rem;
+    border-top: 2px solid color($gray, lighter);
+    margin-top: -1px;
+
+    .alert {
+      margin-top: .5em;
+    }
+
+    .button {
+      cursor: pointer;
+    }
+  }
+
+  .upload_progress {
+    margin: 1em;
+
+    .progress {
+      margin: 0 auto;
+    }
+  }
+
+  .export {
+    display: none;
+
+    &.\-debug {
+      display: block;
+      font-family: monospace;
+      height: 300px;
+      tab-size: 2;
+      border: none;
+      border-radius: 0;
+      border-top: solid 2px color($gray, lighter);
+      box-shadow: none;
+    }
+  }
+}

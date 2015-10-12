@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use Activity;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Http\Request;
 
 abstract class ModuleController extends Controller
 {
@@ -82,13 +83,19 @@ abstract class ModuleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
+     * @param \Illuminate\Http\Request $request
      * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
         $model = $this->repository->findById($id);
+
+        if ($request->has('revert')) {
+            $model->clearTemporaryMedia();
+            return redirect()->action("Back\\{$this->modelName}Controller@edit", [$id]);
+        }
 
         $data = [
             'model' => $model,

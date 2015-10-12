@@ -7,8 +7,18 @@
 
 {!! BlenderForm::date('publish_date') !!}
 
-{!! BlenderForm::images('images') !!}
+<div data-media-collection="images"
+     data-media-type="images-with-lock"
+     data-initial="{{ $model->getMedia('images')->toJson() }}"
+     data-locales="{{ collect(config('app.locales'))->toJson() }}"
+     data-model="{{ collect(['name' => App\Models\Article::class, 'id' => $model->id])->toJson() }}">
+</div>
 
-{!! BlenderForm::downloads('downloads') !!}
+<div data-media-collection="downloads"
+     data-media-type="downloads"
+     data-initial="{{ $model->getMedia('downloads')->toJson() }}"
+     data-locales="{{ collect(config('app.locales'))->toJson() }}"
+     data-model="{{ collect(['name' => App\Models\Article::class, 'id' => $model->id])->toJson() }}">
+</div>
 
 {!! BlenderForm::submit() !!}

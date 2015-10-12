@@ -79,7 +79,6 @@
   },
   "scripts": {
 	"post-install-cmd": [
-	  "cp -n .env.example .env 2>/dev/null || :",
 	  "php artisan clear-compiled",
 	  "php artisan optimize"
 	],

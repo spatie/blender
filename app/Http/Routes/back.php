@@ -25,5 +25,4 @@ Route::module('people', 'Person', true);
 Route::module('tags', 'Tag', true);
 
 // API
-Route::post('mediaLibraryApi/{modelClass}/{id}/{collectionName}', 'MediaLibraryApiController@add');
-Route::get('mediaLibraryApi/{modelClass}/{id}/{collectionName}', 'MediaLibraryApiController@index');
+Route::post('api/media', 'MediaLibraryApiController@add');

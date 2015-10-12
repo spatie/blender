@@ -56,7 +56,6 @@ var files = {
                 config.paths.nodeBlender + 'datatables/media/css/jquery.dataTables.css',
                 config.paths.nodeBlender + 'jquery-confirm/css/jquery-confirm.css',
                 config.paths.nodeBlender + '/select2/dist/css/select2.css',
-                config.paths.nodeBlender + '/cropper/dist/cropper.css',
                 config.paths.css.resources + 'back.css'
             ],
             js : ['app.js', 'chart.js']
