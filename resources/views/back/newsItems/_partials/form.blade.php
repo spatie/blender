@@ -10,7 +10,7 @@
 {!! BlenderForm::category('news_item_category') !!}
 {!! BlenderForm::tags('news_item_tag') !!}
 
-{!! BlenderForm::images('images') !!}
-{!! BlenderForm::downloads('downloads') !!}
+{!! BlenderForm::media('images', 'images') !!}
+{!! BlenderForm::media('downloads', 'downloads') !!}
 
 {!! BlenderForm::submit() !!}
