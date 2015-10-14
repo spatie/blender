@@ -8,9 +8,8 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 class VerifyCsrfToken extends BaseVerifier
 {
     protected $except = [
-        '/blender/mediaLibraryApi',
+        '/blender/api/media',
         '/newsletter/api/subscribe',
-        '/api/jobquery/*',
     ];
 
     /**
