@@ -2,6 +2,7 @@
 
 // Vendor components - specify NPM dependency path in gulpfile
 @import 'susy/sass/susy';
+@import 'blender-media/src/scss/media';
 
 // Settings
 @import 'settings/settings';
@@ -36,8 +37,6 @@
 @import 'components/pagination';
 @import 'components/parts';
 @import 'components/progress';
-@import 'components/media';
-@import 'components/media_roweditor';
 @import 'components/statistics';
 @import 'components/table';
 

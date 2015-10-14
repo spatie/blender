@@ -117,50 +117,25 @@ class FormBuilder extends BaseFormBuilder
         return Form::select('locale', $list, $current, ['data-select' => 'select']);
     }
 
-    public function uploadImages($subject, $collectionName)
+    public function media($subject, $collection, $type, $associated = [])
     {
-        $columns = [
-            ['data' => 'path', 'title' => '', 'media' => 'image'],
-            ['data' => 'name', 'title' => trans('back.name'), 'editable' => 'text'],
-        ];
+        $initial = htmlspecialchars($subject->getMedia($collection)->toJson());
+        $model = htmlspecialchars(collect(['name' => get_class($subject), 'id' => $subject->id]));
 
-        return $this->uploader($subject, $collectionName, $columns, true);
-    }
+        if (! array_key_exists('locales', $associated)) {
+            $associated['locales'] = config('app.locales');
+        }
 
-    public function uploadDownloads($subject, $collectionName)
-    {
-        $columns = [
-            ['data' => 'path', 'title' => '', 'media' => 'download'],
-            ['data' => 'name', 'title' => trans('back.name'), 'editable' => 'text'],
-        ];
+        $associatedData = collect($associated)->map(function($data, $key) {
+            $json = htmlspecialchars(json_encode($data));
+            return "data-{$key}=\"{$json}\"";
+        })->implode(' ');
 
-        return $this->uploader($subject, $collectionName, $columns, false);
-    }
-
-    public function uploader($subject, $collectionName, $columns, $onlyImages = false)
-    {
-        $serverURL = URL::action('Back\MediaLibraryApiController@add', [short_class_name($subject), $subject->id, $collectionName]);
-
-        return Form::textarea($collectionName, $subject->getMedia($collectionName)->toJson(), [
-            'data-parts' => json_encode(
-                [
-                    'debug' => true,
-                    'primaryKeyName' => 'id',
-                    'orderRows' => true,
-                    'dataTableOptions' => [
-                        'searching' => false,
-                        'info' => false,
-                    ],
-                    'columns' => $columns,
-                    'upload' => [
-                        'url' => $serverURL,
-                        'label' => $onlyImages ? trans('back.addImage') : trans('back.addFile'),
-                        'validation' => [
-                            'acceptFileTypes' => ($onlyImages ? 'images' : ''),
-                            'maxFileSize' => config('mediaLibrary.maxFileSize'),
-                        ],
-                    ],
-                ], JSON_FORCE_OBJECT),
-        ]);
+        return "<div data-media-collection=\"{$collection}\"
+                     data-media-type=\"{$type}\"
+                     data-initial=\"{$initial}\"
+                     data-model=\"{$model}\"
+                     {$associatedData}>
+                </div>";
     }
 }

@@ -222,33 +222,18 @@ class BlenderFormBuilder
     }
 
     /**
-     * @param string $name
+     * @param string $collection
+     * @param string $type
+     * @param array $associated
      *
      * @return string
      */
-    public function images($name, $locale = null)
+    public function media($collection, $type, $associated = [])
     {
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+        $label = $this->label($collection);
+        $media = $this->form()->media($this->model, $collection, $type, $associated);
 
-        $label = $this->label($name);
-        $uploader = $this->form()->uploadImages($this->model, $fieldName);
-
-        return $this->wrapInParts($label, $uploader);
-    }
-
-    /**
-     * @param string $name
-     *
-     * @return string
-     */
-    public function downloads($name, $locale = null)
-    {
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
-
-        $label = $this->label($name);
-        $uploader = $this->form()->uploadDownloads($this->model, $fieldName);
-
-        return $this->wrapInParts($label, $uploader);
+        return $this->wrapInFormGroup($label, $media);
     }
 
     /**
