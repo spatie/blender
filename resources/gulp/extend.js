@@ -32,8 +32,7 @@ gulp.task('help', function () {
     gutil.log('');
     gutil.log(gutil.colors.yellow('-------------------------------------'));
     gutil.log(gutil.colors.yellow('gulp'), '                     compile front assets');
-    gutil.log(gutil.colors.yellow('gulp watch'), '               watch front assets');
-    gutil.log(gutil.colors.yellow('gulp serve watch'), '         watch assets and load browser-sync');
+    gutil.log(gutil.colors.yellow('gulp watch'), '               watch front assets and load browser-sync');
     gutil.log(gutil.colors.cyan(  '--production'), '             use flag to compile minified');
     gutil.log(gutil.colors.cyan(  '--back'), '                   use flag to compile or watch back module');
     gutil.log(gutil.colors.yellow('-------------------------------------'));

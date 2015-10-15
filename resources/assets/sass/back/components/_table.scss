@@ -6,6 +6,12 @@ table.dataTable{
   margin: 2em 0 1em;
   border-bottom: none !important; //datatables override
 
+  caption{
+    @include font(sans, bold);
+    @include font-size(m);
+    text-align: left;
+  }
+
   thead{
     th {
       text-transform: uppercase;

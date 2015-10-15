@@ -10,9 +10,10 @@
 
             @foreach($tags as $name => $type)
 
-                <h3>{{ trans("back-tags.types.{$name}") }}</h3>
+
 
                 <table data-sortable="{{ URL::action('Back\TagController@changeOrder') }}">
+                    <caption>{{ trans("back-tags.types.{$name}") }}</caption>
                     <thead>
                     <tr>
                         <th></th>
