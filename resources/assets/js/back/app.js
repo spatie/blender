@@ -13,9 +13,8 @@ global.jQuery = global.$ = $; //expose jQuery for redactor :(
 
 /* ---------- Webfont Loader */
 
-require('components-webfontloader');
-
-WebFont.load({
+var webfont = require('webfontloader');
+webfont.load({
     google: {
         families: ['Lato:100,200,300,400,700,900,300italic']
     },

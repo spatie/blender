@@ -17,22 +17,13 @@
 @import 'helpers/text';
 
 // Layout
-@import 'layout/html-tag';
-@import 'layout/menu';
+@import 'layout/html';
+@import 'layout/nav';
 @import 'layout/main';
 @import 'layout/footer';
+@import 'layout/grid';
 
-// Components aka widgets aka blocks
-// PICK WHAT YOU NEED
-/*
-@import 'components/alert';
-@import 'components/breadcrumbs';
-@import 'components/button';
-@import 'components/form';
-@import 'components/grid';
-@import 'components/pagination';
-@import 'components/progress';
-*/
+// Blocks
 
 
 // Vendor css or overrides

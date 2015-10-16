@@ -12,8 +12,7 @@
   @include container();
   padding: 0 4vw;
 
-
-  &.-full-page{
+  &.-fullscreen{
     width: 100%;
     min-height: 100vh;
   }
@@ -21,6 +20,10 @@
 }
 
 .grid_col{
+
+  &.-last {
+    @include last;
+  }
 
   &.-width-1\/6 {
     @include span(2);
@@ -92,8 +95,12 @@
   }
 
 
-  &.-last {
-    @include last;
+  &.-push-1\/3{
+    @include push(4);
+
+    @include mq(m) {
+      @include push(0);
+    }
   }
 
   &.-push-1\/4{
@@ -103,6 +110,15 @@
       @include push(0);
     }
   }
+
+  &.-push-1\/6{
+    @include push(2);
+
+    @include mq(m) {
+      @include push(0);
+    }
+  }
+
 
 }
 

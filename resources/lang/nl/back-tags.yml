@@ -5,3 +5,6 @@ name: Naam
 type: Type
 online: Online
 save: Bewaar tag
+types:
+  news_item_category: Nieuwscategorie
+  news_item_tag: Nieuwstag

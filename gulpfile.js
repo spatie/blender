@@ -15,6 +15,7 @@ if (config.disableNotifier) process.env.DISABLE_NOTIFIER = true;
 /* Require npm modules */
 var elixir = require('laravel-elixir');
 var gutil = require('gulp-util');
+require('laravel-elixir-browser-sync-simple');
 
 
 /* Proccess settings */
@@ -55,12 +56,17 @@ elixir(function (mix) {
         //versioning public css & js
         .version( [ config.paths.css.public , config.paths.js.public  ] )
 
-        .browserSync([
-            'public/build/*',
-            'resources/views/**/*'
-        ], {
+        .browserSync({
+            files: [
+                'public/build/*',
+                'resources/views/**/*'
+            ],
             proxy: process.env.dev,
-            reloadDelay: 1000
+            logPrefix: "Laravel Eixir BrowserSync",
+            logConnections: false,
+            reloadOnRestart: false,
+            notify: false,
+            open: false
         });
     ;
 
