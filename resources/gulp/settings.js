@@ -13,7 +13,6 @@ var config = {
 
     paths : {
         node : 'node_modules/',
-        nodeBlender : 'node_modules/blender.js/node_modules/',
         fonts: 'public/fonts/',
         css : {
             resources : 'resources/assets/css/',
@@ -53,9 +52,9 @@ var files = {
             sass : 'back/back.scss',
             css : [
                 config.paths.node + 'normalize-css/normalize.css',
-                config.paths.nodeBlender + 'datatables/media/css/jquery.dataTables.css',
-                config.paths.nodeBlender + 'jquery-confirm/css/jquery-confirm.css',
-                config.paths.nodeBlender + '/select2/dist/css/select2.css',
+                config.paths.node + 'datatables/media/css/jquery.dataTables.css',
+                config.paths.node + 'jquery-confirm/css/jquery-confirm.css',
+                config.paths.node + 'select2/dist/css/select2.css',
                 config.paths.css.resources + 'back.css'
             ],
             js : ['app.js', 'chart.js']
