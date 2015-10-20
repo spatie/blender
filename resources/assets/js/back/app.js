@@ -29,7 +29,6 @@ webfont.load({
 /* ---------- blender.js modules */
 
 require('blender.js/modules/ajax.csrf');
-
 require('blender.js/modules/interface.confirm');
 
 require('blender.js/modules/form.autosave'); // do this first
