@@ -1,9 +1,12 @@
 {
   "name": "Blender",
-  "version": "5.2.4",
+  "version": "5.2.5",
   "authors": [
+    "Sebastian De Deyne <sebastian@spatie.be>",
+    "Freek Van der Herten <freek@spatie.be>",
     "Willem Van Bockstal <willem@spatie.be>"
   ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
@@ -15,9 +18,7 @@
     "gulp": "^3.8.11",
     "gulp-svgmin": "^1.1.2",
     "gulp-util": "^3.0.3",
-    "laravel-elixir": "^3.0.0",
-    "laravel-elixir-browser-sync-simple": "^2.1.0",
-    "sassdoc": "^2.1.1"
+    "laravel-elixir": "^3.0.0"
   },
   "dependencies": {
     "blender.js": "git://github.com/spatie-custom/blender.js#1.0.1",
@@ -25,6 +26,7 @@
     "chart.js": "^1.0.2",
     "jquery": "^2.1.4",
     "normalize-css": "^2.3.1",
+    "spatie-front.js": "spatie-custom/spatie-front.js#0.0.3",
     "susy": "^2.2.5",
     "webfontloader": "^1.6.10"
   }

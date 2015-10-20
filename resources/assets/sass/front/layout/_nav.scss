@@ -1,4 +1,11 @@
-.nav{
+.\$nav-mobile{
+    .nav {
 
+    }
 }
 
+.nav{
+    ul{
+        @include ul-clean();
+    }
+}

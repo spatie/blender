@@ -44,12 +44,7 @@ elixir(function (mix) {
         /* Sass -> CSS */
 
         //compile sass to resources/css. Extra includePaths for @imports eg. from vendor/node_modules
-        .sass(files[process.env.module].sass, config.paths.css.resources + process.env.module + '.css', {includePaths: [config.paths.node]})
-
-         /* Combine prefixed CSS */
-
-        //combine resources css to public
-        .styles(files[process.env.module].css, config.paths.css.public + process.env.module + '.css', config.paths.relativeRoot)
+        .sass(files[process.env.module].sass, config.paths.css.public + process.env.module + '.css', {includePaths: [config.paths.node]})
 
         /* Version CSS & Javascript */
 
@@ -62,11 +57,10 @@ elixir(function (mix) {
                 'resources/views/**/*'
             ],
             proxy: process.env.dev,
-            logPrefix: "Laravel Eixir BrowserSync",
-            logConnections: false,
             reloadOnRestart: false,
             notify: false,
-            open: false
+            open: false,
+            xip: true
         });
     ;
 

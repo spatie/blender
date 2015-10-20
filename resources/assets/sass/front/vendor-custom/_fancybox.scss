@@ -1,0 +1,83 @@
+//overrides default stylesheet
+
+.fancybox-opened .fancybox-skin {
+  box-shadow: 0 0 25px rgba($black, 0.2);
+}
+
+.fancybox-title-float-wrap {
+
+  .child {
+    background: rgba($white, 0.95);
+    color: color($gray, dark);
+    font-family: font-family(sans);
+    font-weight: font-weight(normal);
+    text-shadow: none;
+    border-radius: 0;
+  }
+}
+
+.fancybox-overlay {
+  background-color: rgba($black, 0.5);
+}
+
+.fancybox-close,
+.fancybox-nav span {
+  font-family: font-family(icons);
+  @include circle(36px);
+  border: none;
+  color: $black;
+  background-color: $white;
+  font-size: 21px;
+}
+
+.fancybox-close {
+
+  font-size: 18px;
+
+  &:after {
+    content: '\e807'; //cancel
+  }
+
+  @include mq(s){
+    display: none;
+  }
+}
+
+.fancybox-nav {
+  span {
+    position: absolute;
+    top: 50%;
+    margin-top: -18px;
+
+    .touchevents &{
+      visibility: visible;
+    }
+
+  }
+}
+
+.fancybox-prev {
+  span {
+    left: 36px;
+    &:after {
+      content: '\e800'; //cancel
+    }
+
+    .touchevents &{
+      transform: translateX(-54px);
+    }
+  }
+}
+
+.fancybox-next {
+  span {
+    right: 36px;
+    &:after {
+      content: '\e801'; //cancel
+    }
+
+    .touchevents &{
+      transform: translateX(54px);
+    }
+  }
+}

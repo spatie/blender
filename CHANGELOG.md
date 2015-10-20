@@ -4,6 +4,16 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
 
+## [5.2.5] - 2015-10-20
+### Changed
+- elixir built in browsersync
+- front-end sass rewrite
+- sassdoc removal
+- removed a step in Sass->css generation
+- npm3 support in gulp
+- added license to package.json
+
+
 ## [5.2.4] - 2015-08-05
 ### Changed
 - Elixir v3 Browsersync integration

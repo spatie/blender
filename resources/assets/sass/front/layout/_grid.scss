@@ -10,7 +10,8 @@
 //default grid classes
 .grid{
   @include container();
-  padding: 0 4vw;
+  padding: 0 2.5%;
+  box-sizing: content-box;
 
   &.-fullscreen{
     width: 100%;
@@ -21,9 +22,7 @@
 
 .grid_col{
 
-  &.-last {
-    @include last;
-  }
+  padding: 0 2.5%;
 
   &.-width-1\/6 {
     @include span(2);
@@ -119,6 +118,9 @@
     }
   }
 
+  &.-last {
+    @include last;
+  }
 
 }
 

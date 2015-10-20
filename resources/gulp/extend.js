@@ -38,7 +38,6 @@ gulp.task('help', function () {
     gutil.log(gutil.colors.yellow('-------------------------------------'));
     gutil.log(gutil.colors.red(   'gulp phpunit'), '             run unit tests');
     gutil.log(gutil.colors.red(   'gulp favicon'), '             generate favicons');
-    gutil.log(gutil.colors.red(   'gulp doc'), '                 generate documentation');
     gutil.log(gutil.colors.yellow('-------------------------------------'));
     gutil.log('');
 });
@@ -54,16 +53,6 @@ gulp.task('phpunit', function() {
         // mix.phpUnit();
     });
 });
-
-
-/* Show gulp help in terminal */
-gulp.task('doc', function () {
-    return gulp.src('resources/assets/sass/**/*.scss')
-        .pipe(sassdoc({
-            dest: 'public/doc/sass/'
-        }));
-});
-
 
 /* Generate favicons and update html view */
 gulp.task('favicon', function () {

@@ -1,10 +1,6 @@
 /* Layout functions */
 
 /// Responsive breakpoint manager
-/// @group layout
-/// @param {String} $breakpoint - Breakpoint key or rule
-/// @requires $breakpoints
-/// @output media-query rule with content
 @mixin mq($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
     @media #{inspect(map-get($breakpoints, $breakpoint))} {
@@ -17,10 +13,50 @@
   }
 }
 
+
+/// used for footers that are fixed to the bottom: body has min height of 100% + this height as bottom-padding
+@mixin footer-is-fixed($height: 5em){
+  html{
+    height: 100%;
+  }
+
+  body {
+    min-height: 100%;
+
+    .no-touchevents &{
+      padding-bottom: $height + 4em; //footer space reserved on desktop
+
+      @include mq(m){
+        padding-bottom: 0; //footer relative on small screen
+      }
+    }
+  }
+
+  .footer,
+  .touchevents .footer{
+    z-index: 2;
+    width: 100%;
+
+    @include mq(m){
+      height: auto;
+      max-height: none;
+    }
+  }
+
+  .no-touchevents .footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include mq(m){
+      position: relative;
+    }
+  }
+}
+
+
+
 /// Block reset
-/// @group layout
-/// @requires $breakpoints
-/// @output reset rules
 @mixin block-reset{
   width: 100% !important;
   display: block !important;
@@ -31,29 +67,22 @@
 }
 
 /// Position center horizontally in parent
-/// @group layout
-/// @param {String} $position [absolute] - Css property
-/// @output position rules
 @mixin position-center-horizontal($position: absolute){
   position: $position;
   left: 50%;
   transform: translateX(-50%);
 }
 
+
 /// Position center vertically in parent
-/// @group layout
-/// @param {String} $position [absolute] - Css property
-/// @output position rules
 @mixin position-center-vertical($position: absolute){
   position: $position;
   top: 50%;
   transform: translateY(-50%);
 }
 
+
 /// Position center both in parent
-/// @group layout
-/// @param {String} $position [absolute] - Css property
-/// @output position rules
 @mixin position-center($position: absolute){
   position: $position;
   left: 50%;
@@ -61,24 +90,12 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
-/// Position center reset
-/// @group layout
-/// @output position rules
-@mixin position-center-reset(){
-  position: relative;
-  left: 0;
-  top: 0;
-  transform: translateX(0) translateY(0);
-}
 
-/* Typography mixins */
+/*
+Typography mixins
+*/
 
 /// Generate px fallback for a CSS property with rem values
-/// @group typography
-/// @param {String} $property - Css property
-/// @param {List} $values - One or more values
-/// @requires strip-unit
-/// @output property with px fallback and rem values
 @mixin rem-fallback($property, $values...) {
   $max: length($values);
   $pxValues: '';
@@ -108,32 +125,33 @@
 
 
 /// Font shortcut for font family and weight
-/// @group typography
-/// @param {String} $family - Font family: sans, serif, ...
-/// @param {String} $weight - Font weight: light, normal, medium, bold, extrabold
-/// @requires font-weight
-/// @requires font-family
-/// @output weight and family rule
 @mixin font($family: sans, $weight: normal) {
   font-weight: font-weight($weight);
   font-family: font-family($family);
 }
 
 /// Font shortcut for font family and weight
-/// @group typography
-/// @param {String} $size - Font size: s, m, default, ...
-/// @requires font-size
-/// @output font-size rule
 @mixin font-size($size: default) {
   font-size: font-size($size);
 }
 
+/// style links
+@mixin underline($color,$border-color){
+  color: $color;
+  text-decoration: none;
+  border-bottom: solid 2px rgba($border-color, 0.15);
+  transition: .3s color linear, .3s border-color linear;
+}
+/// style links
+@mixin underline-hover($color){
+  &:hover{
+    color: $color;
+    border-bottom: solid 2px rgba($color, 0.75);
+  }
+}
 
 
 /// Set hyphens on
-/// @group typography
-/// @param {Bool} $value [true] - Hyphens on
-/// @output hyphens rules
 @mixin hyphens($value: true){
   @if $value == true {
     -moz-hyphens: auto;
@@ -151,9 +169,6 @@
 
 
 /// Set font-smoothing
-/// @group typography
-/// @param {String} $value [subpixel] - subpixel or pixel
-/// @output webkit/firefox rules for font-smoothing
 @mixin antialiasing($value: subpixel) {
   @if $value == subpixel {
     -webkit-font-smoothing: subpixel-antialiased;
@@ -165,11 +180,6 @@
 }
 
 /// Generate tag around text
-/// @group typography
-/// @requires border-radius
-/// @param {String} $color - Text color
-/// @param {String} $background-color - Background color
-/// @output tag layout
 @mixin tag($color, $background-color){
   display: inline-block;
   color: $color;
@@ -182,8 +192,6 @@
 
 
 /// Set horizontal ul
-/// @group typography
-/// @output rules for horizontal ul
 @mixin ul-horizontal() {
   list-style: none;
   margin: 0;
@@ -194,16 +202,18 @@
   }
 }
 
+@mixin ul-clean() {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
 
-/* Color mixins */
+
+/*
+Color mixins
+*/
 
 /// Linear gradient
-/// @group colors
-/// @param {Color} $start - Start color
-/// @param {Color} $end - End color
-/// @param {Percentage} $form [0%] - From position
-/// @param {Percentage} $to [100%]- To position
-/// @output prefixed background CSS, filter for IE
 @mixin gradient-linear( $start, $stop, $from: 0%, $to: 100% ) {
   background: $start;
   background: -webkit-gradient(linear, left top, left bottom, from(ie-hex-str($start)), to(ie-hex-str($stop)));
@@ -213,17 +223,36 @@
   background: -o-linear-gradient(top, $start $from,$stop $to);
   background: -ms-linear-gradient(top, $start $from,$stop $to);
   background: linear-gradient(to bottom, $start $from,$stop $to);
-  background-repeat: no-repeat;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}',GradientType=0 );
 }
 
-/* Graphic mixins */
+
+/// Linear gradient horizontal
+/// @group colors
+/// @param {Color} $start - Start color
+/// @param {Color} $end - End color
+/// @param {Percentage} $form [0%] - From position
+/// @param {Percentage} $to [100%]- To position
+/// @output prefixed background CSS, filter for IE
+@mixin gradient-linear-horizontal( $start, $stop, $from: 0%, $to: 100% ) {
+  background: $start;
+  background: -webkit-gradient(linear, left top, right top, from(ie-hex-str($start)), to(ie-hex-str($stop)));
+  background: -moz-linear-gradient(center left, $start $from, $stop $to);
+  background: -moz-gradient(center left, $start $from, $stop $to);
+  background: -webkit-linear-gradient(left, $start $from,$stop $to);
+  background: -o-linear-gradient(left, $start $from,$stop $to);
+  background: -ms-linear-gradient(left, $start $from,$stop $to);
+  background: linear-gradient(to right, $start $from,$stop $to);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}',GradientType=0 );
+  background-repeat: no-repeat;
+}
+
+
+/*
+Graphic mixins
+*/
 
 /// Circle
-/// @group graphics
-/// @param {Numeric} $size - Size
-/// @param {String} $display [inline-block] - Display property
-/// @output rounded inline block
 @mixin circle($size, $display: 'inline-block') {
   display: inline-block;
   width: $size;
@@ -235,10 +264,6 @@
 }
 
 /// Square
-/// @group graphics
-/// @param {Numeric} $size - Size
-/// @param {String} $display [inline-block] - Display property
-/// @output squared inline block
 @mixin square($size, $display: 'inline-block') {
   display: inline-block;
   width: $size;
@@ -249,14 +274,10 @@
 }
 
 /// Responsive rectangle
-/// @group graphics
-/// @param {Numeric} $aspect-ratio - Aspect ratio
-/// @param {String} $display [inline-block] - Display property
-/// @output rectangle with fixed aspect-ratio
 @mixin rectangle($aspect-ratio, $display: 'inline-block'){
   width: 100%;
   height: 0;
-  display: $block;
+  display: block;
   padding-bottom: $aspect-ratio;
   overflow: hidden;
 }
@@ -266,29 +287,13 @@
 /* Image mixins */
 
 /// Svg background
-/// @group images
-/// @param {String} $image - Image url
-/// @param {String} $background-position [center center] - Top, left, right, bottom, center, or unit
-/// @param {String} $background-size [contain]- Contain, cover or unit
-/// @param {String} $background-repeat [no-repeat] - No-repeat or repeat
-/// @require str-replace
-/// @output background-image with png fallback via Modernizr
 @mixin background-svg($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat){
-  $png : str-replace($image, '.svg', '.png');
-  @include background-image($png);
-
-  html.svg &{
-    background-image: url('#{$image}');
-  }
+  //removed since we don't need png fallbacks anymore right?
+  @include background-image($image, $background-position, $background-size, $background-repeat);
 }
 
+
 /// Background image
-/// @group images
-/// @param {String} $image - Image url
-/// @param {String} $background-position [center center] - Top, left, right, bottom, center, or unit
-/// @param {String} $background-size [contain]- Contain, cover or unit
-/// @param {String} $background-repeat [no-repeat] - No-repeat or repeat
-/// @output background-image
 @mixin background-image($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat){
   background-image: url('#{$image}');
   background-size: $background-size;
@@ -297,15 +302,13 @@
 }
 
 /// Background image with color overlay
-/// @group images
-/// @param {String} $img - Image url
-/// @param {Color} $rgba - RGBA color
-/// @output background-image with transparent colored overlay
 @mixin background-image-tinted($image,$rgba, $background-position: center center){
   background:
-    linear-gradient( $rgba, $rgba  ),
-    url('#{$image}');
+  linear-gradient(
+                  $rgba,
+                  $rgba
+  ),
+  url('#{$image}');
   background-size: cover;
   background-position: $background-position;
-  background-repeat: no-repeat;
 }

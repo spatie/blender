@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="@yield('pageDescription')">
 
     <title>@yield('pageTitle')</title>
@@ -17,26 +17,22 @@
 @include('googletagmanager::script')
 @include('front.layout._partials.deprecatedBrowser')
 
-<header>
-
+<header class="header">
+    <div class="grid">
+        <nav class="nav">
+            {!! Navigation::getFrontMainMenu() !!}
+        </nav>
+    </div>
 </header>
 
-<main>
+@include('front.layout._partials.flashMessage')
+@yield('content')
 
-    {!! Navigation::getFrontMainMenu() !!}
-
-    @include('front.layout._partials.flashMessage')
-
-    @yield('content')
-
-</main>
-
-<footer>
+<footer class="footer">
     <small>
         © {{ Date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
     </small>
 </footer>
-
 <script src="{{ elixir('js/front.app.js') }}" defer></script>
 </body>
 </html>
