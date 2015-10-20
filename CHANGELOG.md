@@ -6,7 +6,7 @@ See also [http://keepachangelog.com].
 
 ## [5.2.5] - 2015-10-20
 ### Changed
-- elixir built in browsersync
+- elixir built-in browsersync
 - front-end sass rewrite
 - sassdoc removal
 - removed a step in Sass->css generation

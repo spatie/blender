@@ -15,7 +15,6 @@ var config = {
         node : 'node_modules/',
         fonts: 'public/fonts/',
         css : {
-            resources : 'resources/assets/css/',
             public : 'public/css/'
         },
         favicons : {
@@ -41,17 +40,11 @@ var config = {
 var files = {
         front : {
             sass : 'front/front.scss',
-            css : [
-                config.paths.css.resources + 'front.css'
-            ],
             js : ['app.js']
         },
 
         back : {
             sass : 'back/back.scss',
-            css : [
-                config.paths.css.resources + 'back.css'
-            ],
             js : ['app.js', 'chart.js']
 
         }
