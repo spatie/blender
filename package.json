@@ -20,8 +20,8 @@
     "sassdoc": "^2.1.1"
   },
   "dependencies": {
-    "blender-media": "spatie-custom/blender-media#1.1.0",
     "blender.js": "spatie-custom/blender.js#1.1.0",
+    "blender-media": "spatie-custom/blender-media#1.1.1",
     "browsernizr": "1.0.2",
     "chart.js": "^1.0.2",
     "jquery": "^2.1.4",
