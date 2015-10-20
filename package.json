@@ -20,8 +20,8 @@
   },
   "dependencies": {
     "autosize-input": "^0.2.1",
-    "blender-media": "spatie-custom/blender-media",
-    "blender.js": "spatie-custom/blender.js#1.2.0",
+    "blender-media": "spatie-custom/blender-media#1.1.0",
+    "blender.js": "spatie-custom/blender.js#1.2.1",
     "browsernizr": "^1.0.2",
     "chart.js": "^1.0.2",
     "components-webfontloader": "^1.5.2",
