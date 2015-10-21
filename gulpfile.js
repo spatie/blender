@@ -13,11 +13,11 @@ blenderGulp.options = {
             js : ['app.js', 'chart.js']
         }
     },
-    url: 'http://groener.be',
+    url: 'http://blender.spatie.be',
     browserSync: {
-        proxy: 'http://groener.be.192.168.10.10.xip.io/',
-        xip: false, //mostly when using webfonts with domain restrictions: add xip.io as valid domain
-        open: false //open browser automatically?
+        proxy: 'http://blender.192.168.10.10.xip.io/',
+        xip: false, // When using webfonts with domain restrictions: add xip.io as valid domain
+        open: false // Open browser automatically?
     }
 };
 
