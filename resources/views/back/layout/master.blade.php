@@ -30,7 +30,7 @@
         </div>
     @endif
 
-    <main>
+    <main class="main">
         @yield('content')
     </main>
 

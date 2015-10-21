@@ -1,24 +1,18 @@
 *{
   position: relative;
   box-sizing: border-box;
+  //outline: 1px solid;
 }
 
 html{
-  background: $white;
+  height: 100%;
 }
 
 body {
-
-  @include antialiasing(subpixel);
-  @include font(sans, normal);
-
-  font-size: 1.2rem; //scales everything on very large displays
   line-height: $line-height;
   color: $text-color;
-
-  @include mq(l) {
-    font-size: font-size(default);
-  }
+  @include antialiasing(pixel);
+  @include font(sans, normal);
 }
 
 /* Frequent used tags */
@@ -26,53 +20,69 @@ body {
 h1,
 h2,
 h3{
-  line-height: 1.2; //smaller line height for titles
-  margin-top: 0;
-  @include hyphens(false);
+  //line-height: 1.3; //smaller line height for titles
+  margin: 0;
+  text-rendering: optimizeLegibility; 
 
+  
   p + &,
   ul + &,
   ol + &{
-    margin-top: 2em; //margin-top after a text block
+    margin-bottom: gutter(s); //margin-top after a text block
   }
 
   a{ //reset links in titles
-    color: inherit !important;
-    border-color: transparent !important;
+    //color: inherit !important;
   }
 }
 
 h1{
-  @include font(sans, extrabold);
-  @include font-size(xl);
+  @include font(sans, medium);
+  @include font-size(xxl);
+
 }
 
 h2{
-  @include font(sans, light);
+  @include font(sans,medium);
   @include font-size(l);
-  text-transform: uppercase;
+  color: color($gray,darker);
+
+
 }
 
 h3{
-  @include font(sans, bold);
-  @include font-size(m);
+  @include font(sans, normal);
+  margin-bottom: 0.5rem;
+  word-break: break-word;
+
+
+  & + p{
+    margin-top: 0;
+  }
+}
+
+h4{
+  @include font(sans, normal);
+  margin: 0;
 }
 
 a {
-  color: color($link, default);
-  text-decoration: none;
-  border-bottom: solid 1px rgba( color($link, default) , 0.5) ;
-
-  &:hover{
-    color: color($link, hover);
-  }
+  @include underline(color($link),color($gray));
 }
 
 p,
 ul,
 ol{
-  margin-top: 0;
-  margin-bottom: $line-height;
+  margin: 0;
+  line-height: $line-height;
+  margin-bottom: gutter(s);
+  p + &{
+    margin-top: 0;
+  }
+
+  &:last-child{
+    margin-bottom: 0;
+  }
 }
 
 
@@ -105,6 +115,7 @@ li{
 img,
 object{
   max-width: 100%;
+  width: 100%;
 }
 
 
@@ -119,14 +130,15 @@ address {
   display: inline-block;
   padding: 1em;
   margin-bottom: 1.5em;
-  background: color($gray,lightest);
+  background: color($gray,light);
 }
 blockquote {
-  display: inline-block;
-  padding: 1em;
-  margin-bottom: 1.5em;
+  display: block;
+  padding:0 1rem;
+  margin: 2rem 0 3rem;
+  border-left: 1px solid color($gray);
   p {
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 blockquote,
@@ -174,11 +186,6 @@ cite{
   font-style: italic;
 }
 
-hr {
-  border-top: 1px solid color($gray, lighter);
-  margin: 1em 0;
-}
-
 ins,
 mark{
   @include tag( color($yellow, darkest) , color($yellow, lightest) );
@@ -191,13 +198,9 @@ pre {
   padding: 1.5em;
 }
 
-small {
-  font-size: font-size(s);
-}
 
 sub,
 sup {
-  font-size: font-size(xs);
   line-height: 0;
   vertical-align: baseline;
 }
@@ -209,10 +212,3 @@ sub {
 sup {
   bottom: 1ex;
 }
-
-time{
-  @include tag( $text-color , color($yellow, lightest) );
-}
-
-
-

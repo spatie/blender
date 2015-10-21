@@ -1,38 +1,37 @@
 @charset "UTF-8";
 
-// Vendor components - specify NPM dependency path in gulpfile
+//NPM components - specify dependency path in gulpfile
 @import 'susy/sass/susy';
+@import 'normalize-css/normalize';
 
-// Settings
-@import 'settings/settings';
-@import 'settings/typography';
 
 // Utilities
 @import 'utility/functions';
 @import 'utility/mixins';
 
+// Settings
+@import 'settings/settings';
+@import 'settings/typography';
+
+@import 'layout/html';
+@import 'layout/grid';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/nav';
+@import 'layout/footer';
+
+
 // Helpers
-@import 'helpers/align&float';
+@import 'helpers/align';
+@import 'helpers/filters';
+@import 'helpers/margin';
+@import 'helpers/padding';
+@import 'helpers/responsive';
 @import 'helpers/states';
 @import 'helpers/text';
 
-// Layout
-@import 'layout/html';
-@import 'layout/nav';
-@import 'layout/main';
-@import 'layout/footer';
-@import 'layout/grid';
+// Components
 
-// Blocks
+// Vendor custom
 
-
-// Vendor css or overrides
-
-
-// Views
-
-
-
-
-
-
+// Animations

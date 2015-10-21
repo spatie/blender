@@ -2,7 +2,14 @@
 
 // Vendor components - specify NPM dependency path in gulpfile
 @import 'susy/sass/susy';
+<<<<<<< HEAD
 @import 'blender-media/src/scss/media';
+=======
+@import 'normalize-css/normalize';
+@import 'datatables/media/css/jquery.dataTables';
+@import 'jquery-confirm/css/jquery-confirm';
+@import '/select2/dist/css/select2';
+>>>>>>> develop
 
 // Settings
 @import 'settings/settings';

@@ -1,10 +1,10 @@
 /* ---------- Modernizr */
 
-// require('browsernizr/test/css/animations');
-// require('browsernizr/test/css/transforms3d');
-// require('browsernizr/test/svg');
-// require('browsernizr/test/touchevents');
-// var modernizr = require('browsernizr'); // import the tests first
+require('browsernizr/test/css/animations');
+require('browsernizr/test/css/transforms3d');
+require('browsernizr/test/svg');
+require('browsernizr/test/touchevents');
+var modernizr = require('browsernizr'); // import the tests first
 
 /* ---------- jQuery */
 
@@ -24,10 +24,8 @@ webfont.load({
     }
 });
 
-/* ---------- blender.js modules */
+/* ---------- Viewport nav */
 
-//require("blender.js/modules/ajax.csrf");
-//require("spatie-front.js/modules/interface.viewport");
-//require("spatie-front.js/modules/interface.tagfilter");
+var viewport = require("spatie-front.js/modules/interface.viewport");
 
 

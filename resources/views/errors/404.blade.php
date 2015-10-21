@@ -29,12 +29,17 @@
             font-size: 72px;
             margin-bottom: 40px;
         }
+        a{
+            text-decoration: none;
+            color: #00c;
+            border-bottom: solid 1px #00c;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="content">
-        <div class="title">This page could not be found.</div>
+        <div class="title">This page could not be found.<br><a href="/">Home</a></div>
     </div>
 </div>
 </body>

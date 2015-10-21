@@ -1,0 +1,51 @@
+.owl-nav{
+  position: static;
+}
+
+.owl-prev,
+.owl-next{
+  font-size: 32px;
+  position: absolute;
+  top: 28vh;
+  color: $black;
+  opacity: 0;
+  transition: all 0.5s linear;
+
+
+  .owl-carousel:hover &,
+  .touchevents &{
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+    transition: all 0.25s linear;
+
+    &.disabled{
+      opacity: 0;
+    }
+  }
+
+  @include mq(s){
+    top: 18vh;
+    font-size: 21px;
+    @include circle(36px);
+    background: $white;
+  }
+}
+
+.owl-prev{
+  left: -40px;
+  transform: translateY(-50%) translateX(10px);
+
+  @include mq(s){
+    left: -18px;
+    transform: translateY(-50%) translateX(-10px);
+  }
+}
+.owl-next{
+  right: -40px;
+  transform: translateY(-50%) translateX(-10px);
+
+  @include mq(s){
+    right:-18px;
+    transform: translateY(-50%) translateX(10px);
+  }
+}
