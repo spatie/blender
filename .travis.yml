@@ -11,6 +11,7 @@ before_script:
   - travis_retry composer self-update
   - composer install
   - npm install -g npm
+  - npm install -g gulp
   - npm install
   - gulp
   - gulp --back
