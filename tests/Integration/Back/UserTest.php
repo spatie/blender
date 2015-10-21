@@ -74,7 +74,7 @@ class UserTest extends BackTestCase
         }
 
         $this->press(trans('back-users.save'))
-            ->onPage(action('Back\UserController@index', compact('role')))
+            ->seePageIs(action('Back\UserController@index', compact('role')))
             ->see($testUser->email);
 
         $expectedDatabaseFields = [];
@@ -101,9 +101,9 @@ class UserTest extends BackTestCase
         $this
             ->visit(action('Back\UserController@index', compact('role')))
             ->click($user->email)
-            ->onPage(action('Back\UserController@edit', [$user->id]))
+            ->seePageIs(action('Back\UserController@edit', [$user->id]))
             ->press(trans('back-users.save'))
-            ->onPage(action('Back\UserController@index', compact('role')));
+            ->seePageIs(action('Back\UserController@index', compact('role')));
     }
 
     /**
@@ -119,7 +119,7 @@ class UserTest extends BackTestCase
         $this
             ->visit(action('Back\UserController@index', compact('role')))
             ->press('delete_user_'.$user->id)
-            ->onPage(action('Back\UserController@index', compact('role')))
+            ->seePageIs(action('Back\UserController@index', compact('role')))
             ->notSeeInDatabase('users', ['email' => $user->email]);
     }
 

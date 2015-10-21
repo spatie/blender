@@ -5,7 +5,6 @@
         "This file is @generated automatically"
     ],
     "hash": "8c9ea712f415a2c47377c6ad9c79db14",
-    "content-hash": "201394b021f5980b2123a11c35fe678e",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -4617,16 +4616,16 @@
         },
         {
             "name": "spatie/integration",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/integration.git",
-                "reference": "deb6df962a060f6b96f8baeca0085c1fbf1c2293"
+                "reference": "bdf78ef58a82c559c8590d073ea4e920f7f50c13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/integration/zipball/deb6df962a060f6b96f8baeca0085c1fbf1c2293",
-                "reference": "deb6df962a060f6b96f8baeca0085c1fbf1c2293",
+                "url": "https://api.github.com/repos/spatie-custom/integration/zipball/bdf78ef58a82c559c8590d073ea4e920f7f50c13",
+                "reference": "bdf78ef58a82c559c8590d073ea4e920f7f50c13",
                 "shasum": ""
             },
             "require": {
@@ -4671,10 +4670,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/integration/tree/3.0.0",
+                "source": "https://github.com/spatie-custom/integration/tree/3.0.1",
                 "issues": "https://github.com/spatie-custom/integration/issues"
             },
-            "time": "2015-09-23 07:57:08"
+            "time": "2015-10-21 13:25:47"
         },
         {
             "name": "spatie/laravel-analytics",

@@ -16,7 +16,7 @@ class LoginTest extends TestCase
     public function it_will_redirect_protected_routes()
     {
         $this->visit('/blender')
-            ->onPage('/nl/auth/login');
+            ->seePageIs('/nl/auth/login');
     }
 
     /**
@@ -41,7 +41,7 @@ class LoginTest extends TestCase
             ->press(trans('auth.logIn'));
 
         $this
-            ->onPage('/nl/auth/login')
+            ->seePageIs('/nl/auth/login')
             ->see(trans('auth.notActivatedError'));
     }
 
@@ -60,7 +60,7 @@ class LoginTest extends TestCase
         $this->call('GET', 'blender');
 
         $role == UserRole::ADMIN
-            ?  $this->onPage('blender')
+            ?  $this->seePageIs('blender')
             : $this->seeStatusCode(Response::HTTP_UNAUTHORIZED);
     }
 
@@ -82,7 +82,7 @@ class LoginTest extends TestCase
             ->type($password, 'password')
             ->press(trans('auth.logIn'));
 
-        $this->onPage('/nl');
+        $this->seePageIs('/nl');
 
         $this->isLoggedIn($user);
     }

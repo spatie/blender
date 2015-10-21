@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Foundation\Base\ModuleModel;
 use App\Models\Enums\TagType;
+use App\Models\Foundation\Traits\HasTags;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 
@@ -12,6 +13,11 @@ class Tag extends ModuleModel implements SortableInterface
     use Sortable;
 
     public $translatedAttributes = ['name', 'url'];
+
+    public function getTypeAttribute()
+    {
+        return $this->attributes['type'] ?: HasTags::getDefaultTagType();
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphToMany

@@ -37,9 +37,9 @@ class FragmentTest extends BackTestCase
         $this
             ->visit(action('Back\FragmentController@index'))
             ->click($fragment->name)
-            ->onPage(action('Back\FragmentController@edit', [$fragment->id]))
+            ->seePageIs(action('Back\FragmentController@edit', [$fragment->id]))
             ->press(trans('back-fragments.save'))
             ->see(trans('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]))
-            ->onPage(action('Back\FragmentController@edit', [$fragment->id]));
+            ->seePageIs(action('Back\FragmentController@edit', [$fragment->id]));
     }
 }
