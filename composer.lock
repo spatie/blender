@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "08d9d3b1b433d0e201b41d619758ef7a",
-    "content-hash": "92af8c3ae30db5f4580a5b7a40fdb5a4",
+    "hash": "8c9ea712f415a2c47377c6ad9c79db14",
+    "content-hash": "201394b021f5980b2123a11c35fe678e",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -98,16 +98,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.8.0",
+            "version": "3.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6690347bc833e36f7c781eb3cc2bb33a6c49ca7c"
+                "reference": "5de9bee69024457be14d125b2ad1598d17968e11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6690347bc833e36f7c781eb3cc2bb33a6c49ca7c",
-                "reference": "6690347bc833e36f7c781eb3cc2bb33a6c49ca7c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5de9bee69024457be14d125b2ad1598d17968e11",
+                "reference": "5de9bee69024457be14d125b2ad1598d17968e11",
                 "shasum": ""
             },
             "require": {
@@ -170,7 +170,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-10-08 16:02:21"
+            "time": "2015-10-15 21:40:56"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -638,16 +638,16 @@
         },
         {
             "name": "dimsav/laravel-translatable",
-            "version": "v5.1.1",
+            "version": "v5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dimsav/laravel-translatable.git",
-                "reference": "e0ec6da538c866c9dd8a89485ca0565ccc6ebbd0"
+                "reference": "aad1f1cca11439bee6cce57b3a703678d15bb8df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dimsav/laravel-translatable/zipball/e0ec6da538c866c9dd8a89485ca0565ccc6ebbd0",
-                "reference": "e0ec6da538c866c9dd8a89485ca0565ccc6ebbd0",
+                "url": "https://api.github.com/repos/dimsav/laravel-translatable/zipball/aad1f1cca11439bee6cce57b3a703678d15bb8df",
+                "reference": "aad1f1cca11439bee6cce57b3a703678d15bb8df",
                 "shasum": ""
             },
             "require": {
@@ -685,7 +685,7 @@
                 "laravel",
                 "translation"
             ],
-            "time": "2015-09-13 20:58:44"
+            "time": "2015-10-18 12:22:57"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1508,16 +1508,16 @@
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "97fe7210def29451ec74923b27e552238defd75a"
+                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/97fe7210def29451ec74923b27e552238defd75a",
-                "reference": "97fe7210def29451ec74923b27e552238defd75a",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/b1e1c0d55f8083c71eda2c28c12a228d708294ea",
+                "reference": "b1e1c0d55f8083c71eda2c28c12a228d708294ea",
                 "shasum": ""
             },
             "require": {
@@ -1555,7 +1555,7 @@
             "keywords": [
                 "promise"
             ],
-            "time": "2015-08-15 19:37:21"
+            "time": "2015-10-15 22:28:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1958,16 +1958,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.9",
+            "version": "v3.0.10",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "27f9fed44cd988a9c3d03857093b32f250ea704d"
+                "url": "https://github.com/jenssegers/date.git",
+                "reference": "467278308153eb27048e471213366193587d87a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/27f9fed44cd988a9c3d03857093b32f250ea704d",
-                "reference": "27f9fed44cd988a9c3d03857093b32f250ea704d",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/467278308153eb27048e471213366193587d87a0",
+                "reference": "467278308153eb27048e471213366193587d87a0",
                 "shasum": ""
             },
             "require": {
@@ -2010,7 +2010,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-09-16 07:55:11"
+            "time": "2015-09-24 17:36:06"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -2465,16 +2465,16 @@
         },
         {
             "name": "league/fractal",
-            "version": "0.12.0",
+            "version": "0.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/fractal.git",
-                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322"
+                "reference": "3caeefbad51bce7a06947321938128512f42346c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/0a51dcb6398dc2377d086210d0624996a1df8322",
-                "reference": "0a51dcb6398dc2377d086210d0624996a1df8322",
+                "url": "https://api.github.com/repos/thephpleague/fractal/zipball/3caeefbad51bce7a06947321938128512f42346c",
+                "reference": "3caeefbad51bce7a06947321938128512f42346c",
                 "shasum": ""
             },
             "require": {
@@ -2524,7 +2524,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2015-03-19 15:16:43"
+            "time": "2015-10-07 14:48:58"
         },
         {
             "name": "league/glide",
@@ -3064,20 +3064,23 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.0.5",
+            "version": "1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "f667aa2000a192adfa53332335a2ae0c1cb9ea6e"
+                "reference": "7647ac58c35ece044b939e01c85dbaa73ed26351"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/f667aa2000a192adfa53332335a2ae0c1cb9ea6e",
-                "reference": "f667aa2000a192adfa53332335a2ae0c1cb9ea6e",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/7647ac58c35ece044b939e01c85dbaa73ed26351",
+                "reference": "7647ac58c35ece044b939e01c85dbaa73ed26351",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.0"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
             },
             "type": "library",
             "autoload": {
@@ -3102,7 +3105,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2015-10-08 12:57:25"
+            "time": "2015-10-20 15:22:41"
         },
         {
             "name": "patchwork/utf8",
@@ -3719,16 +3722,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.13",
+            "version": "4.8.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "be067d6105286b74272facefc2697038f8807b77"
+                "reference": "b4900675926860bef091644849305399b986efa2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be067d6105286b74272facefc2697038f8807b77",
-                "reference": "be067d6105286b74272facefc2697038f8807b77",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/b4900675926860bef091644849305399b986efa2",
+                "reference": "b4900675926860bef091644849305399b986efa2",
                 "shasum": ""
             },
             "require": {
@@ -3787,7 +3790,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-14 13:49:40"
+            "time": "2015-10-17 15:03:30"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4465,16 +4468,16 @@
         },
         {
             "name": "spatie/activitylog",
-            "version": "2.1.3",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/activitylog.git",
-                "reference": "964b7354e2993b0e21ae526c0cb7822cf96cf84c"
+                "reference": "0d40e4d8fc95e6f2d417b1ec07f528d3676d6505"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/activitylog/zipball/964b7354e2993b0e21ae526c0cb7822cf96cf84c",
-                "reference": "964b7354e2993b0e21ae526c0cb7822cf96cf84c",
+                "url": "https://api.github.com/repos/spatie/activitylog/zipball/0d40e4d8fc95e6f2d417b1ec07f528d3676d6505",
+                "reference": "0d40e4d8fc95e6f2d417b1ec07f528d3676d6505",
                 "shasum": ""
             },
             "require": {
@@ -4512,7 +4515,7 @@
                 "log",
                 "user"
             ],
-            "time": "2015-07-09 09:04:31"
+            "time": "2015-10-15 13:46:19"
         },
         {
             "name": "spatie/array-functions",
@@ -4848,21 +4851,21 @@
         },
         {
             "name": "spatie/laravel-fractal",
-            "version": "1.5.0",
+            "version": "1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-fractal.git",
-                "reference": "bfc0e37337355ff07a5fa37ff4ec884778d69344"
+                "reference": "a949b68249f07129a873ab66cc4863270a01e1ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/bfc0e37337355ff07a5fa37ff4ec884778d69344",
-                "reference": "bfc0e37337355ff07a5fa37ff4ec884778d69344",
+                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/a949b68249f07129a873ab66cc4863270a01e1ec",
+                "reference": "a949b68249f07129a873ab66cc4863270a01e1ec",
                 "shasum": ""
             },
             "require": {
                 "illuminate/support": "^5.1",
-                "league/fractal": "^0.12.0",
+                "league/fractal": "^0.13.0",
                 "php": ">=5.5.0"
             },
             "require-dev": {
@@ -4899,7 +4902,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2015-10-14 12:51:01"
+            "time": "2015-10-21 09:10:48"
         },
         {
             "name": "spatie/laravel-glide",
@@ -4996,16 +4999,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "3.5.1",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "3d9420b659e6a20ba8288887004595d0e7ed75b1"
+                "reference": "84142080233e7703e78638fc827427d10d259d4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/3d9420b659e6a20ba8288887004595d0e7ed75b1",
-                "reference": "3d9420b659e6a20ba8288887004595d0e7ed75b1",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/84142080233e7703e78638fc827427d10d259d4d",
+                "reference": "84142080233e7703e78638fc827427d10d259d4d",
                 "shasum": ""
             },
             "require": {
@@ -5050,7 +5053,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2015-10-08 17:09:14"
+            "time": "2015-10-16 14:35:03"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -5207,6 +5210,57 @@
                 "spatie"
             ],
             "time": "2015-08-14 09:59:48"
+        },
+        {
+            "name": "spatie/laravel-pjax",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-pjax.git",
+                "reference": "e4d565dd308c0fb291915245819a3b1ad0039cfc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-pjax/zipball/e4d565dd308c0fb291915245819a3b1ad0039cfc",
+                "reference": "e4d565dd308c0fb291915245819a3b1ad0039cfc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^5.1",
+                "illuminate/support": "^5.1",
+                "php": ">=5.5.0",
+                "symfony/css-selector": "^2.7",
+                "symfony/dom-crawler": "^2.7"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Pjax\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A pjax middleware for Laravel 5freek@spatie.be",
+            "homepage": "https://github.com/spatie/laravel-pjax",
+            "keywords": [
+                "laravel-pjax",
+                "spatie"
+            ],
+            "time": "2015-10-16 21:07:33"
         },
         {
             "name": "spatie/laravel-tail",

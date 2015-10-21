@@ -13,13 +13,14 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        'Clockwork\Support\Laravel\ClockworkMiddleware',
-        'Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode',
-        'Illuminate\Cookie\Middleware\EncryptCookies',
-        'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-        'Illuminate\Session\Middleware\StartSession',
-        'Illuminate\View\Middleware\ShareErrorsFromSession',
-        'App\Http\Middleware\VerifyCsrfToken',
+        \Clockwork\Support\Laravel\ClockworkMiddleware::class,
+        \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
+        \Illuminate\Cookie\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\VerifyCsrfToken::class,
+        \Spatie\Pjax\Middleware\FilterIfPjax::class,
     ];
 
     /**
@@ -28,10 +29,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => 'App\Http\Middleware\Authenticate',
-        'can' => Authorize::class,
-        'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-        'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-        'sanitizeInput' => 'App\Http\Middleware\SanitizeInput',
+        'auth' => \App\Http\Middleware\Authenticate::class,
+        'can' =>Authorize::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'sanitizeInput' => \App\Http\Middleware\SanitizeInput::class,
     ];
 }
