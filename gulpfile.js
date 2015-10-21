@@ -1,69 +1,24 @@
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- */
+/* Blender front-end build process */
 
-/* config */
-var settings = require("./resources/gulp/settings.js");
-var config = settings.config;
-var files = settings.files;
+var blenderGulp = require("blender-gulp");
 
-//disable notifications
-if (config.disableNotifier) process.env.DISABLE_NOTIFIER = true;
+blenderGulp.options = {
+    files : {
+        front : {
+            sass : 'front/front.scss',
+            js : ['app.js']
+        },
+        back : {
+            sass : 'back/back.scss',
+            js : ['app.js', 'chart.js']
+        }
+    },
+    url: 'http://groener.be',
+    browserSync: {
+        proxy: 'http://groener.be.192.168.10.10.xip.io/',
+        xip: false, //mostly when using webfonts with domain restrictions: add xip.io as valid domain
+        open: false //open browser automatically?
+    }
+};
 
-/* Require npm modules */
-var elixir = require('laravel-elixir');
-var gutil = require('gulp-util');
-require('laravel-elixir-browser-sync-simple');
-
-
-/* Proccess settings */
-process.env.module = (gutil.env.back == 1) ? 'back' : 'front';
-process.env.dev = (gutil.env.back == 1) ? config.app.dev + '/blender' : config.app.dev;
-elixir.config.sourcemaps = false;
-
-/* Custom extensions */
-var extensions = require("./resources/gulp/extend.js");
-
-/* Elixir main function */
-elixir(function (mix) {
-
-
-    /* NPM -> Javascript */
-
-    files[process.env.module].js.map( function(item) {
-        mix.browserify( process.env.module + '/' + item , config.paths.js.public + process.env.module + '.' + item );
-    })
-
-
-    mix
-
-        .svg(config.paths.svg.resources + '*')
-
-        /* Sass -> CSS */
-
-        //compile sass to resources/css. Extra includePaths for @imports eg. from vendor/node_modules
-        .sass(files[process.env.module].sass, config.paths.css.public + process.env.module + '.css', {includePaths: [config.paths.node]})
-
-        /* Version CSS & Javascript */
-
-        //versioning public css & js
-        .version( [ config.paths.css.public , config.paths.js.public  ] )
-
-        .browserSync({
-            files: [
-                'public/build/*',
-                'resources/views/**/*'
-            ],
-            proxy: process.env.dev,
-            reloadOnRestart: false,
-            notify: false,
-            open: false,
-            xip: true
-        });
-    ;
-
-
-});
-
+blenderGulp.init();
