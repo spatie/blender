@@ -12,7 +12,8 @@
     "url": "git@github.com:spatie-custom/blender.git"
   },
   "devDependencies": {
-    "blender-gulp": "spatie-custom/blender-gulp#1.0.0"
+    "blender-gulp": "spatie-custom/blender-gulp#1.0.0",
+    "dotenv": "^1.2.0"
   },
   "dependencies": {
     "blender.js": "git://github.com/spatie-custom/blender.js#1.0.1",
