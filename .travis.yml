@@ -9,7 +9,7 @@ node_js:
 
 before_script:
   - travis_retry composer self-update
-  - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-source
+  - composer install
   - npm install -g npm
   - npm install
   - gulp

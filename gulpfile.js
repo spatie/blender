@@ -28,10 +28,7 @@ var extensions = require("./resources/gulp/extend.js");
 
 /* Set up Browserify */
 elixir.config.js.browserify.options.extensions = ['.jsx'];
-elixir.config.js.browserify.transformers.push({
-    name: 'reactify',
-    options: {}
-});
+elixir.config.js.browserify.options.list = true;
 
 /* Elixir main function */
 elixir(function (mix) {
