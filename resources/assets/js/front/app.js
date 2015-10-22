@@ -8,8 +8,7 @@ var modernizr = require('browsernizr'); // import the tests first
 
 /* ---------- jQuery */
 
-var $ = require('jquery');
-global.jQuery = global.$ = $; //expose jQuery for redactor :(
+global.jQuery = global.$ = require('jquery');
 
 /* ---------- Webfont Loader */
 
