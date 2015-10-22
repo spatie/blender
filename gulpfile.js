@@ -17,8 +17,8 @@ blenderGulp.options = {
     url : process.env.GULP_URL,
     browserSync : {
         proxy : process.env.GULP_BROWSERSYNC_PROXY,
-        xip : process.env.GULP_BROWSERSYNC_XIP, // When using webfonts with domain restrictions: add xip.io as valid domain
-        open : process.env.GULP_BROWSERSYNC_OPEN // Open browser automatically?
+        xip : (process.env.GULP_BROWSERSYNC_XIP === 'true'), // When using webfonts with domain restrictions: add xip.io as valid domain
+        open : (process.env.GULP_BROWSERSYNC_OPEN === 'true') // Open browser automatically?
     }
 };
 
