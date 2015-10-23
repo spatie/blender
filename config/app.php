@@ -17,6 +17,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Demo Mode
+    |--------------------------------------------------------------------------
+    |
+    | When your application is in demo mode, all request to the front site
+    | are redirecting. To view the full front site a user must
+    | first visit /demo.
+    |
+    */
+    'demo' => env('APP_DEMO', false),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application URL
     |--------------------------------------------------------------------------
     |
