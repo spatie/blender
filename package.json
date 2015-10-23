@@ -12,7 +12,7 @@
     "url": "git@github.com:spatie-custom/blender.git"
   },
   "devDependencies": {
-    "blender-gulp": "spatie-custom/blender-gulp#1.0.1",
+    "blender-gulp": "spatie-custom/blender-gulp#1.0.2",
     "blender-media": "spatie-custom/blender-media#1.1.3",
     "blender.js": "spatie-custom/blender.js#1.2.1",
     "browsernizr": "1.0.2",

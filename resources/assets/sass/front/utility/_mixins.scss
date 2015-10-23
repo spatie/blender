@@ -214,7 +214,7 @@ Color mixins
 */
 
 /// Linear gradient
-@mixin gradient-linear( $start, $stop, $from: 0%, $to: 100% ) {
+@mixin gradient-vertical( $start, $stop, $from: 0%, $to: 100% ) {
   background: $start;
   background: -webkit-gradient(linear, left top, left bottom, from(ie-hex-str($start)), to(ie-hex-str($stop)));
   background: -moz-linear-gradient(center top, $start $from, $stop $to);
@@ -228,13 +228,7 @@ Color mixins
 
 
 /// Linear gradient horizontal
-/// @group colors
-/// @param {Color} $start - Start color
-/// @param {Color} $end - End color
-/// @param {Percentage} $form [0%] - From position
-/// @param {Percentage} $to [100%]- To position
-/// @output prefixed background CSS, filter for IE
-@mixin gradient-linear-horizontal( $start, $stop, $from: 0%, $to: 100% ) {
+@mixin gradient-horizontal( $start, $stop, $from: 0%, $to: 100% ) {
   background: $start;
   background: -webkit-gradient(linear, left top, right top, from(ie-hex-str($start)), to(ie-hex-str($stop)));
   background: -moz-linear-gradient(center left, $start $from, $stop $to);
