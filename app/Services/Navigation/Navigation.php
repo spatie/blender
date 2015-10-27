@@ -121,7 +121,7 @@ class Navigation
 
     public function getBackUserRoleMenu()
     {
-        if (count(UserRole::values() == 1)) {
+        if (count(UserRole::values()) == 1) {
             return '';
         }
 
