@@ -35,6 +35,7 @@ require('blender.js/modules/form.autosave'); // do this first
 require('blender.js/modules/form.input.datetimepicker');
 require('blender.js/modules/form.select');
 require('blender.js/modules/form.textarea.autosize');
+require('blender.js/modules/form.textarea.editor');
 // require('blender.js/modules/form.textarea.parts');
 require('blender.js/modules/form.locationpicker');
 

@@ -25,6 +25,6 @@ return [
     | That way, you can access vars, like "SomeNamespace.someVariable."
     |
     */
-    'js_namespace' => 'window.blender'
+    'js_namespace' => 'blender'
 
 ];

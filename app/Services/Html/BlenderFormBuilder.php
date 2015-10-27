@@ -102,8 +102,11 @@ class BlenderFormBuilder
         $options = [
             'data-redactor' => '',
             'data-redactor-medialibrary-url' => action(
-                'Back\MediaLibraryApiController@add',
-                [short_class_name($this->model), $this->model->id, 'redactor']
+                'Back\MediaLibraryApiController@index',
+                [
+                    'model_name' => get_class($this->model),
+                    'model_id' => $this->model->id
+                ]
             ),
         ];
 

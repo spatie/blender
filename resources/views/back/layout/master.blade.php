@@ -46,8 +46,6 @@
 <script src="/redactor/redactor.min.js"></script>
 <script src="/redactor/imagemanager.js"></script>
 <script src="/redactor/video.js"></script>
-<script src="/redactor/redactor.init.js"></script>
-
 
 </body>
 </html>
