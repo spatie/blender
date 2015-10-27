@@ -10,6 +10,8 @@ node_js:
 before_script:
   - travis_retry composer self-update
   - composer install
+  - npm set registry https://npm.spatie.be
+  - npm set ca null
   - npm install -g npm
   - npm install -g gulp
   - npm install

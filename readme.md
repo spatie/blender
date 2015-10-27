@@ -13,7 +13,7 @@ you're on your own.
 
 ###Contributing
 
-Generally we won't accept any PR requests to Blender. If you have discovered a bug or have an idea to improve the code, contact us first before your start coding.
+Generally we won't accept any PR requests to Blender. If you have discovered a bug or have an idea to improve the code, contact us first before you start coding.
 
 ### License
 
