@@ -10,6 +10,7 @@
     <title>@yield('pageTitle')</title>
 
     <link href="{{ elixir('css/front.css') }}" rel="stylesheet">
+    @include('front.layout._partials.openGraph')
     @include('front.layout._partials.favicons')
     @include('front.layout._partials.bugsnag')
 </head>

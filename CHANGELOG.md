@@ -3,6 +3,9 @@ All notable changes to Blender will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
+## [5.3.1] - 2015-10-29
+### Added
+- basic openGraph subview
 
 ## [5.2.6] - 2015-10-21
 ### Changed

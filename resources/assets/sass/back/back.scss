@@ -2,7 +2,7 @@
 
 // Vendor components - specify NPM dependency path in gulpfile
 @import 'susy/sass/susy';
-@import 'blender-media/css/media';
+@import 'blender-media/src/scss/combined';
 @import 'normalize-css/normalize';
 @import 'datatables/media/css/jquery.dataTables';
 @import 'jquery-confirm/css/jquery-confirm';
@@ -57,9 +57,3 @@
 
 // Blender modules
 @import 'views/auth';
-
-
-
-
-
-
