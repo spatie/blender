@@ -2,7 +2,7 @@
 
 @section('pageTitle', 'Home view title')
 
-@section('metaDescription', 'Home view description')
+@section('pageDescription', 'Home view description')
 
 @section('content')
 <main id="home" class="main">
