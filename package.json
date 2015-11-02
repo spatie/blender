@@ -27,5 +27,8 @@
     "spatie-front.js": "spatie-custom/spatie-front.js#0.0.3",
     "susy": "^2.2.5",
     "webfontloader": "^1.6.10"
+  },
+  "engines" : {
+    "node" : ">=4.0.0"
   }
 }

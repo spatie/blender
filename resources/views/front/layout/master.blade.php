@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ locale() }}">
+<html lang="{{ locale() }}"
+      data-viewport-breakpoint="900"
+      data-viewport-scroll-treshold="100">
 @include('front.layout._partials.hiddenCredits')
 <head>
     <meta charset="utf-8">

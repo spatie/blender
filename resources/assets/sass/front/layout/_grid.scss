@@ -122,6 +122,40 @@
     @include last;
   }
 
+  //add these to all elements in a grid-group and forget about '-last'
+  &.-last-every-2 {
+    &:nth-child(2n+1){
+      clear: both;
+    }
+    &:nth-child(2n+2){
+      @include last;
+    }
+  }
+  &.-last-every-3 {
+    &:nth-child(3n+1){
+      clear: both;
+    }
+    &:nth-child(3n+3){
+      @include last;
+    }
+  }
+  &.-last-every-4 {
+    &:nth-child(4n+1){
+      clear: both;
+    }
+    &:nth-child(4n+4){
+      @include last;
+    }
+  }
+  &.-last-every-6 {
+    &:nth-child(6n+1){
+      clear: both;
+    }
+    &:nth-child(6n+6){
+      @include last;
+    }
+  }
+
 }
 
 
