@@ -186,3 +186,16 @@ function class_constants($object, $startsWithFilter = '')
         return starts_with(strtolower($key), strtolower($startsWithFilter));
     }, ARRAY_FILTER_USE_KEY);
 }
+
+/**
+ * Translate the given message.
+ *
+ * @param  string  $id
+ * @param  array   $parameters
+ * @param  string  $locale
+ * @return string
+ */
+function translate($id = null, $parameters = [], $locale = null)
+{
+    return trans($id, $parameters, $domain = 'messages');
+}
