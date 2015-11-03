@@ -1,7 +1,7 @@
 /* Blender front-end build process */
 
-require('dotenv').load();
-var blenderGulp = require("blender-gulp");
+require('dotenv').load()
+var blenderGulp = require("blender-gulp")
 
 blenderGulp.options = {
     files : {
@@ -22,4 +22,4 @@ blenderGulp.options = {
     }
 };
 
-blenderGulp.init();
+blenderGulp.init()
