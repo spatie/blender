@@ -5,7 +5,7 @@ See also [http://keepachangelog.com].
 
 ## [5.3.1] - 2015-10-29
 ### Added
-- basic openGraph subview
+- basic Open Graph subview
 
 ## [5.2.6] - 2015-10-21
 ### Changed

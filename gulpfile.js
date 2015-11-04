@@ -1,6 +1,6 @@
 /* Blender front-end build process */
 
-require('dotenv').load()
+require('dotenv').load({silent: true})
 var blenderGulp = require("blender-gulp")
 
 blenderGulp.options = {
