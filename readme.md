@@ -11,7 +11,7 @@ You may use our template but please notice that we offer no support whatsoever. 
 follow semver. We do not guarantee that the code is stable. In short: when using this
 you're on your own.
 
-## Quick install
+## Install
 
 ### Laravel
 - Download the master branch
@@ -36,7 +36,7 @@ npm set ca null
 npm install
 ```
 
-Don't forget to remove the registry line from your ~/.npmrc if you're planning to publish to npm at some point!
+Don't forget to remove the registry line from your ~/.npmrc if you're planning to publish to npm at some point.
 
 
 ### Gulp
