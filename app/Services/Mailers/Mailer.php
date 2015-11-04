@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mailers;
+namespace App\Services\Mailers;
 
 use Illuminate\Mail\Mailer as Mail;
 use Traversable;

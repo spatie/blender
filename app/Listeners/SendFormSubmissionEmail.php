@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ContactFormSubmitted;
-use App\Mailers\ContactFormMailer;
+use App\Services\Mailers\ContactFormMailer;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
@@ -12,12 +12,12 @@ class SendFormSubmissionEmail implements ShouldQueue
     use InteractsWithQueue;
 
     /**
-     * @var \App\Mailers\ContactFormMailer
+     * @var \App\Services\Mailers\ContactFormMailer
      */
     protected $contactFormMailer;
 
     /**
-     * @param \App\Mailers\ContactFormMailer $contactFormMailer
+     * @param \App\Services\Mailers\ContactFormMailer $contactFormMailer
      */
     public function __construct(ContactFormMailer $contactFormMailer)
     {
