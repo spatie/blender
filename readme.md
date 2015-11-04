@@ -16,7 +16,7 @@ you're on your own.
 ### Laravel
 - Download the master branch
 - Edit your Homestead.yaml file and add Blender as site
-- Create a DB 'Blender' in Homestead MySQL
+- Create a DB 'blender' in Homestead MySQL
 
 Run in your VM project root folder:
 
