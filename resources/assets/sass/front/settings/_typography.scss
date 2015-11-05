@@ -1,32 +1,32 @@
 /// Font-families
 $font-families: (
-        sans : "-apple-system, 'Segoe UI', sans-serif",
-        fixed : "Consolas, 'courier new', courier, monospace",
-        icons: "fontello"
+  sans: '-apple-system, "Segoe UI", sans-serif',
+  fixed: 'Consolas, "courier new", courier, monospace',
+  icons: 'fontello'
 );
 
 
 /// Font-weights
 $font-weights: (
-        thin : 100,
-        light: 200,
-        normal: 400,
-        medium: 500,
-        bold: 500,
-        extrabold: 900,
+  thin: 100,
+  light: 200,
+  normal: 400,
+  medium: 500,
+  bold: 500,
+  extrabold: 900,
 );
 
 
 /// Font-sizes
 $font-sizes: (
-        xxs : 8px,
-        xs : 10px,
-        s: 11px,
-        default: 13px,
-        m: 15px,
-        l: 18px,
-        xl: 22px,
-        xxl: 32px,
+  xxs: 8px,
+  xs: 10px,
+  s: 11px,
+  default: 13px,
+  m: 15px,
+  l: 18px,
+  xl: 22px,
+  xxl: 32px,
 );
 
 /// Line-height

@@ -1,5 +1,4 @@
-/* Layout functions */
-
+// Layout functions
 /// Responsive breakpoint manager
 @mixin mq($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
@@ -15,67 +14,68 @@
 
 
 /// used for footers that are fixed to the bottom: body has min height of 100% + this height as bottom-padding
-@mixin footer-is-fixed($height: 5em){
-  html{
+@mixin footer-is-fixed($height: 5em) {
+  html {
     height: 100%;
   }
 
   body {
     min-height: 100%;
 
-    .no-touchevents &{
+    .no-touchevents & {
       padding-bottom: $height + 4em; //footer space reserved on desktop
 
-      @include mq(m){
+      @include mq(m) {
         padding-bottom: 0; //footer relative on small screen
       }
     }
   }
 
-  .footer,
-  .touchevents .footer{
-    z-index: 2;
-    width: 100%;
+  .footer {
 
-    @include mq(m){
-      height: auto;
-      max-height: none;
+    &,
+    .touchevents & {
+      width: 100%;
+      z-index: 2;
+
+      @include mq(m) {
+        height: auto;
+        max-height: none;
+      }
     }
-  }
 
-  .no-touchevents .footer{
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    .no-touchevents & {
+      bottom: 0;
+      left: 0;
+      position: absolute;
 
-    @include mq(m){
-      position: relative;
+      @include mq(m) {
+        position: relative;
+      }
     }
   }
 }
 
-
-
 /// Block reset
-@mixin block-reset{
-  width: 100% !important;
+@mixin block-reset {
   display: block !important;
+  float: none !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  float: none !important;
   transform: none !important;
+  width: 100% !important;
 }
 
 /// Position center horizontally in parent
-@mixin position-center-horizontal($position: absolute){
-  position: $position;
+@mixin position-center-horizontal($position: absolute) {
   left: 50%;
+  position: $position;
   transform: translateX(-50%);
 }
 
 
 /// Position center vertically in parent
-@mixin position-center-vertical($position: absolute){
+@mixin position-center-vertical($position: absolute) {
   position: $position;
   top: 50%;
   transform: translateY(-50%);
@@ -83,51 +83,20 @@
 
 
 /// Position center both in parent
-@mixin position-center($position: absolute){
-  position: $position;
+@mixin position-center($position: absolute) {
   left: 50%;
+  position: $position;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
 
 
-/*
-Typography mixins
-*/
 
-/// Generate px fallback for a CSS property with rem values
-@mixin rem-fallback($property, $values...) {
-  $max: length($values);
-  $pxValues: '';
-  $remValues: '';
-
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $pxValues: #{$pxValues + $value*16}px;
-
-    @if $i < $max {
-      $pxValues: #{$pxValues + " "};
-    }
-  }
-
-  @for $i from 1 through $max {
-    $value: strip-unit(nth($values, $i));
-    $remValues: #{$remValues + $value}rem;
-
-    @if $i < $max {
-      $remValues: #{$remValues + " "};
-    }
-  }
-
-  #{$property}: $pxValues;
-  #{$property}: $remValues;
-}
-
-
+// Typography mixins
 /// Font shortcut for font family and weight
 @mixin font($family: sans, $weight: normal) {
-  font-weight: font-weight($weight);
   font-family: font-family($family);
+  font-weight: font-weight($weight);
 }
 
 /// Font shortcut for font family and weight
@@ -136,30 +105,29 @@ Typography mixins
 }
 
 /// style links
-@mixin underline($color,$border-color){
+@mixin underline($color, $border-color) {
+  border-bottom: solid 2px rgba($border-color, .15);
   color: $color;
   text-decoration: none;
-  border-bottom: solid 2px rgba($border-color, 0.15);
   transition: .3s color linear, .3s border-color linear;
 }
 /// style links
-@mixin underline-hover($color){
-  &:hover{
+@mixin underline-hover($color) {
+
+  &:hover {
+    border-bottom: solid 2px rgba($color, .75);
     color: $color;
-    border-bottom: solid 2px rgba($color, 0.75);
   }
 }
 
-
 /// Set hyphens on
-@mixin hyphens($value: true){
+@mixin hyphens($value: true) {
   @if $value == true {
     -moz-hyphens: auto;
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
-  }
-  @else {
+  } @else {
     -moz-hyphens: none !important;
     -ms-hyphens: none !important;
     -webkit-hyphens: none !important;
@@ -167,142 +135,148 @@ Typography mixins
   }
 }
 
-
 /// Set font-smoothing
 @mixin antialiasing($value: subpixel) {
   @if $value == subpixel {
     -webkit-font-smoothing: subpixel-antialiased;
   }
   @if $value == pixel {
-    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
 /// Generate tag around text
-@mixin tag($color, $background-color){
-  display: inline-block;
-  color: $color;
+@mixin tag($color, $background-color) {
   background-color: $background-color;
   border-radius: border-radius(s);
-  padding: 0 0.25em;
-  margin-left: -0.25em;
-  margin-right: -0.25em;
+  color: $color;
+  display: inline-block;
+  margin-left: -.25em;
+  margin-right: -.25em;
+  padding: 0 .25em;
 }
 
 
 /// Set horizontal ul
-@mixin ul-horizontal() {
+@mixin ul-horizontal {
   list-style: none;
   margin: 0;
   padding-left: 0;
 
-  li{
+  li {
     display: inline-block;
   }
 }
 
-@mixin ul-clean() {
+@mixin ul-clean {
   list-style: none;
   margin: 0;
   padding-left: 0;
 }
 
 
-/*
-Color mixins
-*/
-
+// Color mixins
 /// Linear gradient
-@mixin gradient-vertical( $start, $stop, $from: 0%, $to: 100% ) {
+@mixin gradient-vertical($start, $stop, $from: 0%, $to: 100%) {
   background: $start;
   background: -webkit-gradient(linear, left top, left bottom, from(ie-hex-str($start)), to(ie-hex-str($stop)));
   background: -moz-linear-gradient(center top, $start $from, $stop $to);
   background: -moz-gradient(center top, $start $from, $stop $to);
-  background: -webkit-linear-gradient(top, $start $from,$stop $to);
-  background: -o-linear-gradient(top, $start $from,$stop $to);
-  background: -ms-linear-gradient(top, $start $from,$stop $to);
-  background: linear-gradient(to bottom, $start $from,$stop $to);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}',GradientType=0 );
+  background: -webkit-linear-gradient(top, $start $from, $stop $to);
+  background: -o-linear-gradient(top, $start $from, $stop $to);
+  background: -ms-linear-gradient(top, $start $from, $stop $to);
+  background: linear-gradient(to bottom, $start $from, $stop $to);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', GradientType=0 );
 }
 
 
 /// Linear gradient horizontal
-@mixin gradient-horizontal( $start, $stop, $from: 0%, $to: 100% ) {
+@mixin gradient-horizontal($start, $stop, $from: 0%, $to: 100%) {
   background: $start;
   background: -webkit-gradient(linear, left top, right top, from(ie-hex-str($start)), to(ie-hex-str($stop)));
   background: -moz-linear-gradient(center left, $start $from, $stop $to);
   background: -moz-gradient(center left, $start $from, $stop $to);
-  background: -webkit-linear-gradient(left, $start $from,$stop $to);
-  background: -o-linear-gradient(left, $start $from,$stop $to);
-  background: -ms-linear-gradient(left, $start $from,$stop $to);
-  background: linear-gradient(to right, $start $from,$stop $to);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}',GradientType=0 );
+  background: -webkit-linear-gradient(left, $start $from, $stop $to);
+  background: -o-linear-gradient(left, $start $from, $stop $to);
+  background: -ms-linear-gradient(left, $start $from, $stop $to);
+  background: linear-gradient(to right, $start $from, $stop $to);
   background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{ie-hex-str($start)}', endColorstr='#{ie-hex-str($stop)}', GradientType=0 );
 }
 
 
-/*
-Graphic mixins
-*/
-
+// Graphic mixins
 /// Circle
 @mixin circle($size, $display: 'inline-block') {
+  border-radius: 100%;
   display: inline-block;
-  width: $size;
   height: $size;
   line-height: $size;
-  text-align: center;
-  border-radius: 100%;
   overflow: hidden;
+  text-align: center;
+  width: $size;
 }
 
 /// Square
 @mixin square($size, $display: 'inline-block') {
   display: inline-block;
-  width: $size;
   height: $size;
   line-height: $size;
-  text-align: center;
   overflow: hidden;
+  text-align: center;
+  width: $size;
 }
 
 /// Responsive rectangle
-@mixin rectangle($aspect-ratio, $display: 'inline-block'){
-  width: 100%;
-  height: 0;
+@mixin rectangle($aspect-ratio, $display: 'inline-block') {
   display: block;
-  padding-bottom: $aspect-ratio;
+  height: 0;
   overflow: hidden;
+  padding-bottom: $aspect-ratio;
+  width: 100%;
 }
 
-
-
-/* Image mixins */
-
+// Image mixins
 /// Svg background
-@mixin background-svg($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat){
+@mixin background-svg($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat) {
   //removed since we don't need png fallbacks anymore right?
   @include background-image($image, $background-position, $background-size, $background-repeat);
 }
 
-
 /// Background image
-@mixin background-image($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat){
+@mixin background-image($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat) {
   background-image: url('#{$image}');
-  background-size: $background-size;
   background-position: $background-position;
   background-repeat: $background-repeat;
+  background-size: $background-size;
 }
 
 /// Background image with color overlay
-@mixin background-image-tinted($image,$rgba, $background-position: center center){
-  background:
-  linear-gradient(
-                  $rgba,
-                  $rgba
-  ),
-  url('#{$image}');
-  background-size: cover;
+@mixin background-image-tinted($image, $rgba, $background-position: center center) {
+  background: linear-gradient($rgba, $rgba), url('#{$image}');
   background-position: $background-position;
+  background-size: cover;
+}
+
+
+/// Form
+// Placeholder
+@mixin prefixed-placeholder($pseudo:'') {
+
+  @at-root #{$pseudo}::-webkit-input-placeholder {
+    @content;
+  }
+
+  @at-root #{$pseudo}:-moz-placeholder {
+    @content;
+  }
+
+  @at-root #{$pseudo}::-moz-placeholder {
+    @content;
+  }
+
+  @at-root #{$pseudo}:-ms-input-placeholder {
+    @content;
+  }
 }

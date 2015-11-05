@@ -1,13 +1,13 @@
-&.\:responsive-mobile-only{
+&.\:responsive-mobile-only {
   display: none !important;
 
-  @include mq(s){
+  @include mq(s) {
     display: block !important;
   }
 }
 
-&.\:responsive-desktop-only{
-  @include mq(s){
+&.\:responsive-desktop-only {
+  @include mq(s) {
     display: none !important;
   }
 }

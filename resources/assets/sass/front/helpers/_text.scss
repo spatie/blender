@@ -1,9 +1,9 @@
-.\:text-ellipsis{
+.\:text-ellipsis {
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
-.\:text-small{
+.\:text-small {
   font-size: font-size(s);
 }

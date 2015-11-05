@@ -1,11 +1,13 @@
-.\$nav-mobile{
-    .nav {
-
+.\$nav-mobile {
+  .nav {
+    li {
+      display: block;
     }
+  }
 }
 
-.nav{
-    ul{
-        @include ul-clean();
-    }
+.nav {
+  ul {
+    @include ul-clean;
+  }
 }

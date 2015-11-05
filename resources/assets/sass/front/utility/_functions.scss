@@ -1,7 +1,4 @@
-/*
-    Utility functions
-*/
-
+// Utility functions
 /// Check if key exists in map, and returns the value. Otherwise give the key back.
 @function mapping($map, $key, $parse: false) {
   @if not map-has-key($map, $key) {
@@ -10,8 +7,7 @@
 
   @if not $parse {
     @return map-get($map, $key);
-  }
-  @else{
+  } @else {
     @return #{map-get($map, $key)};
   }
 }
@@ -20,7 +16,6 @@
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
-
 
 /// Replace `$search` with `$replace` in `$string`
 @function str-replace($string, $search, $replace: '') {
@@ -33,49 +28,38 @@
   @return $string;
 }
 
-
-
-/*
-Settings functions
-*/
-
+// Settings functions
 /// Color shortcut
 @function color($pallete, $key: 'default') {
   @return mapping($pallete, $key);
 }
-
 
 /// Font size shortcut
 @function font-size($key: 'default') {
   @return mapping($font-sizes, $key);
 }
 
-
 /// Font weight shortcut
 @function font-weight($key: 'normal') {
   @return mapping($font-weights, $key);
 }
-
 
 /// Font family
 @function font-family($key: 'normal') {
   @return mapping($font-families, $key, true);
 }
 
-
 /// Z-index shortcut
 @function z-index($key: 'above') {
   @return mapping($z-indexes, $key);
 }
-
 
 /// Border-radius shortcut
 @function border-radius($key: 'm') {
   @return mapping($border-radius, $key);
 }
 
-
 /// Gutter
-@function gutter($key: 'm'){
+@function gutter($key: 'm') {
   @return mapping($gutter, $key);
 }
