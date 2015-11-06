@@ -30,8 +30,8 @@
 
 // Settings functions
 /// Color shortcut
-@function color($pallete, $key: 'default') {
-  @return mapping($pallete, $key);
+@function color($pallete, $key: 'default', $opacity: 1) {
+  @return rgba(mapping($pallete, $key), $opacity);
 }
 
 /// Font size shortcut
