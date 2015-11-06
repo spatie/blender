@@ -43,7 +43,11 @@ php artisan migrate --seed
 
 ### NPM
 
-Installing Blender's npm dependecies requries NPM@3 of higher.
+Installing Blender's npm dependecies requries NPM@3 of higher. Check your version to be sure.
+
+```bash
+npm -v
+```
 
 We use a custom npm registry at [npm.spatie.be](https://npm.spatie.be) via [Sinopia](https://github.com/rlidwka/sinopia) for our private packages.
 

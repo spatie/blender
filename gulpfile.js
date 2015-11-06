@@ -20,6 +20,6 @@ blenderGulp.options = {
         xip : (process.env.GULP_BROWSERSYNC_XIP === 'true'), // When using webfonts with domain restrictions: add xip.io as valid domain
         open : (process.env.GULP_BROWSERSYNC_OPEN === 'true') // Open browser automatically?
     }
-};
+}
 
 blenderGulp.init()
