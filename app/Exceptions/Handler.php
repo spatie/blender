@@ -60,6 +60,8 @@ class Handler extends ExceptionHandler
      */
     protected function renderExceptionWithWhoops(Exception $e)
     {
+        $this->unsetSensitiveData();
+        
         $whoops = new \Whoops\Run();
         $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler());
 
@@ -68,5 +70,17 @@ class Handler extends ExceptionHandler
             $e->getStatusCode(),
             $e->getHeaders()
         );
+    }
+    
+    /**
+     * Don't ever display sensitive data in Whoops pages.
+     */
+    protected function unsetSensitiveData()
+    {
+        foreach ($_ENV as $key => $value) {
+            unset($_SERVER[$key]);
+        }
+
+        $_ENV = [];
     }
 }
