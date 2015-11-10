@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\Mailers\AdminMailerEventHandler;
-use App\Mailers\MemberMailerEventHandler;
+use App\Services\Mailers\AdminMailerEventHandler;
+use App\Services\Mailers\MemberMailerEventHandler;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
