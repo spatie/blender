@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mailers;
+namespace App\Services\Mailers;
 
 use App\Events\ContactFormWasSubmitted;
 use App\Events\UserWasCreated;
@@ -8,8 +8,9 @@ use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;
 use App\Services\EventHandler;
 
-class AdminMailerEventHandler extends EventHandler
+class AdminMailerEventHandler
 {
+
     /**
      * @param AdminMailer $mailer
      */
@@ -33,4 +34,24 @@ class AdminMailerEventHandler extends EventHandler
     {
         $this->mailer->sendContactFormDetails($event->formResponse);
     }
+
+    /**
+     * Register the listeners for the subscriber.
+     *
+     * @param  \Illuminate\Events\Dispatcher  $events
+     * @return array
+     */
+    public function subscribe($events)
+    {
+        $events->listen(
+            UserWasCreated::class,
+            self::class . '@whenUserWasCreated'
+        );
+
+        $events->listen(
+            ContactFormWasSubmitted::class,
+            self::class. '@whenContactFormWasSubmitted'
+        );
+    }
+
 }

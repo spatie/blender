@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mailers;
+namespace App\Services\Mailers;
 
 use Request;
 use Log;
