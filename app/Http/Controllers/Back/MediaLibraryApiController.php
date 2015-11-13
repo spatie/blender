@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Response;
 use Spatie\MediaLibrary\Media;
+use App\Models\Transformers\MediaTransformer;
 
 class MediaLibraryApiController extends Controller
 {
@@ -32,7 +33,12 @@ class MediaLibraryApiController extends Controller
             return Response::json(['filelink' => $media->getUrl('redactor')]);
         }
 
-        return Response::json(['media' => $media->toArray()]);
+        return Response::json(
+            ['media' => fractal()
+                ->item($media)
+                ->transformWith(new MediaTransformer())
+                ->toArray()
+            ]);
     }
 
     /**
