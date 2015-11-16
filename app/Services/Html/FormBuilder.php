@@ -2,6 +2,7 @@
 
 namespace App\Services\Html;
 
+use App\Models\Transformers\MediaTransformer;
 use App\Repositories\TagRepository;
 use Carbon\Carbon;
 use Illuminate\Html\FormBuilder as BaseFormBuilder;
@@ -119,7 +120,11 @@ class FormBuilder extends BaseFormBuilder
 
     public function media($subject, $collection, $type, $associated = [])
     {
-        $initial = htmlspecialchars($subject->getMedia($collection)->toJson());
+        $initialMedia = htmlspecialchars(fractal()
+            ->collection($subject->getMedia($collection))
+            ->transformWith(new MediaTransformer())
+            ->toJson());
+
         $model = htmlspecialchars(collect(['name' => get_class($subject), 'id' => $subject->id]));
 
         if (! array_key_exists('locales', $associated)) {
@@ -133,7 +138,7 @@ class FormBuilder extends BaseFormBuilder
 
         return "<div data-media-collection=\"{$collection}\"
                      data-media-type=\"{$type}\"
-                     data-initial=\"{$initial}\"
+                     data-initial=\"{$initialMedia}\"
                      data-model=\"{$model}\"
                      {$associatedData}>
                 </div>";
