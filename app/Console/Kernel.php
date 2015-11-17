@@ -13,6 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
+        Commands\ClearBeanstalkdQueue::class,
         Commands\CreateUser::class,
         Commands\DeleteOldDrafts::class,
         Commands\GenerateModule::class,
