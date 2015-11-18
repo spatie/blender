@@ -231,5 +231,5 @@ function validate($fields, $rules)
         $rules = ['default' => $rules];
     }
 
-    return ! Validator::make($fields, $rules)->fails();
+    return Validator::make($fields, $rules)->passes();
 }
