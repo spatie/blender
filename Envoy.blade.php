@@ -137,7 +137,6 @@ php artisan cache:clear
 sudo service php5-fpm restart
 @endtask
 
-
 @task('cleanOldReleases', ['on' => 'remote'])
 {{ logMessage('start cleanOldReleases') }}
 # Delete all but the 5 most recent.
