@@ -2,6 +2,7 @@
 
 namespace App\Services\Mailers;
 
+use App\Models\FormResponse;
 use App\Models\User;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Lang;
@@ -9,10 +10,10 @@ use Request;
 
 class AdminMailer extends Mailer
 {
-    public function sendContactFormDetails($formValues)
+    public function sendContactFormDetails(FormResponse $formResponse)
     {
         $view = 'emails.admin.contactFormSubmitted';
-        $data = $formValues;
+        $data = $formResponse->toArray();
         $subject = 'Een nieuwe reactie op '.Request::server('SERVER_NAME');
 
         foreach (config('mail.questionFormRecipients') as $email) {
