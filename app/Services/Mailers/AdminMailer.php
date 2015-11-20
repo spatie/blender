@@ -15,7 +15,7 @@ class AdminMailer extends Mailer
         $data = $formValues;
         $subject = 'Een nieuwe reactie op '.Request::server('SERVER_NAME');
 
-        foreach (['freek@spatie.be'] as $email) {
+        foreach (config('mail.questionFormRecipients') as $email) {
             $this->sendTo($email, $subject, $view, $data);
         }
     }

@@ -5,7 +5,7 @@ namespace App\Events;
 use App\Models\FormResponse;
 use Illuminate\Queue\SerializesModels;
 
-class ContactFormSubmitted extends Event
+class ContactFormWasSubmitted extends Event
 {
     use SerializesModels;
     /**
@@ -20,6 +20,6 @@ class ContactFormSubmitted extends Event
      */
     public function __construct(FormResponse $formResponse)
     {
-        $this->formResponse = $formResponse;
+        $this->formResponse = FormResponse::findOrFail($formResponse->id);
     }
 }

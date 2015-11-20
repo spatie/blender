@@ -10,7 +10,6 @@ use App\Services\EventHandler;
 
 class AdminMailerEventHandler
 {
-
     /**
      * @param AdminMailer $mailer
      */
