@@ -2,7 +2,7 @@
 require __DIR__.'/vendor/autoload.php';
 (new \Dotenv())->load(__DIR__, '.env');
 
-$server = "denbottel.be";
+$server = "";
 $repository = "spatie/{$server}";
 $baseDir = "/home/forge/{$server}";
 $releasesDir = "{$baseDir}/releases";
