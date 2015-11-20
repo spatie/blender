@@ -1,123 +1,160 @@
 @setup
-$server = 'spatie.be';
-$pathOnServer = "/home/forge/{$server}";
+require __DIR__.'/vendor/autoload.php';
+(new \Dotenv())->load(__DIR__, '.env');
+
+$server = "denbottel.be";
+$repository = "spatie/{$server}";
+$baseDir = "/home/forge/{$server}";
+$releasesDir = "{$baseDir}/releases";
+$currentDir = "{$baseDir}/current";
+$newReleaseName = date('Ymd-His');
+$newReleaseDir = "{$releasesDir}/{$newReleaseName}";
 $user = get_current_user();
-$deploymentId = "Deployment on {$server}: {$pathOnServer} by {$user} —";
+
+function logMessage($message) {
+  return "echo '\033[32m" .$message. "\033[0m';\n";
+}
 @endsetup
 
-@servers(['web' => $server, 'localhost' => '127.0.0.1'])
-
-@task('deploy:start', ['on' => 'localhost'])
-echo "{{ $deploymentId }} Started; Checking out the master branch"
-git checkout master
-php artisan slack "{{ $deploymentId }} Started" > /dev/null
-git pull origin master
-@endtask
-
-@task('assets:generate', ['on' => 'localhost'])
-echo "Generating assets"
-npm install
-gulp --production
-gulp --production --back
-php artisan slack "{{ $deploymentId }} Generated assets" > /dev/null
-@endtask
-
-@task('app:down', ['on' => 'web'])
-cd {{ $pathOnServer }}
-echo "Bringing the application down"
-php artisan down
-php artisan slack "{{ $deploymentId }} :arrow_down: Application down" > /dev/null
-@endtask
-
-@task('git:pull', ['on' => 'web'])
-cd {{ $pathOnServer }}
-echo "Pulling changes on server"
-cd {{ $pathOnServer }}
-git pull origin master
-php artisan slack "{{ $deploymentId }} Changes pulled" > /dev/null
-@endtask
-
-@task('composer:install', ['on' => 'web'])
-cd {{ $pathOnServer }}
-echo "Running composer install"
-composer install
-php artisan slack "{{ $deploymentId }} Composer dependencies installed" > /dev/null
-@endtask
-
-@task('cache:clear', ['on' => 'web'])
-cd {{ $pathOnServer }}
-php artisan cache:clear
-php artisan slack "{{ $deploymentId }} Application cache cleared" > /dev/null
-@endtask
-
-@task('assets:clear', ['on' => 'web'])
-echo "Clearing the assets"
-rm -rf {{ $pathOnServer }}/public/build
-php artisan slack "{{ $deploymentId }} Assets cleared" > /dev/null
-@endtask
-
-@task('assets:upload', ['on' => 'localhost'])
-echo "Uploading generated assets"
-scp -r public/build {{ $server }}:{{$pathOnServer}}/public
-php artisan slack "{{ $deploymentId }} Assets uploaded" > /dev/null
-@endtask
-
-@task('app:backup', ['on' => 'web'])
-cd {{ $pathOnServer }}
-echo "Backing up application"
-php artisan backup:run
-php artisan slack "{{ $deploymentId }} Backup created" > /dev/null
-@endtask
-
-@task('db:migrate', ['on' => 'web'])
-cd {{ $pathOnServer }}
-echo "Running migrations"
-php artisan migrate --force --env=production
-php artisan slack "{{ $deploymentId }} Migrations finished" > /dev/null
-@endtask
-
-@task('app:up', ['on' => 'web'])
-cd {{ $pathOnServer }}
-echo "Bringing the application up"
-php artisan up
-php artisan slack "{{ $deploymentId }} :arrow_up: Application up" > /dev/null
-@endtask
-
-@task('deploy:done', ['on' => 'localhost'])
-echo "Application deployed"
-php artisan slack "{{ $deploymentId }} :thumbsup: Done!" > /dev/null
-@endtask
+@servers(['local' => '127.0.0.1', 'remote' => $server])
 
 @macro('deploy')
-deploy:start
-assets:generate
-app:down
-git:pull
-composer:install
-cache:clear
-assets:clear
-assets:upload
-app:backup
-db:migrate
-app:up
-deploy:done
+startDeployment
+generateAssets
+cloneRepository
+uploadGeneratedAssets
+runComposer
+updateSymlinks
+optimizeInstallation
+updatePermissions
+backupDatabase
+migrateDatabase
+blessNewRelease
+cleanOldReleases
+finishDeploy
 @endmacro
 
-@macro('assets')
-deploy:start
-assets:generate
-app:down
-assets:clear
-assets:upload
-app:up
-deploy:done
+@macro('deploy-code')
+  deployOnlyCode
 @endmacro
 
-@macro('app')
-deploy:start
-app:down
-git:pull
-composer:install
-app:up
-deploy:done
-@endmacro
+@task('startDeployment', ['on' => 'local'])
+{{ logMessage('start deployment') }}
+git checkout master
+git pull origin master
+@endtask
+
+@task('generateAssets', ['on' => 'local'])
+{{ logMessage('start generateAssets') }}
+npm install &> /dev/null
+gulp --production &> /dev/null
+gulp --production --back &> /dev/null
+@endtask
+
+@task('cloneRepository', ['on' => 'remote'])
+{{ logMessage('start cloneRepository') }}
+[ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
+cd {{ $releasesDir }};
+
+# Create the release dir
+mkdir {{ $newReleaseDir }};
+
+# Clone the repo
+git clone --depth 1 git@bitbucket.org:{{ $repository }} {{ $newReleaseName }}
+
+# Configure sparse checkout
+cd {{ $newReleaseDir }}
+git config core.sparsecheckout true
+echo "*" > .git/info/sparse-checkout
+echo "!storage" >> .git/info/sparse-checkout
+echo "!public/build" >> .git/info/sparse-checkout
+git read-tree -mu HEAD
+
+# Mark release
+cd {{ $newReleaseDir }}
+echo "{{ $newReleaseName }}" > public/release-name.txt
+@endtask
+
+@task('uploadGeneratedAssets', ['on' => 'local'])
+{{ logMessage('start uploadGeneratedAssets') }}
+scp -r public/build {{ $server }}:{{ $newReleaseDir }}/public
+@endtask
+
+@task('runComposer', ['on' => 'remote'])
+{{ logMessage('start runComposer') }}
+cd {{ $newReleaseDir }};
+composer install --prefer-dist --no-scripts -q -o;
+@endtask
+
+@task('updateSymlinks', ['on' => 'remote'])
+{{ logMessage('start updateSymlinks') }}
+# Remove the storage directory and replace with persistent data
+rm -rf {{ $newReleaseDir }}/storage;
+cd {{ $newReleaseDir }};
+ln -nfs {{ $baseDir }}/persistent/storage storage;
+
+# Remove the public/media directory and replace with persistent data
+rm -rf {{ $newReleaseDir }}/public/media;
+cd {{ $newReleaseDir }};
+ln -nfs {{ $baseDir }}/persistent/media public/media;
+
+# Import the environment config
+cd {{ $newReleaseDir }};
+ln -nfs {{ $baseDir }}/.env .env;
+@endtask
+
+@task('optimizeInstallation', ['on' => 'remote'])
+{{ logMessage('start optimizeInstallation') }}
+cd {{ $newReleaseDir }};
+php artisan clear-compiled;
+php artisan optimize;
+@endtask
+
+@task('updatePermissions', ['on' => 'remote'])
+{{ logMessage('start updatePermissions') }}
+cd {{ $newReleaseDir }};
+find . -type d -exec chmod 775 {} \;
+find . -type f -exec chmod 664 {} \;
+@endtask
+
+@task('backupDatabase', ['on' => 'remote'])
+{{ logMessage('start backupDatabase') }}
+cd {{ $currentDir }}
+php artisan backup:run
+@endtask
+
+@task('migrateDatabase', ['on' => 'remote'])
+{{ logMessage('start migrateDatabase') }}
+cd {{ $newReleaseDir }};
+php artisan migrate --force;
+@endtask
+
+@task('blessNewRelease', ['on' => 'remote'])
+{{ logMessage('start blessNewRelease') }}
+ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
+cd {{ $newReleaseDir }}
+php artisan cache:clear
+sudo service php5-fpm restart
+@endtask
+
+
+@task('cleanOldReleases', ['on' => 'remote'])
+{{ logMessage('start cleanOldReleases') }}
+# Delete all but the 5 most recent.
+cd {{ $releasesDir }}
+ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
+@endtask
+
+@task('finishDeploy', ['on' => 'local'])
+{{ logMessage("Application deployed") }}
+@endtask
+
+@task('deployOnlyCode',['on' => 'remote'])
+{{ logMessage('start deployOnlyCode') }}
+cd {{ $currentDir }}
+git pull origin master
+@endtask
+
+@after
+@slack(env('SLACK_ENDPOINT'), '#deployments', "Deployment on {$server}: {$baseDir} {$newReleaseName} by {$user}: {$task} done")
+@endafter
