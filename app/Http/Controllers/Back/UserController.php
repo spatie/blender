@@ -109,7 +109,7 @@ class UserController extends Controller
 
         $this->userRepository->save($user);
 
-        $eventDescription = trans('back.events.edited', ['model' => 'Gebruiker', 'name' => $user->email]);
+        $eventDescription = trans('back.events.updated', ['model' => 'Gebruiker', 'name' => $user->email]);
         Activity::log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
