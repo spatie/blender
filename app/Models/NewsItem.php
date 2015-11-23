@@ -25,6 +25,8 @@ class NewsItem extends ModuleModel implements HasTagsInterface
             ->setWidth(368)
             ->setHeight(232)
             ->performOnCollections('images');
+
+        parent::registerMediaConversions();
     }
 
     /**
