@@ -17,7 +17,8 @@
             "never"
 
         ],
-        "comma-dangle": [2, "always-multiline"]
+        "comma-dangle": [2, "always-multiline"],
+        "eol-last" : 1
     },
     "globals": {
         "$": true

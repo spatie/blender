@@ -12,7 +12,7 @@ if(chartData) {
         responsive: true,
         scaleShowVerticalLines: false,
         scaleFontFamily: 'Lato, sans-serif',
-        scaleFontColor: '#9699a1'
+        scaleFontColor: '#9699a1',
     })
 
 

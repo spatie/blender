@@ -15,12 +15,12 @@ global.jQuery = global.$ = require('jquery')
 var webfont = require('webfontloader')
 webfont.load({
     google: {
-        families: ['Lato:100,300,400,500,700,900,300italic']
+        families: ['Lato:100,300,400,500,700,900,300italic'],
     },
     custom: {
         families: ['FontAwesome'],
-        urls: ['/fonts/font-awesome/css/font-awesome.min.css']
-    }
+        urls: ['/fonts/font-awesome/css/font-awesome.min.css'],
+    },
 })
 
 /* ---------- Viewport nav */

@@ -3,6 +3,15 @@ form{
   //variations
   &.-stacked{
   }
+
+  &.-form-button{
+    display: inline-block;
+    vertical-align: middle;
+
+    .alert &{
+      margin: 0 1em;
+    }
+  }
 }
 
 
