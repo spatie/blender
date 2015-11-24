@@ -1,0 +1,9 @@
+{
+  "preset": "airbnb",
+  "requireCurlyBraces": null,
+  "requireSemicolons": false,
+  "validateIndentation": 4,
+  "requireTrailingComma": { "ignoreSingleLine": true },
+  "requireCamelCaseOrUpperCaseIdentifiers": false,
+  "requireDotNotation": false
+}
