@@ -21,7 +21,6 @@
     "fedeisas/laravel-mail-css-inliner": "dev-master#430ebd087347812f75a2476bcedc26ced2f4753f",
     "filp/whoops": "^1.0",
     "fzaninotto/faker": "^1.4",
-    "guzzlehttp/guzzle": "^5.0",
     "illuminate/html": "^5.0",
     "itsgoingd/clockwork": "^1.7",
     "jenssegers/date": "^3.0",
@@ -53,7 +52,9 @@
     "spatie/laravel-tail": "^1.0",
     "spatie/seeders": "^3.0",
     "spatie/string": "^2.0",
-    "vespakoen/menu": "^3.0"
+    "vespakoen/menu": "^3.0",
+    "guzzlehttp/guzzle": "^6.1",
+    "spatie/laravel-link-checker": "^1.0"
 
   },
   "require-dev": {
