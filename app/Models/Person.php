@@ -24,6 +24,8 @@ class Person extends ModuleModel implements Sluggable, SortableInterface
             ->setWidth(368)
             ->setHeight(232)
             ->performOnCollections('images');
+            
+        parent::registerMediaConversions();
     }
 
     /**
