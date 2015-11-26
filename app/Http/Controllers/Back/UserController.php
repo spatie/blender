@@ -67,7 +67,7 @@ class UserController extends Controller
             $user->password = str_random(16);
         }
 
-        $user = $this->userRepository->save($user);
+        $this->userRepository->save($user);
 
         $eventDescription =  trans('back-users.passwordMailSent');
 
