@@ -38,6 +38,11 @@ finishDeploy
   deployOnlyCode
 @endmacro
 
+@macro('deploy-assets')
+  generateAssets
+  uploadGeneratedAssetsToCurrentDir
+@endmacro
+
 @task('startDeployment', ['on' => 'local'])
 {{ logMessage('start deployment') }}
 git checkout master
@@ -152,6 +157,12 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 {{ logMessage('start deployOnlyCode') }}
 cd {{ $currentDir }}
 git pull origin master
+@endtask
+
+@task('uploadGeneratedAssetsToCurrentDir', ['on' => 'local'])
+{{ logMessage('start uploadGeneratedAssetsToCurrentDir') }}
+scp -r public/build {{ $server }}:{{ $currentDir }}/public
+php artisan cache:clear
 @endtask
 
 @after
