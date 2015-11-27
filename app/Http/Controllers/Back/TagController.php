@@ -17,7 +17,7 @@ class TagController extends ModuleController
     {
         $tags = $this->repository->getAll()->reduce(function (Collection $carry, Tag $tag) {
 
-            if (! $carry->has($tag->type)) {
+            if (!$carry->has($tag->type)) {
                 $carry->put($tag->type, new Collection());
             }
 

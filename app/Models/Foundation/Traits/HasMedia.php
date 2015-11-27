@@ -24,7 +24,7 @@ trait HasMedia
         foreach ($this->mediaLibraryCollections as $collectionName) {
             if (array_key_exists($collectionName, $attributes)) {
                 $updatedMedia = $this->updateMedia(json_decode($attributes[$collectionName], true), $collectionName);
-                foreach($updatedMedia as $mediaItem) {
+                foreach ($updatedMedia as $mediaItem) {
                     $mediaItem->setCustomProperty('temp', false);
                     $mediaItem->save();
                 }

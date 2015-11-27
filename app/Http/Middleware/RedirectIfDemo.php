@@ -7,7 +7,6 @@ use Illuminate\Http\RedirectResponse;
 
 class RedirectIfDemo
 {
-
     /**
      * Handle an incoming request.
      *
@@ -18,14 +17,14 @@ class RedirectIfDemo
      */
     public function handle($request, Closure $next)
     {
-        if ($this->protectedByDemoMode($request) ) {
-
+        if ($this->protectedByDemoMode($request)) {
             if ($this->isGrantAccessToDemoRequest($request)) {
                 $this->grantAccessToDemo();
+
                 return new RedirectResponse('/');
             }
 
-            if (! $this->hasDemoAccess($request)) {
+            if (!$this->hasDemoAccess($request)) {
                 return response()->view('temp.index');
             }
         }
@@ -37,6 +36,7 @@ class RedirectIfDemo
      * Determine if this site is protected by demo mode.
      *
      * @param \Illuminate\Http\Request $request
+     *
      * @return bool
      */
     protected function protectedByDemoMode($request)
@@ -48,6 +48,7 @@ class RedirectIfDemo
      * Determine if this route grants access to the demo.
      *
      * @param \Illuminate\Http\Request $request
+     *
      * @return bool
      */
     protected function isGrantAccessToDemoRequest($request)
@@ -72,13 +73,18 @@ class RedirectIfDemo
      */
     protected function hasDemoAccess($request)
     {
-        if (session()->has('demo_access_granted')) return true;
+        if (session()->has('demo_access_granted')) {
+            return true;
+        }
 
-        if (auth()->user()) return true;
+        if (auth()->user()) {
+            return true;
+        }
 
-        if (starts_with('/auth', $request->getRequestUri())) return true;
+        if (starts_with('/auth', $request->getRequestUri())) {
+            return true;
+        }
 
         return false;
     }
-
 }

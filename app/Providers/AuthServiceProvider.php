@@ -29,7 +29,7 @@ class AuthServiceProvider extends ServiceProvider
 
         $gate->before(function ($user, $ability) {
 
-           if (! $user->hasStatus(UserStatus::ACTIVE)) {
+           if (!$user->hasStatus(UserStatus::ACTIVE)) {
                return false;
            };
 

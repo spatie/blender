@@ -36,7 +36,7 @@ class HtmlBuilder extends BaseHtmlBuilder
     public function formButton($url, $buttonHtml, $method, $submitButtonOptions = [])
     {
         $submitButtonOptions['type'] = 'submit';
-        $formOptions = ['url' => $url, 'method' => $method, 'class' =>'-form-button'];
+        $formOptions = ['url' => $url, 'method' => $method, 'class' => '-form-button'];
 
         if (strtolower($method) == 'delete') {
             $formOptions['data-confirm'] = 'true';

@@ -4,7 +4,6 @@ namespace App\Services\Mailers;
 
 use App\Events\UserWasActivated;
 use App\Models\Enums\UserRole;
-use App\Services\EventHandler;
 
 class MemberMailerEventHandler
 {
@@ -26,14 +25,15 @@ class MemberMailerEventHandler
     /**
      * Register the listeners for the subscriber.
      *
-     * @param  \Illuminate\Events\Dispatcher  $events
+     * @param \Illuminate\Events\Dispatcher $events
+     *
      * @return array
      */
     public function subscribe($events)
     {
         $events->listen(
             UserWasActivated::class,
-            self::class . '@whenUserWasActivated'
+            self::class.'@whenUserWasActivated'
         );
     }
 }

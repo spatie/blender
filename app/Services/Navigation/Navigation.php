@@ -25,7 +25,6 @@ class Navigation
 
     public function getFrontMainMenu()
     {
-
         $menu = Menu::handler('main', ['class' => 'nav navbar-nav'])
             ->add('/', 'Home');
 

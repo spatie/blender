@@ -127,12 +127,13 @@ class FormBuilder extends BaseFormBuilder
 
         $model = htmlspecialchars(collect(['name' => get_class($subject), 'id' => $subject->id]));
 
-        if (! array_key_exists('locales', $associated)) {
+        if (!array_key_exists('locales', $associated)) {
             $associated['locales'] = config('app.locales');
         }
 
-        $associatedData = collect($associated)->map(function($data, $key) {
+        $associatedData = collect($associated)->map(function ($data, $key) {
             $json = htmlspecialchars(json_encode($data));
+
             return "data-{$key}=\"{$json}\"";
         })->implode(' ');
 

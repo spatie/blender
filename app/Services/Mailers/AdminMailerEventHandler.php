@@ -6,7 +6,6 @@ use App\Events\ContactFormWasSubmitted;
 use App\Events\UserWasCreated;
 use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;
-use App\Services\EventHandler;
 
 class AdminMailerEventHandler
 {
@@ -37,20 +36,20 @@ class AdminMailerEventHandler
     /**
      * Register the listeners for the subscriber.
      *
-     * @param  \Illuminate\Events\Dispatcher  $events
+     * @param \Illuminate\Events\Dispatcher $events
+     *
      * @return array
      */
     public function subscribe($events)
     {
         $events->listen(
             UserWasCreated::class,
-            self::class . '@whenUserWasCreated'
+            self::class.'@whenUserWasCreated'
         );
 
         $events->listen(
             ContactFormWasSubmitted::class,
-            self::class. '@whenContactFormWasSubmitted'
+            self::class.'@whenContactFormWasSubmitted'
         );
     }
-
 }

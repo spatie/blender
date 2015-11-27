@@ -190,9 +190,10 @@ function class_constants($object, $startsWithFilter = '')
 /**
  * Translate the given message.
  *
- * @param  string  $id
- * @param  array   $parameters
- * @param  string  $locale
+ * @param string $id
+ * @param array  $parameters
+ * @param string $locale
+ *
  * @return string
  */
 function translate($id = null, $parameters = [], $locale = null)
@@ -201,16 +202,16 @@ function translate($id = null, $parameters = [], $locale = null)
 }
 
 /**
- * Return the currentUser
+ * Return the currentUser.
  * 
  * @return bool|\App\Models\User
  */
 function currentUser()
 {
-    if (! auth()->check()) {
+    if (!auth()->check()) {
         return false;
     }
-    
+
     return auth()->user();
 }
 
@@ -219,15 +220,16 @@ function currentUser()
  *
  * @param string|array $fields
  * @param string|array $rules
+ *
  * @return bool
  */
 function validate($fields, $rules)
 {
-    if (! is_array($fields)) {
+    if (!is_array($fields)) {
         $fields = ['default' => $fields];
     }
 
-    if (! is_array($rules)) {
+    if (!is_array($rules)) {
         $rules = ['default' => $rules];
     }
 

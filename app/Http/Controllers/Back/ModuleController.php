@@ -84,7 +84,7 @@ abstract class ModuleController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
+     * @param int                      $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -94,6 +94,7 @@ abstract class ModuleController extends Controller
 
         if ($request->has('revert')) {
             $model->clearTemporaryMedia();
+
             return redirect()->action("Back\\{$this->modelName}Controller@edit", [$id]);
         }
 

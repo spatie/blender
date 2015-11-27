@@ -37,7 +37,7 @@ class MediaLibraryApiController extends Controller
             ['media' => fractal()
                 ->item($media)
                 ->transformWith(new MediaTransformer())
-                ->toArray()
+                ->toArray(),
             ]);
     }
 
@@ -47,6 +47,7 @@ class MediaLibraryApiController extends Controller
      * @param \Illuminate\Http\Request $request
      *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
      * @throws \Exception
      */
     public function index(Request $request)
@@ -70,15 +71,16 @@ class MediaLibraryApiController extends Controller
      * @param \Illuminate\Http\Request $request
      *
      * @return mixed
+     *
      * @throws \Exception
      */
     protected function getModelFromRequest(Request $request)
     {
-        if (! isset($request['model_name'])) {
+        if (!isset($request['model_name'])) {
             throw new Exception('No model name provided');
         }
 
-        if (! isset($request['model_id'])) {
+        if (!isset($request['model_id'])) {
             throw new Exception('No model id provided');
         }
 

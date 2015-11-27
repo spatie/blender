@@ -89,7 +89,6 @@ class BlenderFormBuilder
         return $this->wrapInFormGroup($label, $text, $errors);
     }
 
-
     /**
      * @param string $name
      * @param bool   $required
@@ -105,7 +104,7 @@ class BlenderFormBuilder
                 'Back\MediaLibraryApiController@index',
                 [
                     'model_name' => get_class($this->model),
-                    'model_id' => $this->model->id
+                    'model_id' => $this->model->id,
                 ]
             ),
         ];
@@ -227,7 +226,7 @@ class BlenderFormBuilder
     /**
      * @param string $collection
      * @param string $type
-     * @param array $associated
+     * @param array  $associated
      *
      * @return string
      */
