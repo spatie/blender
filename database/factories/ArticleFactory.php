@@ -9,7 +9,6 @@ $factory->define(Article::class, function (Generator $faker) {
     return [
         'draft' => false,
         'online' => $faker->boolean(80),
-        'publish_date' => Carbon::now()->addMinutes(-rand(0, 60 * 24 * 7)),
     ];
 });
 

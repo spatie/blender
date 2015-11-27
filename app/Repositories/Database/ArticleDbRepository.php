@@ -118,7 +118,7 @@ class ArticleDbRepository extends DbRepository implements ArticleRepository
             ->with(['media', 'translations' => function ($query) {
                 $query->where('locale', content_locale());
             }])
-            ->orderBy('publish_date', 'desc')
+            ->orderBy('order_column')
             ->nonDraft();
     }
 }

@@ -29,7 +29,6 @@ class ArticleSeeder extends DatabaseSeeder
                 '<p>'.$this->faker->paragraph(8).'</p>';
         }
 
-        $article->publish_date = new Carbon();
         $article->online = true;
         $article->technical_name = $technicalName;
         $article->draft = false;

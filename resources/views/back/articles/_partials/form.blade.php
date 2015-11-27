@@ -5,8 +5,6 @@
     'text' => 'redactor',
 ]) !!}
 
-{!! BlenderForm::date('publish_date') !!}
-
 {!! BlenderForm::media('images', 'images') !!}
 {!! BlenderForm::media('downloads', 'downloads') !!}
 

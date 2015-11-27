@@ -14,7 +14,6 @@ class CreateArticlesTables extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->datetime('publish_date');
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);
             $table->string('technical_name')->nullable();
