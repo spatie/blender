@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back;
 use Activity;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 abstract class ModuleController extends Controller
@@ -119,7 +120,7 @@ abstract class ModuleController extends Controller
 
         $model = $this->repository->findById($id);
 
-        $model->updateWithRelations($request->all());
+        $model = $this->createUpdater($model, $request)->update();
 
         $this->repository->save($model);
 
@@ -128,6 +129,19 @@ abstract class ModuleController extends Controller
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action("Back\\{$this->modelName}Controller@edit", [$model->id]);
+    }
+
+    /**
+     * @param \Illuminate\Database\Eloquent\Model $model
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \App\Models\Foundation\Updaters\Updater
+     */
+    protected function createUpdater(Model $model, Request $request)
+    {
+        $className = "App\\Models\\Updaters\\{$this->modelName}Updater";
+
+        return $className::create($model, $request);
     }
 
     /**

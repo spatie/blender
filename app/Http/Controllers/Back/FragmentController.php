@@ -6,6 +6,7 @@ use Activity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FragmentRequest;
 use App\Models\Fragment;
+use App\Models\Updaters\FragmentUpdater;
 use App\Repositories\FragmentRepository;
 
 class FragmentController extends Controller
@@ -64,15 +65,15 @@ class FragmentController extends Controller
      * Update the specified resource in storage.
      *
      * @param int                                     $id
-     * @param \App\Http\Requests\Back\FragmentRequest $fragmentRequest
+     * @param \App\Http\Requests\Back\FragmentRequest $request
      *
      * @return \App\Http\Controllers\Back\Response
      */
-    public function update($id, FragmentRequest $fragmentRequest)
+    public function update($id, FragmentRequest $request)
     {
         $fragment = $this->fragmentRepository->findById($id);
 
-        $fragment->updateWithRelations($fragmentRequest->all());
+        $fragment = FragmentUpdater::create($fragment, $request)->update();
 
         $this->fragmentRepository->save($fragment);
 

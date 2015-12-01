@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\UserRequest;
 use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;
+use App\Models\Updaters\UserUpdater;
 use App\Models\User;
 use App\Repositories\UserRepository;
 use Event;
@@ -60,10 +61,12 @@ class UserController extends Controller
     {
         $user = new User();
 
-        $user->updateWithRelations($request->all());
+        $user = UserUpdater::create($user, $request)->update();
+
         $user->role = $role;
         $user->status = UserStatus::ACTIVE;
-        if ($user->password == '') {
+
+        if ($user->password === '') {
             $user->password = str_random(16);
         }
 
@@ -105,7 +108,7 @@ class UserController extends Controller
     {
         $user = $this->userRepository->findByIdOrAbort($id);
 
-        $user->updateWithRelations($request->all());
+        $user = UserUpdater::create($user, $request)->update();
 
         $this->userRepository->save($user);
 

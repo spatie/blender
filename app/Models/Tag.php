@@ -51,20 +51,6 @@ class Tag extends ModuleModel implements SortableInterface
     }
 
     /**
-     * @param array $attributes
-     *
-     * @return $this
-     */
-    public function updateWithRelations(array $attributes)
-    {
-        parent::updateWithRelations($attributes);
-
-        $this->type = $attributes['type'];
-
-        return $this;
-    }
-
-    /**
      * @return array
      */
     public function getTypeOptions()

@@ -21,36 +21,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 {
     use Authenticatable, CanResetPassword, Presentable, Authorizable;
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'users';
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $guarded = ['id'];
-
-    /**
-     * The attributes excluded from the model's JSON form.
-     *
-     * @var array
-     */
     protected $hidden = ['password', 'remember_token'];
-
-    /**
-     * Return these columns as Carbon instances.
-     *
-     * @return array
-     */
-    public function getDates()
-    {
-        return ['last_activity'];
-    }
+    protected $dates = ['last_activity'];
 
     /**
      * When we set the password, make sure to run it through bcrypt.
@@ -60,28 +33,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
-    }
-
-    /**
-     * Update the user using the given attributes.
-     *
-     * @param $attributes
-     */
-    public function updateWithRelations(array $attributes)
-    {
-        $this->email = $attributes['email'];
-        $this->first_name = $attributes['first_name'];
-        $this->last_name = $attributes['last_name'];
-        $this->locale = (isset($attributes['locale']) ? $attributes['locale'] : 'nl');
-        $this->address = (isset($attributes['address']) ? $attributes['address'] : '');
-        $this->postal = (isset($attributes['postal']) ? $attributes['postal'] : '');
-        $this->city = (isset($attributes['city']) ? $attributes['city'] : '');
-        $this->country = (isset($attributes['country']) ? $attributes['country'] : '');
-        $this->telephone = (isset($attributes['telephone']) ? $attributes['telephone'] : '');
-
-        if (isset($attributes['password']) && $attributes['password'] != '') {
-            $this->password = $attributes['password'];
-        }
     }
 
     /**

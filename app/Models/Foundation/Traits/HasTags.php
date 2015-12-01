@@ -77,24 +77,6 @@ trait HasTags
     }
 
     /**
-     * Update all tag types from an attributes array.
-     *
-     * @param array $attributes
-     */
-    public function updateAllTags($attributes)
-    {
-        $this->tags()->detach();
-
-        foreach ($this->tagTypes as $tagType) {
-            if (!isset($attributes["{$tagType}_tags"])) {
-                continue;
-            }
-
-            $this->addTagsFromNameArray($attributes["{$tagType}_tags"], $tagType);
-        }
-    }
-
-    /**
      * @return string
      */
     public static function getDefaultTagLocale()

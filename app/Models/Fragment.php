@@ -10,16 +10,8 @@ class Fragment extends TranslatableEloquent
     use Presentable;
 
     protected $guarded = ['id'];
+
     public $translatedAttributes = ['text'];
-
-    public function updateWithRelations(array $attributes)
-    {
-        foreach (config('app.locales') as $locale) {
-            $this->translate($locale)->text = $attributes[translate_field_name('text', $locale)];
-        }
-
-        return $this;
-    }
 
     /**
      * Return a sluggified version the text of the string.

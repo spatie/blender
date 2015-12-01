@@ -3,13 +3,10 @@
 namespace App\Models;
 
 use App\Models\Foundation\Base\ModuleModel;
-use App\Models\Foundation\Traits\HasOnlineToggle;
 
 class Article extends ModuleModel
 {
-    use HasOnlineToggle;
-
-    protected $mediaLibraryCollections = ['images', 'downloads'];
+    public $mediaLibraryCollections = ['images', 'downloads'];
     public $translatedAttributes = ['name', 'text', 'url'];
 
     /**
@@ -18,17 +15,5 @@ class Article extends ModuleModel
     public function isDeletable()
     {
         return !(bool) $this->technical_name;
-    }
-
-    /**
-     * @param array $attributes
-     *
-     * @return $this
-     */
-    public function updateWithRelations(array $attributes)
-    {
-        parent::updateWithRelations($attributes);
-
-        return $this;
     }
 }
