@@ -50,13 +50,4 @@ interface TagRepository extends Repository
      * @return \App\Models\Tag
      */
     public function findByUrl($url, $type = null, $locale = null);
-
-    /**
-     * Set the new order.
-     *
-     * @param array $ids
-     *
-     * @throws \Spatie\EloquentSortable\SortableException
-     */
-    public function setNewOrder($ids);
 }

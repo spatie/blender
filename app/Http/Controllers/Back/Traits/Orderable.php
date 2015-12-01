@@ -13,6 +13,8 @@ trait Orderable
      */
     public function changeOrder(Request $request)
     {
-        $this->repository->setNewOrder($request->get('ids'));
+        $model = "\\App\\Models\\{$this->modelName}";
+
+        $model::setNewOrder($request->get('ids'));
     }
 }

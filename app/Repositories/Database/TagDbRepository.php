@@ -127,16 +127,4 @@ class TagDbRepository extends DbRepository implements TagRepository
             })
             ->first();
     }
-
-    /**
-     * Set the new order.
-     *
-     * @param array $ids
-     *
-     * @throws \Spatie\EloquentSortable\SortableException
-     */
-    public function setNewOrder($ids)
-    {
-        $this->model->setNewOrder($ids);
-    }
 }

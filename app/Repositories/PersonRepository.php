@@ -28,11 +28,4 @@ interface PersonRepository extends Repository
      * @return \App\Models\Person
      */
     public function findByUrl($url);
-
-    /**
-     * Set the new order.
-     *
-     * @param array $ids
-     */
-    public function setNewOrder($ids);
 }

@@ -57,18 +57,6 @@ class PersonDbRepository extends DbRepository implements PersonRepository
     }
 
     /**
-     * Set the new order.
-     *
-     * @param array $ids
-     *
-     * @throws \Spatie\EloquentSortable\SortableException
-     */
-    public function setNewOrder($ids)
-    {
-        $this->model->setNewOrder($ids);
-    }
-
-    /**
      * Get the base database query.
      *
      * @return \Illuminate\Database\Eloquent\Builder
