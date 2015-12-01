@@ -13,8 +13,8 @@ class PersonRequest extends Request
      */
     public function rules()
     {
-        $rules['name'] = 'required';
-
-        return $rules;
+        return [
+            'name' => 'required',
+        ];
     }
 }

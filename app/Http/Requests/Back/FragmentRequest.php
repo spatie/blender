@@ -13,8 +13,6 @@ class FragmentRequest extends Request
      */
     public function rules()
     {
-        $rules = [];
-
-        return $rules;
+        return [];
     }
 }

@@ -13,8 +13,8 @@ class ArticleRequest extends Request
      */
     public function rules()
     {
-        $rules['date_published'] = 'date_format:'.config('date.defaultFormat');
-
-        return $rules;
+        return [
+            'date_published' => 'date_format:'.config('date.defaultFormat'),
+        ];
     }
 }

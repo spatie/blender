@@ -3,20 +3,18 @@
 namespace App\Events;
 
 use App\Models\FormResponse;
-use Illuminate\Queue\SerializesModels;
 
 class ContactFormWasSubmitted extends Event
 {
-    use SerializesModels;
     /**
-     * @var FormResponse
+     * @var \App\Models\FormResponse
      */
     public $formResponse;
 
     /**
      * Create a new event instance.
      *
-     * @param FormResponse $formResponse
+     * @param \App\Models\FormResponse $formResponse
      */
     public function __construct(FormResponse $formResponse)
     {

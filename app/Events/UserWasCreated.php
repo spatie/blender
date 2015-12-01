@@ -3,19 +3,16 @@
 namespace App\Events;
 
 use App\Models\User;
-use Illuminate\Queue\SerializesModels;
 
 class UserWasCreated extends Event
 {
-    use SerializesModels;
-
     /**
-     * @var
+     * @var \App\Models\User
      */
     public $user;
 
     /**
-     * @param $user
+     * @param \App\Models\User $user
      */
     public function __construct(User $user)
     {

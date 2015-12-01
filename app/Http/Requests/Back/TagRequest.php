@@ -13,6 +13,8 @@ class TagRequest extends Request
      */
     public function rules()
     {
+        $rules = [];
+
         foreach (config('app.locales') as $locale) {
             $rules[translate_field_name('name', $locale)] = 'required';
         }
