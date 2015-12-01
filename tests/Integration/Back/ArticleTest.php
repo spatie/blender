@@ -12,7 +12,6 @@ class ArticleTest extends ModuleTestCase
     protected $controller = 'Back\ArticleController';
     protected $expectedProperties = [
         'id',
-        'publish_date',
         'name',
         'url',
         'text',

@@ -12,7 +12,6 @@
             <thead>
             <tr>
                 <th>{{ trans('back-articles.name') }}</th>
-                <th>{{ trans('back-articles.publish_date') }}</th>
                 <th data-orderable="false"></th>
             </tr>
             </thead>
@@ -22,9 +21,6 @@
                 <tr data-row-id="{{ $article->id }}">
                     <td>
                         <a href="{{ action('Back\ArticleController@edit', [$article->id]) }}">{{ $article->translate(content_locale())->name }}</a>
-                    </td>
-                    <td data-order="{{ $article->publish_date }}">
-                        {{ $article->publish_date->format('d/m/Y') }}
                     </td>
                     <td class="-right">
                         @if($article->isDeletable())
