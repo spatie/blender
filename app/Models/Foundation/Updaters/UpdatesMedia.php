@@ -13,8 +13,7 @@ trait UpdatesMedia
         }
 
         foreach ($this->model->mediaLibraryCollections as $collection) {
-
-            if (! $this->request->has($collection)) {
+            if (!$this->request->has($collection)) {
                 continue;
             }
 

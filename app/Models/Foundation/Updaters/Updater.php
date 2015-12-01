@@ -24,13 +24,13 @@ abstract class Updater
 
     /**
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @param \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request            $request
      *
      * @return static
      */
     public static function create(Model $model, Request $request)
     {
-        $updater = new static;
+        $updater = new static();
 
         $updater->model = $model;
         $updater->request = $request;

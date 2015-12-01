@@ -133,7 +133,7 @@ abstract class ModuleController extends Controller
 
     /**
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @param \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request            $request
      *
      * @return \App\Models\Foundation\Updaters\Updater
      */

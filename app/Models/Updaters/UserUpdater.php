@@ -36,7 +36,7 @@ class UserUpdater extends Updater
             return;
         }
 
-        if($this->request->get('password') !== '') {
+        if ($this->request->get('password') !== '') {
             return;
         }
 

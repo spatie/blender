@@ -9,8 +9,7 @@ trait UpdatesTags
         $this->model->tags()->detach();
 
         foreach ($this->model->tagTypes as $type) {
-
-            if (! $this->request->has("{$type}_tags")) {
+            if (!$this->request->has("{$type}_tags")) {
                 continue;
             }
 
