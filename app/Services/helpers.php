@@ -78,7 +78,13 @@ function translate_field_name($fieldName, $locale)
  */
 function article($technicalName)
 {
-    return app(App\Repositories\ArticleRepository::class)->findByTechnicalName($technicalName);
+    $article = app(App\Repositories\ArticleRepository::class)->findByTechnicalName($technicalName);
+    
+    if (is_null($article)) {
+        throw new Exception("Article `{$technicalName}` doesn't exist.");
+    }
+    
+    return $article;
 }
 
 /**
