@@ -35,7 +35,7 @@ return [
             /**
              * The to address to be used by the mail reporter.
              */
-            'toAddress' => 'freek@spatie.be',
+            'toAddress' => 'technical@spatie.be',
         ]
     ]
 ];
