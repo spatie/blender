@@ -22,7 +22,7 @@ function content_locale()
 
 /**
  * Get a translated fragment's text. Since this utility function is occasionally used in route files, there's also a
- * check for the database connection to return a fallback article in local environments.
+ * check for the database connection to return a fallback fragment in local environments.
  *
  * @param string $name
  * @param string $locale
@@ -69,16 +69,19 @@ function translate_field_name($fieldName, $locale)
 }
 
 /**
- * Find an article by it's technical name. Since this utility function is occasionally used in route files, there's
- * also a check for the database connection to return a fallback article in local environments.
- *
  * @param string $technicalName
  *
  * @return \App\Models\Article
  */
 function article($technicalName)
 {
-    return app(App\Repositories\ArticleRepository::class)->findByTechnicalName($technicalName);
+    $article = app(App\Repositories\ArticleRepository::class)->findByTechnicalName($technicalName);
+    
+    if (is_null($article)) {
+        throw new Exception("Article `{$technicalName}` doesn't exist.");
+    }
+    
+    return $article;
 }
 
 /**
