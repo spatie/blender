@@ -1,3 +1,17 @@
+site:
+  title:
+    desc: Titel van de website
+    name: Spatie
+  subtitle:
+    desc: Subtitel van de website
+    name: SPATIE zit overal tussen.
+  description:
+    desc: Beschrijving van de website voor SEO (ca. 160 karakters)
+    name: 'Webdesign met CMS, apps, logo\'s, huisstijl en grafisch ontwerp uit Antwerpen: SPATIE zit overal tussen.'
+
+brand.name:
+  desc: Naam van het bedrijf of merk
+  name: Spatie
 brand:
   longname:
     desc: Volledige naam van het bedrijf of merk
@@ -21,9 +35,7 @@ brand:
   fax:
     desc: Faxnummer
     name: +32 3 292 56 79
-brand.name:
-  desc: Naam van het bedrijf of merk
-  name: Spatie
+
 contact:
   remarks:
     desc: Contactformulier opmerkingen
