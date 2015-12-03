@@ -19,6 +19,7 @@ class Kernel extends ConsoleKernel
         Commands\GenerateModule::class,
         Commands\PerformScheduledBackup::class,
         Commands\SendSlackMessage::class,
+        \Spatie\LinkChecker\CheckLinksCommand::class,
     ];
 
     /**
@@ -30,5 +31,6 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('backup:scheduled')->dailyAt('03:00');
         $schedule->command('db:deleteOldDrafts')->sundays();
+        $schedule->command('link-checker:run')->monthly();
     }
 }

@@ -205,6 +205,7 @@ return [
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
+        Spatie\LinkChecker\LinkCheckerServiceProvider::class,
     ],
 
     /*
