@@ -4917,16 +4917,16 @@
         },
         {
             "name": "spatie/laravel-link-checker",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-link-checker.git",
-                "reference": "e6c9a0e57db58bc1f077c912af1fb7263a27d5e0"
+                "reference": "2a21a72ca68a7997f8b03250425174d9dc346966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-link-checker/zipball/e6c9a0e57db58bc1f077c912af1fb7263a27d5e0",
-                "reference": "e6c9a0e57db58bc1f077c912af1fb7263a27d5e0",
+                "url": "https://api.github.com/repos/spatie/laravel-link-checker/zipball/2a21a72ca68a7997f8b03250425174d9dc346966",
+                "reference": "2a21a72ca68a7997f8b03250425174d9dc346966",
                 "shasum": ""
             },
             "require": {
@@ -4966,7 +4966,7 @@
                 "link",
                 "spatie"
             ],
-            "time": "2015-11-25 18:34:45"
+            "time": "2015-12-03 16:41:38"
         },
         {
             "name": "spatie/laravel-medialibrary",
