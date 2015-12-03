@@ -7,7 +7,7 @@ site:
     name: SPATIE zit overal tussen.
   description:
     desc: Beschrijving van de website voor SEO (ca. 160 karakters)
-    name: 'Webdesign met CMS, apps, logo\'s, huisstijl en grafisch ontwerp uit Antwerpen: SPATIE zit overal tussen.'
+    name: 'Webdesign met CMS, apps, logo''s, huisstijl en grafisch ontwerp uit Antwerpen: SPATIE zit overal tussen.'
 
 brand.name:
   desc: Naam van het bedrijf of merk
@@ -50,7 +50,7 @@ contact:
 navigation:
   backToList:
     desc: Terug naar overzicht link tekst
-    text: 
+    text:
       nl: Terug naar overzicht
       fr: Retourner au sommaire
 
