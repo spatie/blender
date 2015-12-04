@@ -1,24 +1,11 @@
 {
     "rules": {
-        "indent": [
-            2,
-            4
-        ],
-        "quotes": [
-            2,
-            "single"
-        ],
-        "linebreak-style": [
-            2,
-            "unix"
-        ],
-        "semi": [
-            2,
-            "never"
-
-        ],
         "comma-dangle": [2, "always-multiline"],
-        "eol-last" : 1
+        "indent": [2, 4],
+        "linebreak-style": [2, "unix"],
+        "quotes": [2, "single"],
+        "semi": [2, "always"],
+        "strict": [2, "never"]
     },
     "globals": {
         "$": true
@@ -28,8 +15,8 @@
     },
     "env": {
         "es6": true,
-        "node": true,
-        "browser": true
+        "browser": true,
+        "node": true
     },
     "extends": "eslint:recommended"
 }
