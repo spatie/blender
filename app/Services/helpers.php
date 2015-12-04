@@ -27,7 +27,7 @@ function content_locale()
  * @param string $name
  * @param string $locale
  *
- * @return string
+ * @return \Spatie\String\Str
  */
 function fragment($name, $locale = null)
 {
@@ -39,7 +39,7 @@ function fragment($name, $locale = null)
         return $name;
     }
 
-    return $fragment->getTranslation($locale)->text;
+    return string($fragment->getTranslation($locale)->text);
 }
 
 /**
