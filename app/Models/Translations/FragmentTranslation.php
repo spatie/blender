@@ -13,7 +13,7 @@ class FragmentTranslation extends Translation
         parent::boot();
 
         static::updating(function ($stringTranslation) {
-            $string = Fragment::findOrFail($stringTranslation->string_id);
+            $string = Fragment::findOrFail($stringTranslation->fragment_id);
             Cache::forget(Fragment::getCacheKeyName($string->name, $stringTranslation->locale));
         });
     }
