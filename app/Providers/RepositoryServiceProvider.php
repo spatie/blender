@@ -61,9 +61,6 @@ class RepositoryServiceProvider extends ServiceProvider
                 "App\\Repositories\\{$cacheRepository}Repository",
                 "App\\Repositories\\Cache\\{$cacheRepository}CacheRepository"
             );
-
-
-
         }
 
         foreach ($this->dbRepositories as $dbRepository) {
