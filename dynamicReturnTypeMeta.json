@@ -1,9 +1,0 @@
-{
-    "methodCalls": [
-        {
-            "class": "\\Illuminate\\Contracts\\Foundation\\Application",
-            "method": "make",
-            "position": 0
-        }
-    ]
-}

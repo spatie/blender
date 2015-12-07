@@ -82,7 +82,7 @@ abstract class CacheRepository implements Repository
      */
     protected function rememberForever($key, $value)
     {
-        return $this->cache->section(static::CACHESECTION)->rememberForever(static::CACHESECTION.'.'.$key, $value);
+        return $this->cache->rememberForever('repository.'.static::CACHESECTION.'.'.$key, $value);
     }
 
     /**

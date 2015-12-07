@@ -6,6 +6,7 @@ use App\Repositories\Cache\Subscriber as CacheSubscriber;
 use App\Services\Navigation\CurrentSection;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
+use Cache;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
@@ -34,8 +35,15 @@ class RepositoryServiceProvider extends ServiceProvider
      */
     public function boot(Dispatcher $events)
     {
-        $events->subscribe(CacheSubscriber::class);
+        foreach ($this->cacheRepositories as $repositoryName) {
+            $events->listen(
+                "eloquent.saved: App\\Models\\{$repositoryName}",
+                function() {Cache::flush();}
+            );
+        }
     }
+
+
 
     /**
      * Register any application services.
@@ -53,6 +61,9 @@ class RepositoryServiceProvider extends ServiceProvider
                 "App\\Repositories\\{$cacheRepository}Repository",
                 "App\\Repositories\\Cache\\{$cacheRepository}CacheRepository"
             );
+
+
+
         }
 
         foreach ($this->dbRepositories as $dbRepository) {
