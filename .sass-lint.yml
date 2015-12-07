@@ -57,7 +57,10 @@ rules:
   empty-args: 0
   hex-length: 1
   hex-notation: 1
-  indentation: 1
+  indentation:
+    - 1
+    -
+        size: 4
   leading-zero: 1
   nesting-depth:
     - 1
