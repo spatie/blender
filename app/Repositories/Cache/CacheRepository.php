@@ -67,14 +67,6 @@ abstract class CacheRepository implements Repository
     }
 
     /**
-     * Flush all queries from the cache.
-     */
-    public function flush()
-    {
-        $this->cache->section(static::CACHESECTION)->flush();
-    }
-
-    /**
      * @param string $key
      * @param mixed  $value
      *
