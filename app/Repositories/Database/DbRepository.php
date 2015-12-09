@@ -70,6 +70,6 @@ abstract class DbRepository implements Repository
      */
     public function query()
     {
-        throw new \Exception('not implemted');
+        throw new \Exception('not implemented');
     }
 }

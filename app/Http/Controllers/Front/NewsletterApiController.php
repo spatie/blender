@@ -10,7 +10,6 @@ use Log;
 use Spatie\Newsletter\Exceptions\AlreadySubscribed;
 use Spatie\Newsletter\Exceptions\ServiceRefusedSubscription;
 use Spatie\Newsletter\Interfaces\NewsletterInterface;
-use String;
 
 class NewsletterApiController extends ApiController
 {
@@ -19,9 +18,7 @@ class NewsletterApiController extends ApiController
      */
     private $newsletter;
 
-    /**
-     * @param \Spatie\Newsletter\Interfaces\NewsletterInterface $newsletter
-     */
+
     public function __construct(NewsletterInterface $newsLetter)
     {
         $this->newsletter = $newsLetter;
@@ -38,15 +35,15 @@ class NewsletterApiController extends ApiController
             $this->newsletter->subscribe($request->get('email'));
             Activity::log($request->get('email').' schreef zich in op de nieuwsbrief.');
         } catch (AlreadySubscribed $exception) {
-            return $this->respond(string('newsletter.subscription.result.alreadySubscribed'));
+            return $this->respond(fragment('newsletter.subscription.result.alreadySubscribed'));
         } catch (ServiceRefusedSubscription $exception) {
-            return $this->respondWithBadRequest(string('newsletter.subscription.result.error'));
+            return $this->respondWithBadRequest(fragment('newsletter.subscription.result.error'));
         } catch (Exception $e) {
             Log::error('newsletter subscription failed with exception message: '.$e->getMessage());
 
-            return $this->respondWithInternalServerError(string('newsletter.subscription.result.error'));
+            return $this->respondWithInternalServerError(fragment('newsletter.subscription.result.error'));
         }
 
-        return $this->respond(string('newsletter.subscription.result.ok'));
+        return $this->respond(fragment('newsletter.subscription.result.ok'));
     }
 }
