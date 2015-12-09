@@ -30,7 +30,7 @@ class AdminMailerEventHandler
 
     public function whenContactFormWasSubmitted(ContactFormWasSubmitted $event)
     {
-        $this->mailer->sendContactFormDetails($event->formResponse);
+        $this->mailer->sendContactFormDetails($event->formResponse->toArray());
     }
 
     /**

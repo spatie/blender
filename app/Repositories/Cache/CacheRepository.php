@@ -71,7 +71,7 @@ abstract class CacheRepository implements Repository
      */
     public function flush()
     {
-        $this->cache->section(static::CACHESECTION)->flush();
+        $this->cache->flush();
     }
 
     /**
