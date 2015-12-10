@@ -2,21 +2,21 @@
 
 namespace App\Http\ViewComposers\Back;
 
-use BlenderForm;
+use App\Services\Html\BlenderFormBuilder;
 use Illuminate\Contracts\View\View;
 use function spatie\array_keys_exist;
 
 class BlenderFormComposer
 {
-    /**
-     * Bind data to the view.
-     *
-     * @param View $view
-     */
     public function compose(View $view)
     {
-        if (array_keys_exist(['module', 'model', 'errors'], $view->getData())) {
-            BlenderForm::init($view['module'], $view['model'], $view['errors']);
+        $viewData = $view->getData();
+
+
+        if (! array_keys_exist(['module', 'model', 'errors'], $viewData)) {
+            return;
         }
+
+        app(BlenderFormBuilder::class)->init($viewData['module'], $viewData['model'], $viewData['errors']);
     }
 }

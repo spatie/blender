@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Http\ViewComposers\Back\BlenderFormComposer;
 use Illuminate\Support\ServiceProvider;
-use View;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -13,11 +11,21 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('*', 'App\Http\ViewComposers\GlobalViewComposer');
-        View::composer('*.layout.*', 'App\Http\ViewComposers\HtmlAttributesComposer');
-        View::composer('*.layout.*', 'App\Http\ViewComposers\EncryptedCsrfTokenComposer');
+        $this->addComposer('*', \App\Http\ViewComposers\Shared\GlobalViewComposer::class);
+        $this->addComposer('*.layout.*', \App\Http\ViewComposers\Shared\EncryptedCsrfTokenComposer::class);
 
-        View::composer(['back.*.form', 'back.*.*Form'], BlenderFormComposer::class);
+        $this->addComposer('front.layout.*', \App\Http\ViewComposers\Front\SeoViewComposer::class);
+
+        $this->addComposer(['back.*.form', 'back.*.*Form'], \App\Http\ViewComposers\Back\BlenderFormComposer::class);
+    }
+
+    /**
+     * @param  array|string  $views
+     * @param  \Closure|string  $callback
+     */
+    protected function addComposer($views, $callback)
+    {
+        app('view')->composer($views, $callback);
     }
 
     /**

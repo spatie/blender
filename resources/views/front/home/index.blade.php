@@ -1,9 +1,5 @@
 @extends('front.layout.master')
 
-@section('pageTitle', 'Home view title')
-
-@section('pageDescription', 'Home view description')
-
 @section('content')
 <main id="home" class="main">
     <div class="grid">

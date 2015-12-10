@@ -55,6 +55,6 @@ class HtmlServiceProvider extends ServiceProvider
      */
     protected function registerBlenderBuilder()
     {
-        $this->app->singleton(BlenderBuilder::class);
+        $this->app->singleton(BlenderFormBuilder::class);
     }
 }
