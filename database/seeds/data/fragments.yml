@@ -18,13 +18,13 @@ brand:
     name: Spatie
   address:
     street:
-      desc: Adres: straat
+      desc: 'Adres: straat'
       name: Samberstraat 69D
     city:
-      desc: Adres: plaats
+      desc: 'Adres: plaats'
       name: Antwerpen
     postal:
-      desc: Adres: postcode
+      desc: 'Adres: postcode'
       name: 2060
   email:
     desc: E-mailadres
@@ -39,13 +39,13 @@ brand:
 contact:
   remarks:
     desc: Contactformulier opmerkingen
-    text: Hebt u nog specifieke vragen voor ons? Stel ze hier
+    text: 'Hebt u nog specifieke vragen voor ons? Stel ze hier'
   button:
     desc: Contactformulier knop
     text: 'Ja, contacteer mij'
   response:
     desc: Contactformulier verzonden
-    text: Bedankt! We hebben uw antwoord goed ontvangen.
+    text: 'Bedankt! We hebben uw antwoord goed ontvangen.'
 
 navigation:
   backToList:
@@ -82,47 +82,47 @@ newsletter:
 
 form:
   telephone:
-    desc: Algemene velden formulier: Telefoon
+    desc: 'Algemene velden formulier: Telefoon'
     text:
       nl: Telefoon
       en: Telephone
   email:
-    desc: Algemene velden formulier: E-mail
+    desc: 'Algemene velden formulier: E-mail'
     text:
       nl: E-mail
       en: E-mail
   address:
-    desc: Algemene velden formulier: Adres
+    desc: 'Algemene velden formulier: Adres'
     text:
       nl: Adres
       en: Address
   postal:
-    desc: Algemene velden formulier: Postcode
+    desc: 'Algemene velden formulier: Postcode'
     text:
       nl: Postcode
       en: Zipcode
   city:
-    desc: Algemene velden formulier: Stad
+    desc: 'Algemene velden formulier: Stad'
     text:
       nl: Stad
       en: City
   remarks:
-    desc: Algemene velden formulier: Opmerkingen
+    desc: 'Algemene velden formulier: Opmerkingen'
     text:
       nl: Opmerkingen
       en: Remarks
   submit:
-    desc: Algemene velden formulier: Verzenden
+    desc: 'Algemene velden formulier: Verzenden'
     text:
       nl: Verzenden
       en: Send
   fieldsAreRequired:
-    desc: Algemene velden formulier: Deze velden zijn verplicht
+    desc: 'Algemene velden formulier: Deze velden zijn verplicht'
     text:
       nl: Deze velden zijn verplicht
       en: These fields are required
 form.name:
-  desc: Algemene velden formulier: Naam
+  desc: 'Algemene velden formulier: Naam'
   text:
     nl: Naam
     en: Name
