@@ -139,7 +139,7 @@ php artisan migrate --force;
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 php artisan cache:clear
-sudo service php5-fpm restart
+sudo service php7.0-fpm restart
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
