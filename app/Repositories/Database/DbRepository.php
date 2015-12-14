@@ -3,6 +3,7 @@
 namespace App\Repositories\Database;
 
 use App\Repositories\Repository;
+use Cache;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\OrAbort\OrAbort;
 
@@ -46,6 +47,8 @@ abstract class DbRepository implements Repository
     {
         $model->save();
 
+        Cache::flush();
+
         return $model;
     }
 
@@ -58,7 +61,11 @@ abstract class DbRepository implements Repository
      */
     public function delete(Model $model)
     {
-        return $model->delete();
+        $deleted = $model->delete();
+
+        Cache::flush();
+
+        return $deleted;
     }
 
     /**
