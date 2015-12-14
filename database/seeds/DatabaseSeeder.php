@@ -14,5 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ArticleSeeder::class);
         $this->call(PersonSeeder::class);
         $this->call(NewsItemSeeder::class);
+
+        Cache::flush();
     }
 }
