@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Spatie\Seeders\FragmentSeeder;
+use FragmentSeeder;
 
 class SeedFragments extends Command
 {
