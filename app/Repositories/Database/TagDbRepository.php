@@ -27,6 +27,7 @@ class TagDbRepository extends DbRepository implements TagRepository
             }])
             ->nonDraft()
             ->orderBy('order_column')
+            ->orderBy('type')
             ->get();
     }
 

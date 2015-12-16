@@ -47,11 +47,15 @@ abstract class CacheRepository implements Repository
      *
      * @param \Illuminate\Database\Eloquent\Model $model
      *
-     * @return bool
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function save(Model $model)
     {
-        return $model->save();
+        $model->save();
+
+        $this->flush();
+
+        return $model;
     }
 
     /**
@@ -63,7 +67,11 @@ abstract class CacheRepository implements Repository
      */
     public function delete(Model $model)
     {
-        return $model->delete();
+        $deleted = $model->delete();
+
+        $this->flush();
+
+        return $deleted;
     }
 
     /**
