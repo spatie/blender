@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6be03de3092a913a447fa4a849a7feb0",
-    "content-hash": "4280c6a0dd5924b6e22599a8c6b51da7",
+    "hash": "7aee551785acf13799b08b5b7aeef6d8",
+    "content-hash": "fcd68a179b490adbf23b725f209e6308",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -176,16 +176,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.1.1",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "5497e7d506229c09823903fe02313e67978b1057"
+                "reference": "d82e8f191fb043a0f8cbf2de64fd3027bfa4f772"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/5497e7d506229c09823903fe02313e67978b1057",
-                "reference": "5497e7d506229c09823903fe02313e67978b1057",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/d82e8f191fb043a0f8cbf2de64fd3027bfa4f772",
+                "reference": "d82e8f191fb043a0f8cbf2de64fd3027bfa4f772",
                 "shasum": ""
             },
             "require": {
@@ -235,7 +235,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2015-12-14 13:33:18"
+            "time": "2015-12-21 19:48:06"
         },
         {
             "name": "bugsnag/bugsnag",
@@ -4982,16 +4982,16 @@
         },
         {
             "name": "spatie/laravel-newsletter",
-            "version": "1.1.0",
+            "version": "2.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "03a7309d10b96873708cf2f67be369dd6ef4edfe"
+                "reference": "cdfe4de92f4c822904bfaee5f85a98d495ca56d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/03a7309d10b96873708cf2f67be369dd6ef4edfe",
-                "reference": "03a7309d10b96873708cf2f67be369dd6ef4edfe",
+                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/cdfe4de92f4c822904bfaee5f85a98d495ca56d3",
+                "reference": "cdfe4de92f4c822904bfaee5f85a98d495ca56d3",
                 "shasum": ""
             },
             "require": {
@@ -5029,7 +5029,7 @@
                 "mailchimp",
                 "newsletter"
             ],
-            "time": "2015-06-06 21:09:09"
+            "time": "2015-12-21 22:48:10"
         },
         {
             "name": "spatie/laravel-or-abort",
