@@ -98,16 +98,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.11.7",
+            "version": "3.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "cbad6eab2e212a6931b587135204f12aef2e1a47"
+                "reference": "6d7c51c5eccf5a71f9f001884cccc55a671ff506"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cbad6eab2e212a6931b587135204f12aef2e1a47",
-                "reference": "cbad6eab2e212a6931b587135204f12aef2e1a47",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6d7c51c5eccf5a71f9f001884cccc55a671ff506",
+                "reference": "6d7c51c5eccf5a71f9f001884cccc55a671ff506",
                 "shasum": ""
             },
             "require": {
@@ -172,7 +172,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2015-12-18 00:05:04"
+            "time": "2015-12-21 22:54:08"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
