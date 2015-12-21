@@ -11,7 +11,7 @@
 	}
   ],
   "require": {
-    "barryvdh/laravel-ide-helper": "^2.0",
+    "barryvdh/laravel-ide-helper": "^2.1",
     "bugsnag/bugsnag-laravel": "^1.4",
     "cviebrock/eloquent-sluggable": "^3.0",
     "davejamesmiller/laravel-breadcrumbs": "^3.0",
@@ -48,9 +48,8 @@
     "spatie/laravel-newsletter": "^1.0",
     "spatie/laravel-or-abort": "^1.0",
     "spatie/laravel-paginateroute": "^2.0",
-    "spatie/laravel-pjax": "^1.0",
     "spatie/laravel-tail": "^1.0",
-    "spatie/seeders": "^3.0",
+    "spatie/seeders": "^3.5",
     "spatie/string": "^2.0",
     "vespakoen/menu": "^3.0",
     "guzzlehttp/guzzle": "^6.1",
@@ -62,7 +61,10 @@
 	"phpunit/phpunit": "~4.0",
 	"phpspec/phpspec": "~2.1",
 	"laracasts/generators": "~1.1",
-    "fabpot/php-cs-fixer": "^1.10"
+    "fabpot/php-cs-fixer": "^1.10",
+    "symfony/dom-crawler": "~3.0",
+    "symfony/css-selector": "~3.0"
+
   },
   "autoload": {
 	"classmap": [
