@@ -121,9 +121,10 @@ function roman_year($year = '')
     if (!is_numeric($year)) {
         $year = date('Y');
     }
+    
     $result = '';
 
-    $romanNumerals = array(
+    $romanNumerals = [
         'M' => 1000,
         'CM' => 900,
         'D' => 500,
@@ -136,20 +137,20 @@ function roman_year($year = '')
         'IX' => 9,
         'V' => 5,
         'IV' => 4,
-        'I' => 1, );
+        'I' => 1,
+    ];
 
     foreach ($romanNumerals as $roman => $yearNumber) {
-        /*** divide to get  matches ***/
+        // Divide to get  matches
         $matches = intval($year / $yearNumber);
 
-        /*** assign the roman char * $matches ***/
+        // Assign the roman char * $matches
         $result .= str_repeat($roman, $matches);
 
-        /*** substract from the number ***/
+        // Substract from the number
         $year = $year % $yearNumber;
     }
 
-    /*** return the res ***/
     return $result;
 }
 
