@@ -167,7 +167,6 @@ return [
         */
         App\Services\Locale\LocaleServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
-        App\Providers\BusServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
@@ -189,7 +188,7 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
         Menu\MenuServiceProvider::class,
-        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
+        //Clockwork\Support\Laravel\ClockworkServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Spatie\Glide\GlideServiceProvider::class,
