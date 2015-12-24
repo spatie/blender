@@ -10,19 +10,14 @@ class Fragment extends TranslatableEloquent
     use Presentable;
 
     protected $guarded = ['id'];
+    protected $with = ['name'];
 
     public $translatedAttributes = ['text'];
 
-    /**
-     * Return a sluggified version the text of the string.
-     *
-     * @param $name
-     * @param string $locale
-     *
-     * @return string
-     */
-    public static function getSlugAttribute($name, $locale = '')
+    public static function findByName(string $name) : Fragment
     {
-        return str_slug(static::getText($name, $locale));
+        return app('cache')->rememberForever("fragment.findByName.{$name}", function () use ($name) : Fragment {
+            return static::where('name', $name)->first();
+        });
     }
 }

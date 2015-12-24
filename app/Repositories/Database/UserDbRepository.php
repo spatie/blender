@@ -2,81 +2,54 @@
 
 namespace App\Repositories\Database;
 
+use App\Foundation\Repositories\DbRepository;
 use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;
-use App\Models\User;
 use App\Repositories\UserRepository;
-use DB;
+use Illuminate\Database\Connection as Database;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class UserDbRepository extends DbRepository implements UserRepository
 {
-    public function __construct()
+    /** @return \App\Models\User */
+    public function findByToken(string $token)
     {
-        $this->model = new User();
-    }
+        $userInfo = app(Database::class)
+            ->table(config('auth.password.table'))
+            ->where('token', $token)
+            ->first();
 
-    /**
-     * Find user by the given token.
-     *
-     * @param string $token
-     *
-     * @return mixed
-     */
-    public function findByToken($token)
-    {
-        $rawUser = DB::table(config('auth.password.table'))->where('token', $token)->first();
-
-        if (!$rawUser) {
-            return $rawUser;
+        if (! $userInfo) {
+            return null;
         }
 
-        return $this->model->where('email', $rawUser->email)->first();
+        return $this->query
+            ->where('email', $userInfo->email)
+            ->first();
     }
 
-    /**
-     * Delete the model.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $user
-     *
-     * @return bool
-     *
-     * @throws \Exception
-     */
+    public function getAllWithRole(UserRole $role) : Collection
+    {
+        return $this->query
+            ->where('role', $role)
+            ->get();
+    }
+
+    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status) : Collection
+    {
+        return $this->query
+            ->where('role', $role)
+            ->where('status', $status)
+            ->get();
+    }
+
     public function delete(Model $user)
     {
         if (auth()->user() && auth()->user()->id === $user->id) {
             abort(406);
         }
 
-        return $user->delete();
-    }
-
-    /**
-     * Get all users with the given role.
-     *
-     * @param string $role
-     *
-     * @return mixed
-     */
-    public function getAllWithRole($role)
-    {
-        return $this->model
-            ->where('role', $role)
-            ->get();
-    }
-
-    /**
-     * @param UserRole   $role
-     * @param UserStatus $status
-     *
-     * @return mixed
-     */
-    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status)
-    {
-        return $this->model
-            ->where('role', $role)
-            ->where('status', $status)
-            ->get();
+        return parent::delete($user);
     }
 }
