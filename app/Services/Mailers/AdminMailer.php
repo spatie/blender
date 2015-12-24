@@ -5,8 +5,7 @@ namespace App\Services\Mailers;
 use App\Models\FormResponse;
 use App\Models\User;
 use Illuminate\Contracts\Auth\PasswordBroker;
-use Lang;
-use Request;
+use Illuminate\Mail\Message;
 
 class AdminMailer extends Mailer
 {
@@ -14,7 +13,7 @@ class AdminMailer extends Mailer
     {
         $view = 'emails.admin.contactFormSubmitted';
         $data = $formResponse->toArray();
-        $subject = 'Een nieuwe reactie op '.Request::server('SERVER_NAME');
+        $subject = 'Een nieuwe reactie op '.config('app.url');
 
         foreach (config('mail.questionFormRecipients') as $email) {
             $this->sendTo($email, $subject, $view, $data);
@@ -36,8 +35,8 @@ class AdminMailer extends Mailer
     {
         $passwords = app(PasswordBroker::class);
 
-        $passwords->sendResetLink(['email' => $user->email], function ($message) {
-            $message->subject(Lang::get('passwords.subjectEmailNewUser', [], 'nl'));
+        $passwords->sendResetLink(['email' => $user->email], function (Message $message) {
+            $message->subject(trans('passwords.subjectEmailNewUser', [], 'nl'));
         });
     }
 }
