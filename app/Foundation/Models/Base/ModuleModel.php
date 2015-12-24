@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Models\Foundation\Base;
+namespace App\Foundation\Models\Base;
 
-use App\Models\Foundation\Traits\Draftable;
-use App\Models\Foundation\Traits\Presentable;
-use App\Models\Foundation\Traits\HasMedia as HasMediaTrait;
+use App\Foundation\Models\Traits\Draftable;
+use App\Foundation\Models\Traits\Presentable;
+use App\Foundation\Models\Traits\HasMedia as HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 abstract class ModuleModel extends TranslatableEloquent implements HasMediaConversions
 {
     use Draftable, Presentable, HasMediaTrait;
 
-    /**
-     * @var array
-     */
     protected $guarded = ['id'];
+    protected $with = ['media', 'translations'];
 
     public function registerMediaConversions()
     {

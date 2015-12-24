@@ -3,7 +3,7 @@
 namespace App\Models\Presenters;
 
 use App\Models\Enums\UserStatus;
-use App\Models\Foundation\Base\Presenter;
+use Laracasts\Presenter\Presenter;
 
 class UserPresenter extends Presenter
 {

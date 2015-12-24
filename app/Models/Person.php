@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
-use App\Models\Foundation\Traits\Sluggable as SluggableTrait;
+use App\Foundation\Models\Base\ModuleModel;
+use App\Foundation\Models\Traits\Sluggable as SluggableTrait;
 use Cviebrock\EloquentSluggable\SluggableInterface as Sluggable;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;

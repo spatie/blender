@@ -2,7 +2,7 @@
 
 namespace App\Models\Updaters;
 
-use App\Models\Foundation\Updaters\ModuleModelUpdater;
+use App\Foundation\Models\Updaters\ModuleModelUpdater;
 
 class PersonUpdater extends ModuleModelUpdater
 {

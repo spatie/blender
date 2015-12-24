@@ -3,7 +3,7 @@
 namespace App\Models\Presenters;
 
 use App\Models\Enums\TagType;
-use App\Models\Foundation\Base\Presenter;
+use Laracasts\Presenter\Presenter;
 
 class TagPresenter extends Presenter
 {

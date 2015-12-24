@@ -2,7 +2,7 @@
 
 namespace App\Models\Translations;
 
-use App\Models\Foundation\Base\Translation;
+use App\Foundation\Models\Translations\Translation;
 
 class PersonTranslation extends Translation
 {

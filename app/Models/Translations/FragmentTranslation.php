@@ -2,11 +2,8 @@
 
 namespace App\Models\Translations;
 
-use App\Models\Foundation\Base\Translation;
-use App\Models\Fragment;
-use Cache;
+use App\Foundation\Models\Translations\Translation;
 
 class FragmentTranslation extends Translation
 {
-
 }

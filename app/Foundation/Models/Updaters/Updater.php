@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Foundation\Updaters;
+namespace App\Foundation\Models\Updaters;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;

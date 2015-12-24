@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
+use App\Foundation\Models\Base\ModuleModel;
 use App\Models\Enums\TagType;
-use App\Models\Foundation\Traits\HasTags;
+use App\Foundation\Models\Traits\HasTags;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 

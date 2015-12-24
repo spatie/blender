@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\TranslatableEloquent;
-use App\Models\Foundation\Traits\Presentable;
+use App\Foundation\Models\Base\TranslatableEloquent;
+use App\Foundation\Models\Traits\Presentable;
 
 class Fragment extends TranslatableEloquent
 {
