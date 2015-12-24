@@ -26,7 +26,7 @@ class AdminMailer extends Mailer
         $data = ['userId' => $user->id];
         $subject = 'Een nieuwe gebruiker heeft zich geregistreerd';
 
-        foreach (['freek@spatie.be']  as $email) {
+        foreach (['freek@spatie.be'] as $email) {
             $this->sendTo($email, $subject, $view, $data);
         }
     }
