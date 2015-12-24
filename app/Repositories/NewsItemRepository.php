@@ -2,60 +2,24 @@
 
 namespace App\Repositories;
 
+use App\Foundation\Repositories\Repository;
 use App\Models\NewsItem;
+use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Support\Collection;
 
 interface NewsItemRepository extends Repository
 {
-    /**
-     * Get all online models.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllOnline();
+    const MODEL = NewsItem::class;
 
-    /**
-     * Find a model by it's url.
-     *
-     * @param string $url
-     * @param string $locale
-     *
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function findByUrl($url, $locale = null);
+    public function getAllOnline() : Collection;
 
-    /**
-     * Find the next news item based on publish_date.
-     *
-     * @param \App\Models\NewsItem $newsItem
-     *
-     * @return \App\Models\NewsItem
-     */
+    /** @return \App\Models\NewsItem|null */
     public function findNext(NewsItem $newsItem);
 
-    /**
-     * Find the previous news item based on publish_date.
-     *
-     * @param \App\Models\NewsItem $newsItem
-     *
-     * @return \App\Models\NewsItem
-     */
+    /** @return \App\Models\NewsItem|null */
     public function findPrevious(NewsItem $newsItem);
 
-    /**
-     * Get the models for a page.
-     *
-     * @param int $perPage
-     *
-     * @return \Illuminate\Pagination\Paginator
-     */
-    public function paginate($perPage = 10);
+    public function paginate(int $perPage) : Paginator;
 
-    /**
-     * Get the latest X models.
-     *
-     * @param int $amount
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getLatest($amount = 10);
+    public function getLatest(int $amount) : Collection;
 }

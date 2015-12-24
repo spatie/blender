@@ -3,21 +3,22 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\ActivityRepository;
+use Illuminate\Support\Collection;
+use Spatie\Activitylog\Models\Activity;
 
 class ActivitylogController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @param ActivityRepository $activityRepository
-     *
-     * @return Response
-     */
-    public function index(ActivityRepository $activityRepository)
+    public function index()
     {
-        $logItems = $activityRepository->getPaginator(50);
+        $logItems = $this->getPaginatedActivityLogItems();
 
         return view('back.activitylog.index')->with(compact('logItems'));
+    }
+
+    protected function getPaginatedActivityLogItems() : Collection
+    {
+        return Activity::with('user')
+            ->orderBy('created_at', 'DESC')
+            ->paginate(50);
     }
 }
