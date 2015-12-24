@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Foundation\Base;
+namespace App\Foundation\Models\Translations;
 
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
@@ -11,9 +11,6 @@ class SluggableTranslation extends Translation
 
     protected $guarded = ['id', 'url'];
 
-    /**
-     * Get the options for generating the slug.
-     */
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()

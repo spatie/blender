@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
+use App\Foundation\Models\Base\ModuleModel;
 use Exception;
 use Illuminate\Support\Collection;
 

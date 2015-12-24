@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Foundation\Traits;
+namespace App\Foundation\Models\Traits;
 
 use App\Models\Tag;
 use App\Repositories\TagRepository;

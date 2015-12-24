@@ -3,7 +3,7 @@
 namespace App\Models\Updaters;
 
 use Carbon\Carbon;
-use App\Models\Foundation\Updaters\ModuleModelUpdater;
+use App\Foundation\Models\Updaters\ModuleModelUpdater;
 
 class NewsItemUpdater extends ModuleModelUpdater
 {

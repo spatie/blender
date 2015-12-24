@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Foundation\Base;
+namespace App\Foundation\Models\Base;
 
 use Dimsav\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 abstract class TranslatableEloquent extends Model
 {
     use Translatable;
+
+    protected $guarded = ['id'];
+    protected $with = ['translations'];
 
     public function getTranslationModelNameDefault()
     {
