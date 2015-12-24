@@ -14,21 +14,15 @@ class RepositoryServiceProvider extends ServiceProvider
      * @var array
      */
     protected $dbRepositories = [
-        'Activity',
-        'Event',
         'NewsItem',
         'Person',
-        'Tag',
         'User',
     ];
 
     /**
      * @var array
      */
-    protected $cacheRepositories = [
-        'Article',
-        'Fragment',
-    ];
+    protected $cacheRepositories = [];
 
     /**
      * @param \Illuminate\Contracts\Events\Dispatcher $events
