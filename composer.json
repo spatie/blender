@@ -34,7 +34,7 @@
     "pda/pheanstalk": "^3.0",
     "phpseclib/phpseclib": "0.3.*",
     "pusher/pusher-php-server": "^2.2",
-    "spatie/activitylog": "^2.0",
+    "spatie/activitylog": "^2.3",
     "spatie/array-functions": "^1.1",
     "spatie/eloquent-sortable": "^1.0",
     "spatie/integration": "^3.0.0",

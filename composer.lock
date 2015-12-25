@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "65a37753a8245256c41911161fefd509",
-    "content-hash": "2036112b1e21be772b4d65dd417959fd",
+    "hash": "2f953c25843fc0d0b4aef3504f7b47c5",
+    "content-hash": "f0346bab5e5b110ef5794c69edc2c08b",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -4172,16 +4172,16 @@
         },
         {
             "name": "spatie/activitylog",
-            "version": "2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/activitylog.git",
-                "reference": "82d08bafb25658e58b6356a3e50e9690d739b660"
+                "reference": "821e703705d175fd6930ea14a353ca0180b35fa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/activitylog/zipball/82d08bafb25658e58b6356a3e50e9690d739b660",
-                "reference": "82d08bafb25658e58b6356a3e50e9690d739b660",
+                "url": "https://api.github.com/repos/spatie/activitylog/zipball/821e703705d175fd6930ea14a353ca0180b35fa3",
+                "reference": "821e703705d175fd6930ea14a353ca0180b35fa3",
                 "shasum": ""
             },
             "require": {
@@ -4219,7 +4219,7 @@
                 "log",
                 "user"
             ],
-            "time": "2015-12-21 19:13:17"
+            "time": "2015-12-25 22:02:11"
         },
         {
             "name": "spatie/array-functions",
