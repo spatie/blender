@@ -21,7 +21,7 @@ class Article extends ModuleModel
                 $article = static::where('technical_name', $technicalName)->first();
 
                 if ($article === null) {
-                    throw new Exception("Article {$technicalName} not found");
+                    throw new Exception("Article `{$technicalName}` not found");
                 }
 
                 return $article;

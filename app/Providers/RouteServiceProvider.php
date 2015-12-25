@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Repositories\ArticleRepository;
+use App\Models\Article;
 use Exception;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
@@ -137,7 +137,7 @@ class RouteServiceProvider extends ServiceProvider
 
         $router->macro('articleList', function ($technicalNamePrefix, $action) use ($router) {
 
-            $articles = app(ArticleRepository::class)->getWithTechnicalNameLike($technicalNamePrefix);
+            $articles = Article::getWithTechnicalNameLike($technicalNamePrefix);
 
             $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"),  function () use ($articles) {
                 return redirect(route("{$articles->first()->technical_name}"));

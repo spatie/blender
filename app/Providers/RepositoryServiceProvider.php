@@ -16,6 +16,7 @@ class RepositoryServiceProvider extends ServiceProvider
     protected $dbRepositories = [
         'NewsItem',
         'Person',
+        'Tag',
         'User',
     ];
 
