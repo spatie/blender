@@ -3,26 +3,12 @@
 namespace App\Services\Navigation;
 
 use App\Models\Enums\UserRole;
-use App\Repositories\ArticleRepository;
 use HTML;
 use Menu;
 use Request;
 
 class Navigation
 {
-    /**
-     * @var \App\Repositories\ArticleRepository
-     */
-    protected $articleRepository;
-
-    /**
-     * @param \App\Repositories\ArticleRepository $articleRepository
-     */
-    public function __construct(ArticleRepository $articleRepository)
-    {
-        $this->articleRepository = $articleRepository;
-    }
-
     public function getFrontMainMenu()
     {
         $menu = Menu::handler('main', ['class' => 'nav navbar-nav'])

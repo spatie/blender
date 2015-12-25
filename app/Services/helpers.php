@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Get the app's current locale.
  *
@@ -33,7 +32,7 @@ function fragment($name, $locale = null)
 {
     $locale = $locale ?: content_locale();
 
-    $fragment = app(App\Repositories\FragmentRepository::class)->findByName($name);
+    $fragment = App\Models\Fragment::findByName($name);
 
     if (!$fragment) {
         return $name;
@@ -75,13 +74,7 @@ function translate_field_name($fieldName, $locale)
  */
 function article($technicalName)
 {
-    $article = app(App\Repositories\ArticleRepository::class)->findByTechnicalName($technicalName);
-    
-    if (is_null($article)) {
-        throw new Exception("Article `{$technicalName}` doesn't exist.");
-    }
-    
-    return $article;
+    return App\Models\Article::findByTechnicalName($technicalName);
 }
 
 /**

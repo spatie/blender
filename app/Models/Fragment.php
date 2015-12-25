@@ -10,13 +10,13 @@ class Fragment extends TranslatableEloquent
     use Presentable;
 
     protected $guarded = ['id'];
-    protected $with = ['name'];
 
     public $translatedAttributes = ['text'];
 
-    public static function findByName(string $name) : Fragment
+    /** @return \App\Models\Fragment|null */
+    public static function findByName(string $name)
     {
-        return app('cache')->rememberForever("fragment.findByName.{$name}", function () use ($name) : Fragment {
+        return app('cache')->rememberForever("fragment.findByName.{$name}", function () use ($name) {
             return static::where('name', $name)->first();
         });
     }
