@@ -59,7 +59,6 @@
 	"mockery/mockery": "^0.9.4",
 	"phpunit/phpunit": "~4.0",
 	"phpspec/phpspec": "~2.1",
-	"laracasts/generators": "~1.1",
     "fabpot/php-cs-fixer": "^1.10",
     "symfony/dom-crawler": "~3.0",
     "symfony/css-selector": "~3.0"
