@@ -194,7 +194,6 @@ return [
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class,
-        Laracasts\Generators\GeneratorsServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
         Spatie\Newsletter\NewsletterServiceProvider::class,
@@ -265,7 +264,6 @@ return [
         /*
          * Third party Facades...
          */
-        'Clockwork'         => Clockwork\Support\Laravel\Facade::class,
         'Flash'       		=> Laracasts\Flash\Flash::class,
         'Activity'    		=> Spatie\Activitylog\ActivitylogFacade::class,
         'Date'        		=> Jenssegers\Date\Date::class,

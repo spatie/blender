@@ -2,12 +2,23 @@
 
 namespace App\Models\Foundation\Base;
 
-use Cviebrock\EloquentSluggable\SluggableInterface as Sluggable;
-use App\Models\Foundation\Traits\Sluggable as SluggableTrait;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
-class SluggableTranslation extends Translation implements Sluggable
+class SluggableTranslation extends Translation
 {
-    use SluggableTrait;
+    use HasSlug;
 
     protected $guarded = ['id', 'url'];
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->saveSlugsTo('url')
+            ->allowDuplicateSlugs();
+    }
 }

@@ -6,5 +6,4 @@ use App\Models\Foundation\Base\SluggableTranslation;
 
 class NewsItemTranslation extends SluggableTranslation
 {
-    protected $sluggable = 'name';
 }

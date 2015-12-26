@@ -13,7 +13,6 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        \Clockwork\Support\Laravel\ClockworkMiddleware::class,
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
         \Illuminate\Cookie\Middleware\EncryptCookies::class,
         \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
@@ -21,8 +20,6 @@ class Kernel extends HttpKernel
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\VerifyCsrfToken::class,
         \App\Http\Middleware\RedirectIfDemo::class,
-        \Spatie\Pjax\Middleware\FilterIfPjax::class,
-
     ];
 
     /**
