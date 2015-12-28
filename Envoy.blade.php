@@ -1,6 +1,6 @@
 @setup
 require __DIR__.'/vendor/autoload.php';
-(new \Dotenv())->load(__DIR__, '.env');
+(new \Dotenv\Dotenv(__DIR__, '.env'));
 
 $server = "";
 $repository = "spatie/{$server}";
