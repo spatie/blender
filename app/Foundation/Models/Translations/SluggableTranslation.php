@@ -2,20 +2,11 @@
 
 namespace App\Foundation\Models\Translations;
 
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+use App\Foundation\Models\Traits\Sluggable;
 
 class SluggableTranslation extends Translation
 {
-    use HasSlug;
+    use Sluggable;
 
     protected $guarded = ['id', 'url'];
-
-    public function getSlugOptions() : SlugOptions
-    {
-        return SlugOptions::create()
-            ->generateSlugsFrom('name')
-            ->saveSlugsTo('url')
-            ->allowDuplicateSlugs();
-    }
 }
