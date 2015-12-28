@@ -106,14 +106,7 @@ abstract class ModuleController extends Controller
         return view("back.{$this->moduleName}.edit", $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update($id)
+    public function update(int $id)
     {
         $request = app()->make("App\\Http\\Requests\\Back\\{$this->modelName}Request");
 
