@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Events\UserWasActivated;
 use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;
-use App\Models\Foundation\Traits\Presentable;
+use App\Foundation\Models\Traits\Presentable;
 use Carbon\Carbon;
 use Exception;
 use Illuminate\Auth\Authenticatable;
@@ -61,7 +61,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function isCurrentUser()
     {
-        return ($this->id === auth()->id());
+        return $this->id === auth()->id();
     }
 
     public function hasRole($role)

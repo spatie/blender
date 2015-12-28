@@ -2,7 +2,7 @@
 
 namespace App\Models\Updaters;
 
-use App\Models\Foundation\Updaters\TranslatableUpdater;
+use App\Foundation\Models\Updaters\TranslatableUpdater;
 
 class TagUpdater extends TranslatableUpdater
 {

@@ -2,130 +2,62 @@
 
 namespace App\Repositories\Database;
 
+use App\Models\Enums\TagType;
+use App\Foundation\Models\Traits\HasTags;
+use App\Foundation\Repositories\DbRepository;
 use App\Models\Tag;
-use App\Models\Foundation\Traits\HasTags;
 use App\Repositories\TagRepository;
+use Illuminate\Support\Collection;
 
 class TagDbRepository extends DbRepository implements TagRepository
 {
-    public function __construct()
+    public function getAll() : Collection
     {
-        $this->model = new Tag();
-    }
-
-    /**
-     * Get all models excluding drafts.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getAll()
-    {
-        return $this->model
-            ->newQuery()
-            ->with(['translations' => function ($query) {
-                $query->where('locale', content_locale());
-            }])
+        return $this->query()
             ->nonDraft()
             ->orderBy('order_column')
             ->orderBy('type')
             ->get();
     }
 
-    /**
-     * Get all tags that are online.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllOnline()
+    public function getAllOnline() : Collection
     {
-        $query = $this->model->newQuery();
-
-        return $query
+        return $this->query()
             ->online()
             ->orderBy('order_column')
             ->get();
     }
 
-    /**
-     * Get all tags that are online.
-     *
-     * @param string $type
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllWithType($type)
+    public function getAllWithType(TagType $type) : Collection
     {
-        return $this->model->newQuery()
+        return $this->query()
+            ->online()
             ->where('type', $type)
-            ->online()
             ->orderBy('order_column')
             ->get();
     }
 
-    /**
-     * Find a tag by name, type and locale.
-     *
-     * @param string $name
-     * @param string $type
-     * @param string $locale
-     *
-     * @return \App\Models\Tag
-     */
-    public function findByName($name, $type = null, $locale = null)
+    public function findByName(string $name, TagType $type, $locale = null)
     {
         $type = $type ?: HasTags::getDefaultTagType();
         $locale = $locale ?: HasTags::getDefaultTagLocale();
 
-        return $this->model
+        return $this->query()
             ->where('type', $type)
-            ->whereHas('translations', function ($q) use ($name, $locale) {
-                $q
-                    ->where('name', $name)
-                    ->where('locale', $locale);
+            ->whereHas('translations', function ($query) use ($name, $locale) {
+                $query->where(compact('name', 'locale'));
             })
             ->first();
     }
 
-    /**
-     * Find a tag by name or create (and save) it.
-     *
-     * @param string $name
-     * @param string $type
-     * @param string $locale
-     *
-     * @return \App\Models\Tag
-     */
-    public function findByNameOrCreate($name, $type = null, $locale = null)
+    public function findByNameOrCreate(string $name, TagType $type, $locale = null)
     {
         $tag = $this->findByName($name, $type, $locale);
 
         if ($tag === null) {
-            $tag = $this->model->createFromName($name, $type);
+            $tag = Tag::createFromName($name, $type);
         }
 
         return $tag;
-    }
-
-    /**
-     * Get a tag from it's url.
-     *
-     * @param string $url
-     * @param string $locale
-     *
-     * @return \App\Models\Tag
-     */
-    public function findByUrl($url, $type = null, $locale = null)
-    {
-        $type = $type ?: HasTags::getDefaultTagType();
-        $locale = $locale ?: content_locale();
-
-        return $this->model
-            ->where('type', $type)
-            ->whereHas('translations', function ($query) use ($url, $locale) {
-                $query
-                    ->where('url', $url)
-                    ->where('locale', $locale);
-            })
-            ->first();
     }
 }

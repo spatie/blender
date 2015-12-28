@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Enums\TagType;
 use App\Models\Tag;
 use App\Models\Translations\TagTranslation;
 use App\Repositories\TagRepository;
@@ -8,21 +9,6 @@ use Spatie\Seeders\SuperSeeder\Factory;
 
 class TagSeeder extends DatabaseSeeder
 {
-    /**
-     * @var \App\Repositories\TagRepository
-     */
-    protected $tagRepository;
-
-    /**
-     * @param \App\Repositories\TagRepository
-     */
-    public function __construct(TagRepository $tagRepository)
-    {
-        parent::__construct();
-
-        $this->tagRepository = $tagRepository;
-    }
-
     public function run()
     {
         $this->truncate((new TagTranslation())->getTable(), (new Tag())->getTable(), 'taggables');
@@ -35,7 +21,7 @@ class TagSeeder extends DatabaseSeeder
         $tags = new Collection();
 
         for ($i = 0; $i < $amount; ++$i) {
-            $tag = app()->make(TagRepository::class)->findByNameOrCreate($this->faker->words(2, true));
+            $tag = app()->make(TagRepository::class)->findByNameOrCreate($this->faker->words(2, true), TagType::DEFAULT());
             $tags->add($tag);
         }
 

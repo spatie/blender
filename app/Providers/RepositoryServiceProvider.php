@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Repositories\Cache\Subscriber as CacheSubscriber;
 use App\Services\Navigation\CurrentSection;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -14,8 +13,6 @@ class RepositoryServiceProvider extends ServiceProvider
      * @var array
      */
     protected $dbRepositories = [
-        'Activity',
-        'Event',
         'NewsItem',
         'Person',
         'Tag',
@@ -25,10 +22,7 @@ class RepositoryServiceProvider extends ServiceProvider
     /**
      * @var array
      */
-    protected $cacheRepositories = [
-        'Article',
-        'Fragment',
-    ];
+    protected $cacheRepositories = [];
 
     /**
      * @param \Illuminate\Contracts\Events\Dispatcher $events
@@ -38,12 +32,10 @@ class RepositoryServiceProvider extends ServiceProvider
         foreach ($this->cacheRepositories as $repositoryName) {
             $events->listen(
                 "eloquent.saved: App\\Models\\{$repositoryName}",
-                function() {Cache::flush();}
+                function () {Cache::flush();}
             );
         }
     }
-
-
 
     /**
      * Register any application services.

@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
+use App\Foundation\Models\Base\ModuleModel;
 use App\Models\Enums\TagType;
-use App\Models\Foundation\Traits\HasTags;
-use App\Models\Foundation\Interfaces\HasTags as HasTagsInterface;
+use App\Foundation\Models\Traits\HasTags;
+use App\Foundation\Models\Interfaces\HasTags as HasTagsInterface;
 
 class NewsItem extends ModuleModel implements HasTagsInterface
 {

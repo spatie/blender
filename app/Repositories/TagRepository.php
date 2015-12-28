@@ -2,52 +2,20 @@
 
 namespace App\Repositories;
 
+use App\Foundation\Repositories\Repository;
+use App\Models\Enums\TagType;
+use App\Models\Tag;
+use Illuminate\Support\Collection;
+
 interface TagRepository extends Repository
 {
-    /**
-     * Get all tags that are online.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllOnline();
+    const MODEL = Tag::class;
 
-    /**
-     * Get all tags that are online.
-     *
-     * @param string $type
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllWithType($type);
+    public function getAllOnline() : Collection;
 
-    /**
-     * Find a tag by name, type and locale.
-     *
-     * @param string $name
-     * @param string $type
-     * @param string $locale
-     *
-     * @return \App\Models\Tag
-     */
-    public function findByName($name, $type = null, $locale = null);
+    public function getAllWithType(TagType $type) : Collection;
 
-    /**
-     * Find a tag by name or create (and save) it.
-     *
-     * @param string $name
-     * @param string $type
-     * @param string $locale
-     *
-     * @return \App\Models\Tag
-     */
-    public function findByNameOrCreate($name, $type = null, $locale = null);
+    public function findByName(string $name, TagType $type, $locale = null);
 
-    /**
-     * Get a tag from it's url.
-     *
-     * @param string $url
-     *
-     * @return \App\Models\Tag
-     */
-    public function findByUrl($url, $type = null, $locale = null);
+    public function findByNameOrCreate(string $name, TagType $type, $locale = null);
 }
