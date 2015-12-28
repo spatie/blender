@@ -12,7 +12,9 @@ use Illuminate\Support\Collection;
 
 class UserDbRepository extends DbRepository implements UserRepository
 {
-    /** @return \App\Models\User */
+    /**
+     * @return \App\Models\User|null
+     */
     public function findByToken(string $token)
     {
         $userInfo = app(Database::class)
@@ -20,8 +22,8 @@ class UserDbRepository extends DbRepository implements UserRepository
             ->where('token', $token)
             ->first();
 
-        if (! $userInfo) {
-            return null;
+        if (!$userInfo) {
+            return;
         }
 
         return $this->query()

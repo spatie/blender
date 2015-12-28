@@ -114,7 +114,7 @@ function roman_year($year = '')
     if (!is_numeric($year)) {
         $year = date('Y');
     }
-    
+
     $result = '';
 
     $romanNumerals = [

@@ -25,6 +25,7 @@ class SeedFragments extends Command
     {
         if ($this->option('overwrite')) {
             $this->handleOverwrite();
+
             return;
         }
 
@@ -35,7 +36,7 @@ class SeedFragments extends Command
 
     protected function handleOverwrite()
     {
-        if ( ! $this->confirm('Do you wish to continue? [y|N]')) {
+        if (!$this->confirm('Do you wish to continue? [y|N]')) {
             return;
         }
 

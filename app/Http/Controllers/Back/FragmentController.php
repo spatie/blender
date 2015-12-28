@@ -7,7 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FragmentRequest;
 use App\Models\Fragment;
 use App\Models\Updaters\FragmentUpdater;
-use App\Repositories\FragmentRepository;
 
 class FragmentController extends Controller
 {

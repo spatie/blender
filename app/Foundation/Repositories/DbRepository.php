@@ -11,7 +11,9 @@ abstract class DbRepository extends BaseRepository implements Repository
         return $this->query()->get();
     }
 
-    /** @return \Illuminate\Database\Eloquent\Model|null */
+    /**
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
     public function findById(int $id)
     {
         return $this->query()->find($id);

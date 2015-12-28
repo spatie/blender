@@ -37,7 +37,7 @@ class Navigation
         }
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
-            return (app()->getLocale() == explode('/', trim($item->getContent()->getUrl(), '/'))[0]);
+            return app()->getLocale() == explode('/', trim($item->getContent()->getUrl(), '/'))[0];
         });
 
         return $menu;

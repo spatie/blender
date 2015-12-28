@@ -41,7 +41,7 @@ class RedirectIfDemo
      */
     protected function protectedByDemoMode()
     {
-        if (! app(CurrentSection::class)->isFront()) {
+        if (!app(CurrentSection::class)->isFront()) {
             return false;
         }
 

@@ -9,7 +9,8 @@ trait Sluggable
 {
     use HasSlug;
 
-    public function getSlugOptions() : SlugOptions {
+    public function getSlugOptions() : SlugOptions
+    {
         return SlugOptions::create()
             ->generateSlugsFrom('name')
             ->saveSlugsTo('url')

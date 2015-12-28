@@ -20,8 +20,8 @@ class ViewComposerServiceProvider extends ServiceProvider
     }
 
     /**
-     * @param  array|string  $views
-     * @param  \Closure|string  $callback
+     * @param array|string    $views
+     * @param \Closure|string $callback
      */
     protected function addComposer($views, $callback)
     {

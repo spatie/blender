@@ -13,7 +13,9 @@ class Fragment extends TranslatableEloquent
 
     public $translatedAttributes = ['text'];
 
-    /** @return \App\Models\Fragment|null */
+    /**
+     * @return \App\Models\Fragment|null
+     */
     public static function findByName(string $name)
     {
         return app('cache')->rememberForever("fragment.findByName.{$name}", function () use ($name) {

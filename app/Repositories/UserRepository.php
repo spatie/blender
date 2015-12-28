@@ -12,7 +12,9 @@ interface UserRepository extends Repository
 {
     const MODEL = User::class;
 
-    /** @return \App\Models\User */
+    /**
+     * @return \App\Models\User|null
+     */
     public function findByToken(string $token);
 
     public function getAllWithRole(UserRole $role) : Collection;

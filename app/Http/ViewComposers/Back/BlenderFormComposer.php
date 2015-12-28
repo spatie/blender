@@ -12,8 +12,7 @@ class BlenderFormComposer
     {
         $viewData = $view->getData();
 
-
-        if (! array_keys_exist(['module', 'model', 'errors'], $viewData)) {
+        if (!array_keys_exist(['module', 'model', 'errors'], $viewData)) {
             return;
         }
 

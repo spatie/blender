@@ -13,10 +13,14 @@ interface NewsItemRepository extends Repository
 
     public function getAllOnline() : Collection;
 
-    /** @return \App\Models\NewsItem|null */
+    /**
+     * @return \App\Models\NewsItem|null
+     */
     public function findNext(NewsItem $newsItem);
 
-    /** @return \App\Models\NewsItem|null */
+    /**
+     * @return \App\Models\NewsItem|null
+     */
     public function findPrevious(NewsItem $newsItem);
 
     public function paginate(int $perPage) : Paginator;

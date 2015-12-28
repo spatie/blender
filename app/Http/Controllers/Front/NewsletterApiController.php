@@ -34,13 +34,10 @@ class NewsletterApiController extends ApiController
         try {
             $this->newsletter->subscribe($request->get('email'));
             Activity::log($request->get('email').' schreef zich in op de nieuwsbrief.');
-
         } catch (AlreadySubscribed $exception) {
             return $this->respond(['message' => fragment('newsletter.subscription.result.alreadySubscribed'), 'type' => 'info']);
-
         } catch (ServiceRefusedSubscription $exception) {
             return $this->respondWithBadRequest(['message' => fragment('newsletter.subscription.result.error'), 'type' => 'error']);
-
         } catch (Exception $e) {
             Log::error('newsletter subscription failed with exception message: '.$e->getMessage());
 

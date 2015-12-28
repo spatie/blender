@@ -9,7 +9,9 @@ interface Repository
 {
     public function getAll() : Collection;
 
-    /** @return \Illuminate\Database\Eloquent\Model|null */
+    /**
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
     public function findById(int $id);
 
     public function save(Model $model) : bool;

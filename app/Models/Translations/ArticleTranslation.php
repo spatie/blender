@@ -6,5 +6,4 @@ use App\Foundation\Models\Translations\SluggableTranslation;
 
 class ArticleTranslation extends SluggableTranslation
 {
-
 }

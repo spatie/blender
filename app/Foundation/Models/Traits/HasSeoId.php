@@ -4,7 +4,6 @@ namespace App\Foundation\Models\Traits;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use function Spatie\array_rand_value;
 
 trait HasSeoId
 {
@@ -35,7 +34,7 @@ trait HasSeoId
 
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query
-     * @param string $seoId
+     * @param string                                $seoId
      *
      * @return \Illuminate\Database\Eloquent\Builder
      */

@@ -5,7 +5,6 @@ namespace App\Exceptions;
 use Exception;
 //use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as ExceptionHandler;
-
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;

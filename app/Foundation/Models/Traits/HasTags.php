@@ -31,7 +31,7 @@ trait HasTags
         $type = $type ?: static::getDefaultTagType();
 
         return $this->tags->filter(function ($tag) use ($type) {
-            return ($tag->type == $type);
+            return $tag->type == $type;
         });
     }
 

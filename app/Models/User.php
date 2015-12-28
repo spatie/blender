@@ -61,7 +61,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function isCurrentUser()
     {
-        return ($this->id === auth()->id());
+        return $this->id === auth()->id();
     }
 
     public function hasRole($role)

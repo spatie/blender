@@ -34,7 +34,9 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
             ->get();
     }
 
-    /** @return \App\Models\NewsItem */
+    /**
+     * @return \App\Models\NewsItem|null
+     */
     public function findNext(NewsItem $newsItem)
     {
         return $this->query()
@@ -44,7 +46,9 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
             ->first();
     }
 
-    /** @return \App\Models\NewsItem */
+    /**
+     * @return \App\Models\NewsItem|null
+     */
     public function findPrevious(NewsItem $newsItem)
     {
         return $this->query()
