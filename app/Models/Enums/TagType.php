@@ -6,6 +6,7 @@ use MyCLabs\Enum\Enum;
 
 class TagType extends Enum
 {
+    const DEFAULT = 'default';
     const NEWS_ITEM_CATEGORY = 'news_item_category';
     const NEWS_ITEM_TAG = 'news_item_tag';
 }

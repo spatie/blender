@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Collection;
+use Illuminate\Contracts\Pagination\Paginator;
 use Spatie\Activitylog\Models\Activity;
 
 class ActivitylogController extends Controller
@@ -15,7 +15,7 @@ class ActivitylogController extends Controller
         return view('back.activitylog.index')->with(compact('logItems'));
     }
 
-    protected function getPaginatedActivityLogItems() : Collection
+    protected function getPaginatedActivityLogItems() : Paginator
     {
         return Activity::with('user')
             ->orderBy('created_at', 'DESC')

@@ -36,7 +36,7 @@ class UserController extends Controller
 
     public function index($role)
     {
-        $users = $this->userRepository->getAllWithRole($role);
+        $users = $this->userRepository->getAllWithRole(new UserRole($role));
 
         return view('back.user.index')->with(compact('users', 'role'));
     }

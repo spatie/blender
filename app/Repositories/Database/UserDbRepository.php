@@ -24,27 +24,27 @@ class UserDbRepository extends DbRepository implements UserRepository
             return null;
         }
 
-        return $this->query
+        return $this->query()
             ->where('email', $userInfo->email)
             ->first();
     }
 
     public function getAllWithRole(UserRole $role) : Collection
     {
-        return $this->query
+        return $this->query()
             ->where('role', $role)
             ->get();
     }
 
     public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status) : Collection
     {
-        return $this->query
+        return $this->query()
             ->where('role', $role)
             ->where('status', $status)
             ->get();
     }
 
-    public function delete(Model $user)
+    public function delete(Model $user) : bool
     {
         if (auth()->user() && auth()->user()->id === $user->id) {
             abort(406);

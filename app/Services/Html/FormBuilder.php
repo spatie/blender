@@ -2,6 +2,7 @@
 
 namespace App\Services\Html;
 
+use App\Models\Enums\TagType;
 use App\Models\Transformers\MediaTransformer;
 use App\Repositories\TagRepository;
 use Carbon\Carbon;
@@ -87,7 +88,9 @@ class FormBuilder extends BaseFormBuilder
 
     public function tags($subject, $type = null)
     {
-        $allTags = app()->make(TagRepository::class)->getAllWithType($type)->lists('name', 'name');
+        $allTags = app()->make(TagRepository::class)
+            ->getAllWithType(new TagType($type))
+            ->lists('name', 'name');
 
         return Form::select(
             $type.'_tags[]',
@@ -99,7 +102,9 @@ class FormBuilder extends BaseFormBuilder
 
     public function category($subject, $type = null)
     {
-        $allCategories = app()->make(TagRepository::class)->getAllWithType($type)->lists('name', 'name')->toArray();
+        $allCategories = app()->make(TagRepository::class)
+            ->getAllWithType(new TagType($type))
+            ->lists('name', 'name')->toArray();
 
         return $this->select(
             $type.'_tags[]',

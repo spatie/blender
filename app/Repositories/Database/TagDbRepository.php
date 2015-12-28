@@ -5,6 +5,7 @@ namespace App\Repositories\Database;
 use App\Models\Enums\TagType;
 use App\Foundation\Models\Traits\HasTags;
 use App\Foundation\Repositories\DbRepository;
+use App\Models\Tag;
 use App\Repositories\TagRepository;
 use Illuminate\Support\Collection;
 
@@ -12,11 +13,7 @@ class TagDbRepository extends DbRepository implements TagRepository
 {
     public function getAll() : Collection
     {
-        return $this->model
-            ->newQuery()
-            ->with(['translations' => function ($query) {
-                $query->where('locale', content_locale());
-            }])
+        return $this->query()
             ->nonDraft()
             ->orderBy('order_column')
             ->orderBy('type')
@@ -25,9 +22,7 @@ class TagDbRepository extends DbRepository implements TagRepository
 
     public function getAllOnline() : Collection
     {
-        $query = $this->model->newQuery();
-
-        return $query
+        return $this->query()
             ->online()
             ->orderBy('order_column')
             ->get();
@@ -35,9 +30,9 @@ class TagDbRepository extends DbRepository implements TagRepository
 
     public function getAllWithType(TagType $type) : Collection
     {
-        return $this->model->newQuery()
-            ->where('type', $type)
+        return $this->query()
             ->online()
+            ->where('type', $type)
             ->orderBy('order_column')
             ->get();
     }
@@ -47,12 +42,10 @@ class TagDbRepository extends DbRepository implements TagRepository
         $type = $type ?: HasTags::getDefaultTagType();
         $locale = $locale ?: HasTags::getDefaultTagLocale();
 
-        return $this->model
+        return $this->query()
             ->where('type', $type)
-            ->whereHas('translations', function ($q) use ($name, $locale) {
-                $q
-                    ->where('name', $name)
-                    ->where('locale', $locale);
+            ->whereHas('translations', function ($query) use ($name, $locale) {
+                $query->where(compact('name', 'locale'));
             })
             ->first();
     }
@@ -62,7 +55,7 @@ class TagDbRepository extends DbRepository implements TagRepository
         $tag = $this->findByName($name, $type, $locale);
 
         if ($tag === null) {
-            $tag = $this->model->createFromName($name, $type);
+            $tag = Tag::createFromName($name, $type);
         }
 
         return $tag;

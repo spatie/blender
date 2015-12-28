@@ -12,7 +12,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
 {
     public function getAll() : Collection
     {
-        return $this->query
+        return $this->query()
             ->orderBy('publish_date', 'desc')
             ->nonDraft()
             ->get();
@@ -20,7 +20,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
 
     public function getLatest(int $amount) : Collection
     {
-        return $this->query
+        return $this->query()
             ->orderBy('publish_date', 'desc')
             ->online()
             ->take($amount)
@@ -29,7 +29,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
 
     public function getAllOnline() : Collection
     {
-        return $this->query
+        return $this->query()
             ->online()
             ->get();
     }
@@ -37,7 +37,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
     /** @return \App\Models\NewsItem */
     public function findNext(NewsItem $newsItem)
     {
-        return $this->query
+        return $this->query()
             ->online()
             ->where('publish_date', '>', $newsItem->publish_date)
             ->orderBy('publish_date', 'desc')
@@ -47,7 +47,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
     /** @return \App\Models\NewsItem */
     public function findPrevious(NewsItem $newsItem)
     {
-        return $this->query
+        return $this->query()
             ->online()
             ->where('publish_date', '<', $newsItem->publish_date)
             ->orderBy('publish_date', 'desc')
@@ -56,7 +56,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
 
     public function paginate(int $perPage) : Paginator
     {
-        return $this->query
+        return $this->query()
             ->online()
             ->simplePaginate($perPage);
     }

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Enums\TagType;
 use Illuminate\Support\ServiceProvider;
 use Validator;
 
@@ -14,6 +15,7 @@ class ValidationServiceProvider extends ServiceProvider
     {
         Validator::extend('tags_exist', function ($attributeName, $tagNames, $parameters) {
             list($tagType) = $parameters;
+            $tagType = new TagType($tagType);
 
             $exisitingTagNames = app(\App\Repositories\TagRepository::class)
                 ->getAllWithType($tagType)

@@ -2,29 +2,12 @@
 
 namespace App\Foundation\Repositories;
 
-use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\OrAbort\OrAbort;
 
-class BaseRepository
+abstract class BaseRepository
 {
     use OrAbort;
-
-    const MODEL = null;
-
-    /** @var \Illuminate\Database\Query\Builder */
-    protected $query;
-
-    public function __construct()
-    {
-        $model = static::MODEL;
-
-        if ($model === null) {
-            throw new Exception('No model set for this repository');
-        }
-
-        $this->query = $model::query();
-    }
 
     public function save(Model $model) : bool
     {
@@ -46,5 +29,10 @@ class BaseRepository
         }
 
         return $deleted;
+    }
+
+    protected function query()
+    {
+        return call_user_func(static::MODEL.'::query');
     }
 }

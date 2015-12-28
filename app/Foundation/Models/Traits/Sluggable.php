@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Foundation\Traits;
+namespace App\Foundation\Models\Traits;
 
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;

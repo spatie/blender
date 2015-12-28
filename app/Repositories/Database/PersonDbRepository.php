@@ -10,14 +10,14 @@ class PersonDbRepository extends DbRepository implements PersonRepository
 {
     public function getAll() : Collection
     {
-        return $this->query
+        return $this->query()
             ->orderBy('order_column')
             ->get();
     }
 
     public function getAllOnline() : Collection
     {
-        return $this->query
+        return $this->query()
             ->online()
             ->orderBy('order_column')
             ->get();
