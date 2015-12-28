@@ -1,20 +1,16 @@
 <?php
 /**
  * Get the app's current locale.
- *
- * @return string
  */
-function locale()
+function locale() : string
 {
     return app()->getLocale();
 }
 
 /**
  * Get the app's current content locale.
- *
- * @return string
  */
-function content_locale()
+function content_locale() : string
 {
     return app('currentLocale')->getContentLocale();
 }
@@ -23,12 +19,11 @@ function content_locale()
  * Get a translated fragment's text. Since this utility function is occasionally used in route files, there's also a
  * check for the database connection to return a fallback fragment in local environments.
  *
- * @param string $name
  * @param string $locale
  *
- * @return \Spatie\String\Str
+ * @return \Spatie\String\Str | string
  */
-function fragment($name, $locale = null)
+function fragment(string $name,$locale = null)
 {
     $locale = $locale ?: content_locale();
 
