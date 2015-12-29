@@ -2,6 +2,7 @@
 
 namespace App\Foundation\Models\Traits;
 
+use App\Models\Enums\TagType;
 use App\Models\Tag;
 use App\Repositories\TagRepository;
 use Illuminate\Database\Eloquent\Collection;
@@ -45,7 +46,7 @@ trait HasTags
      */
     public function getTagNames($type = null, $locale = null)
     {
-        $type = $type ?: static::getDefaultTagType();
+        $type = new TagType($type) ?: static::getDefaultTagType();
         $locale = $locale ?: static::getDefaultTagLocale();
 
         return $this->getTags($type)
@@ -84,11 +85,8 @@ trait HasTags
         return content_locale();
     }
 
-    /**
-     * @return string
-     */
-    public static function getDefaultTagType()
+    public static function getDefaultTagType() : TagType
     {
-        return 'main';
+        return new TagType('main');
     }
 }
