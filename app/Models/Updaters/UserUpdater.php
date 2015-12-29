@@ -13,8 +13,6 @@ class UserUpdater extends Updater
     {
         $this->updateFields();
         $this->updatePassword();
-
-        return $this->model;
     }
 
     protected function updateFields()

@@ -14,7 +14,5 @@ class PersonUpdater extends ModuleModelUpdater
         parent::update();
 
         $this->model->name = $this->request->get('name');
-
-        return $this->model;
     }
 }

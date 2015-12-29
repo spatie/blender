@@ -40,4 +40,9 @@ abstract class TranslatableEloquent extends Model
 
         return $this->getTranslationOrNew(is_null($locale) ? locale() : $locale);
     }
+
+    protected function locale() : string
+    {
+        return content_locale();
+    }
 }

@@ -15,7 +15,5 @@ class NewsItemUpdater extends ModuleModelUpdater
         parent::update();
 
         $this->model->publish_date = Carbon::createFromFormat('d/m/Y', $this->request->get('publish_date'));
-
-        return $this->model;
     }
 }
