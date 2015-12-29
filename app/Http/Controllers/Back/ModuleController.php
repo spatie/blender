@@ -112,7 +112,7 @@ abstract class ModuleController extends Controller
 
         $model = $this->query()->find($id);
 
-        $model = $this->createUpdater($model, $request)->update();
+        $this->createUpdater($model, $request)->update();
 
         $model->save();
         app('cache')->flush();
