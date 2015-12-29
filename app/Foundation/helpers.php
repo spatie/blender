@@ -51,60 +51,30 @@ function fragment_slug($name, $locale = null)
     return str_slug($translation);
 }
 
-/**
- * @param string $fieldName
- * @param string $locale
- *
- * @return string
- */
-function translate_field_name($fieldName, $locale)
+function translate_field_name(string $fieldName, string $locale) : string
 {
     return  'translated_'.$locale.'_'.$fieldName;
 }
 
-/**
- * @param string $technicalName
- *
- * @return \App\Models\Article
- */
-function article($technicalName)
+
+function article(string $technicalName) : App\Models\Article
 {
     return App\Models\Article::findByTechnicalName($technicalName);
 }
 
-/**
- * Create a carbon instance from a string.
- *
- * @param string $date
- * @param string $format
- *
- * @return \Carbon\Carbon
- */
-function carbon($date, $format = 'Y-m-d H:i:s')
+
+function carbon(string $date, string $format = 'Y-m-d H:i:s') : Carbon\Carbon
 {
     return Carbon\Carbon::createFromFormat($format, $date);
 }
 
-/**
- * Get a human readable the difference to now.
- *
- * @param \Carbon\Carbon $date
- *
- * @return string
- */
-function diff_date_for_humans(Carbon\Carbon $date)
+function diff_date_for_humans(Carbon\Carbon $date) : string
 {
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
 }
 
-/**
- * Get a Roman formatted year.
- *
- * @param string
- *
- * @return string
- */
-function roman_year($year = '')
+
+function roman_year(int $year = '') : string
 {
     if (!is_numeric($year)) {
         $year = date('Y');
@@ -142,29 +112,16 @@ function roman_year($year = '')
     return $result;
 }
 
-/**
- * Get a the short class name of an object.
- *
- * @param mixed object
- *
- * @return string
- */
-function short_class_name($object)
+
+function short_class_name($object) : string
 {
     $objectProperties = new \ReflectionClass($object);
 
     return $objectProperties->getShortName();
 }
 
-/**
- * Get all constants of a class.
- *
- * @param mixed  $object
- * @param string $startsWithFilter
- *
- * @return array
- */
-function class_constants($object, $startsWithFilter = '')
+
+function class_constants($object, string  $startsWithFilter = '') : array
 {
     $objectProperties = new \ReflectionClass($object);
 
@@ -195,7 +152,7 @@ function translate($id = null, $parameters = [], $locale = null)
 
 /**
  * Return the currentUser.
- * 
+ *
  * @return bool|\App\Models\User
  */
 function currentUser()
@@ -212,10 +169,8 @@ function currentUser()
  *
  * @param string|array $fields
  * @param string|array $rules
- *
- * @return bool
  */
-function validate($fields, $rules)
+function validate($fields, $rules) : bool
 {
     if (!is_array($fields)) {
         $fields = ['default' => $fields];
