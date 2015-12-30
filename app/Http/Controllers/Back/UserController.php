@@ -63,14 +63,14 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        $user = app(UserRepository::class)->findById($id);
+        $user = app(UserRepository::class)->find($id);
 
         return view("back.user.{$user->role}.edit")->with(compact('user'));
     }
 
     public function update($id, UserRequest $request)
     {
-        $user = app(UserRepository::class)->findByIdOrAbort($id);
+        $user = app(UserRepository::class)->findOrAbort($id);
 
         UserUpdater::create($user, $request)->update();
 
@@ -85,7 +85,7 @@ class UserController extends Controller
 
     public function activate($id)
     {
-        $user = app(UserRepository::class)->findByIdOrAbort($id);
+        $user = app(UserRepository::class)->findOrAbort($id);
 
         $user->activate();
 
@@ -98,7 +98,7 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        $user = app(UserRepository::class)->findById($id);
+        $user = app(UserRepository::class)->find($id);
 
         $eventDescription = trans('back.events.deleted', ['model' => 'Gebruiker', 'name' => $user->email]);
         Activity::log($eventDescription);

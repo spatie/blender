@@ -14,7 +14,7 @@ abstract class DbRepository extends BaseRepository implements Repository
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
      */
-    public function findById(int $id)
+    public function find(int $id)
     {
         return $this->query()->find($id);
     }
@@ -30,21 +30,18 @@ abstract class DbRepository extends BaseRepository implements Repository
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
      */
-    public function findByUrl(string $url, string $locale = null)
+    public function findByUrl(string $url)
     {
-        /**
-         * @todo check if model has translatable attributes,
-         * if not --> do not use translations table
-         */
-        $query = $this
-            ->query()
-            ->whereHas('translations', function ($query) use ($url, $locale) {
-                $query
-                    ->where('url', $url)
-                    ->where('locale', $locale ?: content_locale());
-            });
+        $model = static::MODEL;
 
-        return $query->first();
+        if (! isset((new $model)->translatedAttributes)) {
+            return $this->query()->online()->where('url', $url)->first();
+        }
+
+        return $this->query()
+            ->online()
+            ->whereTranslation('url', $url, content_locale())
+            ->first();
     }
 
 

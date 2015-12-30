@@ -12,7 +12,7 @@ interface Repository
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
      */
-    public function findById(int $id);
+    public function find(int $id);
 
     /**
      * @return \Illuminate\Database\Eloquent\Model|null

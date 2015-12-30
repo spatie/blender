@@ -19,10 +19,10 @@ abstract class CacheRepository extends BaseRepository implements Repository
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
      */
-    public function findById(int $id)
+    public function find(int $id)
     {
-        return $this->rememberForever("id.{$id}", function () use ($id) {
-            return $this->dbRepository->findById($id);
+        return $this->rememberForever("find.{$id}", function () use ($id) {
+            return $this->dbRepository->find($id);
         });
     }
 
