@@ -14,6 +14,16 @@ interface Repository
      */
     public function findById(int $id);
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
+    public function findOnline(int $id);
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
+    public function findByUrl(string $url);
+
     public function save(Model $model) : bool;
 
     public function delete(Model $model) : bool;
