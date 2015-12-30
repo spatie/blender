@@ -32,6 +32,10 @@ abstract class DbRepository extends BaseRepository implements Repository
      */
     public function findByUrl(string $url, string $locale = null)
     {
+        /**
+         * @todo check if model has translatable attributes,
+         * if not --> do not use translations table
+         */
         $query = $this
             ->query()
             ->whereHas('translations', function ($query) use ($url, $locale) {
