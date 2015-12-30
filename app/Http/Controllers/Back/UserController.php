@@ -40,7 +40,7 @@ class UserController extends Controller
     {
         $user = new User();
 
-        $user = UserUpdater::create($user, $request)->update();
+        UserUpdater::create($user, $request)->update();
 
         $user->role = $role;
         $user->status = UserStatus::ACTIVE;
@@ -72,7 +72,7 @@ class UserController extends Controller
     {
         $user = app(UserRepository::class)->findByIdOrAbort($id);
 
-        $user = UserUpdater::create($user, $request)->update();
+        UserUpdater::create($user, $request)->update();
 
         app(UserRepository::class)->save($user);
 

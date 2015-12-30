@@ -2,7 +2,6 @@
 
 namespace App\Test\Integration\Back;
 
-use App\Models\NewsItem;
 use NewsItemSeeder;
 
 class NewsItemTest extends ModuleTestCase
