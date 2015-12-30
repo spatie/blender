@@ -187,6 +187,7 @@ return [
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
         Jenssegers\Date\DateServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Maknz\Slack\SlackServiceProvider::class,
         Menu\MenuServiceProvider::class,
@@ -256,25 +257,25 @@ return [
         /*
          * Application Facades...
          */
-        'Navigation'	=> App\Services\Navigation\NavigationFacade::class,
         'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
+        'Navigation'	=> App\Services\Navigation\NavigationFacade::class,
 
         /*
          * Third party Facades...
          */
-        'Flash'       		=> Laracasts\Flash\Flash::class,
         'Activity'    		=> Spatie\Activitylog\ActivitylogFacade::class,
-        'Date'        		=> Jenssegers\Date\Date::class,
-        'Menu'        		=> Menu\Menu::class,
         'Breadcrumbs' 		=> DaveJamesMiller\Breadcrumbs\Facade::class,
-        'GlideImage'  		=> Spatie\Glide\GlideImageFacade::class,
-        'Excel'       		=> Maatwebsite\Excel\Facades\Excel::class,
-        'LaravelAnalytics' 	=> Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
         'Bugsnag' 			=> Bugsnag\BugsnagLaravel\BugsnagFacade::class,
+        'Date'        		=> Jenssegers\Date\Date::class,
+        'Excel'       		=> Maatwebsite\Excel\Facades\Excel::class,
+        'Flash'       		=> Laracasts\Flash\Flash::class,
+        'Fractal'           => Spatie\Fractal\FractalFacade::class,
+        'GlideImage'  		=> Spatie\Glide\GlideImageFacade::class,
+        'GoogleTagManager'  => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
+        'LaravelAnalytics' 	=> Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
+        'Menu'        		=> Menu\Menu::class,
         'Newsletter' 		=> Spatie\Newsletter\NewsletterFacade::class,
         'Slack' 			=> Maknz\Slack\Facades\Slack::class,
-        'GoogleTagManager'  => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
-        'Fractal'           => Spatie\Fractal\FractalFacade::class,
     ],
 
 ];
