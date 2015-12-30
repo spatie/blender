@@ -1,9 +1,9 @@
-news_item_tag:
+news_tag:
   - name: Tag 1
   - name: Tag 2
   - name: Tag 3
 
-news_item_category:
+news_category:
   - name: Category 1
   - name: Category 2
   - name: Category 3

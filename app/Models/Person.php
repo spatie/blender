@@ -11,6 +11,8 @@ class Person extends ModuleModel implements SortableInterface
 {
     use Sortable, Sluggable;
 
+    protected $with = ['translations', 'media'];
+
     public $mediaLibraryCollections = ['images'];
     public $translatedAttributes = ['function', 'career'];
 

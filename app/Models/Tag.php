@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
 use App\Models\Enums\TagType;
-use App\Foundation\Models\Traits\HasTags;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 
@@ -12,34 +11,33 @@ class Tag extends ModuleModel implements SortableInterface
 {
     use Sortable;
 
-    public $translatedAttributes = ['name', 'url'];
+    protected $with = ['translations'];
 
-    public function getTypeAttribute()
+    public $translatedAttributes = ['name', 'url', 'description'];
+
+    public function hasType(TagType $type) : bool
     {
-        return $this->attributes['type'] ?: HasTags::getDefaultTagType();
+        return $this->type === $type->getValue();
     }
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\MorphToMany
-     */
-    public function newsItems()
+    public function scopeWithType($query, TagType $type)
     {
-        return $this->morphedByMany(NewsItem::class, 'taggable');
+        return $query->nonDraft()->where('type', $type->getValue());
     }
 
-    /**
-     * @param string      $name
-     * @param string|null $type
-     *
-     * @return Tag
-     */
-    public static function createFromName($name, $type = null)
+    public static function findByNameOrCreate(string $name, TagType $type) : Tag
     {
-        $tag = new static();
+        $existing = Tag::whereTranslation('name', $name, content_locale())->first();
 
-        $tag->type = $type;
-        $tag->draft = false;
-        $tag->online = true;
+        if ($existing) {
+            return $existing;
+        }
+
+        $tag = new static([
+            'type' => $type,
+            'draft' => false,
+            'online' => true,
+        ]);
 
         foreach (config('app.locales') as $locale) {
             $tag->translateOrNew($locale)->name = $name;
@@ -48,13 +46,5 @@ class Tag extends ModuleModel implements SortableInterface
         $tag->save();
 
         return $tag;
-    }
-
-    /**
-     * @return array
-     */
-    public function getTypeOptions()
-    {
-        return TagType::toArray();
     }
 }

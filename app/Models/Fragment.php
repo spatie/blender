@@ -9,7 +9,7 @@ class Fragment extends TranslatableEloquent
 {
     use Presentable;
 
-    protected $guarded = ['id'];
+    protected $with = ['translations'];
 
     public $translatedAttributes = ['text'];
 

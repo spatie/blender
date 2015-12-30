@@ -3,6 +3,7 @@
 namespace App\Services\Html;
 
 use App\Models\Enums\TagType;
+use App\Models\Tag;
 use App\Models\Transformers\MediaTransformer;
 use App\Repositories\TagRepository;
 use Carbon\Carbon;
@@ -100,16 +101,17 @@ class FormBuilder extends BaseFormBuilder
         );
     }
 
-    public function category($subject, $type = null)
+    public function category($subject, $type)
     {
-        $allCategories = app()->make(TagRepository::class)
-            ->getAllWithType(new TagType($type))
-            ->lists('name', 'name')->toArray();
+        $type = new TagType($type);
+
+        $categories = Tag::withType($type)->get()->lists('name', 'name');
+        $subjectCategory = $subject->tagsWithType($type)->first();
 
         return $this->select(
             $type.'_tags[]',
-            $allCategories,
-            $subject->getTags($type)->first() ? $subject->getTags($type)->first()->name : null
+            $categories,
+           $subjectCategory ? $subjectCategory->name : null
         );
     }
 

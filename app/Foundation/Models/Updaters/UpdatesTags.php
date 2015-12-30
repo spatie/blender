@@ -2,6 +2,9 @@
 
 namespace App\Foundation\Models\Updaters;
 
+use App\Models\Enums\TagType;
+use App\Models\Tag;
+
 trait UpdatesTags
 {
     public function updateTags()
@@ -9,11 +12,18 @@ trait UpdatesTags
         $this->model->tags()->detach();
 
         foreach ($this->model->tagTypes as $type) {
-            if (!$this->request->has("{$type}_tags")) {
-                continue;
-            }
-
-            $this->model->addTagsFromNameArray($this->request->get("{$type}_tags"), $type);
+            $this->updateTagsForType($type);
         }
+    }
+
+    public function updateTagsForType(string $type)
+    {
+        collect($this->request->get("{$type}_tags"))->each(function ($name) use ($type) {
+            $type = new TagType($type);
+
+            $tag = Tag::findByNameOrCreate($name, $type);
+
+            $this->model->tags()->attach($tag);
+        });
     }
 }

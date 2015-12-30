@@ -10,7 +10,6 @@ abstract class TranslatableEloquent extends Model
     use Translatable;
 
     protected $guarded = ['id'];
-    protected $with = ['translations'];
 
     public function getTranslationModelNameDefault()
     {

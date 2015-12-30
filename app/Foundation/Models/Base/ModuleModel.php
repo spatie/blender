@@ -12,7 +12,6 @@ abstract class ModuleModel extends TranslatableEloquent implements HasMediaConve
     use Draftable, Presentable, HasMediaTrait;
 
     protected $guarded = ['id'];
-    protected $with = ['media', 'translations'];
 
     public function registerMediaConversions()
     {

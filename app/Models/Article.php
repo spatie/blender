@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 class Article extends ModuleModel
 {
-    protected $with = ['media', 'translations'];
+    protected $with = ['translations', 'media'];
 
     public $mediaLibraryCollections = ['images', 'downloads'];
     public $translatedAttributes = ['name', 'text', 'url'];
