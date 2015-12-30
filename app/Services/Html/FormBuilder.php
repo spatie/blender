@@ -87,16 +87,17 @@ class FormBuilder extends BaseFormBuilder
         return Form::getValueAttribute($locale == '' ? $propertyName : Form::getTranslatedFieldName($propertyName, $locale), $value);
     }
 
-    public function tags($subject, $type = null)
+    public function tags($subject, $type)
     {
-        $allTags = app()->make(TagRepository::class)
-            ->getAllWithType(new TagType($type))
-            ->lists('name', 'name');
+        $type = new TagType($type);
+
+        $tags = Tag::withType($type)->get()->lists('name', 'name')->toArray();
+        $subjectTags = $subject->tagsWithType($type)->lists('name', 'name')->toArray();
 
         return Form::select(
             $type.'_tags[]',
-            $allTags,
-            $subject->tags->lists('name')->toArray(),
+            $tags,
+            $subjectTags,
             ['multiple' => true, 'data-select' => 'tags']
         );
     }
@@ -105,13 +106,13 @@ class FormBuilder extends BaseFormBuilder
     {
         $type = new TagType($type);
 
-        $categories = Tag::withType($type)->get()->lists('name', 'name');
+        $categories = Tag::withType($type)->get()->lists('name', 'name')->toArray();
         $subjectCategory = $subject->tagsWithType($type)->first();
 
         return $this->select(
             $type.'_tags[]',
             $categories,
-           $subjectCategory ? $subjectCategory->name : null
+            $subjectCategory ? $subjectCategory->name : null
         );
     }
 

@@ -21,8 +21,7 @@ class NewsItemSeeder extends DatabaseSeeder
                 if ($withImages) {
                     $this->addImages($newsItem, 3, 5);
                 }
-            })
-            ->load('translations', 'media')
+            });
         ;
     }
 }
