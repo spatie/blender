@@ -74,7 +74,7 @@ function diff_date_for_humans(Carbon\Carbon $date) : string
 }
 
 
-function roman_year(int $year = '') : string
+function roman_year(int $year = null) : string
 {
     if (!is_numeric($year)) {
         $year = date('Y');
