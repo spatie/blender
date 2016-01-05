@@ -3,6 +3,14 @@ All notable changes to Blender will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
+## [5.4.0] - 2015-12-16
+### Added
+- upgrade to Laravel 5.2
+
+## [5.3.2] - 2015-11-05
+### Added
+- Sass, Js linting config files
+
 ## [5.3.2] - 2015-11-05
 ### Added
 - Sass, Js linting config files

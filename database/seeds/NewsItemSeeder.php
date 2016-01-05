@@ -22,7 +22,7 @@ class NewsItemSeeder extends DatabaseSeeder
                     $this->addImages($newsItem, 3, 5);
                 }
             })
-            ->load('translations', 'media')
+            ->load('translations', 'media');
         ;
     }
 }

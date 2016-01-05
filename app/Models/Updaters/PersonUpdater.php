@@ -2,7 +2,7 @@
 
 namespace App\Models\Updaters;
 
-use App\Models\Foundation\Updaters\ModuleModelUpdater;
+use App\Foundation\Models\Updaters\ModuleModelUpdater;
 
 class PersonUpdater extends ModuleModelUpdater
 {
@@ -14,7 +14,5 @@ class PersonUpdater extends ModuleModelUpdater
         parent::update();
 
         $this->model->name = $this->request->get('name');
-
-        return $this->model;
     }
 }

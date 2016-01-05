@@ -2,8 +2,10 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\Navigation\CurrentSection;
 use Closure;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class RedirectIfDemo
 {
@@ -15,16 +17,16 @@ class RedirectIfDemo
      *
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next)
     {
-        if ($this->protectedByDemoMode($request)) {
+        if ($this->protectedByDemoMode()) {
             if ($this->isGrantAccessToDemoRequest($request)) {
                 $this->grantAccessToDemo();
 
                 return new RedirectResponse('/');
             }
 
-            if (!$this->hasDemoAccess($request)) {
+            if (!$this->hasDemoAccess()) {
                 return response()->view('temp.index');
             }
         }
@@ -35,12 +37,14 @@ class RedirectIfDemo
     /**
      * Determine if this site is protected by demo mode.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return bool
      */
-    protected function protectedByDemoMode($request)
+    protected function protectedByDemoMode()
     {
+        if (!app(CurrentSection::class)->isFront()) {
+            return false;
+        }
+
         return config('app.demo');
     }
 
@@ -51,7 +55,7 @@ class RedirectIfDemo
      *
      * @return bool
      */
-    protected function isGrantAccessToDemoRequest($request)
+    protected function isGrantAccessToDemoRequest(Request $request)
     {
         return $request->getRequestUri() === '/demo';
     }
@@ -67,21 +71,15 @@ class RedirectIfDemo
     /**
      * Determine if the user has demo access.
      *
-     * @param \Illuminate\Http\Request $request
-     *
      * @return bool
      */
-    protected function hasDemoAccess($request)
+    protected function hasDemoAccess()
     {
         if (session()->has('demo_access_granted')) {
             return true;
         }
 
         if (auth()->user()) {
-            return true;
-        }
-
-        if (starts_with('/auth', $request->getRequestUri())) {
             return true;
         }
 

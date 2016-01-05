@@ -2,7 +2,7 @@
 
 namespace App\Models\Presenters;
 
-use App\Models\Foundation\Base\Presenter;
+use Laracasts\Presenter\Presenter;
 
 class NewsItemPresenter extends Presenter
 {

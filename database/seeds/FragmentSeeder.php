@@ -13,6 +13,13 @@ class FragmentSeeder extends DatabaseSeeder
         $this->superSeeder(new FragmentFactory(Fragment::class), 'fragments');
     }
 
+    public function softRun()
+    {
+        $this->run();
+
+        Cache::flush();
+    }
+
     public function seedRandomFragments($amount = 10)
     {
         return factory(Fragment::class, $amount)

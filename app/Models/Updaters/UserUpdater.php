@@ -2,7 +2,7 @@
 
 namespace App\Models\Updaters;
 
-use App\Models\Foundation\Updaters\Updater;
+use App\Foundation\Models\Updaters\Updater;
 
 class UserUpdater extends Updater
 {
@@ -13,8 +13,6 @@ class UserUpdater extends Updater
     {
         $this->updateFields();
         $this->updatePassword();
-
-        return $this->model;
     }
 
     protected function updateFields()

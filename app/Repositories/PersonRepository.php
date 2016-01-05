@@ -2,30 +2,13 @@
 
 namespace App\Repositories;
 
+use App\Foundation\Repositories\Repository;
+use App\Models\Person;
+use Illuminate\Support\Collection;
+
 interface PersonRepository extends Repository
 {
-    /**
-     * Get all online models.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getAllOnline();
+    const MODEL = Person::class;
 
-    /**
-     * Get all online models with a certain type.
-     *
-     * @param string $type
-     *
-     * @return \Illuminate\Database\Eloquent\Collection
-     */
-    public function getWithType($type);
-
-    /**
-     * Get a person from his url.
-     *
-     * @param string $url
-     *
-     * @return \App\Models\Person
-     */
-    public function findByUrl($url);
+    public function getAllOnline() : Collection;
 }

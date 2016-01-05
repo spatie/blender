@@ -38,7 +38,6 @@ abstract class ModuleController extends Controller
     public function __construct(Application $app)
     {
         $this->app = $app;
-        $this->repository = $app->make("App\\Repositories\\{$this->modelName}Repository");
     }
 
     /**
@@ -48,7 +47,7 @@ abstract class ModuleController extends Controller
      */
     public function index()
     {
-        $models = $this->repository->getAll();
+        $models = $this->query()->nonDraft()->get();
 
         $data = [
             $this->moduleName => $models,
@@ -91,7 +90,7 @@ abstract class ModuleController extends Controller
      */
     public function edit(Request $request, $id)
     {
-        $model = $this->repository->findById($id);
+        $model = $this->query()->find($id);
 
         if ($request->has('revert')) {
             $model->clearTemporaryMedia();
@@ -107,22 +106,16 @@ abstract class ModuleController extends Controller
         return view("back.{$this->moduleName}.edit", $data);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update($id)
+    public function update(int $id)
     {
         $request = app()->make("App\\Http\\Requests\\Back\\{$this->modelName}Request");
 
-        $model = $this->repository->findById($id);
+        $model = $this->query()->find($id);
 
-        $model = $this->createUpdater($model, $request)->update();
+        $this->createUpdater($model, $request)->update();
 
-        $this->repository->save($model);
+        $model->save();
+        app('cache')->flush();
 
         $eventDescription = $this->getUpdatedEventDescription($model);
         Activity::log($eventDescription);
@@ -153,13 +146,14 @@ abstract class ModuleController extends Controller
      */
     public function destroy($id)
     {
-        $model = $this->repository->findById($id);
+        $model = $this->query()->find($id);
 
         $eventDescription = $this->getDeletedEventDescription($model);
         Activity::log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
-        $this->repository->delete($model);
+        $model->delete();
+        app('cache')->flush();
 
         return redirect()->action("Back\\{$this->modelName}Controller@index");
     }
@@ -192,5 +186,10 @@ abstract class ModuleController extends Controller
         $modelName = trans("back-{$this->moduleName}.singular");
 
         return trans('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
+    }
+
+    protected function query()
+    {
+        return call_user_func("App\\Models\\{$this->modelName}::query");
     }
 }

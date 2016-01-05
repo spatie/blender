@@ -7,9 +7,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="@yield('pageDescription')">
 
-    <title>@yield('pageTitle')</title>
+    <meta name="description" content="@yield('metaDescription', fragment('site.description'))">
+    <link rel="canonical" href="@yield('canonical', request()->url())" />
+
+    <title>
+        @if($hasTitle)
+            @yield('title') - {{ fragment('site.title') }}
+        @else
+            {{ fragment('site.title') }}
+        @endif
+    </title>
 
     <link href="{{ elixir('css/front.css') }}" rel="stylesheet">
     @include('front.layout._partials.openGraph')

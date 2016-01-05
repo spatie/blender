@@ -2,19 +2,18 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
+use App\Foundation\Models\Base\ModuleModel;
+use App\Foundation\Models\Traits\HasTags;
 use App\Models\Enums\TagType;
-use App\Models\Foundation\Traits\HasTags;
-use App\Models\Foundation\Interfaces\HasTags as HasTagsInterface;
 
-class NewsItem extends ModuleModel implements HasTagsInterface
+class NewsItem extends ModuleModel
 {
     use HasTags;
 
-    protected $moduleName = 'newsItems';
+    protected $with = ['translations', 'media', 'tags'];
     protected $dates = ['publish_date'];
 
-    public $tagTypes = [TagType::NEWS_ITEM_TAG, TagType::NEWS_ITEM_CATEGORY];
+    public $tagTypes = [TagType::NEWS_CATEGORY, TagType::NEWS_TAG];
     public $mediaLibraryCollections = ['images', 'downloads'];
     public $translatedAttributes = ['name', 'text', 'url'];
 

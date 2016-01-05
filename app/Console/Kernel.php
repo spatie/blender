@@ -18,6 +18,7 @@ class Kernel extends ConsoleKernel
         Commands\DeleteOldDrafts::class,
         Commands\GenerateModule::class,
         Commands\PerformScheduledBackup::class,
+        Commands\SeedFragments::class,
         Commands\SendSlackMessage::class,
         \Spatie\LinkChecker\CheckLinksCommand::class,
     ];

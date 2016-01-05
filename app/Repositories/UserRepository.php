@@ -2,37 +2,22 @@
 
 namespace App\Repositories;
 
+use App\Foundation\Repositories\Repository;
 use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;
-use Illuminate\Database\Eloquent\Collection;
+use App\Models\User;
+use Illuminate\Support\Collection;
 
 interface UserRepository extends Repository
 {
-    /**
-     * Find user by the given token.
-     *
-     * @param string $token
-     *
-     * @return mixed
-     */
-    public function findByToken($token);
+    const MODEL = User::class;
 
     /**
-     * Get all users with the given role.
-     *
-     * @param  $role
-     *
-     * @return Collection
+     * @return \App\Models\User|null
      */
-    public function getAllWithRole($role);
+    public function findByToken(string $token);
 
-    /**
-     * Get all users with the given role and status.
-     *
-     * @param UserRole   $role
-     * @param UserStatus $status
-     *
-     * @return Collection
-     */
-    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status);
+    public function getAllWithRole(UserRole $role) : Collection;
+
+    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status) : Collection;
 }

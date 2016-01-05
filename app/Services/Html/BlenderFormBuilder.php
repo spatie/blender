@@ -259,7 +259,7 @@ class BlenderFormBuilder
         $lng = $this->form()->hidden(
             "{$name}_lng",
             $this->form()->useInitialValue($this->model, "{$name}_lng"),
-            ['data-locationpicker-lon' => '']
+            ['data-locationpicker-lng' => '']
         );
 
         $zoom = $this->form()->hidden(

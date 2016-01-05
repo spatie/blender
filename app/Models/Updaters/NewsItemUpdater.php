@@ -2,20 +2,21 @@
 
 namespace App\Models\Updaters;
 
+use App\Foundation\Models\Updaters\UpdatesTags;
+use App\Models\Enums\TagType;
 use Carbon\Carbon;
-use App\Models\Foundation\Updaters\ModuleModelUpdater;
+use App\Foundation\Models\Updaters\ModuleModelUpdater;
 
 class NewsItemUpdater extends ModuleModelUpdater
 {
-    /**
-     * @return \Illuminate\Database\Eloquent\Model
-     */
+    use UpdatesTags;
+
     public function update()
     {
         parent::update();
 
-        $this->model->publish_date = Carbon::createFromFormat('d/m/Y', $this->request->get('publish_date'));
+        $this->updateTags(TagType::NEWS_TAG(), TagType::NEWS_CATEGORY());
 
-        return $this->model;
+        $this->model->publish_date = Carbon::createFromFormat('d/m/Y', $this->request->get('publish_date'));
     }
 }

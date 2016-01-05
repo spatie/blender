@@ -9,5 +9,5 @@ tags: Tags
 images: Afbeeldingen
 downloads: Downloads
 save: Bewaar nieuwsbericht
-news_item_category: Categorie
-news_item_tag: Tags
+news_category: Categorie
+news_tag: Tags

@@ -2,27 +2,24 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\TranslatableEloquent;
-use App\Models\Foundation\Traits\Presentable;
+use App\Foundation\Models\Base\TranslatableEloquent;
+use App\Foundation\Models\Traits\Presentable;
 
 class Fragment extends TranslatableEloquent
 {
     use Presentable;
 
-    protected $guarded = ['id'];
+    protected $with = ['translations'];
 
     public $translatedAttributes = ['text'];
 
     /**
-     * Return a sluggified version the text of the string.
-     *
-     * @param $name
-     * @param string $locale
-     *
-     * @return string
+     * @return \App\Models\Fragment|null
      */
-    public static function getSlugAttribute($name, $locale = '')
+    public static function findByName(string $name)
     {
-        return str_slug(static::getText($name, $locale));
+        return app('cache')->rememberForever("fragment.findByName.{$name}", function () use ($name) {
+            return static::where('name', $name)->first();
+        });
     }
 }

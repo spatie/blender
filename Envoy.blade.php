@@ -1,6 +1,6 @@
 @setup
 require __DIR__.'/vendor/autoload.php';
-(new \Dotenv())->load(__DIR__, '.env');
+(new \Dotenv\Dotenv(__DIR__, '.env'))->load();
 
 $server = "";
 $repository = "spatie/{$server}";
@@ -139,7 +139,7 @@ php artisan migrate --force;
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 php artisan cache:clear
-sudo service php5-fpm restart
+sudo service php7.0-fpm restart
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])

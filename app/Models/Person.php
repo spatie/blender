@@ -2,17 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
-use App\Models\Foundation\Traits\Sluggable as SluggableTrait;
-use Cviebrock\EloquentSluggable\SluggableInterface as Sluggable;
+use App\Foundation\Models\Base\ModuleModel;
+use App\Foundation\Models\Traits\Sluggable;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 
-class Person extends ModuleModel implements Sluggable, SortableInterface
+class Person extends ModuleModel implements SortableInterface
 {
-    use SluggableTrait, Sortable;
+    use Sortable, Sluggable;
 
-    protected $sluggable = 'name';
+    protected $with = ['translations', 'media'];
 
     public $mediaLibraryCollections = ['images'];
     public $translatedAttributes = ['function', 'career'];

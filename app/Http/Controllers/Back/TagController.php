@@ -15,7 +15,7 @@ class TagController extends ModuleController
 
     public function index()
     {
-        $tags = $this->repository->getAll()->reduce(function (Collection $carry, Tag $tag) {
+        $tags = Tag::nonDraft()->get()->reduce(function (Collection $carry, Tag $tag) {
 
             if (!$carry->has($tag->type)) {
                 $carry->put($tag->type, new Collection());

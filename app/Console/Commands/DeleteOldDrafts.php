@@ -40,7 +40,7 @@ class DeleteOldDrafts extends Command
     private function getAllDraftableModelClassNames()
     {
         return array_filter($this->getAllModelClassNames(), function ($modelClass) {
-            return  (in_array(Draftable::class, class_uses($modelClass)));
+            return  in_array(Draftable::class, class_uses($modelClass));
         });
     }
 

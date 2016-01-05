@@ -3,34 +3,40 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\ActivityRepository;
-use LaravelAnalytics;
+use Illuminate\Support\Collection;
+use Spatie\Activitylog\Models\Activity;
 
 class DashboardController extends Controller
 {
-    /**
-     * @param \App\Repositories\ActivityRepository $activityRepository
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(ActivityRepository $activityRepository)
+    public function index()
     {
-        $logItems = $activityRepository->getLatest();
+        $logItems = $this->getLatestActivityItems();
 
         $view = view('back.dashboard.index')->with(compact('logItems'));
 
-        if (config('laravel-analytics.siteId') == '') {
+        if (empty(config('laravel-analytics.siteId'))) {
             return $view;
         }
 
-        $analyticsData = LaravelAnalytics::getVisitorsAndPageViews(14);
+        $analyticsData = $this->getAnalyticsData();
 
-        $dates = $analyticsData->lists('date')->toArray();
-        $visitors = $analyticsData->lists('visitors')->toArray();
-        $pageViews = $analyticsData->lists('pageViews')->toArray();
+        $dates = $analyticsData->lists('date');
+        $visitors = $analyticsData->lists('visitors');
+        $pageViews = $analyticsData->lists('pageViews');
 
-        $view = $view->with(compact('dates', 'visitors', 'pageViews'));
+        return $view->with(compact('dates', 'visitors', 'pageViews'));
+    }
 
-        return $view;
+    protected function getLatestActivityItems() : Collection
+    {
+        return Activity::with('user')
+            ->latest()
+            ->limit(30)
+            ->get();
+    }
+
+    protected function getAnalyticsData() : Collection
+    {
+        return app('laravelAnalytics')->getVisitorsAndPageViews(14);
     }
 }

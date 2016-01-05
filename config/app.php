@@ -2,6 +2,8 @@
 
 return [
 
+    'env' => env('APP_ENV', 'production'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode
@@ -103,9 +105,9 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' => env('APP_KEY', 'SomeRandomStringWith32Characters'),
 
-    'cipher' => MCRYPT_RIJNDAEL_128,
+    'cipher' => 'AES-256-CBC',
 
     /*
     |--------------------------------------------------------------------------
@@ -138,17 +140,16 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
+        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
-        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-        Illuminate\Routing\ControllerServiceProvider::class,
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
+        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
@@ -156,56 +157,51 @@ return [
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
         Illuminate\Redis\RedisServiceProvider::class,
-        Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Session\SessionServiceProvider::class,
-        // Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
         /*
          * Application Service Providers...
         */
-        App\Services\Locale\LocaleServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
-        App\Providers\BusServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
         App\Providers\ValidationServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Services\Navigation\NavigationServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
+        App\Services\Locale\LocaleServiceProvider::class,
+        App\Services\Navigation\NavigationServiceProvider::class,
 
 
         /*
          * Third party Service Providers
          */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        Laracasts\Flash\FlashServiceProvider::class,
-        Spatie\Activitylog\ActivitylogServiceProvider::class,
-        Jenssegers\Date\DateServiceProvider::class,
+        Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Devitek\Core\Translation\TranslationServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
-        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
-        Menu\MenuServiceProvider::class,
-        Clockwork\Support\Laravel\ClockworkServiceProvider::class,
-        Spatie\Tail\TailServiceProvider::class,
-        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
-        Spatie\Glide\GlideServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
-        Spatie\Backup\BackupServiceProvider::class,
-        Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class,
-        Laracasts\Generators\GeneratorsServiceProvider::class,
-        Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
-        Spatie\Newsletter\NewsletterServiceProvider::class,
+        Jenssegers\Date\DateServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         Maknz\Slack\SlackServiceProvider::class,
-        Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
-        Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
-        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        Menu\MenuServiceProvider::class,
+        Spatie\Activitylog\ActivitylogServiceProvider::class,
+        Spatie\Backup\BackupServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
+        Spatie\Glide\GlideServiceProvider::class,
+        Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
+        Spatie\LaravelAnalytics\LaravelAnalyticsServiceProvider::class,
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        Spatie\Newsletter\NewsletterServiceProvider::class,
+        Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
+        Spatie\Tail\TailServiceProvider::class,
     ],
 
     /*
@@ -261,26 +257,25 @@ return [
         /*
          * Application Facades...
          */
-        'Navigation'	=> App\Services\Navigation\NavigationFacade::class,
         'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
+        'Navigation'	=> App\Services\Navigation\NavigationFacade::class,
 
         /*
          * Third party Facades...
          */
-        'Clockwork'         => Clockwork\Support\Laravel\Facade::class,
-        'Flash'       		=> Laracasts\Flash\Flash::class,
         'Activity'    		=> Spatie\Activitylog\ActivitylogFacade::class,
-        'Date'        		=> Jenssegers\Date\Date::class,
-        'Menu'        		=> Menu\Menu::class,
         'Breadcrumbs' 		=> DaveJamesMiller\Breadcrumbs\Facade::class,
-        'GlideImage'  		=> Spatie\Glide\GlideImageFacade::class,
-        'Excel'       		=> Maatwebsite\Excel\Facades\Excel::class,
-        'LaravelAnalytics' 	=> Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
         'Bugsnag' 			=> Bugsnag\BugsnagLaravel\BugsnagFacade::class,
+        'Date'        		=> Jenssegers\Date\Date::class,
+        'Excel'       		=> Maatwebsite\Excel\Facades\Excel::class,
+        'Flash'       		=> Laracasts\Flash\Flash::class,
+        'Fractal'           => Spatie\Fractal\FractalFacade::class,
+        'GlideImage'  		=> Spatie\Glide\GlideImageFacade::class,
+        'GoogleTagManager'  => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
+        'LaravelAnalytics' 	=> Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
+        'Menu'        		=> Menu\Menu::class,
         'Newsletter' 		=> Spatie\Newsletter\NewsletterFacade::class,
         'Slack' 			=> Maknz\Slack\Facades\Slack::class,
-        'GoogleTagManager'  => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
-        'Fractal'           => Spatie\Fractal\FractalFacade::class,
     ],
 
 ];

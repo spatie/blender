@@ -7,29 +7,15 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FragmentRequest;
 use App\Models\Fragment;
 use App\Models\Updaters\FragmentUpdater;
-use App\Repositories\FragmentRepository;
 
 class FragmentController extends Controller
 {
-    /**
-     * @var \App\Repositories\FragmentRepository
-     */
-    protected $fragmentRepository;
-
-    /**
-     * @param \App\Repositories\FragmentRepository $fragmentRepository
-     */
-    public function __construct(FragmentRepository $fragmentRepository)
-    {
-        $this->fragmentRepository = $fragmentRepository;
-    }
-
     /**
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $fragments = $this->fragmentRepository->getAll();
+        $fragments = Fragment::all();
 
         return view('back.fragments.index')->with(compact('fragments'));
     }
@@ -56,7 +42,7 @@ class FragmentController extends Controller
      */
     public function edit($id)
     {
-        $fragment = $this->fragmentRepository->findById($id);
+        $fragment = Fragment::find($id);
 
         return view('back.fragments.edit')->with(compact('fragment'));
     }
@@ -71,36 +57,17 @@ class FragmentController extends Controller
      */
     public function update($id, FragmentRequest $request)
     {
-        $fragment = $this->fragmentRepository->findById($id);
+        $fragment = Fragment::find($id);
 
         $fragment = FragmentUpdater::create($fragment, $request)->update();
 
-        $this->fragmentRepository->save($fragment);
+        $fragment->save();
+        app('cache')->flush();
 
         $eventDescription = trans('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);
         Activity::log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\FragmentController@edit', [$fragment->id]);
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $fragment = $this->fragmentRepository->findById($id);
-
-        $eventDescription = trans('back.events.deleted', ['model' => 'Fragment', 'name' => $fragment->name]);
-
-        $this->fragmentRepository->delete($fragment);
-
-        flash()->success(strip_tags($eventDescription));
-
-        return redirect()->action('Back\FragmentController@index');
     }
 }

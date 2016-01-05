@@ -7,8 +7,8 @@
 
 {!! BlenderForm::date('publish_date') !!}
 
-{!! BlenderForm::category('news_item_category') !!}
-{!! BlenderForm::tags('news_item_tag') !!}
+{!! BlenderForm::category('news_category') !!}
+{!! BlenderForm::tags('news_tag') !!}
 
 {!! BlenderForm::media('images', 'images') !!}
 {!! BlenderForm::media('downloads', 'downloads') !!}

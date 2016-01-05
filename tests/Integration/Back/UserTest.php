@@ -114,7 +114,7 @@ class UserTest extends BackTestCase
      */
     public function it_can_delete_a_user_with_a_role($role)
     {
-        $user = User::where('role', $role)->first();
+        $user = User::where('role', $role)->get()->last();
 
         $this
             ->visit(action('Back\UserController@index', compact('role')))
