@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0cd06bf3151ff23847b4527cd77c8e4a",
-    "content-hash": "93a899d747e2420bb16c09f7e84e3ccb",
+    "hash": "109be9dab87adfe3950ac7a60491a2d4",
+    "content-hash": "03af7b9831d783f6df584efd4407dc21",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -2762,123 +2762,6 @@
             "time": "2015-12-04 15:28:43"
         },
         {
-            "name": "orchestra/database",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/orchestral/database.git",
-                "reference": "364737cfcc0d2f61878622d2bf5406859772cc83"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/database/zipball/364737cfcc0d2f61878622d2bf5406859772cc83",
-                "reference": "364737cfcc0d2f61878622d2bf5406859772cc83",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "~5.2.0",
-                "illuminate/database": "~5.2.0",
-                "php": ">=5.5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Orchestra\\Database\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com",
-                    "homepage": "https://github.com/crynobone"
-                },
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com",
-                    "homepage": "https://github.com/taylorotwell"
-                }
-            ],
-            "description": "Database Component for Orchestra Platform",
-            "keywords": [
-                "database",
-                "orchestra-platform",
-                "orchestral"
-            ],
-            "time": "2015-12-15 02:29:13"
-        },
-        {
-            "name": "orchestra/testbench",
-            "version": "v3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/orchestral/testbench.git",
-                "reference": "2d609a27dac57f86c45de70363db018ad3c5e910"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/2d609a27dac57f86c45de70363db018ad3c5e910",
-                "reference": "2d609a27dac57f86c45de70363db018ad3c5e910",
-                "shasum": ""
-            },
-            "require": {
-                "fzaninotto/faker": "~1.4",
-                "laravel/framework": "~5.2.0",
-                "orchestra/database": "~3.2.0",
-                "php": ">=5.5.0",
-                "symfony/css-selector": "2.8.*|3.0.*",
-                "symfony/dom-crawler": "2.8.*|3.0.*"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "~4.0|~5.0"
-            },
-            "suggest": {
-                "phpunit/phpunit": "Allow to use PHPUnit for testing your Laravel Application/Package (~4.0|~5.0)."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Orchestra\\Testbench\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com",
-                    "homepage": "https://github.com/crynobone"
-                }
-            ],
-            "description": "Laravel Package Unit Testing Helper",
-            "homepage": "http://orchestraplatform.com/docs/latest/components/testbench/",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "laravel",
-                "orchestra-platform",
-                "orchestral",
-                "testing"
-            ],
-            "time": "2015-12-21 23:36:20"
-        },
-        {
             "name": "paragonie/random_compat",
             "version": "1.1.4",
             "source": {
@@ -5097,24 +4980,24 @@
         },
         {
             "name": "spatie/laravel-robots-middleware",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-robots-middleware.git",
-                "reference": "3174481ac2fc2330632a608116273d1728ab922c"
+                "reference": "e3de2a739ef0508837299eb2f0c7cb7335d8c7ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-robots-middleware/zipball/3174481ac2fc2330632a608116273d1728ab922c",
-                "reference": "3174481ac2fc2330632a608116273d1728ab922c",
+                "url": "https://api.github.com/repos/spatie/laravel-robots-middleware/zipball/e3de2a739ef0508837299eb2f0c7cb7335d8c7ce",
+                "reference": "e3de2a739ef0508837299eb2f0c7cb7335d8c7ce",
                 "shasum": ""
             },
             "require": {
                 "illuminate/http": "^5.1",
-                "orchestra/testbench": "^3.2",
                 "php": "^7.0"
             },
             "require-dev": {
+                "orchestra/testbench": "^3.2",
                 "phpunit/phpunit": "4.*"
             },
             "type": "library",
@@ -5143,7 +5026,7 @@
                 "seo",
                 "spatie"
             ],
-            "time": "2016-01-05 15:26:24"
+            "time": "2016-01-05 15:52:27"
         },
         {
             "name": "spatie/laravel-sluggable",
