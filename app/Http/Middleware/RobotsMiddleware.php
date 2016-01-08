@@ -10,6 +10,10 @@ class RobotsMiddleware extends BaseRobotsMiddleware
 {
     protected function shouldIndex(Request $request) : bool
     {
+        if (ends_with($request->getHost(), 'spatie.be')) {
+            return false;
+        }
+
         if (! app()->environment('production')) {
             return false;
         }
