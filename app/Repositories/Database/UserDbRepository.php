@@ -18,7 +18,7 @@ class UserDbRepository extends DbRepository implements UserRepository
     public function findByToken(string $token)
     {
         $userInfo = app(Database::class)
-            ->table(config('auth.password.table'))
+            ->table(config('auth.passwords.users.table'))
             ->where('token', $token)
             ->first();
 
