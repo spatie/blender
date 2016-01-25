@@ -10,7 +10,7 @@ abstract class Mailer
     /**
      * @var Mail
      */
-    private $mail;
+    protected $mail;
 
     /**
      * @param Mail $mail
