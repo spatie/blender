@@ -15,38 +15,30 @@ function content_locale() : string
     return app('currentLocale')->getContentLocale();
 }
 
-/**
- * Get a translated fragment's text. Since this utility function is occasionally used in route files, there's also a
- * check for the database connection to return a fallback fragment in local environments.
- *
- * @param string $locale
- *
- * @return \Spatie\String\Str | string
- */
-function fragment(string $name,$locale = null)
+function fragment($name, array $replacements = []) : string
 {
-    $locale = $locale ?: content_locale();
-
-    $fragment = App\Models\Fragment::findByName($name);
+    $fragment = app(App\Repositories\FragmentRepository::class)->findByName($name);
 
     if (!$fragment) {
         return $name;
     }
 
-    return string($fragment->getTranslation($locale)->text);
+    $text = $fragment->text;
+
+    foreach ($replacements as $key => $value) {
+        $text = str_replace(
+            [':'.Str::upper($key), ':'.Str::ucfirst($key), ':'.$key],
+            [Str::upper($value), Str::ucfirst($value), $value],
+            $text
+        );
+    }
+
+    return $text;
 }
 
-/**
- * Get a translated fragment slug.
- *
- * @param string $name
- * @param string $locale
- *
- * @return string
- */
-function fragment_slug($name, $locale = null)
+function fragment_slug($name, array $replacements = []) : string
 {
-    $translation = fragment($name, $locale);
+    $translation = fragment($name, $replacements);
 
     return str_slug($translation);
 }
