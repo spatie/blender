@@ -91,7 +91,7 @@ class Navigation
     {
         $menu = Menu::handler('backNavigation');
 
-        $menu->add(action('Back\DashboardController@index', [], false), 'Home', null, null, ['class'=>'menu_group_item']);
+        $menu->add(action('Back\DashboardController@index', [], false), 'Dashboard', null, null, ['class'=>'menu_group_item']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));
