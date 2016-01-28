@@ -15,15 +15,14 @@ global.jQuery = global.$ = $ // expose jQuery for redactor :(
 
 var webfont = require('webfontloader')
 webfont.load({
-    google: {
-        families: ['Lato:100,200,300,400,700,900,300italic'],
-    },
     custom: {
         families: ['FontAwesome'],
         urls: ['/fonts/font-awesome/css/font-awesome.min.css'],
+        testStrings: {
+            FontAwesome: '\ue800',
+        },
     },
 })
-
 
 
 /* ---------- blender.js modules */

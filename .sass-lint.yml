@@ -9,7 +9,10 @@ rules:
   # Extends
   extends-before-mixins: 1
   extends-before-declarations: 1
-  placeholder-in-extend: 1
+  placeholder-in-extend: 0
+
+  class-name-format:
+    - 0
 
   # Mixins
   mixins-before-declarations: 1
@@ -66,7 +69,7 @@ rules:
     - 1
     -
         max-depth: 3
-  property-sort-order: 1
+  property-sort-order: 0
   quotes: 1
   shorthand-values: 1
   url-quotes: 1
@@ -81,6 +84,7 @@ rules:
   space-before-bang: 1
   space-after-bang: 1
   space-between-parens: 1
+  space-around-operator: 0
 
   # Final Items
   trailing-semicolon: 1

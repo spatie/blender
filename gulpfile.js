@@ -7,7 +7,7 @@ blenderGulp.options = {
     files : {
         front : {
             sass : 'front/front.scss',
-            js : ['app.js']
+            js : ['head.js', 'app.js']
         },
         back : {
             sass : 'back/back.scss',

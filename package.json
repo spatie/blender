@@ -1,6 +1,6 @@
 {
   "name": "Blender",
-  "version": "5.3.2",
+  "version": "5.4.0",
   "authors": [
     "Sebastian De Deyne <sebastian@spatie.be>",
     "Freek Van der Herten <freek@spatie.be>",
@@ -27,7 +27,7 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-select": "^0.8.2",
-    "spatie-front.js": "spatie-custom/spatie-front.js#0.0.3",
+    "viewport-utility": "^1.0.5",
     "susy": "^2.2.5",
     "webfontloader": "^1.6.10"
   }

@@ -1,182 +1,217 @@
 .menu{
-  margin-bottom: 2em;
-  background: color($gray, lightest);
+    margin-bottom: 2em;
+    background: color($gray, lightest);
 
-  @include mq(s){
-    text-align: center;
-  }
-
-  ul{
-    @include ul-horizontal;
-  }
-
-  li{
-    margin-bottom: 0;
-
-    &.active a{
-      font-weight: font-weight(extrabold);
-      color: color($gray, darker);
+    @include mq(s){
+        text-align: center;
     }
-  }
 
-  a{
-    color: color($gray, dark);
-    border-bottom: none;
-    display: inline-block;
-
-    &:hover{
-      color: color($gray, darker);
+    ul{
+        @include ul-horizontal;
     }
-  }
+
+    li{
+        margin-bottom: 0;
+
+        &.active a{
+            font-weight: font-weight(extrabold);
+            color: color($gray, darker);
+        }
+    }
+
+    a{
+        color: color($gray, dark);
+        border-bottom: none;
+        display: inline-block;
+
+        &:hover{
+            color: color($gray, darker);
+        }
+    }
 }
 
 .menu_brand{
 
+    position: absolute;
+    top: 3.2em;
+    z-index: z-index(above);
 
-  position: absolute;
-  top: 1.2em;
-  z-index: z-index(above);
 
-
-  @include mq(s){
-    position: relative;
-    text-align: center;
-  }
+    @include mq(s){
+        top: 1em;
+        position: relative;
+        text-align: center;
+    }
 }
 
-.menu_brand_logo{
-  width: 2em;
-  height: auto;
-  vertical-align: middle;
-
-  @include mq(s){
-    margin-top: 1.5em;
-    margin-bottom: 1.5em;
-  }
-
-}
-
-.menu_brand_name{
-  font-weight: font-weight(normal);
-  text-transform: uppercase;
-  border: none;
-  color: color($blue, darkest);
-  padding: 0 0.5em !important;
-
-  @include mq(m){
-    display: none !important;
-  }
-}
 
 .menu_circle {
 
-  background-size: contain;
-  background-repeat: no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
 
-  &.-log-out {
-    @include circle(1.5rem);
+    &.-log-out {
+        @include circle(1.5rem);
 
-    overflow: hidden;
-    vertical-align: middle;
-    background-color: $white;
-    &:hover {
-      color: color($orange) !important;
+        overflow: hidden;
+        vertical-align: middle;
+        background-color: $white;
+        &:hover {
+            color: color($orange) !important;
+        }
     }
-  }
 
-  &.-front{
-    height: 1.5rem;
-    width: 1.5rem;
-    vertical-align: middle;
-    display: inline-block;
-    background-image: url('/favicon-32x32.png');
-    margin-right: 0.5em;
-  }
+    &.-front{
+        height: 1.5rem;
+        width: 1.5rem;
+        vertical-align: middle;
+        display: inline-block;
+        background-image: url('/favicon-32x32.png');
+        margin-right: .5em;
+    }
 }
 
-.menu_front-link{
-  @include mq(s){
-    display: none !important;
-  }
+.menu_front{
+    float: left;
+    padding: 1.5em 0;
+    font-size: 0.85rem;
+    z-index: 2;
 }
 
-.menu_front-link_protocol{
-  color: color($gray, lighter);
-  margin-right: 0.35em;
+
+.menu_front_link{
+    margin-bottom: 1.5em;
+
 }
 
+.menu_front_link_protocol{
+    color: color($gray, lighter);
+    margin-right: 0.35em;
+}
+
+.menu_front_link_host,
+.menu_front_link_protocol{
+
+    @include mq(m){
+        display: none !important;
+    }
+}
 
 .menu_user{
-  padding: 1.5em 0;
-  text-align: right;
-  font-size: font-size(s);
-
-  @include mq(s){
-    text-align: center;
-  }
-
-  li{
-    padding-left: 2em;
+    padding: 1.5em 0;
+    text-align: right;
+    font-size: font-size(s);
 
     @include mq(s){
-      padding: 0 1em;
+        text-align: center;
     }
-  }
+
+    li{
+        padding-left: 2em;
+
+        @include mq(s){
+            padding: 0 1em;
+        }
+    }
 
 }
 
 .menu_main{
 
-  font-weight: font-weight(bold);
-  margin-top: 1em;
+    font-weight: font-weight(bold);
+    margin-top: 1em;
 
-  @include mq(s){
-    text-align: center;
-  }
+    @include mq(s){
+        text-align: center;
+    }
 
-  li{
-    font-size: font-size(s);
-  }
+    li{
+        font-size: font-size(s);
+    }
 
 }
 
 .menu_group{
 
-  display: inline-block;
-  margin-bottom: 1em;
-
-  @include mq(m){
-    float: none !important;
-    margin-left: 0 !important;
-  }
-
-  ul {
     display: inline-block;
-    vertical-align: top;
-    border-radius: border-radius(s);
-    background-color: color($gray, lighter);
-    padding: 0.25em 0em;
-  }
+    margin-bottom: 1em;
 
-  & + &{
-    margin-left: 0.75em;
-  }
+    @include mq(m){
+        float: none !important;
+        margin-left: 0 !important;
+    }
 
-  li{
-    border-right: solid 2px darken(color($gray, lighter), 3%);
+    ul {
+        display: inline-block;
+        vertical-align: top;
+        border-radius: border-radius(s);
+        background-color: color($gray, lighter);
+        padding: 0.25em 0em;
+    }
 
-    &:last-child{
-      border-right: none;
+    & + &{
+        margin-left: 0.75em;
+    }
+
+    li{
+        border-right: solid 2px darken(color($gray, lighter), 3%);
+
+        &:last-child{
+            border-right: none;
+        }
+
+        a{
+            padding: 0.25em 1.75em;
+        }
+    }
+
+    //variations
+    &.-right{
+        float: right;
+    }
+
+}
+
+.menu_tabs{
+    margin-bottom: 3em;
+    font-size: font-size(s);
+    font-weight: font-weight(bold);
+
+    @include mq(s){
+        text-align: center;
+    }
+
+    ul{
+        @include ul-horizontal;
+        display: inline-block;
+        vertical-align: top;
+        border-radius: border-radius(s);
+        background-color: color($gray, lighter);
+        padding: 0.25em 0em;
+    }
+
+    li{
+        margin-bottom: 0;
+        border-right: solid 2px darken(color($gray, lighter), 3%);
+
+        &:last-child{
+            border-right: none;
+        }
+
+        &.active a{
+            font-weight: font-weight(extrabold);
+            color: color($gray, darker);
+        }
     }
 
     a{
-      padding: 0.25em 1.75em;
+        color: color($gray, dark);
+        border-bottom: none;
+        display: inline-block;
+        padding: 0.5em 1.75em;
+
+        &:hover{
+            color: color($gray, darker);
+        }
     }
-  }
-
-  //variations
-  &.-right{
-    float: right;
-  }
-
 }

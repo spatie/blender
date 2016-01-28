@@ -92,10 +92,12 @@ class Navigation
     {
         $menu = Menu::handler('backUser');
 
-        $menu->add(url('/'), '<span class="menu_circle -front"></span><span class="menu_front-link_protocol">'.(Request::isSecure() ? '<span class="fa fa-lock"></span>' : '<span class="fa fa-unlock"></span>').'</span>'.Request::getHost(), null, ['class' => 'menu_front-link', 'target' => 'blender', 'title' => url('/')]);
-        $menu->add(action('Back\UserController@edit', ['id' => auth()->user()->id], false), HTML::avatar(auth()->user(), '-small').auth()->user()->email, null, null);
+        $menu->add('/blender/user', trans('back-users.title'));
+        $menu->add(action('Back\ActivitylogController@index', [], false), 'Log');
+        $menu->add(action('Back\StatisticsController@index', [], false), trans('back-statistics.menuTitle'));
 
-        $menu->add('/nl/auth/logout', '<span class="fa fa-power-off"></span>', null, ['class' => 'menu_circle -log-out', 'title' => 'log out']);
+        $menu->add(action('Back\UserController@edit', ['id' => auth()->user()->id], false), HTML::avatar(auth()->user(), '-small') . auth()->user()->email, null, null);
+        $menu->add(action('Auth\AuthController@getLogout', [], false), '<span class="fa fa-power-off"></span>', null, ['class' => 'menu_circle -log-out', 'title' => 'log out']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));

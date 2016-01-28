@@ -1,13 +1,17 @@
 <div class="menu">
     <div class="grid">
-        <span class="menu_brand">
-            <img src="/images/svg/blender.svg" class="menu_brand_logo">
-            <a href="{{ URL::to('/blender') }}" class="menu_brand_name">Blender 5</a>
-        </span>
-
-        <nav class="menu_user">
-            {!! Navigation::getBackUserMenu() !!}
-        </nav>
+        <div class="clearfix">
+            <span class="menu_front">
+                <a class="menu_front_link" href="{{ URL::to('/') }}" target="blender">
+                    <span class="menu_circle -front"></span>
+                    <span class="menu_front_link_protocol"><span class="fa {{ Request::isSecure() ? 'fa-lock': 'fa-unlock' }}"></span></span>
+                    <span class="menu_front_link_host">{{ Request::getHost() }}</span>
+                </a>
+            </span>
+            <nav class="menu_user">
+                {!! Navigation::getBackUserMenu() !!}
+            </nav>
+        </div>
 
         <nav class="menu_main">
             <div class="menu_group">
@@ -15,9 +19,6 @@
             </div>
             <div class="menu_group">
                 {!! Navigation::getBackMainMenu() !!}
-            </div>
-            <div class="menu_group -right">
-                {!! Navigation::getBackServiceMenu() !!}
             </div>
         </nav>
     </div>

@@ -11,6 +11,7 @@
     <title>@yield('pageTitle')</title>
 
     {{-- Fonts & styles --}}
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,300italic' rel='stylesheet' type='text/css'>
     <link href="{{ elixir('css/back.css') }}" rel="stylesheet" />
 
     {{-- Script --}}

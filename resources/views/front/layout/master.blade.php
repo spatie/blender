@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ locale() }}"
-      data-viewport-breakpoint="900"
-      data-viewport-scroll-treshold="100">
+      data-viewport
+      data-viewport-small="900"
+      data-viewport-start="100"
+      data-viewport-end="100">
 @include('front.layout._partials.hiddenCredits')
 <head>
     <meta charset="utf-8">
@@ -20,6 +22,10 @@
     </title>
 
     <link href="{{ elixir('css/front.css') }}" rel="stylesheet">
+
+    <script src="{{ elixir('js/front.head.js') }}" ></script>
+    <script src="{{ elixir('js/front.app.js') }}" defer></script>
+
     @include('front.layout._partials.openGraph')
     @include('front.layout._partials.favicons')
     @include('front.layout._partials.bugsnag')
@@ -44,6 +50,5 @@
         © {{ Date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
     </small>
 </footer>
-<script src="{{ elixir('js/front.app.js') }}" defer></script>
 </body>
 </html>
