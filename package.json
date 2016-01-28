@@ -1,6 +1,6 @@
 {
   "name": "Blender",
-  "version": "5.4.0",
+  "version": "5.4.1",
   "authors": [
     "Sebastian De Deyne <sebastian@spatie.be>",
     "Freek Van der Herten <freek@spatie.be>",
@@ -11,15 +11,14 @@
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "blender-gulp": "^1.1.0",
     "blender-media": "^1.3.1",
     "blender.js": "^1.2.6",
     "browsernizr": "1.0.2",
     "chart.js": "^1.0.2",
+    "dom-storage": "^2.0.2",
     "dotenv": "^1.2.0",
     "gulp": "^3.9.0",
     "jquery": "^2.1.4",
@@ -27,8 +26,9 @@
     "react": "^0.14.0",
     "react-dom": "^0.14.0",
     "react-select": "^0.8.2",
-    "viewport-utility": "^1.0.5",
+    "store": "^1.3.20",
     "susy": "^2.2.5",
+    "viewport-utility": "^1.0.5",
     "webfontloader": "^1.6.10"
   }
 }

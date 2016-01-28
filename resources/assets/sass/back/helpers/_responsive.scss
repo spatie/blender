@@ -1,0 +1,20 @@
+&.\:responsive-mobile-only {
+    @include mq(s) {
+        display: block !important;
+    }
+
+    display: none !important;
+}
+
+&.\:responsive-desktop-only {
+
+    &.grid_col {
+        @include mq(s) {
+            display: none !important;
+        }
+    }
+
+    @include mq(s) {
+        display: none !important;
+    }
+}

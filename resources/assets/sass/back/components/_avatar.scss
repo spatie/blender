@@ -1,4 +1,4 @@
-.avatar{
+.avatar {
   @include circle(2.5rem, inline-block);
   vertical-align: middle;
   margin-right: 0.5em;
@@ -9,14 +9,15 @@
   background-position: center center;
 
   //variations
-  &.-small{
+  &.-small {
     @include circle(1.5rem, inline-block);
 
     border-width: 1px;
   }
 
-  &.-large{
+  &.-large {
     @include circle(5rem, inline-block);
   }
 
 }
+

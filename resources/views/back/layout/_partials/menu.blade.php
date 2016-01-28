@@ -17,8 +17,14 @@
             <div class="menu_group">
                 {!! Navigation::getBackDashboardMenu() !!}
             </div>
-            <div class="menu_group">
-                {!! Navigation::getBackMainMenu() !!}
+            <div class="menu_group" data-menu-group="content">
+                {!! Navigation::getBackContentMenu() !!}
+            </div>
+            <div class="menu_group" data-menu-group="module">
+                {!! Navigation::getBackModuleMenu() !!}
+            </div>
+            <div class="menu_group" data-menu-group="settings">
+                {!! Navigation::getBackServiceMenu() !!}
             </div>
         </nav>
     </div>

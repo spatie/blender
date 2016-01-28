@@ -3,6 +3,11 @@ All notable changes to Blender will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
+## [5.4.1] - 2016-01-28
+### Changad
+- Font imports
+- Back menu
+
 ## [5.4.0] - 2015-12-16
 ### Added
 - upgrade to Laravel 5.2

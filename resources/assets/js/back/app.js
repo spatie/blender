@@ -42,3 +42,5 @@ require('blender.js/modules/table.datatables')
 require('blender.js/modules/table.sortable')
 
 require('./media')
+
+require('./menu')
