@@ -13,7 +13,7 @@
             </nav>
         </div>
 
-        <nav class="menu_main">
+        <nav class="menu_main" data-menu-main>
             <div class="menu_group">
                 {!! Navigation::getBackDashboardMenu() !!}
             </div>

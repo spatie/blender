@@ -113,8 +113,13 @@
 
 .menu_main{
 
+    display: none;
     font-weight: font-weight(bold);
     margin-top: 1em;
+
+    .\$menu-ready &{
+        display: block;
+    }
 
     @include mq(s){
         text-align: center;

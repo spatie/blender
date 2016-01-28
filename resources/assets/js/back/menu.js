@@ -15,6 +15,8 @@ const store = require('store');
 
     getState();
 
+    showMenu();
+
 })();
 
 function addToggle($group) {
@@ -53,4 +55,9 @@ function getState(){
     activeGroups.map(group => {
         toggleGroup($('[data-menu-group="' + group +'"]'));
     })
+}
+
+function showMenu(){
+
+    $('html').addClass('$menu-ready');
 }
