@@ -78,9 +78,17 @@
     z-index: 2;
 }
 
+
+.menu_front_link{
+    padding-right: 1.5em;
+}
+
 .menu_front_link_protocol{
     color: color($gray, lighter);
-    margin-right: 0.35em;
+    padding-left: 0.35em;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .menu_front_link_host,
@@ -113,12 +121,12 @@
 
 .menu_main{
 
-    display: none;
+    opacity: 0;
     font-weight: font-weight(bold);
     margin-top: 1em;
 
     .\$menu-ready &{
-        display: block;
+        opacity: 1;
     }
 
     @include mq(s){
