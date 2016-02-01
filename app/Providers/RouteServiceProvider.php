@@ -45,7 +45,7 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(
             [
                 'namespace' => $this->namespace.'\Back',
-                'middleware' => 'can:viewBacksite',
+                'middleware' => 'auth:back',
                 'prefix' => 'blender',
             ],
             function ($router) {

@@ -13,13 +13,6 @@ use App\Models\Transformers\MediaTransformer;
 
 class MediaLibraryApiController extends Controller
 {
-    /**
-     * Add the upload file to the mediaLibrary.
-     *
-     * @param \App\Http\Requests\Back\AddMediaRequest $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function add(AddMediaRequest $request)
     {
         $model = $this->getModelFromRequest($request);
@@ -41,15 +34,6 @@ class MediaLibraryApiController extends Controller
             ]);
     }
 
-    /**
-     * Return all the media in the current collection for the given model as json.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
-     * @throws \Exception
-     */
     public function index(Request $request)
     {
         $model = $this->getModelFromRequest($request);
@@ -67,13 +51,6 @@ class MediaLibraryApiController extends Controller
         return Response::json($media);
     }
 
-    /**
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return mixed
-     *
-     * @throws \Exception
-     */
     protected function getModelFromRequest(Request $request)
     {
         if (!isset($request['model_name'])) {

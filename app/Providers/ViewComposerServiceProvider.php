@@ -9,7 +9,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function register()
     {
     }
-    
+
     public function boot()
     {
         $this->addComposer('*', \App\Http\ViewComposers\Shared\GlobalViewComposer::class);

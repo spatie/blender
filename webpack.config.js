@@ -1,5 +1,3 @@
-'use strict';
-
 const webpack = require('webpack');
 
 const config = require('blender-gulp/config/webpack');
