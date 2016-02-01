@@ -20,7 +20,7 @@
 
             <div class="form_group">
                 {!! Form::label('email', Lang::get('auth.email'), ['class' => '-invers']) !!}
-                {!! Form::email('email', $user->email, ['disabled' => true]) !!}
+                {!! Form::email('email', $user->email, ['disabled' => 'disabled', 'autocomplete' => 'off']) !!}
             </div>
 
             <div class="form_group">

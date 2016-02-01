@@ -17,7 +17,7 @@ function content_locale() : string
 
 function fragment($name, array $replacements = []) : string
 {
-    $fragment = app(App\Repositories\FragmentRepository::class)->findByName($name);
+    $fragment = App\Models\Fragment::findByName($name);
 
     if (!$fragment) {
         return $name;

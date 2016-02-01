@@ -137,9 +137,6 @@ return [
 
     'providers' => [
 
-        /*
-         * Laravel Framework Service Providers...
-         */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Auth\Passwords\PasswordResetServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -161,10 +158,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        /*
-         * Application Service Providers...
-        */
         App\Providers\AuthServiceProvider::class,
+        App\Providers\BladeDirectiveServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
@@ -175,10 +170,6 @@ return [
         App\Services\Locale\LocaleServiceProvider::class,
         App\Services\Navigation\NavigationServiceProvider::class,
 
-
-        /*
-         * Third party Service Providers
-         */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
@@ -254,15 +245,9 @@ return [
         'Form'      => Illuminate\Html\FormFacade::class,
         'HTML'      => Illuminate\Html\HtmlFacade::class,
 
-        /*
-         * Application Facades...
-         */
         'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
         'Navigation'	=> App\Services\Navigation\NavigationFacade::class,
 
-        /*
-         * Third party Facades...
-         */
         'Activity'    		=> Spatie\Activitylog\ActivitylogFacade::class,
         'Breadcrumbs' 		=> DaveJamesMiller\Breadcrumbs\Facade::class,
         'Bugsnag' 			=> Bugsnag\BugsnagLaravel\BugsnagFacade::class,

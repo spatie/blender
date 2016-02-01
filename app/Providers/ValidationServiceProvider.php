@@ -8,12 +8,13 @@ use Validator;
 
 class ValidationServiceProvider extends ServiceProvider
 {
-    /**
-     * Bootstrap any application services.
-     */
+    public function register()
+    {
+    }
+
     public function boot()
     {
-        Validator::extend('tags_exist', function ($attributeName, $tagNames, $parameters) {
+        Validator::extend('tags_exist', function ($attribute, $tagNames, $parameters) {
             list($tagType) = $parameters;
             $tagType = new TagType($tagType);
 
@@ -28,13 +29,5 @@ class ValidationServiceProvider extends ServiceProvider
 
             return true;
         });
-    }
-
-    /**
-     * Register the service provider.
-     */
-    public function register()
-    {
-        //
     }
 }

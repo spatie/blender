@@ -8,22 +8,12 @@ use Illuminate\Cache\MemcachedConnector;
 
 class ConfigServiceProvider extends ServiceProvider
 {
-    /**
-     * Overwrite any vendor / package configuration.
-     *
-     * This service provider is intended to provide a convenient location for you
-     * to overwrite any "vendor" or package configuration that you may want to
-     * modify before the application handles the incoming request / command.
-     */
     public function register()
     {
         $this->configureCacheProvider();
         $this->configureEmailRecipients();
     }
 
-    /**
-     * Set the cache driver to array if memcached is set but not available. Ignored in production.
-     */
     protected function configureCacheProvider()
     {
         if (
@@ -44,9 +34,6 @@ class ConfigServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * Set the email recipients to technical@spatie.be in non-production environments.
-     */
     protected function configureEmailRecipients()
     {
         if (app()->environment() === 'production') {

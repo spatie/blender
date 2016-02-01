@@ -32,16 +32,18 @@ backupDatabase
 migrateDatabase
 blessNewRelease
 cleanOldReleases
+regenerateLocalAssets
 finishDeploy
 @endmacro
 
 @macro('deploy-code')
-  deployOnlyCode
+deployOnlyCode
 @endmacro
 
 @macro('deploy-assets')
-  generateAssets
-  uploadGeneratedAssetsToCurrentDir
+generateAssets
+uploadGeneratedAssetsToCurrentDir
+regenerateLocalAssets
 @endmacro
 
 @task('startDeployment', ['on' => 'local'])
@@ -54,7 +56,6 @@ git pull origin master
 {{ logMessage('start generateAssets') }}
 npm install &> /dev/null
 gulp --production &> /dev/null
-gulp --production --back &> /dev/null
 @endtask
 
 @task('cloneRepository', ['on' => 'remote'])
@@ -170,6 +171,11 @@ git pull origin master
 {{ logMessage('start uploadGeneratedAssetsToCurrentDir') }}
 scp -r public/build {{ $server }}:{{ $currentDir }}/public
 php artisan cache:clear
+@endtask
+
+@task('regenerateLocalAssets', ['on' => 'local'])
+{{ logMessage('regenerating local assets') }}
+gulp
 @endtask
 
 @after
