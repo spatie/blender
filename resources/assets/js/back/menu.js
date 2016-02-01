@@ -48,7 +48,7 @@ function storeState(){
 
 function getState(){
 
-    let activeGroups = store.get('activeMenuGroups');
+    let activeGroups = store.get('activeMenuGroups', []);
 
     activeGroups.map(group => {
         toggleGroup($('[data-menu-group="' + group +'"]'));

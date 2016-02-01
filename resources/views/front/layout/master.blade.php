@@ -21,34 +21,35 @@
         @endif
     </title>
 
-    <link href="{{ elixir('css/front.css') }}" rel="stylesheet">
+    @if(! app()->environment('production'))
+        <script src="{{ elixir('front.style.js') }}"></script>
+    @else
+        <link rel="stylesheet" href="{{ elixir('front.style.css') }}">
+    @endif
 
-    <script src="{{ elixir('js/front.head.js') }}" ></script>
-    <script src="{{ elixir('js/front.app.js') }}" defer></script>
+    <script src="{{ elixir('front.head.js') }}"></script>
 
     @include('front.layout._partials.openGraph')
     @include('front.layout._partials.favicons')
     @include('front.layout._partials.bugsnag')
 </head>
 <body>
-@include('googletagmanager::script')
-@include('front.layout._partials.deprecatedBrowser')
-
-<header class="header">
-    <div class="grid">
-        <nav class="nav">
-            {!! Navigation::getFrontMainMenu() !!}
-        </nav>
-    </div>
-</header>
-
-@include('front.layout._partials.flashMessage')
-@yield('content')
-
-<footer class="footer">
-    <small>
-        © {{ Date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
-    </small>
-</footer>
+    @include('googletagmanager::script')
+    @include('front.layout._partials.deprecatedBrowser')
+    <header class="header">
+        <div class="grid">
+            <nav class="nav">
+                {!! Navigation::getFrontMainMenu() !!}
+            </nav>
+        </div>
+    </header>
+    @include('front.layout._partials.flashMessage')
+    @yield('content')
+    <footer class="footer">
+        <small>
+            © {{ Date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
+        </small>
+    </footer>
+    <script src="{{ elixir('front.app.js') }}"></script>
 </body>
 </html>

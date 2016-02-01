@@ -10,43 +10,34 @@
     <meta name="description" content="@yield('pageDescription')">
     <title>@yield('pageTitle')</title>
 
-    {{-- Fonts & styles --}}
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,300italic' rel='stylesheet' type='text/css'>
-    <link href="{{ elixir('css/back.css') }}" rel="stylesheet" />
 
-    {{-- Script --}}
+    @if(! app()->environment('production'))
+        <script src="{{ elixir('back.style.js') }}"></script>
+    @else
+        <link rel="stylesheet" href="{{ elixir('back.style.css') }}">
+    @endif
 
-    {{-- Favicon --}}
     @include('front.layout._partials.favicons')
-
 </head>
 <body>
-
     @if (auth()->user())
         @include('back.layout._partials.menu')
-
         <div class="grid">
             @include('back.layout._partials.breadcrumbs')
             @include('back.layout._partials.flashMessage')
         </div>
     @endif
-
     <main class="main">
         @yield('content')
     </main>
-
     @if (auth()->user())
         @include('back.layout._partials.footer')
     @endif
-
-{{-- Scripts --}}
-<script src="{{ elixir('js/back.app.js') }}" ></script>
-@yield('extraJs')
-
-{{-- redactor--}}
-<script src="/redactor/redactor.min.js"></script>
-<script src="/redactor/imagemanager.js"></script>
-<script src="/redactor/video.js"></script>
-
+    <script src="{{ elixir('back.app.js') }}"></script>
+    @yield('extraJs')
+    <script src="/redactor/redactor.min.js"></script>
+    <script src="/redactor/imagemanager.js"></script>
+    <script src="/redactor/video.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <h2>{{ trans('back-statistics.visitors') }}</h2>
 
-<div class="chart">
+<div class="chart" data-chart>
     <canvas id="daily-visitors" width=1000 height=250></canvas>
     <div class="chart_legend" id="daily-visitors-legend">
     </div>
@@ -41,5 +41,4 @@
             }
     };
 </script>
-<script src="{{ elixir('js/back.chart.js') }}" ></script>
 @stop
