@@ -9,55 +9,60 @@ use Cache;
 
 class RepositoryServiceProvider extends ServiceProvider
 {
-    /**
-     * @var array
-     */
     protected $dbRepositories = [
         'NewsItem',
         'Person',
         'User',
     ];
 
-    /**
-     * @var array
-     */
     protected $cacheRepositories = [];
 
-    /**
-     * @param \Illuminate\Contracts\Events\Dispatcher $events
-     */
-    public function boot(Dispatcher $events)
-    {
-        foreach ($this->cacheRepositories as $repositoryName) {
-            $events->listen(
-                "eloquent.saved: App\\Models\\{$repositoryName}",
-                function () {Cache::flush();}
-            );
-        }
-    }
-
-    /**
-     * Register any application services.
-     */
     public function register()
     {
-        // Don't use cache repositories in the back end
+        $this->unregisterCacheRepositoriesInBlender();
+        $this->registerCacheRepositories();
+        $this->registerDbRepositories();
+    }
+
+    public function boot(Dispatcher $events)
+    {
+        $this->registerCacheFlushEvents($events);
+    }
+
+    protected function unregisterCacheRepositoriesInBlender()
+    {
         if ($this->app->make(CurrentSection::class)->determine() === 'blender') {
             $this->dbRepositories = array_merge($this->dbRepositories, $this->cacheRepositories);
             $this->cacheRepositories = [];
         }
+    }
 
+    protected function registerCacheRepositories()
+    {
         foreach ($this->cacheRepositories as $cacheRepository) {
             $this->app->singleton(
                 "App\\Repositories\\{$cacheRepository}Repository",
                 "App\\Repositories\\Cache\\{$cacheRepository}CacheRepository"
             );
         }
+    }
 
+    protected function registerDbRepositories()
+    {
         foreach ($this->dbRepositories as $dbRepository) {
             $this->app->singleton(
                 "App\\Repositories\\{$dbRepository}Repository",
                 "App\\Repositories\\Database\\{$dbRepository}DbRepository"
+            );
+        }
+    }
+
+    protected function registerCacheFlushEvents(Dispatcher $events)
+    {
+        foreach ($this->cacheRepositories as $repositoryName) {
+            $events->listen(
+                "eloquent.saved: App\\Models\\{$repositoryName}",
+                function () {Cache::flush();}
             );
         }
     }

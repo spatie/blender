@@ -9,35 +9,17 @@ use Illuminate\Routing\Router;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    /**
-     * This namespace is applied to the controller routes in your routes file.
-     *
-     * In addition, it is set as the URL generator's root namespace.
-     *
-     * @var string
-     */
     protected $namespace = 'App\Http\Controllers';
 
-    /**
-     * Define your route model bindings, pattern filters, etc.
-     *
-     * @param \Illuminate\Routing\Router $router
-     */
     public function boot(Router $router)
     {
         $this->app->setLocale($this->app['currentLocale']->determine());
 
         $this->registerMacros($router);
-        $this->app['paginateroute']->registerMacros();
 
         parent::boot($router);
     }
 
-    /**
-     * Define the routes for the application.
-     *
-     * @param \Illuminate\Routing\Router $router
-     */
     public function map(Router $router)
     {
         $this->mapAuthRoutes($router);
@@ -45,9 +27,6 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapFrontRoutes($router);
     }
 
-    /**
-     * @param \Illuminate\Routing\Router $router
-     */
     protected function mapAuthRoutes(Router $router)
     {
         $router->get('auth/{action?}', function ($action = null) {
@@ -61,9 +40,6 @@ class RouteServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * @param \Illuminate\Routing\Router $router
-     */
     protected function mapBackRoutes(Router $router)
     {
         $router->group(
@@ -78,9 +54,6 @@ class RouteServiceProvider extends ServiceProvider
         );
     }
 
-    /**
-     * @param \Illuminate\Routing\Router $router
-     */
     protected function mapFrontRoutes(Router $router)
     {
         $router->group(
@@ -89,20 +62,18 @@ class RouteServiceProvider extends ServiceProvider
                 'middleware' => 'sanitizeInput',
             ],
             function ($router) {
-                // Add routes for mono lingual site
-                if (count(config('app.locales')) == 1) {
+                if (count(config('app.locales')) === 1) {
                     $this->requireFrontRoutes();
+                    return;
                 }
-                // Add routes for multi lingual site
-                else {
-                    $router->get('/', function () {
-                        return redirect(config('app.locales')[0]);
-                    });
 
-                    $router->group(['prefix' => app()->getLocale()], function () {
-                        $this->requireFrontRoutes();
-                    });
-                }
+                $router->get('/', function () {
+                    return redirect(config('app.locales')[0]);
+                });
+
+                $router->group(['prefix' => app()->getLocale()], function () {
+                    $this->requireFrontRoutes();
+                });
             }
         );
     }
@@ -116,9 +87,6 @@ class RouteServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * @param \Illuminate\Routing\Router $router
-     */
     protected function registerMacros(Router $router)
     {
         $router->macro('redirect', function ($url, $action) use ($router) {
@@ -147,5 +115,7 @@ class RouteServiceProvider extends ServiceProvider
                 $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}").'/'.$article->url, $action)->name("{$article->technical_name}");
             });
         });
+
+        $this->app['paginateroute']->registerMacros();
     }
 }
