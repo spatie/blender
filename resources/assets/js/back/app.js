@@ -11,11 +11,11 @@ import 'blender.js/modules/table.sortable';
 // Heavy components coming up
 
 if ($('[data-chart]').size()) {
-    require.ensure([], () => { require('./modules/chart').init(); }, 'back.chart');
+    require.ensure([], () => { require('./modules/chart').default(); }, 'back.chart');
 }
 
 if ($('[data-editor]').size()) {
-    require.ensure([], () => { require('./modules/editor').init(); }, 'back.editor');
+    require.ensure([], () => { require('./modules/editor').default(); }, 'back.editor');
 }
 
 if ($('[data-media-collection]').size()) {
