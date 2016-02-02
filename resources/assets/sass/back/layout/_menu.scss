@@ -187,15 +187,20 @@
         }
     }
 
+
+
     &:before {
         content: '—' attr(data-menu-group) '—';
-        position: absolute;
         @include position-center-horizontal();
         top: -1.75em;
         color: $text-color;
         font-size: font-size(xxs);
         text-transform: uppercase;
         opacity: 0;
+
+        @include mq(s){
+            display: none;
+        }
     }
 }
 
