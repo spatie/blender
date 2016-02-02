@@ -1,7 +1,8 @@
 const store = require('store');
 
+$(document).ready(init);
 
-(function init() {
+function init() {
 
     $('[data-menu-group]').each(function () {
 
@@ -11,11 +12,11 @@ const store = require('store');
             addToggle($(this));
         }
 
-    })
+    });
 
     getState();
-
-})();
+    showMenu();
+}
 
 function addToggle($group) {
     let moreLink = $('<li class="menu_group_item -icon"><a href="#"><i data-group-toggle class="fa fa-ellipsis-v"></i></a></li>');
@@ -25,7 +26,7 @@ function addToggle($group) {
         e.preventDefault();
         toggleGroup($group);
         storeState();
-    })
+    });
 }
 
 function toggleGroup($group) {
@@ -33,24 +34,28 @@ function toggleGroup($group) {
     $('[data-group-toggle]', $group).toggleClass('fa-ellipsis-v fa-caret-left');
 }
 
-function storeState(){
+function storeState() {
 
     let activeGroups = [];
 
-    $('[data-menu-group]').each(function (){
-          if($(this).hasClass('-show-secondary')){
-              activeGroups.push($(this).data('menu-group'));
-          }
-    })
+    $('[data-menu-group]').each(function () {
+        if ($(this).hasClass('-show-secondary')) {
+            activeGroups.push($(this).data('menu-group'));
+        }
+    });
 
     store.set('activeMenuGroups', activeGroups);
 }
 
-function getState(){
+
+function getState() {
 
     let activeGroups = store.get('activeMenuGroups', []);
-
     activeGroups.map(group => {
-        toggleGroup($('[data-menu-group="' + group +'"]'));
-    })
+        toggleGroup($('[data-menu-group="' + group + '"]'));
+    });
+}
+
+function showMenu() {
+    $('html').addClass('$menu-ready');
 }

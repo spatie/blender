@@ -20,5 +20,5 @@ _ide_helper*.php
 /public/doc/sass
 /public/media
 
-#REMOVE THIS LINE IN PROJECTS
-/public/redactor
+# REMOVE THIS LINE IN PROJECTS
+/resources/assets/js/back/redactor

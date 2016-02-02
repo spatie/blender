@@ -2,9 +2,11 @@ require('browsernizr/test/css/animations');
 require('browsernizr/test/css/transforms3d');
 require('browsernizr/test/svg');
 require('browsernizr/test/touchevents');
-require('browsernizr'); // import the tests first
+require('browsernizr');
 
-var webfont = require('webfontloader');
+require('./modules/menu');
+
+const webfont = require('webfontloader');
 webfont.load({
     custom: {
         families: ['FontAwesome'],

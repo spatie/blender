@@ -78,9 +78,17 @@
     z-index: 2;
 }
 
+
+.menu_front_link{
+    padding-right: 1.5em;
+}
+
 .menu_front_link_protocol{
     color: color($gray, lighter);
-    margin-right: 0.35em;
+    padding-left: 0.35em;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .menu_front_link_host,
@@ -108,10 +116,9 @@
             padding: 0 .5em;
         }
     }
-
 }
 
-.menu_main{
+.menu_main {
 
     font-weight: font-weight(bold);
     margin-top: 1em;
@@ -123,7 +130,18 @@
     li{
         font-size: font-size(s);
     }
+}
 
+.menu_main_dummy {
+    position: absolute;
+}
+
+.menu_groups {
+    opacity: 0;
+
+    .\$menu-ready & {
+        opacity: 1;
+    }
 }
 
 .menu_group{

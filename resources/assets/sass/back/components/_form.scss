@@ -43,7 +43,7 @@ form{
 fieldset{
   border: 0;
   padding: .75em;
-  margin: 0.75em 0;
+  margin: .75em -.75em;
   min-width: 0;
   background: lighten(color($gray, lightest) , 1%);
 
@@ -72,7 +72,7 @@ legend{
 label{
   color: rgba($black, 0.5);
   font-weight: font-weight(500);
-  font-size: font-size(s);
+  font-size: font-size(default);
 
   //variations
   &.-invers{
@@ -158,12 +158,6 @@ input[type="text"]{
 
 input[type="search"]{
   padding: 0 1em;
-}
-
-input[type="checkbox"],
-input[type="radio"]{
-  margin-right: 0.25em;
- font-size: 2rem;
 }
 
 textarea{

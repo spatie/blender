@@ -38,8 +38,8 @@ class FormBuilder extends BaseFormBuilder
             Form::useInitialValue($subject, $fieldName, $locale),
             array_merge($options,
                 [
-                    'data-redactor' => '',
-                    'data-redactor-medialibrary-url' => URL::action('Back\MediaLibraryApiController@add', [short_class_name($subject), $subject->id, 'redactor']),
+                    'data-editor' => '',
+                    'data-editor-medialibrary-url' => URL::action('Back\MediaLibraryApiController@add', [short_class_name($subject), $subject->id, 'redactor']),
                 ]));
     }
 
@@ -102,7 +102,7 @@ class FormBuilder extends BaseFormBuilder
         );
     }
 
-    public function category($subject, $type)
+    public function category($subject, $type, $options)
     {
         $type = new TagType($type);
 
@@ -112,7 +112,8 @@ class FormBuilder extends BaseFormBuilder
         return $this->select(
             $type.'_tags[]',
             $categories,
-            $subjectCategory ? $subjectCategory->name : null
+            $subjectCategory ? $subjectCategory->name : null,
+            $options ? $options : null
         );
     }
 

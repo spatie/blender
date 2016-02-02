@@ -8,6 +8,10 @@
     font-size: font-size(s);
 }
 
+.\:text-uppercase {
+    text-transform: uppercase;
+}
+
 .\:text-super {
     font-size: font-size(xs);
     top: -.35em;

@@ -99,8 +99,8 @@ class BlenderFormBuilder
     public function redactor($name, $required = false, $locale = null)
     {
         $options = [
-            'data-redactor' => '',
-            'data-redactor-medialibrary-url' => action(
+            'data-editor' => '',
+            'data-editor-medialibrary-url' => action(
                 'Back\MediaLibraryApiController@index',
                 [
                     'model_name' => get_class($this->model),
@@ -172,7 +172,7 @@ class BlenderFormBuilder
 
         $label = $this->label($name);
         $select = $this->form()->select($fieldName, $options,
-            $this->form()->useInitialValue($this->model, $name, $locale));
+            $this->form()->useInitialValue($this->model, $name, $locale), ['data-select' => 'select']);
         $errors = $this->error($fieldName, $this->errors);
 
         return $this->wrapInFormGroup($label, $select, $errors);
@@ -218,7 +218,7 @@ class BlenderFormBuilder
     public function category($type)
     {
         $label = $this->form()->label($type.'_tags[]', trans("back-{$this->module}.{$type}"));
-        $tags = $this->form()->category($this->model, $type);
+        $tags = $this->form()->category($this->model, $type, ['data-select'=>'select']);
 
         return $this->wrapInFormGroup($label, $tags);
     }
