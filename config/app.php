@@ -79,6 +79,7 @@ return [
 
     'locales' => ['nl', 'fr'],
     'backLocales' => ['nl', 'en'],
+    'fragmentLocales' => ['nl', 'en'],
 
 
     /*

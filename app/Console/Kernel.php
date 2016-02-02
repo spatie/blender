@@ -4,6 +4,8 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\FragmentImporter\Commands\ImportFragments;
+use Spatie\LinkChecker\CheckLinksCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -20,7 +22,8 @@ class Kernel extends ConsoleKernel
         Commands\PerformScheduledBackup::class,
         Commands\SeedFragments::class,
         Commands\SendSlackMessage::class,
-        \Spatie\LinkChecker\CheckLinksCommand::class,
+        CheckLinksCommand::class,
+        ImportFragments::class,
     ];
 
     /**

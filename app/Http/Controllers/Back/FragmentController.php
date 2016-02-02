@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FragmentRequest;
 use App\Models\Fragment;
 use App\Models\Updaters\FragmentUpdater;
+use Spatie\FragmentImporter\Exporter;
 
 class FragmentController extends Controller
 {
@@ -69,5 +70,10 @@ class FragmentController extends Controller
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\FragmentController@edit', [$fragment->id]);
+    }
+
+    public function download()
+    {
+        Exporter::sendExportToBrowser();
     }
 }

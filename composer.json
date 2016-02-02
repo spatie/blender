@@ -27,7 +27,7 @@
     "laracasts/utilities": "^2.1",
     "laravel/framework": "5.2.*",
     "league/flysystem-aws-s3-v3": "^1.0",
-    "maatwebsite/excel": "^2.0.0",
+    "maatwebsite/excel": "^2.1",
     "maknz/slack": "^1.5",
     "myclabs/php-enum": "^1.4",
     "pda/pheanstalk": "^3.0",
@@ -53,7 +53,8 @@
     "guzzlehttp/guzzle": "^6.1",
     "spatie/laravel-link-checker": "^1.0",
     "spatie/laravel-sluggable": "^1.0",
-    "spatie/laravel-robots-middleware": "^1.0"
+    "spatie/laravel-robots-middleware": "^1.0",
+    "spatie/fragment-importer": "^1.0.1"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
