@@ -1,7 +1,9 @@
 const store = require('store');
+global.jQuery = global.$ = require('jquery');
 
+$(document).ready(init);
 
-(function init() {
+function init() {
 
     $('[data-menu-group]').each(function () {
 
@@ -17,7 +19,7 @@ const store = require('store');
 
     showMenu();
 
-})();
+}
 
 function addToggle($group) {
     let moreLink = $('<li class="menu_group_item -icon"><a href="#"><i data-group-toggle class="fa fa-ellipsis-v"></i></a></li>');
@@ -48,16 +50,15 @@ function storeState(){
     store.set('activeMenuGroups', activeGroups);
 }
 
+
 function getState(){
 
     let activeGroups = store.get('activeMenuGroups', []);
-
     activeGroups.map(group => {
         toggleGroup($('[data-menu-group="' + group +'"]'));
     })
 }
 
 function showMenu(){
-
     $('html').addClass('$menu-ready');
 }

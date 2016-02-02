@@ -116,18 +116,12 @@
             padding: 0 .5em;
         }
     }
-
 }
 
-.menu_main{
+.menu_main {
 
-    opacity: 0;
     font-weight: font-weight(bold);
     margin-top: 1em;
-
-    .\$menu-ready &{
-        opacity: 1;
-    }
 
     @include mq(s){
         text-align: center;
@@ -136,7 +130,18 @@
     li{
         font-size: font-size(s);
     }
+}
 
+.menu_main_dummy {
+    position: absolute;
+}
+
+.menu_groups{
+    visibility: hidden;
+
+    .\$menu-ready &{
+        visibility: visible;
+    }
 }
 
 .menu_group{

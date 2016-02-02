@@ -1,6 +1,6 @@
 /* ---------- Charts.js */
 
-//global.$ = require('jquery') //present in app.js
+//global.$ = require('jquery') //present in head.js
 var Chart = require('chart.js')
 
 // chartData is defined in the view

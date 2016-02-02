@@ -667,11 +667,12 @@ body .redactor-box-fullscreen {
   width: 30px;
   height: 30px;
   text-align: center;
-  color: #bbb;
+  color: #fff;
   font-size: 30px;
   font-weight: 300;
   cursor: pointer;
-  line-height: 1;
+  line-height: 10px;
+  padding: 0;
 }
 #redactor-modal-close:hover {
   color: #000;

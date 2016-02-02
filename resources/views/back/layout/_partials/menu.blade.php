@@ -12,19 +12,20 @@
                 {!! Navigation::getBackUserMenu() !!}
             </nav>
         </div>
-
         <nav class="menu_main" data-menu-main>
-            <div class="menu_group">
-                {!! Navigation::getBackDashboardMenu() !!}
-            </div>
-            <div class="menu_group" data-menu-group="content">
-                {!! Navigation::getBackContentMenu() !!}
-            </div>
-            <div class="menu_group" data-menu-group="module">
-                {!! Navigation::getBackModuleMenu() !!}
-            </div>
-            <div class="menu_group" data-menu-group="settings">
-                {!! Navigation::getBackServiceMenu() !!}
+            <div class="menu_groups" data-menu-groups>
+                <div class="menu_group">
+                    {!! Navigation::getBackDashboardMenu() !!}
+                </div>
+                <div class="menu_group" data-menu-group="content">
+                    {!! Navigation::getBackContentMenu() !!}
+                </div>
+                <div class="menu_group" data-menu-group="module">
+                    {!! Navigation::getBackModuleMenu() !!}
+                </div>
+                <div class="menu_group" data-menu-group="settings">
+                    {!! Navigation::getBackServiceMenu() !!}
+                </div>
             </div>
         </nav>
     </div>

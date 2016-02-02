@@ -102,7 +102,7 @@ class FormBuilder extends BaseFormBuilder
         );
     }
 
-    public function category($subject, $type)
+    public function category($subject, $type, $options)
     {
         $type = new TagType($type);
 
@@ -112,7 +112,8 @@ class FormBuilder extends BaseFormBuilder
         return $this->select(
             $type.'_tags[]',
             $categories,
-            $subjectCategory ? $subjectCategory->name : null
+            $subjectCategory ? $subjectCategory->name : null,
+            $options ? $options : null
         );
     }
 
