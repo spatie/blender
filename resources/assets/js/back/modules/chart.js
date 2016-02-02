@@ -1,10 +1,9 @@
-/* ---------- Charts.js */
-
-var Chart = require('chart.js');
+import Chart from 'chart.js';
 
 // chartData is defined in the view
-$(function () {
-    let chartData = global.chartData;
+
+function init() {
+    const chartData = global.chartData;
 
     if (chartData) {
         new Chart(chartData.ctx).Line(chartData.chart, {
@@ -29,4 +28,6 @@ $(function () {
             });
         }
     }
-});
+};
+
+export default init;

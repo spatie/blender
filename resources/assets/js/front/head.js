@@ -1,10 +1,10 @@
-require('browsernizr/test/css/animations');
-require('browsernizr/test/css/transforms3d');
-require('browsernizr/test/svg');
-require('browsernizr/test/touchevents');
-require('browsernizr'); // import the tests first
+import webfont from 'webfontloader';
+import 'browsernizr/test/css/animations';
+import 'browsernizr/test/css/transforms3d';
+import 'browsernizr/test/svg';
+import 'browsernizr/test/touchevents';
+import 'browsernizr';
 
-var webfont = require('webfontloader');
 webfont.load({
     custom: {
         families: ['FontAwesome'],
