@@ -17,13 +17,13 @@
                 <div class="menu_group">
                     {!! Navigation::getBackDashboardMenu() !!}
                 </div>
-                <div class="menu_group" data-menu-group="content">
+                <div class="menu_group" data-menu-group="inhoud">
                     {!! Navigation::getBackContentMenu() !!}
                 </div>
-                <div class="menu_group" data-menu-group="module">
+                <div class="menu_group" data-menu-group="modules">
                     {!! Navigation::getBackModuleMenu() !!}
                 </div>
-                <div class="menu_group" data-menu-group="settings">
+                <div class="menu_group" data-menu-group="configuratie">
                     {!! Navigation::getBackServiceMenu() !!}
                 </div>
             </div>
