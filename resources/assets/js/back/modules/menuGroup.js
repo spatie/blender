@@ -60,5 +60,5 @@ function showMenu() {
     $('html').addClass('$menu-ready');
 }
 
-export default initializeMenuGroup;
-export { init };
+export default init;
+export { initializeMenuGroup };

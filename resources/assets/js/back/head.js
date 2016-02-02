@@ -1,4 +1,4 @@
-import menu from './modules/menu';
+import menuGroup from './modules/menuGroup';
 import webfont from 'webfontloader';
 import 'browsernizr/test/css/animations';
 import 'browsernizr/test/css/transforms3d';
@@ -7,7 +7,7 @@ import 'browsernizr/test/touchevents';
 import 'browsernizr';
 
 $(document).ready(function(){
-    menu.init();
+    menuGroup();
 });
 
 webfont.load({

@@ -27,5 +27,5 @@ function initializeEditor($textarea) {
     });
 }
 
-export default initializeEditor;
-export { init };
+export default init;
+export { initializeEditor };
