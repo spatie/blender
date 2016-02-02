@@ -3,6 +3,11 @@ All notable changes to Blender will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
+## [5.4.2] - 2016-02-02
+### Changad
+- Webpack dependencies back
+- editor script
+
 ## [5.4.1] - 2016-01-28
 ### Changad
 - Font imports

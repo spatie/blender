@@ -4,11 +4,9 @@ require('browsernizr/test/svg');
 require('browsernizr/test/touchevents');
 require('browsernizr');
 
-//global.jQuery = global.$ = require('jquery');
+require('./modules/menu');
 
-require('./menu/menu');
-
-const webfont = require('webfontloader')
+const webfont = require('webfontloader');
 webfont.load({
     custom: {
         families: ['FontAwesome'],

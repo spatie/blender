@@ -10,7 +10,6 @@
     <meta name="description" content="@yield('pageDescription')">
     <title>@yield('pageTitle')</title>
 
-    <script src="{{ elixir('back.head.js') }}"></script>
 
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,300italic' rel='stylesheet' type='text/css'>
 
@@ -20,6 +19,8 @@
         <link rel="stylesheet" href="{{ elixir('back.style.css') }}">
     @endif
 
+    <script src="{{ elixir('back.vendor.js') }}"></script>
+    <script src="{{ elixir('back.head.js') }}"></script>
 
     @include('front.layout._partials.favicons')
 </head>
@@ -37,12 +38,7 @@
     @if (auth()->user())
         @include('back.layout._partials.footer')
     @endif
-    <script src="{{ elixir('back.app.js') }}"></script>
+    <script src="{{ elixir('back.app.js') }}" defer></script>
     @yield('extraJs')
-    <script src="/redactor/redactor/redactor.min.js"></script>
-    <script src="/redactor/langs/nl.js"></script>
-    <script src="/redactor/plugins/imagemanager.js"></script>
-    <script src="/redactor/plugins/video.js"></script>
-    <script src="/redactor/redactor.init.js"></script>
 </body>
 </html>

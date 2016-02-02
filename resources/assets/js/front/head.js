@@ -1,10 +1,10 @@
-require('browsernizr/test/css/animations')
-require('browsernizr/test/css/transforms3d')
-require('browsernizr/test/svg')
-require('browsernizr/test/touchevents')
-require('browsernizr') // import the tests first
+require('browsernizr/test/css/animations');
+require('browsernizr/test/css/transforms3d');
+require('browsernizr/test/svg');
+require('browsernizr/test/touchevents');
+require('browsernizr'); // import the tests first
 
-var webfont = require('webfontloader')
+var webfont = require('webfontloader');
 webfont.load({
     custom: {
         families: ['FontAwesome'],
@@ -13,4 +13,4 @@ webfont.load({
             FontAwesome: '\ue800',
         },
     },
-})
+});

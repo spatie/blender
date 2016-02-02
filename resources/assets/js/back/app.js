@@ -1,5 +1,3 @@
-//global.jQuery = global.$ = require('jquery'); //present in head.js
-
 require('blender.js/modules/ajax.csrf');
 require('blender.js/modules/interface.confirm');
 
@@ -13,9 +11,16 @@ require('blender.js/modules/form.locationpicker');
 require('blender.js/modules/table.datatables');
 require('blender.js/modules/table.sortable');
 
-require('./media');
+// Heavy components coming up
 
+if ($('[data-chart]').size()) {
+    require.ensure([], () => { require('./modules/chart'); }, 'back.chart');
+}
 
-if ($('data-chart').size()) {
-    require.ensure([], () => { require('./chart'); }, 'back.chart');
+if ($('[data-editor]').size()) {
+    require.ensure([], () => { require('./modules/editor'); }, 'back.editor');
+}
+
+if ($('[data-media-collection]').size()) {
+    require.ensure([], () => { require('./modules/media'); }, 'back.media');
 }

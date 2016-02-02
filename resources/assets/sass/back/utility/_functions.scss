@@ -1,12 +1,8 @@
-/* Utility functions */
+/*
+    Utility functions
+*/
 
 /// Check if key exists in map, and returns the value. Otherwise give the key back.
-/// @group internal
-/// @access private
-/// @param {Map} $map - Sass map
-/// @param {String} $key - Map key
-/// @param {String} $parse - Parse result as string
-/// @return {String}
 @function mapping($map, $key, $parse: false) {
   @if not map-has-key($map, $key) {
     @return $key;
@@ -15,28 +11,18 @@
   @if not $parse {
     @return map-get($map, $key);
   }
-  @else{
+  @else {
     @return #{map-get($map, $key)};
   }
-
 }
 
 /// Strip unit from number
-/// @group internal
-/// @access private
-/// @param {String} $value - Value with unit (px, % , rem, em)
-/// @return {Number}
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
+
 /// Replace `$search` with `$replace` in `$string`
-/// @group internal
-/// @access private
-/// @param {String} $string - Initial string
-/// @param {String} $search - Substring to replace
-/// @param {String} $replace ('') - New value
-/// @return {String} - Updated string
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
@@ -47,66 +33,43 @@
   @return $string;
 }
 
-/* Settings functions */
+
+
+/*
+Settings functions
+*/
 
 /// Color shortcut
-/// @group colors
-/// @param {Map} $pallete - Color pallete
-/// @param {String} $key [default] - color key
-/// @requires mapping
-/// @return {Color}
-@function color($pallete, $key: 'default') {
-  @return mapping($pallete, $key);
+@function color($pallete, $key: 'default', $opacity: 1) {
+  @return rgba(mapping($pallete, $key), $opacity);
 }
 
+
 /// Font size shortcut
-/// @group typography
-/// @param {String} $key [default] - Font size key
-/// @requires $font-sizes
-/// @requires mapping
-/// @return {String}
 @function font-size($key: 'default') {
   @return mapping($font-sizes, $key);
 }
 
+
 /// Font weight shortcut
-/// @group typography
-/// @param {String} $key [normal] - Font weight key
-/// @requires $font-weights
-/// @requires mapping
-/// @return {String}
 @function font-weight($key: 'normal') {
   @return mapping($font-weights, $key);
 }
 
+
 /// Font family
-/// @group typography
-/// @param {String} $key [normal] - Font family key
-/// @requires $font-families
-/// @requires mapping
-/// @return {String}
 @function font-family($key: 'normal') {
   @return mapping($font-families, $key, true);
 }
 
+
 /// Z-index shortcut
-/// @group layout
-/// @param {String} $key - Z-index key
-/// @requires $z-indexes
-/// @requires mapping
-/// @return {Number}
-@function z-index($key) {
+@function z-index($key: 'above') {
   @return mapping($z-indexes, $key);
 }
 
+
 /// Border-radius shortcut
-/// @group layout
-/// @param {String} $key - Border-radius key
-/// @requires $border-radius
-/// @requires mapping
-/// @return {String}
-@function border-radius($key) {
+@function border-radius($key: 'm') {
   @return mapping($border-radius, $key);
 }
-
-

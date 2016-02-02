@@ -136,11 +136,11 @@
     position: absolute;
 }
 
-.menu_groups{
-    visibility: hidden;
+.menu_groups {
+    opacity: 0;
 
-    .\$menu-ready &{
-        visibility: visible;
+    .\$menu-ready & {
+        opacity: 1;
     }
 }
 

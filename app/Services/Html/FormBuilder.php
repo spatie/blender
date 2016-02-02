@@ -38,8 +38,8 @@ class FormBuilder extends BaseFormBuilder
             Form::useInitialValue($subject, $fieldName, $locale),
             array_merge($options,
                 [
-                    'data-redactor' => '',
-                    'data-redactor-medialibrary-url' => URL::action('Back\MediaLibraryApiController@add', [short_class_name($subject), $subject->id, 'redactor']),
+                    'data-editor' => '',
+                    'data-editor-medialibrary-url' => URL::action('Back\MediaLibraryApiController@add', [short_class_name($subject), $subject->id, 'redactor']),
                 ]));
     }
 

@@ -2,7 +2,6 @@
   Overrides on default confirm styles via Node
 */
 .select2{
-  font-size: font-size(s);
   width: 100% !important;
 }
 
@@ -14,9 +13,9 @@
   border: 2px solid color($gray, light);
   box-shadow: inset 0 3px rgba(color($gray), 0.15), 0 3px rgba($black, 0.075);
   border-radius: border-radius(s);
-  padding: 0.35em;
+  padding: 0 0.35em;
   height: auto;
-  min-height: 3.2em;
+  min-height: 2.5em;
   outline: none !important;
 }
 
@@ -43,6 +42,7 @@
 .select2-container--default .select2-selection--multiple .select2-selection__choice{
   background: color($blue, lightest);
   border: none;
+  margin-top: 8px;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{

@@ -17,7 +17,7 @@ body {
   @include antialiasing(subpixel);
   @include font(sans, normal);
 
-  font-size: 1.2rem; //scales everything on very large displays
+  font-size: 1.1rem; //scales everything on very large displays
   line-height: $line-height;
   color: $text-color;
 
