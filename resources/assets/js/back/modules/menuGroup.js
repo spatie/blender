@@ -1,22 +1,22 @@
-const store = require('store');
-
-$(document).ready(init);
+import store from 'store';
 
 function init() {
-
     $('[data-menu-group]').each(function () {
-
-        let secondaryItems = $('.-secondary', $(this));
-
-        if (secondaryItems.size()) {
-            addToggle($(this));
-        }
-
+        initializeMenuGroup($(this));
     });
 
     getState();
     showMenu();
 }
+
+function initializeMenuGroup($group) {
+    let secondaryItems = $('.-secondary', $group);
+
+    if (secondaryItems.size()) {
+        addToggle($group);
+    }
+}
+
 
 function addToggle($group) {
     let moreLink = $('<li class="menu_group_item -icon"><a href="#"><i data-group-toggle class="fa fa-ellipsis-v"></i></a></li>');
@@ -59,3 +59,6 @@ function getState() {
 function showMenu() {
     $('html').addClass('$menu-ready');
 }
+
+export default init;
+export { initializeMenuGroup };

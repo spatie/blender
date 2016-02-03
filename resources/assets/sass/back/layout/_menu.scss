@@ -132,10 +132,6 @@
     }
 }
 
-.menu_main_dummy {
-    position: absolute;
-}
-
 .menu_groups {
     opacity: 0;
 
@@ -184,6 +180,26 @@
     &.-show-secondary {
         li {
             display: inline-block !important;
+        }
+
+        &:before {
+            opacity: .35;
+        }
+    }
+
+
+
+    &:before {
+        content: '—' attr(data-menu-group) '—';
+        @include position-center-horizontal();
+        top: -1.75em;
+        color: $text-color;
+        font-size: font-size(xxs);
+        text-transform: uppercase;
+        opacity: 0;
+
+        @include mq(s){
+            display: none;
         }
     }
 }

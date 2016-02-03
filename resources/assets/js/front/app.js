@@ -1,3 +1,3 @@
-global.$ = global.jQuery = require('jquery');
+import viewport from 'viewport-utility';
 
-require('viewport-utility').init();
+viewport.init();

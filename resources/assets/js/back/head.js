@@ -1,12 +1,15 @@
-require('browsernizr/test/css/animations');
-require('browsernizr/test/css/transforms3d');
-require('browsernizr/test/svg');
-require('browsernizr/test/touchevents');
-require('browsernizr');
+import menuGroup from './modules/menuGroup';
+import webfont from 'webfontloader';
+import 'browsernizr/test/css/animations';
+import 'browsernizr/test/css/transforms3d';
+import 'browsernizr/test/svg';
+import 'browsernizr/test/touchevents';
+import 'browsernizr';
 
-require('./modules/menu');
+$(document).ready(function(){
+    menuGroup();
+});
 
-const webfont = require('webfontloader');
 webfont.load({
     custom: {
         families: ['FontAwesome'],

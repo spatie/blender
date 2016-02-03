@@ -1,24 +1,21 @@
-require('blender.js/modules/ajax.csrf');
-require('blender.js/modules/interface.confirm');
-
-require('blender.js/modules/form.autosave');
-require('blender.js/modules/form.input.datetimepicker');
-require('blender.js/modules/form.select');
-require('blender.js/modules/form.textarea.autosize');
-// require('blender.js/modules/form.textarea.parts');
-require('blender.js/modules/form.locationpicker');
-
-require('blender.js/modules/table.datatables');
-require('blender.js/modules/table.sortable');
+import 'blender.js/modules/ajax.csrf';
+import 'blender.js/modules/interface.confirm';
+import 'blender.js/modules/form.autosave';
+import 'blender.js/modules/form.input.datetimepicker';
+import 'blender.js/modules/form.select';
+import 'blender.js/modules/form.textarea.autosize';
+import 'blender.js/modules/form.locationpicker';
+import 'blender.js/modules/table.datatables';
+import 'blender.js/modules/table.sortable';
 
 // Heavy components coming up
 
 if ($('[data-chart]').size()) {
-    require.ensure([], () => { require('./modules/chart'); }, 'back.chart');
+    require.ensure([], () => { require('./modules/chart').default(); }, 'back.chart');
 }
 
 if ($('[data-editor]').size()) {
-    require.ensure([], () => { require('./modules/editor'); }, 'back.editor');
+    require.ensure([], () => { require('./modules/editor').default(); }, 'back.editor');
 }
 
 if ($('[data-media-collection]').size()) {
