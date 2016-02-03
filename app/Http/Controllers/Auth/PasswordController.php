@@ -171,6 +171,12 @@ class PasswordController extends Controller
 
                 return redirect($this->auth->user()->getHomeUrl());
 
+            case PasswordBroker::INVALID_TOKEN:
+                flash()->message(trans('auth.resetLinkExpired'));
+
+                return redirect()->back()
+                    ->withErrors(['email' => trans($response)]);
+
             default:
                 flash()->error(trans('auth.correctFormErrors'));
 
