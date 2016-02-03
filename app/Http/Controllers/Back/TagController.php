@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Back\Traits\Orderable;
 use App\Models\Tag;
 use Illuminate\Support\Collection;
 
 class TagController extends ModuleController
 {
-    use Orderable;
-
     protected $modelName = 'Tag';
     protected $moduleName = 'tags';
 

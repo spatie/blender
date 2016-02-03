@@ -7,12 +7,9 @@ use LaravelAnalytics;
 
 class StatisticsController extends Controller
 {
-    /**
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        if (config('laravel-analytics.siteId') == '') {
+        if (empty(config('laravel-analytics.siteId'))) {
             return view('back.statistics.notconfigured');
         }
 

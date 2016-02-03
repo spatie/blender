@@ -4,47 +4,20 @@ namespace App\Http\Controllers\Back;
 
 use Activity;
 use App\Http\Controllers\Controller;
-use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 abstract class ModuleController extends Controller
 {
-    /**
-     * @var string
-     */
-    protected $modelName;
+    /** @var string */
+    protected $modelName = null;
 
-    /**
-     * @var string
-     */
-    protected $moduleName;
+    /** @var string */
+    protected $moduleName = null;
 
-    /**
-     * @var \Illuminate\Contracts\Foundation\Application
-     */
-    protected $app;
-
-    /**
-     * Return a fresh instance of the model (called on `create()`).
-     *
-     * @return \Illuminate\Database\Eloquent\Model
-     */
+    /** @return \Illuminate\Database\Eloquent\Model */
     abstract protected function make();
 
-    /**
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     */
-    public function __construct(Application $app)
-    {
-        $this->app = $app;
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $models = $this->query()->nonDraft()->get();
@@ -56,11 +29,6 @@ abstract class ModuleController extends Controller
         return view("back.{$this->moduleName}.index", $data);
     }
 
-    /**
-     * Create a new record and redirect to the edit page.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function create()
     {
         $model = $this->make();
@@ -68,26 +36,11 @@ abstract class ModuleController extends Controller
         return redirect()->action("Back\\{$this->modelName}Controller@edit", [$model->id]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function show($id)
     {
         return redirect()->action("Back\\{$this->modelName}Controller@edit", [$id]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param int                      $id
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Request $request, $id)
     {
         $model = $this->query()->find($id);
@@ -124,12 +77,6 @@ abstract class ModuleController extends Controller
         return redirect()->action("Back\\{$this->modelName}Controller@edit", [$model->id]);
     }
 
-    /**
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @param \Illuminate\Http\Request            $request
-     *
-     * @return \App\Models\Foundation\Updaters\Updater
-     */
     protected function createUpdater(Model $model, Request $request)
     {
         $className = "App\\Models\\Updaters\\{$this->modelName}Updater";
@@ -137,13 +84,6 @@ abstract class ModuleController extends Controller
         return $className::create($model, $request);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function destroy($id)
     {
         $model = $this->query()->find($id);
@@ -158,11 +98,13 @@ abstract class ModuleController extends Controller
         return redirect()->action("Back\\{$this->modelName}Controller@index");
     }
 
-    /**
-     * @param mixed $model
-     *
-     * @return string
-     */
+    public function changeOrder(Request $request)
+    {
+        $model = "\\App\\Models\\{$this->modelName}";
+
+        $model::setNewOrder($request->get('ids'));
+    }
+
     protected function getUpdatedEventDescription($model)
     {
         $modelName = trans("back-{$this->moduleName}.singular");
@@ -176,11 +118,6 @@ abstract class ModuleController extends Controller
         return trans('back.events.updated', ['model' => $modelName, 'name' => $linkToModel]);
     }
 
-    /**
-     * @param mixed $model
-     *
-     * @return string
-     */
     protected function getDeletedEventDescription($model)
     {
         $modelName = trans("back-{$this->moduleName}.singular");
