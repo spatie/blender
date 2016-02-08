@@ -1,6 +1,6 @@
 <?php
 
-namespace Services\Auth\Front\Exceptions;
+namespace App\Services\Auth\Front\Exceptions;
 
 use Exception;
 

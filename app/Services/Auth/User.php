@@ -1,6 +1,6 @@
 <?php
 
-namespace Services\Auth;
+namespace App\Services\Auth;
 
 use App\Foundation\Models\Traits\Presentable;
 use Carbon\Carbon;
@@ -24,7 +24,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  */
-abstract class BaseUser extends Model implements AuthenticatableContract, CanResetPasswordContract, AuthorizableContract
+abstract class User extends Model implements AuthenticatableContract, CanResetPasswordContract, AuthorizableContract
 {
     use Authenticatable, CanResetPassword, Presentable, Authorizable;
 
@@ -45,7 +45,7 @@ abstract class BaseUser extends Model implements AuthenticatableContract, CanRes
         return empty($this->password);
     }
 
-    public function registerLastActivity() : static
+    public function registerLastActivity() : User
     {
         $this->last_activity = Carbon::now();
 

@@ -12,7 +12,7 @@ abstract class Enum extends BaseEnum
             throw new EnumTypesDontMatch();
         }
 
-        return $this->getValue() !== $enum->getValue();
+        return $this->getValue() === $enum->getValue();
     }
 
     public function doesntEqual(Enum $enum) : bool

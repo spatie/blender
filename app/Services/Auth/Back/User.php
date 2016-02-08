@@ -33,7 +33,7 @@ class User extends BaseUser
 
     public function getStatusAttribute() : UserStatus
     {
-        return new UserStatus($this->status);
+        return new UserStatus($this->attributes['status']);
     }
 
     public function setStatusAttribute(UserStatus $status)
@@ -46,7 +46,7 @@ class User extends BaseUser
         return $this->status->equals($status);
     }
 
-    public function activate() : static
+    public function activate() : User
     {
         if ($this->status->doesntEqual(UserStatus::WAITING_FOR_APPROVAL())) {
             throw new UserIsAlreadyActivated();
@@ -59,7 +59,7 @@ class User extends BaseUser
 
     public function getRoleAttribute() : UserRole
     {
-        return new UserRole($this->role);
+        return new UserRole($this->attributes['role']);
     }
 
     public function setRoleAttribute(UserRole $role)
@@ -69,6 +69,6 @@ class User extends BaseUser
 
     public function hasRole(UserRole $role) : bool
     {
-        return $this->role->equals($role->getValue());
+        return $this->role->equals($role);
     }
 }
