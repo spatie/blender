@@ -14,8 +14,12 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 
 /**
  * @property int $id
+ * @property string $email
  * @property string $password
+ * @property int $first_name
+ * @property int $last_name
  * @property string $remember_token
+ * @property string $locale
  * @property \Carbon\Carbon $last_activity
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at

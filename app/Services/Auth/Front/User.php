@@ -7,6 +7,11 @@ use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\User as BaseUser;
 
 /**
+ * @property string $address
+ * @property string $postal
+ * @property string $city
+ * @property string $country
+ * @property string $telephone
  * @property \App\Services\Auth\Front\Enums\UserRole $role
  * @property \App\Services\Auth\Front\Enums\UserStatus $status
  */
