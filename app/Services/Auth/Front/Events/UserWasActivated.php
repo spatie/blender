@@ -1,19 +1,15 @@
 <?php
 
-namespace App\Events;
+namespace Services\Auth\Front\Events;
 
-use App\Models\User;
+use App\Events\Event;
+use App\Services\Auth\Front\User;
 
 class UserWasActivated extends Event
 {
-    /**
-     * @var \App\Models\User
-     */
+    /** @var \App\Services\Auth\Front\User */
     public $user;
 
-    /**
-     * @param \App\Models\User $user
-     */
     public function __construct(User $user)
     {
         $this->user = $user;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace App\Services\Auth;
 
 use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;

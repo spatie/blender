@@ -2,7 +2,7 @@
 
 namespace App\Models\Enums;
 
-use MyCLabs\Enum\Enum;
+use App\Foundation\Models\Enums\Enum;
 
 class TagType extends Enum
 {
