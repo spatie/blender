@@ -10,6 +10,5 @@ class FragmentSeeder extends DatabaseSeeder
         $this->truncate((new FragmentTranslation())->getTable(), (new Fragment())->getTable());
 
         Artisan::call('fragments:import');
-
     }
 }
