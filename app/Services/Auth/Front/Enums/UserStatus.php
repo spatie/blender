@@ -4,6 +4,10 @@ namespace App\Services\Auth\Front\Enums;
 
 use App\Foundation\Models\Enums\Enum;
 
+/**
+ * @method static ACTIVE()
+ * @method static WAITING_FOR_APPROVAL()
+ */
 class UserStatus extends Enum
 {
     const ACTIVE = 'active';
