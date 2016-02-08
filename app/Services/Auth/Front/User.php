@@ -18,6 +18,8 @@ use App\Services\Auth\User as BaseUser;
  */
 class User extends BaseUser
 {
+    protected $table = 'users_front';
+
     public function isCurrentUser() : bool
     {
         if (! $this->id) {
@@ -29,12 +31,12 @@ class User extends BaseUser
 
     public function getHomeUrl() : string
     {
-        return url();
+        return url('/');
     }
 
     public function getProfileUrl() : string
     {
-        return url();
+        return url('/');
     }
 
     public function getStatusAttribute() : UserStatus

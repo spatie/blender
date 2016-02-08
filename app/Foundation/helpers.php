@@ -142,15 +142,11 @@ function translate($id = null, $parameters = [], $locale = null)
     return trans($id, $parameters, $domain = 'messages');
 }
 
-/**
- * Return the currentUser.
- *
- * @return bool|\App\Models\User
- */
-function currentUser()
+/** @return \App\Services\Auth\User|null */
+function current_user()
 {
-    if (!auth()->check()) {
-        return false;
+    if (! auth()->check()) {
+        return null;
     }
 
     return auth()->user();

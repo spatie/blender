@@ -8,8 +8,9 @@ class DatabaseSeeder extends Seeder
     {
         parent::run();
 
+        $this->call(BackUserSeeder::class);
+        $this->call(FrontUserSeeder::class);
         $this->call(FragmentSeeder::class);
-        $this->call(UserSeeder::class);
         $this->call(TagSeeder::class);
         $this->call(ArticleSeeder::class);
         $this->call(PersonSeeder::class);

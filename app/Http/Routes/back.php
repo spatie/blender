@@ -10,7 +10,6 @@ Route::post('formresponses', 'FormResponseController@download');
 
 Route::get('statistics', 'StatisticsController@index')->name('statistics');
 
-Route::pattern('role', App\Models\Enums\UserRole::allAsRegex());
 Route::get('user', 'UserController@redirectToDefaultIndex');
 Route::get('user/activate/{user}', 'UserController@activate');
 Route::get('user/{role}', 'UserController@index');

@@ -105,7 +105,7 @@ class Navigation
         $menu = Menu::handler('backUser');
 
         $menu->add(action('Back\UserController@edit', ['id' => auth()->user()->id], false), HTML::avatar(auth()->user(), '-small') . '<span class=":responsive-desktop-only">' . auth()->user()->email . '</span>', null, null);
-        $menu->add(action('Auth\AuthController@getLogout', [], false), '<span class="fa fa-power-off"></span>', null, ['class' => 'menu_circle -log-out', 'title' => 'log out']);
+        //$menu->add(action('Auth\AuthController@getLogout', [], false), '<span class="fa fa-power-off"></span>', null, ['class' => 'menu_circle -log-out', 'title' => 'log out']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));

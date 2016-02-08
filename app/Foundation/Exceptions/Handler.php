@@ -63,7 +63,7 @@ class Handler extends ExceptionHandler
         );
     }
 
-    /**
+    /*
      * Don't ever display sensitive data in Whoops pages.
      */
     protected function unsetSensitiveData()

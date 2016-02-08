@@ -78,8 +78,8 @@ return [
     */
 
     'locales' => ['nl', 'fr'],
-    'backLocales' => ['nl', 'en'],
-    'fragmentLocales' => ['nl', 'en'],
+    'backLocales' => ['nl'],
+    'fragmentLocales' => ['nl'],
 
 
     /*
@@ -159,7 +159,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        App\Providers\AuthServiceProvider::class,
         App\Providers\BladeDirectiveServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
         App\Providers\EventServiceProvider::class,
@@ -167,6 +166,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ValidationServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
+        App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Locale\LocaleServiceProvider::class,
         App\Services\Navigation\NavigationServiceProvider::class,

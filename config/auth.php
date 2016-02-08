@@ -15,7 +15,7 @@ return [
 
 	'defaults' => [
 		'guard' => 'front',
-		'passwords' => 'users',
+		'passwords' => 'front',
 	],
 
 	/*
@@ -38,11 +38,11 @@ return [
 	'guards' => [
 		'front' => [
 			'driver' => 'session',
-			'provider' => 'users',
+			'provider' => 'front',
 		],
         'back' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'back',
         ],
 	],
 
@@ -64,13 +64,13 @@ return [
     */
 
 	'providers' => [
-		'users' => [
+		'front' => [
 			'driver' => 'eloquent',
-			'model' => App\Models\User::class,
+			'model' => App\Services\Auth\Front\User::class,
 		],
-         'admins' => [
+         'back' => [
              'driver' => 'eloquent',
-             'model' => App\Models\Admin::class,
+             'model' => App\Services\Auth\Back\User::class,
 		 ],
 	],
 

@@ -10,8 +10,18 @@ class ConfigServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->configureGuardDriver();
         $this->configureCacheProvider();
         $this->configureEmailRecipients();
+    }
+
+    protected function configureGuardDriver()
+    {
+        if (app()->runningInConsole()) {
+            return;
+        }
+
+        return request()->isForBack() ? 'back' : 'front';
     }
 
     protected function configureCacheProvider()

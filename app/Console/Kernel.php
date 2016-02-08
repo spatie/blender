@@ -16,11 +16,9 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\ClearBeanstalkdQueue::class,
-        Commands\CreateUser::class,
         Commands\DeleteOldDrafts::class,
         Commands\GenerateModule::class,
         Commands\PerformScheduledBackup::class,
-        Commands\SeedFragments::class,
         Commands\SendSlackMessage::class,
         CheckLinksCommand::class,
         ImportFragments::class,
