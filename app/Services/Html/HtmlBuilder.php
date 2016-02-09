@@ -44,4 +44,9 @@ class HtmlBuilder extends BaseHtmlBuilder
 
         return Form::open($formOptions).Form::button($buttonHtml, $submitButtonOptions).Form::close();
     }
+
+    public function sanitizeUrl(string $url, string $protocol = 'http') : string
+    {
+        return preg_replace('/^(?!https?:\/\/)/', $protocol . '://', $url) ;
+    }
 }

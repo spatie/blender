@@ -1,3 +1,15 @@
+.\:margin {
+    margin: gutter(m);
+}
+
+.\:margin-small {
+    margin: gutter(s);
+}
+
+.\:margin-large {
+    margin: gutter(l);
+}
+
 .\:margin-left {
   margin-left: gutter(m);
 }

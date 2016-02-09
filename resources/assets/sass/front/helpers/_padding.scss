@@ -1,3 +1,15 @@
+.\:padding {
+    padding: gutter(m);
+}
+
+.\:padding-small {
+    padding: gutter(s);
+}
+
+.\:padding-large {
+    padding: gutter(l);
+}
+
 .\:padding-left {
   padding-left: gutter(m);
 }

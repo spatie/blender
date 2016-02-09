@@ -19,14 +19,14 @@ $font-weights: (
 
 /// Font-sizes
 $font-sizes: (
-  xxs: 8px,
-  xs: 10px,
-  s: 11px,
-  default: 13px,
-  m: 15px,
-  l: 18px,
-  xl: 22px,
-  xxl: 32px,
+    xxs: .65em,
+    xs: .8em,
+    s: .95em,
+    default: 1em,
+    m: 1.1em,
+    l: 1.5em,
+    xl: 2.1em,
+    xxl: 2.8em,
 );
 
 /// Line-height
