@@ -10,9 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class LoginTest extends TestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function it_will_redirect_protected_routes()
     {
         $this->visit('/blender')
@@ -22,8 +20,6 @@ class LoginTest extends TestCase
     /**
      * @test
      * @dataProvider roleProvider
-     *
-     * @param $role
      */
     public function non_active_users_cannot_login($role)
     {
@@ -48,8 +44,6 @@ class LoginTest extends TestCase
     /**
      * @test
      * @dataProvider roleProvider
-     *
-     * @param $role
      */
     public function only_an_admin_can_view_the_backsite($role)
     {
@@ -64,9 +58,7 @@ class LoginTest extends TestCase
             : $this->seeStatusCode(Response::HTTP_UNAUTHORIZED);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function activated_members_get_redirected_to_the_home_page()
     {
         $password = 'test12345';
@@ -87,7 +79,7 @@ class LoginTest extends TestCase
         $this->isLoggedIn($user);
     }
 
-    public function isLoggedIn($user)
+    protected function isLoggedIn($user)
     {
         $errorMessage =  "Failed to assert that user {$user->id} is logged in.";
 

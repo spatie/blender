@@ -11,9 +11,6 @@ class HomeTest extends FrontTestCase
      */
     public function it_can_display_the_home_page()
     {
-        // Temporarily disabled for routing issues.
-        return;
-
         $this->visit('/');
         $this->assertResponseOk();
     }

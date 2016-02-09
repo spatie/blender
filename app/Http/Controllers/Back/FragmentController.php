@@ -7,12 +7,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FragmentRequest;
 use App\Models\Fragment;
 use App\Models\Updaters\FragmentUpdater;
+use Spatie\FragmentImporter\Exporter;
 
 class FragmentController extends Controller
 {
-    /**
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $fragments = Fragment::all();
@@ -20,11 +18,6 @@ class FragmentController extends Controller
         return view('back.fragments.index')->with(compact('fragments'));
     }
 
-    /**
-     * Create a new record and redirect to the edit page.
-     *
-     * @return \Illuminate\Http\RedirectResponse
-     */
     public function create()
     {
         $fragment = new Fragment();
@@ -33,13 +26,6 @@ class FragmentController extends Controller
         return redirect()->action('Back\FragmentController@edit', [$fragment->id]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param int $id
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $fragment = Fragment::find($id);
@@ -47,14 +33,6 @@ class FragmentController extends Controller
         return view('back.fragments.edit')->with(compact('fragment'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param int                                     $id
-     * @param \App\Http\Requests\Back\FragmentRequest $request
-     *
-     * @return \App\Http\Controllers\Back\Response
-     */
     public function update($id, FragmentRequest $request)
     {
         $fragment = Fragment::find($id);
@@ -69,5 +47,10 @@ class FragmentController extends Controller
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\FragmentController@edit', [$fragment->id]);
+    }
+
+    public function download()
+    {
+        Exporter::sendExportToBrowser();
     }
 }

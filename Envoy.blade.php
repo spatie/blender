@@ -30,6 +30,7 @@ optimizeInstallation
 updatePermissions
 backupDatabase
 migrateDatabase
+insertNewFragments
 blessNewRelease
 cleanOldReleases
 regenerateLocalAssets
@@ -148,6 +149,12 @@ ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 php artisan cache:clear
 sudo service php7.0-fpm restart
+@endtask
+
+@task('insertNewFragments', ['on' => 'remote'])
+{{ logMessage('start insertNewFragments') }}
+cd {{ $newReleaseDir }};
+php artisan fragments:import;
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])

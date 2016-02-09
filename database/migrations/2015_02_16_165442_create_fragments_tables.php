@@ -18,7 +18,7 @@ class CreateFragmentsTables extends Migration
             $table->string('name');
             $table->string('description')->nullable();
             $table->boolean('contains_html')->default(false);
-            $table->boolean('hide_fragment')->default(false);
+            $table->boolean('hidden')->default(false);
             $table->boolean('draft')->default(true);
             $table->timestamps();
         });
