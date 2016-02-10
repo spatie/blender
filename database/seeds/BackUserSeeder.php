@@ -13,7 +13,7 @@ class BackUserSeeder extends DatabaseSeeder
         $this->seedAdmins();
     }
 
-    protected function seedAdmins()
+    public function seedAdmins()
     {
         $users = [
             'Willem' => 'Van Bockstal',

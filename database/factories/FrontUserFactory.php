@@ -13,7 +13,7 @@ $factory->define(User::class, function (Generator $faker) {
         'first_name' => $firstName,
         'last_name' => $lastName,
         'email' => strtolower("{$firstName}.{$lastName}@spatie.be"),
-        'password' => strtolower($firstName),
+        'password' => app()->environment('local') ? strtolower($firstName) : string()->random(),
 
         'locale' => 'nl',
 

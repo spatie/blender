@@ -39,6 +39,16 @@ class AuthServiceProvider extends ServiceProvider
     {
         parent::register();
 
+        $this->registerDefaultAuthDriver();
+    }
+
+    protected function registerDefaultAuthDriver()
+    {
+        if ($this->app->runningInConsole()) {
+            auth()->shouldUse('back');
+            return;
+        }
+
         auth()->shouldUse(request()->section());
     }
 }

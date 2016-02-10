@@ -12,7 +12,7 @@ class CurrentLocale
             return $default;
         }
 
-        if (app()->request->isBack()) {
+        if (app('request')->isBack()) {
             // User might not be set yet if called in a service provider so a fallback is provided
             if (auth()->check()) {
                 return app()->auth->user()->locale;
