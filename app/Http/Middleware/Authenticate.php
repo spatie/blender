@@ -7,28 +7,28 @@ use Exception;
 
 class Authenticate
 {
-    public function handle($request, Closure $next, string $guard)
+    public function handle($request, Closure $next)
     {
-        if (auth()->guard($guard)->guest()) {
-            return $this->handleUnauthorizedRequest($request, $guard);
+        if (auth()->guest()) {
+            return $this->handleUnauthorizedRequest($request);
         }
 
-        current_user()->registerLastActivity();
+        current_user()->registerLastActivity()->save();
 
         return $next($request);
     }
 
-    protected function handleUnauthorizedRequest($request, string $guard)
+    protected function handleUnauthorizedRequest($request)
     {
         if ($request->ajax()) {
             return response('Unauthorized.', 401);
         }
 
-        if ($guard === 'front') {
+        if ($request->isFront()) {
             return redirect()->guest(action('Front\AuthController@getLogin'));
         }
 
-        if ($guard === 'back') {
+        if ($request->isBack()) {
             return redirect()->guest(action('Back\AuthController@getLogin'));
         }
 

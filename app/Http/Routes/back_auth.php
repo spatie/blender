@@ -8,4 +8,7 @@ Route::get('password/email', 'AuthController@getEmail');
 Route::post('password/email', 'AuthController@postEmail');
 Route::get('password/reset/{token}', 'AuthController@getReset');
 Route::post('password/reset/{token}', 'AuthController@postReset');
-Route::redirect('password', 'AuthController@getEmail');
+
+Route::get('password', function () {
+    return redirect()->action('AuthController@getEmail');
+});
