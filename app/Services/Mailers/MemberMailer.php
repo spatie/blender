@@ -2,7 +2,7 @@
 
 namespace App\Services\Mailers;
 
-use App\Models\User;
+use App\Services\Auth\Front\User;
 
 class MemberMailer extends Mailer
 {
