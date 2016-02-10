@@ -24,7 +24,7 @@
             {!! Form::button( trans('back-auth.resetPasswordButton'), ['type'=>'submit', 'class'=>'button -default']) !!}
         </div>
         <div class="form_group_help">
-            <a href="{{ URL::route('login') }}">{{ trans('back-auth.toLogin') }}</a>
+            <a href="{{ login_url()  }}">{{ trans('back-auth.toLogin') }}</a>
         </div>
         {!! Form::close() !!}
     </div>

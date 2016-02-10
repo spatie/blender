@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
-class PasswordController
+class PasswordController extends Controller
 {
     use ResetsPasswords;
 
-    /** @var \Illuminate\Contracts\Auth\Guard */
-    protected $guard;
-
-    public function __construct()
-    {
-        $this->guard = auth()->guard('front');
-    }
+    protected $guard = 'front';
+    protected $linkRequestView = 'front.auth.password';
+    protected $resetView = 'front.auth.reset';
 }

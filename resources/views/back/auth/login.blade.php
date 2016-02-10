@@ -27,7 +27,7 @@
                 {!! Form::password('password', [ ]) !!}
                 {!! HTML::error($errors->first('password')) !!}
                 <div class="form_group_help">
-                    <a href="{{ URL::to('/'.app()->getLocale().'/password/email') }}">{{ trans('back-auth.forgotPassword') }}</a>
+                    <a href="{{ action('Back\PasswordController@getEmail') }}">{{ trans('back-auth.forgotPassword') }}</a>
                 </div>
             </div>
 
