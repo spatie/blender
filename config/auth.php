@@ -68,10 +68,10 @@ return [
 			'driver' => 'eloquent',
 			'model' => App\Services\Auth\Front\User::class,
 		],
-         'back' => [
-             'driver' => 'eloquent',
-             'model' => App\Services\Auth\Back\User::class,
-		 ],
+        'back' => [
+            'driver' => 'eloquent',
+            'model' => App\Services\Auth\Back\User::class,
+		],
 	],
 
 	/*
@@ -95,14 +95,14 @@ return [
 
 	'passwords' => [
 		'front' => [
-			'provider' => 'users',
-			'email' => 'emails.auth.password',
+			'provider' => 'front',
+			'email' => 'emails.auth.front.passwords',
 			'table' => 'password_resets',
 			'expire' => 60 * 24 * 4,
 		],
         'back' => [
-            'provider' => 'users',
-            'email' => 'emails.auth.password',
+            'provider' => 'back',
+            'email' => 'emails.auth.back.passwords',
             'table' => 'password_resets',
             'expire' => 60 * 24 * 4,
         ],

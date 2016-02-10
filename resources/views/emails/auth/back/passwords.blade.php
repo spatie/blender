@@ -7,13 +7,13 @@
         {{ trans('auth.passwordMail.compellation', [], null, $user->locale) }} {{ $user->firstName }},
     </p>
     <p>
-        {{ trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') .'.intro', [], null, $user->locale) }} <a href="{{ URL::to('/blender') }}">{{ Request::getHost() }}</a>.
+        {{ trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') .'.intro', [], null, $user->locale) }} <a href="{{ url('blender') }}">{{ Request::getHost() }}</a>.
     </p>
     <table>
         <tr>
             <td class="padding">
                 <p>
-                    <a href="{{ URL::to('/'.$user->locale.'/password/reset/'.$token) }}" class="btn-primary">
+                    <a href="{{ action('Back\PasswordController@getReset', [$token]) }}" class="btn-primary">
                         {{ trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton', [], null, $user->locale) }}
                     </a>
                 </p>

@@ -10,9 +10,15 @@
     <div class="+auth_card">
         <h1 class="+auth_title -small">{{ fragment('auth.titleResetPassword') }}</h1>
         {!! Form::open(['class'=>'-stacked +auth_form']) !!}
+        @if(session('status'))
+        <p class="alert -info">
+            {{ session('status') }}
+        </p>
+        @else
         <p class="alert -invers">
             {{ fragment('auth.resetPasswordIntro') }}
         </p>
+        @endif
         <div class="form_group">
             {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
             {!! Form::email('email', null, ['autofocus' => true]) !!}
