@@ -4,6 +4,7 @@ namespace App\Services\Auth\Front;
 
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
+use App\Services\Auth\Front\Events\UserWasRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
 use App\Services\Auth\User as BaseUser;
 
@@ -27,7 +28,7 @@ class User extends BaseUser
             'status' => UserStatus::ACTIVE(),
         ];
 
-        return static::create($defaults + array_only($input, [
+        $user = static::create($defaults + array_only($input, [
             'first_name',
             'last_name',
             'address',
@@ -38,6 +39,10 @@ class User extends BaseUser
             'email',
             'password',
         ]));
+
+        event(new UserWasRegistered($user));
+
+        return $user;
     }
 
     public function guardDriver() : string

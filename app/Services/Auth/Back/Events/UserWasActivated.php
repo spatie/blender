@@ -1,6 +1,6 @@
 <?php
 
-namespace Services\Auth\Back\Events;
+namespace App\Services\Auth\Back\Events;
 
 use App\Events\Event;
 use App\Services\Auth\Front\User;
