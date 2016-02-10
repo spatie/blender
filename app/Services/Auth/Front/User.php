@@ -20,13 +20,9 @@ class User extends BaseUser
 {
     protected $table = 'users_front';
 
-    public function isCurrentUser() : bool
+    public function guardDriver() : string
     {
-        if (! $this->id) {
-            return false;
-        }
-
-        return $this->id === auth()->guard('front')->id();
+        return 'front';
     }
 
     public function getHomeUrl() : string

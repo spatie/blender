@@ -22,22 +22,8 @@ class RouteServiceProvider extends ServiceProvider
 
     public function map(Router $router)
     {
-        $this->mapAuthRoutes($router);
         $this->mapBackRoutes($router);
         $this->mapFrontRoutes($router);
-    }
-
-    protected function mapAuthRoutes(Router $router)
-    {
-        $router->get('auth/{action?}', function ($action = null) {
-            return redirect(app()->getLocale().'/auth/'.$action);
-        });
-
-        foreach (config('app.backLocales') as $locale) {
-            $router->group(['namespace' => $this->namespace.'\Auth', 'prefix' => $locale], function () {
-                require app_path('Http/Routes/auth.php');
-            });
-        }
     }
 
     protected function mapBackRoutes(Router $router)
@@ -45,11 +31,14 @@ class RouteServiceProvider extends ServiceProvider
         $router->group(
             [
                 'namespace' => $this->namespace.'\Back',
-                'middleware' => 'auth:back',
                 'prefix' => 'blender',
             ],
             function ($router) {
-                require app_path('Http/Routes/back.php');
+                $router->group(['middelware' => 'auth:back'], function ($router) {
+                    require app_path('Http/Routes/back.php');
+                });
+
+                require app_path('Http/Routes/back.auth.php');
             }
         );
     }
@@ -82,8 +71,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         try {
             require app_path('Http/Routes/front.php');
+            require app_path('Http/Routes/front.auth.php');
         } catch (Exception $exception) {
-            app('log')->warning('Front routes weren\'t included.');
+            logger()->warning('Front routes weren\'t included.');
         }
     }
 

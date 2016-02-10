@@ -94,13 +94,13 @@ return [
     */
 
 	'passwords' => [
-		'users' => [
+		'front' => [
 			'provider' => 'users',
 			'email' => 'emails.auth.password',
 			'table' => 'password_resets',
 			'expire' => 60 * 24 * 4,
 		],
-        'admins' => [
+        'back' => [
             'provider' => 'users',
             'email' => 'emails.auth.password',
             'table' => 'password_resets',

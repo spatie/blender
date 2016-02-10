@@ -6,7 +6,7 @@ use Illuminate\Http\Request as BaseRequest;
 
 class Request extends BaseRequest
 {
-    protected function section() : string
+    public function section() : string
     {
         if($this->segment(1) === 'blender') {
             return 'back';
@@ -15,12 +15,12 @@ class Request extends BaseRequest
         return 'front';
     }
 
-    public function isForFront() : bool
+    public function isFront() : bool
     {
         return $this->section() === 'front';
     }
 
-    public function isForBack() : bool
+    public function isBack() : bool
     {
         return $this->section() === 'back';
     }

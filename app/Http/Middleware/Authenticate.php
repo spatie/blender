@@ -3,49 +3,35 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Auth\Guard;
+use Exception;
 
 class Authenticate
 {
-    /**
-     * The Guard implementation.
-     *
-     * @var Guard
-     */
-    protected $auth;
-
-    /**
-     * Create a new filter instance.
-     *
-     * @param Guard $auth
-     */
-    public function __construct(Guard $auth)
+    public function handle($request, Closure $next, string $guard)
     {
-        $this->auth = $auth;
-    }
-
-    /**
-     * Handle an incoming request.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \Closure                 $next
-     *
-     * @return mixed
-     */
-    public function handle($request, Closure $next)
-    {
-        if ($this->auth->guest()) {
-            if ($request->ajax()) {
-                return response('Unauthorized.', 401);
-            } else {
-                return redirect()->guest('auth/login');
-            }
+        if (auth()->guard($guard)->guest()) {
+            return $this->handleUnauthorizedRequest($request, $guard);
         }
 
-        app()->setLocale(app('currentLocale')->determine());
-
-        $this->auth->user()->setLastActivityToNow();
+        current_user()->registerLastActivity();
 
         return $next($request);
+    }
+
+    protected function handleUnauthorizedRequest($request, string $guard)
+    {
+        if ($request->ajax()) {
+            return response('Unauthorized.', 401);
+        }
+
+        if ($guard === 'front') {
+            return redirect()->guest(action('Front\AuthController@getLogin'));
+        }
+
+        if ($guard === 'back') {
+            return redirect()->guest(action('Back\AuthController@getLogin'));
+        }
+
+        throw new Exception('Invalid auth guard specified');
     }
 }

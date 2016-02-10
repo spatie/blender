@@ -152,11 +152,27 @@ function current_user()
     return auth()->user();
 }
 
+function login_url() : string
+{
+    return request()->isFront() ?
+        action('Front\AuthController@getLogin') :
+        action('Back\AuthController@getLogin');
+}
+
+function logout_url() : string
+{
+    return request()->isFront() ?
+        action('Front\AuthController@getLogout') :
+        action('Back\AuthController@getLogout');
+}
+
 /**
  * Validate some data.
  *
  * @param string|array $fields
  * @param string|array $rules
+ *
+ * @return bool
  */
 function validate($fields, $rules) : bool
 {

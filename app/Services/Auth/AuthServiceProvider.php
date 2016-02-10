@@ -34,4 +34,11 @@ class AuthServiceProvider extends ServiceProvider
             return $user->hasRole(UserRole::ADMIN);
         });
     }
+
+    public function register()
+    {
+        parent::register();
+
+        auth()->shouldUse(request()->section());
+    }
 }

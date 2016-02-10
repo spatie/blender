@@ -14,23 +14,19 @@ class User extends BaseUser
 {
     protected $table = 'users_back';
 
-    public function isCurrentUser() : bool
+    public function guardDriver() : string
     {
-        if (! $this->id) {
-            return false;
-        }
-
-        return $this->id === auth()->guard('back')->id();
+        return 'back';
     }
 
     public function getHomeUrl() : string
     {
-        return url();
+        return url('blender');
     }
 
     public function getProfileUrl() : string
     {
-        return url();
+        return action('Back\UserController@edit', ['id' => $this->id]);
     }
 
     public function getStatusAttribute() : UserStatus

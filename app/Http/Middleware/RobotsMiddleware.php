@@ -21,6 +21,6 @@ class RobotsMiddleware extends BaseRobotsMiddleware
             return false;
         }
 
-        return $request->isForFront();
+        return $request->isFront();
     }
 }

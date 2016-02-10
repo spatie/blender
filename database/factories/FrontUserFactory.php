@@ -13,7 +13,7 @@ $factory->define(User::class, function (Generator $faker) {
         'first_name' => $firstName,
         'last_name' => $lastName,
         'email' => strtolower("{$firstName}.{$lastName}@spatie.be"),
-        'password' => bcrypt('test'),
+        'password' => strtolower($firstName),
 
         'locale' => 'nl',
 

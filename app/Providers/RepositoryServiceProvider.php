@@ -34,7 +34,7 @@ class RepositoryServiceProvider extends ServiceProvider
             return;
         }
 
-        if ($this->app->request->isForBack()) {
+        if ($this->app->request->isBack()) {
             $this->dbRepositories = array_merge($this->dbRepositories, $this->cacheRepositories);
             $this->cacheRepositories = [];
         }

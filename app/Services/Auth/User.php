@@ -32,6 +32,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['last_activity'];
 
+    abstract public function guardDriver() : string;
     abstract public function getHomeUrl() : string;
     abstract public function getProfileUrl() : string;
 
@@ -50,5 +51,18 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
         $this->last_activity = Carbon::now();
 
         return $this;
+    }
+
+    public function isCurrentUser() : bool
+    {
+        if (! $this->id) {
+            return false;
+        }
+
+        if ($this->guardDriver() !== config('auth.defaults.guard')) {
+            return false;
+        }
+
+        return $this->id === auth()->id();
     }
 }

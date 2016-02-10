@@ -40,7 +40,7 @@ class RedirectIfDemo
      */
     protected function protectedByDemoMode()
     {
-        if (! app('request')->isForFront()) {
+        if (! app('request')->isFront()) {
             return false;
         }
 
