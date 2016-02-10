@@ -142,7 +142,7 @@ function translate($id = null, $parameters = [], $locale = null)
     return trans($id, $parameters, $domain = 'messages');
 }
 
-/** @return \App\Services\Auth\User|null */
+/** @return \App\Services\Auth\Front\User|\App\Services\Auth\Back\User|null */
 function current_user()
 {
     if (! auth()->check()) {
@@ -164,6 +164,11 @@ function logout_url() : string
     return request()->isFront() ?
         action('Front\AuthController@getLogout') :
         action('Back\AuthController@getLogout');
+}
+
+function register_url() : string
+{
+    return action('Front\AuthController@getRegister');
 }
 
 /**

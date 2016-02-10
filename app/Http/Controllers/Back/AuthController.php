@@ -3,20 +3,40 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use App\Services\Auth\Back\User;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesUsers, ThrottlesLogins;
 
-    protected function getGuard() : string
-    {
-        return 'back';
-    }
+    protected $guard = 'back';
+    protected $loginView = 'back.auth.login';
 
     public function redirectPath() : string
     {
         return current_user()->getHomeUrl();
+    }
+
+    protected function authenticated(Request $request, User $user)
+    {
+        if (! $user->isActive()) {
+            auth()->logout();
+
+            return $this->sendInactiveAccountResponse($request);
+        }
+
+        return redirect()->intended($this->redirectPath());
+    }
+
+    protected function sendInactiveAccountResponse($request)
+    {
+        return redirect()->back()
+            ->withInput($request->only($this->loginUsername(), 'remember'))
+            ->withErrors([
+                $this->loginUsername() => trans('back-auth.inactiveAccountError'),
+            ]);
     }
 }

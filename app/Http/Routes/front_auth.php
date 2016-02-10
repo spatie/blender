@@ -17,8 +17,5 @@ Route::group(['middleware' => 'guest'], function () {
 
 Route::get('logout', 'AuthController@getLogout');
 
-//Route::pattern('registrationRole', '(member)');
-//Route::group(['prefix' => 'register'], function () {
-//    Route::get('{registrationRole}', 'RegistrationController@showRegistrationForm');
-//    Route::post('{registrationRole}', 'RegistrationController@saveUser');
-//});
+Route::get('register', 'AuthController@getRegister');
+Route::post('register', 'AuthController@postRegister');

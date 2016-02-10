@@ -1,7 +1,5 @@
 <?php
 
-use App\Services\Auth\Front\Enums\UserRole;
-use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\User;
 
 class FrontUserSeeder extends DatabaseSeeder
@@ -30,8 +28,8 @@ class FrontUserSeeder extends DatabaseSeeder
 
         collect($users)->each(function ($lastName, $firstName) {
 
-            User::create([
-                'email' => strtolower($firstName) . '-front@spatie.be',
+            factory(User::class)->create([
+                'email' => strtolower($firstName).'@spatie.be',
                 'password' => app()->environment('local') ? strtolower($firstName) : string()->random(),
                 'first_name' => "{$firstName} (Front)",
                 'last_name' => $lastName,

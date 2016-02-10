@@ -4,10 +4,9 @@
 
 @section('content')
 <section class="+auth">
-    {{-- @include('auth._partials.lang') --}}
-    
+
     @include('back.layout._partials.flashMessage', ['extraClass' => '-fixed'])
-    
+
     <div class="+auth_card">
         <h1 class="+auth_title -small">{{ Lang::get('auth.titleResetPassword') }}</h1>
         {!! Form::open(['class'=>'-stacked +auth_form']) !!}

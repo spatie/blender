@@ -44,6 +44,11 @@ class User extends BaseUser
         return $this->status->equals($status);
     }
 
+    public function isActive() : bool
+    {
+        return $this->hasStatus(UserStatus::ACTIVE());
+    }
+
     public function activate() : User
     {
         if ($this->status->doesntEqual(UserStatus::WAITING_FOR_APPROVAL())) {

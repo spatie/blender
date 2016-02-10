@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <a href="{{ URL::action('Auth\AuthController@getLogin') }}">Naar login</a>
+    <a href="{{ URL::action('Front\AuthController@getLogin') }}">Naar login</a>
 
     {!! Form::open() !!}
 

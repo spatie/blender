@@ -4,7 +4,6 @@
 
 @section('content')
     <section class="+auth">
-        {{-- @include('auth._partials.lang') --}}
         <div class="+auth_card">
             <h1 class="+auth_title -small">
                 {!! HTML::avatar($user, '-large +auth_gravatar') !!}<br>

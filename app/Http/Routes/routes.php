@@ -9,17 +9,11 @@ Route::group(['namespace' => 'Back', 'prefix' => 'blender'], function () {
     require __DIR__.'/back_auth.php';
 });
 
+Route::group(['namespace' => 'Front'], function () {
 
-Route::group(['namespace' => 'Front', 'middleware' => 'sanitizeInput'], function () {
+        $multiLingual = count(config('app.locales')) > 1;
 
-        $localeConfiguration = count(config('app.locales')) > 1 ? ['prefix' => locale()] : [];
-
-        Route::get('/', function () {
-            return redirect(locale());
-        });
-
-        Route::group($localeConfiguration, function () {
-
+        Route::group($multiLingual ? ['prefix' => locale()] : [], function () {
             try {
                 require __DIR__.'/front.php';
                 require __DIR__.'/front_auth.php';
@@ -27,5 +21,11 @@ Route::group(['namespace' => 'Front', 'middleware' => 'sanitizeInput'], function
                 logger()->warning('Front routes weren\'t included.');
             }
         });
+
+        if ($multiLingual) {
+            Route::get('/', function () {
+                return redirect(locale());
+            });
+        }
     }
 );

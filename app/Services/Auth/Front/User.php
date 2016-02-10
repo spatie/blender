@@ -20,6 +20,26 @@ class User extends BaseUser
 {
     protected $table = 'users_front';
 
+    public static function register(array $input) : User
+    {
+        $defaults = [
+            'role' => UserRole::MEMBER(),
+            'status' => UserStatus::ACTIVE(),
+        ];
+
+        return static::create($defaults + array_only($input, [
+            'first_name',
+            'last_name',
+            'address',
+            'postal',
+            'city',
+            'country',
+            'telephone',
+            'email',
+            'password',
+        ]));
+    }
+
     public function guardDriver() : string
     {
         return 'front';
@@ -48,6 +68,11 @@ class User extends BaseUser
     public function hasStatus(UserStatus $status) : bool
     {
         return $this->status->equals($status);
+    }
+
+    public function isActive() : bool
+    {
+        return $this->hasStatus(UserStatus::ACTIVE());
     }
 
     public function activate() : User

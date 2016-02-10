@@ -45,7 +45,7 @@
                 @if(current_user())
                 Hey, {{ current_user()->first_name }} — <a href="{{ logout_url() }}">Uitloggen</a>
                 @else
-                <a href="{{ login_url() }}">Inloggen</a>
+                <a href="{{ register_url() }}">Registreren</a> - <a href="{{ login_url() }}">Inloggen</a>
                 @endif
             </nav>
         </div>
