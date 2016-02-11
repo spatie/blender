@@ -23,12 +23,17 @@ class AuthController extends Controller
     protected function authenticated(Request $request, User $user)
     {
         if (! $user->isActive()) {
-            auth()->logout();
+            auth()->guard('back')->logout();
 
             return $this->sendInactiveAccountResponse($request);
         }
 
         return redirect()->intended($this->redirectPath());
+    }
+
+    protected function getFailedLoginMessage() : string
+    {
+        return fragment('auth.failed');
     }
 
     protected function sendInactiveAccountResponse($request)
