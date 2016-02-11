@@ -9,12 +9,10 @@ before_script:
   - nvm install 5
   - npm set registry https://npm.spatie.be
   - npm set ca null
-  - npm install -g npm
-  - npm install -g gulp
   - npm install
   - gulp
   - gulp --back
 
 script:
- - phpunit --coverage-text --coverage-clover=coverage.clover
+ - phpunit
 
