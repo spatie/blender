@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\Navigation\Section;
 use Closure;
 use Exception;
 
@@ -24,11 +25,11 @@ class Authenticate
             return response('Unauthorized.', 401);
         }
 
-        if ($request->isFront()) {
+        if (app(Section::class)->isFront()) {
             return redirect()->guest(action('Front\AuthController@getLogin'));
         }
 
-        if ($request->isBack()) {
+        if (app(Section::class)->isBack()) {
             return redirect()->guest(action('Back\AuthController@getLogin'));
         }
 

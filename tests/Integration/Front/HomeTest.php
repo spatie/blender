@@ -6,9 +6,7 @@ use Spatie\Integration\FrontTestCase;
 
 class HomeTest extends FrontTestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function it_can_display_the_home_page()
     {
         $this->visit('/');

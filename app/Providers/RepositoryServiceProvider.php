@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Services\Navigation\Section;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Cache;
@@ -34,7 +35,7 @@ class RepositoryServiceProvider extends ServiceProvider
             return;
         }
 
-        if ($this->app->request->isBack()) {
+        if (app(Section::class)->isBack()) {
             $this->dbRepositories = array_merge($this->dbRepositories, $this->cacheRepositories);
             $this->cacheRepositories = [];
         }

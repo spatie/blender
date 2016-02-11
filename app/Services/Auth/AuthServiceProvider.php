@@ -2,6 +2,7 @@
 
 namespace App\Services\Auth;
 
+use App\Services\Navigation\Section;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -28,6 +29,6 @@ class AuthServiceProvider extends ServiceProvider
             return;
         }
 
-        auth()->shouldUse(request()->section());
+        auth()->shouldUse(app(Section::class)->section());
     }
 }

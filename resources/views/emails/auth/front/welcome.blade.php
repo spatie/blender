@@ -9,6 +9,3 @@
     U kunt <a href="{{ action('Front\AuthController@getLogin') }}">hier</a> inloggen.
 
 @endsection
-
-
-

@@ -154,14 +154,14 @@ function current_user()
 
 function login_url() : string
 {
-    return request()->isFront() ?
+    return app(App\Services\Navigation\Section::class)->isFront() ?
         action('Front\AuthController@getLogin') :
         action('Back\AuthController@getLogin');
 }
 
 function logout_url() : string
 {
-    return request()->isFront() ?
+    return app(App\Services\Navigation\Section::class)->isFront() ?
         action('Front\AuthController@getLogout') :
         action('Back\AuthController@getLogout');
 }
