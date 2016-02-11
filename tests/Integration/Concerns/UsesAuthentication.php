@@ -8,28 +8,50 @@ use App\Services\Auth\User;
 
 trait UsesAuthentication
 {
-    /** @return static */
+    /**
+     * @param \App\Services\Auth\User $user
+     * @param string $section
+     *
+     * @return static
+     */
     protected function assertLoggedInAs(User $user, string $section)
     {
-        $this->assertTrue($this->app['auth']->guard($section)->check());
-        $this->assertEquals($this->app['auth']->guard($section)->id(), $user->id);
+        $guard = $this->app['auth']->guard($section);
+
+        $this->assertTrue($guard->check(),
+            "Expected {$section} user {$user->id} to be logged in, not no one is.");
+
+        $this->assertEquals($guard->id(), $user->id,
+            "Expected {$section} user {$user->id} to be logged in, not {$guard->id()} is.");
 
         return $this;
     }
 
-    /** @return static */
+    /**
+     * @param \App\Services\Auth\Front\User $user
+     *
+     * @return static
+     */
     protected function assertLoggedInOnFrontAs(FrontUser $user)
     {
         return $this->assertLoggedInAs($user, 'front');
     }
 
-    /** @return static */
+    /**
+     * @param \App\Services\Auth\Back\User $user
+     *
+     * @return static
+     */
     protected function assertLoggedInOnBackAs(BackUser $user)
     {
         return $this->assertLoggedInAs($user, 'back');
     }
 
-    /** @return static */
+    /**
+     * @param string $section
+     *
+     * @return static
+     */
     protected function assertNotLoggedIn(string $section)
     {
         $this->assertFalse($this->app['auth']->guard($section)->check());
@@ -53,13 +75,21 @@ trait UsesAuthentication
         return $this;
     }
 
-    /** @return static */
+    /**
+     * @param \App\Services\Auth\Front\User $user
+     *
+     * @return static
+     */
     protected function actingAsOnFront(FrontUser $user)
     {
         return $this->actingAs($user, 'front');
     }
 
-    /** @return static */
+    /**
+     * @param \App\Services\Auth\Back\User $user
+     *
+     * @return static
+     */
     protected function actingAsOnBack(BackUser $user)
     {
         return $this->actingAs($user, 'back');
@@ -69,7 +99,7 @@ trait UsesAuthentication
     {
         return factory(FrontUser::class)->create(array_merge([
             'email' => 'user@spatie.be',
-            'password' => 'secret',
+            'password' => 'password',
         ], $attributes));
     }
 
@@ -77,7 +107,7 @@ trait UsesAuthentication
     {
         return factory(BackUser::class)->create(array_merge([
             'email' => 'user@spatie.be',
-            'password' => 'secret',
+            'password' => 'password',
         ], $attributes));
     }
 }

@@ -36,7 +36,6 @@
     "spatie/activitylog": "^2.3",
     "spatie/array-functions": "^1.1",
     "spatie/eloquent-sortable": "^1.0",
-    "spatie/integration": "^3.0.0",
     "spatie/laravel-analytics": "^1.0",
     "spatie/laravel-authorize": "^1.0.0",
     "spatie/laravel-backup": "^2.4",
@@ -59,7 +58,6 @@
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
 	"phpunit/phpunit": "~4.0",
-	"phpspec/phpspec": "~2.1",
     "fabpot/php-cs-fixer": "^1.10",
     "symfony/dom-crawler": "~3.0",
     "symfony/css-selector": "~3.0"

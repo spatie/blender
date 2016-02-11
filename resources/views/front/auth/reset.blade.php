@@ -19,7 +19,8 @@
 
             <div class="form_group">
                 {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
-                {!! Form::email('email', $user->email, ['disabled' => 'disabled', 'autocomplete' => 'off']) !!}
+                <input type="email" value="{{ $user->email }}" disabled autocomplete="off">
+                {!! Form::hidden('email', $user->email) !!}
             </div>
 
             <div class="form_group">

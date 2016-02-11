@@ -2,9 +2,9 @@
 
 namespace App\Test\Integration\Front;
 
-use Spatie\Integration\FrontTestCase;
+use App\Test\Integration\TestCase;
 
-class HomeTest extends FrontTestCase
+class HomeTest extends TestCase
 {
     /** @test */
     public function it_can_display_the_home_page()

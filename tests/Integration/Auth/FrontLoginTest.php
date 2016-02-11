@@ -4,7 +4,7 @@ namespace App\Test\Integration\Auth;
 
 use App\Services\Auth\Front\Enums\UserStatus;
 use App\Test\Integration\Concerns\UsesAuthentication;
-use Spatie\Integration\TestCase;
+use App\Test\Integration\TestCase;
 
 class FrontLoginTest extends TestCase
 {
@@ -15,7 +15,7 @@ class FrontLoginTest extends TestCase
         // This test is only viable if the application actually has protected routes
 
         $this
-            ->visit('/secret')
+            ->visit('/password')
             ->seePageIs('/nl/login');
     }
 
@@ -27,7 +27,7 @@ class FrontLoginTest extends TestCase
         $this
             ->visitFrontLogin()
             ->type('user@spatie.be', 'email')
-            ->type('secret', 'password')
+            ->type('password', 'password')
             ->press(fragment('auth.logIn'))
             ->assertLoggedInOnFrontAs($user);
     }
@@ -40,7 +40,7 @@ class FrontLoginTest extends TestCase
         $this
             ->visitFrontLogin()
             ->type('user@spatie.be', 'email')
-            ->type('secret', 'password')
+            ->type('password', 'password')
             ->press(fragment('auth.logIn'))
             ->assertLoggedInOnFrontAs($user)
             ->seePageIs('/nl'); // Not using `getHomeUrl` because it depends on locale
@@ -69,7 +69,7 @@ class FrontLoginTest extends TestCase
         $this
             ->visitFrontLogin()
             ->type('user@spatie.be', 'email')
-            ->type('secret', 'password')
+            ->type('password', 'password')
             ->press(fragment('auth.logIn'))
             ->seePageIs('/nl/login')
             ->see(fragment('auth.notActivatedError'))

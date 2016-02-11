@@ -66,7 +66,11 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
         return $this->id === auth()->id();
     }
 
-    /** @return \App\Services\Auth\User|null */
+    /**
+     * @param string $token
+     *
+     * @return \App\Services\Auth\User|null
+     */
     public static function findByToken(string $token)
     {
         $resetRecord = app('db')->table('password_resets')->where('token', $token)->first();
@@ -76,5 +80,15 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
         }
 
         return static::where('email', $resetRecord->email)->first();
+    }
+
+    /**
+     * @param string $email
+     *
+     * @return \App\Services\Auth\User|null
+     */
+    public static function findByEmail(string $email)
+    {
+        return static::where('email', $email)->first();
     }
 }
