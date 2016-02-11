@@ -13,6 +13,7 @@ use App\Services\Auth\User as BaseUser;
 class User extends BaseUser
 {
     protected $table = 'users_back';
+    protected $presenter = UserPresenter::class;
 
     public function guardDriver() : string
     {

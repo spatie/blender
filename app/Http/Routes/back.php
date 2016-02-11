@@ -10,12 +10,7 @@ Route::post('formresponses', 'FormResponseController@download');
 
 Route::get('statistics', 'StatisticsController@index')->name('statistics');
 
-Route::get('user', 'UserController@redirectToDefaultIndex');
-Route::get('user/activate/{user}', 'UserController@activate');
-Route::get('user/{role}', 'UserController@index');
-Route::get('user/{role}/create', 'UserController@create');
-Route::post('user/{role}/store', 'UserController@store');
-Route::resource('user', 'UserController', ['except' => ['index', 'create', 'store']]);
+Route::module('backUsers', 'BackUser');
 
 Route::module('articles', 'Article');
 Route::module('newsItems', 'NewsItem');

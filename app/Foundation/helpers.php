@@ -218,3 +218,8 @@ function lang_to_fragments(string $namespace, array $names, array $defaults = []
         return $carry;
     }, $defaults);
 }
+
+function activity(string $message)
+{
+    Activity::log($message);
+}

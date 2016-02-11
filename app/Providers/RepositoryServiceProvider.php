@@ -10,9 +10,10 @@ use Cache;
 class RepositoryServiceProvider extends ServiceProvider
 {
     protected $dbRepositories = [
+        'BackUser',
+        'FrontUser',
         'NewsItem',
         'Person',
-        'User',
     ];
 
     protected $cacheRepositories = [];

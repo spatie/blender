@@ -4,7 +4,7 @@ namespace App\Http\Requests\Back;
 
 use App\Http\Requests\Request;
 
-class UserRequest extends Request
+class BackUserRequest extends Request
 {
     /**
      * Get the validation rules that apply to the request.
@@ -14,7 +14,7 @@ class UserRequest extends Request
     public function rules()
     {
         $rules = [
-            'email' => 'required|email|unique:users',
+            'email' => 'required|email|unique:users_back',
             'first_name' => 'required',
             'last_name' => 'required',
             'password' => 'min:8|confirmed',
