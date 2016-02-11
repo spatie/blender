@@ -10,10 +10,6 @@ class CurrentLocale
     {
         $default = app()->getLocale();
 
-        if (app()->runningInConsole()) {
-            return $default;
-        }
-
         if (app(Section::class)->isBack()) {
             // User might not be set yet if called in a service provider so a fallback is provided
             if (auth()->check()) {

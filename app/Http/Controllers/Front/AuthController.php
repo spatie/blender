@@ -33,12 +33,17 @@ class AuthController extends Controller
         return redirect()->intended($this->redirectPath());
     }
 
+    protected function getFailedLoginMessage() : string
+    {
+        return fragment('auth.failed');
+    }
+
     protected function sendInactiveAccountResponse($request)
     {
         return redirect()->back()
             ->withInput($request->only($this->loginUsername(), 'remember'))
             ->withErrors([
-                $this->loginUsername() => fragment('auth.inactiveAccountError'),
+                $this->loginUsername() => fragment('auth.notActivatedError'),
             ]);
     }
 

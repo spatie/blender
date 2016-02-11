@@ -22,7 +22,7 @@ class RouteServiceProvider extends ServiceProvider
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace], function () {
-            require_once app_path('Http/Routes/routes.php');
+            require app_path('Http/Routes/routes.php');
         });
     }
 

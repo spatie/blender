@@ -31,10 +31,6 @@ class RepositoryServiceProvider extends ServiceProvider
 
     protected function unregisterCacheRepositoriesInBlender()
     {
-        if ($this->app->runningInConsole()) {
-            return;
-        }
-
         if (app(Section::class)->isBack()) {
             $this->dbRepositories = array_merge($this->dbRepositories, $this->cacheRepositories);
             $this->cacheRepositories = [];
