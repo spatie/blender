@@ -7,14 +7,14 @@ use App\Test\Integration\Exception;
 use App\Test\Integration\TestCase;
 use DB;
 
-class FrontPasswordsTest extends TestCase
+class BackPasswordsTest extends TestCase
 {
     use UsesAuthentication;
 
     /** @test */
     function users_can_request_a_new_password()
     {
-        $this->createFrontUser();
+        $this->createBackUser();
 
         $this
             ->requestResetLink()
@@ -25,38 +25,38 @@ class FrontPasswordsTest extends TestCase
     /** @test */
     function invalid_reset_links_redirect_to_the_request_page()
     {
-        $this->createFrontUser();
+        $this->createBackUser();
 
         $this
-            ->visit('/nl/password/reset/invalidlink')
-            ->seePageIs('/nl/password/email');
+            ->visit('/blender/password/reset/invalidlink')
+            ->seePageIs('/blender/password/email');
     }
 
     /** @test */
     function reset_links_can_be_used_to_reset_a_password()
     {
-        $user = $this->createFrontUser();
+        $user = $this->createBackUser();
 
         $this
             ->requestResetLink()
-            ->visit("/nl/password/reset/{$this->findTokenForEmail('user@spatie.be')}")
+            ->visit("/blender/password/reset/{$this->findTokenForEmail('user@spatie.be')}")
             ->see(fragment('auth.titleChangePassword'))
-            ->assertNotLoggedInOnFront()
+            ->assertNotLoggedInOnBack()
             ->type('user@spatie.be', 'email') // Required in the tests
             ->type('newpassword', 'password')
             ->type('newpassword', 'password_confirmation')
             ->press(fragment('auth.passwordMail.oldUser.resetButton'))
-            ->assertLoggedInOnFrontAs($user);
+            ->assertLoggedInOnBackAs($user);
     }
 
-    protected function requestResetLink() : FrontPasswordsTest
+    protected function requestResetLink() : BackPasswordsTest
     {
         return $this
-            ->visit('/nl/login')
-            ->click(fragment('auth.forgotPassword'))
-            ->seePageIs('/nl/password/email')
+            ->visit('/blender/login')
+            ->click(fragment('back-auth.forgotPassword'))
+            ->seePageIs('/blender/password/email')
             ->type('user@spatie.be', 'email')
-            ->press(fragment('auth.resetPasswordButton'));
+            ->press(fragment('back-auth.resetPasswordButton'));
     }
 
     protected function findTokenForEmail(string $email) : string

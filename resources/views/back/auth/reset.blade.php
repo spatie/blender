@@ -19,15 +19,14 @@
             </p>
 
             <div class="form_group">
-                {!! Form::label('email', trans('back-auth.email'), ['class' => '-invers']) !!}
-                {!! Form::email('email', $user->email, ['disabled' => 'disabled', 'autocomplete' => 'off']) !!}
+                {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
+                <input type="email" value="{{ $user->email }}" disabled autocomplete="off">
+                {!! Form::hidden('email', $user->email) !!}
             </div>
 
             <div class="form_group">
                 {!! Form::label('password', trans('back-auth.password'), ['class' => '-invers'] ) !!}
                 {!! Form::password('password', null, ['autofocus' ]) !!}
-
-
             </div>
 
             <div class="form_group">
