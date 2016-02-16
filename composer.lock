@@ -4131,16 +4131,16 @@
         },
         {
             "name": "spatie/activitylog",
-            "version": "2.4.0",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/activitylog.git",
-                "reference": "75a856f639c73c1b0cd9bdd074f9b4286a808da8"
+                "reference": "3bc6e0aba5b9789baf47efd233ba3cbfbfd721d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/activitylog/zipball/75a856f639c73c1b0cd9bdd074f9b4286a808da8",
-                "reference": "75a856f639c73c1b0cd9bdd074f9b4286a808da8",
+                "url": "https://api.github.com/repos/spatie/activitylog/zipball/3bc6e0aba5b9789baf47efd233ba3cbfbfd721d9",
+                "reference": "3bc6e0aba5b9789baf47efd233ba3cbfbfd721d9",
                 "shasum": ""
             },
             "require": {
@@ -4178,7 +4178,7 @@
                 "log",
                 "user"
             ],
-            "time": "2016-02-16 16:02:18"
+            "time": "2016-02-16 16:20:41"
         },
         {
             "name": "spatie/array-functions",
