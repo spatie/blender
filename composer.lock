@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f17cdba9c620b236f94ce378bfc0c836",
-    "content-hash": "21a7be3ae7fc7912dd5da69579295eb8",
+    "hash": "6b1cc52dbe02aaa4b049b954df1f94d2",
+    "content-hash": "3a60f55b5c3d7539b8b64e8cd480976e",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -98,16 +98,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.15.0",
+            "version": "3.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "cf218650881cd79f7bfec669996cd3aff22528d1"
+                "reference": "5e6078913293576de969703481994b77c380ca30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/cf218650881cd79f7bfec669996cd3aff22528d1",
-                "reference": "cf218650881cd79f7bfec669996cd3aff22528d1",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5e6078913293576de969703481994b77c380ca30",
+                "reference": "5e6078913293576de969703481994b77c380ca30",
                 "shasum": ""
             },
             "require": {
@@ -174,7 +174,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-02-09 21:59:27"
+            "time": "2016-02-11 23:23:31"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1901,16 +1901,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.14",
+            "version": "v5.2.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ce63ba53d4891bdbb5e1aaeced1b5dd34edbc86f"
+                "reference": "39e89553c124dce266da03ee3c0260bdd62f1848"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ce63ba53d4891bdbb5e1aaeced1b5dd34edbc86f",
-                "reference": "ce63ba53d4891bdbb5e1aaeced1b5dd34edbc86f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/39e89553c124dce266da03ee3c0260bdd62f1848",
+                "reference": "39e89553c124dce266da03ee3c0260bdd62f1848",
                 "shasum": ""
             },
             "require": {
@@ -2025,7 +2025,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-02-03 14:19:04"
+            "time": "2016-02-15 17:46:58"
         },
         {
             "name": "league/flysystem",
@@ -3127,22 +3127,24 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "4745ded9307786b730d7a60df5cb5a6c43cf95f7"
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/4745ded9307786b730d7a60df5cb5a6c43cf95f7",
-                "reference": "4745ded9307786b730d7a60df5cb5a6c43cf95f7",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/3c91bdf81797d725b14cb62906f9a4ce44235972",
+                "reference": "3c91bdf81797d725b14cb62906f9a4ce44235972",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
+                "php": "^5.3|^7.0",
                 "phpdocumentor/reflection-docblock": "~2.0",
-                "sebastian/comparator": "~1.1"
+                "sebastian/comparator": "~1.1",
+                "sebastian/recursion-context": "~1.0"
             },
             "require-dev": {
                 "phpspec/phpspec": "~2.0"
@@ -3150,7 +3152,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4.x-dev"
+                    "dev-master": "1.5.x-dev"
                 }
             },
             "autoload": {
@@ -3183,7 +3185,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2015-08-13 10:07:40"
+            "time": "2016-02-15 07:46:21"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3427,16 +3429,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.22",
+            "version": "4.8.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72"
+                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dfb11aa5236376b4fc63853cf746af39fe780e72",
-                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6e351261f9cd33daf205a131a1ba61c6d33bd483",
+                "reference": "6e351261f9cd33daf205a131a1ba61c6d33bd483",
                 "shasum": ""
             },
             "require": {
@@ -3495,7 +3497,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-02-02 09:01:21"
+            "time": "2016-02-11 14:56:33"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -4129,16 +4131,16 @@
         },
         {
             "name": "spatie/activitylog",
-            "version": "2.3.0",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/activitylog.git",
-                "reference": "821e703705d175fd6930ea14a353ca0180b35fa3"
+                "reference": "75a856f639c73c1b0cd9bdd074f9b4286a808da8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/activitylog/zipball/821e703705d175fd6930ea14a353ca0180b35fa3",
-                "reference": "821e703705d175fd6930ea14a353ca0180b35fa3",
+                "url": "https://api.github.com/repos/spatie/activitylog/zipball/75a856f639c73c1b0cd9bdd074f9b4286a808da8",
+                "reference": "75a856f639c73c1b0cd9bdd074f9b4286a808da8",
                 "shasum": ""
             },
             "require": {
@@ -4176,7 +4178,7 @@
                 "log",
                 "user"
             ],
-            "time": "2015-12-25 22:02:11"
+            "time": "2016-02-16 16:02:18"
         },
         {
             "name": "spatie/array-functions",
@@ -5127,6 +5129,52 @@
                 "tail"
             ],
             "time": "2015-10-11 09:45:38"
+        },
+        {
+            "name": "spatie/menu",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/menu.git",
+                "reference": "cb9a4f8115542e24f75ba04b7bdf3086d1af71ce"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/cb9a4f8115542e24f75ba04b7bdf3086d1af71ce",
+                "reference": "cb9a4f8115542e24f75ba04b7bdf3086d1af71ce",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^2.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Navigation\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": ":package_description",
+            "homepage": "https://github.com/spatie/navigation",
+            "keywords": [
+                "navigation",
+                "spatie"
+            ],
+            "time": "2016-02-16 15:45:05"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -6749,7 +6797,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fedeisas/laravel-mail-css-inliner": 20
+        "fedeisas/laravel-mail-css-inliner": 20,
+        "spatie/menu": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

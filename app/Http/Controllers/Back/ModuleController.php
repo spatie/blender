@@ -100,7 +100,7 @@ abstract class ModuleController extends Controller
 
     protected function getUpdatedEventDescription($model)
     {
-        $modelName = trans("back-{$this->moduleName}.singular");
+        $modelName = fragment("back.{$this->moduleName}.singular");
 
         $linkToModel = link_to_action("Back\\{$this->modelName}Controller@edit", $model->name, ['id' => $model->id]);
 
@@ -113,7 +113,7 @@ abstract class ModuleController extends Controller
 
     protected function getDeletedEventDescription($model)
     {
-        $modelName = trans("back-{$this->moduleName}.singular");
+        $modelName = fragment("back.{$this->moduleName}.singular");
 
         return fragment('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
     }

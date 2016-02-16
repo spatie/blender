@@ -13,7 +13,7 @@
 
 
                 <table data-sortable="{{ URL::action('Back\TagController@changeOrder') }}">
-                    <caption>{{ trans("back-tags.types.{$name}") }}</caption>
+                    <caption>{{ fragment("back.tags.types.{$name}") }}</caption>
                     <thead>
                     <tr>
                         <th></th>

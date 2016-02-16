@@ -15,7 +15,7 @@ class TagPresenter extends Presenter
         $tagTypes = [];
 
         foreach (TagType::values() as $value) {
-            $tagTypes[(string) $value] = trans("back-tags.types.{$value}");
+            $tagTypes[(string) $value] = fragment("back.tags.types.{$value}");
         }
 
         return collect($tagTypes)->sort();

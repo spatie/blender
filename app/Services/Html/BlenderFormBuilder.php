@@ -39,7 +39,7 @@ class BlenderFormBuilder
      */
     public function label($name, $required = false)
     {
-        return $this->form()->label($name, trans("back-{$this->module}.{$name}").($required ? '*' : ''));
+        return $this->form()->label($name, fragment("back.{$this->module}.{$name}").($required ? '*' : ''));
     }
 
     /**
@@ -131,7 +131,7 @@ class BlenderFormBuilder
             'class' => 'form-control',
         ];
 
-        $labelName = trans("back-{$this->module}.{$name}");
+        $labelName = fragment("back.{$this->module}.{$name}");
         $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
 
         $checkbox = $this->form()->checkbox($fieldName, 1,
@@ -204,7 +204,7 @@ class BlenderFormBuilder
      */
     public function tags($type)
     {
-        $label = $this->form()->label($type.'_tags[]', trans("back-{$this->module}.{$type}"));
+        $label = $this->form()->label($type.'_tags[]', fragment("back.{$this->module}.{$type}"));
         $tags = $this->form()->tags($this->model, $type);
 
         return $this->wrapInFormGroup($label, $tags);
@@ -217,7 +217,7 @@ class BlenderFormBuilder
      */
     public function category($type)
     {
-        $label = $this->form()->label($type.'_tags[]', trans("back-{$this->module}.{$type}"));
+        $label = $this->form()->label($type.'_tags[]', fragment("back.{$this->module}.{$type}"));
         $tags = $this->form()->category($this->model, $type, ['data-select'=>'select']);
 
         return $this->wrapInFormGroup($label, $tags);
@@ -301,7 +301,7 @@ class BlenderFormBuilder
      */
     public function submit()
     {
-        $submit = $this->form()->submit(trans("back-{$this->module}.save"), ['class' => 'button -default']);
+        $submit = $this->form()->submit(fragment("back.{$this->module}.save"), ['class' => 'button -default']);
 
         return "<div class=\"form_group -buttons\">{$submit}</div>";
     }

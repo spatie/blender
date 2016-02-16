@@ -95,7 +95,7 @@ class Breadcrumbs
             "{$singular}ListBack",
             function ($breadcrumbs) use ($ucname, $plural) {
                 $breadcrumbs->push(
-                    trans("back-{$plural}.title"),
+                    fragment("back.{$plural}.title"),
                     action("Back\\{$ucname}Controller@index")
                 );
             }
@@ -107,7 +107,7 @@ class Breadcrumbs
                 $breadcrumbs->parent("{$singular}ListBack");
 
                 $breadcrumbs->push(
-                    $model->isDraft() ? trans("back-{$plural}.new") :
+                    $model->isDraft() ? fragment("back.{$plural}.new") :
                         (isset($model->name) ? $model->name : ucfirst(fragment('back.change'))),
                     action("Back\\{$ucname}Controller@create")
                 );

@@ -1,4 +1,7 @@
 <?php
+
+use Illuminate\Support\Str;
+
 /**
  * Get the app's current locale.
  */

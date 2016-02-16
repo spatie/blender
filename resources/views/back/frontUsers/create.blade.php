@@ -7,7 +7,7 @@
 @section('content')
     <section>
         <div class="grid">
-            <h1>{{ trans("back-frontUsers.new") }}</h1>
+            <h1>{{ fragment("back.frontUsers.new") }}</h1>
 
             {!! Form::open([
                 'url' => action('Back\FrontUserController@store'),
