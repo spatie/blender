@@ -33,7 +33,7 @@
     "pda/pheanstalk": "^3.0",
     "phpseclib/phpseclib": "0.3.*",
     "pusher/pusher-php-server": "^2.2",
-    "spatie/activitylog": "^2.3",
+    "spatie/activitylog": "^2.4",
     "spatie/array-functions": "^1.1",
     "spatie/eloquent-sortable": "^1.0",
     "spatie/laravel-analytics": "^1.0",
