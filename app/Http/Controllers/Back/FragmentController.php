@@ -44,7 +44,7 @@ class FragmentController extends Controller
     {
         $fragment = Fragment::find($id);
 
-        $fragment = FragmentUpdater::create($fragment, $request)->update();
+        FragmentUpdater::update($fragment, $request);
 
         $fragment->save();
         app('cache')->flush();
