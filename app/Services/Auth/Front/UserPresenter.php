@@ -12,21 +12,16 @@ class UserPresenter extends Presenter
         return "{$this->first_name} {$this->last_name}";
     }
 
-    public function avatar() : string
-    {
-        return 'https://www.gravatar.com/avatar/'.md5($this->email).'?d=mm&s=256';
-    }
-
     public function lastActivityDate() : string
     {
         if ($this->last_activity === null || $this->last_activity->year == -1) {
-            return trans('back-users.neverLoggedIn');
+            return trans('back-frontUsers.neverLoggedIn');
         }
 
         $lastActivityDate = diff_date_for_humans($this->last_activity);
 
         if (str_contains($lastActivityDate, 'second')) {
-            $lastActivityDate = trans('back-users.justNow');
+            $lastActivityDate = trans('back-frontUsers.justNow');
         }
 
         return $lastActivityDate;

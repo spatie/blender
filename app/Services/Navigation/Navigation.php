@@ -75,7 +75,8 @@ class Navigation
     {
         $menu = Menu::handler('backService');
 
-        $menu->add(action('Back\BackUserController@index', [], false), trans('back-users.title'), null, null, ['class'=>'menu_group_item']);
+        $menu->add(action('Back\FrontUserController@index', [], false), trans('back-frontUsers.title'), null, null, ['class'=>'menu_group_item']);
+        $menu->add(action('Back\BackUserController@index', [], false), trans('back-backUsers.title'), null, null, ['class'=>'menu_group_item']);
         $menu->add(action('Back\ActivitylogController@index', [], false), 'Log', null, null, ['class'=>'menu_group_item -secondary']);
         $menu->add(action('Back\StatisticsController@index', [], false), trans('back-statistics.menuTitle'), null, null, ['class'=>'menu_group_item -secondary']);
 

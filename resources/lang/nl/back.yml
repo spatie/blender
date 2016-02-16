@@ -13,3 +13,4 @@ events:
   created: :model :name werd aangemaakt
   updated: :model :name werd bijgewerkt
   deleted: :model :name werd verwijderd
+  activated: :model :name werd geactiveerd

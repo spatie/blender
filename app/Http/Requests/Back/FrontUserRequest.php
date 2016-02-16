@@ -4,19 +4,18 @@ namespace App\Http\Requests\Back;
 
 use App\Http\Requests\Request;
 
-class BackUserRequest extends Request
+class FrontUserRequest extends Request
 {
     public function rules() : array
     {
         $rules = [
-            'email' => 'required|email|unique:users_back,email',
+            'email' => 'required|email|unique:users_front,email',
             'first_name' => 'required',
             'last_name' => 'required',
-            'password' => 'confirmed',
         ];
 
         if ($this->method() === 'PATCH') {
-            $rules['email'] .= ",{$this->getRouteParameter('backUsers')}";
+            $rules['email'] .= ",{$this->getRouteParameter('frontUsers')}";
         }
 
         return $rules;

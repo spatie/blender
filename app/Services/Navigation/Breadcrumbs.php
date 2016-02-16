@@ -54,20 +54,32 @@ class Breadcrumbs
 
     protected function registerUserBreadcrumbs()
     {
-        BreadCrumbsManager::register('backUserListBack', function ($breadcrumbs, $user) {
-
-            $breadcrumbs->push(trans('back-users.title'), '/blender/user/admin');
-            $breadcrumbs->push(trans("back-users.role.{$user->role}.plural"), action('Back\BackUserController@index', ['role' => $user->role]));
+        BreadCrumbsManager::register('backUserListBack', function ($breadcrumbs) {
+            $breadcrumbs->push(trans('back-backUsers.title'), action('Back\BackUserController@index'));
         });
 
-        BreadCrumbsManager::register('newBackUserBack', function ($breadcrumbs, $user) {
-            $breadcrumbs->parent('backUserListBack', $user);
-            $breadcrumbs->push(trans('back-users.new'), action('Back\BackUserController@create', ['role' => $user->role]));
+        BreadCrumbsManager::register('newBackUserBack', function ($breadcrumbs) {
+            $breadcrumbs->parent('backUserListBack');
+            $breadcrumbs->push(trans('back-backUsers.new'), action('Back\BackUserController@create'));
         });
 
         BreadCrumbsManager::register('editBackUserBack', function ($breadcrumbs, $user) {
             $breadcrumbs->parent('backUserListBack', $user);
             $breadcrumbs->push($user->present()->fullName, action('Back\BackUserController@edit', $user->id));
+        });
+
+        BreadCrumbsManager::register('frontUserListBack', function ($breadcrumbs) {
+            $breadcrumbs->push(trans('back-frontUsers.title'), action('Back\FrontUserController@index'));
+        });
+
+        BreadCrumbsManager::register('newFrontUserBack', function ($breadcrumbs) {
+            $breadcrumbs->parent('frontUserListBack');
+            $breadcrumbs->push(trans('back-frontUsers.new'), action('Back\FrontUserController@create'));
+        });
+
+        BreadCrumbsManager::register('editFrontUserBack', function ($breadcrumbs, $user) {
+            $breadcrumbs->parent('frontUserListBack', $user);
+            $breadcrumbs->push($user->present()->fullName, action('Back\FrontUserController@edit', $user->id));
         });
     }
 

@@ -9,7 +9,8 @@ lastName: Last name
 locale: Taal
 automaticCredentialsMailInfo: We will send this new user an e-mail with a link to specifiy a password.
 save: Save user
-gravatarInfo: You can specify this avatar on 
+gravatarInfo: You can specify this avatar on
 passwordChangeInfo: Only fill in these fields if you want to change the password.
 password: Password
 passwordConfirmation: Confirm password
+administrator: administrator

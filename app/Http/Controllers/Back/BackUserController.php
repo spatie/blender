@@ -30,26 +30,23 @@ class BackUserController extends Controller
 
     public function create()
     {
-        $user = new User();
-
-        return view("back.backUsers.create")->with(compact('user', 'role'));
+        return view('back.backUsers.create', ['user' => new User()]);
     }
 
     public function store(BackUserRequest $request)
     {
         $user = new User();
 
-        UserUpdater::create($user, $request)->update();
+        UserUpdater::update($user, $request);
 
         $user->role = UserRole::ADMIN();
         $user->status = UserStatus::ACTIVE();
 
         $this->backUserRepository->save($user);
 
-        $eventDescription = trans('back-users.passwordMailSent');
-
+        $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity($eventDescription);
-        flash()->success(strip_tags($eventDescription));
+        flash()->success(strip_tags($eventDescription).'. '.trans('back-backUsers.passwordMailSent'));
 
         event(new UserWasCreated($user));
 
@@ -60,6 +57,8 @@ class BackUserController extends Controller
     {
         $user = $this->backUserRepository->find($id);
 
+        if (! $user) abort(404);
+
         return view('back.backUsers.edit')->with(compact('user'));
     }
 
@@ -67,11 +66,11 @@ class BackUserController extends Controller
     {
         $user = $this->backUserRepository->findOrAbort($id);
 
-        UserUpdater::create($user, $request)->update();
+        UserUpdater::update($user, $request);
 
         $this->backUserRepository->save($user);
 
-        $eventDescription = trans('back.events.updated', ['model' => 'Gebruiker', 'name' => $user->email]);
+        $eventDescription = $this->getEventDescriptionFor('updated', $user);
         activity($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
@@ -84,7 +83,7 @@ class BackUserController extends Controller
 
         $user->activate();
 
-        $eventDescription = trans('back.events.activated', ['model' => 'Gebruiker', 'name' => $user->email]);
+        $eventDescription = $this->getEventDescriptionFor('activated', $user);
         activity($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
@@ -95,12 +94,28 @@ class BackUserController extends Controller
     {
         $user = $this->backUserRepository->find($id);
 
-        $eventDescription = trans('back.events.deleted', ['model' => 'Gebruiker', 'name' => $user->email]);
-        activity($eventDescription);
-        flash()->success(strip_tags($eventDescription));
+        $eventDescription = $this->getEventDescriptionFor('deleted', $user);
 
         $this->backUserRepository->delete($user);
 
+        activity($eventDescription);
+        flash()->success(strip_tags($eventDescription));
+
         return redirect()->action('Back\BackUserController@index');
+    }
+
+    protected function getEventDescriptionFor(string $event, User $user) : string
+    {
+        $name = sprintf(
+            '<a href="%s">%s</a>',
+            action('Back\BackUserController@edit', [$user->id]),
+            $user->email
+        );
+
+        if ($event === 'deleted') {
+            $name = $user->email;
+        }
+
+        return trans("back.events.$event", ['model' => trans('back-backUsers.administrator'), 'name' => $name]);
     }
 }

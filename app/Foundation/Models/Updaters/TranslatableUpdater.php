@@ -9,7 +9,7 @@ class TranslatableUpdater extends Updater
     /**
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function update()
+    public function performUpdate()
     {
         $this->updateTranslations();
 

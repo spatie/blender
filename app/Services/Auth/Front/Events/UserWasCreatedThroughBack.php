@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Services\Auth\Back\Events;
+namespace App\Services\Auth\Front\Events;
 
 use App\Events\Event;
-use App\Services\Auth\Back\User;
+use App\Services\Auth\Front\User;
 
-class UserWasCreated extends Event
+class UserWasCreatedThroughBack extends Event
 {
     /** @var \App\Services\Auth\Front\User */
     public $user;

@@ -9,7 +9,7 @@ class UserUpdater extends Updater
     /** @var \App\Services\Auth\Front\User */
     protected $model;
 
-    public function update()
+    public function performUpdate()
     {
         $this->model->email = $this->request->get('email');
         $this->model->first_name = $this->request->get('first_name');

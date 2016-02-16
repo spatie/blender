@@ -11,6 +11,7 @@ Route::post('formresponses', 'FormResponseController@download');
 Route::get('statistics', 'StatisticsController@index')->name('statistics');
 
 Route::module('backUsers', 'BackUser');
+Route::module('frontUsers', 'FrontUser');
 
 Route::module('articles', 'Article');
 Route::module('newsItems', 'NewsItem');

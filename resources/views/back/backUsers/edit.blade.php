@@ -11,7 +11,7 @@
             <div>
                 {!! HTML::avatar($user) !!}
                 <span class="help -small">
-                    {{ trans('back-users.gravatarInfo') }} <a href="https://gravatar.com">gravatar.com</a>
+                    {{ trans('back-backUsers.gravatarInfo') }} <a href="https://gravatar.com">gravatar.com</a>
                 </span>
             </div>
             {!! Form::model(

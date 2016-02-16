@@ -3,6 +3,8 @@
 namespace App\Services\Mailers;
 
 use App\Services\Auth\Front\User;
+use Illuminate\Mail\Message;
+use Password;
 
 class MemberMailer extends Mailer
 {
@@ -15,12 +17,10 @@ class MemberMailer extends Mailer
         $this->sendTo($user->email, $subject, $view, $data);
     }
 
-    public function sendApprovedMail(User $user)
+    public function sendPasswordEmail(User $user)
     {
-        $view = 'emails.auth.front.approved';
-        $data = ['userId' => $user->id];
-        $subject = 'Uw account is goedgekeurd';
-
-        $this->sendTo($user->email, $subject, $view, $data);
+        Password::broker('front')->sendResetLink(['email' => $user->email], function (Message $message) {
+            $message->subject('Welkom bij '.request()->getHost());
+        });
     }
 }

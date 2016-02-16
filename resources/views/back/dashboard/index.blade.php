@@ -31,7 +31,7 @@
                             <tr>
                                 <td>{{ diff_date_for_humans($logItem->created_at) }}</td>
                                 <td>{!! $logItem->text !!}</td>
-                                <td>{!! ($logItem->user ? link_to_action('Back\UserController@edit', $logItem->user->present()->fullName, [$logItem->user->id]) : '') !!}</td>
+                                <td>{!! ($logItem->user ? link_to_action('Back\BackUserController@edit', $logItem->user->present()->fullName, [$logItem->user->id]) : '') !!}</td>
                             </tr>
                         @endforeach
                     </tbody>
