@@ -1,9 +1,9 @@
-<h2>{{ trans('back-statistics.mostUsedBrowsers') }}</h2>
+<h2>{{ fragment('back.statistics.mostUsedBrowsers') }}</h2>
 @if (count($browserData))
     <table class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
-        <th>{{ trans('back-statistics.browsers') }}</th>
-        <th>{{ trans('back-statistics.sessions') }}</th>
+        <th>{{ fragment('back.statistics.browsers') }}</th>
+        <th>{{ fragment('back.statistics.sessions') }}</th>
         </thead>
         <tbody>
         @foreach($browserData as $browserRow)
@@ -43,5 +43,5 @@
     @stop
 --}}
 @else
-    {!! HTML::info(trans('back-statistics.noData')) !!}
+    {!! HTML::info(fragment('back.statistics.noData')) !!}
 @endif

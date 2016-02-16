@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Services\Navigation\CurrentSection;
+use App\Services\Navigation\Section;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Cache;
@@ -10,9 +10,10 @@ use Cache;
 class RepositoryServiceProvider extends ServiceProvider
 {
     protected $dbRepositories = [
+        'BackUser',
+        'FrontUser',
         'NewsItem',
         'Person',
-        'User',
     ];
 
     protected $cacheRepositories = [];
@@ -31,7 +32,7 @@ class RepositoryServiceProvider extends ServiceProvider
 
     protected function unregisterCacheRepositoriesInBlender()
     {
-        if ($this->app->make(CurrentSection::class)->determine() === 'blender') {
+        if (app(Section::class)->isBack()) {
             $this->dbRepositories = array_merge($this->dbRepositories, $this->cacheRepositories);
             $this->cacheRepositories = [];
         }

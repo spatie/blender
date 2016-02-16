@@ -32,7 +32,7 @@ class Handler extends ExceptionHandler
     }
 
 
-    public function render($request, Exception $e) : Response
+    public function render($request, Exception $e)
     {
         if ($this->isHttpException($e)) {
             return $this->renderHttpException($e);
@@ -63,7 +63,7 @@ class Handler extends ExceptionHandler
         );
     }
 
-    /**
+    /*
      * Don't ever display sensitive data in Whoops pages.
      */
     protected function unsetSensitiveData()

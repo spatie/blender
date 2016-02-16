@@ -15,7 +15,7 @@ return [
 
 	'defaults' => [
 		'guard' => 'front',
-		'passwords' => 'users',
+		'passwords' => 'front',
 	],
 
 	/*
@@ -38,11 +38,11 @@ return [
 	'guards' => [
 		'front' => [
 			'driver' => 'session',
-			'provider' => 'users',
+			'provider' => 'front',
 		],
         'back' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'back',
         ],
 	],
 
@@ -64,15 +64,14 @@ return [
     */
 
 	'providers' => [
-		'users' => [
+		'front' => [
 			'driver' => 'eloquent',
-			'model' => App\Models\User::class,
+			'model' => App\Services\Auth\Front\User::class,
 		],
-
-		// 'users' => [
-		//     'driver' => 'database',
-		//     'table' => 'users',
-		// ],
+        'back' => [
+            'driver' => 'eloquent',
+            'model' => App\Services\Auth\Back\User::class,
+		],
 	],
 
 	/*
@@ -95,12 +94,18 @@ return [
     */
 
 	'passwords' => [
-		'users' => [
-			'provider' => 'users',
-			'email' => 'emails.auth.password',
+		'front' => [
+			'provider' => 'front',
+			'email' => 'emails.auth.front.passwords',
 			'table' => 'password_resets',
 			'expire' => 60 * 24 * 4,
 		],
+        'back' => [
+            'provider' => 'back',
+            'email' => 'emails.auth.back.passwords',
+            'table' => 'password_resets',
+            'expire' => 60 * 24 * 4,
+        ],
 	],
 
 ];

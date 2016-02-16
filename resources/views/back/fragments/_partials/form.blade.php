@@ -1,6 +1,6 @@
 @foreach(config('app.locales') as $locale)
     <div class="form_group">
-        {!! Form::getLabelForTranslatedField('text', trans('back-fragments.text'), $locale) !!}
+        {!! Form::getLabelForTranslatedField('text', fragment('back.fragments.text'), $locale) !!}
 
         @if($fragment->contains_html)
         {!! Form::redactor($fragment, 'text', $locale) !!}
@@ -16,5 +16,5 @@
 @endforeach
 
 <div class="form_group -buttons">
-    {!!  Form::button(trans('back-fragments.save'), ['type' => 'submit' , 'class' => 'button -default']) !!}
+    {!!  Form::button(fragment('back.fragments.save'), ['type' => 'submit' , 'class' => 'button -default']) !!}
 </div>

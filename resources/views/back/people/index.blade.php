@@ -1,19 +1,19 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-people.title'))
+@section('pageTitle', fragment('back.people.title'))
 
 @section('content')
     <section>
         <div class="grid">
-            <h1>{{ trans('back-people.title') }}</h1>
+            <h1>{{ fragment('back.people.title') }}</h1>
 
-            <a href="{{ action('Back\PersonController@create') }}" class="button">{{ trans('back-people.new') }}</a>
+            <a href="{{ action('Back\PersonController@create') }}" class="button">{{ fragment('back.people.new') }}</a>
 
             <table data-sortable="{{ action('Back\PersonController@changeOrder') }}">
                 <thead>
                 <tr>
-                    <th>{{ trans('back-people.name') }}</th>
-                    <th>{{ trans('back-people.function') }}</th>
+                    <th>{{ fragment('back.people.name') }}</th>
+                    <th>{{ fragment('back.people.function') }}</th>
                     <th data-orderable="false"></th>
                 </tr>
 

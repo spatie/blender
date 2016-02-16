@@ -246,8 +246,8 @@ class BlenderFormBuilder
     public function map($name)
     {
         $label = $this->label($name);
-        $text = "<input type='text' class='locationpicker_search' data-locationpicker-search placeholder='".trans('back.locationpicker.search')."'>";
-        $button = "<button class='locationpicker_button' type='button' data-locationpicker-button>".trans('back.locationpicker.submit').'</button>';
+        $text = "<input type='text' class='locationpicker_search' data-locationpicker-search placeholder='".fragment('back.locationpicker.search')."'>";
+        $button = "<button class='locationpicker_button' type='button' data-locationpicker-button>".fragment('back.locationpicker.submit').'</button>';
         $map = "<div class='locationpicker_map' data-locationpicker-map></div>";
 
         $lat = $this->form()->hidden(

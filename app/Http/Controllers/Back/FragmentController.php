@@ -13,7 +13,14 @@ class FragmentController extends Controller
 {
     public function index()
     {
-        $fragments = Fragment::all();
+        $fragments = Fragment::where('hidden', false)->get();
+
+        return view('back.fragments.index')->with(compact('fragments'));
+    }
+
+    public function hidden()
+    {
+        $fragments = Fragment::where('hidden', true)->get();
 
         return view('back.fragments.index')->with(compact('fragments'));
     }
@@ -42,7 +49,7 @@ class FragmentController extends Controller
         $fragment->save();
         app('cache')->flush();
 
-        $eventDescription = trans('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);
+        $eventDescription = fragment('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);
         Activity::log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 

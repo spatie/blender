@@ -38,8 +38,15 @@
     @include('front.layout._partials.deprecatedBrowser')
     <header class="header">
         <div class="grid">
-            <nav class="nav">
+            <nav class="nav grid_col -width-1/2">
                 {!! Navigation::getFrontMainMenu() !!}
+            </nav>
+            <nav class="nav :align-right grid_col -width-1/2 -last">
+                @if(current_user())
+                Hey, {{ current_user()->first_name }} — <a href="{{ logout_url() }}">Uitloggen</a>
+                @else
+                <a href="{{ register_url() }}">Registreren</a> - <a href="{{ login_url() }}">Inloggen</a>
+                @endif
             </nav>
         </div>
     </header>

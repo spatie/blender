@@ -4,14 +4,12 @@ namespace App\Services\Mailers;
 
 use App\Events\ContactFormWasSubmitted;
 use App\Events\UserWasCreated;
-use App\Models\Enums\UserRole;
-use App\Models\Enums\UserStatus;
+use App\Services\Auth\Back\Enums\UserRole;
+use App\Services\Auth\Back\Enums\UserStatus;
+use Illuminate\Contracts\Events\Dispatcher;
 
 class AdminMailerEventHandler
 {
-    /**
-     * @param AdminMailer $mailer
-     */
     public function __construct(AdminMailer $mailer)
     {
         $this->mailer = $mailer;
@@ -33,14 +31,7 @@ class AdminMailerEventHandler
         $this->mailer->sendContactFormDetails($event->formResponse);
     }
 
-    /**
-     * Register the listeners for the subscriber.
-     *
-     * @param \Illuminate\Events\Dispatcher $events
-     *
-     * @return array
-     */
-    public function subscribe($events)
+    public function subscribe(Dispatcher $events)
     {
         $events->listen(
             UserWasCreated::class,

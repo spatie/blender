@@ -43,7 +43,7 @@ class Breadcrumbs
     protected function registerFragmentBreadcrumbs()
     {
         BreadCrumbsManager::register('fragments', function ($breadcrumbs) {
-            $breadcrumbs->push(trans('back-fragments.title'), action('Back\FragmentController@index'));
+            $breadcrumbs->push(fragment('back.fragments.title'), action('Back\FragmentController@index'));
         });
 
         BreadCrumbsManager::register('fragmentDetail', function ($breadcrumbs, $string) {
@@ -54,20 +54,32 @@ class Breadcrumbs
 
     protected function registerUserBreadcrumbs()
     {
-        BreadCrumbsManager::register('userListBack', function ($breadcrumbs, $user) {
-
-            $breadcrumbs->push(trans('back-users.title'), '/blender/user/admin');
-            $breadcrumbs->push(trans("back-users.role.{$user->role}.plural"), action('Back\UserController@index', ['role' => $user->role]));
+        BreadCrumbsManager::register('backUserListBack', function ($breadcrumbs) {
+            $breadcrumbs->push(fragment('back.backUsers.title'), action('Back\BackUserController@index'));
         });
 
-        BreadCrumbsManager::register('newUserBack', function ($breadcrumbs, $user) {
-            $breadcrumbs->parent('userListBack', $user);
-            $breadcrumbs->push(trans('back-users.new'), action('Back\UserController@create', ['role' => $user->role]));
+        BreadCrumbsManager::register('newBackUserBack', function ($breadcrumbs) {
+            $breadcrumbs->parent('backUserListBack');
+            $breadcrumbs->push(fragment('back.backUsers.new'), action('Back\BackUserController@create'));
         });
 
-        BreadCrumbsManager::register('editUserBack', function ($breadcrumbs, $user) {
-            $breadcrumbs->parent('userListBack', $user);
-            $breadcrumbs->push($user->present()->fullName, action('Back\UserController@edit', $user->id));
+        BreadCrumbsManager::register('editBackUserBack', function ($breadcrumbs, $user) {
+            $breadcrumbs->parent('backUserListBack', $user);
+            $breadcrumbs->push($user->present()->fullName, action('Back\BackUserController@edit', $user->id));
+        });
+
+        BreadCrumbsManager::register('frontUserListBack', function ($breadcrumbs) {
+            $breadcrumbs->push(fragment('back.frontUsers.title'), action('Back\FrontUserController@index'));
+        });
+
+        BreadCrumbsManager::register('newFrontUserBack', function ($breadcrumbs) {
+            $breadcrumbs->parent('frontUserListBack');
+            $breadcrumbs->push(fragment('back.frontUsers.new'), action('Back\FrontUserController@create'));
+        });
+
+        BreadCrumbsManager::register('editFrontUserBack', function ($breadcrumbs, $user) {
+            $breadcrumbs->parent('frontUserListBack', $user);
+            $breadcrumbs->push($user->present()->fullName, action('Back\FrontUserController@edit', $user->id));
         });
     }
 
@@ -96,7 +108,7 @@ class Breadcrumbs
 
                 $breadcrumbs->push(
                     $model->isDraft() ? trans("back-{$plural}.new") :
-                        (isset($model->name) ? $model->name : ucfirst(trans('back.change'))),
+                        (isset($model->name) ? $model->name : ucfirst(fragment('back.change'))),
                     action("Back\\{$ucname}Controller@create")
                 );
             }

@@ -19,6 +19,7 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('section', Section::class);
         $this->app->singleton('navigation', Navigation::class);
     }
 }

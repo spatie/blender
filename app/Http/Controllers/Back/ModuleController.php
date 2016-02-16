@@ -65,7 +65,7 @@ abstract class ModuleController extends Controller
 
         $model = $this->query()->find($id);
 
-        $this->createUpdater($model, $request)->update();
+        call_user_func("App\\Models\\Updaters\\{$this->modelName}Updater::update", $model, $request);
 
         $model->save();
         app('cache')->flush();
@@ -75,13 +75,6 @@ abstract class ModuleController extends Controller
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action("Back\\{$this->modelName}Controller@edit", [$model->id]);
-    }
-
-    protected function createUpdater(Model $model, Request $request)
-    {
-        $className = "App\\Models\\Updaters\\{$this->modelName}Updater";
-
-        return $className::create($model, $request);
     }
 
     public function destroy($id)
@@ -112,17 +105,17 @@ abstract class ModuleController extends Controller
         $linkToModel = link_to_action("Back\\{$this->modelName}Controller@edit", $model->name, ['id' => $model->id]);
 
         if ($model->wasDraft) {
-            return trans('back.events.created', ['model' => $modelName, 'name' => $linkToModel]);
+            return fragment('back.events.created', ['model' => $modelName, 'name' => $linkToModel]);
         }
 
-        return trans('back.events.updated', ['model' => $modelName, 'name' => $linkToModel]);
+        return fragment('back.events.updated', ['model' => $modelName, 'name' => $linkToModel]);
     }
 
     protected function getDeletedEventDescription($model)
     {
         $modelName = trans("back-{$this->moduleName}.singular");
 
-        return trans('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
+        return fragment('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
     }
 
     protected function query()

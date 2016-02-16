@@ -1,9 +1,9 @@
-<h2>{{ trans('back-statistics.sources') }}</h2>
+<h2>{{ fragment('back.statistics.sources') }}</h2>
 @if (count($referrerData))
     <table  class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
-        <th>{{ trans('back-statistics.source') }}</th>
-        <th>{{ trans('back-statistics.numberOfVisitors') }}</th>
+        <th>{{ fragment('back.statistics.source') }}</th>
+        <th>{{ fragment('back.statistics.numberOfVisitors') }}</th>
         </thead>
         <tbody>
         @foreach($referrerData as $referrerRow)
@@ -19,6 +19,6 @@
         </tbody>
     </table>
 @else
-    {!! HTML::info(trans('back-statistics.noData')) !!}
+    {!! HTML::info(fragment('back.statistics.noData')) !!}
 @endif
 

@@ -11,9 +11,9 @@ class NewsItemUpdater extends ModuleModelUpdater
 {
     use UpdatesTags;
 
-    public function update()
+    public function performUpdate()
     {
-        parent::update();
+        parent::performUpdate();
 
         $this->updateTags(TagType::NEWS_TAG(), TagType::NEWS_CATEGORY());
 

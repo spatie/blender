@@ -7,34 +7,22 @@ use Illuminate\Http\Request;
 
 abstract class Updater
 {
-    /**
-     * @var \Illuminate\Http\Request
-     */
+    /** @var \Illuminate\Http\Request */
     protected $request;
 
-    /**
-     * @var \Illuminate\Database\Eloquent\Model
-     */
+    /** @var \Illuminate\Database\Eloquent\Model */
     protected $model;
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    abstract public function update();
+    /** @return \Illuminate\Database\Eloquent\Model */
+    abstract public function performUpdate();
 
-    /**
-     * @param \Illuminate\Database\Eloquent\Model $model
-     * @param \Illuminate\Http\Request            $request
-     *
-     * @return static
-     */
-    public static function create(Model $model, Request $request)
+    public static function update(Model $model, Request $request)
     {
         $updater = new static();
 
         $updater->model = $model;
         $updater->request = $request;
 
-        return $updater;
+        $updater->performUpdate();
     }
 }

@@ -6,9 +6,9 @@ use App\Foundation\Models\Updaters\TranslatableUpdater;
 
 class TagUpdater extends TranslatableUpdater
 {
-    public function update()
+    public function performUpdate()
     {
-        parent::update();
+        parent::performUpdate();
 
         $this->model->type = $this->request->get('type');
     }

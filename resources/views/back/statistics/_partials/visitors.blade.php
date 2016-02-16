@@ -1,4 +1,4 @@
-<h2>{{ trans('back-statistics.visitors') }}</h2>
+<h2>{{ fragment('back.statistics.visitors') }}</h2>
 <div class="chart" data-chart>
     <canvas id="visitors" width=1000 height=250></canvas>
     <div class="chart_legend" id="visitors-legend">
@@ -15,7 +15,7 @@
                 labels: {!! json_encode(array_map(function($month) {return $month->format('m-Y');}, $visitorsData->lists('yearMonth')->toArray())) !!},
                 datasets: [
                     {
-                        label: '{{ trans('back-statistics.visitors') }}',
+                        label: '{{ fragment('back.statistics.visitors') }}',
                         data: {!! json_encode($visitorsData->lists('visitors')) !!},
                         fillColor: "rgba(151,187,205,0.2)",
                         strokeColor: "rgba(151,187,205,1)",

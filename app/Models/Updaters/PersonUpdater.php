@@ -9,9 +9,9 @@ class PersonUpdater extends ModuleModelUpdater
     /**
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function update()
+    public function performUpdate()
     {
-        parent::update();
+        parent::performUpdate();
 
         $this->model->name = $this->request->get('name');
     }

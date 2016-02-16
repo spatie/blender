@@ -142,18 +142,51 @@ function translate($id = null, $parameters = [], $locale = null)
     return trans($id, $parameters, $domain = 'messages');
 }
 
-/**
- * Return the currentUser.
- *
- * @return bool|\App\Models\User
- */
-function currentUser()
+/** @return \App\Services\Auth\Front\User|\App\Services\Auth\Back\User|null */
+function current_user()
 {
-    if (!auth()->check()) {
-        return false;
+    return app(App\Services\Navigation\Section::class)->isFront() ?
+        current_front_user() :
+        current_back_user();
+}
+
+/** @return \App\Services\Auth\Front\User|null */
+function current_front_user()
+{
+    if (! auth()->guard('front')->check()) {
+        return null;
     }
 
-    return auth()->user();
+    return auth()->guard('front')->user();
+}
+
+/** @return \App\Services\Auth\Back\User|null */
+function current_back_user()
+{
+    if (! auth()->guard('back')->check()) {
+        return null;
+    }
+
+    return auth()->guard('back')->user();
+}
+
+function login_url() : string
+{
+    return app(App\Services\Navigation\Section::class)->isFront() ?
+        action('Front\AuthController@getLogin') :
+        action('Back\AuthController@getLogin');
+}
+
+function logout_url() : string
+{
+    return app(App\Services\Navigation\Section::class)->isFront() ?
+        action('Front\AuthController@getLogout') :
+        action('Back\AuthController@getLogout');
+}
+
+function register_url() : string
+{
+    return action('Front\AuthController@getRegister');
 }
 
 /**
@@ -161,6 +194,8 @@ function currentUser()
  *
  * @param string|array $fields
  * @param string|array $rules
+ *
+ * @return bool
  */
 function validate($fields, $rules) : bool
 {
@@ -173,4 +208,18 @@ function validate($fields, $rules) : bool
     }
 
     return Validator::make($fields, $rules)->passes();
+}
+
+function lang_to_fragments(string $namespace, array $names, array $defaults = []) : array
+{
+    return array_reduce($names, function ($carry, $name) use ($namespace) {
+        $carry[$name] = fragment("{$namespace}.{$name}");
+
+        return $carry;
+    }, $defaults);
+}
+
+function activity(string $message)
+{
+    Activity::log($message);
 }

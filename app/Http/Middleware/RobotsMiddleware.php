@@ -2,7 +2,7 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\Navigation\CurrentSection;
+use App\Services\Navigation\Section;
 use Illuminate\Http\Request;
 use Spatie\RobotsMiddleware\RobotsMiddleware as BaseRobotsMiddleware;
 
@@ -22,6 +22,6 @@ class RobotsMiddleware extends BaseRobotsMiddleware
             return false;
         }
 
-        return app(CurrentSection::class)->isFront();
+        return app(Section::class)->isFront();
     }
 }

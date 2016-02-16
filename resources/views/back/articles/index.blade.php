@@ -1,17 +1,17 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-articles.title'))
+@section('pageTitle', fragment('back.articles.title'))
 
 @section('content')
 <section>
     <div class="grid">
-        <h1>{{ trans('back-articles.title') }}</h1>
-        <a href="{{ action('Back\ArticleController@create') }}" class="button">{{ trans('back-articles.new') }}</a>
+        <h1>{{ fragment('back.articles.title') }}</h1>
+        <a href="{{ action('Back\ArticleController@create') }}" class="button">{{ fragment('back.articles.new') }}</a>
 
         <table data-datatable data-order='[[ 0, "asc" ]]'>
             <thead>
             <tr>
-                <th>{{ trans('back-articles.name') }}</th>
+                <th>{{ fragment('back.articles.name') }}</th>
                 <th data-orderable="false"></th>
             </tr>
             </thead>

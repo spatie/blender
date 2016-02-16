@@ -3,7 +3,7 @@
 namespace App\Services\Mailers;
 
 use App\Models\FormResponse;
-use App\Models\User;
+use App\Services\Auth\Back\User;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Mail\Message;
 
