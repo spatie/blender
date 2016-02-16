@@ -45,9 +45,9 @@ class Navigation
     public function getBackContentMenu()
     {
         $menu = Menu::handler('backContent');
-        $menu->add(action('Back\ArticleController@index', [], false), trans('back-articles.title'), null, null, ['class'=>'menu_group_item']);
-        $menu->add(action('Back\NewsItemController@index', [], false), trans('back-newsItems.title'), null, null, ['class'=>'menu_group_item -secondary']);
-        $menu->add(action('Back\PersonController@index', [], false), trans('back-people.title'), null, null, ['class'=>'menu_group_item -secondary']);
+        $menu->add(action('Back\ArticleController@index', [], false), fragment('back.articles.title'), null, null, ['class'=>'menu_group_item']);
+        $menu->add(action('Back\NewsItemController@index', [], false), fragment('back.newsItems.title'), null, null, ['class'=>'menu_group_item -secondary']);
+        $menu->add(action('Back\PersonController@index', [], false), fragment('back.people.title'), null, null, ['class'=>'menu_group_item -secondary']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));
@@ -59,9 +59,9 @@ class Navigation
     public function getBackModuleMenu()
     {
         $menu = Menu::handler('backModule');
-        $menu->add(action('Back\FragmentController@index', [], false), trans('back-fragments.title'), null, null, ['class'=>'menu_group_item']);
-        $menu->add(action('Back\FormResponseController@showDownloadButton', [], false), trans('back-formResponses.title'), null, null, ['class'=>'menu_group_item -secondary']);
-        $menu->add(action('Back\TagController@index', [], false), trans('back-tags.title'), null, null, ['class'=>'menu_group_item -secondary']);
+        $menu->add(action('Back\FragmentController@index', [], false), fragment('back.fragments.title'), null, null, ['class'=>'menu_group_item']);
+        $menu->add(action('Back\FormResponseController@showDownloadButton', [], false), fragment('back.formResponses.title'), null, null, ['class'=>'menu_group_item -secondary']);
+        $menu->add(action('Back\TagController@index', [], false), fragment('back.tags.title'), null, null, ['class'=>'menu_group_item -secondary']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));
@@ -75,10 +75,10 @@ class Navigation
     {
         $menu = Menu::handler('backService');
 
-        $menu->add(action('Back\FrontUserController@index', [], false), trans('back-frontUsers.title'), null, null, ['class'=>'menu_group_item']);
-        $menu->add(action('Back\BackUserController@index', [], false), trans('back-backUsers.title'), null, null, ['class'=>'menu_group_item']);
+        $menu->add(action('Back\FrontUserController@index', [], false), fragment('back.frontUsers.title'), null, null, ['class'=>'menu_group_item']);
+        $menu->add(action('Back\BackUserController@index', [], false), fragment('back.backUsers.title'), null, null, ['class'=>'menu_group_item']);
         $menu->add(action('Back\ActivitylogController@index', [], false), 'Log', null, null, ['class'=>'menu_group_item -secondary']);
-        $menu->add(action('Back\StatisticsController@index', [], false), trans('back-statistics.menuTitle'), null, null, ['class'=>'menu_group_item -secondary']);
+        $menu->add(action('Back\StatisticsController@index', [], false), fragment('back.statistics.menuTitle'), null, null, ['class'=>'menu_group_item -secondary']);
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
             return str_replace('/blender/', '/', $item->getContent()->getUrl()) == ('/'.Request::segment(2));

@@ -105,17 +105,17 @@ abstract class ModuleController extends Controller
         $linkToModel = link_to_action("Back\\{$this->modelName}Controller@edit", $model->name, ['id' => $model->id]);
 
         if ($model->wasDraft) {
-            return trans('back.events.created', ['model' => $modelName, 'name' => $linkToModel]);
+            return fragment('back.events.created', ['model' => $modelName, 'name' => $linkToModel]);
         }
 
-        return trans('back.events.updated', ['model' => $modelName, 'name' => $linkToModel]);
+        return fragment('back.events.updated', ['model' => $modelName, 'name' => $linkToModel]);
     }
 
     protected function getDeletedEventDescription($model)
     {
         $modelName = trans("back-{$this->moduleName}.singular");
 
-        return trans('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
+        return fragment('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
     }
 
     protected function query()

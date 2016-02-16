@@ -13,9 +13,9 @@
             <table class="-datatable -compact">
                 <thead>
                 <tr>
-                    <th>{{ trans('back-log.time') }}</th>
-                    <th>{{ trans('back-log.description') }}</th>
-                    <th>{{ trans('back-log.user') }}</th>
+                    <th>{{ fragment('back.log.time') }}</th>
+                    <th>{{ fragment('back.log.description') }}</th>
+                    <th>{{ fragment('back.log.user') }}</th>
                 </tr>
                 </thead>
                 <tbody>

@@ -43,7 +43,7 @@ class Breadcrumbs
     protected function registerFragmentBreadcrumbs()
     {
         BreadCrumbsManager::register('fragments', function ($breadcrumbs) {
-            $breadcrumbs->push(trans('back-fragments.title'), action('Back\FragmentController@index'));
+            $breadcrumbs->push(fragment('back.fragments.title'), action('Back\FragmentController@index'));
         });
 
         BreadCrumbsManager::register('fragmentDetail', function ($breadcrumbs, $string) {
@@ -55,12 +55,12 @@ class Breadcrumbs
     protected function registerUserBreadcrumbs()
     {
         BreadCrumbsManager::register('backUserListBack', function ($breadcrumbs) {
-            $breadcrumbs->push(trans('back-backUsers.title'), action('Back\BackUserController@index'));
+            $breadcrumbs->push(fragment('back.backUsers.title'), action('Back\BackUserController@index'));
         });
 
         BreadCrumbsManager::register('newBackUserBack', function ($breadcrumbs) {
             $breadcrumbs->parent('backUserListBack');
-            $breadcrumbs->push(trans('back-backUsers.new'), action('Back\BackUserController@create'));
+            $breadcrumbs->push(fragment('back.backUsers.new'), action('Back\BackUserController@create'));
         });
 
         BreadCrumbsManager::register('editBackUserBack', function ($breadcrumbs, $user) {
@@ -69,12 +69,12 @@ class Breadcrumbs
         });
 
         BreadCrumbsManager::register('frontUserListBack', function ($breadcrumbs) {
-            $breadcrumbs->push(trans('back-frontUsers.title'), action('Back\FrontUserController@index'));
+            $breadcrumbs->push(fragment('back.frontUsers.title'), action('Back\FrontUserController@index'));
         });
 
         BreadCrumbsManager::register('newFrontUserBack', function ($breadcrumbs) {
             $breadcrumbs->parent('frontUserListBack');
-            $breadcrumbs->push(trans('back-frontUsers.new'), action('Back\FrontUserController@create'));
+            $breadcrumbs->push(fragment('back.frontUsers.new'), action('Back\FrontUserController@create'));
         });
 
         BreadCrumbsManager::register('editFrontUserBack', function ($breadcrumbs, $user) {
@@ -108,7 +108,7 @@ class Breadcrumbs
 
                 $breadcrumbs->push(
                     $model->isDraft() ? trans("back-{$plural}.new") :
-                        (isset($model->name) ? $model->name : ucfirst(trans('back.change'))),
+                        (isset($model->name) ? $model->name : ucfirst(fragment('back.change'))),
                     action("Back\\{$ucname}Controller@create")
                 );
             }

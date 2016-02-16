@@ -3,10 +3,10 @@
 
         <div class="footer_version">
             <span class="footer_status {{ app()->environment() == 'production' ? ' -production' : '-non-production' }}">
-                {{  trans('back.environment.' . (app()->environment() == 'production' ? 'production' : 'test')) }}
+                {{  fragment('back.environment.' . (app()->environment() == 'production' ? 'production' : 'test')) }}
             </span>
             <span title="Laravel v. {{ app()->version() }}">
-                <img src="/images/svg/blender.svg" class="footer_brand"> Blender v. {{ config('blender.version') }} - {{ trans('back.since') }} {{ config('blender.installDate') }}
+                <img src="/images/svg/blender.svg" class="footer_brand"> Blender v. {{ config('blender.version') }} - {{ fragment('back.since') }} {{ config('blender.installDate') }}
             </span>
         </div>
     </div>

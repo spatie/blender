@@ -1,6 +1,6 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-auth.titleLogin'))
+@section('pageTitle', fragment('back.auth.titleLogin'))
 
 @section('content')
 
@@ -17,22 +17,22 @@
         {!! Form::open(['class'=>'-stacked +auth_form']) !!}
 
             <div class="form_group">
-                {!! Form::label('email', trans('back-auth.email'), ['class' => '-invers'] ) !!}
+                {!! Form::label('email', fragment('back.auth.email'), ['class' => '-invers'] ) !!}
                 {!! Form::email('email', Input::old('email'), ['autofocus' => true ]) !!}
                 {!! HTML::error($errors->first('email')) !!}
             </div>
 
             <div class="form_group">
-                {!! Form::label('password', trans('back-auth.password'), ['class' => '-invers']) !!}
+                {!! Form::label('password', fragment('back.auth.password'), ['class' => '-invers']) !!}
                 {!! Form::password('password', [ ]) !!}
                 {!! HTML::error($errors->first('password')) !!}
                 <div class="form_group_help">
-                    <a href="{{ action('Back\PasswordController@getEmail') }}">{{ trans('back-auth.forgotPassword') }}</a>
+                    <a href="{{ action('Back\PasswordController@getEmail') }}">{{ fragment('back.auth.forgotPassword') }}</a>
                 </div>
             </div>
 
             <div class="form_group -buttons">
-            {!! Form::button(trans('back-auth.logIn'), ['type'=>'submit', 'class'=>'button -default']) !!}
+            {!! Form::button(fragment('back.auth.logIn'), ['type'=>'submit', 'class'=>'button -default']) !!}
             </div>
 
         {!! Form::close() !!}

@@ -1,4 +1,4 @@
-<h2>{{ trans('back-statistics.visitors') }}</h2>
+<h2>{{ fragment('back.statistics.visitors') }}</h2>
 
 <div class="chart" data-chart>
     <canvas id="daily-visitors" width=1000 height=250></canvas>
@@ -19,7 +19,7 @@
                 labels: {!! json_encode(array_map(function($date) {return $date->format('d/m');}, $dates)) !!},
                 datasets: [
                     {
-                        label: '{{ trans('back-statistics.visitors') }}',
+                        label: '{{ fragment('back.statistics.visitors') }}',
                         data: {!! json_encode($visitors) !!},
                         fillColor: "rgba(151,187,205,0.2)",
                         strokeColor: "rgba(151,187,205,1)",

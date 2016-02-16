@@ -41,7 +41,7 @@ class AuthController extends Controller
         return redirect()->back()
             ->withInput($request->only($this->loginUsername(), 'remember'))
             ->withErrors([
-                $this->loginUsername() => trans('back-auth.inactiveAccountError'),
+                $this->loginUsername() => fragment('back.auth.inactiveAccountError'),
             ]);
     }
 }

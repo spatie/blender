@@ -1,16 +1,13 @@
-environment:
-  test: testomgeving
-  production: production
-since: sinds
-change: wijzig
-name: Naam
-addImage: Voeg afbeelding toe
-addFile: Voeg bestand toe
-locationpicker:
-  search: Zoek adres
-  submit: Zoek
-events:
-  created: :model :name werd aangemaakt
-  updated: :model :name werd bijgewerkt
-  deleted: :model :name werd verwijderd
-  activated: :model :name werd geactiveerd
+back.environment.test: testomgeving
+back.environment.production: production
+back.since: sinds
+back.change: wijzig
+back.name: Naam
+back.addImage: Voeg afbeelding toe
+back.addFile: Voeg bestand toe
+back.locationpicker.search: Zoek adres
+back.locationpicker.submit: Zoek
+back.events.created: :model :name werd aangemaakt
+back.events.updated: :model :name werd bijgewerkt
+back.events.deleted: :model :name werd verwijderd
+back.events.activated: :model :name werd geactiveerd

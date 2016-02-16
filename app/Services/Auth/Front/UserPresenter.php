@@ -15,13 +15,13 @@ class UserPresenter extends Presenter
     public function lastActivityDate() : string
     {
         if ($this->last_activity === null || $this->last_activity->year == -1) {
-            return trans('back-frontUsers.neverLoggedIn');
+            return fragment('back.frontUsers.neverLoggedIn');
         }
 
         $lastActivityDate = diff_date_for_humans($this->last_activity);
 
         if (str_contains($lastActivityDate, 'second')) {
-            $lastActivityDate = trans('back-frontUsers.justNow');
+            $lastActivityDate = fragment('back.frontUsers.justNow');
         }
 
         return $lastActivityDate;

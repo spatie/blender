@@ -1,20 +1,20 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-frontUsers.title'))
+@section('pageTitle', fragment('back.frontUsers.title'))
 
 @section('content')
     <section>
         <div class="grid">
-            <h1>{{ trans('back-frontUsers.title') }}</h1>
+            <h1>{{ fragment('back.frontUsers.title') }}</h1>
             <a href="{{ action('Back\FrontUserController@create') }}" class="button">
-                {{ trans('back-frontUsers.new') }}
+                {{ fragment('back.frontUsers.new') }}
             </a>
             <table data-datatable data-order='[[ 0, "asc" ]]'>
                 <thead>
                     <tr>
                         <th>E-mail</th>
-                        <th>{{ trans('back-frontUsers.name') }}</th>
-                        <th>{{ trans('back-frontUsers.lastActivity') }}</th>
+                        <th>{{ fragment('back.frontUsers.name') }}</th>
+                        <th>{{ fragment('back.frontUsers.lastActivity') }}</th>
                         <th data-orderable="false"></th>
                     </tr>
                 </thead>

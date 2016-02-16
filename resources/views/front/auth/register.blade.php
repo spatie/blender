@@ -65,7 +65,7 @@
     </div>
 
     <div class="form-line">
-        {!! Form::label('password', trans('back-users.password')) !!}
+        {!! Form::label('password', fragment('back.users.password')) !!}
         <div class="form-element">
             {!! Form::password('password', [ ]) !!}
             {!! HTML::error($errors->first('password')) !!}
@@ -73,7 +73,7 @@
     </div>
 
     <div class="form-line">
-        {!! Form::label('password_confirmation', trans('back-users.passwordConfirmation')) !!}
+        {!! Form::label('password_confirmation', fragment('back.users.passwordConfirmation')) !!}
         <div class="form-element">
             {!! Form::password('password_confirmation', [ ]) !!}
             {!! HTML::error($errors->first('password_confirmation')) !!}

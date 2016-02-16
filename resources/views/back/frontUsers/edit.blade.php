@@ -7,7 +7,7 @@
 @section('content')
     <section>
         <div class="grid">
-            <h1>{{ trans('back-frontUsers.member') }} {{ $user->email }}</h1>
+            <h1>{{ fragment('back.frontUsers.member') }} {{ $user->email }}</h1>
             {!! Form::model(
                 $user,
                 ['method' => 'PATCH', 'action' => ['Back\FrontUserController@update', $user->id] ,

@@ -27,7 +27,7 @@ class BackLoginTest extends TestCase
             ->visitBackLogin()
             ->type('user@spatie.be', 'email')
             ->type('password', 'password')
-            ->press(trans('back-auth.logIn'))
+            ->press(fragment('back.auth.logIn'))
             ->assertLoggedInOnBackAs($user);
     }
 
@@ -40,7 +40,7 @@ class BackLoginTest extends TestCase
             ->visitBackLogin()
             ->type('user@spatie.be', 'email')
             ->type('password', 'password')
-            ->press(trans('back-auth.logIn'))
+            ->press(fragment('back.auth.logIn'))
             ->assertLoggedInOnBackAs($user)
             ->seePageIs('/blender');
     }
@@ -54,7 +54,7 @@ class BackLoginTest extends TestCase
             ->visitBackLogin()
             ->type('user@spatie.be', 'email')
             ->type('notmypassword', 'password')
-            ->press(trans('back-auth.logIn'))
+            ->press(fragment('back.auth.logIn'))
             ->seePageIs('/blender/login')
             ->see(fragment('auth.failed'))
             ->assertNotLoggedInOnBack();
@@ -69,9 +69,9 @@ class BackLoginTest extends TestCase
             ->visitBackLogin()
             ->type('user@spatie.be', 'email')
             ->type('password', 'password')
-            ->press(trans('back-auth.logIn'))
+            ->press(fragment('back.auth.logIn'))
             ->seePageIs('/blender/login')
-            ->see(trans('back-auth.inactiveAccountError'))
+            ->see(fragment('back.auth.inactiveAccountError'))
             ->assertNotLoggedInOnBack();
     }
 

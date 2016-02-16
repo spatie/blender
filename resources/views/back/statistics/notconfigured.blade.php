@@ -5,6 +5,6 @@
 @section('content')
 <section>
     <div class="grid">
-        {!! HTML::info(trans('back-statistics.notConfigured')) !!}
+        {!! HTML::info(fragment('back.statistics.notConfigured')) !!}
 
 @stop

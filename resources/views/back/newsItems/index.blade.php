@@ -1,18 +1,18 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-newsItems.title'))
+@section('pageTitle', fragment('back.newsItems.title'))
 
 @section('content')
 <section>
     <div class="grid">
-        <h1>{{ trans('back-newsItems.title') }}</h1>
-        <a href="{{ action('Back\NewsItemController@create') }}" class="button">{{ trans('back-newsItems.new') }}</a>
+        <h1>{{ fragment('back.newsItems.title') }}</h1>
+        <a href="{{ action('Back\NewsItemController@create') }}" class="button">{{ fragment('back.newsItems.new') }}</a>
 
         <table data-datatable data-order='[[ 0, "asc" ]]'>
             <thead>
             <tr>
-                <th>{{ trans('back-newsItems.name') }}</th>
-                <th>{{ trans('back-newsItems.publish_date') }}</th>
+                <th>{{ fragment('back.newsItems.name') }}</th>
+                <th>{{ fragment('back.newsItems.publish_date') }}</th>
                 <th data-orderable="false"></th>
             </tr>
             </thead>

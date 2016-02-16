@@ -1,12 +1,12 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-tags.title'))
+@section('pageTitle', fragment('back.tags.title'))
 
 @section('content')
     <section>
         <div class="grid">
-            <h1>{{ trans('back-tags.title') }}</h1>
-            <a href="{{ URL::action('Back\TagController@create') }}" class="button">{{ trans('back-tags.new') }}</a>
+            <h1>{{ fragment('back.tags.title') }}</h1>
+            <a href="{{ URL::action('Back\TagController@create') }}" class="button">{{ fragment('back.tags.new') }}</a>
 
             @foreach($tags as $name => $type)
 

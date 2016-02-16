@@ -1,17 +1,17 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-fragments.title'))
+@section('pageTitle', fragment('back.fragments.title'))
 
 @section('content')
     <section>
         <div class="grid">
-            <h1>{{ trans('back-fragments.title') }}</h1>
+            <h1>{{ fragment('back.fragments.title') }}</h1>
 
             <table data-datatable data-order='[[ 0, "asc" ]]'>
                 <thead>
                 <tr>
-                    <th>{{ trans('back-fragments.name') }}</th>
-                    <th>{{ trans('back-fragments.content') }}</th>
+                    <th>{{ fragment('back.fragments.name') }}</th>
+                    <th>{{ fragment('back.fragments.content') }}</th>
                 </tr>
                 </thead>
                 <tbody>

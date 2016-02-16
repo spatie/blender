@@ -1,6 +1,6 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-frontUsers.new'))
+@section('pageTitle', fragment('back.frontUsers.new'))
 
 @section('breadcrumbs', Breadcrumbs::render('newFrontUserBack'))
 

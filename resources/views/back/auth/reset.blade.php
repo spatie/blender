@@ -1,6 +1,6 @@
 @extends('back.layout.master')
 
-@section('pageTitle', trans('back-auth.titleChangePassword'))
+@section('pageTitle', fragment('back.auth.titleChangePassword'))
 
 @section('content')
     <section class="+auth">
@@ -8,14 +8,14 @@
         <div class="+auth_card">
             <h1 class="+auth_title -small">
                 {!! HTML::avatar($user, '-large +auth_gravatar') !!}<br>
-                {{ trans('back-auth.titleChangePassword') }}
+                {{ fragment('back.auth.titleChangePassword') }}
             </h1>
 
             {!! Form::open(['class'=>'-stacked +auth_form']) !!}
             {!! Form::hidden('token', $token) !!}
             {!! Form::hidden('email', $user->email) !!}
             <p class="alert -invers">
-                {{ trans('back-auth.resetInstructions') }}
+                {{ fragment('back.auth.resetInstructions') }}
             </p>
 
             <div class="form_group">
@@ -25,12 +25,12 @@
             </div>
 
             <div class="form_group">
-                {!! Form::label('password', trans('back-auth.password'), ['class' => '-invers'] ) !!}
+                {!! Form::label('password', fragment('back.auth.password'), ['class' => '-invers'] ) !!}
                 {!! Form::password('password', null, ['autofocus' ]) !!}
             </div>
 
             <div class="form_group">
-                {!! Form::label('password_confirmation', trans('back-auth.passwordConfirm'), ['class' => '-invers']) !!}
+                {!! Form::label('password_confirmation', fragment('back.auth.passwordConfirm'), ['class' => '-invers']) !!}
                 {!! Form::password('password_confirmation', [null]) !!}
                 {!! HTML::error($errors->first('password')) !!}
             </div>

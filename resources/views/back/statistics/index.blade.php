@@ -5,7 +5,7 @@
 @section('content')
 <section>
     <div class="grid">
-        <h1>{{ trans('back-statistics.title') }}</h1>
+        <h1>{{ fragment('back.statistics.title') }}</h1>
 
         <div class="statistic">
             @include('back.statistics._partials.visitors')

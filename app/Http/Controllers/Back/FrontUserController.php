@@ -46,7 +46,7 @@ class FrontUserController extends Controller
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.trans('back-frontUsers.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.fragment('back.frontUsers.passwordMailSent'));
 
         event(new UserWasCreatedThroughBack($user));
 
@@ -103,6 +103,6 @@ class FrontUserController extends Controller
             $name = $user->email;
         }
 
-        return trans("back.events.$event", ['model' => trans('back-frontUsers.member'), 'name' => $name]);
+        return trans("back.events.$event", ['model' => fragment('back.frontUsers.member'), 'name' => $name]);
     }
 }
