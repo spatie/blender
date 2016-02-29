@@ -19,12 +19,6 @@
             </p>
 
             <div class="form_group">
-                {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
-                <input type="email" value="{{ $user->email }}" disabled autocomplete="off">
-                {!! Form::hidden('email', $user->email) !!}
-            </div>
-
-            <div class="form_group">
                 {!! Form::label('password', fragment('back.auth.password'), ['class' => '-invers'] ) !!}
                 {!! Form::password('password', null, ['autofocus' ]) !!}
             </div>

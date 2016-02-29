@@ -29,6 +29,7 @@
 
     <script src="{{ elixir('front.head.js') }}"></script>
 
+    @include('front.layout._partials.hreflang')
     @include('front.layout._partials.openGraph')
     @include('front.layout._partials.favicons')
     @include('front.layout._partials.bugsnag')
