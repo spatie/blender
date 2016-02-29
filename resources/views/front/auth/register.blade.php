@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="form_group -buttons">
-            {!! Form::button(trans('auth.register'), ['type'=>'submit', 'class'=>'button -default']) !!}
+            {!! Form::button(fragment('auth.register'), ['type'=>'submit', 'class'=>'button -default']) !!}
         </div>
         {!! Form::close() !!}
     </div>
