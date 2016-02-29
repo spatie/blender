@@ -25,6 +25,8 @@
     @include('front.layout._partials.favicons')
 </head>
 <body>
+    @include('front.layout._partials.deprecatedBrowser')
+
     @if (auth()->user())
         @include('back.layout._partials.menu')
         <div class="grid">

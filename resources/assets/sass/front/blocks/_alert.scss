@@ -1,0 +1,50 @@
+.alert {
+    padding: 1em;
+
+    .form_element & {
+        font-size: .75em;
+        margin-top: 3px;
+    }
+
+    a{
+        color: inherit;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    &.-small {
+        padding: .5em;
+    }
+
+    &.-info {
+        background: color($blue, lightest);
+        color: color($blue, dark);
+    }
+
+    &.-success {
+        background: color($green, lightest);
+        color: color($green, dark);
+    }
+
+    &.-warning {
+        background: color($yellow);
+        color: $white;
+    }
+
+    &.-error,
+    &.-danger {
+        background: color($red, lightest);
+        color: color($red);
+    }
+
+    &.-fixed {
+        left: 0;
+        position: fixed;
+        text-align: center;
+        top: 0;
+        width: 100%;
+        z-index: z-index(modal);
+    }
+}

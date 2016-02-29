@@ -38,16 +38,20 @@
     @include('front.layout._partials.deprecatedBrowser')
     <header class="header">
         <div class="grid">
-            <nav class="nav grid_col -width-1/2">
-                {!! Navigation::getFrontMainMenu() !!}
-            </nav>
-            <nav class="nav :align-right grid_col -width-1/2 -last">
-                @if(current_user())
-                Hey, {{ current_user()->first_name }} — <a href="{{ logout_url() }}">Uitloggen</a>
-                @else
-                <a href="{{ register_url() }}">Registreren</a> - <a href="{{ login_url() }}">Inloggen</a>
-                @endif
-            </nav>
+            <div class="grid_col -width-1/2">
+                <nav class="nav">
+                    {!! Navigation::getFrontMainMenu() !!}
+                </nav>
+            </div>
+            <div class="grid_col -width-1/2">
+                <nav class="nav :align-right">
+                    @if(current_user())
+                    <a href="{{ profile_url() }}">{{ current_user()->first_name }}</a> • <a href="{{ logout_url() }}">{{ fragment('auth.logout') }}</a>
+                    @else
+                    <a href="{{ register_url() }}">{{ fragment('auth.register') }}</a> • <a href="{{ login_url() }}">{{ fragment('auth.login') }}</a>
+                    @endif
+                </nav>
+            </div>
         </div>
     </header>
     @include('front.layout._partials.flashMessage')

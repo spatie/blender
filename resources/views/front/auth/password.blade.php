@@ -1,4 +1,4 @@
-@extends('back.layout.master')
+@extends('front.layout.master')
 
 @section('pageTitle', fragment('auth.titleResetPassword'))
 
