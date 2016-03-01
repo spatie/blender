@@ -33,6 +33,6 @@ class CreateUsersFrontTable extends Migration
 
 	public function down()
 	{
-		Schema::drop('users');
+		Schema::drop('users_front');
 	}
 }

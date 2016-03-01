@@ -53,7 +53,7 @@
     "spatie/laravel-link-checker": "^1.0",
     "spatie/laravel-sluggable": "^1.0",
     "spatie/laravel-robots-middleware": "^1.0",
-    "spatie/fragment-importer": "^1.0.1",
+    "spatie/fragment-importer": "^1.0.6",
     "spatie/laravel-failed-job-monitor": "^1.0"
   },
   "require-dev": {

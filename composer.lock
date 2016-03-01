@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fbd59cbc6124d45d8ce3c4ca92225fb5",
-    "content-hash": "854933eba0af1481531c33850bbc0669",
+    "hash": "7065b9a806ef1ba4b07d801ffb4e4c20",
+    "content-hash": "07c800c916d2e521d47c8453d1443faa",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -2765,16 +2765,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "b0e69d10852716b2ccbdff69c75c477637220790"
+                "reference": "f078eba3bcf140fd69b5fcc3ea5ac809abf729dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b0e69d10852716b2ccbdff69c75c477637220790",
-                "reference": "b0e69d10852716b2ccbdff69c75c477637220790",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/f078eba3bcf140fd69b5fcc3ea5ac809abf729dc",
+                "reference": "f078eba3bcf140fd69b5fcc3ea5ac809abf729dc",
                 "shasum": ""
             },
             "require": {
@@ -2809,7 +2809,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-02-06 03:52:05"
+            "time": "2016-02-29 17:25:04"
         },
         {
             "name": "patchwork/utf8",
@@ -4230,16 +4230,16 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "ed28a245417334447bdc1085debeda49d8802517"
+                "reference": "9521681b8d56a3493895c6aed89f6bfc740f77b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/ed28a245417334447bdc1085debeda49d8802517",
-                "reference": "ed28a245417334447bdc1085debeda49d8802517",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/9521681b8d56a3493895c6aed89f6bfc740f77b4",
+                "reference": "9521681b8d56a3493895c6aed89f6bfc740f77b4",
                 "shasum": ""
             },
             "require": {
@@ -4280,7 +4280,7 @@
                 "spatie",
                 "website"
             ],
-            "time": "2015-12-21 19:31:46"
+            "time": "2016-03-01 12:32:56"
         },
         {
             "name": "spatie/eloquent-sortable",
@@ -4333,16 +4333,16 @@
         },
         {
             "name": "spatie/fragment-importer",
-            "version": "1.0.4",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/fragment-importer.git",
-                "reference": "e2c2a028f581f8f5f33ac2a2b978490f30847a47"
+                "reference": "6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/e2c2a028f581f8f5f33ac2a2b978490f30847a47",
-                "reference": "e2c2a028f581f8f5f33ac2a2b978490f30847a47",
+                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9",
+                "reference": "6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9",
                 "shasum": ""
             },
             "require": {
@@ -4388,10 +4388,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/fragment-importer/tree/1.0.4",
+                "source": "https://github.com/spatie-custom/fragment-importer/tree/1.0.6",
                 "issues": "https://github.com/spatie-custom/fragment-importer/issues"
             },
-            "time": "2016-02-18 15:10:27"
+            "time": "2016-03-01 12:50:01"
         },
         {
             "name": "spatie/laravel-analytics",
@@ -5185,54 +5185,6 @@
                 "tail"
             ],
             "time": "2015-10-11 09:45:38"
-        },
-        {
-            "name": "spatie/menu",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/menu.git",
-                "reference": "7e3776c089820c89f009edbf055d802fa8ffdaa3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/7e3776c089820c89f009edbf055d802fa8ffdaa3",
-                "reference": "7e3776c089820c89f009edbf055d802fa8ffdaa3",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "bossa/phpspec2-expect": "^1.0",
-                "phpspec/phpspec": "^2.4.1",
-                "phpspec/prophecy": "^1.6"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Menu\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian De Deyne",
-                    "email": "sebastian@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": ":package_description",
-            "homepage": "https://github.com/spatie/navigation",
-            "keywords": [
-                "navigation",
-                "spatie"
-            ],
-            "time": "2016-02-25 10:52:24"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -6913,8 +6865,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fedeisas/laravel-mail-css-inliner": 20,
-        "spatie/menu": 20
+        "fedeisas/laravel-mail-css-inliner": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
