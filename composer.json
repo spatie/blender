@@ -46,7 +46,6 @@
     "spatie/laravel-or-abort": "^1.0",
     "spatie/laravel-paginateroute": "^2.0",
     "spatie/laravel-tail": "^1.0",
-    "spatie/menu": "dev-master",
     "spatie/seeders": "^3.5",
     "spatie/string": "^2.0",
     "vespakoen/menu": "^3.0",
