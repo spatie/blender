@@ -19,10 +19,6 @@ return [
 		'secret' => '',
 	],
 
-	'mandrill' => [
-		'secret' => env('MAIL_MANDRILL_SECRET'),
-	],
-
 	'ses' => [
 		'key' => '',
 		'secret' => '',
