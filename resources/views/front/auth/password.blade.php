@@ -8,7 +8,7 @@
     @include('back.layout._partials.flashMessage', ['extraClass' => '-fixed'])
 
     <div class="+auth_card">
-        <h1 class="+auth_title -small">{{ fragment('auth.titleResetPassword') }}</h1>
+        <h1 class="+auth_title -small">{{ fragment('auth.resetPassword.title') }}</h1>
         {!! Form::open(['class'=>'-stacked +auth_form']) !!}
         @if(session('status'))
         <p class="alert -info">
@@ -16,7 +16,7 @@
         </p>
         @else
         <p class="alert -invers">
-            {{ fragment('auth.resetPasswordIntro') }}
+            {{ fragment('auth.resetPassword.intro') }}
         </p>
         @endif
         <div class="form_group">
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form_group -buttons">
-            {!! Form::button( fragment('auth.resetPasswordButton'), ['type'=>'submit', 'class'=>'button -default']) !!}
+            {!! Form::button( fragment('auth.resetPassword.button'), ['type'=>'submit', 'class'=>'button -default']) !!}
         </div>
         <div class="form_group_help">
             <a href="{{ login_url() }}">{{ fragment('auth.toLogin') }}</a>

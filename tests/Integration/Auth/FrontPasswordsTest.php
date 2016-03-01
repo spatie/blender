@@ -56,7 +56,7 @@ class FrontPasswordsTest extends TestCase
             ->click(fragment('auth.forgotPassword'))
             ->seePageIs('/nl/password/email')
             ->type('user@spatie.be', 'email')
-            ->press(fragment('auth.resetPasswordButton'));
+            ->press(fragment('auth.resetPassword.button'));
     }
 
     protected function findTokenForEmail(string $email) : string

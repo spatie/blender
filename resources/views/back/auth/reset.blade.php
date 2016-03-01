@@ -8,7 +8,7 @@
         <div class="+auth_card">
             <h1 class="+auth_title -small">
                 {!! HTML::avatar($user, '-large +auth_gravatar') !!}<br>
-                {{ fragment('back.auth.titleChangePassword') }}
+                {{ fragment('back.auth.resetPassword.title') }}
             </h1>
 
             {!! Form::open(['class'=>'-stacked +auth_form']) !!}
