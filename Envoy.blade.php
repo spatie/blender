@@ -161,6 +161,7 @@ php artisan fragments:import;
 {{ logMessage('start cleanOldReleases') }}
 # Delete all but the 5 most recent.
 cd {{ $releasesDir }}
+ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" sudo chown -R forge;
 ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 @endtask
 
