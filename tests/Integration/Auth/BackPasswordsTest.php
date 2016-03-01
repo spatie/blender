@@ -56,7 +56,7 @@ class BackPasswordsTest extends TestCase
             ->click(fragment('back.auth.forgotPassword'))
             ->seePageIs('/blender/password/email')
             ->type('user@spatie.be', 'email')
-            ->press(fragment('back.auth.resetPasswordButton'));
+            ->press(fragment('back.auth.resetPassword.button'));
     }
 
     protected function findTokenForEmail(string $email) : string
