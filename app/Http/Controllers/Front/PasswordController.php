@@ -13,10 +13,29 @@ class PasswordController extends Controller
         ResetsPasswords::reset as defaultReset;
     }
 
-    protected $guard = 'front';
-    protected $broker = 'front';
-    protected $linkRequestView = 'front.auth.password';
-    protected $resetView = 'front.auth.reset';
+    /** @var string */
+    protected $guard;
+
+    /** @var string */
+    protected $broker;
+
+    /** @var string */
+    protected $linkRequestView;
+
+    /** @var string */
+    protected $resetView;
+
+    /** @var string */
+    protected $subject;
+
+    public function __construct()
+    {
+        $this->guard = 'front';
+        $this->broker = 'front';
+        $this->linkRequestView = 'front.auth.password';
+        $this->resetView = 'front.auth.reset';
+        $this->subject = fragment('passwords.subjectEmail').' '.config('app.url');
+    }
 
     public function redirectPath()
     {

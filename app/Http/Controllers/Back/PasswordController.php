@@ -13,10 +13,29 @@ class PasswordController extends Controller
         ResetsPasswords::reset as defaultReset;
     }
 
-    protected $guard = 'back';
-    protected $broker = 'back';
-    protected $linkRequestView = 'back.auth.password';
-    protected $resetView = 'back.auth.reset';
+    /** @var string */
+    protected $guard;
+
+    /** @var string */
+    protected $broker;
+
+    /** @var string */
+    protected $linkRequestView;
+
+    /** @var string */
+    protected $resetView;
+
+    /** @var string */
+    protected $subject;
+
+    public function __construct()
+    {
+        $this->guard = 'back';
+        $this->broker = 'back';
+        $this->linkRequestView = 'back.auth.password';
+        $this->resetView = 'back.auth.reset';
+        $this->subject = fragment('passwords.subjectEmail').' '.config('app.url');
+    }
 
     public function redirectPath()
     {
