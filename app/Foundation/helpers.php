@@ -226,3 +226,16 @@ function activity(string $message)
 {
     Activity::log($message);
 }
+
+function blade(string $template, array $variables) : string
+{
+    extract($variables);
+
+    $template = \Blade::compileString($template);
+
+    ob_start();
+
+    eval(' ?>'.$template);
+
+    return ob_get_clean();
+}
