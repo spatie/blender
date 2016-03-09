@@ -16,7 +16,7 @@
             graphName : 'daily-visitors',
             ctx : document.getElementById('daily-visitors').getContext('2d'),
             chart : {
-                labels: {!! json_encode(array_map(function($date) {return $date->format('d/m');}, $dates)) !!},
+                labels: {!! json_encode($dates->map(function($date) { return $date->format('d/m'); })) !!},
                 datasets: [
                     {
                         label: '{{ fragment('back.statistics.visitors') }}',
