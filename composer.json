@@ -58,7 +58,7 @@
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
-	"phpunit/phpunit": "~4.0",
+	"phpunit/phpunit": "~5.0",
     "fabpot/php-cs-fixer": "^1.10",
     "symfony/dom-crawler": "~3.0",
     "symfony/css-selector": "~3.0"

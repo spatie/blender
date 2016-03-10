@@ -4,6 +4,7 @@ namespace App\Services\Auth\Back;
 
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
+use App\Services\Auth\Back\Exceptions\UserIsAlreadyActivated;
 use App\Services\Auth\User as BaseUser;
 
 /**

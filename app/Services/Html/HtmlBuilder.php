@@ -49,4 +49,15 @@ class HtmlBuilder extends BaseHtmlBuilder
     {
         return preg_replace('/^(?!https?:\/\/)/', $protocol . '://', $url) ;
     }
+
+    public function onlineIndicator(bool $online) : string
+    {
+        $state = $online ? 'on' : 'off';
+        $icon = $online ? 'circle' : 'circle-o';
+        $title = $online ? 'Online' : 'Offline';
+
+        return "<span class=\"status -{$state} -space-right\" title=\"{$title}\">".
+            "<i class=\"fa fa-{$icon}\"></i>".
+        "</span>";
+    }
 }
