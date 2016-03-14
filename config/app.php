@@ -195,6 +195,7 @@ return [
         Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
         Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class,
     ],
 
     /*

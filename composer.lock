@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3a1dae5cc640582f2b3816fcfb410f54",
-    "content-hash": "0a5486869f48e296256262cbf610ac5f",
+    "hash": "43e41a7b651b6457562318b66d2b7d19",
+    "content-hash": "f3ed1cada9eff5aaf2bd7e7daed00ace",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -1035,7 +1035,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fedeisas/laravel-mail-css-inliner/zipball/430ebd087347812f75a2476bcedc26ced2f4753f",
+                "url": "https://api.github.com/repos/fedeisas/laravel-mail-css-inliner/zipball/e152fcab7ecaf4c43dd7cccd272c8403720d3d33",
                 "reference": "430ebd087347812f75a2476bcedc26ced2f4753f",
                 "shasum": ""
             },
@@ -5543,6 +5543,53 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-02-23 07:41:20"
+        },
+        {
+            "name": "themsaid/laravel-mail-preview",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themsaid/laravel-mail-preview.git",
+                "reference": "edba190c2b5780bd193a08da56d7d5abdcba3a3f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themsaid/laravel-mail-preview/zipball/edba190c2b5780bd193a08da56d7d5abdcba3a3f",
+                "reference": "edba190c2b5780bd193a08da56d7d5abdcba3a3f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/filesystem": "5.2.*",
+                "illuminate/mail": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Themsaid\\MailPreview\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohamed Said",
+                    "email": "theMohamedSaid@gmail.com"
+                }
+            ],
+            "description": "Adds a 'preview' mail driver for testing emails in laravel.",
+            "homepage": "https://github.com/themsaid/laravel-preview-mail-driver",
+            "keywords": [
+                "laravel",
+                "mail"
+            ],
+            "time": "2016-03-13 21:49:34"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",

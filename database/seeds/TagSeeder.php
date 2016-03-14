@@ -12,7 +12,7 @@ class TagSeeder extends DatabaseSeeder
     {
         $this->truncate((new TagTranslation())->getTable(), (new Tag())->getTable(), 'taggables');
 
-        $this->superSeeder(new TagFactory(Tag::class), 'tags');
+        $this->seedRandomTags();
     }
 
     public function seedRandomTags($amount = 10)
