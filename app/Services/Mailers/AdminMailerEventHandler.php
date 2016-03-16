@@ -3,9 +3,7 @@
 namespace App\Services\Mailers;
 
 use App\Events\ContactFormWasSubmitted;
-use App\Events\UserWasCreated;
-use App\Services\Auth\Back\Enums\UserRole;
-use App\Services\Auth\Back\Enums\UserStatus;
+use App\Services\Auth\Back\Events\UserWasCreated;
 use Illuminate\Contracts\Events\Dispatcher;
 
 class AdminMailerEventHandler
@@ -17,13 +15,7 @@ class AdminMailerEventHandler
 
     public function whenUserWasCreated(UserWasCreated $event)
     {
-        if ($event->user->hasRole(UserRole::ADMIN)) {
-            $this->mailer->sendPasswordEmail($event->user);
-        }
-
-        if ($event->user->status == UserStatus::WAITING_FOR_APPROVAL) {
-            $this->mailer->sendApprovalMail($event->user);
-        }
+        $this->mailer->sendPasswordEmail($event->user);
     }
 
     public function whenContactFormWasSubmitted(ContactFormWasSubmitted $event)

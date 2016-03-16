@@ -4,8 +4,8 @@ namespace App\Services\Mailers;
 
 use App\Models\FormResponse;
 use App\Services\Auth\Back\User;
-use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Mail\Message;
+use Password;
 
 class AdminMailer extends Mailer
 {
@@ -33,10 +33,10 @@ class AdminMailer extends Mailer
 
     public function sendPasswordEmail(User $user)
     {
-        $passwords = app(PasswordBroker::class);
+        $passwords = Password::broker('back');
 
         $passwords->sendResetLink(['email' => $user->email], function (Message $message) {
-            $message->subject(trans('passwords.subjectEmailNewUser', [], 'nl'));
+            $message->subject(fragment('passwords.subjectEmailNewUser'));
         });
     }
 }
