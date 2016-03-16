@@ -52,7 +52,7 @@ npm -v
 We use a custom npm registry at [npm.spatie.be](https://npm.spatie.be) via [Sinopia](https://github.com/rlidwka/sinopia) for our private packages.
 
 ```bash
-npm set registry https://npm.spatie.be
+npm set registry http://npm.spatie.be
 npm set ca null
 
 npm install
