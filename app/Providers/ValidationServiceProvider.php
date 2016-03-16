@@ -29,5 +29,13 @@ class ValidationServiceProvider extends ServiceProvider
 
             return true;
         });
+
+        Validator::extend('enum', function ($attribute, $value, $parameters) {
+
+            /** @var \App\Foundation\Models\Enums\Enum $class */
+            $class = $parameters[0];
+
+            return $class::isValid($value);
+        });
     }
 }
