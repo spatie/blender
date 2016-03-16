@@ -14,12 +14,4 @@ class PersonDbRepository extends DbRepository implements PersonRepository
             ->orderBy('order_column')
             ->get();
     }
-
-    public function getAllOnline() : Collection
-    {
-        return $this->query()
-            ->online()
-            ->orderBy('order_column')
-            ->get();
-    }
 }

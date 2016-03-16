@@ -19,6 +19,8 @@ interface Repository
      */
     public function findOnline(int $id);
 
+    public function getAllOnline() : Collection;
+
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
      */

@@ -27,6 +27,13 @@ abstract class DbRepository extends BaseRepository implements Repository
         return $this->query()->online()->find($id);
     }
 
+    public function getAllOnline() : Collection
+    {
+        return $this->query()
+            ->online()
+            ->get();
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
      */

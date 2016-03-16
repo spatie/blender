@@ -11,8 +11,6 @@ interface NewsItemRepository extends Repository
 {
     const MODEL = NewsItem::class;
 
-    public function getAllOnline() : Collection;
-
     /**
      * @return \App\Models\NewsItem|null
      */

@@ -27,13 +27,6 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
             ->get();
     }
 
-    public function getAllOnline() : Collection
-    {
-        return $this->query()
-            ->online()
-            ->get();
-    }
-
     /**
      * @return \App\Models\NewsItem|null
      */
