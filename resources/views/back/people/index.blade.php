@@ -13,7 +13,6 @@
                 <thead>
                 <tr>
                     <th>{{ fragment('back.people.name') }}</th>
-                    <th>{{ fragment('back.people.function') }}</th>
                     <th data-orderable="false"></th>
                 </tr>
 
@@ -21,7 +20,6 @@
                 @foreach($people as $person)
                     <tr data-row-id="{{ $person->id }}" >
                         <td><a href="{!! action('Back\PersonController@edit', [$person->id]) !!}">{{ $person->name }}</a></td>
-                        <td>{{ $person->function }}</td>
                         <td class="-right">
                             {!! HTML::formButton(action('Back\PersonController@destroy', [$person->id]), '<span class="fa fa-remove"></span>', 'delete',
                             [

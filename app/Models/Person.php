@@ -14,7 +14,7 @@ class Person extends ModuleModel implements SortableInterface
     protected $with = ['translations', 'media'];
 
     public $mediaLibraryCollections = ['images'];
-    public $translatedAttributes = ['function', 'career'];
+    public $translatedAttributes = ['text'];
 
     public function registerMediaConversions()
     {
