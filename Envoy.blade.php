@@ -174,6 +174,8 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 {{ logMessage('start deployOnlyCode') }}
 cd {{ $currentDir }}
 git pull origin master
+sudo service php7.0-fpm restart
+sudo supervisorctl restart all
 @endtask
 
 @task('uploadGeneratedAssetsToCurrentDir', ['on' => 'local'])
