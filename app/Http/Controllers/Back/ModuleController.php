@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Back;
 
 use Activity;
 use App\Http\Controllers\Controller;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Spatie\EloquentSortable\SortableInterface;
 
 abstract class ModuleController extends Controller
 {
@@ -20,7 +20,7 @@ abstract class ModuleController extends Controller
 
     public function index()
     {
-        $models = $this->query()->nonDraft()->get();
+        $models = $this->query()->get();
 
         $data = [
             $this->moduleName => $models,
@@ -41,9 +41,9 @@ abstract class ModuleController extends Controller
         return redirect()->action("Back\\{$this->modelName}Controller@edit", [$id]);
     }
 
-    public function edit(Request $request, $id)
+    public function edit(Request $request, int $id)
     {
-        $model = $this->query()->find($id);
+        $model = $this->find($id);
 
         if ($request->has('revert')) {
             $model->clearTemporaryMedia();
@@ -63,7 +63,7 @@ abstract class ModuleController extends Controller
     {
         $request = app()->make("App\\Http\\Requests\\Back\\{$this->modelName}Request");
 
-        $model = $this->query()->find($id);
+        $model = $this->find($id);
 
         call_user_func("App\\Models\\Updaters\\{$this->modelName}Updater::update", $model, $request);
 
@@ -118,8 +118,23 @@ abstract class ModuleController extends Controller
         return fragment('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
     }
 
+    protected function find(int $id)
+    {
+        $class = "App\\Models\\{$this->modelName}";
+
+        return call_user_func("{$class}::find", $id);
+    }
+
     protected function query()
     {
-        return call_user_func("App\\Models\\{$this->modelName}::query");
+        $class = "App\\Models\\{$this->modelName}";
+
+        $query = call_user_func("{$class}::query")->nonDraft();
+
+        if (array_key_exists(SortableInterface::class, class_implements($class))) {
+            return $query->orderBy('order_column', 'asc');
+        }
+
+        return $query;
     }
 }
