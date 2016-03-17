@@ -1,12 +1,13 @@
 .avatar {
   @include circle(2.5rem, inline-block);
-  vertical-align: middle;
-  margin-right: 0.5em;
-  border: solid 2px color($gray, lighter);
-  overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
+
   background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 2px color($gray, lighter);
+  margin-right: .5em;
+  overflow: hidden;
+  vertical-align: middle;
 
   //variations
   &.-small {
@@ -18,6 +19,4 @@
   &.-large {
     @include circle(5rem, inline-block);
   }
-
 }
-

@@ -4,79 +4,74 @@
 */
 
 
-[data-datatable]{
+[data-datatable] {
   display: none; //hide before load
 }
 
-.dataTables_wrapper{
-  margin: 1em 0;
-  @include mq(s){
+.dataTables_wrapper {
+  @include mq(s) {
     margin: 1em 0;
   }
 
-  [data-datatable]{
+  margin: 1em 0;
+
+  [data-datatable] {
     display: table; //loaded
   }
 }
 
-table.dataTable{
-
-  thead{
-
+table.dataTable {
+  thead {
     .sorting:after,
     .sorting_desc:after,
-    .sorting_asc:after{
-      position: absolute;
+    .sorting_asc:after {
+      @include position-center-vertical;
+
+      font-family: font-family(icons);
       font-size: font-size(xs);
       left: 0;
-      @include position-center-vertical;
-      font-family: font-family(icons);
+      position: absolute;
     }
 
     .sorting {
-
       background-image: none !important;
 
       &:after {
-        content: "\f0dc";
         color: color($gray, lighter);
+        content: '\f0dc';
       }
     }
 
-    .sorting_desc{
-      font-weight: font-weight(bold);
+    .sorting_desc {
       background-image: none !important;
-      &:after{
-        content: "\f0dd";
-      }
-    }
-
-    .sorting_asc{
       font-weight: font-weight(bold);
-      background-image: none !important;
-      &:after{
-        content: "\f0de";
+      &:after {
+        content: '\f0dd';
       }
     }
 
+    .sorting_asc {
+      background-image: none !important;
+      font-weight: font-weight(bold);
+      &:after {
+        content: '\f0de';
+      }
+    }
   }
-
 }
 
-.dataTables_info{
-  font-size: font-size(s);
+.dataTables_info {
   color: color($gray, light) !important;
+  font-size: font-size(s);
   text-align: left !important;
 }
 
-.dataTables_filter{
+.dataTables_filter {
+  float: right !important;
   font-size: font-size(s);
   padding-bottom: 1em;
-  float: right !important;
 
-  input[type=search]{
-     border-radius: 1.5em;
+  input[type=search] {
+    border-radius: 1.5em;
   }
 }
-
-

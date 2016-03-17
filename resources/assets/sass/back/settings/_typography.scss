@@ -4,9 +4,9 @@
 /// @prop {String} key - key
 /// @prop {String} value - font family
 $font-families: (
-        sans : "Lato, -apple-system, 'Segoe UI', sans-serif",
-        fixed : "Consolas, 'courier new', courier, monospace",
-        icons: "Fontawesome"
+        sans : 'Lato, -apple-system, \'Segoe UI\', sans-serif',
+        fixed : 'Consolas, \'courier new\', courier, monospace',
+        icons: 'Fontawesome'
 );
 
 /// Font-weights
@@ -29,9 +29,9 @@ $font-weights: (
 /// @prop {String} key - Size key
 /// @prop {String} value - Size value
 $font-sizes: (
-        xxs : 0.65rem,
-        xs : 0.75rem,
-        s: 0.85rem,
+        xxs : .65rem,
+        xs : .75rem,
+        s: .85rem,
         default: 1rem,
         m: 1.2rem,
         l: 1.8rem,

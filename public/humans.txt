@@ -2,7 +2,7 @@ This site was made by these wonderful humans:
 
 - Rogier De Boevé (@rdbok)
 - Sebastian De Deyne (@sebdedeyne)
-- Willem Van Bockstal (@boxtalk)
+- Willem Van Bockstal (@willemvbockstal)
 - Jef Van der Voort (@spatie_be)
 - Freek Van der Herten (@freekmurze)
 

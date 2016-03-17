@@ -13,20 +13,20 @@
             </nav>
         </div>
         <nav class="menu_main" data-menu-main>
-            <div class="menu_groups" data-menu-groups>
-                <div class="menu_group">
+            <ul class="menu_groups" data-menu-groups="single">
+                <li class="menu_group">
                     {!! Navigation::getBackDashboardMenu() !!}
-                </div>
-                <div class="menu_group" data-menu-group="inhoud">
+                </li>
+                <li class="menu_group" data-menu-group="inhoud">
                     {!! Navigation::getBackContentMenu() !!}
-                </div>
-                <div class="menu_group" data-menu-group="modules">
+                </li>
+                <li class="menu_group" data-menu-group="modules">
                     {!! Navigation::getBackModuleMenu() !!}
-                </div>
-                <div class="menu_group" data-menu-group="configuratie">
+                </li>
+                <li class="menu_group" data-menu-group="configuratie">
                     {!! Navigation::getBackServiceMenu() !!}
-                </div>
-            </div>
+                </li>
+            </ul>
         </nav>
     </div>
 </div>

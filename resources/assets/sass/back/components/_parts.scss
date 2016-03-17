@@ -1,169 +1,171 @@
 //spatie parts plugin
 
-.parts{
+.parts {
   @extend .clearfix;
-  margin: 4em 0 2em 0;
-  border: solid 2px color($gray, light);
-  box-shadow: 0 3px rgba(34, 34, 34, 0.05);
-  border-radius: border-radius(s);
-  transition: transform 0.3s ease-out;
-  font-size: font-size(s);
-  background: lighten(color($gray, lightest) , 1%);
 
-  label{
+  background: lighten(color($gray, lightest) , 1%);
+  border: solid 2px color($gray, light);
+  border-radius: border-radius(s);
+  box-shadow: 0 3px rgba(34, 34, 34, .05);
+  font-size: font-size(s);
+  margin: 4em 0 2em 0;
+  transition: transform .3s ease-out;
+
+  label {
     background: $white;
+    background: transparent;
+    border-radius: border-radius(m);
+    left: 0;
     position: absolute;
     top: -2.35em;
-    left: 0;
-    border-radius: border-radius(m);
-    background: transparent;
   }
 
-  .dataTables_wrapper{
+  .dataTables_wrapper {
     margin: 0 !important;
   }
 
-  .dataTable{
+  .dataTable {
     margin: 0 !important;
     width: 100% !important;
   }
 }
 
-th.part_thumb{
+th.part_thumb {
   min-width: 4rem;
 }
 
-td.-edit{
+td.-edit {
   cursor: text !important;
   word-break: break-all;
 
-  &:after{
+  &:after {
+    color: rgba(color($gray), .3);
     content: '\f040'; //pencil
+    display: inline-block;
     font-family: font-family(icons);
     font-size: font-size(s);
-    margin-left: 0.5em;
-    display: inline-block;
+    margin-left: .5em;
     vertical-align: middle;
-    color: rgba(color($gray), .3);
   }
 
-  &:focus{
+  &:focus {
     outline: solid 4px color($blue, light);
-    &:after{
-      display:none;
+    &:after {
+      display: none;
     }
   }
 }
 
-td.part_thumb{
-
+td.part_thumb {
   white-space: nowrap;
 
-  div{
-    vertical-align: middle;
-    display: inline-block;
-    width: 3rem;
-    height: 3rem;
+  div {
+    background-color: color($gray,dark);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
-    background-color: color($gray,dark);
-    border-radius: border-radius(s);
     border: solid 1px color($gray, lighter);
+    border-radius: border-radius(s);
+    display: inline-block;
+    height: 3rem;
+    vertical-align: middle;
+    width: 3rem;
   }
 }
-td.part_thumb.-download{
-  div{
-    display: inline-block;
-    vertical-align: middle;
-    text-align: center;
-    text-transform: uppercase;
+td.part_thumb.-download {
+  div {
     color: color($gray,lightest);
+    display: inline-block;
+    font-weight: bold;
     line-height: 3rem;
     overflow: hidden;
-    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
   }
 }
 
-.parts_new{
-  position: relative;
-  padding: 1em;
-  font-size: font-size(xs);
+.parts_new {
   @extend .group;
-  label{
-    position:relative;
-    top: 0;
+
+  font-size: font-size(xs);
+  padding: 1em;
+  position: relative;
+  label {
     display: block;
     font-style: italic;
+    position: relative;
+    top: 0;
   }
 
-  input{
+  input {
     width: 100%;
   }
 }
 
-.-dropzone{
+.-dropzone {
   background: color($blue, lightest);
   border-color: color($blue, light);
   border-style: dashed;
-  opacity: 0.8;
+  opacity: .8;
   transform: scale(1.05);
 
-  tr, td{
+  tr,
+  td {
     background: color($blue, lightest) !important;
   }
 }
 
-.parts_alerts{
-  .alert{
-    margin: 0.5em 0;
+.parts_alerts {
+  .alert {
+    margin: .5em 0;
     padding: 1em;
   }
 }
 
-.ui-autocomplete{
-  position: relative;
-  top: -3px !important;
+.ui-autocomplete {
   background: #fff;
-  list-style: none;
-  padding: 0px;
+  background: #fff;
   border: 2px solid color($gray, light);
   border-radius: 3px;
   border-top-color: transparent;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.25);
-  background: #fff;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, .25);
+  list-style: none;
+  padding: 0;
+  position: relative;
+  top: -3px !important;
 
-  .ui-state-focus{
-    font-weight: bold;
+  .ui-state-focus {
     background: color($blue, lightest);
+    font-weight: bold;
   }
 
-  li{
+  li {
+    cursor: pointer;
     display: block;
     padding: 10px 50px 10px 10px ;
-    cursor: pointer;
-    text-decoration: none;
     position: relative;
+    text-decoration: none;
   }
 }
 
-.ui-helper-hidden-accessible{
+.ui-helper-hidden-accessible {
   display: none;
 }
 
 .image_editor {
   display: none;
-  overflow: auto;
-  width: 90vw !important;
-  max-height: 80vh !important;
-  padding: 30px !important;
   margin: 0 !important;
+  max-height: 80vh !important;
+  overflow: auto;
+  padding: 30px !important;
   transform: translate(-50%, -50%);
+  width: 90vw !important;
 }
 
 .image_editor_title {
-  font-weight: bold;
   font-size: 1.3rem;
+  font-weight: bold;
   margin-bottom: 28px;
 }
 
@@ -172,8 +174,8 @@ td.part_thumb.-download{
   border-radius: 1px;
 
   .-has-metadata & {
-      width: calc(100% - 380px);
-      float: left;
+    float: left;
+    width: calc(100% - 380px);
   }
 }
 
@@ -183,20 +185,20 @@ td.part_thumb.-download{
 }
 
 .image_editor_options {
-  width: 380px;
-  padding-left: 30px;
-  float: left;
   display: none;
+  float: left;
+  padding-left: 30px;
+  width: 380px;
 
   .-has-metadata & {
-      display: block;
+    display: block;
   }
 
   label,
   input,
   textarea {
-    width: 100%;
     display: block;
+    width: 100%;
   }
 }
 
@@ -204,7 +206,7 @@ td.part_thumb.-download{
   margin-top: 30px;
 
   .-has-metadata & {
+    float: left;
     width: 100%;
-    float: left;  
   }
 }

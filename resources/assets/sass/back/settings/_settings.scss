@@ -117,7 +117,7 @@ $green: (
 $gray: (
         lightest: #f5f5f6,
         lighter: #d8d8da,
-        light: #B8B9B6,
+        light: #b8b9b6,
         default: #9699a1,
         dark: #676970,
         darker: #3c3c3c,
@@ -193,7 +193,7 @@ $susy: (
         container: 75em,
         container-position: center,
         columns: 12,
-        gutters: 0.25,
+        gutters: .25,
         column-width: false,
         global-box-sizing: border-box,
         last-flow: to,
@@ -238,4 +238,3 @@ $border-radius: (
         l: 15px,
         xl: 21px,
 );
-

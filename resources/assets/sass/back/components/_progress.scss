@@ -1,38 +1,38 @@
-.progress{
-  width: 100%;
-  height: 2em;
+.progress {
   background-color: color($green, lightest);
   border-radius: 2em;
+  height: 2em;
   overflow: hidden;
+  width: 100%;
 }
 
 
-.progress_bar{
-  height: 100%;
+.progress_bar {
   background-color: color($green, light);
-  border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
-  transition: all 0.3s ease-in-out;
+  border-top-left-radius: 1em;
+  height: 100%;
+  transition: all .3s ease-in-out;
 }
 
-.-working{
-  width: 2em;
+.-working {
+  animation: bubble .6s infinite linear;
   border: solid 4px color($green, light);
   margin: 0 auto;
-  animation: bubble .6s infinite linear;
+  width: 2em;
 
-  .progress_bar{
+  .progress_bar {
     display: none;
   }
 }
 
-@keyframes bubble{
+@keyframes bubble {
   from {
-    transform: scale(0);
     opacity: 1;
+    transform: scale(0);
   }
   to {
-    transform: scale(1);
     opacity: 0;
+    transform: scale(1);
   }
 }

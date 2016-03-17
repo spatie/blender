@@ -1,58 +1,56 @@
 //overrides default stylesheet
 
 .fancybox-opened .fancybox-skin {
-  box-shadow: 0 0 25px rgba($black, 0.2);
+  box-shadow: 0 0 25px rgba($black, .2);
 }
 
 .fancybox-title-float-wrap {
-
   .child {
-    background: rgba($white, 0.95);
+    background: rgba($white, .95);
+    border-radius: 0;
     color: color($gray, dark);
     font-family: font-family(sans);
     font-weight: font-weight(normal);
     text-shadow: none;
-    border-radius: 0;
   }
 }
 
 .fancybox-overlay {
-  background-color: rgba($black, 0.5);
+  background-color: rgba($black, .5);
 }
 
 .fancybox-close,
 .fancybox-nav span {
-  font-family: font-family(icons);
   @include circle(36px);
+
+  background-color: $white;
   border: none;
   color: $black;
-  background-color: $white;
+  font-family: font-family(icons);
   font-size: 21px;
 }
 
 .fancybox-close {
+  @include mq(s) {
+    display: none;
+  }
 
   font-size: 18px;
 
   &:after {
     content: '\e807'; //cancel
   }
-
-  @include mq(s){
-    display: none;
-  }
 }
 
 .fancybox-nav {
   span {
+    margin-top: -18px;
     position: absolute;
     top: 50%;
-    margin-top: -18px;
 
-    .touchevents &{
+    .touchevents & {
       visibility: visible;
     }
-
   }
 }
 
@@ -63,7 +61,7 @@
       content: '\e800'; //cancel
     }
 
-    .touchevents &{
+    .touchevents & {
       transform: translateX(-54px);
     }
   }
@@ -76,7 +74,7 @@
       content: '\e801'; //cancel
     }
 
-    .touchevents &{
+    .touchevents & {
       transform: translateX(54px);
     }
   }

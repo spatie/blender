@@ -1,14 +1,12 @@
-form{
-
+form {
   //variations
-  &.-stacked{
-  }
 
-  &.-form-button{
+
+  &.-form-button {
     display: inline-block;
     vertical-align: middle;
 
-    .alert &{
+    .alert & {
       margin: 0 1em;
     }
   }
@@ -16,39 +14,40 @@ form{
 
 
 // Container for collection of label & input
-.form_group{
+.form_group {
   @extend .clearfix;
-  padding: 0.75em 0;
+
+  padding: .75em 0;
 
 
   //variations
-  &.-buttons{
+  &.-buttons {
     padding: 2em 0;
   }
 
-  &.-media{
-    padding: .75em;
-    margin: 0.75em 0;
+  &.-media {
     background: lighten(color($gray, lightest) , 1%);
+    margin: .75em 0;
+    padding: .75em;
   }
 }
 
-.form_group_help{
-  margin-top: 0.5em;
+.form_group_help {
   font-size: font-size(s);
+  margin-top: .5em;
 }
 
 
 
-fieldset{
+fieldset {
+  background: lighten(color($gray, lightest) , 1%);
   border: 0;
-  padding: .75em;
   margin: .75em -.75em;
   min-width: 0;
-  background: lighten(color($gray, lightest) , 1%);
+  padding: .75em;
 
   //variations
-  &.-info{
+  &.-info {
     background: rgba(color($blue, lightest) , .75);
   }
 
@@ -59,82 +58,82 @@ fieldset{
 }
 
 
-legend{
+legend {
+  color: rgba($black, .5);
   display: table;
-  text-transform: uppercase;
-  text-align: left;
-  color: rgba($black, 0.5);
-  font-weight: font-weight(500);
   font-size: font-size(xs);
+  font-weight: font-weight(500);
+  text-align: left;
+  text-transform: uppercase;
 }
 
 
-label{
-  color: rgba($black, 0.5);
-  font-weight: font-weight(500);
+label {
+  color: rgba($black, .5);
   font-size: font-size(default);
+  font-weight: font-weight(500);
 
   //variations
-  &.-invers{
-    color: rgba($white, 0.5);
+  &.-invers {
+    color: rgba($white, .5);
   }
 
   //context
-  form.-stacked &{
+  form.-stacked & {
     display: block;
     padding-bottom: .75em;
   }
 }
 
 .legend_lang,
-.label_lang{
-  display: inline-block;
-  vertical-align: top;
-  text-transform: uppercase;
-  text-align: center;
-  width: 2em;
-  height: 2em;
-  line-height: 1.8; //correction
-  border-radius: 100%;
-  font-size: font-size(xs);
-  color: color($gray, light);
+.label_lang {
   background: $white;
   border: solid 1px color($gray, light);
+  border-radius: 100%;
+  box-shadow: 0 3px rgba($black, .075);
+  color: color($gray, light);
+  display: inline-block;
+  font-size: font-size(xs);
+  height: 2em;
+  line-height: 1.8; //correction
   margin: 0 .35em;
-  box-shadow: 0 3px rgba($black, 0.075);
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: top;
+  width: 2em;
 }
 
 
 //standard controls
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='url'],
+input[type='date'],
+input[type='month'],
+input[type='time'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='week'],
+input[type='number'],
+input[type='search'],
+input[type='tel'],
+input[type='color'],
 select,
 textarea {
-  color: $text-color;
-  font-weight: font-weight(normal);
-  padding: 0 0.5em;
-  height: 2.5em;
-  display: inline-block;
   border: 2px solid color($gray, light);
-  box-shadow: inset 0 3px rgba(color($gray), 0.15), 0 3px rgba($black, 0.075);
   border-radius: border-radius(s);
+  box-shadow: inset 0 3px rgba(color($gray), .15), 0 3px rgba($black, .075);
+  color: $text-color;
+  display: inline-block;
+  font-weight: font-weight(normal);
+  height: 2.5em;
+  padding: 0 .5em;
   vertical-align: middle;
 
-  &:focus{
-    outline: none;
+  &:focus {
     border: 2px solid color($blue, light);
+    outline: none;
   }
 
   //context
@@ -143,28 +142,27 @@ textarea {
   }
 }
 
-[disabled]{
+[disabled] {
   background: transparent;
 }
 
-input[type="text"]{
-
+input[type='text'] {
   &.-datetime,
-  form.-stacked &.-datetime{
+  form.-stacked &.-datetime {
     width: 8em;
   }
 }
 
 
-input[type="search"]{
+input[type='search'] {
   padding: 0 1em;
 }
 
-textarea{
-  padding: 0.5em;
+textarea {
   max-width: 100%;
+  padding: .5em;
 }
 
-textarea[data-autosize]{
+textarea[data-autosize] {
   resize: none;
 }

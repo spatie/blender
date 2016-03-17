@@ -2,28 +2,22 @@
   Overrides on default confirm styles via Node
 */
 
-.jconfirm{
 
-}
 
-.jconfirm-box{
-  max-width: 15em;
+.jconfirm-box {
+  background-color: color($blue, lightest);
   margin-left: auto;
   margin-right: auto;
+  max-width: 15em;
 
-  background-color: color($blue, lightest);
-
-  .title{
-    text-align: center;
+  .title {
     padding-top: 2em !important;
+    text-align: center;
   }
 
-  .buttons{
+  .buttons {
     float: none;
-    text-align: center;
     padding-bottom: 3em !important;
+    text-align: center;
   }
 }
-
-
-

@@ -1,13 +1,13 @@
-.\:clickable{
+.\:clickable {
   cursor: pointer;
 }
 
-.\:unselectable{
-  -moz-user-select: -moz-none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.\:unselectable {
+   -khtml-user-select:      none;
+  -webkit-user-select:      none;
+     -moz-user-select: -moz-none;
+      -ms-user-select:      none;
+          user-select:      none;
 }
 
 .\:hidden {
@@ -15,7 +15,7 @@
   visibility: hidden;
 }
 
-.\:hidden-visually{
+.\:hidden-visually {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -29,5 +29,3 @@
 .\:invisible {
   visibility: hidden;
 }
-
-

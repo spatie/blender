@@ -15,6 +15,7 @@ html {
 body {
   @include antialiasing(pixel);
   @include font(sans, normal);
+
   color: $text-color;
   line-height: $line-height;
 }
@@ -26,16 +27,17 @@ h2,
 h3 {
   //line-height: 1.3; //smaller line height for titles
   margin: 0;
-  text-rendering: optimizeLegibility; 
+  text-rendering: optimizeLegibility;
 
-  
+
   p + &,
   ul + &,
   ol + & {
     margin-bottom: gutter(s); //margin-top after a text block
   }
 
-  a { //reset links in titles
+  a {
+    //reset links in titles
     //color: inherit !important;
   }
 }
@@ -43,19 +45,18 @@ h3 {
 h1 {
   @include font(sans, medium);
   @include font-size(xxl);
-
 }
 
 h2 {
   @include font(sans, medium);
   @include font-size(l);
+
   color: color($gray, darker);
-
-
 }
 
 h3 {
   @include font(sans, normal);
+
   margin-bottom: .5rem;
   word-break: break-word;
 
@@ -66,6 +67,7 @@ h3 {
 
 h4 {
   @include font(sans, normal);
+
   margin: 0;
 }
 
@@ -125,7 +127,6 @@ object {
 
 abbr,
 dfn {
-
   &[title] {
     border-bottom: 1px dotted color($gray);
     cursor: help;
@@ -165,6 +166,7 @@ kbd,
 samp,
 var {
   @include font(fixed, normal);
+
   background: color($gray, darkest);
   border-radius: border-radius(s);
   color: $white;
@@ -196,6 +198,7 @@ cite {
 ins,
 mark {
   @include tag(color($yellow, darkest) , color($yellow, lightest));
+
   text-decoration: none;
 }
 

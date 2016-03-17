@@ -5696,7 +5696,7 @@
             "authors": [
                 {
                     "name": "Mohamed Said",
-                    "email": "theMohamedSaid@gmail.com"
+                    "email": "themohamedsaid@gmail.com"
                 }
             ],
             "description": "Adds a 'preview' mail driver for testing emails in laravel.",

@@ -1,29 +1,30 @@
-.pagination{
+.pagination {
   @include ul-horizontal();
-  text-align: center;
+
   font-size: font-size(s);
   margin: 2em 0 1em 0;
+  text-align: center;
 
-  li{
+  li {
+    margin: .15em;
 
-    margin: 0.15em;
-
-    &.disabled{
+    &.disabled {
       color: color($gray);
     }
 
-    &.active{
+    &.active {
       font-weight: font-weight(extrabold);
     }
 
     span,
-    a{
-      display: inline-block;
+    a {
       @include circle(2em);
+
       border: none;
+      display: inline-block;
     }
 
-    a:hover{
+    a:hover {
       background-color: color($blue, lightest);
     }
   }
