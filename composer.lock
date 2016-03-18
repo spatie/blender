@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fc897f233b5946ea2ca3b8c5deddb704",
-    "content-hash": "16304a4cbd9e5722f6a3fde181176d41",
+    "hash": "4b50d36175578232cc417938b88ac8b3",
+    "content-hash": "1e2a5ab3f8db511c64b1aef74ff56ab3",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -4189,16 +4189,16 @@
         },
         {
             "name": "spatie/laravel-menu",
-            "version": "0.5.0",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "b1a3673eea0e729a8600cc88b1e75490b28c47b2"
+                "reference": "7183fabc32b2fa17eac7ecffedd1a806142ae63f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/b1a3673eea0e729a8600cc88b1e75490b28c47b2",
-                "reference": "b1a3673eea0e729a8600cc88b1e75490b28c47b2",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/7183fabc32b2fa17eac7ecffedd1a806142ae63f",
+                "reference": "7183fabc32b2fa17eac7ecffedd1a806142ae63f",
                 "shasum": ""
             },
             "require": {
@@ -4233,20 +4233,20 @@
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2016-03-18 09:44:58"
+            "time": "2016-03-18 11:16:24"
         },
         {
             "name": "spatie/laravel-model-cleanup",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-model-cleanup.git",
-                "reference": "3cd2400c9885bf11764c43a11ebc1f77b572bb6f"
+                "reference": "d880618b39ce0d035193d59f7c460ec3b6747386"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-model-cleanup/zipball/3cd2400c9885bf11764c43a11ebc1f77b572bb6f",
-                "reference": "3cd2400c9885bf11764c43a11ebc1f77b572bb6f",
+                "url": "https://api.github.com/repos/spatie/laravel-model-cleanup/zipball/d880618b39ce0d035193d59f7c460ec3b6747386",
+                "reference": "d880618b39ce0d035193d59f7c460ec3b6747386",
                 "shasum": ""
             },
             "require": {
@@ -4289,7 +4289,7 @@
                 "laravel-model-cleanup",
                 "spatie"
             ],
-            "time": "2016-03-18 09:15:56"
+            "time": "2016-03-18 12:34:35"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -4595,16 +4595,16 @@
         },
         {
             "name": "spatie/menu",
-            "version": "0.6.1",
+            "version": "0.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/menu.git",
-                "reference": "d2d60b378a1fe873b5f7463767d024fb4bf87446"
+                "reference": "402a50f1515b39beb28210c84f284c47f6168699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/d2d60b378a1fe873b5f7463767d024fb4bf87446",
-                "reference": "d2d60b378a1fe873b5f7463767d024fb4bf87446",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/402a50f1515b39beb28210c84f284c47f6168699",
+                "reference": "402a50f1515b39beb28210c84f284c47f6168699",
                 "shasum": ""
             },
             "require": {
@@ -4642,7 +4642,7 @@
                 "navigation",
                 "spatie"
             ],
-            "time": "2016-03-18 09:42:29"
+            "time": "2016-03-18 12:33:38"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -7209,8 +7209,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fedeisas/laravel-mail-css-inliner": 20,
-        "spatie/laravel-model-cleanup": 20
+        "fedeisas/laravel-mail-css-inliner": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
