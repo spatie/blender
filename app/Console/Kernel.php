@@ -34,5 +34,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('backup:scheduled')->dailyAt('03:00');
         $schedule->command('db:deleteOldDrafts')->sundays();
         $schedule->command('link-checker:run')->monthly();
+        $schedule->command('clean:models')->daily();
     }
 }
