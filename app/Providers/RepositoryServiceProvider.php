@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Services\Navigation\Section;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Support\ServiceProvider;
 use Cache;
@@ -32,7 +31,7 @@ class RepositoryServiceProvider extends ServiceProvider
 
     protected function unregisterCacheRepositoriesInBlender()
     {
-        if (app(Section::class)->isBack()) {
+        if (request()->isBack()) {
             $this->dbRepositories = array_merge($this->dbRepositories, $this->cacheRepositories);
             $this->cacheRepositories = [];
         }

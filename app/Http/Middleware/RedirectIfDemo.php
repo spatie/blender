@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\Navigation\Section;
 use Closure;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -41,7 +40,7 @@ class RedirectIfDemo
      */
     protected function protectedByDemoMode()
     {
-        if (! app(Section::class)->isFront()) {
+        if (! request()->isFront()) {
             return false;
         }
 

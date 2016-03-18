@@ -159,8 +159,10 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        App\Providers\BladeDirectiveServiceProvider::class,
+        App\Services\Navigation\NavigationServiceProvider::class,
+
         App\Providers\ConfigServiceProvider::class,
+        App\Providers\BladeDirectiveServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
@@ -170,7 +172,6 @@ return [
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Locale\LocaleServiceProvider::class,
-        App\Services\Navigation\NavigationServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
@@ -251,7 +252,6 @@ return [
         'HTML'      => Illuminate\Html\HtmlFacade::class,
 
         'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
-        'Navigation'	=> App\Services\Navigation\NavigationFacade::class,
 
         'Activity'    		=> Spatie\Activitylog\ActivitylogFacade::class,
         'Breadcrumbs' 		=> DaveJamesMiller\Breadcrumbs\Facade::class,

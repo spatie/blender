@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Navigation;
+namespace App\Services\Navigation\Breadcrumbs;
 
 use Breadcrumbs as BreadCrumbsManager;
 use DaveJamesMiller\Breadcrumbs\Manager;

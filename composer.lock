@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c343a3bcbbd0c20cdd5b0ece6c187668",
-    "content-hash": "3027d540f298840a696411399d827fb2",
+    "hash": "0431fc2645540b3b9f904e9b2a60265f",
+    "content-hash": "a2d01fbac50ee59c962090630b9abda1",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4149,16 +4149,16 @@
         },
         {
             "name": "spatie/laravel-menu",
-            "version": "0.5.1",
+            "version": "0.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "b1a3673eea0e729a8600cc88b1e75490b28c47b2"
+                "reference": "7183fabc32b2fa17eac7ecffedd1a806142ae63f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/b1a3673eea0e729a8600cc88b1e75490b28c47b2",
-                "reference": "b1a3673eea0e729a8600cc88b1e75490b28c47b2",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/7183fabc32b2fa17eac7ecffedd1a806142ae63f",
+                "reference": "7183fabc32b2fa17eac7ecffedd1a806142ae63f",
                 "shasum": ""
             },
             "require": {
@@ -4193,7 +4193,7 @@
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2016-03-18 09:44:58"
+            "time": "2016-03-18 11:16:24"
         },
         {
             "name": "spatie/laravel-model-cleanup",
@@ -4201,12 +4201,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-model-cleanup.git",
-                "reference": "3cd2400c9885bf11764c43a11ebc1f77b572bb6f"
+                "reference": "ef1fc0f7b0e111e8d8ac6dba33063988b564fee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-model-cleanup/zipball/3cd2400c9885bf11764c43a11ebc1f77b572bb6f",
-                "reference": "3cd2400c9885bf11764c43a11ebc1f77b572bb6f",
+                "url": "https://api.github.com/repos/spatie/laravel-model-cleanup/zipball/ef1fc0f7b0e111e8d8ac6dba33063988b564fee8",
+                "reference": "ef1fc0f7b0e111e8d8ac6dba33063988b564fee8",
                 "shasum": ""
             },
             "require": {
@@ -4249,7 +4249,7 @@
                 "laravel-model-cleanup",
                 "spatie"
             ],
-            "time": "2016-03-18 09:15:56"
+            "time": "2016-03-18 12:32:07"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -4555,16 +4555,16 @@
         },
         {
             "name": "spatie/menu",
-            "version": "0.6.2",
+            "version": "0.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/menu.git",
-                "reference": "ff9598191e6bf4b00ab7970ab5fd3a61a2f950a6"
+                "reference": "402a50f1515b39beb28210c84f284c47f6168699"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/ff9598191e6bf4b00ab7970ab5fd3a61a2f950a6",
-                "reference": "ff9598191e6bf4b00ab7970ab5fd3a61a2f950a6",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/402a50f1515b39beb28210c84f284c47f6168699",
+                "reference": "402a50f1515b39beb28210c84f284c47f6168699",
                 "shasum": ""
             },
             "require": {
@@ -4602,7 +4602,7 @@
                 "navigation",
                 "spatie"
             ],
-            "time": "2016-03-18 11:10:35"
+            "time": "2016-03-18 12:33:38"
         },
         {
             "name": "spatie/pdf-to-image",

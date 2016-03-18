@@ -148,7 +148,7 @@ function translate($id = null, $parameters = [], $locale = null)
 /** @return \App\Services\Auth\Front\User|\App\Services\Auth\Back\User|null */
 function current_user()
 {
-    return app(App\Services\Navigation\Section::class)->isFront() ?
+    return request()->isFront() ?
         current_front_user() :
         current_back_user();
 }
@@ -175,14 +175,14 @@ function current_back_user()
 
 function login_url() : string
 {
-    return app(App\Services\Navigation\Section::class)->isFront() ?
+    return request()->isFront() ?
         action('Front\AuthController@getLogin') :
         action('Back\AuthController@getLogin');
 }
 
 function logout_url() : string
 {
-    return app(App\Services\Navigation\Section::class)->isFront() ?
+    return request()->isFront() ?
         action('Front\AuthController@getLogout') :
         action('Back\AuthController@getLogout');
 }
@@ -225,4 +225,9 @@ function lang_to_fragments(string $namespace, array $names, array $defaults = []
 function activity(string $message)
 {
     Activity::log($message);
+}
+
+function el(string $tag, $attributes = null, $contents = null) : string
+{
+    return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
 }

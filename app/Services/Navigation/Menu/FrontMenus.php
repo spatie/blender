@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Services\Navigation;
+namespace App\Services\Navigation\Menu;
 
-use HTML;
-use Menu;
-use Request;
-
-class Navigation
+class FrontMenus
 {
+    public function register()
+    {
+
+    }
+
     public function getFrontMainMenu()
     {
         $menu = Menu::handler('main', ['class' => 'nav navbar-nav'])

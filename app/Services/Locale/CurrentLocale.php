@@ -2,15 +2,13 @@
 
 namespace App\Services\Locale;
 
-use App\Services\Navigation\Section;
-
 class CurrentLocale
 {
     public static function determine() : string
     {
         $default = app()->getLocale();
 
-        if (app(Section::class)->isBack()) {
+        if (request()->isBack()) {
             // User might not be set yet if called in a service provider so a fallback is provided
             if (auth()->check()) {
                 return app()->auth->user()->locale;
