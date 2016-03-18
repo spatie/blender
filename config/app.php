@@ -196,6 +196,8 @@ return [
         Spatie\Tail\TailServiceProvider::class,
         Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
+        Spatie\ModelCleanup\ModelCleanupServiceProvider::class,
+
     ],
 
     /*
