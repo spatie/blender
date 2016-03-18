@@ -24,11 +24,11 @@ class Authenticate
             return response('Unauthorized.', 401);
         }
 
-        if (request()->isFront()) {
+        if ($request->isFront()) {
             return redirect()->guest(action('Front\AuthController@getLogin'));
         }
 
-        if (request()->isBack()) {
+        if ($request->isBack()) {
             return redirect()->guest(action('Back\AuthController@getLogin'));
         }
 

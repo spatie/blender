@@ -145,12 +145,21 @@ function translate($id = null, $parameters = [], $locale = null)
     return trans($id, $parameters, $domain = 'messages');
 }
 
-/** @return \App\Services\Auth\Front\User|\App\Services\Auth\Back\User|null */
+/**
+ * @return \App\Services\Auth\Back\User|\App\Services\Auth\Front\User|null
+ * @throws \Exception
+ */
 function current_user()
 {
-    return request()->isFront() ?
-        current_front_user() :
-        current_back_user();
+    if (request()->isFront()) {
+        return current_front_user();
+    }
+
+    if (request()->isBack()) {
+        return current_back_user();
+    }
+
+    throw new \Exception('Request was neither for front or back');
 }
 
 /** @return \App\Services\Auth\Front\User|null */

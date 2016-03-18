@@ -27,7 +27,7 @@
 <body>
     @include('front.layout._partials.deprecatedBrowser')
 
-    @if (auth()->user())
+    @if (current_user())
         @include('back.layout._partials.menu')
         <div class="grid">
             @include('back.layout._partials.breadcrumbs')
@@ -37,7 +37,7 @@
     <main class="main">
         @yield('content')
     </main>
-    @if (auth()->user())
+    @if (current_user())
         @include('back.layout._partials.footer')
     @endif
     <script src="{{ elixir('back.app.js') }}" defer></script>

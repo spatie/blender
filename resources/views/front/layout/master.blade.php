@@ -41,7 +41,7 @@
         <div class="grid">
             <div class="grid_col -width-1/2">
                 <nav class="nav">
-                    {!! Navigation::getFrontMainMenu() !!}
+                    {!! Menu::main() !!}
                 </nav>
             </div>
             <div class="grid_col -width-1/2">
