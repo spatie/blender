@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0431fc2645540b3b9f904e9b2a60265f",
-    "content-hash": "a2d01fbac50ee59c962090630b9abda1",
+    "hash": "05c599a1055576765644701612215ea8",
+    "content-hash": "2c41be267448e5186f5808139a348249",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4197,16 +4197,16 @@
         },
         {
             "name": "spatie/laravel-model-cleanup",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-model-cleanup.git",
-                "reference": "ef1fc0f7b0e111e8d8ac6dba33063988b564fee8"
+                "reference": "d880618b39ce0d035193d59f7c460ec3b6747386"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-model-cleanup/zipball/ef1fc0f7b0e111e8d8ac6dba33063988b564fee8",
-                "reference": "ef1fc0f7b0e111e8d8ac6dba33063988b564fee8",
+                "url": "https://api.github.com/repos/spatie/laravel-model-cleanup/zipball/d880618b39ce0d035193d59f7c460ec3b6747386",
+                "reference": "d880618b39ce0d035193d59f7c460ec3b6747386",
                 "shasum": ""
             },
             "require": {
@@ -4249,7 +4249,7 @@
                 "laravel-model-cleanup",
                 "spatie"
             ],
-            "time": "2016-03-18 12:32:07"
+            "time": "2016-03-18 12:34:35"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -7119,8 +7119,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fedeisas/laravel-mail-css-inliner": 20,
-        "spatie/laravel-model-cleanup": 20
+        "fedeisas/laravel-mail-css-inliner": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
