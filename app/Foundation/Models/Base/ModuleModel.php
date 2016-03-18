@@ -6,8 +6,11 @@ use App\Foundation\Models\Traits\Draftable;
 use App\Foundation\Models\Traits\Presentable;
 use App\Foundation\Models\Traits\HasMedia as HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
+use Spatie\ModelCleanup\GetsCleanedUp;
+use Illuminate\Database\Eloquent\Builder;
+use Carbon\Carbon;
 
-abstract class ModuleModel extends TranslatableEloquent implements HasMediaConversions
+abstract class ModuleModel extends TranslatableEloquent implements HasMediaConversions, GetsCleanedUp
 {
     use Draftable, Presentable, HasMediaTrait;
 
@@ -24,5 +27,12 @@ abstract class ModuleModel extends TranslatableEloquent implements HasMediaConve
             ->setWidth(368)
             ->setHeight(232)
             ->nonQueued();
+    }
+
+    public static function cleanUp(Builder $query) : Builder
+    {
+        return $query
+            ->draft()
+            ->where('created_at', '<', Carbon::now()->subWeek());
     }
 }

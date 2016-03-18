@@ -56,7 +56,8 @@
     "spatie/fragment-importer": "^1.0.6",
     "spatie/laravel-failed-job-monitor": "^1.0",
     "spatie/laravel-menu": "^0.5.0",
-    "themsaid/laravel-mail-preview": "^1.0"
+    "themsaid/laravel-mail-preview": "^1.0",
+    "spatie/laravel-model-cleanup": "dev-master"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
