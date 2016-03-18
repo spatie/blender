@@ -9,24 +9,11 @@
                 </a>
             </nav>
             <nav class="menu_user">
-                {!! Navigation::getBackUserMenu() !!}
+                {!! Menu::backUser() !!}
             </nav>
         </div>
         <nav class="menu_main" data-menu-main>
-            <ul class="menu_groups" data-menu-groups>
-                <li class="menu_group -single">
-                    {!! Navigation::getBackDashboardMenu() !!}
-                </li>
-                <li class="menu_group" data-menu-group="inhoud">
-                    {!! Navigation::getBackContentMenu() !!}
-                </li>
-                <li class="menu_group" data-menu-group="modules">
-                    {!! Navigation::getBackModuleMenu() !!}
-                </li>
-                <li class="menu_group" data-menu-group="configuratie">
-                    {!! Navigation::getBackServiceMenu() !!}
-                </li>
-            </ul>
+            {!! Menu::backMain() !!}
         </nav>
     </div>
 </div>
