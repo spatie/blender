@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "43e41a7b651b6457562318b66d2b7d19",
-    "content-hash": "f3ed1cada9eff5aaf2bd7e7daed00ace",
+    "hash": "4d24ec7e59b2ea00fcc2f3013a3f1947",
+    "content-hash": "2a0e3e384cfa699673be768f661651af",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -98,16 +98,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.16.0",
+            "version": "3.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "202a3abc5d3262c170a4a8407c9998096e33af1e"
+                "reference": "4853bf1f865f6c6df44db0cd5664319ae806f319"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/202a3abc5d3262c170a4a8407c9998096e33af1e",
-                "reference": "202a3abc5d3262c170a4a8407c9998096e33af1e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4853bf1f865f6c6df44db0cd5664319ae806f319",
+                "reference": "4853bf1f865f6c6df44db0cd5664319ae806f319",
                 "shasum": ""
             },
             "require": {
@@ -174,7 +174,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-03-15 23:35:49"
+            "time": "2016-03-17 23:57:52"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -2823,16 +2823,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v1.2.2",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "b3313b618f4edd76523572531d5d7e22fe747430"
+                "reference": "ff76e1a660669bb56ba74ba0583fd8d41417bf39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b3313b618f4edd76523572531d5d7e22fe747430",
-                "reference": "b3313b618f4edd76523572531d5d7e22fe747430",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/ff76e1a660669bb56ba74ba0583fd8d41417bf39",
+                "reference": "ff76e1a660669bb56ba74ba0583fd8d41417bf39",
                 "shasum": ""
             },
             "require": {
@@ -2867,7 +2867,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-03-11 19:54:08"
+            "time": "2016-03-17 16:11:57"
         },
         {
             "name": "patchwork/utf8",
@@ -3651,6 +3651,52 @@
             "time": "2016-03-01 12:50:01"
         },
         {
+            "name": "spatie/html-element",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/html-element.git",
+                "reference": "d7da01b4bd6ac122901bec6a1b042ecf240bb2c7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/html-element/zipball/d7da01b4bd6ac122901bec6a1b042ecf240bb2c7",
+                "reference": "d7da01b4bd6ac122901bec6a1b042ecf240bb2c7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\HtmlElement\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Html rendering in php inspired by hyperscript",
+            "homepage": "https://github.com/spatie/html-element",
+            "keywords": [
+                "html-element",
+                "spatie"
+            ],
+            "time": "2016-03-11 13:14:56"
+        },
+        {
             "name": "spatie/laravel-analytics",
             "version": "1.3.1",
             "source": {
@@ -4142,6 +4188,54 @@
             "time": "2016-02-25 20:16:39"
         },
         {
+            "name": "spatie/laravel-menu",
+            "version": "0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-menu.git",
+                "reference": "b1a3673eea0e729a8600cc88b1e75490b28c47b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/b1a3673eea0e729a8600cc88b1e75490b28c47b2",
+                "reference": "b1a3673eea0e729a8600cc88b1e75490b28c47b2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "spatie/menu": "^0.6.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.1",
+                "phpunit/phpunit": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Menu\\Laravel\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastiandedeyne@gmail.com",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Html menu generation in Laravel",
+            "homepage": "https://github.com/spatie/laravel-menu",
+            "keywords": [
+                "laravel-menu",
+                "spatie"
+            ],
+            "time": "2016-03-18 09:44:58"
+        },
+        {
             "name": "spatie/laravel-newsletter",
             "version": "2.2.0",
             "source": {
@@ -4442,6 +4536,57 @@
                 "tail"
             ],
             "time": "2015-10-11 09:45:38"
+        },
+        {
+            "name": "spatie/menu",
+            "version": "0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/menu.git",
+                "reference": "d2d60b378a1fe873b5f7463767d024fb4bf87446"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/d2d60b378a1fe873b5f7463767d024fb4bf87446",
+                "reference": "d2d60b378a1fe873b5f7463767d024fb4bf87446",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "spatie/html-element": "^1.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.2.10"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Menu\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Html menu generator",
+            "homepage": "https://github.com/spatie/menu",
+            "keywords": [
+                "menu",
+                "navigation",
+                "spatie"
+            ],
+            "time": "2016-03-18 09:42:29"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -5696,7 +5841,7 @@
             "authors": [
                 {
                     "name": "Mohamed Said",
-                    "email": "themohamedsaid@gmail.com"
+                    "email": "theMohamedSaid@gmail.com"
                 }
             ],
             "description": "Adds a 'preview' mail driver for testing emails in laravel.",
