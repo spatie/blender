@@ -11,7 +11,7 @@
   }
 
   li {
-    &.active a {
+    &.-active a {
       color: color($gray, darker);
       font-weight: font-weight(extrabold);
     }
@@ -27,19 +27,6 @@
     }
   }
 }
-
-.menu_brand {
-  @include mq(s) {
-    position: relative;
-    text-align: center;
-    top: 1em;
-  }
-
-  position: absolute;
-  top: 3.2em;
-  z-index: z-index(above);
-}
-
 
 .menu_circle {
   background-repeat: no-repeat;
@@ -72,7 +59,6 @@
   padding: 1.5em 0;
   z-index: 2;
 }
-
 
 .menu_front_link {
   padding-right: 1.5em;
@@ -125,8 +111,6 @@
   }
 }
 
-
-
 .menu_group {
   @include mq(m) {
     float: none !important;
@@ -141,23 +125,24 @@
     }
   }
 
+  background-color: color($gray, lighter);
+  border-radius: border-radius(s);
+  display: inline-block;
   display: inline-block;
   margin-bottom: 1.35em;
-  margin-right: .75em;
-    background-color: color($gray, lighter);
-    border-radius: border-radius(s);
-    display: inline-block;
-    padding: .25em;
-    vertical-align: top;
-  ul {
-      padding-right: 1.5em;
-
-  }
+  padding: .25em;
+    padding-right: 1.5em;
+  vertical-align: top;
 
 
   //variations
   &.-right {
     float: right;
+  }
+
+  &.-single {
+      padding-right: 0;
+
   }
 
   &.-active {
@@ -169,8 +154,6 @@
       opacity: .35;
     }
   }
-
-
 
   &:before {
     @include position-center-horizontal();
@@ -189,8 +172,8 @@
 
 .menu_group_item {
   @include mq(s) {
+    border: none;
     width: 100%;
-      border: none;
   }
 
   border-right: solid 2px darken(color($gray, lighter), 3%);
@@ -204,15 +187,9 @@
   }
 
   &.-icon {
-
-    position: absolute;
-    right: 0;
-    top: 0;
-
     @include mq(s) {
-
       right: .15em;
-      top: .25em;
+        left: auto;
       width: auto;
 
       i {
@@ -221,6 +198,9 @@
     }
 
     opacity: .5;
+    position: absolute;
+    left: 100%;
+    top: 0;
 
     a {
       padding: .25em .75em .25em .5em;
@@ -267,7 +247,7 @@
       border-right: none;
     }
 
-    &.active a {
+    &.-active a {
       color: color($gray, darker);
       font-weight: font-weight(extrabold);
     }
