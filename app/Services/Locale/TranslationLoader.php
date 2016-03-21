@@ -24,13 +24,22 @@ class TranslationLoader extends FileLoader
             return $this->loadNamespaced($locale, $group, $namespace);
         }
 
-        if (!Schema::hasTable('fragments')) {
+        if (!$this->fragmentsAreAvailable()) {
             return [];
         }
 
         return Cache::rememberForever("locale.fragments.{$locale}.{$group}", function () use ($group, $locale) {
             return $this->fetchFragments($group, $locale);
         });
+    }
+
+    protected function fragmentsAreAvailable() : bool
+    {
+        try {
+            return Schema::hasTable('fragments');
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     protected function fetchFragments(string $group, string $locale) : array
