@@ -5,9 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateActivityLogTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('activity_log', function (Blueprint $table) {
@@ -19,9 +16,6 @@ class CreateActivityLogTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
         Schema::drop('activity_log');
