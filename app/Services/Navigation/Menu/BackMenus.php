@@ -44,8 +44,8 @@ class BackMenus
 
         Menu::macro('backUser', function () {
 
-            $avatar = HTML::avatar(auth()->user(), '-small') .
-                el('span.:response-desktop-only', auth()->user()->email);
+            $avatar = HTML::avatar(current_user(), '-small') .
+                el('span.:response-desktop-only', current_user()->email);
 
             return Menu::new()
                 ->add(Link::action('Back\BackUserController@edit', $avatar, [current_user()->id]))
