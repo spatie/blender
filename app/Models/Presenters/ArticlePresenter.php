@@ -12,7 +12,7 @@ class ArticlePresenter extends Presenter
 {
     public function tease($characters, $moreTextIndicator = '...') : Str
     {
-        return (string) string($this->entity->text)->tease($characters, $moreTextIndicator);
+        return string($this->entity->text)->tease($characters, $moreTextIndicator);
     }
 
     public function meta() : Str
