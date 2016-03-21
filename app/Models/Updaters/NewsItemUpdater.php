@@ -15,7 +15,7 @@ class NewsItemUpdater extends ModuleModelUpdater
     {
         parent::performUpdate();
 
-        $this->updateTags(TagType::NEWS_TAG(), TagType::NEWS_CATEGORY());
+        $this->updateTags();
 
         $this->model->publish_date = Carbon::createFromFormat('d/m/Y', $this->request->get('publish_date'));
     }
