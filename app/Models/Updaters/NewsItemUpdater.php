@@ -3,7 +3,6 @@
 namespace App\Models\Updaters;
 
 use App\Foundation\Models\Updaters\UpdatesTags;
-use App\Models\Enums\TagType;
 use Carbon\Carbon;
 use App\Foundation\Models\Updaters\ModuleModelUpdater;
 
