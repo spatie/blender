@@ -7,10 +7,7 @@ use Laracasts\Presenter\Presenter;
 
 class TagPresenter extends Presenter
 {
-    /**
-     *  Get an array with all possible types.
-     */
-    public function allTagTypes()
+    public function allTagTypes() : array
     {
         $tagTypes = [];
 
@@ -18,6 +15,6 @@ class TagPresenter extends Presenter
             $tagTypes[(string) $value] = fragment("back.tags.types.{$value}");
         }
 
-        return collect($tagTypes)->sort();
+        return collect($tagTypes)->sort()->toArray();
     }
 }

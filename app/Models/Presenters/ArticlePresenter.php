@@ -3,25 +3,17 @@
 namespace App\Models\Presenters;
 
 use Laracasts\Presenter\Presenter;
+use Spatie\String\Str;
 
 class ArticlePresenter extends Presenter
 {
-    /**
-     * @param string $characters
-     * @param string $moreTextIndicator
-     *
-     * @return \Spatie\String\Str
-     */
-    public function tease($characters, $moreTextIndicator = '...')
+    public function tease($characters, $moreTextIndicator = '...') : Str
     {
         return (string) string($this->entity->text)->tease($characters, $moreTextIndicator);
     }
 
-    /**
-     * @return string
-     */
-    public function meta()
+    public function meta() : Str
     {
-        return (string) $this->tease(155);
+        return $this->tease(155);
     }
 }
