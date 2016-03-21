@@ -20,7 +20,7 @@ function generate() {
 
 # Model & related objects
 generate  app/Models/NewsItem.php                               app/Models/${singular}.php
-generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Updaters/${singular}Presenter.php
+generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Presenters/${singular}Presenter.php
 generate  app/Models/Translations/NewsItemTranslation.php       app/Models/Translations/${singular}Translation.php
 generate  app/Models/Updaters/NewsItemUpdater.php               app/Models/Updaters/${singular}Updater.php
 
