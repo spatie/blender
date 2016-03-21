@@ -1,18 +1,10 @@
 <?php
 
-use Illuminate\Support\Str;
-
-/**
- * Get the app's current locale.
- */
 function locale() : string
 {
     return app()->getLocale();
 }
 
-/**
- * Get the app's current content locale.
- */
 function content_locale() : string
 {
     return app('currentLocale')->getContentLocale();
@@ -20,23 +12,7 @@ function content_locale() : string
 
 function fragment($name, array $replacements = []) : string
 {
-    $fragment = App\Models\Fragment::findByName($name);
-
-    if (!$fragment) {
-        return $name;
-    }
-
-    $text = $fragment->text;
-
-    foreach ($replacements as $key => $value) {
-        $text = str_replace(
-            [':'.Str::upper($key), ':'.Str::ucfirst($key), ':'.$key],
-            [Str::upper($value), Str::ucfirst($value), $value],
-            $text
-        );
-    }
-
-    return $text;
+    return trans($name, $replacements);
 }
 
 function fragment_slug($name, array $replacements = []) : string
@@ -51,12 +27,10 @@ function translate_field_name(string $fieldName, string $locale) : string
     return  'translated_'.$locale.'_'.$fieldName;
 }
 
-
 function article(string $technicalName) : App\Models\Article
 {
     return App\Models\Article::findByTechnicalName($technicalName);
 }
-
 
 function carbon(string $date, string $format = 'Y-m-d H:i:s') : Carbon\Carbon
 {
@@ -67,7 +41,6 @@ function diff_date_for_humans(Carbon\Carbon $date) : string
 {
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
 }
-
 
 function roman_year(int $year = null) : string
 {
@@ -129,20 +102,6 @@ function class_constants($object, string  $startsWithFilter = '') : array
     return array_filter($constants, function ($key) use ($startsWithFilter) {
         return starts_with(strtolower($key), strtolower($startsWithFilter));
     }, ARRAY_FILTER_USE_KEY);
-}
-
-/**
- * Translate the given message.
- *
- * @param string $id
- * @param array  $parameters
- * @param string $locale
- *
- * @return string
- */
-function translate($id = null, $parameters = [], $locale = null)
-{
-    return trans($id, $parameters, $domain = 'messages');
 }
 
 /**
@@ -220,15 +179,6 @@ function validate($fields, $rules) : bool
     }
 
     return Validator::make($fields, $rules)->passes();
-}
-
-function lang_to_fragments(string $namespace, array $names, array $defaults = []) : array
-{
-    return array_reduce($names, function ($carry, $name) use ($namespace) {
-        $carry[$name] = fragment("{$namespace}.{$name}");
-
-        return $carry;
-    }, $defaults);
 }
 
 function activity(string $message)
