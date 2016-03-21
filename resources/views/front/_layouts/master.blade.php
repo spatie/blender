@@ -4,7 +4,7 @@
       data-viewport-small="900"
       data-viewport-start="100"
       data-viewport-end="100">
-@include('front.layout._partials.hiddenCredits')
+@include('front._layouts._partials.hiddenCredits')
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,14 +29,14 @@
 
     <script src="{{ elixir('front.head.js') }}"></script>
 
-    @include('front.layout._partials.hreflang')
-    @include('front.layout._partials.openGraph')
-    @include('front.layout._partials.favicons')
-    @include('front.layout._partials.bugsnag')
+    @include('front._layouts._partials.hreflang')
+    @include('front._layouts._partials.openGraph')
+    @include('front._layouts._partials.favicons')
+    @include('front._layouts._partials.bugsnag')
 </head>
 <body>
     @include('googletagmanager::script')
-    @include('front.layout._partials.deprecatedBrowser')
+    @include('front._layouts._partials.deprecatedBrowser')
     <header class="header">
         <div class="grid">
             <div class="grid_col -width-1/2">
@@ -55,7 +55,7 @@
             </div>
         </div>
     </header>
-    @include('front.layout._partials.flashMessage')
+    @include('front._layouts._partials.flashMessage')
     @yield('content')
     <footer class="footer">
         <small>

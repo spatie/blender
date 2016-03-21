@@ -1,11 +1,11 @@
-@extends('front.layout.master')
+@extends('front._layouts.master')
 
 @section('pageTitle', fragment('auth.titleResetPassword'))
 
 @section('content')
 <section class="+auth">
 
-    @include('back.layout._partials.flashMessage', ['extraClass' => '-fixed'])
+    @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
 
     <div class="+auth_card">
         <h1 class="+auth_title -small">{{ fragment('auth.resetPassword.title') }}</h1>

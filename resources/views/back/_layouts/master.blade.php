@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ locale() }}">
-@include('front.layout._partials.hiddenCredits')
+@include('front._layouts._partials.hiddenCredits')
 <head>
     <meta charset="utf-8">
 
@@ -22,23 +22,23 @@
     <script src="{{ elixir('back.vendor.js') }}"></script>
     <script src="{{ elixir('back.head.js') }}"></script>
 
-    @include('front.layout._partials.favicons')
+    @include('front._layouts._partials.favicons')
 </head>
 <body>
-    @include('front.layout._partials.deprecatedBrowser')
+    @include('front._layouts._partials.deprecatedBrowser')
 
     @if (current_user())
-        @include('back.layout._partials.menu')
+        @include('back._layouts._partials.menu')
         <div class="grid">
-            @include('back.layout._partials.breadcrumbs')
-            @include('back.layout._partials.flashMessage')
+            @include('back._layouts._partials.breadcrumbs')
+            @include('back._layouts._partials.flashMessage')
         </div>
     @endif
     <main class="main">
         @yield('content')
     </main>
     @if (current_user())
-        @include('back.layout._partials.footer')
+        @include('back._layouts._partials.footer')
     @endif
     <script src="{{ elixir('back.app.js') }}" defer></script>
     @yield('extraJs')

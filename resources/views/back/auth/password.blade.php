@@ -1,4 +1,4 @@
-@extends('back.layout.master')
+@extends('back._layouts.master')
 
 @section('pageTitle', fragment('back.auth.titleResetPassword'))
 
@@ -6,7 +6,7 @@
 <section class="+auth">
     {{-- @include('auth._partials.lang') --}}
 
-    @include('back.layout._partials.flashMessage', ['extraClass' => '-fixed'])
+    @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
 
     <div class="+auth_card">
         <h1 class="+auth_title -small">{{ fragment('back.auth.resetPassword.title') }}</h1>

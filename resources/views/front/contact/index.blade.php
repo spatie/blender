@@ -1,4 +1,4 @@
-@extends('front.layout.master')
+@extends('front._layouts.master')
 
 @section('pageTitle', $article->title)
 @section('pageDescription', $article->title)
