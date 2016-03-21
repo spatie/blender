@@ -7,6 +7,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         parent::run();
+        
+        Cache::flush();
 
         $this->call(BackUserSeeder::class);
         $this->call(FrontUserSeeder::class);
@@ -15,7 +17,5 @@ class DatabaseSeeder extends Seeder
         $this->call(ArticleSeeder::class);
         $this->call(PersonSeeder::class);
         $this->call(NewsItemSeeder::class);
-
-        Cache::flush();
     }
 }
