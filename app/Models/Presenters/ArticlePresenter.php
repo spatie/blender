@@ -5,6 +5,9 @@ namespace App\Models\Presenters;
 use Laracasts\Presenter\Presenter;
 use Spatie\String\Str;
 
+/**
+ * @property \App\Models\Article $entity
+ */
 class ArticlePresenter extends Presenter
 {
     public function tease($characters, $moreTextIndicator = '...') : Str
