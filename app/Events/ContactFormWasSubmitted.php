@@ -11,6 +11,6 @@ class ContactFormWasSubmitted extends Event
 
     public function __construct(FormResponse $formResponse)
     {
-        $this->formResponse = $formResponse;
+        $this->formResponse = $formResponse->fresh();
     }
 }
