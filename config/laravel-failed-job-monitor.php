@@ -6,7 +6,7 @@ return [
      * If a jobs fail we will send you a notification via these channels.
      * You can use "mail", "slack" or both.
      */
-    'senders' => ['slack'],
+    'senders' => env('APP_ENV') === 'production' ? ['slack'] : [],
 
     'mail' => [
         'from' => 'your@email.com',
