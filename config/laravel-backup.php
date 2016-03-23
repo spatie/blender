@@ -2,76 +2,167 @@
 
 return [
 
-    'source' => [
+    'backup' => [
 
-        'files' => [
+        /*
+         * The name of this application. You can use this name to monitor
+         * the backups.
+         */
+        'name' => env('APP_URL'),
 
-            /*
-             * The list of directories that should be part of the backup. You can
-             * specify individual files as well.
-             */
-            'include' => [
-                //base_path(),
+        'source' => [
+
+            'files' => [
+
+                /*
+                 * The list of directories that should be part of the backup. You can
+                 * specify individual files as well.
+                 */
+                'include' => [
+          
+                ],
+
+                /*
+                 * These directories will be excluded from the backup.
+                 * You can specify individual files as well.
+                 */
+                'exclude' => [
+                    base_path('vendor'),
+                    storage_path(),
+                ],
             ],
 
             /*
-             * These directories will be excluded from the backup.
-             * You can specify individual files as well.
+             * The names of the connections to the databases that should be part of the backup.
+             * Currently only MySQL- and PostgreSQL-databases are supported.
              */
-            'exclude' => [
-                storage_path(),
-                base_path('vendor'),
+            'databases' => [
+                'mysql',
             ],
         ],
 
-        /*
-         * Should the database be part of the back up.
-         */
-        'backup-db' => true,
+        'destination' => [
+
+            /*
+             * The disk names on which the backups will be stored.
+             */
+            'disks' => [
+                'local',
+            ],
+        ],
     ],
 
-    'destination' => [
-
+    'cleanup' => [
         /*
-         * The filesystem(s) you on which the backups will be stored. Choose one or more
-         * of the filesystems you configured in app/config/filesystems.php
+         * The strategy that will be used to cleanup old backups.
+         * The youngest backup will never be deleted.
          */
-        'filesystem' => ['local'],
+        'strategy' => \Spatie\Backup\Tasks\Cleanup\Strategies\DefaultStrategy::class,
 
-        /*
-         * The path where the backups will be saved. This path
-         * is relative to the root you configured on your chosen
-         * filesystem(s).
-         *
-         * If you're using the local filesystem a .gitignore file will
-         * be automatically placed in this directory so you don't
-         * accidentally end up committing these backups.
-         */
-        'path' => 'backups',
+        'defaultStrategy' => [
+
+            /*
+             * The amount of days that all daily backups must be kept.
+             */
+            'keepAllBackupsForDays' => 7,
+
+            /*
+             * The amount of days that all daily backups must be kept.
+             */
+            'keepDailyBackupsForDays' => 16,
+
+            /*
+             * The amount of weeks of which one weekly backup must be kept.
+             */
+            'keepWeeklyBackupsForWeeks' => 8,
+
+            /*
+             * The amount of months of which one monthly backup must be kept.
+             */
+            'keepMonthlyBackupsForMonths' => 4,
+
+            /*
+             * The amount of years of which one yearly backup must be kept
+             */
+            'keepYearlyBackupsForYears' => 2,
+
+            /*
+             * After cleaning up the backups remove the oldest backup until
+             * this amount of megabytes has been reached.
+             */
+            'deleteOldestBackupsWhenUsingMoreMegabytesThan' => 5000
+        ]
     ],
 
-    'clean' => [
+
+    /*
+     *  In this array you can specify which backups should be monitored.
+     *  If a backup does not meet the specified requirements the
+     *  UnHealthyBackupWasFound-event will be fired.
+     */
+    'monitorBackups' => [
+        [
+            'name' => env('APP_URL'),
+            'disks' => ['local'],
+            'newestBackupsShouldNotBeOlderThanDays' => 1,
+            'storageUsedMayNotBeHigherThanMegabytes' => 5000,
+        ],
+
         /*
-        * The clean command will remove all backups that are older then this amount of days
+        [
+            'name' => 'name of the second app',
+            'disks' => ['local', 's3'],
+            'newestBackupsShouldNotBeOlderThanDays' => 1,
+            'storageUsedMayNotBeHigherThanMegabytes' => 5000,
+        ],
         */
-        'maxAgeInDays' => 90,
     ],
 
-    'mysql' => [
-        /*
-         * The path to the mysqldump binary. You can leave this empty
-         * if the binary is installed in the default location.
-         */
-        'dump_command_path' => '',
+    'notifications' => [
 
         /*
-         * If your server supports it you can turn on extended insert.
-         * This will result in a smaller dump file and speeds up the backup process.
+         * This class will be used to send all notifications.
+         */
+        'handler' => Spatie\Backup\Notifications\Notifier::class,
+
+        /*
+         * Here you can specify the ways you want to be notified when certain
+         * events take place. Possible values are "log", "mail", "slack" and "pushover".
          *
-         * See: https://dev.mysql.com/doc/refman/5.1/en/mysqldump.html#option_mysqldump_extended-insert
+         * Slack requires the installation of the maknz/slack package.
          */
-        'useExtendedInsert' => true,
-    ],
+        'events' => [
+            'whenBackupWasSuccessful'     => ['log'],
+            'whenCleanupWasSuccessful'    => ['log'],
+            'whenHealthyBackupWasFound'   => ['log'],
+            'whenBackupHasFailed'         => ['log', 'mail'],
+            'whenCleanupHasFailed'        => ['log', 'mail'],
+            'whenUnhealthyBackupWasFound' => ['log', 'mail']
+        ],
 
+        /*
+         * Here you can specify how emails should be sent.
+         */
+        'mail' => [
+            'from' => 'technical@spatie.be',
+            'to'   => 'backups@spatie.be',
+        ],
 
+        /*
+         * Here you can specify how messages should be sent to Slack.
+         */
+        'slack' => [
+            'channel'  => '#backups',
+            'username' => 'Backup bot',
+            'icon'     => ':robot:',
+        ],
+
+        /*
+         * Here you can specify how messages should be sent to Pushover.
+         */
+        'pushover' => [
+            'token' => env('PUSHOVER_APP_TOKEN'),
+            'user'  => env('PUSHOVER_USER_KEY'),
+        ],
+    ]
 ];

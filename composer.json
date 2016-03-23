@@ -39,7 +39,7 @@
     "spatie/eloquent-sortable": "^1.0",
     "spatie/laravel-analytics": "^1.0",
     "spatie/laravel-authorize": "^1.0.0",
-    "spatie/laravel-backup": "^2.4",
+    "spatie/laravel-backup": "^3.0",
     "spatie/laravel-fractal": "^1.6.1",
     "spatie/laravel-googletagmanager": "^2.0",
     "spatie/laravel-medialibrary": "^3.1.1",
