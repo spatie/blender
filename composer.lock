@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9c87827c923816c21a8055fe75a9985",
-    "content-hash": "9c3850ba22a9d47e3c8f9d315f0c2743",
+    "hash": "f1d11c4620c9b6caa27557c0d611a1e2",
+    "content-hash": "439c2357947260024ee6f7b4b210c389",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3347,16 +3347,16 @@
         },
         {
             "name": "spatie/activitylog",
-            "version": "2.4.1",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/activitylog.git",
-                "reference": "3bc6e0aba5b9789baf47efd233ba3cbfbfd721d9"
+                "reference": "b734982a3a238f0b5371a5f9230ffce25a1ef4ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/activitylog/zipball/3bc6e0aba5b9789baf47efd233ba3cbfbfd721d9",
-                "reference": "3bc6e0aba5b9789baf47efd233ba3cbfbfd721d9",
+                "url": "https://api.github.com/repos/spatie/activitylog/zipball/b734982a3a238f0b5371a5f9230ffce25a1ef4ab",
+                "reference": "b734982a3a238f0b5371a5f9230ffce25a1ef4ab",
                 "shasum": ""
             },
             "require": {
@@ -3394,7 +3394,7 @@
                 "log",
                 "user"
             ],
-            "time": "2016-02-16 16:20:41"
+            "time": "2016-03-23 19:16:40"
         },
         {
             "name": "spatie/array-functions",
@@ -4204,21 +4204,21 @@
         },
         {
             "name": "spatie/laravel-menu",
-            "version": "0.5.2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "7183fabc32b2fa17eac7ecffedd1a806142ae63f"
+                "reference": "58766711be3a202264d6a50a4a5a14bc314c9e2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/7183fabc32b2fa17eac7ecffedd1a806142ae63f",
-                "reference": "7183fabc32b2fa17eac7ecffedd1a806142ae63f",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/58766711be3a202264d6a50a4a5a14bc314c9e2b",
+                "reference": "58766711be3a202264d6a50a4a5a14bc314c9e2b",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
-                "spatie/menu": "^0.6.0"
+                "spatie/menu": "^1.0.0"
             },
             "require-dev": {
                 "orchestra/testbench": "^3.1",
@@ -4242,13 +4242,13 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Html menu generation in Laravel",
+            "description": "Html menu generator for Laravel",
             "homepage": "https://github.com/spatie/laravel-menu",
             "keywords": [
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2016-03-18 11:16:24"
+            "time": "2016-03-24 13:15:40"
         },
         {
             "name": "spatie/laravel-model-cleanup",
@@ -4610,16 +4610,16 @@
         },
         {
             "name": "spatie/menu",
-            "version": "0.6.5",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/menu.git",
-                "reference": "8a3de51df06c21068ff4d524ae3d725dd1f12b6e"
+                "reference": "499455f209ba726db3f209fa1fcef26a36303a3f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/8a3de51df06c21068ff4d524ae3d725dd1f12b6e",
-                "reference": "8a3de51df06c21068ff4d524ae3d725dd1f12b6e",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/499455f209ba726db3f209fa1fcef26a36303a3f",
+                "reference": "499455f209ba726db3f209fa1fcef26a36303a3f",
                 "shasum": ""
             },
             "require": {
@@ -4657,7 +4657,7 @@
                 "navigation",
                 "spatie"
             ],
-            "time": "2016-03-21 12:13:20"
+            "time": "2016-03-24 11:56:23"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -6552,16 +6552,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.0.6",
+            "version": "3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "49bc700750196c04dd6bc2c4c99cb632b893836b"
+                "reference": "7c34c9bdde4131b824086457a3145e27dba10ca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/49bc700750196c04dd6bc2c4c99cb632b893836b",
-                "reference": "49bc700750196c04dd6bc2c4c99cb632b893836b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/7c34c9bdde4131b824086457a3145e27dba10ca1",
+                "reference": "7c34c9bdde4131b824086457a3145e27dba10ca1",
                 "shasum": ""
             },
             "require": {
@@ -6579,7 +6579,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0.x-dev"
+                    "dev-master": "3.1.x-dev"
                 }
             },
             "autoload": {
@@ -6604,7 +6604,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2015-12-08 08:47:06"
+            "time": "2016-03-24 05:58:25"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
