@@ -19,17 +19,15 @@ return [
                  * specify individual files as well.
                  */
                 'include' => [
-          
+                    storage_path(),
+                    public_path('media'),
                 ],
 
                 /*
                  * These directories will be excluded from the backup.
                  * You can specify individual files as well.
                  */
-                'exclude' => [
-                    base_path('vendor'),
-                    storage_path(),
-                ],
+                'exclude' => [],
             ],
 
             /*
