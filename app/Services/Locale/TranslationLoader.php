@@ -28,9 +28,12 @@ class TranslationLoader extends FileLoader
             return [];
         }
 
-        return Cache::rememberForever("locale.fragments.{$locale}.{$group}", function () use ($group, $locale) {
-            return $this->fetchFragments($group, $locale);
-        });
+        return Cache::rememberForever(
+            "locale.fragments.{$locale}.{$group}",
+            function () use ($group, $locale) {
+                return Fragment::getGroup($group, $locale);
+            }
+        );
     }
 
     protected function fragmentsAreAvailable() : bool
@@ -40,20 +43,5 @@ class TranslationLoader extends FileLoader
         } catch (\Exception $e) {
             return false;
         }
-    }
-
-    protected function fetchFragments(string $group, string $locale) : array
-    {
-        return Fragment::query()
-            ->where('name', 'LIKE', "{$group}.%")
-            ->get()
-            ->map(function (Fragment $fragment) use ($locale, $group) {
-                return [
-                    'key' => str_replace("{$group}.", '', $fragment->name),
-                    'text' => $fragment->translate($locale)->text,
-                ];
-            })
-            ->pluck('text', 'key')
-            ->toArray();
     }
 }
