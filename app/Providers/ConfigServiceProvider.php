@@ -10,8 +10,17 @@ class ConfigServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->configureAuthorization();
         $this->configureCacheProvider();
         $this->configureEmailRecipients();
+    }
+
+    protected function configureAuthorization()
+    {
+        config()->set(
+            'laravel-authorize.login_url',
+            request()->isFront() ? 'login' : 'blender/login'
+        );
     }
 
     protected function configureCacheProvider()
