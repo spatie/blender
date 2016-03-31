@@ -9,9 +9,11 @@ Route::group(['namespace' => 'Back', 'prefix' => 'blender'], function () {
     });
 });
 
-Route::group(['namespace' => 'Front'], function () {
+Route::group(['namespace' => 'Front', 'middleware' => 'demoMode'], function () {
 
         $multiLingual = count(config('app.locales')) > 1;
+
+        Route::demoAccess('/demo');
 
         Route::group($multiLingual ? ['prefix' => locale()] : [], function () {
             try {
