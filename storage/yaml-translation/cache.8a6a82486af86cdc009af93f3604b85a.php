@@ -1,0 +1,17 @@
+<?php
+
+return array (
+  'title' => 'Nieuws',
+  'singular' => 'Nieuwsbericht',
+  'new' => 'Nieuw nieuwsbericht',
+  'name' => 'Naam',
+  'text' => 'Tekst',
+  'publish_date' => 'Publicatiedatum',
+  'online' => 'Online',
+  'tags' => 'Tags',
+  'images' => 'Afbeeldingen',
+  'downloads' => 'Downloads',
+  'save' => 'Bewaar nieuwsbericht',
+  'news_item_category' => 'Categorie',
+  'news_item_tag' => 'Tags',
+);

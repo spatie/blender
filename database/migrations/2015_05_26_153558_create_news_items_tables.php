@@ -5,9 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateNewsItemsTables extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up()
     {
         Schema::create('news_items', function (Blueprint $table) {
@@ -32,9 +29,6 @@ class CreateNewsItemsTables extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down()
     {
         Schema::drop('news_item_translations');

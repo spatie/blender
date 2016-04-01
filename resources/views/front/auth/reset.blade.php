@@ -1,4 +1,4 @@
-@extends('back.layout.master')
+@extends('back._layouts.master')
 
 @section('pageTitle', fragment('auth.titleChangePassword'))
 
@@ -16,7 +16,7 @@
             <p class="alert -invers">
                 {{ fragment('auth.resetInstructions') }}
             </p>
-            
+
             <div class="form_group">
                 {!! Form::label('password', fragment('auth.password'), ['class' => '-invers'] ) !!}
                 {!! Form::password('password', null, ['autofocus' ]) !!}

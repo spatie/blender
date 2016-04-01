@@ -9,9 +9,9 @@ before_script:
   - nvm install 5
   - npm set registry http://npm.spatie.be
   - npm set ca null
+  - npm cache clean
   - npm install
   - gulp
-  - gulp --back
 
 script:
  - phpunit

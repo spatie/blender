@@ -1,4 +1,4 @@
-@extends('front.layout.master')
+@extends('front._layouts.master')
 
 @section('pageTitle', fragment('auth.titleRegister'))
 

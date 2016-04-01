@@ -1,4 +1,4 @@
-@extends('back.layout.master')
+@extends('back._layouts.master')
 
 @section('pageTitle', $user->email)
 

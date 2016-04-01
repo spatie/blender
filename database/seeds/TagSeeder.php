@@ -3,8 +3,6 @@
 use App\Models\Enums\TagType;
 use App\Models\Tag;
 use App\Models\Translations\TagTranslation;
-use Illuminate\Database\Eloquent\Collection;
-use Spatie\Seeders\SuperSeeder\Factory;
 
 class TagSeeder extends DatabaseSeeder
 {
@@ -12,50 +10,29 @@ class TagSeeder extends DatabaseSeeder
     {
         $this->truncate((new TagTranslation())->getTable(), (new Tag())->getTable(), 'taggables');
 
-        $this->seedRandomTags();
+        $this->seedTags(TagType::NEWS_CATEGORY(), [
+            'Categorie 1',
+            'Categorie 2',
+            'Categorie 3',
+        ]);
+
+        $this->seedTags(TagType::NEWS_TAG(), [
+            'Tag 1',
+            'Tag 2',
+            'Tag 3',
+        ]);
     }
 
-    public function seedRandomTags($amount = 10)
+    public function seedTags(TagType $type, array $names)
     {
-        $tags = new Collection();
-
-        for ($i = 0; $i < $amount; ++$i) {
-            $tag = Tag::findByNameOrCreate($this->faker->words(2, true), TagType::NEWS_TAG());
-            $tags->add($tag);
-        }
-
-        return $tags;
-    }
-}
-
-class TagFactory extends Factory
-{
-    public function isModel($data)
-    {
-        return isset($data['name']);
-    }
-
-    public function initialize($model, $data, $carry)
-    {
-        $model->draft = false;
-        $model->online = true;
-        $model->type = $carry[0];
-    }
-
-    public function setName($model, $value)
-    {
-        $locales = array_fill_keys(config('app.locales'), null);
-
-        if (is_array($value)) {
-            $translations = array_merge($locales, $value);
-            $defaultTranslation = $value[config('app.locale')];
-        } else {
-            $translations = array_merge($locales, [config('app.locale') => $value]);
-            $defaultTranslation = $value;
-        }
-
-        foreach ($translations as $locale => $translation) {
-            $model->translate($locale)->name = $translation ?: "$defaultTranslation $locale";
+        foreach ($names as $i => $name) {
+            Tag::create([
+                'type' => $type,
+                'name' => $name,
+                'draft' => 0,
+                'online' => 1,
+                'order_column' => $i,
+            ]);
         }
     }
 }

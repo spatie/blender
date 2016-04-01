@@ -3,13 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormResponseTable extends Migration {
-
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
+class CreateFormResponseTable extends Migration
+{
     public function up()
     {
         Schema::create('form_responses', function(Blueprint $table) {
@@ -25,14 +20,8 @@ class CreateFormResponseTable extends Migration {
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::drop('form_responses');
     }
-
 }

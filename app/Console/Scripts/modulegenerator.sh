@@ -19,9 +19,10 @@ function generate() {
 }
 
 # Model & related objects
-generate  app/Models/NewsItem.php                          app/Models/${singular}.php
-generate  app/Models/Translations/NewsItemTranslation.php  app/Models/Translations/${singular}Translation.php
-generate  app/Models/Updaters/NewsItemUpdater.php          app/Models/Updaters/${singular}Updater.php
+generate  app/Models/NewsItem.php                               app/Models/${singular}.php
+generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Presenters/${singular}Presenter.php
+generate  app/Models/Translations/NewsItemTranslation.php       app/Models/Translations/${singular}Translation.php
+generate  app/Models/Updaters/NewsItemUpdater.php               app/Models/Updaters/${singular}Updater.php
 
 # Repositories
 generate  app/Repositories/NewsItemRepository.php             app/Repositories/${singular}Repository.php
@@ -32,23 +33,15 @@ generate  app/Http/Controllers/Back/NewsItemController.php  app/Http/Controllers
 generate  app/Http/Requests/Back/NewsItemRequest.php        app/Http/Requests/Back/${singular}Request.php
 
 # Views
-mkdir resources/views/back/${lcplural}
-mkdir resources/views/back/${lcplural}/_partials
+mkdir -p resources/views/back/${lcplural}/_partials
 generate  resources/views/back/newsItems/_partials/form.blade.php  resources/views/back/${lcplural}/_partials/form.blade.php
 generate  resources/views/back/newsItems/index.blade.php           resources/views/back/${lcplural}/index.blade.php
 generate  resources/views/back/newsItems/edit.blade.php            resources/views/back/${lcplural}/edit.blade.php
-
-# Lang
-generate  resources/lang/nl/back-newsItems.yml  resources/lang/nl/back-${lcplural}.yml
-generate  resources/lang/en/back-newsItems.yml  resources/lang/en/back-${lcplural}.yml
 
 # Database
 generate  database/factories/NewsItemFactory.php                            database/factories/${singular}Factory.php
 generate  database/seeds/NewsItemSeeder.php                                 database/seeds/${singular}Seeder.php
 generate  database/migrations/2015_05_26_153558_create_news_items_tables.php  database/migrations/${now}_create_${lcplural}_tables.php
-
-# Tests
-generate  tests/Integration/Back/NewsItemTest.php  tests/Integration/Back/${singular}Test.php
 
 # Todos
 echo "ALL DONE!"

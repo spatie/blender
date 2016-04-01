@@ -5,11 +5,6 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateFragmentsTables extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('fragments', function(Blueprint $table)
@@ -35,11 +30,6 @@ class CreateFragmentsTables extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::drop('fragment_translations');

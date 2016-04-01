@@ -1,4 +1,4 @@
-@extends('back.layout.master')
+@extends('back._layouts.master')
 
 @section('pageTitle', fragment('back.auth.titleLogin'))
 
@@ -6,7 +6,7 @@
 
 <section class="+auth">
 
-    @include('back.layout._partials.flashMessage', ['extraClass' => '-fixed'])
+    @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
 
     {{-- @include('auth._partials.lang') --}}
     <div class="+auth_card">

@@ -1,10 +1,10 @@
-@extends('front.layout.master')
+@extends('front._layouts.master')
 
 @section('pageTitle', fragment('auth.titleLogin'))
 
 @section('content')
     <div class="grid">
-        @include('back.layout._partials.flashMessage', ['extraClass' => '-fixed'])
+        @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
         {!! Form::open() !!}
         <div class="form-line">
             {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}

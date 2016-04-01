@@ -9,20 +9,20 @@ class NewsItemSeeder extends DatabaseSeeder
     {
         $this->truncate((new NewsItemTranslation())->getTable(), (new NewsItem())->getTable());
 
-        $this->seedRandomNewsItems(20, false);
+        $this->seedRandomNewsItems();
     }
 
-    public function seedRandomNewsItems($amount = 10, $withImages = false)
+    public function seedRandomNewsItems($amount = 10, $withMedia = true)
     {
         return factory(NewsItem::class, $amount)
             ->create()
-            ->each(function ($newsItem) use ($withImages) {
+            ->each(function ($newsItem) use ($withMedia) {
                 $this->addTranslations($newsItem);
-                if ($withImages) {
-                    $this->addImages($newsItem, 3, 5);
+
+                if ($withMedia) {
+                    $this->addImages($newsItem, 1, 3);
                 }
-            })
-            ->load('translations', 'media');
+            });
         ;
     }
 }

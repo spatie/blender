@@ -3,7 +3,9 @@
 namespace App\Services\Locale;
 
 use App\Models\Fragment;
+use Cache;
 use Illuminate\Translation\FileLoader;
+use Schema;
 
 class TranslationLoader extends FileLoader
 {
@@ -16,22 +18,30 @@ class TranslationLoader extends FileLoader
      *
      * @return array
      */
-    public function load($locale, $group, $namespace = null)
+    public function load($locale, $group, $namespace = null) : array
     {
         if (!is_null($namespace) && $namespace !== '*') {
             return $this->loadNamespaced($locale, $group, $namespace);
         }
 
-        return Fragment::query()
-            ->where('name', 'LIKE', "{$group}.%")
-            ->get()
-            ->map(function (Fragment $fragment) use ($locale, $group) {
-                return [
-                    'key' => str_replace("{$group}.", '', $fragment->name),
-                    'text' => $fragment->translate($locale)->text,
-                ];
-            })
-            ->pluck('text', 'key')
-            ->toArray();
+        if (!$this->fragmentsAreAvailable()) {
+            return [];
+        }
+
+        return Cache::rememberForever(
+            "locale.fragments.{$locale}.{$group}",
+            function () use ($group, $locale) {
+                return Fragment::getGroup($group, $locale);
+            }
+        );
+    }
+
+    protected function fragmentsAreAvailable() : bool
+    {
+        try {
+            return Schema::hasTable('fragments');
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 }

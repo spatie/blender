@@ -5,12 +5,12 @@ namespace App\Models\Presenters;
 use App\Models\Enums\TagType;
 use Laracasts\Presenter\Presenter;
 
+/**
+ * @property \App\Models\Tag $entity
+ */
 class TagPresenter extends Presenter
 {
-    /**
-     *  Get an array with all possible types.
-     */
-    public function allTagTypes()
+    public function allTagTypes() : array
     {
         $tagTypes = [];
 
@@ -18,6 +18,6 @@ class TagPresenter extends Presenter
             $tagTypes[(string) $value] = fragment("back.tags.types.{$value}");
         }
 
-        return collect($tagTypes)->sort();
+        return collect($tagTypes)->sort()->toArray();
     }
 }

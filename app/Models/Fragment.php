@@ -22,4 +22,19 @@ class Fragment extends TranslatableEloquent
             return static::where('name', $name)->first();
         });
     }
+
+    public static function getGroup(string $group, string $locale) : array
+    {
+        return static::query()
+            ->where('name', 'LIKE', "{$group}.%")
+            ->get()
+            ->map(function (Fragment $fragment) use ($locale, $group) {
+                return [
+                    'key' => preg_replace("/{$group}\\./", '', $fragment->name, 1),
+                    'text' => $fragment->translate($locale)->text,
+                ];
+            })
+            ->pluck('text', 'key')
+            ->toArray();
+    }
 }
