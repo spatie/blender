@@ -5,7 +5,7 @@ return [
     /**
      * This is the master switch to enable demo mode.
      */
-    'enabled' => env('DEMO_MODE_ENABLED', true),
+    'enabled' => env('DEMO_MODE_ENABLED', false),
 
     /**
      * Visitors that go an url that is protected by demo mode will be redirected.

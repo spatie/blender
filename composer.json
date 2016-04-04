@@ -56,7 +56,8 @@
     "spatie/laravel-robots-middleware": "^1.0",
     "spatie/fragment-importer": "^1.0.6",
     "themsaid/laravel-mail-preview": "^1.0",
-    "spatie/laravel-model-cleanup": "^1.0"
+    "spatie/laravel-model-cleanup": "^1.0",
+    "spatie/laravel-demo-mode": "^1.0"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
