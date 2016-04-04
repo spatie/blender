@@ -6,9 +6,6 @@ _ide_helper*.php
 
 # BACK END
 /vendor
-/storage/glide/cache
-/storage/tempSeeder
-/storage/database.sqlite
 /database/seeds/data/~$fragments*.xlsx
 
 # FRONT END
