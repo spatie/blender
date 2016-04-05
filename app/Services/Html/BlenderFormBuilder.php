@@ -2,102 +2,65 @@
 
 namespace App\Services\Html;
 
+use Form;
+use HTML;
+use Illuminate\Contracts\Support\MessageBag;
+use Illuminate\Database\Eloquent\Model;
+
 class BlenderFormBuilder
 {
-    /**
-     * @var string
-     */
+    /** @var string */
     protected $module;
 
-    /**
-     * @var mixed
-     */
+    /** @var \Illuminate\Database\Eloquent\Model */
     protected $model;
 
-    /**
-     * @var \Illuminate\Support\ViewErrorBag
-     */
+    /** @var \Illuminate\Contracts\Support\MessageBag */
     protected $errors;
 
-    /**
-     * @param string                           $module
-     * @param mixed                            $model
-     * @param \Illuminate\Support\ViewErrorBag $errors
-     */
-    public function init($module, $model, $errors)
+    public function init(string $module, Model $model, MessageBag $errors)
     {
         $this->module = $module;
         $this->model = $model;
         $this->errors = $errors;
     }
 
-    /**
-     * @param string $name
-     * @param bool   $required
-     *
-     * @return string
-     */
-    public function label($name, $required = false)
+    public function label(string $name, bool $required = false, array $options = []) : string
     {
-        return $this->form()->label($name, fragment("back.{$this->module}.{$name}").($required ? '*' : ''));
+        return Form::label($name, fragment("back.{$this->module}.{$name}") . ($required ? '*' : ''), $options);
     }
 
-    /**
-     * @param string $name
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function error($name, $locale = null)
+    public function error(string $name) : string
     {
-        return $this->html()->error($this->errors->first($name));
+        return HTML::error($this->errors->first($name));
     }
 
-    /**
-     * @param string $name
-     * @param bool   $required
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function text($name, $required = false, $locale = null)
+    public function text(string $name, bool $required = false, string $locale = '') : string
     {
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+        $fieldName = $this->fieldName($name);
 
-        $label = $this->label($name, $required);
-        $text = $this->form()->text($fieldName, $this->form()->useInitialValue($this->model, $name, $locale));
-        $errors = $this->error($fieldName, $this->errors);
-
-        return $this->wrapInFormGroup($label, $text, $errors);
+        return $this->group([
+            $this->label($name, $required),
+            Form::text($fieldName, Form::useInitialValue($this->model, $name, $locale)),
+            $this->error($fieldName, $this->errors),
+        ]);
     }
 
-    /**
-     * @param string $name
-     * @param bool   $required
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function textarea($name, $required = false, $locale = null)
+    public function textarea(string $name, bool $required = false, string $locale = '') : string
     {
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+        $fieldName = $this->fieldName($name);
 
-        $label = $this->label($name, $required);
-        $text = $this->form()->textarea($fieldName, $this->form()->useInitialValue($this->model, $name, $locale), ['data-autosize' => true]);
-        $errors = $this->error($fieldName, $this->errors);
-
-        return $this->wrapInFormGroup($label, $text, $errors);
+        return $this->group([
+            $this->label($name, $required),
+            Form::textarea($fieldName, Form::useInitialValue($this->model, $name, $locale), ['data-autosize']),
+            $this->error($fieldName, $this->errors),
+        ]);
     }
 
-    /**
-     * @param string $name
-     * @param bool   $required
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function redactor($name, $required = false, $locale = null)
+    public function redactor(string $name, bool $required = false, string $locale = '') : string
     {
+        $fieldName = $this->fieldName($name);
+
         $options = [
             'data-editor' => '',
             'data-editor-medialibrary-url' => action(
@@ -109,36 +72,21 @@ class BlenderFormBuilder
             ),
         ];
 
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
-
-        $label = $this->label($name, $required);
-        $redactor = $this->form()->textarea($fieldName,
-            $this->form()->useInitialValue($this->model, $name, $locale), $options);
-        $errors = $this->error($fieldName, $this->errors);
-
-        return $this->wrapInFormGroup($label, $redactor, $errors);
+        return $this->group([
+            $this->label($name, $required),
+            Form::textarea($fieldName, Form::useInitialValue($this->model, $name, $locale), $options),
+            $this->error($fieldName, $this->errors),
+        ]);
     }
 
-    /**
-     * @param string $name
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function checkbox($name, $locale = null)
+    public function checkbox(string $name, string $locale = '') : string
     {
-        $options = [
-            'class' => 'form-control',
-        ];
+        $fieldName = $this->fieldName($name);
 
-        $labelName = fragment("back.{$this->module}.{$name}");
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+        $contents = Form::checkbox($fieldName, 1, Form::useInitialValue($this->model, $name, $locale),
+            ['class' => 'form-control']) . ' ' . fragment("back.{$this->module}.{$name}");
 
-        $checkbox = $this->form()->checkbox($fieldName, 1,
-            $this->form()->useInitialValue($this->model, $name, $locale), $options);
-        $checkboxWithLabel = "<label class=-checkbox>{$checkbox} {$labelName}</label>";
-
-        return $this->wrapInFormGroup($checkboxWithLabel);
+        return $this->group(el('label.-checkbox', $contents));
     }
 
     /**
@@ -148,7 +96,7 @@ class BlenderFormBuilder
      *
      * @return string
      */
-    public function date($name, $required = false, $locale = null)
+    public function date($name, $required = false, string $locale = '')
     {
         $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
 
@@ -166,7 +114,7 @@ class BlenderFormBuilder
      *
      * @return string
      */
-    public function select($name, $options, $locale = null)
+    public function select($name, $options, string $locale = '')
     {
         $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
 
@@ -185,7 +133,7 @@ class BlenderFormBuilder
      *
      * @return string
      */
-    public function searchableSelect($name, $options, $locale = null)
+    public function searchableSelect($name, $options, string $locale = '')
     {
         $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
 
@@ -307,26 +255,6 @@ class BlenderFormBuilder
     }
 
     /**
-     * Call the html builder.
-     *
-     * @return \App\Services\Html\HtmlBuilder
-     */
-    protected function html()
-    {
-        return app()->make('html');
-    }
-
-    /**
-     * Call the form builder.
-     *
-     * @return \App\Services\Html\FormBuilder
-     */
-    protected function form()
-    {
-        return app()->make('form');
-    }
-
-    /**
      * Wrap an html string in a fieldset with a legend.
      *
      * @param string $locale
@@ -341,31 +269,18 @@ class BlenderFormBuilder
         return "<fieldset><legend><span class=legend_lang>{$locale}</span></legend>{$innerHtml}</fieldset>";
     }
 
-    /**
-     * Wrap an html string in a form_group div.
-     *
-     * @param string $elements,...
-     *
-     * @return string
-     */
-    protected function wrapInFormGroup(...$elements)
+    protected function group(array $elements) : string
     {
-        $innerHtml = implode('', $elements);
-
-        return "<div class=form_group>{$innerHtml}</div>";
+        return el('div.form_group', $elements);
     }
 
-    /**
-     * Wrap an html string in a parts div.
-     *
-     * @param string $elements,...
-     *
-     * @return string
-     */
-    protected function wrapInParts(...$elements)
+    protected function parts(array $elements) : string
     {
-        $innerHtml = implode('', $elements);
+        return el('div.parts', $elements);
+    }
 
-        return "<div class=parts>{$innerHtml}</div>";
+    protected function fieldName(string $name, string $locale = '')
+    {
+        return $locale ? translate_field_name($name, $locale) : $name;
     }
 }

@@ -25,7 +25,12 @@
             </table>
 
             <div class="form_group -buttons">
-                {!! HTML::formButton(URL::action('Back\FragmentController@download'), 'Download fragments', 'POST') !!}
+                {!! Form::openButton([
+                    'action' => 'Back\FragmentController@download',
+                    'method' => 'post'
+                ]) !!}
+                    {{ fragment('back.fragments.download') }}
+                {!! Form::closeButton() !!}
             </div>
         </div>
     </section>

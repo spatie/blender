@@ -29,12 +29,7 @@
                                 <a href="{{ Url::action('Back\TagController@edit', [$tag->id]) }}">{{ $tag->translate(content_locale())->name }}</a>
                             </td>
                             <td class="-right">
-                                {!! HTML::formButton(URL::action('Back\TagController@destroy', [$tag->id]), '<span class="fa fa-remove"></span>', 'delete',
-                                    [
-                                        'class'=>'button -danger -small',
-                                        'id'=> 'delete_tag_' . $tag->id
-                                    ]
-                                )!!}
+                                {!! HTML::deleteButton(action('Back\TagController@destroy', $tag->id)) !!}
                             </td>
                         </tr>
 

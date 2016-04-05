@@ -7,150 +7,157 @@ use App\Models\Tag;
 use App\Models\Transformers\MediaTransformer;
 use App\Repositories\TagRepository;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Html\FormBuilder as BaseFormBuilder;
 use HTML;
-use Form;
-use URL;
 
 class FormBuilder extends BaseFormBuilder
 {
-    public function openDraftable($options)
+    public function openDraftable(array $options, Model $subject) : string
     {
-        if (isset($options['subject'])) {
-            $subject = $options['subject'];
-            $draftableIdentifier = short_class_name($subject).'_'.($subject->isDraft() ? 'new' : $subject->id);
+        $identifier = short_class_name($subject) . '_' . ($subject->isDraft() ? 'new' : $subject->id);
 
-            $options = array_merge($options, [
-                'data-autosave' => '',
-                'name' => $draftableIdentifier,
-                'id' => $draftableIdentifier,
-            ]);
-            unset($options['subject']);
+        $options = array_merge($options, [
+            'data-autosave' => '',
+            'name' => $identifier,
+            'id' => $identifier,
+        ]);
+
+        return $this->open($options);
+    }
+
+    public function openButton(array $formOptions = [], array $buttonOptions = []) : string
+    {
+        if (strtolower($formOptions['method'] ?? '') === 'delete') {
+            $formOptions['data-confirm'] = 'true';
         }
 
-        return Form::open($options);
+        return $this->open($formOptions) . substr(el('button', $buttonOptions, ''), 0, -strlen('</button>'));
     }
 
-    public function redactor($subject, $fieldName, $locale = '', $options = [])
+    public function closeButton() : string
     {
-        return Form::textarea(
-            Form::getTranslatedFieldName($fieldName, $locale),
-            Form::useInitialValue($subject, $fieldName, $locale),
-            array_merge($options,
-                [
-                    'data-editor' => '',
-                    'data-editor-medialibrary-url' => URL::action('Back\MediaLibraryApiController@add', [short_class_name($subject), $subject->id, 'redactor']),
-                ]));
+        return '</button>' . $this->close();
     }
 
-    public function checkboxWithLabel($subject, $fieldName, $label, $options = [])
+    public function redactor($subject, string $fieldName, string $locale = '', array $options = []) : string
+    {
+        $fieldName = $locale ? translate_field_name($fieldName, $locale) : $fieldName;
+        
+        return $this->textarea(
+            $fieldName,
+            $this->useInitialValue($subject, $fieldName, $locale),
+            array_merge($options, [
+                'data-editor',
+                'data-editor-medialibrary-url' => action(
+                    'Back\MediaLibraryApiController@add',
+                    [short_class_name($subject), $subject->id, 'redactor']
+                ),
+            ])
+        );
+    }
+
+    public function checkboxWithLabel($subject, string $fieldName, string $label, array $options = []) : string
     {
         $options = array_merge(['class' => 'form-control'], $options);
 
-        return
-            '<label class="-checkbox">'.
-                Form::checkbox($fieldName, 1, Form::useInitialValue($subject, $fieldName), $options).' '.
-                $label.
-            '</label>';
+        return el('label.-checkbox',
+            $this->checkbox($fieldName, 1, $this->useInitialValue($subject, $fieldName), $options)
+            . ' ' . $label
+        );
     }
 
-    public function datePicker($name, $value)
+    public function datePicker(string $name, string $value) : string
     {
-        return Form::text($name, $value, [
+        return $this->text($name, $value, [
             'data-datetimepicker',
             'class' => '-datetime',
         ]);
     }
 
-    public function getTranslatedFieldName($fieldName, $locale)
+    public function tags($subject, string $type, array $options = []) : string
     {
-        if ($locale == '') {
-            return $fieldName;
+        $type = new TagType($type);
+
+        $tags = Tag::getWithType($type)->lists('name', 'name')->toArray();
+        $subjectTags = $subject->tagsWithType($type)->lists('name', 'name')->toArray();
+
+        $options = array_merge(['multiple', 'data-select' => 'tags'], $options);
+
+        return $this->select("{$type}_tags[]", $tags, $subjectTags, $options);
+    }
+
+    public function category($subject, $type, array $options = []) : string
+    {
+        $type = new TagType($type);
+
+        $categories = Tag::getWithType($type)->lists('name', 'name')->toArray();
+        $subjectCategory = $subject->tagsWithType($type)->first()->name ?? null;
+
+        return $this->select("{$type}_tags[]", $categories, $subjectCategory, $options);
+    }
+
+    public function locales(array $locales, string $current) : string
+    {
+        $list = array_reduce($locales, function (array $list, string $locale) {
+            $list[$locale] = trans("locales.{$locale}");
+            return $list;
+        }, []);
+
+        return $this->select('locale', $list, $current, ['data-select' => 'select']);
+    }
+
+    public function media($subject, string $collection, string $type, array $associated = []) : string
+    {
+        $initialMedia = fractal()
+            ->collection($subject->getMedia($collection))
+            ->transformWith(new MediaTransformer())
+            ->toJson();
+
+        $model = collect([
+            'name' => get_class($subject),
+            'id' => $subject->id
+        ])->toJson();
+
+        $associated = $this->getAssociatedMediaData($associated);
+
+        return el('div', array_merge($associated, [
+            'data-media-collection' => $collection,
+            'data-media-type' => $type,
+            'data-initial' => htmlspecialchars($initialMedia),
+            'data-model' => htmlspecialchars($model),
+        ]), '');
+    }
+
+    protected function getAssociatedMediaData(array $associated = []) : array
+    {
+        $associated['locales'] = $associated['locales'] ?? config('app.locales');
+
+        $normalized = [];
+
+        foreach ($associated as $key => $value) {
+            $normalized["data-{$key}"] = htmlspecialchars(json_encode($value));
         }
 
-        return translate_field_name($fieldName, $locale);
+        return $normalized;
     }
 
-    public function getLabelForTranslatedField($fieldName, $label, $locale)
+    public function useInitialValue($subject, string $propertyName, string $locale = '') : string
     {
-        return HTML::decode(Form::label($fieldName, $label.' <span class="label_lang">'.$locale.'</span>'));
-    }
-
-    public function useInitialValue($subject, $propertyName, $locale = '')
-    {
-        $value = ($locale == '' ? $subject->$propertyName : $subject->translate($locale)->$propertyName);
+        $fieldName = $locale ? translate_field_name($propertyName, $locale) : $propertyName;
+        $value = $locale ? $subject->translate($locale)->$propertyName : $subject->$propertyName;
 
         if ($value instanceof Carbon) {
             $value = $value->format('d/m/Y');
         }
 
-        return Form::getValueAttribute($locale == '' ? $propertyName : Form::getTranslatedFieldName($propertyName, $locale), $value);
+        return $this->getValueAttribute($fieldName, $value);
     }
 
-    public function tags($subject, $type)
+    public function getLabelForTranslatedField(string $fieldName, string $label, string $locale) : string
     {
-        $type = new TagType($type);
-
-        $tags = Tag::withType($type)->get()->lists('name', 'name')->toArray();
-        $subjectTags = $subject->tagsWithType($type)->lists('name', 'name')->toArray();
-
-        return Form::select(
-            $type.'_tags[]',
-            $tags,
-            $subjectTags,
-            ['multiple' => true, 'data-select' => 'tags']
+        return HTML::decode(
+            $this->label($fieldName, $label . el('span.label_lang', $locale))
         );
-    }
-
-    public function category($subject, $type, $options)
-    {
-        $type = new TagType($type);
-
-        $categories = Tag::withType($type)->get()->lists('name', 'name')->toArray();
-        $subjectCategory = $subject->tagsWithType($type)->first();
-
-        return $this->select(
-            $type.'_tags[]',
-            $categories,
-            $subjectCategory ? $subjectCategory->name : null,
-            $options ? $options : null
-        );
-    }
-
-    public function locales($locales, $current)
-    {
-        $list = [];
-        foreach ($locales as $locale) {
-            $list[$locale] = trans('locales.'.$locale);
-        }
-
-        return Form::select('locale', $list, $current, ['data-select' => 'select']);
-    }
-
-    public function media($subject, $collection, $type, $associated = [])
-    {
-        $initialMedia = htmlspecialchars(fractal()
-            ->collection($subject->getMedia($collection))
-            ->transformWith(new MediaTransformer())
-            ->toJson());
-
-        $model = htmlspecialchars(collect(['name' => get_class($subject), 'id' => $subject->id]));
-
-        if (!array_key_exists('locales', $associated)) {
-            $associated['locales'] = config('app.locales');
-        }
-
-        $associatedData = collect($associated)->map(function ($data, $key) {
-            $json = htmlspecialchars(json_encode($data));
-
-            return "data-{$key}=\"{$json}\"";
-        })->implode(' ');
-
-        return "<div data-media-collection=\"{$collection}\"
-                     data-media-type=\"{$type}\"
-                     data-initial=\"{$initialMedia}\"
-                     data-model=\"{$model}\"
-                     {$associatedData}>
-                </div>";
     }
 }

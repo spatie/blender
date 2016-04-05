@@ -21,12 +21,7 @@
                     <tr data-row-id="{{ $person->id }}" >
                         <td><a href="{!! action('Back\PersonController@edit', [$person->id]) !!}">{{ $person->name }}</a></td>
                         <td class="-right">
-                            {!! HTML::formButton(action('Back\PersonController@destroy', [$person->id]), '<span class="fa fa-remove"></span>', 'delete',
-                            [
-                            'class'=>'button -danger -small',
-                            'id'=> 'delete_person_' . $person->id
-                            ]
-                            ); !!}
+                            {!! HTML::deleteButton(action('Back\PersonController@destroy', $person->id)) !!}
                         </td>
                     </tr>
                 @endforeach

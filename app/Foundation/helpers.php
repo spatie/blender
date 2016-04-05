@@ -22,9 +22,11 @@ function fragment_slug($name, array $replacements = []) : string
     return str_slug($translation);
 }
 
-function translate_field_name(string $fieldName, string $locale) : string
+function translate_field_name(string $name, string $locale = '') : string
 {
-    return  'translated_'.$locale.'_'.$fieldName;
+    $locale = $locale ?? content_locale();
+
+    return "translated_{$locale}_{$name}";
 }
 
 function article(string $technicalName) : App\Models\Article

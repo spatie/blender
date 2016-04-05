@@ -24,12 +24,7 @@
                     </td>
                     <td class="-right">
                         @if($article->isDeletable())
-                            {!! HTML::formButton(action('Back\ArticleController@destroy', [$article->id]), '<span class="fa fa-remove"></span>', 'delete',
-                                [
-                                    'class'=>'button -danger -small',
-                                    'id'=> 'delete_article_' . $article->id
-                                ]
-                            )!!}
+                            {!! HTML::deleteButton(action('Back\ArticleController@destroy', $article->id)) !!}
                         @endif
                     </td>
                 </tr>

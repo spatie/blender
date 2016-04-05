@@ -23,7 +23,7 @@
 
 @unless($user->id)
     <div class="alerts">
-        {!! HTML::info(fragment('back.frontUsers.automaticCredentialsMailInfo') , '-small') !!}
+        {!! HTML::info(fragment('back.frontUsers.automaticCredentialsMailInfo'), '-small') !!}
     </div>
 @endunless
 

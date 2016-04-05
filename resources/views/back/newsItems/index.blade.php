@@ -29,12 +29,7 @@
                         {{ $newsItem->publish_date->format('d/m/Y') }}
                     </td>
                     <td class="-right">
-                        {!! HTML::formButton(action('Back\NewsItemController@destroy', [$newsItem->id]), '<span class="fa fa-remove"></span>', 'delete',
-                            [
-                                'class'=>'button -danger -small',
-                                'id'=> 'delete_newsItem_' . $newsItem->id
-                            ]
-                        )!!}
+                        {!! HTML::deleteButton(action('Back\NewsItemController@destroy', $newsItem->id)) !!}
                     </td>
                 </tr>
 

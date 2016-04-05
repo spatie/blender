@@ -11,11 +11,15 @@
 
         @if( app()->getLocale() == 'nl')
         <div class="alerts">
-            {!! HTML::info($fragment->description, '-small -inline'); !!}
+            {!! HTML::info($fragment->description, '-small -inline') !!}
         </div>
         @endif
 
-        {!! Form::open(['method'=>'PATCH', 'action'=>['Back\FragmentController@update', $fragment->id] , 'class' =>'-stacked']) !!}
+        {!! Form::open([
+            'method'=>'PATCH',
+            'action' => ['Back\FragmentController@update', $fragment->id],
+            'class' =>'-stacked']
+        ) !!}
         @include('back.fragments._partials.form')
         {!! Form::close() !!}
     </div>

@@ -11,11 +11,10 @@
         <h1>{{ $model->name ?: fragment('back.newsItems.new') }}</h1>
 
         {!! Form::openDraftable([
-                'method'=>'PATCH',
-                'subject' => $model,
-                'action'=> ['Back\NewsItemController@update', $model->id],
-                'class' => '-stacked'
-            ]) !!}
+            'method'=>'PATCH',
+            'action'=> ['Back\NewsItemController@update', $model->id],
+            'class' => '-stacked'
+        ], $model) !!}
 
         @include('back.newsItems._partials.form')
 

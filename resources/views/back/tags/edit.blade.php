@@ -7,19 +7,17 @@
 @section('content')
 <section>
     <div class="grid">
-    <h1>{{ $model->name ?: fragment('back.tags.new') }}</h1>
+        <h1>{{ $model->name ?: fragment('back.tags.new') }}</h1>
 
-        {!! Form::openDraftable(
-            [
+        {!! Form::openDraftable([
             'method'=>'PATCH',
             'action'=> ['Back\TagController@update', $model->id],
-            'subject' => $model,
             'class' => '-stacked'
-            ]
-        ) !!}
-    @include('back.tags._partials.form')
-    {!! Form::close() !!}
+        ], $model) !!}
 
+        @include('back.tags._partials.form')
+
+        {!! Form::close() !!}
     </div>
 </section>
 @stop

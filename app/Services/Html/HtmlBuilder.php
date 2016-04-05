@@ -2,52 +2,72 @@
 
 namespace App\Services\Html;
 
+use App\Services\Auth\User;
 use Illuminate\Html\HtmlBuilder as BaseHtmlBuilder;
 use Form;
 use Session;
 
 class HtmlBuilder extends BaseHtmlBuilder
 {
-    public function flashMessage()
+    public function flashMessage() : string
     {
-        return (Session::has('flash_notification.message')) ? '<div class="alert -'.Session::get('flash_notification.level').'">'.Session::get('flash_notification.message').'</div>' : '';
-    }
-
-    public function error($message)
-    {
-        return $message == '' ? '' : '<div class="alert -danger">'.$message.'</div>';
-    }
-
-    public function message($message)
-    {
-        return $message == '' ? '' : '<div class="alert -success">'.$message.'</div>';
-    }
-
-    public function info($message, $size = '')
-    {
-        return $message == '' ? '' : '<div class="alert -info '.$size.'"><span class="fa fa-info-circle"></span> '.$message.'</div>';
-    }
-
-    public function avatar($user, $class = '')
-    {
-        return '<span class="avatar '.$class.'" style="background-image: url(\''.$user->present()->avatar.'\')" /></span>';
-    }
-
-    public function formButton($url, $buttonHtml, $method, $submitButtonOptions = [])
-    {
-        $submitButtonOptions['type'] = 'submit';
-        $formOptions = ['url' => $url, 'method' => $method, 'class' => '-form-button'];
-
-        if (strtolower($method) == 'delete') {
-            $formOptions['data-confirm'] = 'true';
+        if (!Session::has('flash_notification.message')) {
+            return '';
         }
 
-        return Form::open($formOptions).Form::button($buttonHtml, $submitButtonOptions).Form::close();
+        $level = Session::get('flash_notification.level');
+
+        return el("div.alert.-{$level}", Session::get('flash_notification.message'));
     }
 
-    public function sanitizeUrl(string $url, string $protocol = 'http') : string
+    public function error($message) : string
     {
-        return preg_replace('/^(?!https?:\/\/)/', $protocol . '://', $url) ;
+        if (empty($message)) {
+            return '';
+        }
+
+        return el('div.alert.-danger', $message);
+    }
+
+    public function message($message, string $classes = '') : string
+    {
+        if (empty($message)) {
+            return '';
+        }
+
+        return el('div.alert.-success', ['class' => $classes], $message);
+    }
+
+    public function info($message, string $classes = '') : string
+    {
+        if (empty($message)) {
+            return '';
+        }
+
+        return el('div.alert.-danger', ['class' => $classes],
+            el('span.fa.fa-info-circle', $message)
+        );
+    }
+
+    public function avatar(User $user, string $classes = '') : string
+    {
+        return el('span.avatar', [
+            'class' => $classes,
+            'style' => "background-image: url('{$user->present()->avatar()}')",
+        ], '');
+    }
+
+    public function deleteButton(string $url) : string
+    {
+        return Form::openButton(
+            [
+                'url' => $url,
+                'method' => 'delete',
+            ],
+            [
+                'class' => 'button -danger -small',
+            ]
+        ) . el('span.fa.fa-remove') . Form::closeButton();
     }
 
     public function onlineIndicator(bool $online) : string
@@ -56,8 +76,8 @@ class HtmlBuilder extends BaseHtmlBuilder
         $icon = $online ? 'circle' : 'circle-o';
         $title = $online ? 'Online' : 'Offline';
 
-        return "<span class=\"status -{$state} -space-right\" title=\"{$title}\">".
-            "<i class=\"fa fa-{$icon}\"></i>".
-        "</span>";
+        return el("span.status.-{$state}.space-right", ['title' => $title],
+            el("i.fa.fa-{$icon}")
+        );
     }
 }

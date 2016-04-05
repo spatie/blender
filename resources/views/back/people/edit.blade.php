@@ -9,14 +9,14 @@
     <div class="grid">
         <h1>{{ $model->name ?: fragment('back.people.new') }}</h1>
 
-        {!! Form::openDraftable(
-        [
+        {!! Form::openDraftable([
             'method' =>'PATCH',
-            'subject' => $model,
             'action' => ['Back\PersonController@update', $model->id],
             'class' => '-stacked',
-        ] ) !!}
+        ], $model) !!}
+
         @include('back.people._partials.form')
+
         {!! Form::close() !!}
     </div>
 </section>

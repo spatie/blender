@@ -32,12 +32,7 @@
                         </td>
                         <td class="-right">
                             @unless ($user->isCurrentUser())
-                            {!! HTML::formButton(
-                                action('Back\BackUserController@destroy', [$user->id]),
-                                '<span class="fa fa-remove"></span>',
-                                'delete',
-                                ['class'=>'button -danger -small', 'id'=>"delete_user_{$user->id}"]
-                            ) !!}
+                                {!! HTML::deleteButton(action('Back\BackUserController@destroy', $user->id)) !!}
                             @endunless
                         </td>
                     </tr>

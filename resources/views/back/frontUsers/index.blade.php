@@ -31,14 +31,7 @@
                             {{ $user->present()->lastActivityDate }}
                         </td>
                         <td class="-right">
-                            @unless ($user->isCurrentUser())
-                            {!! HTML::formButton(
-                                action('Back\FrontUserController@destroy', [$user->id]),
-                                '<span class="fa fa-remove"></span>',
-                                'delete',
-                                ['class'=>'button -danger -small', 'id'=>"delete_user_{$user->id}"]
-                            ) !!}
-                            @endunless
+                            {!! HTML::deleteButton(action('Back\FrontUserController@destroy', $user->id)) !!}
                         </td>
                     </tr>
                     @endforeach

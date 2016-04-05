@@ -25,6 +25,11 @@ class Tag extends ModuleModel implements SortableInterface
         return $query->nonDraft()->where('type', $type->getValue());
     }
 
+    public static function getWithType(TagType $type)
+    {
+        return static::withType($type)->get();
+    }
+
     public static function findByNameOrCreate(string $name, TagType $type) : Tag
     {
         $existing = Tag::whereTranslation('name', $name, content_locale())->first();
