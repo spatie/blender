@@ -37,7 +37,7 @@ class BlenderFormBuilder
 
     public function text(string $name, bool $required = false, string $locale = '') : string
     {
-        $fieldName = $this->fieldName($name);
+        $fieldName = $this->fieldName($name, $locale);
 
         return $this->group([
             $this->label($name, $required),
@@ -48,7 +48,7 @@ class BlenderFormBuilder
 
     public function textarea(string $name, bool $required = false, string $locale = '') : string
     {
-        $fieldName = $this->fieldName($name);
+        $fieldName = $this->fieldName($name, $locale);
 
         return $this->group([
             $this->label($name, $required),
@@ -59,7 +59,7 @@ class BlenderFormBuilder
 
     public function redactor(string $name, bool $required = false, string $locale = '') : string
     {
-        $fieldName = $this->fieldName($name);
+        $fieldName = $this->fieldName($name, $locale);
 
         $options = [
             'data-editor' => '',
@@ -81,116 +81,81 @@ class BlenderFormBuilder
 
     public function checkbox(string $name, string $locale = '') : string
     {
-        $fieldName = $this->fieldName($name);
+        $fieldName = $this->fieldName($name, $locale);
 
         $contents = Form::checkbox($fieldName, 1, Form::useInitialValue($this->model, $name, $locale),
             ['class' => 'form-control']) . ' ' . fragment("back.{$this->module}.{$name}");
 
-        return $this->group(el('label.-checkbox', $contents));
+        return $this->group([el('label.-checkbox', $contents)]);
     }
 
-    /**
-     * @param string $name
-     * @param bool   $required
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function date($name, $required = false, string $locale = '')
+    public function date(string $name, bool $required = false, string $locale = '') : string
     {
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+        $fieldName = $this->fieldName($name, $locale);
 
-        $label = $this->label($name, $required);
-        $datePicker = $this->form()->datePicker($fieldName, $this->form()->useInitialValue($this->model, $name, $locale));
-        $errors = $this->error($fieldName, $this->errors);
-
-        return $this->wrapInFormGroup($label, $datePicker, $errors);
+        return $this->group([
+            $this->label($name, $required),
+            Form::datePicker($fieldName, Form::useInitialValue($this->model, $name, $locale)),
+            $this->error($fieldName, $this->errors),
+        ]);
     }
 
-    /**
-     * @param string $name
-     * @param array  $options
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function select($name, $options, string $locale = '')
+    public function select(string $name, $options, string $locale = '') : string
     {
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+        $fieldName = $this->fieldName($name, $locale);
 
-        $label = $this->label($name);
-        $select = $this->form()->select($fieldName, $options,
-            $this->form()->useInitialValue($this->model, $name, $locale), ['data-select' => 'select']);
-        $errors = $this->error($fieldName, $this->errors);
-
-        return $this->wrapInFormGroup($label, $select, $errors);
+        return $this->group([
+            $this->label($name, true),
+            Form::select(
+                $fieldName,
+                $options,
+                Form::useInitialValue($this->model, $name, $locale),
+                ['data-select' => 'select']
+            ),
+            $this->error($fieldName, $this->errors),
+        ]);
     }
 
-    /**
-     * @param string $name
-     * @param array  $options
-     * @param string $locale
-     *
-     * @return string
-     */
-    public function searchableSelect($name, $options, string $locale = '')
+    public function searchableSelect(string $name, $options, string $locale = '') : string
     {
-        $fieldName = $locale ? $this->form()->getTranslatedFieldName($name, $locale) : $name;
+        $fieldName = $this->fieldName($name, $locale);
 
-        $label = $this->label($name);
-        $select = $this->form()->select($fieldName, $options,
-            $this->form()->useInitialValue($this->model, $name, $locale), ['data-select' => 'search']);
-        $errors = $this->error($fieldName, $this->errors);
-
-        return $this->wrapInFormGroup($label, $select, $errors);
+        return $this->group([
+            $this->label($name),
+            Form::select(
+                $fieldName,
+                $options,
+                Form::useInitialValue($this->model, $name, $locale),
+                ['data-select' => 'search']
+            ),
+            $this->error($fieldName, $this->errors),
+        ]);
     }
 
-    /**
-     * @param string $type
-     *
-     * @return string
-     */
-    public function tags($type)
+    public function tags(string $type) : string
     {
-        $label = $this->form()->label($type.'_tags[]', fragment("back.{$this->module}.{$type}"));
-        $tags = $this->form()->tags($this->model, $type);
-
-        return $this->wrapInFormGroup($label, $tags);
+        return $this->group([
+            Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}") . '*'),
+            Form::tags($this->model, $type),
+        ]);
     }
 
-    /**
-     * @param string $type
-     *
-     * @return string
-     */
-    public function category($type)
+    public function category(string $type) : string
     {
-        $label = $this->form()->label($type.'_tags[]', fragment("back.{$this->module}.{$type}"));
-        $tags = $this->form()->category($this->model, $type, ['data-select'=>'select']);
-
-        return $this->wrapInFormGroup($label, $tags);
+        return $this->group([
+            Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}") . '*'),
+            Form::category($this->model, $type, ['data-select'=>'select']),
+        ]);
     }
 
-    /**
-     * @param string $collection
-     * @param string $type
-     * @param array  $associated
-     *
-     * @return string
-     */
-    public function media($collection, $type, $associated = [])
+    public function media(string $collection, string $type, array $associated = []) : string
     {
-        $label = $this->label($collection);
-        $media = $this->form()->media($this->model, $collection, $type, $associated);
-
-        return $this->wrapInFormGroup($label, $media);
+        return $this->group([
+            $this->label($collection),
+            Form::media($this->model, $collection, $type, $associated),
+        ]);
     }
 
-    /**
-     * @param string $name
-     *
-     * @return string
-     */
     public function map($name)
     {
         $label = $this->label($name);
@@ -222,14 +187,11 @@ class BlenderFormBuilder
         return $this->wrapInFormGroup($label, $picker);
     }
 
-    /**
-     * @param array $fields Ex. ['name' => 'text', 'contents' => 'redactor']
-     *
-     * @return string
-     */
-    public function translated($fields)
+    public function translated(array $fields) : string
     {
-        $translatedFieldsHtml = '';
+        // Ex. ['name' => 'text', 'contents' => 'redactor']
+        
+        $translatedFields = [];
 
         foreach (config('app.locales') as $locale) {
             $fieldset = [];
@@ -238,35 +200,26 @@ class BlenderFormBuilder
                 $fieldset[] = $this->$type($name, false, $locale);
             }
 
-            $translatedFieldsHtml .= $this->wrapInLanguageField($locale, ...$fieldset);
+            $translatedFields[] = $this->languageFieldSet($locale, $fieldset);
         }
 
-        return $translatedFieldsHtml;
+        return implode('', $translatedFields);
     }
 
-    /**
-     * @return string
-     */
-    public function submit()
+    public function submit() : string
     {
-        $submit = $this->form()->submit(fragment("back.{$this->module}.save"), ['class' => 'button -default']);
-
-        return "<div class=\"form_group -buttons\">{$submit}</div>";
+        return el('div.form_group.-buttons',
+            Form::submit(fragment("back.{$this->module}.save"), ['class' => 'button -default'])
+        );
     }
 
-    /**
-     * Wrap an html string in a fieldset with a legend.
-     *
-     * @param string $locale
-     * @param string $elements,...
-     *
-     * @return string
-     */
-    protected function wrapInLanguageField($locale, ...$elements)
+    protected function languageFieldSet($locale, array $elements)
     {
-        $innerHtml = implode('', $elements);
-
-        return "<fieldset><legend><span class=legend_lang>{$locale}</span></legend>{$innerHtml}</fieldset>";
+        return el('fieldset',
+            el('legend',
+                array_merge(el('div.legend_lang', $locale), $elements)
+            )
+        );
     }
 
     protected function group(array $elements) : string
