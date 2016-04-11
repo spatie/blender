@@ -44,7 +44,6 @@ class NavigationServiceProvider extends ServiceProvider
 
     protected function bootMenus()
     {
-        $this->app->make(Macros::class)->register();
         $this->app->make(FrontMenus::class)->register();
         $this->app->make(BackMenus::class)->register();
     }

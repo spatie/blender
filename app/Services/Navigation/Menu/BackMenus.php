@@ -10,6 +10,31 @@ class BackMenus
 {
     public function register()
     {
+        Menu::macro('back', function () {
+            return Menu::new()
+                ->setActiveClass('-active')
+                ->setActiveFromRequest('/blender');
+        });
+
+        Menu::macro('moduleGroup', function ($title) {
+            return Menu::back()
+                ->addParentClass('menu_group')
+                ->setParentAttribute('data-menu-group', fragment("back.nav.{$title}"))
+                ->registerFilter(function (Link $link) {
+                    $link->addParentClass('menu_group_item');
+                });
+        });
+
+        Menu::macro('startSecondary', function () {
+            return $this->registerFilter(function (Link $link) {
+                $link->addParentClass('-secondary');
+            });
+        });
+
+        Menu::macro('module', function (string $action, string $name) {
+            return $this->action("Back\\{$action}", fragment("back.{$name}"));
+        });
+        
         Menu::macro('backMain', function () {
             return Menu::back()
                 ->addClass('menu_groups')
