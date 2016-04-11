@@ -59,16 +59,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.17.3",
+            "version": "3.17.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "4d70cbe397c03e84907e10436358f627aab428e6"
+                "reference": "1cef9b334729b3564c9aef15481a55561c54b53f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4d70cbe397c03e84907e10436358f627aab428e6",
-                "reference": "4d70cbe397c03e84907e10436358f627aab428e6",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1cef9b334729b3564c9aef15481a55561c54b53f",
+                "reference": "1cef9b334729b3564c9aef15481a55561c54b53f",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-03-29 22:53:44"
+            "time": "2016-04-07 22:44:13"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -435,16 +435,16 @@
         },
         {
             "name": "dimsav/laravel-translatable",
-            "version": "v5.5",
+            "version": "v5.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dimsav/laravel-translatable.git",
-                "reference": "dd6c5dbbf76b4afe360679cfede9f178f88ee92d"
+                "reference": "f4c4c096998d5cc68d5bac90af6d11a636e8b3af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dimsav/laravel-translatable/zipball/dd6c5dbbf76b4afe360679cfede9f178f88ee92d",
-                "reference": "dd6c5dbbf76b4afe360679cfede9f178f88ee92d",
+                "url": "https://api.github.com/repos/dimsav/laravel-translatable/zipball/f4c4c096998d5cc68d5bac90af6d11a636e8b3af",
+                "reference": "f4c4c096998d5cc68d5bac90af6d11a636e8b3af",
                 "shasum": ""
             },
             "require": {
@@ -482,7 +482,7 @@
                 "laravel",
                 "translation"
             ],
-            "time": "2016-01-19 19:42:08"
+            "time": "2016-04-10 18:27:27"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1605,16 +1605,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.2.0",
+            "version": "v3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jenssegers/date.git",
-                "reference": "a796be8acfe789592611922ec1b7929c269e7aaf"
+                "reference": "000caf2e52c5029a746c244390e304413abbbd28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/date/zipball/a796be8acfe789592611922ec1b7929c269e7aaf",
-                "reference": "a796be8acfe789592611922ec1b7929c269e7aaf",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/000caf2e52c5029a746c244390e304413abbbd28",
+                "reference": "000caf2e52c5029a746c244390e304413abbbd28",
                 "shasum": ""
             },
             "require": {
@@ -1658,7 +1658,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2016-02-21 11:06:03"
+            "time": "2016-04-07 12:00:23"
         },
         {
             "name": "jeremeamia/SuperClosure",
@@ -3824,16 +3824,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "3.4.0",
+            "version": "3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "7e215940f2c60ec9994ef0c71d240fda6777609c"
+                "reference": "1793179e6a18395f62dee558c4bf99805e65c7b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/7e215940f2c60ec9994ef0c71d240fda6777609c",
-                "reference": "7e215940f2c60ec9994ef0c71d240fda6777609c",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/1793179e6a18395f62dee558c4bf99805e65c7b0",
+                "reference": "1793179e6a18395f62dee558c4bf99805e65c7b0",
                 "shasum": ""
             },
             "require": {
@@ -3882,7 +3882,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2016-04-03 21:18:17"
+            "time": "2016-04-07 07:58:29"
         },
         {
             "name": "spatie/laravel-demo-mode",
@@ -4191,23 +4191,23 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "3.17.2",
+            "version": "3.17.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "feddc9c2ade269500b7b6913aed41268ea19890d"
+                "reference": "a9762c74a95eacd0cb697742ce117a7876edd5f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/feddc9c2ade269500b7b6913aed41268ea19890d",
-                "reference": "feddc9c2ade269500b7b6913aed41268ea19890d",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/a9762c74a95eacd0cb697742ce117a7876edd5f7",
+                "reference": "a9762c74a95eacd0cb697742ce117a7876edd5f7",
                 "shasum": ""
             },
             "require": {
-                "illuminate/bus": "~5.1|~5.2",
-                "illuminate/console": "~5.1|~5.2",
-                "illuminate/database": "~5.1|~5.2",
-                "illuminate/support": "~5.1|~5.2",
+                "illuminate/bus": "~5.1.16|~5.2.0",
+                "illuminate/console": "~5.1.16|~5.2.0",
+                "illuminate/database": "~5.1.16|~5.2.0",
+                "illuminate/support": "~5.1.16|~5.2.0",
                 "php": "^5.5|^7.0",
                 "spatie/laravel-glide": "^2.2.4",
                 "spatie/pdf-to-image": "^1.0.1",
@@ -4247,27 +4247,31 @@
                 "media",
                 "spatie"
             ],
-            "time": "2016-03-25 08:43:55"
+            "time": "2016-04-04 14:28:53"
         },
         {
             "name": "spatie/laravel-menu",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "e8977dfe503b6b5af4826412ba9e862b0d463aac"
+                "reference": "7ee9fe60a2ef8d2e3538c4c7799103b6a23dc279"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/e8977dfe503b6b5af4826412ba9e862b0d463aac",
-                "reference": "e8977dfe503b6b5af4826412ba9e862b0d463aac",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/7ee9fe60a2ef8d2e3538c4c7799103b6a23dc279",
+                "reference": "7ee9fe60a2ef8d2e3538c4c7799103b6a23dc279",
                 "shasum": ""
             },
             "require": {
+                "illuminate/auth": "~5.1.14|~5.2.0",
+                "illuminate/contracts": "~5.1.14|~5.2.0",
+                "illuminate/support": "~5.1.14|~5.2.0",
                 "php": "^7.0",
                 "spatie/menu": "^1.1.0"
             },
             "require-dev": {
+                "fzaninotto/faker": "~1.4",
                 "orchestra/testbench": "^3.1",
                 "phpunit/phpunit": "^5.2"
             },
@@ -4295,7 +4299,7 @@
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2016-03-30 21:19:10"
+            "time": "2016-04-04 11:11:50"
         },
         {
             "name": "spatie/laravel-model-cleanup",
@@ -4657,16 +4661,16 @@
         },
         {
             "name": "spatie/menu",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/menu.git",
-                "reference": "686a76f2f8896a768ff9fb6b557b47a74ae12c6c"
+                "reference": "825726806a2098b2393b0771482d899530c442d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/686a76f2f8896a768ff9fb6b557b47a74ae12c6c",
-                "reference": "686a76f2f8896a768ff9fb6b557b47a74ae12c6c",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/825726806a2098b2393b0771482d899530c442d4",
+                "reference": "825726806a2098b2393b0771482d899530c442d4",
                 "shasum": ""
             },
             "require": {
@@ -4704,7 +4708,7 @@
                 "navigation",
                 "spatie"
             ],
-            "time": "2016-03-30 07:45:48"
+            "time": "2016-04-04 09:51:46"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -6285,16 +6289,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "3.3.0",
+            "version": "3.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "fe33716763b604ade4cb442c0794f5bd5ad73004"
+                "reference": "2431befdd451fac43fbcde94d1a92fb3b8b68f86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/fe33716763b604ade4cb442c0794f5bd5ad73004",
-                "reference": "fe33716763b604ade4cb442c0794f5bd5ad73004",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/2431befdd451fac43fbcde94d1a92fb3b8b68f86",
+                "reference": "2431befdd451fac43fbcde94d1a92fb3b8b68f86",
                 "shasum": ""
             },
             "require": {
@@ -6312,7 +6316,7 @@
             },
             "suggest": {
                 "ext-dom": "*",
-                "ext-xdebug": ">=2.2.1",
+                "ext-xdebug": ">=2.4.0",
                 "ext-xmlwriter": "*"
             },
             "type": "library",
@@ -6344,7 +6348,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-03-03 08:49:08"
+            "time": "2016-04-08 08:14:53"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -6526,16 +6530,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.3.0",
+            "version": "5.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "dd3001822b2df8f5add266020e3d2fd3c5db3ae9"
+                "reference": "34a3acb401ae79deb37bc6e5f5ec3d325b369b4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dd3001822b2df8f5add266020e3d2fd3c5db3ae9",
-                "reference": "dd3001822b2df8f5add266020e3d2fd3c5db3ae9",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/34a3acb401ae79deb37bc6e5f5ec3d325b369b4c",
+                "reference": "34a3acb401ae79deb37bc6e5f5ec3d325b369b4c",
                 "shasum": ""
             },
             "require": {
@@ -6550,7 +6554,7 @@
                 "phpunit/php-code-coverage": "^3.3.0",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
-                "phpunit/php-timer": ">=1.0.6",
+                "phpunit/php-timer": "^1.0.6",
                 "phpunit/phpunit-mock-objects": "^3.1",
                 "sebastian/comparator": "~1.1",
                 "sebastian/diff": "~1.2",
@@ -6597,7 +6601,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-03-31 21:35:50"
+            "time": "2016-04-07 07:04:34"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
