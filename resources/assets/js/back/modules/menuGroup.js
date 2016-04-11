@@ -1,6 +1,6 @@
 function init() {
     $('[data-menu-group]').each(function () {
-        initializeMenuGroup($(this));
+       initializeMenuGroup($(this));
     });
 }
 
@@ -13,7 +13,8 @@ function initializeMenuGroup($group) {
 }
 
 function addToggle($group) {
-    let moreLink = $('<li class="menu_group_item -icon"><a href="#"><i data-group-toggle class="fa fa-ellipsis-v"></i></a></li>');
+    let css = $group.hasClass('-active') ? 'fa-caret-left' : 'fa-ellipsis-v';
+    let moreLink = $('<li class="menu_group_item -icon"><a href="#"><i data-group-toggle class="fa ' + css + '"></i></a></li>');
     $('ul', $group).append(moreLink);
 
     moreLink.on('click', e => {
@@ -25,7 +26,6 @@ function addToggle($group) {
 
 
 function closeOtherGroups($group) {
-
     $('[data-menu-group]').not($group).filter('.-active').each(function () {
         toggleGroup($(this));
     })
@@ -37,4 +37,3 @@ function toggleGroup($group) {
 }
 
 export default init;
-export { initializeMenuGroup };
