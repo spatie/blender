@@ -156,41 +156,57 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function map($name)
+    public function map(string $name) : string
     {
-        $label = $this->label($name);
-        $text = "<input type='text' class='locationpicker_search' data-locationpicker-search placeholder='".fragment('back.locationpicker.search')."'>";
-        $button = "<button class='locationpicker_button' type='button' data-locationpicker-button>".fragment('back.locationpicker.submit').'</button>';
-        $map = "<div class='locationpicker_map' data-locationpicker-map></div>";
+        $form = [];
 
-        $lat = $this->form()->hidden(
+        $form[] = el('div', ['class' => 'locationpicker_tools :align-right'], [
+            el('input', [
+                'type' => 'text',
+                'class' => 'locationpicker_search',
+                'placeholder' => fragment('back.locationpicker.search'),
+                'data-locationpicker-search',
+            ], ''),
+            el('button', [
+                'class' => 'locationpicker_button',
+                'type' => 'button',
+                'data-locationpicker-button',
+            ], fragment('back.locationpicker.submit')),
+        ]);
+
+        $form[] = el('div', [
+            'class' => 'locationpicker_map',
+            'data-locationpicker-map',
+        ]);
+
+        $form[] = Form::hidden(
             "{$name}_lat",
-            $this->form()->useInitialValue($this->model, "{$name}_lat"),
-            ['data-locationpicker-lat' => '']
+            Form::useInitialValue($this->model, "{$name}_lat"),
+            ['data-locationpicker-lat']
         );
 
-        $lng = $this->form()->hidden(
+        $form[] = Form::hidden(
             "{$name}_lng",
-            $this->form()->useInitialValue($this->model, "{$name}_lng"),
-            ['data-locationpicker-lng' => '']
+            Form::useInitialValue($this->model, "{$name}_lng"),
+            ['data-locationpicker-lng']
         );
 
-        $zoom = $this->form()->hidden(
+        $form[] = Form::hidden(
             "{$name}_zoom",
-            $this->form()->useInitialValue($this->model, "{$name}_zoom"),
-            ['data-locationpicker-zoom' => '']
+            Form::useInitialValue($this->model, "{$name}_zoom"),
+            ['data-locationpicker-zoom']
         );
 
-        $pickerTools = "<div class='locationpicker_tools :align-right'>{$text}{$button}</div>";
-        $picker = "<div class='locationpicker' id='custom_id' data-locationpicker>{$pickerTools}{$map}{$lat}{$lng}{$zoom}</div>";
-
-        return $this->wrapInFormGroup($label, $picker);
+        return $this->group([
+            $this->label($name),
+            el('div.locationpicker#custom_id', $form),
+        ]);
     }
 
     public function translated(array $fields) : string
     {
         // Ex. ['name' => 'text', 'contents' => 'redactor']
-        
+
         $translatedFields = [];
 
         foreach (config('app.locales') as $locale) {
@@ -232,7 +248,7 @@ class BlenderFormBuilder
         return el('div.parts', $elements);
     }
 
-    protected function fieldName(string $name, string $locale = '')
+    protected function fieldName(string $name, string $locale = '') : string
     {
         return $locale ? translate_field_name($name, $locale) : $name;
     }
