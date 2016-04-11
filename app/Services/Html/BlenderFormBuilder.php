@@ -4,8 +4,8 @@ namespace App\Services\Html;
 
 use Form;
 use HTML;
-use Illuminate\Contracts\Support\MessageBag;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\ViewErrorBag;
 
 class BlenderFormBuilder
 {
@@ -15,10 +15,10 @@ class BlenderFormBuilder
     /** @var \Illuminate\Database\Eloquent\Model */
     protected $model;
 
-    /** @var \Illuminate\Contracts\Support\MessageBag */
+    /** @var \Illuminate\Support\ViewErrorBag */
     protected $errors;
 
-    public function init(string $module, Model $model, MessageBag $errors)
+    public function init(string $module, Model $model, ViewErrorBag $errors)
     {
         $this->module = $module;
         $this->model = $model;
@@ -177,7 +177,7 @@ class BlenderFormBuilder
         $form[] = el('div', [
             'class' => 'locationpicker_map',
             'data-locationpicker-map',
-        ]);
+        ], '');
 
         $form[] = Form::hidden(
             "{$name}_lat",
@@ -232,9 +232,7 @@ class BlenderFormBuilder
     protected function languageFieldSet($locale, array $elements)
     {
         return el('fieldset',
-            el('legend',
-                array_merge(el('div.legend_lang', $locale), $elements)
-            )
+            array_merge([el('legend', el('div.legend_lang', $locale))], $elements)
         );
     }
 

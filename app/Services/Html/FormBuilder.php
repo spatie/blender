@@ -43,7 +43,7 @@ class FormBuilder extends BaseFormBuilder
     public function redactor($subject, string $fieldName, string $locale = '', array $options = []) : string
     {
         $fieldName = $locale ? translate_field_name($fieldName, $locale) : $fieldName;
-        
+
         return $this->textarea(
             $fieldName,
             $this->useInitialValue($subject, $fieldName, $locale),
@@ -151,7 +151,7 @@ class FormBuilder extends BaseFormBuilder
             $value = $value->format('d/m/Y');
         }
 
-        return $this->getValueAttribute($fieldName, $value);
+        return $this->getValueAttribute($fieldName, $value) ?? '';
     }
 
     public function getLabelForTranslatedField(string $fieldName, string $label, string $locale) : string
