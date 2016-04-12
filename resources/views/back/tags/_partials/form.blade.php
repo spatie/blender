@@ -4,7 +4,6 @@
 
 {!! BlenderForm::translated([
     'name' => 'text',
-    'description' => 'redactor',
 ]) !!}
 
 {!! BlenderForm::submit() !!}

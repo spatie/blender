@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d6cbeb5dd609ee5c5d16bcb79e2edb39",
-    "content-hash": "766e702319b35bbab2574f8b285e5765",
+    "hash": "a5fcfb27c3e1aff571e45c12eeee8449",
+    "content-hash": "1b2fe9dbee47291331edb27cd2e53477",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3514,16 +3514,16 @@
         },
         {
             "name": "spatie/fragment-importer",
-            "version": "1.0.6",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/fragment-importer.git",
-                "reference": "6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9"
+                "reference": "b6260f2c648a1aa94aef299da8e73dceedf268f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9",
-                "reference": "6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9",
+                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/b6260f2c648a1aa94aef299da8e73dceedf268f7",
+                "reference": "b6260f2c648a1aa94aef299da8e73dceedf268f7",
                 "shasum": ""
             },
             "require": {
@@ -3569,10 +3569,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/fragment-importer/tree/1.0.6",
+                "source": "https://github.com/spatie-custom/fragment-importer/tree/2.0.0",
                 "issues": "https://github.com/spatie-custom/fragment-importer/issues"
             },
-            "time": "2016-03-01 12:50:01"
+            "time": "2016-04-12 14:24:39"
         },
         {
             "name": "spatie/html-element",

@@ -51,7 +51,7 @@
     "spatie/laravel-link-checker": "^1.0",
     "spatie/laravel-menu": "^1.0.0",
     "spatie/laravel-robots-middleware": "^1.0",
-    "spatie/fragment-importer": "^1.0.6",
+    "spatie/fragment-importer": "^2.0.0",
     "themsaid/laravel-mail-preview": "^1.0",
     "spatie/laravel-model-cleanup": "^1.0",
     "spatie/laravel-demo-mode": "^1.0",
