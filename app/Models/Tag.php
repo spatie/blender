@@ -12,8 +12,6 @@ class Tag extends ModuleModel implements SortableInterface
 {
     use HasUrl, Sortable;
 
-    protected $with = ['translations'];
-
     public $translatable = ['name', 'url'];
 
     public function hasType(TagType $type) : bool
@@ -34,7 +32,7 @@ class Tag extends ModuleModel implements SortableInterface
     public static function findByNameOrCreate(string $name, TagType $type) : Tag
     {
         $existing = Tag::nonDraft()->get()
-            ->first(function (Tag $tag) use ($name) {
+            ->first(function (int $id, Tag $tag) use ($name) {
                 return $tag->translate('name', content_locale()) === $name;
             });
 

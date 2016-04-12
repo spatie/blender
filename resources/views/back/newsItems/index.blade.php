@@ -23,7 +23,9 @@
                 <tr data-row-id="{{ $newsItem->id }}">
                     <td>
                         {!! HTML::onlineIndicator($newsItem->online) !!}
-                        <a href="{{ action('Back\NewsItemController@edit', [$newsItem->id]) }}">{{ $newsItem->translate(content_locale())->name }}</a>
+                        <a href="{{ action('Back\NewsItemController@edit', [$newsItem->id]) }}">
+                            {{ $newsItem->name }}
+                        </a>
                     </td>
                     <td data-order="{{ $newsItem->publish_date }}">
                         {{ $newsItem->publish_date->format('d/m/Y') }}

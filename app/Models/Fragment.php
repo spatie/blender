@@ -11,8 +11,6 @@ class Fragment extends Model
 {
     use HasTranslations, Presentable;
 
-    protected $with = ['translations'];
-
     public $translatable = ['text'];
 
     /**

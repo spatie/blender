@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a3e403b42001323f3e950b316a6582e",
-    "content-hash": "f0c103ef32dc7ef0136f29bc2f7ded24",
+    "hash": "d6cbeb5dd609ee5c5d16bcb79e2edb39",
+    "content-hash": "766e702319b35bbab2574f8b285e5765",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4691,16 +4691,16 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "3.5.1",
+            "version": "4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/seeders.git",
-                "reference": "00181c45c180ee8c49119e257fa6c0302ea670a6"
+                "reference": "aee7c7ab9088ec804f51f7339ca83c6cfe770276"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/00181c45c180ee8c49119e257fa6c0302ea670a6",
-                "reference": "00181c45c180ee8c49119e257fa6c0302ea670a6",
+                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/aee7c7ab9088ec804f51f7339ca83c6cfe770276",
+                "reference": "aee7c7ab9088ec804f51f7339ca83c6cfe770276",
                 "shasum": ""
             },
             "require": {
@@ -4717,12 +4717,10 @@
             "autoload": {
                 "psr-4": {
                     "Spatie\\Seeders\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\Seeders\\Test\\": "tests"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "license": [
                 "MIT"
@@ -4748,10 +4746,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/seeders/tree/3.5.1",
+                "source": "https://github.com/spatie-custom/seeders/tree/4.0",
                 "issues": "https://github.com/spatie-custom/seeders/issues"
             },
-            "time": "2016-03-02 12:37:37"
+            "time": "2016-04-12 14:06:35"
         },
         {
             "name": "spatie/string",

@@ -11,7 +11,7 @@ class NewsItem extends ModuleModel
 {
     use HasTags, HasUrl;
 
-    protected $with = ['translations', 'media', 'tags'];
+    protected $with = ['media', 'tags'];
     protected $dates = ['publish_date'];
 
     public $tagTypes = [TagType::NEWS_CATEGORY, TagType::NEWS_TAG];
