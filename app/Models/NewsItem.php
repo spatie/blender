@@ -4,12 +4,12 @@ namespace App\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
 use App\Foundation\Models\Traits\HasTags;
-use App\Foundation\Models\Traits\HasUrl;
+use App\Foundation\Models\Traits\HasSlug;
 use App\Models\Enums\TagType;
 
 class NewsItem extends ModuleModel
 {
-    use HasTags, HasUrl;
+    use HasTags, HasSlug;
 
     protected $with = ['media', 'tags'];
     protected $dates = ['publish_date'];

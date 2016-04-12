@@ -3,14 +3,14 @@
 namespace App\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
-use App\Foundation\Models\Traits\HasUrl;
+use App\Foundation\Models\Traits\HasSlug;
 use Cache;
 use Exception;
 use Illuminate\Support\Collection;
 
 class Article extends ModuleModel
 {
-    use HasUrl;
+    use HasSlug;
     
     protected $with = ['media'];
 

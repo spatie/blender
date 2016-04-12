@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
-use App\Foundation\Models\Traits\HasUrl;
+use App\Foundation\Models\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 
 class Person extends ModuleModel implements SortableInterface
 {
-    use Sortable, HasUrl;
+    use Sortable, HasSlug;
 
     protected $with = ['media'];
 
@@ -24,5 +24,10 @@ class Person extends ModuleModel implements SortableInterface
             ->setWidth(368)
             ->setHeight(232)
             ->performOnCollections('images');
+    }
+
+    protected function generateSlug() : string
+    {
+        return str_slug($this->name);
     }
 }
