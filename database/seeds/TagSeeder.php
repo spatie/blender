@@ -8,7 +8,7 @@ class TagSeeder extends DatabaseSeeder
 {
     public function run()
     {
-        $this->truncate((new TagTranslation())->getTable(), (new Tag())->getTable(), 'taggables');
+        $this->truncate((new Tag())->getTable(), 'taggables');
 
         $this->seedTags(TagType::NEWS_CATEGORY(), [
             'Categorie 1',
@@ -28,7 +28,7 @@ class TagSeeder extends DatabaseSeeder
         foreach ($names as $i => $name) {
             Tag::create([
                 'type' => $type,
-                'name' => $name,
+                'name' => faker()->translate($name),
                 'draft' => 0,
                 'online' => 1,
                 'order_column' => $i,

@@ -145,7 +145,7 @@ class FormBuilder extends BaseFormBuilder
     public function useInitialValue($subject, string $propertyName, string $locale = '') : string
     {
         $fieldName = $locale ? translate_field_name($propertyName, $locale) : $propertyName;
-        $value = $locale ? $subject->translate($locale)->$propertyName : $subject->$propertyName;
+        $value = $locale ? $subject->translate($propertyName, $locale) : $subject->$propertyName;
 
         if ($value instanceof Carbon) {
             $value = $value->format('d/m/Y');

@@ -57,7 +57,8 @@
     "spatie/fragment-importer": "^1.0.6",
     "themsaid/laravel-mail-preview": "^1.0",
     "spatie/laravel-model-cleanup": "^1.0",
-    "spatie/laravel-demo-mode": "^1.0"
+    "spatie/laravel-demo-mode": "^1.0",
+    "spatie/laravel-translatable": "^1.0"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
@@ -80,7 +81,10 @@
   "autoload-dev": {
 	"psr-4": {
 	  "App\\Test\\": "tests/"
-	}
+	},
+    "files": [
+      "database/faker/Faker.php"
+    ]
   },
   "scripts": {
 	"post-install-cmd": [

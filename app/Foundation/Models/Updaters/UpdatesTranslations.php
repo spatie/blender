@@ -14,7 +14,7 @@ trait UpdatesTranslations
                     continue;
                 }
 
-                $this->model->translate($locale)->$fieldName = $this->request->get($translatedFieldName);
+                $this->model->setTranslation($fieldName, $locale, $this->request->get($translatedFieldName);
             }
         }
     }

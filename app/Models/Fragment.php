@@ -4,14 +4,16 @@ namespace App\Models;
 
 use App\Foundation\Models\Base\TranslatableEloquent;
 use App\Foundation\Models\Traits\Presentable;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
-class Fragment extends TranslatableEloquent
+class Fragment extends Model
 {
-    use Presentable;
+    use HasTranslations, Presentable;
 
     protected $with = ['translations'];
 
-    public $translatedAttributes = ['text'];
+    public $translatable = ['text'];
 
     /**
      * @return \App\Models\Fragment|null
@@ -31,7 +33,7 @@ class Fragment extends TranslatableEloquent
             ->map(function (Fragment $fragment) use ($locale, $group) {
                 return [
                     'key' => preg_replace("/{$group}\\./", '', $fragment->name, 1),
-                    'text' => $fragment->translate($locale)->text,
+                    'text' => $fragment->translate('text', $locale),
                 ];
             })
             ->pluck('text', 'key')

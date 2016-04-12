@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff3c88329699b13de68d4dc8078eebb8",
-    "content-hash": "f5cfe1f86bdba9c960e99634a1d05f03",
+    "hash": "39dcd3cd759e56db0b5ca88fa496e261",
+    "content-hash": "50fcf34de5bef17244cda747d0dc6c3a",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4658,6 +4658,70 @@
                 "tail"
             ],
             "time": "2015-10-11 09:45:38"
+        },
+        {
+            "name": "spatie/laravel-translatable",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-translatable.git",
+                "reference": "6c1ff79c20e26f363583d88bd6d3eea414bcb2dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/6c1ff79c20e26f363583d88bd6d3eea414bcb2dc",
+                "reference": "6c1ff79c20e26f363583d88bd6d3eea414bcb2dc",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "orchestra/testbench": "^3.2",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Translatable\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "theMohamedSaid@gmail.com",
+                    "role": "Original idea"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Human scrutinizer"
+                }
+            ],
+            "description": "A trait to make an Eloquent model hold translations",
+            "homepage": "https://github.com/spatie/laravel-translatable",
+            "keywords": [
+                "eloquent",
+                "i8n",
+                "laravel-translatable",
+                "model",
+                "multilingual",
+                "spatie",
+                "translate"
+            ],
+            "time": "2016-04-11 17:59:57"
         },
         {
             "name": "spatie/menu",

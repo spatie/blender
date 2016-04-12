@@ -3,18 +3,18 @@
 namespace App\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
-use App\Foundation\Models\Traits\Sluggable;
+use App\Foundation\Models\Traits\HasUrl;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 
 class Person extends ModuleModel implements SortableInterface
 {
-    use Sortable, Sluggable;
+    use Sortable, HasUrl;
 
     protected $with = ['translations', 'media'];
 
     public $mediaLibraryCollections = ['images'];
-    public $translatedAttributes = ['text'];
+    public $translatable = ['text'];
 
     public function registerMediaConversions()
     {
