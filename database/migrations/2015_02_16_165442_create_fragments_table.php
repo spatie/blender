@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFragmentsTables extends Migration
+class CreateFragmentsTable extends Migration
 {
     public function up()
     {

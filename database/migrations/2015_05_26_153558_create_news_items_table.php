@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsItemsTables extends Migration
+class CreateNewsItemsTable extends Migration
 {
     public function up()
     {
