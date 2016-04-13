@@ -11,7 +11,12 @@
             {!! HTML::info(fragment('back.formResponses.info', ['recipients' => implode(', ', (new Illuminate\Support\Collection(config('mail.questionFormRecipients')))->toArray() )]))  !!}
 
             <div class="form_group -buttons">
-                {!! HTML::formButton(URL::action('Back\FormResponseController@download'), fragment('back.formResponses.download'), 'POST') !!}
+                {!! Form::openButton([
+                    'action' => 'Back\FormResponseController@download',
+                    'method' => 'post',
+                ]) !!}
+                    {{ fragment('back.formResponses.download') }}
+                {!! Form::closeButton() !!}
             </div>
         </div>
     </section>

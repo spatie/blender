@@ -12,6 +12,11 @@ class UserPresenter extends Presenter
         return "{$this->first_name} {$this->last_name}";
     }
 
+    public function avatar() : string
+    {
+        return 'https://www.gravatar.com/avatar/'.md5($this->email).'?d=mm&s=256';
+    }
+
     public function lastActivityDate() : string
     {
         if ($this->last_activity === null || $this->last_activity->year == -1) {

@@ -2,11 +2,11 @@
 
 namespace App\Foundation\Models\Translations;
 
-use App\Foundation\Models\Traits\Sluggable;
+use App\Foundation\Models\Traits\HasSlug;
 
 class SluggableTranslation extends Translation
 {
-    use Sluggable;
+    use HasSlug;
 
     protected $guarded = ['id', 'url'];
 }

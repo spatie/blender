@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff3c88329699b13de68d4dc8078eebb8",
-    "content-hash": "f5cfe1f86bdba9c960e99634a1d05f03",
+    "hash": "a5fcfb27c3e1aff571e45c12eeee8449",
+    "content-hash": "1b2fe9dbee47291331edb27cd2e53477",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -59,16 +59,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.17.5",
+            "version": "3.17.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "1cef9b334729b3564c9aef15481a55561c54b53f"
+                "reference": "d5a5145263da88c9ba870b579c3d4f648b82d2a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/1cef9b334729b3564c9aef15481a55561c54b53f",
-                "reference": "1cef9b334729b3564c9aef15481a55561c54b53f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d5a5145263da88c9ba870b579c3d4f648b82d2a9",
+                "reference": "d5a5145263da88c9ba870b579c3d4f648b82d2a9",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-04-07 22:44:13"
+            "time": "2016-04-11 17:36:01"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -397,92 +397,6 @@
                 "laravel"
             ],
             "time": "2015-02-08 21:44:39"
-        },
-        {
-            "name": "devitek/yaml-translation",
-            "version": "1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Devitek/laravel-yaml-translation.git",
-                "reference": "47fe02174e47d262ff74b349320062b5844f2e19"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Devitek/laravel-yaml-translation/zipball/47fe02174e47d262ff74b349320062b5844f2e19",
-                "reference": "47fe02174e47d262ff74b349320062b5844f2e19",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/translation": "5.x",
-                "php": ">=5.4.0",
-                "symfony/yaml": "2.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Devitek\\": "src/Devitek"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Thomas SIEFFERT",
-                    "email": "caporaldead@devitek.fr"
-                }
-            ],
-            "description": "Add YAML file support to Laravel TranslationServiceProvider",
-            "time": "2015-11-05 16:35:25"
-        },
-        {
-            "name": "dimsav/laravel-translatable",
-            "version": "v5.5.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/dimsav/laravel-translatable.git",
-                "reference": "f4c4c096998d5cc68d5bac90af6d11a636e8b3af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/dimsav/laravel-translatable/zipball/f4c4c096998d5cc68d5bac90af6d11a636e8b3af",
-                "reference": "f4c4c096998d5cc68d5bac90af6d11a636e8b3af",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.1",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "~3.0",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dimsav\\Translatable\\": "src/Translatable/"
-                },
-                "classmap": [
-                    "tests"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dimitrios Savvopoulos",
-                    "email": "ds@dimsav.com",
-                    "homepage": "http://dimsav.com"
-                }
-            ],
-            "description": "A Laravel package for multilingual models",
-            "keywords": [
-                "database",
-                "language",
-                "laravel",
-                "translation"
-            ],
-            "time": "2016-04-10 18:27:27"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -3600,16 +3514,16 @@
         },
         {
             "name": "spatie/fragment-importer",
-            "version": "1.0.6",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/fragment-importer.git",
-                "reference": "6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9"
+                "reference": "b6260f2c648a1aa94aef299da8e73dceedf268f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9",
-                "reference": "6f87b18fb6d31de893cfc282f9c6eb3d9e1591e9",
+                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/b6260f2c648a1aa94aef299da8e73dceedf268f7",
+                "reference": "b6260f2c648a1aa94aef299da8e73dceedf268f7",
                 "shasum": ""
             },
             "require": {
@@ -3655,10 +3569,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/fragment-importer/tree/1.0.6",
+                "source": "https://github.com/spatie-custom/fragment-importer/tree/2.0.0",
                 "issues": "https://github.com/spatie-custom/fragment-importer/issues"
             },
-            "time": "2016-03-01 12:50:01"
+            "time": "2016-04-12 14:24:39"
         },
         {
             "name": "spatie/html-element",
@@ -4191,16 +4105,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "3.17.3",
+            "version": "3.17.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "a9762c74a95eacd0cb697742ce117a7876edd5f7"
+                "reference": "7f96cd3c709643ab0dde977936b98a7f75396d31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/a9762c74a95eacd0cb697742ce117a7876edd5f7",
-                "reference": "a9762c74a95eacd0cb697742ce117a7876edd5f7",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/7f96cd3c709643ab0dde977936b98a7f75396d31",
+                "reference": "7f96cd3c709643ab0dde977936b98a7f75396d31",
                 "shasum": ""
             },
             "require": {
@@ -4247,7 +4161,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2016-04-04 14:28:53"
+            "time": "2016-04-12 09:57:52"
         },
         {
             "name": "spatie/laravel-menu",
@@ -4564,55 +4478,6 @@
             "time": "2016-01-12 12:28:05"
         },
         {
-            "name": "spatie/laravel-sluggable",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-sluggable.git",
-                "reference": "88d463dc820a5d2829b80346ea5dace27c057c9f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sluggable/zipball/88d463dc820a5d2829b80346ea5dace27c057c9f",
-                "reference": "88d463dc820a5d2829b80346ea5dace27c057c9f",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "^5.0",
-                "illuminate/support": "^5.0",
-                "php": ">=7.0.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^3.2",
-                "phpunit/phpunit": "^4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Sluggable\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Generate slugs when saving Eloquent models",
-            "homepage": "https://github.com/spatie/laravel-sluggable",
-            "keywords": [
-                "laravel-sluggable",
-                "spatie"
-            ],
-            "time": "2016-01-24 13:32:00"
-        },
-        {
             "name": "spatie/laravel-tail",
             "version": "1.1.2",
             "source": {
@@ -4658,6 +4523,70 @@
                 "tail"
             ],
             "time": "2015-10-11 09:45:38"
+        },
+        {
+            "name": "spatie/laravel-translatable",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-translatable.git",
+                "reference": "6c1ff79c20e26f363583d88bd6d3eea414bcb2dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-translatable/zipball/6c1ff79c20e26f363583d88bd6d3eea414bcb2dc",
+                "reference": "6c1ff79c20e26f363583d88bd6d3eea414bcb2dc",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "orchestra/testbench": "^3.2",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Translatable\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Mohamed Said",
+                    "email": "theMohamedSaid@gmail.com",
+                    "role": "Original idea"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Human scrutinizer"
+                }
+            ],
+            "description": "A trait to make an Eloquent model hold translations",
+            "homepage": "https://github.com/spatie/laravel-translatable",
+            "keywords": [
+                "eloquent",
+                "i8n",
+                "laravel-translatable",
+                "model",
+                "multilingual",
+                "spatie",
+                "translate"
+            ],
+            "time": "2016-04-11 17:59:57"
         },
         {
             "name": "spatie/menu",
@@ -4762,16 +4691,16 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "3.5.1",
+            "version": "4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/seeders.git",
-                "reference": "00181c45c180ee8c49119e257fa6c0302ea670a6"
+                "reference": "aee7c7ab9088ec804f51f7339ca83c6cfe770276"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/00181c45c180ee8c49119e257fa6c0302ea670a6",
-                "reference": "00181c45c180ee8c49119e257fa6c0302ea670a6",
+                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/aee7c7ab9088ec804f51f7339ca83c6cfe770276",
+                "reference": "aee7c7ab9088ec804f51f7339ca83c6cfe770276",
                 "shasum": ""
             },
             "require": {
@@ -4788,12 +4717,10 @@
             "autoload": {
                 "psr-4": {
                     "Spatie\\Seeders\\": "src"
-                }
-            },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\Seeders\\Test\\": "tests"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
             "license": [
                 "MIT"
@@ -4819,10 +4746,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/seeders/tree/3.5.1",
+                "source": "https://github.com/spatie-custom/seeders/tree/4.0",
                 "issues": "https://github.com/spatie-custom/seeders/issues"
             },
-            "time": "2016-03-02 12:37:37"
+            "time": "2016-04-12 14:06:35"
         },
         {
             "name": "spatie/string",
@@ -5873,55 +5800,6 @@
                 "dump"
             ],
             "time": "2016-03-10 10:34:12"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v2.8.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/yaml.git",
-                "reference": "584e52cb8f788a887553ba82db6caacb1d6260bb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/584e52cb8f788a887553ba82db6caacb1d6260bb",
-                "reference": "584e52cb8f788a887553ba82db6caacb1d6260bb",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.9"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.8-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Yaml\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-03-04 07:54:35"
         },
         {
             "name": "themsaid/laravel-mail-preview",
@@ -7266,6 +7144,55 @@
                 }
             ],
             "description": "Symfony Stopwatch Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-03-04 07:55:57"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "0047c8366744a16de7516622c5b7355336afae96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0047c8366744a16de7516622c5b7355336afae96",
+                "reference": "0047c8366744a16de7516622c5b7355336afae96",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Yaml\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-03-04 07:55:57"
         }

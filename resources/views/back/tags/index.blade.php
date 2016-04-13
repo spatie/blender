@@ -26,7 +26,9 @@
 
                         <tr data-row-id="{{ $tag->id }}" >
                             <td>
-                                <a href="{{ Url::action('Back\TagController@edit', [$tag->id]) }}">{{ $tag->translate(content_locale())->name }}</a>
+                                <a href="{{ Url::action('Back\TagController@edit', [$tag->id]) }}">
+                                    {{ $tag->name }}
+                                </a>
                             </td>
                             <td class="-right">
                                 {!! HTML::deleteButton(action('Back\TagController@destroy', $tag->id)) !!}

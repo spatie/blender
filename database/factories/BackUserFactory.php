@@ -3,14 +3,16 @@
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\User;
-use Faker\Generator;
 
-$factory->define(User::class, function (Generator $faker) {
+$factory->define(User::class, function () {
+
+    $person = faker()->person();
+
     return [
-        'first_name' => $faker->firstName,
-        'last_name' => $faker->lastName,
-        'email' => $faker->email,
-        'password' => $faker->password,
+        'first_name' => $person['firstName'],
+        'last_name' => $person['lastName'],
+        'email' => $person['email'],
+        'password' => faker()->password,
 
         'locale' => 'nl',
 

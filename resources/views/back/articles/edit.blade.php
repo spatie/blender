@@ -9,14 +9,11 @@
     <div class="grid">
     <h1>{{ $model->name ?: fragment('back.articles.new') }}</h1>
 
-    {!! Form::openDraftable(
-        [
-            'method'=>'PATCH',
-            'action'=> ['Back\ArticleController@update', $model->id],
-            'subject' => $model,
-            'class' => '-stacked'
-        ]
-    ) !!}
+    {!! Form::openDraftable([
+        'method'=>'PATCH',
+        'action'=> ['Back\ArticleController@update', $model->id],
+        'class' => '-stacked'
+    ], $model) !!}
 
     @if($model->technical_name && view()->exists("back.articles._partials.{$model->technical_name}Form"))
         @include("back.articles._partials.{$model->technical_name}Form")

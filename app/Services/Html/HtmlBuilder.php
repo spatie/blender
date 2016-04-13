@@ -76,7 +76,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         $icon = $online ? 'circle' : 'circle-o';
         $title = $online ? 'Online' : 'Offline';
 
-        return el("span.status.-{$state}.space-right", ['title' => $title],
+        return el("span.status.-{$state}.-space-right", ['title' => $title],
             el("i.fa.fa-{$icon}")
         );
     }

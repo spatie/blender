@@ -23,10 +23,4 @@ class RobotsMiddleware extends BaseRobotsMiddleware
 
         return request()->isFront();
     }
-
-    protected function responseWithRobots(string $contents)
-    {
-        $this->response->headers->set('x-robots-tag', "{$contents}, noodp", false);
-        return $this->response;
-    }
 }

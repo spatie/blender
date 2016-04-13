@@ -1,19 +1,12 @@
 <?php
 
 use App\Models\Person;
-use App\Models\Translations\PersonTranslation;
-use Faker\Generator;
 
-$factory->define(Person::class, function (Generator $faker) {
+$factory->define(Person::class, function () {
     return [
-        'name' => $faker->name,
+        'name' => faker()->name,
+        'text' => faker()->translate(faker()->sentences(2)),
+        'online' => faker()->mostly(),
         'draft' => false,
-        'online' => true,
-    ];
-});
-
-$factory->define(PersonTranslation::class, function (Generator $faker) {
-    return [
-        'text' => $faker->paragraphs(2, true),
     ];
 });

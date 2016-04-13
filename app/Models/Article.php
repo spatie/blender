@@ -3,19 +3,23 @@
 namespace App\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
+use App\Foundation\Models\Traits\HasSlug;
+use Cache;
 use Exception;
 use Illuminate\Support\Collection;
 
 class Article extends ModuleModel
 {
-    protected $with = ['translations', 'media'];
+    use HasSlug;
+    
+    protected $with = ['media'];
 
     public $mediaLibraryCollections = ['images', 'downloads'];
-    public $translatedAttributes = ['name', 'text', 'url'];
+    public $translatable = ['name', 'text', 'url'];
 
     public static function findByTechnicalName(string $technicalName) : Article
     {
-        return app('cache')->rememberForever(
+        return Cache::rememberForever(
             "article.findByTechnicalName.{$technicalName}",
             function () use ($technicalName) : Article {
                 $article = static::where('technical_name', $technicalName)->first();
@@ -31,7 +35,7 @@ class Article extends ModuleModel
 
     public static function getWithTechnicalNameLike(string $technicalName) : Collection
     {
-        return app('cache')->rememberForever(
+        return Cache::rememberForever(
             "article.getWithTechnicalNameLike.{$technicalName}",
             function () use ($technicalName) : Collection {
                 return static::where('technical_name', 'like', "{$technicalName}.%")

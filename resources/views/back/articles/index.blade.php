@@ -20,7 +20,7 @@
             @foreach($articles as $article)
                 <tr data-row-id="{{ $article->id }}">
                     <td>
-                        <a href="{{ action('Back\ArticleController@edit', [$article->id]) }}">{{ $article->translate(content_locale())->name }}</a>
+                        <a href="{{ action('Back\ArticleController@edit', [$article->id]) }}">{{ $article->name }}</a>
                     </td>
                     <td class="-right">
                         @if($article->isDeletable())

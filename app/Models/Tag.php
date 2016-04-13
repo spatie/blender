@@ -3,17 +3,16 @@
 namespace App\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
+use App\Foundation\Models\Traits\HasSlug;
 use App\Models\Enums\TagType;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 
 class Tag extends ModuleModel implements SortableInterface
 {
-    use Sortable;
+    use HasSlug, Sortable;
 
-    protected $with = ['translations'];
-
-    public $translatedAttributes = ['name', 'url', 'description'];
+    public $translatable = ['name', 'url'];
 
     public function hasType(TagType $type) : bool
     {
@@ -32,7 +31,10 @@ class Tag extends ModuleModel implements SortableInterface
 
     public static function findByNameOrCreate(string $name, TagType $type) : Tag
     {
-        $existing = Tag::whereTranslation('name', $name, content_locale())->first();
+        $existing = Tag::nonDraft()->get()
+            ->first(function (int $id, Tag $tag) use ($name) {
+                return $tag->translate('name', content_locale()) === $name;
+            });
 
         if ($existing) {
             return $existing;
@@ -44,9 +46,7 @@ class Tag extends ModuleModel implements SortableInterface
             'online' => true,
         ]);
 
-        foreach (config('app.locales') as $locale) {
-            $tag->translateOrNew($locale)->name = $name;
-        }
+        $tag->setTranslations('name', array_fill_keys(config('app.locales'), $name));
 
         $tag->save();
 
