@@ -1,9 +1,9 @@
-{!! Form::open() !!}
+{!! Form::open(['data-validate']) !!}
 
 <div class="form-line">
     {!! Form::label('name', fragment('form.name'), ['class'=>'required']) !!}
     <div class="form-element">
-        {!! Form::text('name') !!}
+        {!! Form::text('name', null, ['required', 'min' => 5, 'max' => '10', 'autocomplete' => 'off']) !!}
         {!! HTML::error($errors->first('name')) !!}
     </div>
 </div>
@@ -19,7 +19,7 @@
 <div class="form-line">
     {!! Form::label('email', fragment('form.email'), ['class'=>'required']) !!}
     <div class="form-element">
-        {!! Form::text('email') !!}
+        {!! Form::email('email') !!}
         {!! HTML::error($errors->first('email')) !!}
     </div>
 </div>

@@ -22,11 +22,7 @@ class HtmlBuilder extends BaseHtmlBuilder
 
     public function error($message) : string
     {
-        if (empty($message)) {
-            return '';
-        }
-
-        return el('div.alert.-danger', $message);
+        return el('div.alert.-danger[data-validation-error]', $message);
     }
 
     public function message($message, string $classes = '') : string
