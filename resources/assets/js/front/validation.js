@@ -1,3 +1,4 @@
+import ErrorBag from './ErrorBag';
 import validate from './validators';
 
 const messages = {
@@ -11,39 +12,78 @@ const parseMessage = (message, parameters = {}) => {
     return messages[message].replace(/:[\w]+/g, (key => parameters[key.slice(1)] || key));
 }
 
+const validateInput = $input => {
+
+    const errors = new ErrorBag();
+
+    if ($input.is('[minlength]') && !validate.min($input.val(), parseInt($input.attr('minlength')))) {
+        errors.add(['minlength', {amount: parseInt($input.attr('minlength'))}]);
+    }
+
+    if ($input.is('[maxlength]') && !validate.max($input.val(), parseInt($input.attr('maxlength')))) {
+        errors.add(['maxlength', {amount: parseInt($input.attr('maxlength'))}]);
+    }
+
+    if ($input.is('[type=email]') && !validate.email($input.val())) {
+        errors.add(['email']);
+    }
+
+    if ($input.is('[required]') && !validate.required($input.val(), 'required')) {
+        errors.add(['required']);
+    }
+
+    return errors;
+};
+
+const clearInputError = $input => {
+    $input.next('[data-validation-error]').text('');
+};
+
+const setInputError = ($input, error) => {
+    $input.next('[data-validation-error]')
+        .text(parseMessage(error[0], error[1]));
+};
+
 export const init = () => {
 
-    $('[data-validate] input').on('blur keyup', e => {
+    $('[data-validate] input').on('blur keyup', function(e) {
+
         const $input = $(e.target);
-        const errors = [];
+        const errors = validateInput($input);
 
-        if ($input.is('[min]') && ! validate.min($input.val(), parseInt($input.attr('min')))) {
-            errors.push(['min', { amount: parseInt($input.attr('min')) }]);
-        }
-
-        if ($input.is('[max]') && ! validate.max($input.val(), parseInt($input.attr('max')))) {
-            errors.push(['max', { amount: parseInt($input.attr('max')) }]);
-        }
-
-        if ($input.is('[type=email]') && ! validate.email($input.val())) {
-            errors.push(['email']);
-        }
-
-        if ($input.is('[required]') && ! validate.required($input.val(), 'required')) {
-            errors.push(['required']);
-        }
-
-        if (errors.length === 0) {
-            $input.next('[data-validation-error]').text('');
+        if (errors.isEmpty()) {
+            clearInputError($input);
             return;
         }
 
         if (e.type === 'blur') {
-            const [ message, variables ] = errors[errors.length - 1];
-            $input.next('[data-validation-error]').text(parseMessage(message, variables));
+            setInputError($input, errors.last());
         }
     });
 
+    $('[data-validate]').on('submit', e => {
+
+        const formErrors = new ErrorBag();
+
+        $.each($(e.target).find('input'), function (i, el) {
+
+            const $input = $(el);
+            const errors = validateInput($input);
+
+            formErrors.merge(errors);
+
+            if (formErrors.isEmpty()) {
+                clearInputError($input);
+                return;
+            }
+
+            setInputError($input, errors.last());
+        });
+
+        if (formErrors.hasErrors()) {
+            e.preventDefault();
+        }
+    });
 };
 
 export default init;

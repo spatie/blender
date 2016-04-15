@@ -1,6 +1,10 @@
 .alert {
   padding: 1em;
 
+  &:empty {
+    padding: 0;
+  }
+
   .form_element & {
     font-size: .75em;
     margin-top: 3px;
