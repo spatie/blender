@@ -8,7 +8,7 @@
         <h1>{{ fragment('back.newsItems.title') }}</h1>
         <a href="{{ action('Back\NewsItemController@create') }}" class="button">{{ fragment('back.newsItems.new') }}</a>
 
-        <table data-datatable data-order='[[ 0, "asc" ]]'>
+        <table data-datatable data-order='[[ 1, "desc" ]]'>
             <thead>
             <tr>
                 <th>{{ fragment('back.newsItems.name') }}</th>
