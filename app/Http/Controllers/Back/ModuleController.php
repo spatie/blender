@@ -15,6 +15,9 @@ abstract class ModuleController extends Controller
     /** @var string */
     protected $moduleName = null;
 
+    /** @var bool */
+    protected $redirectToIndex = false;
+
     /** @return \Illuminate\Database\Eloquent\Model */
     abstract protected function make();
 
@@ -73,6 +76,10 @@ abstract class ModuleController extends Controller
         $eventDescription = $this->getUpdatedEventDescription($model);
         Activity::log($eventDescription);
         flash()->success(strip_tags($eventDescription));
+
+        if ($this->redirectToIndex) {
+            return redirect()->action("Back\\{$this->modelName}Controller@index");
+        }
 
         return redirect()->action("Back\\{$this->modelName}Controller@edit", [$model->id]);
     }

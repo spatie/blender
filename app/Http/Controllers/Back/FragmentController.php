@@ -53,7 +53,7 @@ class FragmentController extends Controller
         Activity::log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
-        return redirect()->action('Back\FragmentController@edit', [$fragment->id]);
+        return redirect()->action('Back\FragmentController@index');
     }
 
     public function download()

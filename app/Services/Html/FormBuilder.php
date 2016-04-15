@@ -42,11 +42,12 @@ class FormBuilder extends BaseFormBuilder
 
     public function redactor($subject, string $fieldName, string $locale = '', array $options = []) : string
     {
+        $initial = $this->useInitialValue($subject, $fieldName, $locale);
         $fieldName = $locale ? translate_field_name($fieldName, $locale) : $fieldName;
 
         return $this->textarea(
             $fieldName,
-            $this->useInitialValue($subject, $fieldName, $locale),
+            $initial,
             array_merge($options, [
                 'data-editor',
                 'data-editor-medialibrary-url' => action(
