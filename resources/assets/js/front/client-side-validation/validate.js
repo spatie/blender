@@ -1,6 +1,6 @@
 import is from 'is_js';
 
-export default {
+export const validate = {
     required(value) {
         return is.existy(value) && is.not.empty(value);
     },
