@@ -1,7 +1,7 @@
 import viewport from 'viewport-utility';
 
 if ($('[data-validate]').size()) {
-    require.ensure([], () => { require('./validation').init(); }, 'front.validation');
+    require.ensure([], () => { require('client-side-validation').init(); }, 'front.validation');
 }
 
 viewport.init();

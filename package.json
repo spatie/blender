@@ -11,7 +11,9 @@
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "client-side-validation": "^0.1.0"
+  },
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-core": "^6.4.5",
