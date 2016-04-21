@@ -86,7 +86,7 @@ td.part_thumb.-download {
 }
 
 .parts_new {
-  @extend .group;
+  @extend .clearfix;
 
   font-size: font-size(xs);
   padding: 1em;
