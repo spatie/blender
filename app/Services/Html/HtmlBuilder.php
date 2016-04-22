@@ -20,9 +20,15 @@ class HtmlBuilder extends BaseHtmlBuilder
         return el("div.alert.-{$level}", Session::get('flash_notification.message'));
     }
 
-    public function error($message) : string
+    public function error($message, $name = '') : string
     {
-        return el('div.alert.-danger[data-validation-error]', $message);
+        if (empty($message) && empty($name)) {
+            return '';
+        }
+
+        $attributes = empty($name) ? [] : ['data-validation-error' => $name];
+        
+        return el('div.alert.-danger', $attributes, $message);
     }
 
     public function message($message, string $classes = '') : string

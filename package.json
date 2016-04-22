@@ -11,9 +11,6 @@
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
   },
-  "dependencies": {
-    "client-side-validation": "^0.1.0"
-  },
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-core": "^6.4.5",
@@ -27,6 +24,7 @@
     "blender.js": "^1.2.6",
     "browsernizr": "1.0.2",
     "chart.js": "^1.0.2",
+    "client-side-validation": "^0.1.6",
     "dom-storage": "^2.0.2",
     "dotenv": "^1.2.0",
     "gulp": "^3.9.0",
