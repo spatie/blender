@@ -24,7 +24,7 @@
     "blender.js": "^1.2.6",
     "browsernizr": "1.0.2",
     "chart.js": "^1.0.2",
-    "client-side-validation": "^0.1.6",
+    "client-side-validation": "^1.0.0",
     "dom-storage": "^2.0.2",
     "dotenv": "^1.2.0",
     "gulp": "^3.9.0",
