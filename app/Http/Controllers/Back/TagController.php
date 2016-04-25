@@ -10,6 +10,8 @@ class TagController extends ModuleController
     protected $modelName = 'Tag';
     protected $moduleName = 'tags';
 
+    protected $redirectToIndex = true;
+
     public function index()
     {
         $tags = Tag::nonDraft()->get()->reduce(function (Collection $carry, Tag $tag) {

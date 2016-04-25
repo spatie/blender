@@ -177,7 +177,6 @@ return [
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
-        Jenssegers\Date\DateServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
