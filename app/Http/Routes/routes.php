@@ -2,6 +2,10 @@
 
 Route::demoAccess('/demo');
 
+$router->get('coming-soon', function() {
+    return view('temp/index');
+});
+
 Route::group(['namespace' => 'Back', 'prefix' => 'blender'], function () {
 
     require __DIR__ . '/back_auth.php';

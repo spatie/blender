@@ -37,7 +37,7 @@
     "spatie/laravel-fractal": "^1.6.1",
     "spatie/laravel-googletagmanager": "^2.0",
     "spatie/laravel-medialibrary": "^4.0.0",
-    "spatie/laravel-newsletter": "v3.x-dev",
+    "spatie/laravel-newsletter": "^3.0.0",
     "spatie/laravel-or-abort": "^1.0",
     "spatie/laravel-paginateroute": "^2.0",
     "spatie/laravel-tail": "^1.0",
