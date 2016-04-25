@@ -1,10 +1,10 @@
-{!! Form::open() !!}
+{!! Form::open(['data-validate']) !!}
 
 <div class="form-line">
     {!! Form::label('name', fragment('form.name'), ['class'=>'required']) !!}
     <div class="form-element">
-        {!! Form::text('name') !!}
-        {!! HTML::error($errors->first('name')) !!}
+        {!! Form::text('name', null, ['required', 'min' => 5, 'max' => '10', 'autocomplete' => 'off']) !!}
+        {!! HTML::error($errors->first('name'), 'name') !!}
     </div>
 </div>
 
@@ -12,15 +12,15 @@
     {!! Form::label('telephone', fragment('form.telephone'), ['class'=>'required']) !!}
     <div class="form-element">
         {!! Form::text('telephone') !!}
-        {!! HTML::error($errors->first('telephone')) !!}
+        {!! HTML::error($errors->first('telephone'), 'telephone') !!}
     </div>
 </div>
 
 <div class="form-line">
     {!! Form::label('email', fragment('form.email'), ['class'=>'required']) !!}
     <div class="form-element">
-        {!! Form::text('email') !!}
-        {!! HTML::error($errors->first('email')) !!}
+        {!! Form::email('email') !!}
+        {!! HTML::error($errors->first('email'), 'email') !!}
     </div>
 </div>
 
@@ -28,7 +28,7 @@
     {!! Form::label('address', fragment('form.address')) !!}
     <div class="form-element">
         {!! Form::text('address') !!}
-        {!! HTML::error($errors->first('address')) !!}
+        {!! HTML::error($errors->first('address'), 'address') !!}
     </div>
 </div>
 
@@ -36,7 +36,7 @@
     {!! Form::label('postal', fragment('form.postal').' + '.fragment('form.city')) !!}
     <div class="form-element form-element-postal">
         {!! Form::text('postal') !!}
-        {!! HTML::error($errors->first('postal')) !!}
+        {!! HTML::error($errors->first('postal'), 'postal') !!}
     </div>
     <div class="form-element form-element-city">
         {!! Form::text('city') !!}
@@ -48,7 +48,7 @@
     {!! Form::label('remarks', fragment('contact.remarks')) !!}
     <div class="form-element">
         {!! Form::textarea('remarks') !!}
-        {!! HTML::error($errors->first('remarks')) !!}
+        {!! HTML::error($errors->first('remarks'), 'remarks') !!}
     </div>
 </div>
 
