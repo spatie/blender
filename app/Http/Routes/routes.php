@@ -2,7 +2,7 @@
 
 Route::demoAccess('/demo');
 
-$router->get('coming-soon', function() {
+Route::get('coming-soon', function() {
     return view('temp/index');
 });
 
