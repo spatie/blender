@@ -7,9 +7,6 @@ use Newsletter;
 use App\Http\Controllers\ApiController;
 use App\Http\Requests\Front\NewsletterSubscriptionRequest;
 
-use Spatie\Newsletter\Exceptions\AlreadySubscribed;
-use Spatie\Newsletter\Exceptions\ServiceRefusedSubscription;
-
 class NewsletterApiController extends ApiController
 {
     /**
