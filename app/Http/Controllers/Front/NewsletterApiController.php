@@ -16,7 +16,7 @@ class NewsletterApiController extends ApiController
      */
     public function subscribe(NewsletterSubscriptionRequest $request)
     {
-        $email = $request->get('email');
+        $email = strtolower($request->get('email'));
 
         if (Newsletter::hasMember($email)) {
             return $this->respond(['message' => fragment('newsletter.subscription.result.alreadySubscribed'), 'type' => 'info']);
