@@ -82,14 +82,12 @@ function roman_year(int $year = null) : string
     return $result;
 }
 
-
 function short_class_name($object) : string
 {
     $objectProperties = new \ReflectionClass($object);
 
     return $objectProperties->getShortName();
 }
-
 
 function class_constants($object, string  $startsWithFilter = '') : array
 {
@@ -108,6 +106,7 @@ function class_constants($object, string  $startsWithFilter = '') : array
 
 /**
  * @return \App\Services\Auth\Back\User|\App\Services\Auth\Front\User|null
+ *
  * @throws \Exception
  */
 function current_user()
@@ -126,8 +125,8 @@ function current_user()
 /** @return \App\Services\Auth\Front\User|null */
 function current_front_user()
 {
-    if (! auth()->guard('front')->check()) {
-        return null;
+    if (!auth()->guard('front')->check()) {
+        return;
     }
 
     return auth()->guard('front')->user();
@@ -136,8 +135,8 @@ function current_front_user()
 /** @return \App\Services\Auth\Back\User|null */
 function current_back_user()
 {
-    if (! auth()->guard('back')->check()) {
-        return null;
+    if (!auth()->guard('back')->check()) {
+        return;
     }
 
     return auth()->guard('back')->user();

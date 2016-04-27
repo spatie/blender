@@ -57,7 +57,9 @@ class FrontUserController extends Controller
     {
         $user = $this->frontUserRepository->find($id);
 
-        if (! $user) abort(404);
+        if (!$user) {
+            abort(404);
+        }
 
         return view('back.frontUsers.edit')->with(compact('user'));
     }

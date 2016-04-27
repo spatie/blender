@@ -11,7 +11,7 @@ use Illuminate\Support\Collection;
 class Article extends ModuleModel
 {
     use HasSlug;
-    
+
     protected $with = ['media'];
 
     public $mediaLibraryCollections = ['images', 'downloads'];

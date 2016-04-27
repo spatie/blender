@@ -13,7 +13,7 @@ class BladeDirectiveServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        Blade::directive('json', function($expression) {
+        Blade::directive('json', function ($expression) {
             return "<?php echo json_encode({$expression}); ?>";
         });
     }

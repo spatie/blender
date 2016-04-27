@@ -5,7 +5,6 @@ namespace App\Services\Navigation;
 use App\Services\Navigation\Breadcrumbs\Breadcrumbs;
 use App\Services\Navigation\Menu\BackMenus;
 use App\Services\Navigation\Menu\FrontMenus;
-use App\Services\Navigation\Menu\Macros;
 use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Foundation\Models\Base\TranslatableEloquent;
 use App\Foundation\Models\Traits\Presentable;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;

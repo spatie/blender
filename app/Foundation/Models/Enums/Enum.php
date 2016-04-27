@@ -8,7 +8,7 @@ abstract class Enum extends BaseEnum
 {
     public function equals(Enum $enum) : bool
     {
-        if (! $enum instanceof $this) {
+        if (!$enum instanceof $this) {
             throw new EnumTypesDontMatch();
         }
 
@@ -17,7 +17,7 @@ abstract class Enum extends BaseEnum
 
     public function doesntEqual(Enum $enum) : bool
     {
-        return ! $this->equals($enum);
+        return !$this->equals($enum);
     }
 
     public static function allAsRegex() : string

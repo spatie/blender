@@ -41,7 +41,7 @@ abstract class DbRepository extends BaseRepository implements Repository
     {
         $model = static::MODEL;
 
-        if (! isset((new $model)->translatedAttributes)) {
+        if (!isset((new $model())->translatedAttributes)) {
             return $this->query()->online()->where('url', $url)->first();
         }
 
@@ -50,6 +50,4 @@ abstract class DbRepository extends BaseRepository implements Repository
             ->whereTranslation('url', $url, content_locale())
             ->first();
     }
-
-
 }

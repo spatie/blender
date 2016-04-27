@@ -34,7 +34,7 @@ class BackMenus
         Menu::macro('module', function (string $action, string $name) {
             return $this->action("Back\\{$action}", fragment("back.{$name}"));
         });
-        
+
         Menu::macro('backMain', function () {
             return Menu::back()
                 ->addClass('menu_groups')
@@ -69,7 +69,7 @@ class BackMenus
 
         Menu::macro('backUser', function () {
 
-            $avatar = HTML::avatar(current_user(), '-small') .
+            $avatar = HTML::avatar(current_user(), '-small').
                 el('span.:response-desktop-only', current_user()->email);
 
             return Menu::new()

@@ -55,7 +55,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
 
     public function isCurrentUser() : bool
     {
-        if (! $this->id) {
+        if (!$this->id) {
             return false;
         }
 
@@ -76,7 +76,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
         $resetRecord = app('db')->table('password_resets')->where('token', $token)->first();
 
         if (empty($resetRecord)) {
-            return null;
+            return;
         }
 
         return static::where('email', $resetRecord->email)->first();

@@ -24,7 +24,7 @@ class AuthController extends Controller
 
     protected function authenticated(Request $request, User $user)
     {
-        if (! $user->isActive()) {
+        if (!$user->isActive()) {
             auth()->guard('front')->logout();
 
             return $this->sendInactiveAccountResponse($request);

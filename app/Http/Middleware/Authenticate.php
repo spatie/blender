@@ -9,7 +9,7 @@ class Authenticate
 {
     public function handle($request, Closure $next)
     {
-        if (! current_user()) {
+        if (!current_user()) {
             return $this->handleUnauthorizedRequest($request);
         }
 

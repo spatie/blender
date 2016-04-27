@@ -22,7 +22,7 @@ class AuthController extends Controller
 
     protected function authenticated(Request $request, User $user)
     {
-        if (! $user->isActive()) {
+        if (!$user->isActive()) {
             auth()->guard('back')->logout();
 
             return $this->sendInactiveAccountResponse($request);

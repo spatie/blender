@@ -57,7 +57,9 @@ class BackUserController extends Controller
     {
         $user = $this->backUserRepository->find($id);
 
-        if (! $user) abort(404);
+        if (!$user) {
+            abort(404);
+        }
 
         return view('back.backUsers.edit')->with(compact('user'));
     }

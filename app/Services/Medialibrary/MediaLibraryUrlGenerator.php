@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\MediaLibrary;
+namespace App\Services\Medialibrary;
 
 use Spatie\MediaLibrary\UrlGenerator\LocalUrlGenerator;
 

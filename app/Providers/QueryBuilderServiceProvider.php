@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class QueryBuilderServiceProvider extends ServiceProvider
 {
-    
     public function boot()
     {
         Builder::macro('if', function (bool $condition, string $column, string $operator, $value) {

@@ -27,7 +27,7 @@ class BlenderFormBuilder
 
     public function label(string $name, bool $required = false, array $options = []) : string
     {
-        return Form::label($name, fragment("back.{$this->module}.{$name}") . ($required ? '*' : ''), $options);
+        return Form::label($name, fragment("back.{$this->module}.{$name}").($required ? '*' : ''), $options);
     }
 
     public function error(string $name) : string
@@ -84,7 +84,7 @@ class BlenderFormBuilder
         $fieldName = $this->fieldName($name, $locale);
 
         $contents = Form::checkbox($fieldName, 1, Form::useInitialValue($this->model, $name, $locale),
-            ['class' => 'form-control']) . ' ' . fragment("back.{$this->module}.{$name}");
+            ['class' => 'form-control']).' '.fragment("back.{$this->module}.{$name}");
 
         return $this->group([el('label.-checkbox', $contents)]);
     }
@@ -135,7 +135,7 @@ class BlenderFormBuilder
     public function tags(string $type) : string
     {
         return $this->group([
-            Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}") . '*'),
+            Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}").'*'),
             Form::tags($this->model, $type),
         ]);
     }
@@ -143,8 +143,8 @@ class BlenderFormBuilder
     public function category(string $type) : string
     {
         return $this->group([
-            Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}") . '*'),
-            Form::category($this->model, $type, ['data-select'=>'select']),
+            Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}").'*'),
+            Form::category($this->model, $type, ['data-select' => 'select']),
         ]);
     }
 

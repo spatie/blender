@@ -32,10 +32,8 @@ class SubscribeToNewsletter extends Job implements ShouldQueue
             $newsletter->subscribe($this->user->email, [], 'subscribers');
 
             Log::info("subscribed {$this->user->email} to the newsletter");
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             Log::warning("could not subscribe {$this->user->email} to the newsletter because {$e->getMessage()}");
         }
-
-
     }
 }

@@ -5,7 +5,6 @@ namespace App\Services\Html;
 use App\Models\Enums\TagType;
 use App\Models\Tag;
 use App\Models\Transformers\MediaTransformer;
-use App\Repositories\TagRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Html\FormBuilder as BaseFormBuilder;
@@ -15,7 +14,7 @@ class FormBuilder extends BaseFormBuilder
 {
     public function openDraftable(array $options, Model $subject) : string
     {
-        $identifier = short_class_name($subject) . '_' . ($subject->isDraft() ? 'new' : $subject->id);
+        $identifier = short_class_name($subject).'_'.($subject->isDraft() ? 'new' : $subject->id);
 
         $options = array_merge($options, [
             'data-autosave' => '',
@@ -32,12 +31,12 @@ class FormBuilder extends BaseFormBuilder
             $formOptions['data-confirm'] = 'true';
         }
 
-        return $this->open($formOptions) . substr(el('button', $buttonOptions, ''), 0, -strlen('</button>'));
+        return $this->open($formOptions).substr(el('button', $buttonOptions, ''), 0, -strlen('</button>'));
     }
 
     public function closeButton() : string
     {
-        return '</button>' . $this->close();
+        return '</button>'.$this->close();
     }
 
     public function redactor($subject, string $fieldName, string $locale = '', array $options = []) : string
@@ -64,7 +63,7 @@ class FormBuilder extends BaseFormBuilder
 
         return el('label.-checkbox',
             $this->checkbox($fieldName, 1, $this->useInitialValue($subject, $fieldName), $options)
-            . ' ' . $label
+            .' '.$label
         );
     }
 
@@ -102,6 +101,7 @@ class FormBuilder extends BaseFormBuilder
     {
         $list = array_reduce($locales, function (array $list, string $locale) {
             $list[$locale] = trans("locales.{$locale}");
+
             return $list;
         }, []);
 
@@ -117,7 +117,7 @@ class FormBuilder extends BaseFormBuilder
 
         $model = collect([
             'name' => get_class($subject),
-            'id' => $subject->id
+            'id' => $subject->id,
         ])->toJson();
 
         $associated = $this->getAssociatedMediaData($associated);
@@ -158,7 +158,7 @@ class FormBuilder extends BaseFormBuilder
     public function getLabelForTranslatedField(string $fieldName, string $label, string $locale) : string
     {
         return HTML::decode(
-            $this->label($fieldName, $label . el('span.label_lang', $locale))
+            $this->label($fieldName, $label.el('span.label_lang', $locale))
         );
     }
 }

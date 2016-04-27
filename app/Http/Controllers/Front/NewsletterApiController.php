@@ -24,7 +24,7 @@ class NewsletterApiController extends ApiController
 
         $result = Newsletter::subscribe($email);
 
-        if (! $result) {
+        if (!$result) {
             return $this->respondWithBadRequest(['message' => fragment('newsletter.subscription.result.error'), 'type' => 'error']);
         }
 

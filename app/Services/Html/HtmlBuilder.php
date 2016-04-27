@@ -27,7 +27,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         }
 
         $attributes = empty($name) ? [] : ['data-validation-error' => $name];
-        
+
         return el('div.alert.-danger', $attributes, $message);
     }
 
@@ -69,7 +69,7 @@ class HtmlBuilder extends BaseHtmlBuilder
             [
                 'class' => 'button -danger -small',
             ]
-        ) . el('span.fa.fa-remove') . Form::closeButton();
+        ).el('span.fa.fa-remove').Form::closeButton();
     }
 
     public function onlineIndicator(bool $online) : string

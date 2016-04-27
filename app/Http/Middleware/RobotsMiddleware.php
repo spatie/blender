@@ -13,11 +13,11 @@ class RobotsMiddleware extends BaseRobotsMiddleware
             return false;
         }
 
-        if (! app()->environment('production')) {
+        if (!app()->environment('production')) {
             return false;
         }
 
-        if (! env('ALLOW_ROBOTS')) {
+        if (!env('ALLOW_ROBOTS')) {
             return false;
         }
 
