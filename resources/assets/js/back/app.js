@@ -14,10 +14,13 @@ if ($('[data-chart]').size()) {
     require.ensure([], () => { require('./modules/chart').default(); }, 'back.chart');
 }
 
-if ($('[data-editor]').size()) {
-    require.ensure([], () => { require('./modules/editor').default(); }, 'back.editor');
-}
-
 if ($('[data-media-collection]').size()) {
     require.ensure([], () => { require('./modules/media'); }, 'back.media');
 }
+
+// Uncomment if redactor files are present
+/*
+if ($('[data-editor]').size()) {
+    require.ensure([], () => { require('./modules/editor').default(); }, 'back.editor');
+}
+*/

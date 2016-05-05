@@ -35,6 +35,8 @@ Install the composer dependencies
 composer install
 ```
 
+Make a copy `.env.example` and rename to `.env`
+
 Finally make sure you have a database named `blender` in Homestead, and run the migrations and seeds
 
 ```bash
@@ -59,6 +61,11 @@ npm install
 ```
 
 Don't forget to remove the registry line from your `~/.npmrc` if you're planning to publish to npm at some point.
+
+### Customisation
+
+- Most of our projects are in Dutch. You can change the language in `config/app.php` and manage translations in `database/seeds/data/fragments.xlsx`
+- We use [Redactor](https://imperavi.com/redactor/) from Imperavi as text editor but are not licensed to open source this. The text editor is hence degraded to a standard text area unless you comment out this part in `resources/assets/back/app.js`
 
 ### Gulp
 
