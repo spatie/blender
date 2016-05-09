@@ -51,7 +51,8 @@
     "themsaid/laravel-mail-preview": "^1.2",
     "spatie/laravel-model-cleanup": "^1.0",
     "spatie/laravel-demo-mode": "^1.0",
-    "spatie/laravel-translatable": "^1.0"
+    "spatie/laravel-translatable": "^1.0",
+    "jenssegers/date": "^3.2"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
