@@ -21,7 +21,6 @@ function generate() {
 # Model & related objects
 generate  app/Models/NewsItem.php                               app/Models/${singular}.php
 generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Presenters/${singular}Presenter.php
-generate  app/Models/Translations/NewsItemTranslation.php       app/Models/Translations/${singular}Translation.php
 generate  app/Models/Updaters/NewsItemUpdater.php               app/Models/Updaters/${singular}Updater.php
 
 # Repositories
@@ -41,7 +40,7 @@ generate  resources/views/back/newsItems/edit.blade.php            resources/vie
 # Database
 generate  database/factories/NewsItemFactory.php                            database/factories/${singular}Factory.php
 generate  database/seeds/NewsItemSeeder.php                                 database/seeds/${singular}Seeder.php
-generate  database/migrations/2015_05_26_153558_create_news_items_tables.php  database/migrations/${now}_create_${lcplural}_tables.php
+generate  database/migrations/2015_05_26_153558_create_news_items_table.php  database/migrations/${now}_create_${lcplural}_table.php
 
 # Todos
 echo "ALL DONE!"
