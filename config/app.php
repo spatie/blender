@@ -151,6 +151,7 @@ return [
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
+
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
@@ -162,7 +163,9 @@ return [
         App\Services\Navigation\NavigationServiceProvider::class,
 
         App\Providers\ConfigServiceProvider::class,
+
         App\Providers\BladeDirectiveServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
@@ -173,6 +176,7 @@ return [
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Locale\LocaleServiceProvider::class,
+
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
@@ -195,7 +199,6 @@ return [
         Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
         Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
-        Themsaid\MailPreview\MailPreviewServiceProvider::class,
         Spatie\ModelCleanup\ModelCleanupServiceProvider::class,
         Spatie\DemoMode\DemoModeServiceProvider::class,
     ],
