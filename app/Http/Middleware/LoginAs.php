@@ -14,12 +14,12 @@ class LoginAs
     {
         $segments = array_reverse(request()->segments());
 
-        if (!$this->canLoginAs()) {
-            throw new Exception('You can\'t log in as a specific user right now');
-        }
-
         if (($segments[1] ?? '') !== 'login') {
             return $next($request);
+        }
+
+        if (!$this->canLoginAs()) {
+            throw new Exception("You can't log in as a specific user right now");
         }
 
         return $this->loginAsAndRedirect($segments[0]);
@@ -28,7 +28,7 @@ class LoginAs
     protected function canLoginAs() : bool
     {
         // Just to be sure...
-        
+
         if (!app()->environment('local')) {
             return false;
         }
@@ -37,7 +37,7 @@ class LoginAs
             return false;
         }
 
-        if (env('DB_USERNAME') !== 'homestead') {
+        if (! in_array(env('DB_USERNAME'), ['homestead', 'root'])) {
             return false;
         }
 
