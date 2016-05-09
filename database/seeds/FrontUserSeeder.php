@@ -14,7 +14,7 @@ class FrontUserSeeder extends DatabaseSeeder
 
     public function seedRandomFrontUsers($amount = 10)
     {
-        return factory(User::class, $amount)->create();
+        return factory(User::class, $amount)->create([]);
     }
 
     public function seedSpatieUsers()
