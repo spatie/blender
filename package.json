@@ -27,6 +27,8 @@
     "client-side-validation": "^1.0.0",
     "dom-storage": "^2.0.2",
     "dotenv": "^1.2.0",
+    "eslint": "^2.9.0",
+    "eslint-plugin-react": "^5.1.1",
     "gulp": "^3.9.0",
     "jquery": "^2.1.4",
     "normalize-css": "^2.3.1",
