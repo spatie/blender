@@ -201,6 +201,7 @@ return [
         Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
         Spatie\ModelCleanup\ModelCleanupServiceProvider::class,
         Spatie\DemoMode\DemoModeServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
     ],
 
     /*
