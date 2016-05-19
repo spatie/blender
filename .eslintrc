@@ -10,7 +10,8 @@
         "strict": [2, "never"]
     },
     "globals": {
-        "$": true
+        "$": true,
+        "jQuery": true
     },
     "parserOptions": {
         "ecmaVersion": 6,
