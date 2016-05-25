@@ -55,6 +55,6 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
     {
         return $this->query()
             ->online()
-            ->simplePaginate($perPage);
+            ->paginate($perPage);
     }
 }
