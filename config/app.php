@@ -267,6 +267,7 @@ return [
         'Menu'              => Spatie\Menu\Laravel\MenuFacade::class,
         'Newsletter' 		=> Spatie\Newsletter\NewsletterFacade::class,
         'Slack' 			=> Maknz\Slack\Facades\Slack::class,
+        'PaginateRoute'     => Spatie\PaginateRoute\PaginateRouteFacade::class,
     ],
 
 ];
