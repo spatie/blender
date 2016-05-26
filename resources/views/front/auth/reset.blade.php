@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('pageTitle', fragment('auth.titleChangePassword'))
+@section('title', fragment('auth.titleChangePassword'))
 
 @section('content')
     <section class="+auth">

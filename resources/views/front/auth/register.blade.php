@@ -1,6 +1,6 @@
 @extends('front._layouts.master')
 
-@section('pageTitle', fragment('auth.titleRegister'))
+@section('title', fragment('auth.titleRegister'))
 
 @section('content')
     <div class="grid">
