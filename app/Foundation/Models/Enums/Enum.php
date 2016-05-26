@@ -20,7 +20,7 @@ abstract class Enum extends BaseEnum
     {
         return !$this->equals($enum);
     }
-    
+
     public static function toCollection(): Collection
     {
         return collect(static::toArray());

@@ -248,6 +248,6 @@ class BlenderFormBuilder
 
     protected function fieldName(string $name, string $locale = ''):string
     {
-        return $locale ? translate_field_name($name, $locale):$name;
+        return $locale ? translate_field_name($name, $locale) : $name;
     }
 }

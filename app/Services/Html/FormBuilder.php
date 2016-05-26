@@ -42,7 +42,7 @@ class FormBuilder extends BaseFormBuilder
     public function redactor($subject, string $fieldName, string $locale = '', array $options = []):string
     {
         $initial = $this->useInitialValue($subject, $fieldName, $locale);
-        $fieldName = $locale ? translate_field_name($fieldName, $locale):$fieldName;
+        $fieldName = $locale ? translate_field_name($fieldName, $locale) : $fieldName;
 
         return $this->textarea(
             $fieldName,
@@ -145,8 +145,8 @@ class FormBuilder extends BaseFormBuilder
 
     public function useInitialValue($subject, string $propertyName, string $locale = ''):string
     {
-        $fieldName = $locale ? translate_field_name($propertyName, $locale):$propertyName;
-        $value = $locale ? $subject->translate($propertyName, $locale):$subject->$propertyName;
+        $fieldName = $locale ? translate_field_name($propertyName, $locale) : $propertyName;
+        $value = $locale ? $subject->translate($propertyName, $locale) : $subject->$propertyName;
 
         if ($value instanceof Carbon) {
             $value = $value->format('d/m/Y');
