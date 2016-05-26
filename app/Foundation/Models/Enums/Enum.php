@@ -2,6 +2,7 @@
 
 namespace App\Foundation\Models\Enums;
 
+use Illuminate\Support\Collection;
 use MyCLabs\Enum\Enum as BaseEnum;
 
 abstract class Enum extends BaseEnum
