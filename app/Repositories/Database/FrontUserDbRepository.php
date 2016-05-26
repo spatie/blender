@@ -10,14 +10,14 @@ use Illuminate\Support\Collection;
 
 class FrontUserDbRepository extends DbRepository implements FrontUserRepository
 {
-    public function getAllWithRole(UserRole $role) : Collection
+    public function getAllWithRole(UserRole $role):Collection
     {
         return $this->query()
             ->where('role', $role)
             ->get();
     }
 
-    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status) : Collection
+    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status):Collection
     {
         return $this->query()
             ->where('role', $role)

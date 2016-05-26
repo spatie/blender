@@ -32,28 +32,28 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['last_activity'];
 
-    abstract public function guardDriver() : string;
-    abstract public function getHomeUrl() : string;
-    abstract public function getProfileUrl() : string;
+    abstract public function guardDriver():string;
+    abstract public function getHomeUrl():string;
+    abstract public function getProfileUrl():string;
 
     public function setPasswordAttribute(string $value)
     {
         $this->attributes['password'] = bcrypt($value);
     }
 
-    public function hasNeverLoggedIn() : bool
+    public function hasNeverLoggedIn():bool
     {
         return empty($this->password);
     }
 
-    public function registerLastActivity() : User
+    public function registerLastActivity():User
     {
         $this->last_activity = Carbon::now();
 
         return $this;
     }
 
-    public function isCurrentUser() : bool
+    public function isCurrentUser():bool
     {
         if (!$this->id) {
             return false;

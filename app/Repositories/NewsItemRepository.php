@@ -21,7 +21,7 @@ interface NewsItemRepository extends Repository
      */
     public function findPrevious(NewsItem $newsItem);
 
-    public function paginate(int $perPage) : Paginator;
+    public function paginate(int $perPage):Paginator;
 
-    public function getLatest(int $amount) : Collection;
+    public function getLatest(int $amount):Collection;
 }

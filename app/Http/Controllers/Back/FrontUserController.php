@@ -93,7 +93,7 @@ class FrontUserController extends Controller
         return redirect()->action('Back\FrontUserController@index');
     }
 
-    protected function getEventDescriptionFor(string $event, User $user) : string
+    protected function getEventDescriptionFor(string $event, User $user):string
     {
         $name = sprintf(
             '<a href="%s">%s</a>',

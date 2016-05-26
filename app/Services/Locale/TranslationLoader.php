@@ -18,7 +18,7 @@ class TranslationLoader extends FileLoader
      *
      * @return array
      */
-    public function load($locale, $group, $namespace = null) : array
+    public function load($locale, $group, $namespace = null):array
     {
         if (!is_null($namespace) && $namespace !== '*') {
             return $this->loadNamespaced($locale, $group, $namespace);
@@ -36,7 +36,7 @@ class TranslationLoader extends FileLoader
         );
     }
 
-    protected function fragmentsAreAvailable() : bool
+    protected function fragmentsAreAvailable():bool
     {
         try {
             return Schema::hasTable('fragments');

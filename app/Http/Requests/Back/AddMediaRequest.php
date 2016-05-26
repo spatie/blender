@@ -7,7 +7,7 @@ use Illuminate\Contracts\Validation\Validator;
 
 class AddMediaRequest extends Request
 {
-    public function rules() : array
+    public function rules():array
     {
         $rules = [
             'collection' => 'required',

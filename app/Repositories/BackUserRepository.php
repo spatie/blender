@@ -12,6 +12,6 @@ interface BackUserRepository extends Repository
 {
     const MODEL = User::class;
 
-    public function getAllWithRole(UserRole $role) : Collection;
-    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status) : Collection;
+    public function getAllWithRole(UserRole $role):Collection;
+    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status):Collection;
 }
