@@ -37,7 +37,7 @@ class LoginAs
             return false;
         }
 
-        if (! in_array(env('DB_USERNAME'), ['homestead', 'root'])) {
+        if (!in_array(env('DB_USERNAME'), ['homestead', 'root'])) {
             return false;
         }
 

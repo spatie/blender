@@ -17,7 +17,7 @@ class CurrentLocale
             return $default;
         }
 
-        return static::isValidLocale(app()->request->segment(1)) ? app()->request->segment(1):$default;
+        return static::isValidLocale(app()->request->segment(1)) ? app()->request->segment(1) : $default;
     }
 
     public static function getContentLocale():string
