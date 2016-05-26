@@ -22,7 +22,7 @@ class Fragment extends Model
         });
     }
 
-    public static function getGroup(string $group, string $locale) : array
+    public static function getGroup(string $group, string $locale):array
     {
         return static::query()
             ->where('name', 'LIKE', "{$group}.%")

@@ -22,7 +22,7 @@ class User extends BaseUser
     protected $table = 'users_front';
     protected $presenter = UserPresenter::class;
 
-    public static function register(array $input) : User
+    public static function register(array $input):User
     {
         $defaults = [
             'role' => UserRole::MEMBER(),
@@ -46,22 +46,22 @@ class User extends BaseUser
         return $user;
     }
 
-    public function guardDriver() : string
+    public function guardDriver():string
     {
         return 'front';
     }
 
-    public function getHomeUrl() : string
+    public function getHomeUrl():string
     {
         return url('/');
     }
 
-    public function getProfileUrl() : string
+    public function getProfileUrl():string
     {
         return url('/');
     }
 
-    public function getStatusAttribute() : UserStatus
+    public function getStatusAttribute():UserStatus
     {
         return new UserStatus($this->attributes['status']);
     }
@@ -71,17 +71,17 @@ class User extends BaseUser
         $this->attributes['status'] = $status->getValue();
     }
 
-    public function hasStatus(UserStatus $status) : bool
+    public function hasStatus(UserStatus $status):bool
     {
         return $this->status->equals($status);
     }
 
-    public function isActive() : bool
+    public function isActive():bool
     {
         return $this->hasStatus(UserStatus::ACTIVE());
     }
 
-    public function activate() : User
+    public function activate():User
     {
         if ($this->status->doesntEqual(UserStatus::WAITING_FOR_APPROVAL())) {
             throw new UserIsAlreadyActivated();
@@ -92,7 +92,7 @@ class User extends BaseUser
         return $this;
     }
 
-    public function getRoleAttribute() : UserRole
+    public function getRoleAttribute():UserRole
     {
         return new UserRole($this->attributes['role']);
     }
@@ -102,7 +102,7 @@ class User extends BaseUser
         $this->attributes['role'] = $role->getValue();
     }
 
-    public function hasRole(UserRole $role) : bool
+    public function hasRole(UserRole $role):bool
     {
         return $this->role->equals($role);
     }

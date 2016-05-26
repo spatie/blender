@@ -26,7 +26,7 @@ class Person extends ModuleModel implements SortableInterface
             ->performOnCollections('images');
     }
 
-    protected function generateSlug() : string
+    protected function generateSlug():string
     {
         return str_slug($this->name);
     }

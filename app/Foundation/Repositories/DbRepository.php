@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 
 abstract class DbRepository extends BaseRepository implements Repository
 {
-    public function getAll() : Collection
+    public function getAll():Collection
     {
         return $this->query()->get();
     }
@@ -27,7 +27,7 @@ abstract class DbRepository extends BaseRepository implements Repository
         return $this->query()->online()->find($id);
     }
 
-    public function getAllOnline() : Collection
+    public function getAllOnline():Collection
     {
         return $this->query()
             ->online()
