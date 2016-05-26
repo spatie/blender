@@ -1,7 +1,7 @@
 @extends('front._layouts.master')
 
-@section('pageTitle', $article->title)
-@section('pageDescription', $article->title)
+@section('title', $article->name)
+@section('metaDescription', $article->present()->meta())
 
 @section('content')
 
