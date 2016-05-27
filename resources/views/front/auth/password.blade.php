@@ -1,6 +1,6 @@
 @extends('front._layouts.master')
 
-@section('pageTitle', fragment('auth.titleResetPassword'))
+@section('title', fragment('auth.titleResetPassword'))
 
 @section('content')
 <section class="+auth">

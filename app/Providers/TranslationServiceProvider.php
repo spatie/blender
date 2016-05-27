@@ -34,7 +34,7 @@ class TranslationServiceProvider extends ServiceProvider
         });
     }
 
-    public function provides() : array
+    public function provides():array
     {
         return ['translator', 'translation.loader'];
     }

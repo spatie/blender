@@ -6,7 +6,7 @@ use App\Http\Requests\Request;
 
 class PersonRequest extends Request
 {
-    public function rules() : array
+    public function rules():array
     {
         return [
             'name' => 'required',

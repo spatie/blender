@@ -17,11 +17,11 @@ class Article extends ModuleModel
     public $mediaLibraryCollections = ['images', 'downloads'];
     public $translatable = ['name', 'text', 'url'];
 
-    public static function findByTechnicalName(string $technicalName) : Article
+    public static function findByTechnicalName(string $technicalName):Article
     {
         return Cache::rememberForever(
             "article.findByTechnicalName.{$technicalName}",
-            function () use ($technicalName) : Article {
+            function () use ($technicalName):Article {
                 $article = static::where('technical_name', $technicalName)->first();
 
                 if ($article === null) {
@@ -33,11 +33,11 @@ class Article extends ModuleModel
         );
     }
 
-    public static function getWithTechnicalNameLike(string $technicalName) : Collection
+    public static function getWithTechnicalNameLike(string $technicalName):Collection
     {
         return Cache::rememberForever(
             "article.getWithTechnicalNameLike.{$technicalName}",
-            function () use ($technicalName) : Collection {
+            function () use ($technicalName):Collection {
                 return static::where('technical_name', 'like', "{$technicalName}.%")
                     ->orderBy('order_column')
                     ->get();
@@ -45,7 +45,7 @@ class Article extends ModuleModel
         );
     }
 
-    public function isDeletable() : bool
+    public function isDeletable():bool
     {
         return !(bool) $this->technical_name;
     }

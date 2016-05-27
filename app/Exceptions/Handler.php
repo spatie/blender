@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Foundation\Exceptions;
+namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
@@ -48,7 +48,7 @@ class Handler extends ExceptionHandler
         return parent::render($request, $e);
     }
 
-    protected function renderExceptionWithWhoops(Exception $e) : Response
+    protected function renderExceptionWithWhoops(Exception $e):Response
     {
         $this->unsetSensitiveData();
 

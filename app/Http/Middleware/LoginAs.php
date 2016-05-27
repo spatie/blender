@@ -25,7 +25,7 @@ class LoginAs
         return $this->loginAsAndRedirect($segments[0]);
     }
 
-    protected function canLoginAs() : bool
+    protected function canLoginAs():bool
     {
         // Just to be sure...
 
@@ -37,7 +37,7 @@ class LoginAs
             return false;
         }
 
-        if (! in_array(env('DB_USERNAME'), ['homestead', 'root'])) {
+        if (!in_array(env('DB_USERNAME'), ['homestead', 'root'])) {
             return false;
         }
 
@@ -59,7 +59,7 @@ class LoginAs
         );
     }
 
-    protected function getUser(string $identifier) : Authenticatable
+    protected function getUser(string $identifier):Authenticatable
     {
         if (!str_contains($identifier, '@')) {
             $identifier .= '@spatie.be';

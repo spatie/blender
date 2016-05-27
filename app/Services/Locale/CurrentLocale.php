@@ -4,7 +4,7 @@ namespace App\Services\Locale;
 
 class CurrentLocale
 {
-    public static function determine() : string
+    public static function determine():string
     {
         $default = app()->getLocale();
 
@@ -20,7 +20,7 @@ class CurrentLocale
         return static::isValidLocale(app()->request->segment(1)) ? app()->request->segment(1) : $default;
     }
 
-    public static function getContentLocale() : string
+    public static function getContentLocale():string
     {
         if (!static::isValidLocale(locale())) {
             return config('app.locales')[0];
@@ -29,7 +29,7 @@ class CurrentLocale
         return locale();
     }
 
-    protected static function isValidLocale($locale) : bool
+    protected static function isValidLocale($locale):bool
     {
         if (!is_string($locale)) {
             return false;
@@ -40,7 +40,7 @@ class CurrentLocale
         return in_array($locale, $locales);
     }
 
-    protected static function isValidBackLocale(string $locale) : bool
+    protected static function isValidBackLocale(string $locale):bool
     {
         $backLocales = config('app.backLocales');
 

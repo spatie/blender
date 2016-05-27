@@ -25,17 +25,17 @@ class BlenderFormBuilder
         $this->errors = $errors;
     }
 
-    public function label(string $name, bool $required = false, array $options = []) : string
+    public function label(string $name, bool $required = false, array $options = []):string
     {
         return Form::label($name, fragment("back.{$this->module}.{$name}").($required ? '*' : ''), $options);
     }
 
-    public function error(string $name) : string
+    public function error(string $name):string
     {
         return HTML::error($this->errors->first($name));
     }
 
-    public function text(string $name, bool $required = false, string $locale = '') : string
+    public function text(string $name, bool $required = false, string $locale = ''):string
     {
         $fieldName = $this->fieldName($name, $locale);
 
@@ -46,7 +46,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function textarea(string $name, bool $required = false, string $locale = '') : string
+    public function textarea(string $name, bool $required = false, string $locale = ''):string
     {
         $fieldName = $this->fieldName($name, $locale);
 
@@ -57,7 +57,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function redactor(string $name, bool $required = false, string $locale = '') : string
+    public function redactor(string $name, bool $required = false, string $locale = ''):string
     {
         $fieldName = $this->fieldName($name, $locale);
 
@@ -79,7 +79,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function checkbox(string $name, string $locale = '') : string
+    public function checkbox(string $name, string $locale = ''):string
     {
         $fieldName = $this->fieldName($name, $locale);
 
@@ -89,7 +89,7 @@ class BlenderFormBuilder
         return $this->group([el('label.-checkbox', $contents)]);
     }
 
-    public function date(string $name, bool $required = false, string $locale = '') : string
+    public function date(string $name, bool $required = false, string $locale = ''):string
     {
         $fieldName = $this->fieldName($name, $locale);
 
@@ -100,7 +100,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function select(string $name, $options, string $locale = '') : string
+    public function select(string $name, $options, string $locale = ''):string
     {
         $fieldName = $this->fieldName($name, $locale);
 
@@ -116,7 +116,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function searchableSelect(string $name, $options, string $locale = '') : string
+    public function searchableSelect(string $name, $options, string $locale = ''):string
     {
         $fieldName = $this->fieldName($name, $locale);
 
@@ -132,7 +132,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function tags(string $type) : string
+    public function tags(string $type):string
     {
         return $this->group([
             Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}").'*'),
@@ -140,7 +140,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function category(string $type) : string
+    public function category(string $type):string
     {
         return $this->group([
             Form::label($type.'_tags[]', fragment("back.{$this->module}.{$type}").'*'),
@@ -148,7 +148,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function media(string $collection, string $type, array $associated = []) : string
+    public function media(string $collection, string $type, array $associated = []):string
     {
         return $this->group([
             $this->label($collection),
@@ -156,7 +156,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function map(string $name) : string
+    public function map(string $name):string
     {
         $form = [];
 
@@ -203,7 +203,7 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function translated(array $fields) : string
+    public function translated(array $fields):string
     {
         // Ex. ['name' => 'text', 'contents' => 'redactor']
 
@@ -222,7 +222,7 @@ class BlenderFormBuilder
         return implode('', $translatedFields);
     }
 
-    public function submit() : string
+    public function submit():string
     {
         return el('div.form_group.-buttons',
             Form::submit(fragment("back.{$this->module}.save"), ['class' => 'button -default'])
@@ -236,17 +236,17 @@ class BlenderFormBuilder
         );
     }
 
-    protected function group(array $elements) : string
+    protected function group(array $elements):string
     {
         return el('div.form_group', $elements);
     }
 
-    protected function parts(array $elements) : string
+    protected function parts(array $elements):string
     {
         return el('div.parts', $elements);
     }
 
-    protected function fieldName(string $name, string $locale = '') : string
+    protected function fieldName(string $name, string $locale = ''):string
     {
         return $locale ? translate_field_name($name, $locale) : $name;
     }
