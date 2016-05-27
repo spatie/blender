@@ -174,7 +174,7 @@ return [
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Locale\LocaleServiceProvider::class,
-
+        \App\Providers\CollectionServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
