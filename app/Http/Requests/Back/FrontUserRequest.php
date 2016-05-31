@@ -6,7 +6,7 @@ use App\Http\Requests\Request;
 
 class FrontUserRequest extends Request
 {
-    public function rules():array
+    public function rules(): array
     {
         $rules = [
             'email' => 'required|email|unique:users_front,email',

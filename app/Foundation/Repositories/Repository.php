@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 interface Repository
 {
-    public function getAll():Collection;
+    public function getAll(): Collection;
 
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
@@ -20,7 +20,7 @@ interface Repository
      */
     public function findOnline(int $id);
 
-    public function getAllOnline():Collection;
+    public function getAllOnline(): Collection;
 
     public function getAllOnlineGroupedByTagCategory(TagType $tagType): Collection
 
@@ -29,7 +29,7 @@ interface Repository
      */
     public function findByUrl(string $url);
 
-    public function save(Model $model):bool;
+    public function save(Model $model): bool;
 
-    public function delete(Model $model):bool;
+    public function delete(Model $model): bool;
 }

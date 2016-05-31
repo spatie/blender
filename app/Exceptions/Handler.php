@@ -46,7 +46,7 @@ class Handler extends ExceptionHandler
         return parent::render($request, $e);
     }
 
-    protected function renderExceptionWithWhoops(Exception $e):Response
+    protected function renderExceptionWithWhoops(Exception $e): Response
     {
         $this->unsetSensitiveData();
 

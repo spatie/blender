@@ -11,14 +11,14 @@ use Illuminate\Support\Collection;
 
 class BackUserDbRepository extends DbRepository implements BackUserRepository
 {
-    public function getAllWithRole(UserRole $role):Collection
+    public function getAllWithRole(UserRole $role): Collection
     {
         return $this->query()
             ->where('role', $role)
             ->get();
     }
 
-    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status):Collection
+    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status): Collection
     {
         return $this->query()
             ->where('role', $role)
@@ -26,7 +26,7 @@ class BackUserDbRepository extends DbRepository implements BackUserRepository
             ->get();
     }
 
-    public function delete(Model $user):bool
+    public function delete(Model $user): bool
     {
         if (current_back_user() && current_back_user()->id === $user->id) {
             abort(406);

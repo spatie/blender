@@ -9,7 +9,7 @@ abstract class BaseRepository
 {
     use OrAbort;
 
-    public function save(Model $model):bool
+    public function save(Model $model): bool
     {
         $saved = $model->save();
 
@@ -20,7 +20,7 @@ abstract class BaseRepository
         return $saved;
     }
 
-    public function delete(Model $model):bool
+    public function delete(Model $model): bool
     {
         $deleted = $model->delete();
 
