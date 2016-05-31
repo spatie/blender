@@ -10,7 +10,7 @@ use Spatie\String\Str;
  */
 class FragmentPresenter extends Presenter
 {
-    public function tease():Str
+    public function tease(): Str
     {
         return string($this->entity->text)->tease();
     }

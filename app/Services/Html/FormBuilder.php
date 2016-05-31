@@ -12,7 +12,7 @@ use HTML;
 
 class FormBuilder extends BaseFormBuilder
 {
-    public function openDraftable(array $options, Model $subject):string
+    public function openDraftable(array $options, Model $subject): string
     {
         $identifier = short_class_name($subject).'_'.($subject->isDraft() ? 'new' : $subject->id);
 
@@ -25,7 +25,7 @@ class FormBuilder extends BaseFormBuilder
         return $this->open($options);
     }
 
-    public function openButton(array $formOptions = [], array $buttonOptions = []):string
+    public function openButton(array $formOptions = [], array $buttonOptions = []): string
     {
         if (strtolower($formOptions['method'] ?? '') === 'delete') {
             $formOptions['data-confirm'] = 'true';
@@ -34,12 +34,12 @@ class FormBuilder extends BaseFormBuilder
         return $this->open($formOptions).substr(el('button', $buttonOptions, ''), 0, -strlen('</button>'));
     }
 
-    public function closeButton():string
+    public function closeButton(): string
     {
         return '</button>'.$this->close();
     }
 
-    public function redactor($subject, string $fieldName, string $locale = '', array $options = []):string
+    public function redactor($subject, string $fieldName, string $locale = '', array $options = []): string
     {
         $initial = $this->useInitialValue($subject, $fieldName, $locale);
         $fieldName = $locale ? translate_field_name($fieldName, $locale) : $fieldName;
@@ -57,7 +57,7 @@ class FormBuilder extends BaseFormBuilder
         );
     }
 
-    public function checkboxWithLabel($subject, string $fieldName, string $label, array $options = []):string
+    public function checkboxWithLabel($subject, string $fieldName, string $label, array $options = []): string
     {
         $options = array_merge(['class' => 'form-control'], $options);
 
@@ -67,7 +67,7 @@ class FormBuilder extends BaseFormBuilder
         );
     }
 
-    public function datePicker(string $name, string $value):string
+    public function datePicker(string $name, string $value): string
     {
         return $this->text($name, $value, [
             'data-datetimepicker',
@@ -75,7 +75,7 @@ class FormBuilder extends BaseFormBuilder
         ]);
     }
 
-    public function tags($subject, string $type, array $options = []):string
+    public function tags($subject, string $type, array $options = []): string
     {
         $type = new TagType($type);
 
@@ -87,7 +87,7 @@ class FormBuilder extends BaseFormBuilder
         return $this->select("{$type}_tags[]", $tags, $subjectTags, $options);
     }
 
-    public function category($subject, $type, array $options = []):string
+    public function category($subject, $type, array $options = []): string
     {
         $type = new TagType($type);
 
@@ -97,7 +97,7 @@ class FormBuilder extends BaseFormBuilder
         return $this->select("{$type}_tags[]", $categories, $subjectCategory, $options);
     }
 
-    public function locales(array $locales, string $current):string
+    public function locales(array $locales, string $current): string
     {
         $list = array_reduce($locales, function (array $list, string $locale) {
             $list[$locale] = trans("locales.{$locale}");
@@ -108,7 +108,7 @@ class FormBuilder extends BaseFormBuilder
         return $this->select('locale', $list, $current, ['data-select' => 'select']);
     }
 
-    public function media($subject, string $collection, string $type, array $associated = []):string
+    public function media($subject, string $collection, string $type, array $associated = []): string
     {
         $initialMedia = fractal()
             ->collection($subject->getMedia($collection))
@@ -130,7 +130,7 @@ class FormBuilder extends BaseFormBuilder
         ]), '');
     }
 
-    protected function getAssociatedMediaData(array $associated = []):array
+    protected function getAssociatedMediaData(array $associated = []): array
     {
         $associated['locales'] = $associated['locales'] ?? config('app.locales');
 
@@ -143,7 +143,7 @@ class FormBuilder extends BaseFormBuilder
         return $normalized;
     }
 
-    public function useInitialValue($subject, string $propertyName, string $locale = ''):string
+    public function useInitialValue($subject, string $propertyName, string $locale = ''): string
     {
         $fieldName = $locale ? translate_field_name($propertyName, $locale) : $propertyName;
         $value = $locale ? $subject->translate($propertyName, $locale) : $subject->$propertyName;
@@ -155,7 +155,7 @@ class FormBuilder extends BaseFormBuilder
         return $this->getValueAttribute($fieldName, $value) ?? '';
     }
 
-    public function getLabelForTranslatedField(string $fieldName, string $label, string $locale):string
+    public function getLabelForTranslatedField(string $fieldName, string $label, string $locale): string
     {
         return HTML::decode(
             $this->label($fieldName, $label.el('span.label_lang', $locale))

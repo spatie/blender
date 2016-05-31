@@ -10,12 +10,12 @@ use Spatie\String\Str;
  */
 class ArticlePresenter extends Presenter
 {
-    public function tease($characters, $moreTextIndicator = '...'):Str
+    public function tease($characters, $moreTextIndicator = '...'): Str
     {
         return string($this->entity->text)->tease($characters, $moreTextIndicator);
     }
 
-    public function meta():Str
+    public function meta(): Str
     {
         return $this->tease(155);
     }

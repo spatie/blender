@@ -11,7 +11,7 @@ trait HasSlug
         });
     }
 
-    protected function generateSlug():string
+    protected function generateSlug(): string
     {
         $slugs = [];
 

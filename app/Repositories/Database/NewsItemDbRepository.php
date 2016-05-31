@@ -10,7 +10,7 @@ use Illuminate\Support\Collection;
 
 class NewsItemDbRepository extends DbRepository implements NewsItemRepository
 {
-    public function getAll():Collection
+    public function getAll(): Collection
     {
         return $this->query()
             ->orderBy('publish_date', 'desc')
@@ -18,7 +18,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
             ->get();
     }
 
-    public function getLatest(int $amount):Collection
+    public function getLatest(int $amount): Collection
     {
         return $this->query()
             ->orderBy('publish_date', 'desc')
@@ -51,7 +51,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
             ->first();
     }
 
-    public function paginate(int $perPage):Paginator
+    public function paginate(int $perPage): Paginator
     {
         return $this->query()
             ->online()

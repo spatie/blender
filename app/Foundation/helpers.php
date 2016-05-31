@@ -1,50 +1,50 @@
 <?php
 
-function locale():string
+function locale(): string
 {
     return app()->getLocale();
 }
 
-function content_locale():string
+function content_locale(): string
 {
     return app('currentLocale')->getContentLocale();
 }
 
-function fragment($name, array $replacements = []):string
+function fragment($name, array $replacements = []): string
 {
     return trans($name, $replacements);
 }
 
-function fragment_slug($name, array $replacements = []):string
+function fragment_slug($name, array $replacements = []): string
 {
     $translation = fragment($name, $replacements);
 
     return str_slug($translation);
 }
 
-function translate_field_name(string $name, string $locale = ''):string
+function translate_field_name(string $name, string $locale = ''): string
 {
     $locale = $locale ?? content_locale();
 
     return "translated_{$locale}_{$name}";
 }
 
-function article(string $technicalName):App\Models\Article
+function article(string $technicalName): App\Models\Article
 {
     return App\Models\Article::findByTechnicalName($technicalName);
 }
 
-function carbon(string $date, string $format = 'Y-m-d H:i:s'):Carbon\Carbon
+function carbon(string $date, string $format = 'Y-m-d H:i:s'): Carbon\Carbon
 {
     return Carbon\Carbon::createFromFormat($format, $date);
 }
 
-function diff_date_for_humans(Carbon\Carbon $date):string
+function diff_date_for_humans(Carbon\Carbon $date): string
 {
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
 }
 
-function roman_year(int $year = null):string
+function roman_year(int $year = null): string
 {
     if (!is_numeric($year)) {
         $year = date('Y');
@@ -82,14 +82,14 @@ function roman_year(int $year = null):string
     return $result;
 }
 
-function short_class_name($object):string
+function short_class_name($object): string
 {
     $objectProperties = new \ReflectionClass($object);
 
     return $objectProperties->getShortName();
 }
 
-function class_constants($object, string  $startsWithFilter = ''):array
+function class_constants($object, string  $startsWithFilter = ''): array
 {
     $objectProperties = new \ReflectionClass($object);
 
@@ -142,21 +142,21 @@ function current_back_user()
     return auth()->guard('back')->user();
 }
 
-function login_url():string
+function login_url(): string
 {
     return request()->isFront() ?
         action('Front\AuthController@getLogin') :
         action('Back\AuthController@getLogin');
 }
 
-function logout_url():string
+function logout_url(): string
 {
     return request()->isFront() ?
         action('Front\AuthController@getLogout') :
         action('Back\AuthController@getLogout');
 }
 
-function register_url():string
+function register_url(): string
 {
     return action('Front\AuthController@getRegister');
 }
@@ -169,7 +169,7 @@ function register_url():string
  *
  * @return bool
  */
-function validate($fields, $rules):bool
+function validate($fields, $rules): bool
 {
     if (!is_array($fields)) {
         $fields = ['default' => $fields];
@@ -187,15 +187,15 @@ function activity(string $message)
     Activity::log($message);
 }
 
-function el(string $tag, $attributes = null, $contents = null):string
+function el(string $tag, $attributes = null, $contents = null): string
 {
     return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
 }
 
-function rgb_to_hex(int $red, int $green, int $blue): string
+function rgb_to_hex(int $red, int $green, int $blue):  string
 {
     return '#' . collect([$red, $green, $blue])
-        ->map(function (int $decimal): string {
+        ->map(function (int $decimal):  string {
             return str_pad(dechex($decimal), 2, STR_PAD_LEFT);
         })
         ->implode('');

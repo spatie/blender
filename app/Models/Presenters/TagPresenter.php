@@ -10,7 +10,7 @@ use Laracasts\Presenter\Presenter;
  */
 class TagPresenter extends Presenter
 {
-    public function allTagTypes():array
+    public function allTagTypes(): array
     {
         $tagTypes = [];
 

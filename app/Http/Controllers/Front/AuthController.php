@@ -17,7 +17,7 @@ class AuthController extends Controller
     protected $loginView = 'front.auth.login';
     protected $registerView = 'front.auth.register';
 
-    public function redirectPath():string
+    public function redirectPath(): string
     {
         return current_user()->getHomeUrl();
     }
@@ -33,7 +33,7 @@ class AuthController extends Controller
         return redirect()->intended($this->redirectPath());
     }
 
-    protected function getFailedLoginMessage():string
+    protected function getFailedLoginMessage(): string
     {
         return fragment('auth.failed');
     }
@@ -47,7 +47,7 @@ class AuthController extends Controller
             ]);
     }
 
-    protected function validator(array $input):Validator
+    protected function validator(array $input): Validator
     {
         return validator($input, [
             'first_name' => 'required',
@@ -62,7 +62,7 @@ class AuthController extends Controller
         ]);
     }
 
-    protected function create(array $input):User
+    protected function create(array $input): User
     {
         return User::register($input);
     }
