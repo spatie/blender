@@ -169,7 +169,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\TranslationServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
         App\Providers\ValidationServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
