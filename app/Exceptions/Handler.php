@@ -7,7 +7,6 @@ use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as BugsnagExceptionHandler;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Illuminate\Http\Exception\HttpResponseException;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Validation\ValidationException;
@@ -19,14 +18,13 @@ class Handler extends ExceptionHandler
         HttpException::class,
         ModelNotFoundException::class,
         ValidationException::class,
-        HttpResponseException::class,
     ];
 
     public function report(Exception $e)
     {
         parent::report($e);
 
-        if (app()->environment('production')) {
+        if (app()->environment('production') && $this->shouldReport($e)) {
             app(BugsnagExceptionHandler::class)->report($e);
         }
     }
