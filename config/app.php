@@ -165,6 +165,7 @@ return [
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
         App\Providers\BladeDirectiveServiceProvider::class,
+        App\Providers\CollectionServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
@@ -173,7 +174,7 @@ return [
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Locale\LocaleServiceProvider::class,
-        \App\Providers\CollectionServiceProvider::class,
+        App\Services\Mailers\MailerServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
