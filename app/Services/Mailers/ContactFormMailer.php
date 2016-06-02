@@ -7,11 +7,11 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Request;
 use Log;
 
-class ContactFormMailerEventHandler
+class ContactFormMailer
 {
     use SendsMails;
 
-    public function whenContactFormWasSubmitted(ContactFormWasSubmitted $event)
+    public function contactFormWasSubmitted(ContactFormWasSubmitted $event)
     {
         collect(config('mail.questionFormRecipients'))->each(function (string $email) use ($event) {
             $this->sendMail(
@@ -25,6 +25,6 @@ class ContactFormMailerEventHandler
 
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(ContactFormWasSubmitted::class, [$this, 'whenContactFormWasSubmitted']);
+        $events->listen(ContactFormWasSubmitted::class, [$this, 'contactFormWasSubmitted']);
     }
 }

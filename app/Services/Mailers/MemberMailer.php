@@ -7,11 +7,11 @@ use App\Services\Auth\Front\Events\UserWasCreatedThroughBack;
 use App\Services\Auth\Front\Events\UserWasRegistered;
 use Illuminate\Contracts\Events\Dispatcher;
 
-class MemberMailerEventHandler
+class MemberMailer
 {
     use SendsMails;
     
-    public function whenUserWasRegistered(UserWasRegistered $event)
+    public function userWasRegistered(UserWasRegistered $event)
     {
         $this->sendTo(
             $event->user->email,
@@ -21,7 +21,7 @@ class MemberMailerEventHandler
         );
     }
 
-    public function whenUserWasCreatedThroughBack(UserWasCreatedThroughBack $event)
+    public function userWasCreatedThroughBack(UserWasCreatedThroughBack $event)
     {
         Password::broker('front')->sendResetLink(['email' => $event->user->email], function (Message $message) {
             $message->subject('Welkom bij ' . config('app.url'));
@@ -30,7 +30,6 @@ class MemberMailerEventHandler
 
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(UserWasActivated::class, [$this, 'whenUserWasActivated']);
-        $events->listen(UserWasCreatedThroughBack::class, [$this, 'whenUserWasCreatedThroughBack']);
+        $events->listen(UserWasCreatedThroughBack::class, [$this, 'userWasCreatedThroughBack']);
     }
 }

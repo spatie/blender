@@ -7,18 +7,18 @@ use App\Services\Auth\Front\Events\UserWasActivated;
 use App\Services\Auth\Back\Events\UserWasCreated;
 use Illuminate\Contracts\Events\Dispatcher;
 
-class AdminMailerEventHandler
+class AdminMailer
 {
     use SendsMails;
-    
-    public function whenUserWasCreated(UserWasCreated $event)
+
+    public function userWasCreated(UserWasCreated $event)
     {
         Password::broker('back')->sendResetLink(['email' => $event->user->email], function (Message $message) {
             $message->subject(fragment('passwords.subjectEmailNewUser'));
         });
     }
 
-    public function whenContactFormWasSubmitted(ContactFormWasSubmitted $event)
+    public function contactFormWasSubmitted(ContactFormWasSubmitted $event)
     {
         collect(config('mail.questionFormRecipients'))->each(function (string $email) use ($event) {
             $this->sendMail(
@@ -30,21 +30,9 @@ class AdminMailerEventHandler
         });
     }
 
-    public function whenUserWasActivated(UserWasActivated $event)
-    {
-        collect([])->each(function (string $email) use ($event) {
-            $this->sendMail(
-                $email,
-                'Een nieuwe gebruiker heeft zich geregistreerd',
-                'emails.admin.userApproval',
-                ['userId' => $event->user->id]
-            );
-        });
-    }
-
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(UserWasCreated::class, [$this, 'whenUserWasCreated']);
-        $events->listen(ContactFormWasSubmitted::class, [$this, 'whenContactFormWasSubmitted']);
+        $events->listen(UserWasCreated::class, [$this, 'userWasCreated']);
+        $events->listen(ContactFormWasSubmitted::class, [$this, 'contactFormWasSubmitted']);
     }
 }
