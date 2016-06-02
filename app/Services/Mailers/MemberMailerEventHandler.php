@@ -9,31 +9,28 @@ use Illuminate\Contracts\Events\Dispatcher;
 
 class MemberMailerEventHandler
 {
-    public function __construct(MemberMailer $mailer)
-    {
-        $this->mailer = $mailer;
-    }
-
-    public function subscribe(Dispatcher $events)
-    {
-        $events->listen(
-            UserWasActivated::class,
-            static::class.'@whenUserWasActivated'
-        );
-
-        $events->listen(
-            UserWasCreatedThroughBack::class,
-            static::class.'@whenUserWasCreatedThroughBack'
-        );
-    }
-
+    use SendsMails;
+    
     public function whenUserWasRegistered(UserWasRegistered $event)
     {
-        $this->mailer->sendWelcomeMail($event->user);
+        $this->sendTo(
+            $event->user->email,
+            'Welkom bij ' . config('app.url'),
+            'emails.auth.front.welcome',
+            ['userId' => $event->user->id]
+        );
     }
 
     public function whenUserWasCreatedThroughBack(UserWasCreatedThroughBack $event)
     {
-        $this->mailer->sendPasswordEmail($event->user);
+        Password::broker('front')->sendResetLink(['email' => $event->user->email], function (Message $message) {
+            $message->subject('Welkom bij ' . config('app.url'));
+        });
+    }
+
+    public function subscribe(Dispatcher $events)
+    {
+        $events->listen(UserWasActivated::class, [$this, 'whenUserWasActivated']);
+        $events->listen(UserWasCreatedThroughBack::class, [$this, 'whenUserWasCreatedThroughBack']);
     }
 }
