@@ -7,7 +7,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Request;
 use Log;
 
-class ContactFormMailerEventHandler extends Mailer
+class ContactFormMailerEventHandler
 {
     use SendsMails;
 
@@ -17,7 +17,7 @@ class ContactFormMailerEventHandler extends Mailer
             $this->sendMail(
                 $email,
                 'Een nieuwe reactie op ' . config('app.url'),
-                'emails.contactFormSubmitted',
+                'emails.admin.contactFormSubmitted',
                 $event->formResponse->toArray()
             );
         });
