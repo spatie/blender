@@ -26,7 +26,7 @@ class ConfigServiceProvider extends ServiceProvider
     protected function configureCacheProvider()
     {
         if (
-            app()->environment() === 'production' ||
+            app()->environment('production') ||
             config()->get('cache.default') !== 'memcached'
         ) {
             return;
@@ -45,7 +45,7 @@ class ConfigServiceProvider extends ServiceProvider
 
     protected function configureEmailRecipients()
     {
-        if (app()->environment() === 'production') {
+        if (app()->environment('production')) {
             return;
         }
 
