@@ -2,25 +2,34 @@
 
 namespace App\Services\Mailers;
 
-use App\Services\Auth\Front\User;
-use Illuminate\Mail\Message;
-use Password;
+use App\Events\UserWasActivated;
+use App\Services\Auth\Front\Events\UserWasCreatedThroughBack;
+use App\Services\Auth\Front\Events\UserWasRegistered;
+use Illuminate\Contracts\Events\Dispatcher;
 
-class MemberMailer extends Mailer
+class MemberMailer
 {
-    public function sendWelcomeMail(User $user)
+    use SendsMails;
+    
+    public function userWasRegistered(UserWasRegistered $event)
     {
-        $view = 'emails.auth.front.welcome';
-        $data = ['userId' => $user->id];
-        $subject = 'Welkom bij '.request()->getHost();
-
-        $this->sendTo($user->email, $subject, $view, $data);
+        $this->sendTo(
+            $event->user->email,
+            'Welkom bij ' . config('app.url'),
+            'emails.auth.front.welcome',
+            ['userId' => $event->user->id]
+        );
     }
 
-    public function sendPasswordEmail(User $user)
+    public function userWasCreatedThroughBack(UserWasCreatedThroughBack $event)
     {
-        Password::broker('front')->sendResetLink(['email' => $user->email], function (Message $message) {
-            $message->subject('Welkom bij '.request()->getHost());
+        Password::broker('front')->sendResetLink(['email' => $event->user->email], function (Message $message) {
+            $message->subject('Welkom bij ' . config('app.url'));
         });
+    }
+
+    public function subscribe(Dispatcher $events)
+    {
+        $events->listen(UserWasCreatedThroughBack::class, [$this, 'userWasCreatedThroughBack']);
     }
 }

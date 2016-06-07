@@ -15,7 +15,7 @@ class AuthController extends Controller
     protected $guard = 'back';
     protected $loginView = 'back.auth.login';
 
-    public function redirectPath():string
+    public function redirectPath(): string
     {
         return current_user()->getHomeUrl();
     }
@@ -31,7 +31,7 @@ class AuthController extends Controller
         return redirect()->intended($this->redirectPath());
     }
 
-    protected function getFailedLoginMessage():string
+    protected function getFailedLoginMessage(): string
     {
         return fragment('auth.failed');
     }

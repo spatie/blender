@@ -15,7 +15,7 @@ class ActivitylogController extends Controller
         return view('back.activitylog.index')->with(compact('logItems'));
     }
 
-    protected function getPaginatedActivityLogItems():Paginator
+    protected function getPaginatedActivityLogItems(): Paginator
     {
         return Activity::with('user')
             ->orderBy('created_at', 'DESC')

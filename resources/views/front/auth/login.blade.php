@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="form_group -buttons">
-            {!! Form::button(fragment('auth.logIn'), ['type'=>'submit', 'class'=>'button -default']) !!}
+            {!! Form::button(fragment('auth.login'), ['type'=>'submit', 'class'=>'button -default']) !!}
             <div class="form_group_help">
                 <a href="{{ register_url() }}">{{ fragment('auth.noAccount') }}</a>
             </div>

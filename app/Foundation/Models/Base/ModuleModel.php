@@ -31,7 +31,7 @@ abstract class ModuleModel extends Model implements HasMediaConversions, GetsCle
             ->nonQueued();
     }
 
-    public static function cleanUp(Builder $query):Builder
+    public static function cleanUp(Builder $query): Builder
     {
         return $query
             ->draft()

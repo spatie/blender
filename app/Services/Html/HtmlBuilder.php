@@ -9,7 +9,7 @@ use Session;
 
 class HtmlBuilder extends BaseHtmlBuilder
 {
-    public function flashMessage():string
+    public function flashMessage(): string
     {
         if (!Session::has('flash_notification.message')) {
             return '';
@@ -20,7 +20,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         return el("div.alert.-{$level}", Session::get('flash_notification.message'));
     }
 
-    public function error($message, $name = ''):string
+    public function error($message, $name = ''): string
     {
         if (empty($message) && empty($name)) {
             return '';
@@ -31,7 +31,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         return el('div.alert.-danger', $attributes, $message);
     }
 
-    public function message($message, string $classes = ''):string
+    public function message($message, string $classes = ''): string
     {
         if (empty($message)) {
             return '';
@@ -40,7 +40,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         return el('div.alert.-success', ['class' => $classes], $message);
     }
 
-    public function info($message, string $classes = ''):string
+    public function info($message, string $classes = ''): string
     {
         if (empty($message)) {
             return '';
@@ -51,7 +51,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         );
     }
 
-    public function avatar(User $user, string $classes = ''):string
+    public function avatar(User $user, string $classes = ''): string
     {
         return el('span.avatar', [
             'class' => $classes,
@@ -59,7 +59,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         ], '');
     }
 
-    public function deleteButton(string $url):string
+    public function deleteButton(string $url): string
     {
         return Form::openButton(
             [
@@ -72,7 +72,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         ).el('span.fa.fa-remove').Form::closeButton();
     }
 
-    public function onlineIndicator(bool $online):string
+    public function onlineIndicator(bool $online): string
     {
         $state = $online ? 'on' : 'off';
         $icon = $online ? 'circle' : 'circle-o';

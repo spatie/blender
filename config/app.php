@@ -161,22 +161,20 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         App\Services\Navigation\NavigationServiceProvider::class,
-
         App\Providers\ConfigServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
         App\Providers\BladeDirectiveServiceProvider::class,
-        Themsaid\MailPreview\MailPreviewServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
+        App\Providers\CollectionServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\TranslationServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
         App\Providers\ValidationServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Locale\LocaleServiceProvider::class,
-        \App\Providers\CollectionServiceProvider::class,
+        App\Services\Mailers\MailerServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,

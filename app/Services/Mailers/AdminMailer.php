@@ -2,41 +2,37 @@
 
 namespace App\Services\Mailers;
 
-use App\Models\FormResponse;
-use App\Services\Auth\Back\User;
-use Illuminate\Mail\Message;
-use Password;
+use App\Events\ContactFormWasSubmitted;
+use App\Services\Auth\Front\Events\UserWasActivated;
+use App\Services\Auth\Back\Events\UserWasCreated;
+use Illuminate\Contracts\Events\Dispatcher;
 
-class AdminMailer extends Mailer
+class AdminMailer
 {
-    public function sendContactFormDetails(FormResponse $formResponse)
+    use SendsMails;
+
+    public function userWasCreated(UserWasCreated $event)
     {
-        $view = 'emails.admin.contactFormSubmitted';
-        $data = $formResponse->toArray();
-        $subject = 'Een nieuwe reactie op '.config('app.url');
-
-        foreach (config('mail.questionFormRecipients') as $email) {
-            $this->sendTo($email, $subject, $view, $data);
-        }
-    }
-
-    public function sendApprovalMail(User $user)
-    {
-        $view = 'emails.admin.userApproval';
-        $data = ['userId' => $user->id];
-        $subject = 'Een nieuwe gebruiker heeft zich geregistreerd';
-
-        foreach (['freek@spatie.be'] as $email) {
-            $this->sendTo($email, $subject, $view, $data);
-        }
-    }
-
-    public function sendPasswordEmail(User $user)
-    {
-        $passwords = Password::broker('back');
-
-        $passwords->sendResetLink(['email' => $user->email], function (Message $message) {
+        Password::broker('back')->sendResetLink(['email' => $event->user->email], function (Message $message) {
             $message->subject(fragment('passwords.subjectEmailNewUser'));
         });
+    }
+
+    public function contactFormWasSubmitted(ContactFormWasSubmitted $event)
+    {
+        collect(config('mail.questionFormRecipients'))->each(function (string $email) use ($event) {
+            $this->sendMail(
+                $email,
+                'Een nieuwe reactie op ' . config('app.url'),
+                'emails.admin.contactFormSubmitted',
+                $event->formResponse->toArray()
+            );
+        });
+    }
+
+    public function subscribe(Dispatcher $events)
+    {
+        $events->listen(UserWasCreated::class, [$this, 'userWasCreated']);
+        $events->listen(ContactFormWasSubmitted::class, [$this, 'contactFormWasSubmitted']);
     }
 }

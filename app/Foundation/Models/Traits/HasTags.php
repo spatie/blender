@@ -9,12 +9,12 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 trait HasTags
 {
-    public function tags():MorphToMany
+    public function tags(): MorphToMany
     {
         return $this->morphToMany(Tag::class, 'taggable');
     }
 
-    public function tagsWithType(TagType $type):Collection
+    public function tagsWithType(TagType $type): Collection
     {
         return $this->tags->filter(function (Tag $tag) use ($type) {
             return $tag->hasType($type);

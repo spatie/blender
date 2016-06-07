@@ -10,7 +10,7 @@ use Spatie\String\Str;
  */
 class NewsItemPresenter extends Presenter
 {
-    public function excerpt($length = 200):Str
+    public function excerpt($length = 200): Str
     {
         return string($this->entity->text)->tease($length);
     }

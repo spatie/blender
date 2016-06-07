@@ -106,7 +106,7 @@ class BackUserController extends Controller
         return redirect()->action('Back\BackUserController@index');
     }
 
-    protected function getEventDescriptionFor(string $event, User $user):string
+    protected function getEventDescriptionFor(string $event, User $user): string
     {
         $name = sprintf(
             '<a href="%s">%s</a>',

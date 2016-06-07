@@ -27,7 +27,7 @@ class DashboardController extends Controller
         return $view->with(compact('dates', 'visitors', 'pageViews'));
     }
 
-    protected function getLatestActivityItems():Collection
+    protected function getLatestActivityItems(): Collection
     {
         return Activity::with('user')
             ->latest()
@@ -35,7 +35,7 @@ class DashboardController extends Controller
             ->get();
     }
 
-    protected function getAnalyticsData():Collection
+    protected function getAnalyticsData(): Collection
     {
         return app('laravelAnalytics')->getVisitorsAndPageViews(14);
     }

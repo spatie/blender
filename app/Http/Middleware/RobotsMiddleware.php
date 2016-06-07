@@ -7,7 +7,7 @@ use Spatie\RobotsMiddleware\RobotsMiddleware as BaseRobotsMiddleware;
 
 class RobotsMiddleware extends BaseRobotsMiddleware
 {
-    protected function shouldIndex(Request $request):bool
+    protected function shouldIndex(Request $request): bool
     {
         if (ends_with($request->getHost(), 'spatie.be')) {
             return false;

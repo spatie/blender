@@ -2,20 +2,29 @@
 
 namespace App\Services\Mailers;
 
+use App\Events\ContactFormWasSubmitted;
+use Illuminate\Contracts\Events\Dispatcher;
 use Request;
 use Log;
 
-class ContactFormMailer extends Mailer
+class ContactFormMailer
 {
-    public function notifySiteOwner($formValues)
-    {
-        $view = 'emails.contactFormSubmitted';
-        $data = $formValues;
-        $subject = 'Een nieuwe reactie op '.Request::server('SERVER_NAME');
+    use SendsMails;
 
-        foreach (config('mail.questionFormRecipients') as $email) {
-            Log::info('mail naar '.$email.' met inhoud '.print_r($formValues, true));
-            $this->sendTo($email, $subject, $view, $data);
-        }
+    public function contactFormWasSubmitted(ContactFormWasSubmitted $event)
+    {
+        collect(config('mail.questionFormRecipients'))->each(function (string $email) use ($event) {
+            $this->sendMail(
+                $email,
+                'Een nieuwe reactie op ' . config('app.url'),
+                'emails.admin.contactFormSubmitted',
+                $event->formResponse->toArray()
+            );
+        });
+    }
+
+    public function subscribe(Dispatcher $events)
+    {
+        $events->listen(ContactFormWasSubmitted::class, [$this, 'contactFormWasSubmitted']);
     }
 }

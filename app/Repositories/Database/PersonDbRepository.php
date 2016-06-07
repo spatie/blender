@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 
 class PersonDbRepository extends DbRepository implements PersonRepository
 {
-    public function getAll():Collection
+    public function getAll(): Collection
     {
         return $this->query()
             ->orderBy('order_column')

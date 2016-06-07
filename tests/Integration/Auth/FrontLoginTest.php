@@ -28,7 +28,7 @@ class FrontLoginTest extends TestCase
             ->visitFrontLogin()
             ->type('user@spatie.be', 'email')
             ->type('password', 'password')
-            ->press(fragment('auth.logIn'))
+            ->press(fragment('auth.login'))
             ->assertLoggedInOnFrontAs($user);
     }
 
@@ -41,7 +41,7 @@ class FrontLoginTest extends TestCase
             ->visitFrontLogin()
             ->type('user@spatie.be', 'email')
             ->type('password', 'password')
-            ->press(fragment('auth.logIn'))
+            ->press(fragment('auth.login'))
             ->assertLoggedInOnFrontAs($user)
             ->seePageIs('/nl'); // Not using `getHomeUrl` because it depends on locale
     }
@@ -55,7 +55,7 @@ class FrontLoginTest extends TestCase
             ->visitFrontLogin()
             ->type('user@spatie.be', 'email')
             ->type('notmypassword', 'password')
-            ->press(fragment('auth.logIn'))
+            ->press(fragment('auth.login'))
             ->seePageIs('/nl/login')
             ->see(fragment('auth.failed'))
             ->assertNotLoggedInOnFront();
@@ -70,7 +70,7 @@ class FrontLoginTest extends TestCase
             ->visitFrontLogin()
             ->type('user@spatie.be', 'email')
             ->type('password', 'password')
-            ->press(fragment('auth.logIn'))
+            ->press(fragment('auth.login'))
             ->seePageIs('/nl/login')
             ->see(fragment('auth.notActivatedError'))
             ->assertNotLoggedInOnFront();
