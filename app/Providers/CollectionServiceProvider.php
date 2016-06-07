@@ -19,7 +19,7 @@ class CollectionServiceProvider extends ServiceProvider
             return $callback($this);
         });
 
-        Collection::macro('dump', function () {
+        Collection::macro('dd', function () {
             dd($this);
         });
 
