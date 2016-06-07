@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "96c071d3abdcfd20ad84f7afc14a0021",
-    "content-hash": "0635a1f41b56a3328d860559642bdb9b",
+    "hash": "e657b12e2f5aac981f1742bb43ddc0c8",
+    "content-hash": "d300219076625cd029fd203e391a29b6",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3762,6 +3762,64 @@
                 "spatie"
             ],
             "time": "2016-04-27 21:02:51"
+        },
+        {
+            "name": "spatie/laravel-blade-javascript",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-blade-javascript.git",
+                "reference": "db8a7fc2a77d847ff5f5d3832fcc1dc2c32b2901"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-blade-javascript/zipball/db8a7fc2a77d847ff5f5d3832fcc1dc2c32b2901",
+                "reference": "db8a7fc2a77d847ff5f5d3832fcc1dc2c32b2901",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.1",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.2",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\BladeJavaScript\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A Blade directive to export variables to JavaScript",
+            "homepage": "https://github.com/spatie/laravel-blade-javascript",
+            "keywords": [
+                "blade",
+                "directive",
+                "javascript",
+                "laravel",
+                "laravel-blade-javascript",
+                "spatie"
+            ],
+            "time": "2016-06-07 13:53:18"
         },
         {
             "name": "spatie/laravel-demo-mode",
