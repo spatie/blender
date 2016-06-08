@@ -12,14 +12,10 @@
     "url": "git@github.com:spatie-custom/blender.git"
   },
   "devDependencies": {
-    "babel": "^6.3.26",
-    "babel-core": "^6.4.5",
-    "babel-loader": "^6.2.1",
-    "babel-preset-es2015": "^6.3.13",
-    "babel-preset-react": "^6.3.13",
-    "babel-register": "^6.4.3",
-    "babel-runtime": "^6.5.0",
-    "blender-gulp": "^2.0.5",
+    "babel": "^6.5.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "blender-gulp": "^2.1.5",
     "blender-media": "^1.3.1",
     "blender.js": "^1.2.6",
     "browsernizr": "1.0.2",
