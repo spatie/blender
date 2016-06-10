@@ -1,8 +1,15 @@
 <?php
 
+use Illuminate\Support\Collection;
+
 function locale(): string
 {
     return app()->getLocale();
+}
+
+function locales(): Collection
+{
+    return collect(config('app.locales'));
 }
 
 function content_locale(): string

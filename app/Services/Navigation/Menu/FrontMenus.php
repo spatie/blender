@@ -19,13 +19,9 @@ class FrontMenus
         });
 
         Menu::macro('language', function () {
-            $menu = Menu::front();
-
-            foreach (config('app.locales') as $locale) {
+            return locales()->reduce(function (Menu $menu, string $locale) {
                 $menu->url($locale, $locale);
-            }
-
-            return $menu;
+            }, Menu::front());
         });
     }
 }
