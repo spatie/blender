@@ -96,7 +96,7 @@ function short_class_name($object): string
     return $objectProperties->getShortName();
 }
 
-function class_constants($object, string  $startsWithFilter = ''): array
+function class_constants($object, string $startsWithFilter = ''): array
 {
     $objectProperties = new \ReflectionClass($object);
 
