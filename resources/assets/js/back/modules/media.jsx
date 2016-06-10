@@ -7,6 +7,8 @@ media.register('images', {
     rowEditor: <Name />,
 });
 
-media.register('downloads');
+media.register('downloads', {
+    rowEditor: <Name />,
+});
 
 media.mount();
