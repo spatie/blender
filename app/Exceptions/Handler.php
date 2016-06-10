@@ -35,11 +35,11 @@ class Handler extends ExceptionHandler
             return $this->renderHttpException($e);
         }
 
-        if (in_array(get_class($e), $this->dontReport)) {
+        if ($this->shouldntReport($e)) {
             return parent::render($request, $e);
         }
 
-        if (config('app.debug') && env('USE_WHOOPS', true)) {
+        if (config('app.debug')) {
             return $this->renderExceptionWithWhoops($e);
         }
 
