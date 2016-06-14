@@ -2,7 +2,6 @@
 
 namespace App\Foundation\Repositories;
 
-use App\Models\Enums\TagType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
@@ -21,9 +20,7 @@ interface Repository
     public function findOnline(int $id);
 
     public function getAllOnline(): Collection;
-
-    public function getAllOnlineGroupedByTagCategory(TagType $tagType): Collection
-
+    
     /**
      * @return \Illuminate\Database\Eloquent\Model|null
      */

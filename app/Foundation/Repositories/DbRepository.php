@@ -2,9 +2,6 @@
 
 namespace App\Foundation\Repositories;
 
-use App\Models\Enums\TagType;
-use App\Models\Tag;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
 abstract class DbRepository extends BaseRepository implements Repository
@@ -35,32 +32,6 @@ abstract class DbRepository extends BaseRepository implements Repository
         return $this->query()
             ->online()
             ->get();
-    }
-
-    public function getAllOnlineGroupedByTagCategory(TagType $tagType): Collection
-    {
-        $tags = Tag::getWithType($tagType);
-
-        return $this->getAllOnline()
-            ->groupBy(function (Model $model) use ($tagType) {
-                $firstTag = $model->tagsWithType($tagType)->first();
-
-                if (!$firstTag) {
-                    return 0;
-                }
-
-                return $firstTag->id;
-            })
-            ->map(function ($tagIdsWithModels, int $tagId) use ($tags) {
-                return [
-                    'tag' => $tags->get($tagId),
-                    'models' => collect($tagIdsWithModels)->values(),
-                ];
-            })
-            ->sortBy(function (array $tagsAndModels) {
-                return $tagsAndModels['tag']->order_column;
-            })
-            ->values();
     }
 
     /**
