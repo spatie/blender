@@ -15,7 +15,7 @@
         display: inline-block;
 
         &:hover {
-            color: color($gray, darker);
+            color: color($link);
         }
     }
 }
