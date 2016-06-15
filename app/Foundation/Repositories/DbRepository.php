@@ -33,21 +33,31 @@ abstract class DbRepository extends BaseRepository implements Repository
             ->online()
             ->get();
     }
-
+    
     /**
+     * @param string $url
+     * @param array  $with
+     *
      * @return \Illuminate\Database\Eloquent\Model|null
      */
-    public function findByUrl(string $url)
+    public function findByUrl(string $url, $with = [])
     {
         $model = static::MODEL;
 
+        $locale = content_locale();
+
         if (!isset((new $model())->translatedAttributes)) {
-            return $this->query()->online()->where('url', $url)->first();
+
+            return $this->query()
+                ->online()
+                ->where('url', 'regexp', "\"{$locale}\"\s*:\s*\"{$url}\"")
+                ->first();
         }
 
         return $this->query()
+            ->with($with)
             ->online()
-            ->whereTranslation('url', $url, content_locale())
+            ->whereTranslation('url', $url, $locale)
             ->first();
     }
 }
