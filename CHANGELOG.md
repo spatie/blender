@@ -3,6 +3,10 @@ All notable changes to Blender will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
+## [5.4.4] - 2016-06-15
+### Changad
+- Changed back menu layout
+
 ## [5.4.3] - 2016-05-02
 ### Changad
 - Remove default redactor dependency

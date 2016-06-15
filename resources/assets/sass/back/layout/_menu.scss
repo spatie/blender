@@ -1,14 +1,6 @@
 .menu {
-    @include mq(s) {
-        text-align: center;
-    }
-
     background: color($gray, lightest);
     margin-bottom: 2em;
-
-    ul {
-        @include ul-horizontal;
-    }
 
     li {
         &.-active > a {
@@ -47,33 +39,38 @@
         background-image: url('/favicon-32x32.png');
         display: inline-block;
         height: 1.5rem;
-        margin-right: .5em;
+        margin-right: .15em;
         vertical-align: middle;
         width: 1.5rem;
     }
 }
 
-.menu_front {
+.menu_home {
+
     float: left;
     font-size: .85rem;
     padding: 1.5em 0;
     z-index: 2;
 }
 
-.menu_front_link {
-    padding-right: 1.5em;
+.menu_home_dashboard {
+    margin-right: 1.5em;
 }
 
-.menu_front_link_protocol {
+.menu_home_front {
+    padding-left: 1.5em;
+}
+
+.menu_home_front_protocol {
     color: color($gray, lighter);
     padding-left: .35em;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 0;
 }
 
-.menu_front_link_host,
-.menu_front_link_protocol {
+.menu_home_front_host,
+.menu_home_front_protocol {
     @include mq(m) {
         display: none !important;
     }
@@ -88,6 +85,10 @@
     padding: 1.5em 0;
     text-align: right;
 
+    ul {
+        @include ul-horizontal;
+    }
+
     li {
         @include mq(s) {
             font-size: .85em;
@@ -98,117 +99,66 @@
     }
 }
 
-.menu_main {
-    @include mq(s) {
-        text-align: center;
-    }
+.menu_groups {
 
-    font-weight: font-weight(bold);
-    margin-top: 1em;
+   padding: 1em 0;
+   font-size: font-size(s);
+   display:flex;
+   overflow-x: auto;
 
-    li {
-        font-size: font-size(s);
-    }
+
+
+    @include mq(m){
+       margin: 0 -4vw;
+   }
 }
 
 .menu_group {
 
-    @include mq(m) {
-        float: none !important;
-    }
-
-    @include mq(s) {
-        display: block !important;
-        margin-bottom: .25em;
-
-        ul {
-            width: 100%;
-        }
-    }
-
-    background-color: color($gray, lighter);
-    border-radius: border-radius(s);
-    display: inline-block;
-    margin-bottom: 1.35em;
-    margin-left: .25em;
-    padding: .25em;
-    padding-right: 1.5em;
+    display: block;
+    flex-shrink: 0;
     vertical-align: top;
+    padding: 0 4em 0 1em;
+    border-left: solid color($gray, lighter) 2px;
+    font-weight: font-weight(medium);
 
-    &.-single {
-        padding-right: 0;
-    }
-
-    &.-active {
-        li {
-            display: inline-block !important;
-        }
-
-        &[data-menu-group]:before {
-            @include position-center-horizontal();
-            @include mq(s) {
-                display: none;
-            }
-
-            color: $text-color;
-            content: '—' attr(data-menu-group) '—';
-            font-size: font-size(xxs);
-            opacity: .35;
-            text-transform: uppercase;
-            top: -1.5em;
-        }
-    }
-}
-
-.menu_group_item {
-    @include mq(s) {
-        border: none;
-        width: 100%;
-    }
-
-    border-right: solid 2px darken(color($gray, lighter), 3%);
-
-    &.-active {
-        display: inline-block !important;
-    }
-
-    &.-secondary {
-        display: none;
-    }
-
-    &.-icon {
-        @include mq(s) {
-            right: .15em;
-            left: auto;
-            width: auto;
-
-            i {
-                transform: rotate(90deg);
-            }
-        }
-
-        opacity: .5;
-        position: absolute;
-        left: 100%;
-        top: 0;
-
-        a {
-            padding: .25em .75em .25em .5em;
-        }
-    }
-
-    &:last-child {
-        border-right: none;
+    ul {
+        @include ul-clean;
     }
 
     a {
-        padding: .25em 1.25em;
+        border-bottom: none;
+        color: $text-color;
+        display: inline-block;
+        line-height: 1.7;
 
-        &:focus {
-            outline: none;
+        &:hover {
+            color: color($link);
         }
     }
+
+    &:before {
+        content: attr(data-menu-group);
+        font-weight: font-weight(extrabold);
+        font-size: 0.75em;
+        text-transform: uppercase;
+        margin: 0 0 .25em 0;
+        color: color($gray, light);
+        display: block;
+
+    }
+
 }
+
+.menu_group_title {
+    font-weight: font-weight(extrabold);
+    font-size: 0.75em;
+    text-transform: uppercase;
+    margin: 0 0 .25em 0;
+    color: color($gray, light);
+}
+
+
 
 .menu_tabs {
     @include mq(s) {

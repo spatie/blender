@@ -25,12 +25,6 @@ class BackMenus
                 });
         });
 
-        Menu::macro('startSecondary', function () {
-            return $this->registerFilter(function (Link $link) {
-                $link->addParentClass('-secondary');
-            });
-        });
-
         Menu::macro('module', function (string $action, string $name) {
             return $this->action("Back\\{$action}", fragment("back.{$name}"));
         });
@@ -39,29 +33,21 @@ class BackMenus
             return Menu::back()
                 ->addClass('menu_groups')
                 ->setAttribute('data-menu-groups')
-                ->add(Menu::back()
-                    ->addParentClass('menu_group -single')
-                    ->add(
-                        Link::action('Back\DashboardController@index', fragment('back.dashboard.title'))
-                            ->addParentClass('menu_group_item')
-                    )
-                )
                 ->add(Menu::moduleGroup('content')
-                    ->module('NewsItemController@index', 'newsItems.title')
-                    ->startSecondary()
-                    ->module('PersonController@index', 'people.title')
                     ->module('ArticleController@index', 'articles.title')
+                    ->module('NewsItemController@index', 'newsItems.title')
+                    ->module('PersonController@index', 'people.title')
                 )
                 ->add(Menu::moduleGroup('modules')
-                    ->module('FormResponseController@showDownloadButton', 'formResponses.title')
-                    ->startSecondary()
-                    ->module('TagController@index', 'tags.title')
                     ->module('FragmentController@index', 'fragments.title')
+                    ->module('FormResponseController@showDownloadButton', 'formResponses.title')
+                    ->module('TagController@index', 'tags.title')
                 )
-                ->add(Menu::moduleGroup('configuration')
+                ->add(Menu::moduleGroup('users')
                     ->module('FrontUserController@index', 'frontUsers.title')
                     ->module('BackUserController@index', 'backUsers.title')
-                    ->startSecondary()
+                )
+                ->add(Menu::moduleGroup('system')
                     ->module('ActivitylogController@index', 'log.title')
                     ->module('StatisticsController@index', 'statistics.menuTitle')
                 );

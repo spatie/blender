@@ -10,8 +10,7 @@
     <meta name="description" content="@yield('pageDescription')">
     <title>@yield('pageTitle')</title>
 
-
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900,300italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700,900,300italic' rel='stylesheet' type='text/css'>
 
     @if(! app()->environment('production'))
         <script src="{{ elixir('back.style.js') }}"></script>

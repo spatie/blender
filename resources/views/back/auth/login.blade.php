@@ -10,20 +10,20 @@
 
     {{-- @include('auth._partials.lang') --}}
     <div class="+auth_card">
-        <h1 class="+auth_title">
-            <img class="+auth_logo" src="/images/svg/blender.svg">
-            Blender
-        </h1>
         {!! Form::open(['class'=>'-stacked +auth_form']) !!}
+            <h1 class="+auth_title">
+                <img class="+auth_logo" src="/images/svg/blender.svg">
+                Blender
+            </h1>
 
             <div class="form_group">
-                {!! Form::label('email', fragment('back.auth.email'), ['class' => '-invers'] ) !!}
+                {!! Form::label('email', fragment('back.auth.email') ) !!}
                 {!! Form::email('email', Input::old('email'), ['autofocus' => true ]) !!}
                 {!! HTML::error($errors->first('email')) !!}
             </div>
 
             <div class="form_group">
-                {!! Form::label('password', fragment('back.auth.password'), ['class' => '-invers']) !!}
+                {!! Form::label('password', fragment('back.auth.password')) !!}
                 {!! Form::password('password', [ ]) !!}
                 {!! HTML::error($errors->first('password')) !!}
                 <div class="form_group_help">
@@ -39,7 +39,9 @@
     </div>
 </section>
 
+{{--
 <div class="+auth_credit">
     picture: Folkert Gorter
 </div>
+--}}
 @endsection

@@ -1,21 +1,22 @@
 .\+auth {
-  @include background-image-tinted('/images/auth-background.jpg' , rgba( color($blue,darkest), .75), top center);
+  @include background-image-tinted('/images/auth-background.jpg' , rgba( $white, .75), top center);
 
-  backdrop-filter: blur(10px);
-  color: $white;
+  color: $text-color;
   min-height: 100vh;
-
-  a:hover {
-    color: $white;
-  }
 }
 
 .\+auth_card {
-  @include mq(s) {
-    padding-top: 10vh;
-  }
+  @include position-center;
 
-  padding-top: 15vh;
+  width: 40vw;
+
+    @include mq(s) {
+        position:relative;
+        width: 90vw;
+        top: 2em;
+        left: 5vw;
+        transform: none;
+    }
 }
 
 .\+auth_gravatar {
@@ -28,7 +29,7 @@
 }
 
 .\+auth_logo {
-  height: 1em;
+  height: 2em;
   top: -.1em;
   vertical-align: middle;
   width: auto;
@@ -39,8 +40,8 @@
     font-size: 8vw;
   }
 
-  font-size: 4vw;
-  font-weight: font-weight(thin);
+  font-size: font-size(m);
+  font-weight: font-weight(extrabold);
   margin-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
@@ -49,18 +50,18 @@
   text-transform: uppercase;
 
   &.-small {
-    font-size: font-size(l);
     max-width: none;
   }
 }
 
 .\+auth_form {
-  background: rgba(color($blue,darkest) , .15);
+  background: rgba($white , .15);
   border-radius: border-radius(m);
   margin-left: auto;
   margin-right: auto;
   max-width: 32em;
-  padding: 3em 6em;
+  padding: 4em;
+  box-shadow: 0 0 20px rgba(0,0,0,.03);
 
   [disabled] {
     color: $white;
@@ -81,7 +82,6 @@
 
   a {
     border-bottom: none;
-    color: $white;
     padding: 0 .25em;
     text-transform: uppercase;
   }
@@ -93,7 +93,6 @@
 
 .\+auth_credit {
   bottom: 3px;
-  color: $white;
   font-size: font-size(xs);
   font-weight: font-weight(medium);
   left: 3px;
