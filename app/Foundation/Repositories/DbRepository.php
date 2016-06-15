@@ -33,7 +33,7 @@ abstract class DbRepository extends BaseRepository implements Repository
             ->online()
             ->get();
     }
-    
+
     /**
      * @param string $url
      * @param array  $with
