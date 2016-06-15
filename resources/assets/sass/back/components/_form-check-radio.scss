@@ -41,8 +41,7 @@ input[type=checkbox] {
     transition: transform .1s;
     z-index: 2;
   }
-  
-  
+
   &[disabled] {
       &:after {
           box-shadow: none !important;

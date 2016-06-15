@@ -9,19 +9,19 @@
     @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
 
     <div class="+auth_card">
-        <h1 class="+auth_title -small">{{ fragment('back.auth.resetPassword.title') }}</h1>
         {!! Form::open(['class'=>'-stacked +auth_form']) !!}
+        <h1 class="+auth_title -small">{{ fragment('back.auth.resetPassword.title') }}</h1>
         @if(session('status'))
             <p class="alert -info">
                 {{ session('status') }}
             </p>
         @else
-        <p class="alert -invers">
+        <p class="alert -info">
             {{ fragment('back.auth.resetPassword.intro') }}
         </p>
         @endif
         <div class="form_group">
-            {!! Form::label('email', fragment('back.auth.email'), ['class' => '-invers']) !!}
+            {!! Form::label('email', fragment('back.auth.email')) !!}
             {!! Form::email('email', null, ['autofocus' => true]) !!}
             {!! HTML::error($errors->first('email')) !!}
         </div>

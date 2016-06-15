@@ -13,9 +13,10 @@
 
 
 .alert {
-  border-radius: border-radius(s);
+  border-radius:  border-radius(s);
   padding: 1em;
   z-index: z-index(above);
+  border-left: 5px solid;
 
   //variations
   &.-small,
@@ -31,27 +32,32 @@
   &.-invers {
     background: rgba(color($blue, lightest) , .1);
     color: $white;
+    border-left-color: $white;
   }
 
   &.-warning {
     background: color($orange,lightest);
-    color: color($orange,dark);
+    color: color($orange);
+    border-left-color: color($orange);
   }
 
   &.-danger,
   &.-error {
-    background: color($red, light);
-    color: color($red,lightest);
+    background: color($red, lightest);
+    color: color($red,dark);
+    border-left-color: color($red,dark);
   }
 
   &.-success {
     background: color($green, lightest);
-    color: color($green,darker);
+    color: color($green, dark);
+    border-left-color: color($green, dark);
   }
 
   &.-info {
     background: color($blue, lightest);
-    color: color($blue, dark);
+    color: color($blue);
+    border-left-color: color($blue);
   }
 
   //context

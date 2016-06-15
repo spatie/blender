@@ -46,8 +46,8 @@ class HtmlBuilder extends BaseHtmlBuilder
             return '';
         }
 
-        return el('div.alert.-danger', ['class' => $classes],
-            el('span.fa.fa-info-circle', $message)
+        return el('div.alert.-info', ['class' => $classes],
+            el('span.fa.fa-info-circle') . ' ' . $message
         );
     }
 

@@ -14,17 +14,17 @@
             {!! Form::open(['class'=>'-stacked +auth_form']) !!}
             {!! Form::hidden('token', $token) !!}
             {!! Form::hidden('email', $user->email) !!}
-            <p class="alert -invers">
+            <p class="alert -info">
                 {{ fragment('back.auth.resetInstructions') }}
             </p>
 
             <div class="form_group">
-                {!! Form::label('password', fragment('back.auth.password'), ['class' => '-invers'] ) !!}
+                {!! Form::label('password', fragment('back.auth.password') ) !!}
                 {!! Form::password('password', null, ['autofocus' ]) !!}
             </div>
 
             <div class="form_group">
-                {!! Form::label('password_confirmation', fragment('back.auth.passwordConfirm'), ['class' => '-invers']) !!}
+                {!! Form::label('password_confirmation', fragment('back.auth.passwordConfirm')) !!}
                 {!! Form::password('password_confirmation', [null]) !!}
                 {!! HTML::error($errors->first('password')) !!}
             </div>

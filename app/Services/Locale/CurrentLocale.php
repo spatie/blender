@@ -6,18 +6,12 @@ class CurrentLocale
 {
     public static function determine(): string
     {
-        $default = app()->getLocale();
-
         if (request()->isBack()) {
-            // User might not be set yet if called in a service provider so a fallback is provided
-            if (auth()->check()) {
-                return app()->auth->user()->locale;
-            }
-
-            return $default;
+            return config('app.backLocales')[0];
         }
 
-        return static::isValidLocale(app()->request->segment(1)) ? app()->request->segment(1) : $default;
+        return static::isValidLocale(app()->request->segment(1)) ? 
+            app()->request->segment(1) : app()->getLocale();
     }
 
     public static function getContentLocale(): string

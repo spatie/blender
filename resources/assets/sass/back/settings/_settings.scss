@@ -76,7 +76,7 @@ $blue: (
         lightest: #e5f4f8,
         lighter: #a7dceb,
         light: #73c7de,
-        default: #13869e,
+        default: #007593,
         dark: #11727f,
         darker: #20365a,
         darkest: #262835,
@@ -117,7 +117,7 @@ $green: (
 $gray: (
         lightest: #f5f5f6,
         lighter: #d8d8da,
-        light: #b8b9b6,
+        light: #b3b6be,
         default: #9699a1,
         dark: #676970,
         darker: #3c3c3c,
@@ -131,10 +131,10 @@ $gray: (
 /// @prop {Color} value - color
 /// @see {mixin} color
 $link: (
-        default: #13869e,
-        hover: #20365a,
-        active: #13869e,
-        visited: #13869e
+        default: #007593,
+        hover: #008caa,
+        active: #007593,
+        visited: #007593
 );
 
 /// Black
