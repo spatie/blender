@@ -7,7 +7,7 @@ use App\Services\Auth\Back\User;
 
 class UserWasCreated extends Event
 {
-    /** @var \App\Services\Auth\Front\User */
+    /** @var \App\Services\Auth\Back\User */
     public $user;
 
     public function __construct(User $user)
