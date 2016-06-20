@@ -14,7 +14,7 @@ function locales(): Collection
 
 function content_locale(): string
 {
-    return app('currentLocale')->getContentLocale();
+    return \App\Services\Locale\CurrentLocale::getContentLocale();
 }
 
 function fragment($name, array $replacements = []): string

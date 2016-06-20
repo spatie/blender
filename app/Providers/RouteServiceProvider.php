@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Article;
+use App\Services\Locale\CurrentLocale;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 
@@ -12,7 +13,7 @@ class RouteServiceProvider extends ServiceProvider
 
     public function boot(Router $router)
     {
-        $this->app->setLocale($this->app['currentLocale']->determine());
+        $this->app->setLocale(CurrentLocale::determine());
 
         $this->registerMacros($router);
 
