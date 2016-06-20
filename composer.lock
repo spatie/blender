@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6119406d0377987c6f491f3a45798ad1",
-    "content-hash": "1d4834858c4837ef36fbbf2bf8acf72f",
+    "hash": "fa761335b80213c7c6afd6b4b41ab44d",
+    "content-hash": "4e45e6beb6d8c5681b9393cc0b6d14c5",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -308,16 +308,16 @@
         },
         {
             "name": "bugsnag/bugsnag",
-            "version": "v2.7.2",
+            "version": "v2.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bugsnag/bugsnag-php.git",
-                "reference": "c504c3d17637bd0295b10bfeb38ef0b388831d5d"
+                "reference": "1727b5b77d02f6e1c2a6544abced88b3dfa1bca4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bugsnag/bugsnag-php/zipball/c504c3d17637bd0295b10bfeb38ef0b388831d5d",
-                "reference": "c504c3d17637bd0295b10bfeb38ef0b388831d5d",
+                "url": "https://api.github.com/repos/bugsnag/bugsnag-php/zipball/1727b5b77d02f6e1c2a6544abced88b3dfa1bca4",
+                "reference": "1727b5b77d02f6e1c2a6544abced88b3dfa1bca4",
                 "shasum": ""
             },
             "require": {
@@ -327,6 +327,11 @@
                 "phpunit/phpunit": "~4.8|~5.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "Bugsnag_": "src/"
@@ -352,7 +357,7 @@
                 "logging",
                 "tracking"
             ],
-            "time": "2016-06-17 21:48:37"
+            "time": "2016-06-20 17:03:41"
         },
         {
             "name": "bugsnag/bugsnag-laravel",
@@ -3644,34 +3649,34 @@
         },
         {
             "name": "spatie/laravel-analytics",
-            "version": "1.4.1",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-analytics.git",
-                "reference": "957f8f698fd14b89dedfff1d90eb486d89b559c8"
+                "reference": "92e91ff86bfd08239867c6ffbc09ef99f0346676"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-analytics/zipball/957f8f698fd14b89dedfff1d90eb486d89b559c8",
-                "reference": "957f8f698fd14b89dedfff1d90eb486d89b559c8",
+                "url": "https://api.github.com/repos/spatie/laravel-analytics/zipball/92e91ff86bfd08239867c6ffbc09ef99f0346676",
+                "reference": "92e91ff86bfd08239867c6ffbc09ef99f0346676",
                 "shasum": ""
             },
             "require": {
-                "google/apiclient": "1.1.*",
-                "illuminate/contracts": "~5.0",
-                "illuminate/support": "~5.0",
-                "nesbot/carbon": "~1.0",
-                "php": ">=5.4.0"
+                "google/apiclient": "^1.1",
+                "illuminate/contracts": "^5.1",
+                "illuminate/support": "^5.1",
+                "nesbot/carbon": "^1.21",
+                "php": "^7.0"
             },
             "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
+                "mockery/mockery": "^0.9.5",
+                "orchestra/testbench": "3.2.x@dev",
+                "phpunit/phpunit": "^4.0"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Spatie\\LaravelAnalytics\\": "src"
+                    "Spatie\\Analytics\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3684,15 +3689,9 @@
                     "email": "freek@spatie.be",
                     "homepage": "https://murze.be",
                     "role": "Developer"
-                },
-                {
-                    "name": "Matthias De Winter",
-                    "email": "dewinter.matthias@gmail.com",
-                    "homepage": "https://github.com/MatthiasDeWinter",
-                    "role": "Developer"
                 }
             ],
-            "description": "An opinionated Laravel 5 package to retrieve Google Analytics data.",
+            "description": "A Laravel 5 package to retrieve Google Analytics data.",
             "homepage": "https://github.com/spatie/laravel-analytics",
             "keywords": [
                 "analytics",
@@ -3702,7 +3701,7 @@
                 "retrieve",
                 "spatie"
             ],
-            "time": "2016-05-13 06:41:58"
+            "time": "2016-06-20 17:19:21"
         },
         {
             "name": "spatie/laravel-backup",
