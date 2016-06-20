@@ -49,6 +49,11 @@ class ConfigServiceProvider extends ServiceProvider
             return;
         }
 
-        config()->set('mail.questionFormRecipients', ['technical@spatie.be']);
+        config()->set(
+            'mail.recipients',
+            collect(config('mail.recipients'))->map(function () {
+                return 'technical@spatie.be';
+            })
+        );
     }
 }

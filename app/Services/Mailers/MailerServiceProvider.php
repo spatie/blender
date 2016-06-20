@@ -14,7 +14,6 @@ class MailerServiceProvider extends ServiceProvider
     public function boot(Dispatcher $events)
     {
         $events->subscribe(AdminMailer::class);
-        $events->subscribe(ContactFormMailer::class);
         $events->subscribe(MemberMailer::class);
     }
 }

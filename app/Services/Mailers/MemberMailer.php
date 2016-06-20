@@ -10,7 +10,12 @@ use Illuminate\Contracts\Events\Dispatcher;
 class MemberMailer
 {
     use SendsMails;
-    
+
+    public function subscribe(Dispatcher $events)
+    {
+        $events->listen(UserWasCreatedThroughBack::class, [$this, 'userWasCreatedThroughBack']);
+    }
+
     public function userWasRegistered(UserWasRegistered $event)
     {
         $this->sendTo(
@@ -26,10 +31,5 @@ class MemberMailer
         Password::broker('front')->sendResetLink(['email' => $event->user->email], function (Message $message) {
             $message->subject('Welkom bij ' . config('app.url'));
         });
-    }
-
-    public function subscribe(Dispatcher $events)
-    {
-        $events->listen(UserWasCreatedThroughBack::class, [$this, 'userWasCreatedThroughBack']);
     }
 }
