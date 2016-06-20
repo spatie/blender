@@ -16,8 +16,9 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
  * @property int $id
  * @property string $email
  * @property string $password
- * @property int $first_name
- * @property int $last_name
+ * @property string $first_name
+ * @property string $last_name
+ * @property string $name
  * @property string $remember_token
  * @property string $locale
  * @property \Carbon\Carbon $last_activity
@@ -38,7 +39,17 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
 
     public function setPasswordAttribute(string $value)
     {
+        if (is_null($value)) {
+            $this->attributes['password'] = null;
+            return;
+        }
+
         $this->attributes['password'] = bcrypt($value);
+    }
+
+    public function getNameAttribute(): string
+    {
+        return $this->first_name . ' ' . $this->last_name;
     }
 
     public function hasNeverLoggedIn(): bool

@@ -7,11 +7,6 @@ use Laracasts\Presenter\Presenter;
 /** @mixin \App\Services\Auth\Back\User */
 class UserPresenter extends Presenter
 {
-    public function fullName(): string
-    {
-        return "{$this->first_name} {$this->last_name}";
-    }
-
     public function avatar(): string
     {
         return 'https://www.gravatar.com/avatar/'.md5($this->email).'?d=mm&s=256';
