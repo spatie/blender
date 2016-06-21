@@ -12,11 +12,11 @@
             graphName : 'visitors',
             ctx : document.getElementById('visitors').getContext('2d'),
             chart : {
-                labels: {!! json_encode(array_map(function($month) {return $month->format('m-Y');}, $visitorsData->lists('yearMonth')->toArray())) !!},
+                labels: {!! json_encode($visitors->pluck('date')->toArray()) !!},
                 datasets: [
                     {
                         label: '{{ fragment('back.statistics.visitors') }}',
-                        data: {!! json_encode($visitorsData->lists('visitors')) !!},
+                        data: {!! json_encode($visitors->pluck('visitors')->toArray())  !!},
                         fillColor: "rgba(151,187,205,0.2)",
                         strokeColor: "rgba(151,187,205,1)",
                         pointColor: "rgba(151,187,205,1)",
@@ -25,7 +25,7 @@
                     },
                     {
                         label: 'Pageviews',
-                        data: {!! json_encode($visitorsData->lists('pageViews')) !!},
+                        data: {!! json_encode($visitors->pluck('pageViews')->toArray())  !!},
                         fillColor: "rgba(220,220,220,0.2)",
                         strokeColor: "rgba(220,220,220,1)",
                         pointColor: "rgba(220,220,220,1)",
