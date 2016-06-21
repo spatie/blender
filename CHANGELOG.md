@@ -4,20 +4,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
 ## [5.4.4] - 2016-06-15
-### Changad
+### Changed
 - Changed back menu layout
 
 ## [5.4.3] - 2016-05-02
-### Changad
+### Changed
 - Remove default redactor dependency
 
 ## [5.4.2] - 2016-02-02
-### Changad
+### Changed
 - Webpack dependencies back
 - editor script
 
 ## [5.4.1] - 2016-01-28
-### Changad
+### Changed
 - Font imports
 - Back menu
 
