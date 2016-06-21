@@ -4,7 +4,7 @@
     <h1>{{ trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton', [], null, $user->locale) }}</h1>
 
     <p>
-        {{ trans('auth.passwordMail.compellation', [], null, $user->locale) }} {{ $user->firstName }},
+        {{ trans('auth.passwordMail.compellation', [], null, $user->locale) }} {{ $user->first_name }},
     </p>
     <p>
         {{ trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') .'.intro', [], null, $user->locale) }} <a href="{{ url('blender') }}">{{ Request::getHost() }}</a>.
