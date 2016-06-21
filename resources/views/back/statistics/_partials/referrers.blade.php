@@ -1,18 +1,18 @@
 <h2>{{ fragment('back.statistics.sources') }}</h2>
-@if (count($referrerData))
+@if (count($referrers))
     <table  class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
         <th>{{ fragment('back.statistics.source') }}</th>
         <th>{{ fragment('back.statistics.numberOfVisitors') }}</th>
         </thead>
         <tbody>
-        @foreach($referrerData as $referrerRow)
+        @foreach($referrers as $referrer)
             <tr>
                 <td>
-                    {{ $referrerRow['url'] }}
+                    {{ $referrer['url'] }}
                 </td>
                 <td>
-                    {{ $referrerRow['pageViews'] }}
+                    {{ $referrer['pageViews'] }}
                 </td>
             </tr>
         @endforeach

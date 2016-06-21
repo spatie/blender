@@ -1,20 +1,20 @@
 
 <h2>{{ fragment('back.statistics.mostVisitedPages') }}</h2>
 
-@if (count($pagesData))
+@if (count($pages))
     <table  class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
         <th>{{ fragment('back.statistics.page') }}</th>
         <th>{{ fragment('back.statistics.numberOfVisitors') }}</th>
         </thead>
         <tbody>
-        @foreach($pagesData as $pageRow)
+        @foreach($pages as $page)
             <tr>
                 <td>
-                    {{ $pageRow['url'] }}
+                    {{ $page['url'] }}
                 </td>
                 <td>
-                    {{ $pageRow['pageViews'] }}
+                    {{ $page['pageViews'] }}
                 </td>
             </tr>
         @endforeach

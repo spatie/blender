@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
+use Analytics;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use Spatie\Activitylog\Models\Activity;
+use Spatie\Analytics\Period;
 
 class DashboardController extends Controller
 {
@@ -14,15 +16,15 @@ class DashboardController extends Controller
 
         $view = view('back.dashboard.index')->with(compact('logItems'));
 
-        if (empty(config('laravel-analytics.siteId'))) {
+        if (empty(config('laravel-analytics.view_id'))) {
             return $view;
         }
 
-        $analyticsData = $this->getAnalyticsData();
+        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(14));
 
-        $dates = $analyticsData->lists('date');
-        $visitors = $analyticsData->lists('visitors');
-        $pageViews = $analyticsData->lists('pageViews');
+        $dates = $analyticsData->pluck('date');
+        $visitors = $analyticsData->pluck('visitors');
+        $pageViews = $analyticsData->pluck('pageViews');
 
         return $view->with(compact('dates', 'visitors', 'pageViews'));
     }
@@ -33,10 +35,5 @@ class DashboardController extends Controller
             ->latest()
             ->limit(30)
             ->get();
-    }
-
-    protected function getAnalyticsData(): Collection
-    {
-        return app('laravelAnalytics')->getVisitorsAndPageViews(14);
     }
 }

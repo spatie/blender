@@ -3,23 +3,36 @@
 namespace App\Http\Controllers\Back;
 
 use App\Http\Controllers\Controller;
-use LaravelAnalytics;
+use Analytics;
+use Spatie\Analytics\Period;
 
 class StatisticsController extends Controller
 {
     public function index()
     {
-        if (empty(config('laravel-analytics.siteId'))) {
+        if (empty(config('laravel-analytics.view_id'))) {
             return view('back.statistics.notconfigured');
         }
 
-        $visitorsData = LaravelAnalytics::getVisitorsAndPageViews(365, 'yearMonth');
-        $pagesData = LaravelAnalytics::getMostVisitedPages();
-        $keywordData = LaravelAnalytics::getTopKeywords();
-        $referrerData = LaravelAnalytics::getTopReferrers();
-        $browserData = LaravelAnalytics::getTopBrowsers();
+        $visitors = Analytics::fetchVisitorsAndPageViews(Period::days(365))
+            ->groupBy(function (array $visitorStatistics) {
+                return $visitorStatistics['date']->format('Y-m');
+            })
+            ->map(function ($visitorStatistics, $yearMonth) {
+                list($year, $month) = explode('-', $yearMonth);
 
-        return view('back.statistics.index')
-            ->with(compact('visitorsData', 'pagesData', 'keywordData', 'referrerData', 'browserData'));
+                return [
+                    'date' => "{$month}-{$year}",
+                    'visitors' => $visitorStatistics->sum('visitors'),
+                    'pageViews' => $visitorStatistics->sum('pageViews')
+                ];
+            })
+            ->values();
+
+        $pages = Analytics::fetchMostVisitedPages(Period::days(365));
+        $referrers = Analytics::fetchTopReferrers(Period::days(365));
+        $browsers = Analytics::fetchTopBrowsers(Period::days(365));
+
+        return view('back.statistics.index') ->with(compact('visitors', 'pages', 'referrers', 'browsers'));
     }
 }

@@ -14,9 +14,6 @@
             @include('back.statistics._partials.pages')
         </div>
         <div class="statistic">
-            @include('back.statistics._partials.keywords')
-        </div>
-        <div class="statistic">
             @include('back.statistics._partials.referrers')
         </div>
         <div class="statistic">

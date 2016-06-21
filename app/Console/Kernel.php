@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\PrefetchAnalyticsData;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Spatie\FragmentImporter\Commands\ImportFragments;
@@ -21,6 +22,7 @@ class Kernel extends ConsoleKernel
         Commands\SendSlackMessage::class,
         CheckLinksCommand::class,
         ImportFragments::class,
+        PrefetchAnalyticsData::class,
     ];
 
     /**
@@ -31,6 +33,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('backup:scheduled')->dailyAt('03:00');
+        $schedule->command('analytics:prefetch')->dailyAt('06:00');
         $schedule->command('link-checker:run')->monthly();
         $schedule->command('clean:models')->daily();
     }

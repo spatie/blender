@@ -1,41 +1,22 @@
 <?php
 
-return
+return [
 
-    [
-        /*
-         * The siteId is used to retrieve and display Google Analytics statistics
-         * in the admin-section.
-         *
-         * Should look like: ga:xxxxxxxx.
-         */
-        'siteId' => env('ANALYTICS_SITE_ID'),
+    /*
+     * The view id of which you want to display data.
+     */
+    'view_id' => env('ANALYTICS_VIEW_ID'),
 
-        /*
-         * Set the client id
-         *
-         * Should look like:
-         * xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com
-         */
-        'clientId' => env('ANALYTICS_CLIENT_ID'),
+    /*
+     * Path to the client secret json file. Take a look at the README of this package
+     * to learn how to get this file.
+     */
+    'service_account_credentials_json' => storage_path('app/laravel-google-analytics/service-account-credentials.json'),
 
-        /*
-         * Set the service account name
-         *
-         * Should look like:
-         * xxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@developer.gserviceaccount.com
-         */
-        'serviceEmail' => env('ANALYTICS_SERVICE_EMAIL'),
+    /*
+     * The amount of minutes the Google API responses will be cached.
+     * If you set this to zero, the responses won't be cached at all.
+     */
+    'cache_lifetime_in_minutes' => (60 * 24) - 5,
 
-        /*
-         * You need to download a p12-certificate from the Google API console
-         * Be sure to store this file in a secure location.
-         */
-        'certificatePath' => storage_path('laravel-analytics/blender5.p12'),
-
-        /*
-         * The amount of minutes the Google API responses will be cached.
-         * If you set this to zero, the responses won't be cached at all.
-         */
-        'cacheLifetime' => 60 * 24 * 2,
-    ];
+];
