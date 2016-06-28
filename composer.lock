@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d61577c2c60ec859e870abd60de403a2",
-    "content-hash": "8b2e2f49ea263b23fd0acfbbdde58cf3",
+    "hash": "2a7c0d8b998063736e915515b80279b8",
+    "content-hash": "cea93a0ede275a060db5247e06fd26f7",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3825,16 +3825,16 @@
         },
         {
             "name": "spatie/laravel-cookie-consent",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-cookie-consent.git",
-                "reference": "8867ed87a29882b07bfd38eef64d0accacfcef00"
+                "reference": "2628892ad1028fb9d8d1b8660334e5c777281024"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/8867ed87a29882b07bfd38eef64d0accacfcef00",
-                "reference": "8867ed87a29882b07bfd38eef64d0accacfcef00",
+                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/2628892ad1028fb9d8d1b8660334e5c777281024",
+                "reference": "2628892ad1028fb9d8d1b8660334e5c777281024",
                 "shasum": ""
             },
             "require": {
@@ -3881,7 +3881,7 @@
                 "law",
                 "spatie"
             ],
-            "time": "2016-06-28 13:39:05"
+            "time": "2016-06-28 13:57:08"
         },
         {
             "name": "spatie/laravel-demo-mode",
@@ -7483,8 +7483,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fedeisas/laravel-mail-css-inliner": 20,
-        "spatie/laravel-cookie-consent": 20
+        "fedeisas/laravel-mail-css-inliner": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
