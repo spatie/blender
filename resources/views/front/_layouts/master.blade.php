@@ -53,11 +53,13 @@
     </header>
     @include('front._layouts._partials.flashMessage')
     @yield('content')
+    @include('cookieConsent::index')
     <footer class="footer">
         <small>
             © {{ Date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
         </small>
     </footer>
     <script src="{{ elixir('front.app.js') }}"></script>
+
 </body>
 </html>

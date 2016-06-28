@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fa761335b80213c7c6afd6b4b41ab44d",
-    "content-hash": "4e45e6beb6d8c5681b9393cc0b6d14c5",
+    "hash": "2a7c0d8b998063736e915515b80279b8",
+    "content-hash": "cea93a0ede275a060db5247e06fd26f7",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3824,6 +3824,66 @@
             "time": "2016-06-26 21:48:37"
         },
         {
+            "name": "spatie/laravel-cookie-consent",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-cookie-consent.git",
+                "reference": "2628892ad1028fb9d8d1b8660334e5c777281024"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/2628892ad1028fb9d8d1b8660334e5c777281024",
+                "reference": "2628892ad1028fb9d8d1b8660334e5c777281024",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cookie": "^5.1",
+                "illuminate/support": "^5.1",
+                "illuminate/view": "^5.1",
+                "php": "^5.5|^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.2",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\CookieConsent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Willem Van Bockstal",
+                    "email": "willem@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Make your Laravel app comply with the crazy EU cookie law",
+            "homepage": "https://github.com/spatie/laravel-cookie-consent",
+            "keywords": [
+                "comply",
+                "cookie",
+                "eu",
+                "laravel-cookie-consent",
+                "law",
+                "spatie"
+            ],
+            "time": "2016-06-28 13:57:08"
+        },
+        {
             "name": "spatie/laravel-demo-mode",
             "version": "1.0.2",
             "source": {
@@ -4712,27 +4772,25 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "4.0",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/seeders.git",
-                "reference": "aee7c7ab9088ec804f51f7339ca83c6cfe770276"
+                "reference": "3de2719b51c0138a7e92e8c316efa82df4343ee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/aee7c7ab9088ec804f51f7339ca83c6cfe770276",
-                "reference": "aee7c7ab9088ec804f51f7339ca83c6cfe770276",
+                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/3de2719b51c0138a7e92e8c316efa82df4343ee9",
+                "reference": "3de2719b51c0138a7e92e8c316efa82df4343ee9",
                 "shasum": ""
             },
             "require": {
                 "fzaninotto/faker": "^1.5",
-                "illuminate/database": "4.*|5.*",
-                "illuminate/support": "4.*|5.*",
+                "illuminate/database": "5.*",
+                "illuminate/support": "5.*",
                 "league/flysystem": "^1.0",
-                "php": "^5.5|^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.7"
+                "php": "^7.0",
+                "spatie/html-element": "^1.0"
             },
             "type": "library",
             "autoload": {
@@ -4767,10 +4825,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/seeders/tree/4.0",
+                "source": "https://github.com/spatie-custom/seeders/tree/4.3.0",
                 "issues": "https://github.com/spatie-custom/seeders/issues"
             },
-            "time": "2016-04-12 14:06:35"
+            "time": "2016-06-17 14:12:18"
         },
         {
             "name": "spatie/string",
