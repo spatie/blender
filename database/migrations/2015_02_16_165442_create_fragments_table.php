@@ -10,7 +10,7 @@ class CreateFragmentsTable extends Migration
         Schema::create('fragments', function(Blueprint $table)
         {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->index();
             $table->text('text');
             $table->string('description')->nullable();
             $table->boolean('contains_html')->default(false);

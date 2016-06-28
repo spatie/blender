@@ -41,7 +41,7 @@
     "spatie/laravel-or-abort": "^1.0",
     "spatie/laravel-paginateroute": "^2.0",
     "spatie/laravel-tail": "^1.0",
-    "spatie/seeders": "4.0",
+    "spatie/seeders": "^4.3",
     "spatie/string": "^2.0",
     "spatie/laravel-failed-job-monitor": "^1.0",
     "spatie/laravel-link-checker": "^1.0",
