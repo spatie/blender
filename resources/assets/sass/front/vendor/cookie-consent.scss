@@ -1,0 +1,29 @@
+.cookie-consent {
+  background: color($yellow, lightest);
+  font-size: font-size(s);
+  padding: 1em;
+  text-align: center;
+}
+
+.cookie-consent__message {
+  color: color($yellow, dark);
+}
+
+.cookie-consent__agree {
+  background-color: color($yellow, lighter);
+  border: 0;
+  border-radius: border-radius(3px);
+  box-shadow: 0 2px 5px color($yellow, dark, .15);
+  color: color($yellow, dark);
+  font-weight: bold;
+  margin: 0 1em;
+  padding: .5em 1em;
+
+  &:hover {
+    color: color($yellow, darker);
+  }
+
+  &:active {
+    top: 1px;
+  }
+}
