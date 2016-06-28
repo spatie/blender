@@ -199,7 +199,8 @@ return [
         Spatie\ModelCleanup\ModelCleanupServiceProvider::class,
         Spatie\DemoMode\DemoModeServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
-        Spatie\BladeJavaScript\BladeJavaScriptServiceProvider::class
+        Spatie\BladeJavaScript\BladeJavaScriptServiceProvider::class,
+        Spatie\CookieConsent\CookieConsentServiceProvider::class,
     ],
 
     /*

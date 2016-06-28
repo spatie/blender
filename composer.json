@@ -55,7 +55,8 @@
     "jenssegers/date": "^3.2",
     "barryvdh/laravel-debugbar": "^2.2",
     "ksubileau/color-thief-php": "^1.3",
-    "spatie/laravel-blade-javascript": "^1.0"
+    "spatie/laravel-blade-javascript": "^1.0",
+    "spatie/laravel-cookie-consent": "^1.0"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
