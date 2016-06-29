@@ -73,7 +73,9 @@ abstract class ModuleController extends Controller
         app('cache')->flush();
 
         $eventDescription = $this->getUpdatedEventDescription($model);
-        activity()->log($eventDescription);
+
+        activity()->on($model)->log($eventDescription);
+
         flash()->success(strip_tags($eventDescription));
 
         if ($this->redirectToIndex) {
@@ -88,7 +90,7 @@ abstract class ModuleController extends Controller
         $model = $this->query()->find($id);
 
         $eventDescription = $this->getDeletedEventDescription($model);
-        activity()->log($eventDescription);
+        activity()->on($model)->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         $model->delete();

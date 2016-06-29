@@ -4,13 +4,18 @@ namespace App\Models;
 
 use App\Foundation\Models\Traits\Presentable;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Translatable\HasTranslations;
 
 class Fragment extends Model
 {
-    use HasTranslations, Presentable;
+    use HasTranslations, Presentable, LogsActivity;
 
     public $translatable = ['text'];
+
+    protected static $logAttributes = ['name', 'text'];
+
+    protected static $recordEvents = ['updated'];
 
     /**
      * @return \App\Models\Fragment|null
@@ -35,5 +40,13 @@ class Fragment extends Model
             })
             ->pluck('text', 'key')
             ->toArray();
+    }
+
+
+    public function getDescriptionForEvent(string $eventName): string
+    {
+        $link = link_to_action("Back\\FragmentController@edit", $this->name, [$this->id]);
+
+        return "Fragment '{$link}' werd bijgewerkt";
     }
 }

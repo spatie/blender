@@ -49,7 +49,7 @@ class FragmentController extends Controller
         app('cache')->flush();
 
         $eventDescription = fragment('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);
-        activity()->log($eventDescription);
+
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\FragmentController@index');
