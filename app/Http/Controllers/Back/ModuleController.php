@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Back;
 
-use Activity;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\EloquentSortable\SortableInterface;
@@ -74,7 +73,9 @@ abstract class ModuleController extends Controller
         app('cache')->flush();
 
         $eventDescription = $this->getUpdatedEventDescription($model);
-        Activity::log($eventDescription);
+
+        activity()->on($model)->log($eventDescription);
+
         flash()->success(strip_tags($eventDescription));
 
         if ($this->redirectToIndex) {
@@ -89,7 +90,7 @@ abstract class ModuleController extends Controller
         $model = $this->query()->find($id);
 
         $eventDescription = $this->getDeletedEventDescription($model);
-        Activity::log($eventDescription);
+        activity()->on($model)->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         $model->delete();

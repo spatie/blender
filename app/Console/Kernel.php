@@ -36,5 +36,6 @@ class Kernel extends ConsoleKernel
         $schedule->command('analytics:prefetch')->dailyAt('06:00');
         $schedule->command('link-checker:run')->monthly();
         $schedule->command('clean:models')->daily();
+        $schedule->command('activity:clean')->daily();
     }
 }

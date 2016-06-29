@@ -28,6 +28,8 @@ class AuthController extends Controller
             return $this->sendInactiveAccountResponse($request);
         }
 
+        activity()->log('Gebruiker logt in.');
+
         return redirect()->intended($this->redirectPath());
     }
 

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Front;
 
-use Activity;
 use Newsletter;
 use App\Http\Controllers\ApiController;
 use App\Http\Requests\Front\NewsletterSubscriptionRequest;
@@ -28,7 +27,7 @@ class NewsletterApiController extends ApiController
             return $this->respondWithBadRequest(['message' => fragment('newsletter.subscription.result.error'), 'type' => 'error']);
         }
 
-        Activity::log("{$email} schreef zich in op de nieuwsbrief");
+        activity()->log("{$email} schreef zich in op de nieuwsbrief");
 
         return $this->respond(['message' => fragment('newsletter.subscription.result.ok'), 'type' => 'success']);
     }
