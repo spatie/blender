@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import viewport from 'viewport-utility';
 
 if ($('[data-validate]').size()) {

@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import 'blender.js/modules/ajax.csrf';
 import 'blender.js/modules/interface.confirm';
 import 'blender.js/modules/form.autosave';
