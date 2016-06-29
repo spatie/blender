@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Back;
 
-use Activity;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FragmentRequest;
 use App\Models\Fragment;
@@ -50,7 +49,7 @@ class FragmentController extends Controller
         app('cache')->flush();
 
         $eventDescription = fragment('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);
-        Activity::log($eventDescription);
+        activity()->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\FragmentController@index');

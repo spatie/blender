@@ -31,7 +31,7 @@ class DashboardController extends Controller
 
     protected function getLatestActivityItems(): Collection
     {
-        return Activity::with('user')
+        return Activity::with('causer')
             ->latest()
             ->limit(30)
             ->get();

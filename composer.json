@@ -29,7 +29,7 @@
     "maknz/slack": "^1.5",
     "myclabs/php-enum": "^1.4",
     "pda/pheanstalk": "^3.0",
-    "spatie/activitylog": "^2.4",
+    "spatie/laravel-activitylog": "^1.0",
     "spatie/array-functions": "^1.1",
     "spatie/eloquent-sortable": "^1.0",
     "spatie/laravel-analytics": "^2.0",

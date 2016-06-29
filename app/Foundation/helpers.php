@@ -189,11 +189,6 @@ function validate($fields, $rules): bool
     return Validator::make($fields, $rules)->passes();
 }
 
-function activity(string $message)
-{
-    Activity::log($message);
-}
-
 function el(string $tag, $attributes = null, $contents = null): string
 {
     return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2a7c0d8b998063736e915515b80279b8",
-    "content-hash": "cea93a0ede275a060db5247e06fd26f7",
+    "hash": "fb350557e9add889a80c85b6e9103d3a",
+    "content-hash": "89c74720f2e9530e8252c74255771c81",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -59,16 +59,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.18.21",
+            "version": "3.18.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "db88adc1569789e7d680809f51a62d2bd3410216"
+                "reference": "d1a990d3a7c1fec992abdb508b47271ba089586e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/db88adc1569789e7d680809f51a62d2bd3410216",
-                "reference": "db88adc1569789e7d680809f51a62d2bd3410216",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d1a990d3a7c1fec992abdb508b47271ba089586e",
+                "reference": "d1a990d3a7c1fec992abdb508b47271ba089586e",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-06-27 22:52:29"
+            "time": "2016-06-28 23:29:43"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3287,57 +3287,6 @@
             "time": "2016-03-09 05:03:14"
         },
         {
-            "name": "spatie/activitylog",
-            "version": "2.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/activitylog.git",
-                "reference": "b734982a3a238f0b5371a5f9230ffce25a1ef4ab"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/activitylog/zipball/b734982a3a238f0b5371a5f9230ffce25a1ef4ab",
-                "reference": "b734982a3a238f0b5371a5f9230ffce25a1ef4ab",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/migrations"
-                ],
-                "psr-0": {
-                    "Spatie\\Activitylog\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be"
-                }
-            ],
-            "description": "A very simple activity logger to monitor the users of your website or application",
-            "homepage": "https://github.com/spatie/activitylog",
-            "keywords": [
-                "activity",
-                "laravel",
-                "log",
-                "user"
-            ],
-            "time": "2016-03-23 19:16:40"
-        },
-        {
             "name": "spatie/array-functions",
             "version": "1.8.0",
             "source": {
@@ -3648,6 +3597,69 @@
             "time": "2016-03-11 13:14:56"
         },
         {
+            "name": "spatie/laravel-activitylog",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-activitylog.git",
+                "reference": "b2120fe7774db70df04e7917af44865ca9d8e161"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/b2120fe7774db70df04e7917af44865ca9d8e161",
+                "reference": "b2120fe7774db70df04e7917af44865ca9d8e161",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "^5.2",
+                "illuminate/database": "^5.2",
+                "illuminate/support": "^5.2.21",
+                "php": "^7.0",
+                "spatie/string": "^2.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.2",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Activitylog\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A very simple activity logger to monitor the users of your website or application",
+            "homepage": "https://github.com/spatie/activitylog",
+            "keywords": [
+                "activity",
+                "laravel",
+                "log",
+                "spatie",
+                "user"
+            ],
+            "time": "2016-06-29 10:44:31"
+        },
+        {
             "name": "spatie/laravel-analytics",
             "version": "2.1.0",
             "source": {
@@ -3825,16 +3837,16 @@
         },
         {
             "name": "spatie/laravel-cookie-consent",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-cookie-consent.git",
-                "reference": "2628892ad1028fb9d8d1b8660334e5c777281024"
+                "reference": "14ce897c9fe50c27cd899a587a0ef20a5d94b2ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/2628892ad1028fb9d8d1b8660334e5c777281024",
-                "reference": "2628892ad1028fb9d8d1b8660334e5c777281024",
+                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/14ce897c9fe50c27cd899a587a0ef20a5d94b2ce",
+                "reference": "14ce897c9fe50c27cd899a587a0ef20a5d94b2ce",
                 "shasum": ""
             },
             "require": {
@@ -3881,7 +3893,7 @@
                 "law",
                 "spatie"
             ],
-            "time": "2016-06-28 13:57:08"
+            "time": "2016-06-28 14:14:05"
         },
         {
             "name": "spatie/laravel-demo-mode",

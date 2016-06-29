@@ -30,8 +30,8 @@
                         @foreach($logItems as $logItem)
                             <tr>
                                 <td>{{ diff_date_for_humans($logItem->created_at) }}</td>
-                                <td>{!! $logItem->text !!}</td>
-                                <td>{!! ($logItem->user ? link_to_action('Back\BackUserController@edit', $logItem->user->present()->fullName, [$logItem->user->id]) : '') !!}</td>
+                                <td>{!! $logItem->description !!}</td>
+                                <td>{!! ($logItem->causer ? link_to_action('Back\BackUserController@edit', $logItem->causer->present()->email, [$logItem->causer->id]) : '') !!}</td>
                             </tr>
                         @endforeach
                     </tbody>
