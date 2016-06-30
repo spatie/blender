@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fb350557e9add889a80c85b6e9103d3a",
-    "content-hash": "89c74720f2e9530e8252c74255771c81",
+    "hash": "becce44915d98356062a54f90a176428",
+    "content-hash": "55d9bc3629f6595c20798001d08650af",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1516,6 +1516,7 @@
                     "email": "taylorotwell@gmail.com"
                 }
             ],
+            "abandoned": "laravelcollective/html",
             "time": "2015-01-01 16:31:18"
         },
         {
@@ -3837,16 +3838,16 @@
         },
         {
             "name": "spatie/laravel-cookie-consent",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-cookie-consent.git",
-                "reference": "14ce897c9fe50c27cd899a587a0ef20a5d94b2ce"
+                "reference": "cd37bbfa4f7c0ef116820af65dda43cedd9dca00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/14ce897c9fe50c27cd899a587a0ef20a5d94b2ce",
-                "reference": "14ce897c9fe50c27cd899a587a0ef20a5d94b2ce",
+                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/cd37bbfa4f7c0ef116820af65dda43cedd9dca00",
+                "reference": "cd37bbfa4f7c0ef116820af65dda43cedd9dca00",
                 "shasum": ""
             },
             "require": {
@@ -3893,7 +3894,7 @@
                 "law",
                 "spatie"
             ],
-            "time": "2016-06-28 14:14:05"
+            "time": "2016-06-30 09:23:01"
         },
         {
             "name": "spatie/laravel-demo-mode",
