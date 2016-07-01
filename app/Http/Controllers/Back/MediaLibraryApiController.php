@@ -18,7 +18,7 @@ class MediaLibraryApiController extends Controller
         $model = $this->getModelFromRequest($request);
 
         $media = $model
-            ->addMedia($request->file('file'))
+            ->addMedia($request->file('file')[0])
             ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
             ->toCollection($request->get('collection_name', 'default'));
 
@@ -27,11 +27,11 @@ class MediaLibraryApiController extends Controller
         }
 
         return Response::json(
-            ['media' => fractal()
+            fractal()
                 ->item($media)
                 ->transformWith(new MediaTransformer())
-                ->toArray(),
-            ]);
+                ->toArray()
+        );
     }
 
     public function index(Request $request)

@@ -108,7 +108,7 @@ class FormBuilder extends BaseFormBuilder
         return $this->select('locale', $list, $current, ['data-select' => 'select']);
     }
 
-    public function media($subject, string $collection, string $type, array $associated = []): string
+    public function media($subject, string $collection, string $type, $associated = []): string
     {
         $initialMedia = fractal()
             ->collection($subject->getMedia($collection))
@@ -120,27 +120,23 @@ class FormBuilder extends BaseFormBuilder
             'id' => $subject->id,
         ])->toJson();
 
-        $associated = $this->getAssociatedMediaData($associated);
-
-        return el('div', array_merge($associated, [
-            'data-media-collection' => $collection,
-            'data-media-type' => $type,
-            'data-initial' => htmlspecialchars($initialMedia),
-            'data-model' => htmlspecialchars($model),
+        return el('media', array_merge($associated, [
+            'collection' => $collection,
+            'type' => $type,
+            'upload-url' => action('Back\MediaLibraryApiController@add'),
+            ':model' => htmlspecialchars($model),
+            ':initial' => htmlspecialchars($initialMedia),
+            ':data' => htmlspecialchars($this->getAssociatedMediaData($associated)),
         ]), '');
     }
 
-    protected function getAssociatedMediaData(array $associated = []): array
+    protected function getAssociatedMediaData($associated = []): string
     {
-        $associated['locales'] = $associated['locales'] ?? config('app.locales');
+        $associated = collect($associated);
 
-        $normalized = [];
+        $associated->put('locales', config('app.locales'));
 
-        foreach ($associated as $key => $value) {
-            $normalized["data-{$key}"] = htmlspecialchars(json_encode($value));
-        }
-
-        return $normalized;
+        return $associated->toJson();
     }
 
     public function useInitialValue($subject, string $propertyName, string $locale = ''): string
