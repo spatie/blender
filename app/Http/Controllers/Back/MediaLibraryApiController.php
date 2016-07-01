@@ -14,31 +14,23 @@ class MediaLibraryApiController extends Controller
 {
     public function add(AddMediaRequest $request)
     {
-        try {
+        $model = $this->getModelFromRequest($request);
 
-            $model = $this->getModelFromRequest($request);
+        $media = $model
+            ->addMedia($request->file('file')[0])
+            ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
+            ->toCollection($request->get('collection_name', 'default'));
 
-            $media = $model
-                ->addMedia($request->file('file')[0])
-                ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
-                ->toCollection($request->get('collection_name', 'default'));
-
-            if ($request->has('redactor')) {
-                return Response::json(['filelink' => $media->getUrl('redactor')]);
-            }
-
-            return response()->json(
-                fractal()
-                    ->item($media)
-                    ->transformWith(new MediaTransformer())
-                    ->toArray()
-            );
-
-        } catch (Exception $e) {
-
-            return response(null, 500);
-
+        if ($request->has('redactor')) {
+            return Response::json(['filelink' => $media->getUrl('redactor')]);
         }
+
+        return response()->json(
+            fractal()
+                ->item($media)
+                ->transformWith(new MediaTransformer())
+                ->toArray()
+        );
     }
 
     public function index(Request $request)
