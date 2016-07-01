@@ -15,12 +15,12 @@ html {
 body {
   @include antialiasing(subpixel);
   @include font(sans, normal);
+
   @include mq(l) {
     font-size: font-size(default);
   }
 
   color: $text-color;
-  font-size: 1.1rem; //scales everything on very large displays
   line-height: $line-height;
 
 }
