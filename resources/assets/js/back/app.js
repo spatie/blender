@@ -9,7 +9,6 @@ import 'blender.js/modules/form.locationpicker';
 import 'blender.js/modules/table.datatables';
 import 'blender.js/modules/table.sortable';
 
-import Media from 'blender-media';
 import Vue from 'vue';
 import Vuex from 'vuex';
 
@@ -18,12 +17,11 @@ Vue.use(Vuex);
 new Vue({
     el: 'body',
     components: {
-        // media(resolve) {
-        //     require.ensure(['blender-media'], require => {
-        //         resolve(require('blender-media'));
-        //     });
-        // },
-        Media
+        media(resolve) {
+            require.ensure([], require => {
+                resolve(require('blender-media').default);
+            }, 'front.blender-media');
+        },
     },
 });
 
