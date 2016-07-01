@@ -7,7 +7,6 @@ use App\Http\Requests\Back\AddMediaRequest;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Response;
 use Spatie\MediaLibrary\Media;
 use App\Models\Transformers\MediaTransformer;
 
@@ -15,23 +14,31 @@ class MediaLibraryApiController extends Controller
 {
     public function add(AddMediaRequest $request)
     {
-        $model = $this->getModelFromRequest($request);
+        try {
 
-        $media = $model
-            ->addMedia($request->file('file')[0])
-            ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
-            ->toCollection($request->get('collection_name', 'default'));
+            $model = $this->getModelFromRequest($request);
 
-        if ($request->has('redactor')) {
-            return Response::json(['filelink' => $media->getUrl('redactor')]);
+            $media = $model
+                ->addMedia($request->file('file')[0])
+                ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
+                ->toCollection($request->get('collection_name', 'default'));
+
+            if ($request->has('redactor')) {
+                return Response::json(['filelink' => $media->getUrl('redactor')]);
+            }
+
+            return response()->json(
+                fractal()
+                    ->item($media)
+                    ->transformWith(new MediaTransformer())
+                    ->toArray()
+            );
+
+        } catch (Exception $e) {
+
+            return response(null, 500);
+
         }
-
-        return Response::json(
-            fractal()
-                ->item($media)
-                ->transformWith(new MediaTransformer())
-                ->toArray()
-        );
     }
 
     public function index(Request $request)
@@ -48,7 +55,7 @@ class MediaLibraryApiController extends Controller
             ]);
         }, new Collection());
 
-        return Response::json($media);
+        return response()->json($media);
     }
 
     protected function getModelFromRequest(Request $request)
