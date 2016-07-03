@@ -71,7 +71,7 @@ Don't forget to remove the registry line from your `~/.npmrc` if you're planning
 
 Run `gulp help` to see available options. 
 
-Blender users our [blender-gulp](https://github.com/spatie-custom/blender-gulp) packge for gulp tasks & setup, you will need to have [webpack](https://webpack.github.io/) installed globaly installed in order for gulp to work correctly `npm install -g webpack`.
+Blender users our [blender-gulp](https://github.com/spatie-custom/blender-gulp) package for gulp tasks & setup, you will need to have [webpack](https://webpack.github.io/) installed globaly in order for gulp to work correctly `npm install -g webpack`.
 
 To get you started for both front and back-end assets, run:
 
