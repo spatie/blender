@@ -2,6 +2,6 @@
 
 {!! BlenderForm::text('name') !!}
 
-{!! BlenderForm::media('images', 'images') !!}
+{!! BlenderForm::media('images', 'image') !!}
 
 {!! BlenderForm::submit() !!}
