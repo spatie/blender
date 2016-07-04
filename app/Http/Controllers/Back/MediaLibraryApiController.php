@@ -7,7 +7,6 @@ use App\Http\Requests\Back\AddMediaRequest;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Response;
 use Spatie\MediaLibrary\Media;
 use App\Models\Transformers\MediaTransformer;
 
@@ -18,7 +17,7 @@ class MediaLibraryApiController extends Controller
         $model = $this->getModelFromRequest($request);
 
         $media = $model
-            ->addMedia($request->file('file'))
+            ->addMedia($request->file('file')[0])
             ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
             ->toCollection($request->get('collection_name', 'default'));
 
@@ -26,12 +25,12 @@ class MediaLibraryApiController extends Controller
             return Response::json(['filelink' => $media->getUrl('redactor')]);
         }
 
-        return Response::json(
-            ['media' => fractal()
+        return response()->json(
+            fractal()
                 ->item($media)
                 ->transformWith(new MediaTransformer())
-                ->toArray(),
-            ]);
+                ->toArray()
+        );
     }
 
     public function index(Request $request)
@@ -48,7 +47,7 @@ class MediaLibraryApiController extends Controller
             ]);
         }, new Collection());
 
-        return Response::json($media);
+        return response()->json($media);
     }
 
     protected function getModelFromRequest(Request $request)

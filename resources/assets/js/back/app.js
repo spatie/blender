@@ -9,14 +9,26 @@ import 'blender.js/modules/form.locationpicker';
 import 'blender.js/modules/table.datatables';
 import 'blender.js/modules/table.sortable';
 
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+Vue.use(Vuex);
+
+new Vue({
+    el: 'body',
+    components: {
+        media(resolve) {
+            require.ensure([], require => {
+                resolve(require('blender-media').default);
+            }, 'front.blender-media');
+        },
+    },
+});
+
 // Heavy components coming up
 
 if ($('[data-chart]').size()) {
     require.ensure([], () => { require('./modules/chart').default(); }, 'back.chart');
-}
-
-if ($('[data-media-collection]').size()) {
-    require.ensure([], () => { require('./modules/media'); }, 'back.media');
 }
 
 // Uncomment if redactor files are present

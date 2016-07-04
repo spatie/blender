@@ -146,14 +146,10 @@ textarea {
 }
 
 input[disabled] {
-    background: transparent;
-    border: 0 ;
-    padding: 0 ;
     -webkit-text-fill-color: $text-color;
     -webkit-opacity: 1;
     color: $text-color;
     box-shadow: none;
-    font-weight: font-weight(bold);
 
     label + & {
         margin-top: -.75em; // compensate for label bottom padding
