@@ -199,7 +199,7 @@ class BlenderFormBuilder
 
         return $this->group([
             $this->label($name),
-            el('div.locationpicker#custom_id', $form),
+            el('div.locationpicker', ['data-locationpicker'], $form),
         ]);
     }
 

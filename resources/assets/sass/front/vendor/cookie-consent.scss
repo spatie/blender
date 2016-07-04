@@ -10,7 +10,7 @@
 }
 
 .cookie-consent__agree {
-  background-color: color($yellow, lighter);
+  background-color: color($yellow, dark);
   border: 0;
   border-radius: border-radius(3px);
   box-shadow: 0 2px 5px color($yellow, dark, .15);
@@ -20,7 +20,7 @@
   padding: .5em 1em;
 
   &:hover {
-    color: color($yellow, darker);
+    background-color: color($yellow, darker);
   }
 
   &:active {

@@ -69,13 +69,14 @@ Don't forget to remove the registry line from your `~/.npmrc` if you're planning
 
 ### Gulp
 
-Run `gulp help` to see available options.
+Run `gulp help` to see available options. 
+
+Blender uses our [blender-gulp](https://github.com/spatie-custom/blender-gulp) package for gulp tasks & setup, you will need to have [webpack](https://webpack.github.io/) installed globaly in order for gulp to work correctly `npm install -g webpack`.
 
 To get you started for both front and back-end assets, run:
 
 ```bash
 gulp
-gulp --back
 ```
 
 ## Colofon
