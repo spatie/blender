@@ -77,7 +77,6 @@ To get you started for both front and back-end assets, run:
 
 ```bash
 gulp
-gulp --back
 ```
 
 ## Colofon
