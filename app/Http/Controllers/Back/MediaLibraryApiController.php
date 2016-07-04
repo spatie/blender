@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\AddMediaRequest;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use Spatie\MediaLibrary\Media;
 use App\Models\Transformers\MediaTransformer;
@@ -16,21 +17,19 @@ class MediaLibraryApiController extends Controller
     {
         $model = $this->getModelFromRequest($request);
 
-        $media = $model
-            ->addMedia($request->file('file')[0])
-            ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
-            ->toCollection($request->get('collection_name', 'default'));
+        $media = collect($request->file('file'))
+            ->map(function (UploadedFile $file) use ($model, $request) {
+                return $model
+                    ->addMedia($file)
+                    ->withCustomProperties(['temp' => $request->has('redactor') ? false : true])
+                    ->toCollection($request->get('collection_name', 'default'));
+            });
 
         if ($request->has('redactor')) {
-            return Response::json(['filelink' => $media->getUrl('redactor')]);
+            return Response::json(['filelink' => $media->first()->getUrl('redactor')]);
         }
 
-        return response()->json(
-            fractal()
-                ->item($media)
-                ->transformWith(new MediaTransformer())
-                ->toArray()
-        );
+        return fractal()->collection($media)->transformWith(new MediaTransformer());
     }
 
     public function index(Request $request)
