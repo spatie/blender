@@ -5,6 +5,8 @@
     'text' => 'redactor',
 ]) !!}
 
+{!! BlenderForm::select('parent_id', $parentMenuItems) !!}
+
 {!! BlenderForm::media('images', 'images') !!}
 {!! BlenderForm::media('downloads', 'downloads') !!}
 

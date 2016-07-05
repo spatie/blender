@@ -8,7 +8,7 @@
     <h1>{{ $article->name }}</h1>
 
     @if($cover = $article->getFirstMedia('images'))
-        <img src="{{ $cover->getUrl('detail') }}" alt="{{ $cover->name }}">
+        <img src="{{ $cover->getUrl('thumb') }}" alt="{{ $cover->name }}">
     @endif
 
     {!! $article->text !!}
