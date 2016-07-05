@@ -39,6 +39,7 @@
                 <nav class="nav">
                     {!! Menu::main() !!}
                 </nav>
+                @yield('subMenu')
             </div>
             <div class="grid_col -width-1/2">
                 <nav class="nav :align-right">

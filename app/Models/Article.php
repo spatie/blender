@@ -4,8 +4,11 @@ namespace app\Models;
 
 use App\Foundation\Models\Base\ModuleModel;
 use App\Foundation\Models\Traits\HasSlug;
+use App\Models\Enums\SpecialArticle;
 use Cache;
 use Exception;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 
 class Article extends ModuleModel
@@ -17,6 +20,16 @@ class Article extends ModuleModel
     public $mediaLibraryCollections = ['images', 'downloads'];
     public $translatable = ['name', 'text', 'url'];
 
+    public function registerMediaConversions()
+    {
+        parent::registerMediaConversions();
+
+        $this->addMediaConversion('thumb')
+            ->setWidth(368)
+            ->setHeight(232)
+            ->performOnCollections('images');
+    }
+    
     public static function findByTechnicalName(string $technicalName): Article
     {
         return Cache::rememberForever(
@@ -48,5 +61,43 @@ class Article extends ModuleModel
     public function isDeletable(): bool
     {
         return !(bool) $this->technical_name;
+    }
+
+
+    public function children(): HasMany
+    {
+        return $this->hasMany(self::class, 'parent_id')->orderBy('order_column');
+    }
+
+    public function hasChildren(): bool
+    {
+        return count($this->children);
+    }
+
+    public function parentArticle(): BelongsTo
+    {
+        return $this->belongsTo(self::class, 'parent_id');
+    }
+
+    public function hasParentArticle(): bool
+    {
+        return !is_null($this->parentArticle);
+    }
+
+    public function getFullUrlAttribute(): string
+    {
+        if ($this->technical_name === SpecialArticle::HOME) {
+            return '/';
+        }
+
+        $parentUrl = $this->hasParentArticle() ? $this->parentArticle->url . '/' : '';
+
+        $localeSegment = '';
+
+        if (count(locales())) {
+            $localeSegment = "/" . locale();
+        }
+
+        return "{$localeSegment}/{$parentUrl}{$this->url}";
     }
 }

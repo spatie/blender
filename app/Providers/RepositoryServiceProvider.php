@@ -13,6 +13,7 @@ class RepositoryServiceProvider extends ServiceProvider
         'FrontUser',
         'NewsItem',
         'Person',
+        'Article',
     ];
 
     protected $cacheRepositories = [];
