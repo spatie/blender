@@ -36,5 +36,9 @@ class CollectionServiceProvider extends ServiceProvider
             }
             return $this;
         });
+        
+        Collection::macro('range', function ($low, $high, $step = 1): Collection {
+            return new Collection(range($low, $high, $step));
+        });
     }
 }
