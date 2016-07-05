@@ -16,7 +16,9 @@ class MediaTransformer extends TransformerAbstract
             'fileName' => $media->file_name,
             'customProperties' => json_encode($media->custom_properties, JSON_FORCE_OBJECT),
             'orderColumn' => $media->order_column,
-            'thumbUrl' => $media->getUrl('admin'),
+            'thumbUrl' => strtolower($media->extension) === 'svg' ?
+                $media->getUrl() :
+                $media->getUrl('admin'),
             'originalUrl' => $media->getUrl(),
         ];
     }
