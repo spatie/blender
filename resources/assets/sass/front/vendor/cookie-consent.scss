@@ -7,6 +7,11 @@
 
 .cookie-consent__message {
   color: color($yellow, dark);
+  display: inline-block;
+
+    p {
+        margin: 0 ;
+    }
 }
 
 .cookie-consent__agree {
@@ -14,7 +19,7 @@
   border: 0;
   border-radius: border-radius(3px);
   box-shadow: 0 2px 5px color($yellow, dark, .15);
-  color: color($yellow, dark);
+  color: color($yellow, lightest);
   font-weight: bold;
   margin: 0 1em;
   padding: .5em 1em;
