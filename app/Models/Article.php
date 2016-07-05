@@ -29,7 +29,7 @@ class Article extends ModuleModel
             ->setHeight(232)
             ->performOnCollections('images');
     }
-    
+
     public static function findByTechnicalName(string $technicalName): Article
     {
         return Cache::rememberForever(
@@ -86,17 +86,17 @@ class Article extends ModuleModel
 
     public function getFullUrlAttribute(): string
     {
+        $localeSegment = '';
+
+        if (locales()->count() > 1) {
+            $localeSegment = "/" . locale();
+        }
+
         if ($this->technical_name === SpecialArticle::HOME) {
-            return '/';
+            return $localeSegment;
         }
 
         $parentUrl = $this->hasParentArticle() ? $this->parentArticle->url . '/' : '';
-
-        $localeSegment = '';
-
-        if (count(locales())) {
-            $localeSegment = "/" . locale();
-        }
 
         return "{$localeSegment}/{$parentUrl}{$this->url}";
     }

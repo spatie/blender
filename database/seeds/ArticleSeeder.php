@@ -20,7 +20,7 @@ class ArticleSeeder extends DatabaseSeeder
     {
         $article = factory(Article::class)->create([
             'name' => faker()->translate($name),
-            'technical_name' => $technicalName ?? null,
+            'technical_name' => $technicalName,
             'online' => true,
             'parent_id' => $parentArticle ? $parentArticle->id : null,
         ]);

@@ -10,7 +10,7 @@ class ArticleUpdater extends ModuleModelUpdater
     {
         parent::performUpdate();
 
-        $parentId = $this->request->get('parent_id') == 0 ? null : $this->request->get('parent_id');
+        $parentId = $this->request->get('parent_id') == 0 ?: $this->request->get('parent_id');
 
         $this->model->parent_id = $parentId;
     }
