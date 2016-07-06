@@ -19,6 +19,7 @@ function initializeEditor($textarea) {
     $textarea.redactor({
         imageUpload: apiUrl + '?redactor=true',
         imageManagerJson: apiUrl,
+        buttons: ['html', 'formatting', 'bold', 'italic', 'unorderedlist', 'orderedlist', 'outdent', 'indent', 'link', 'image'],
         formatting: ['p', 'h1', 'h2', 'h3', 'blockquote'],
         lang: 'nl',
         plugins: ['imagemanager', 'video'],
