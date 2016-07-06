@@ -45,9 +45,10 @@ php artisan migrate --seed
 
 ### NPM
 
-Installing Blender's npm dependecies requries NPM@3 of higher. Check your version to be sure.
+Installing Blender's npm dependecies requries Node ^4.4 and NPM ^3. Check your versions to be sure.
 
 ```bash
+node -v
 npm -v
 ```
 
