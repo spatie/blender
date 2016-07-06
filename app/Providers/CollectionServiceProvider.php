@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class CollectionServiceProvider extends ServiceProvider
 {
-
     /**
      * Register the service provider.
      *
@@ -35,6 +34,10 @@ class CollectionServiceProvider extends ServiceProvider
                 $callback($this);
             }
             return $this;
+        });
+        
+        Collection::macro('range', function ($low, $high, $step = 1): Collection {
+            return new Collection(range($low, $high, $step));
         });
     }
 }
