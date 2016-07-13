@@ -201,6 +201,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Spatie\BladeJavaScript\BladeJavaScriptServiceProvider::class,
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
+        Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
     ],
 
     /*

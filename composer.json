@@ -56,7 +56,8 @@
     "spatie/laravel-translatable": "^1.0",
     "spatie/laravel-blade-javascript": "^1.0",
     "spatie/laravel-activitylog": "^1.0",
-    "spatie/laravel-cookie-consent": "^1.0"
+    "spatie/laravel-cookie-consent": "^1.0",
+    "propaganistas/laravel-phone": "^2.6"
   },
   "require-dev": {
 	"mockery/mockery": "^0.9.4",
