@@ -22,7 +22,7 @@
 
                 <tr data-row-id="{{ $newsItem->id }}">
                     <td>
-                        {!! HTML::onlineIndicator($newsItem->online) !!}
+                        {!! Html::onlineIndicator($newsItem->online) !!}
                         <a href="{{ action('Back\NewsItemController@edit', [$newsItem->id]) }}">
                             {{ $newsItem->name }}
                         </a>
@@ -31,7 +31,7 @@
                         {{ $newsItem->publish_date->format('d/m/Y') }}
                     </td>
                     <td class="-right">
-                        {!! HTML::deleteButton(action('Back\NewsItemController@destroy', $newsItem->id)) !!}
+                        {!! Html::deleteButton(action('Back\NewsItemController@destroy', $newsItem->id)) !!}
                     </td>
                 </tr>
 

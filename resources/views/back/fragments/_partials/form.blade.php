@@ -11,7 +11,7 @@
         ]) !!}
         @endif
 
-        {!! HTML::error($errors->first(translate_field_name('text', $locale))) !!}
+        {!! Html::error($errors->first(translate_field_name('text', $locale))) !!}
     </div>
 @endforeach
 

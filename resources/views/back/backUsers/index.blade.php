@@ -25,14 +25,14 @@
                             <a href="{{ action('Back\BackUserController@edit', [$user->id]) }}">{{ $user->email }}</a>
                         </td>
                         <td>
-                            {!! HTML::avatar($user, '-small') !!}  <span>{{ $user->present()->fullName }}</span>
+                            {!! Html::avatar($user, '-small') !!}  <span>{{ $user->present()->fullName }}</span>
                         </td>
                         <td>
                             {{ $user->present()->lastActivityDate }}
                         </td>
                         <td class="-right">
                             @unless ($user->isCurrentUser())
-                                {!! HTML::deleteButton(action('Back\BackUserController@destroy', $user->id)) !!}
+                                {!! Html::deleteButton(action('Back\BackUserController@destroy', $user->id)) !!}
                             @endunless
                         </td>
                     </tr>

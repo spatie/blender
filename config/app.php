@@ -250,8 +250,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Gate'      => Illuminate\Support\Facades\Gate::class,
 
-        'Form'      => Illuminate\Html\FormFacade::class,
-        'HTML'      => Illuminate\Html\HtmlFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
         'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
 

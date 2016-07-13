@@ -12,7 +12,7 @@
                 @include('back.dashboard._partials.visitors')
             @else
                 <div class="alerts">
-                    {!! HTML::info(fragment('back.statistics.notConfigured')) !!}
+                    {!! Html::info(fragment('back.statistics.notConfigured')) !!}
                 </div>
             @endif
 

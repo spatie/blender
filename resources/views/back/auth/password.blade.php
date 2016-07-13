@@ -23,7 +23,7 @@
         <div class="form_group">
             {!! Form::label('email', fragment('back.auth.email')) !!}
             {!! Form::email('email', null, ['autofocus' => true]) !!}
-            {!! HTML::error($errors->first('email')) !!}
+            {!! Html::error($errors->first('email')) !!}
         </div>
 
         <div class="form_group -buttons">

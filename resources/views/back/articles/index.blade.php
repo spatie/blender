@@ -25,7 +25,7 @@
                         </td>
                         <td class="-right">
                             @if($article->isDeletable())
-                                {!! HTML::deleteButton(action('Back\ArticleController@destroy', $article->id)) !!}
+                                {!! Html::deleteButton(action('Back\ArticleController@destroy', $article->id)) !!}
                             @endif
                         </td>
                     </tr>

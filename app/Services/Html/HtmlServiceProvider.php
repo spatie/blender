@@ -2,7 +2,7 @@
 
 namespace App\Services\Html;
 
-use Illuminate\Html\HtmlServiceProvider as ServiceProvider;
+use Collective\Html\HtmlServiceProvider as ServiceProvider;
 
 class HtmlServiceProvider extends ServiceProvider
 {
@@ -32,7 +32,7 @@ class HtmlServiceProvider extends ServiceProvider
     protected function registerHtmlBuilder()
     {
         $this->app->singleton('html', function ($app) {
-            return new HtmlBuilder($app['url']);
+            return new HtmlBuilder($app['url'], view());
         });
     }
 
@@ -42,7 +42,7 @@ class HtmlServiceProvider extends ServiceProvider
     protected function registerFormBuilder()
     {
         $this->app->singleton('form', function ($app) {
-            $formBuilder = new FormBuilder($app['html'], $app['url'], $app['session.store']->getToken());
+            $formBuilder = new FormBuilder($app['html'], $app['url'], view(), $app['session.store']->getToken());
 
             $formBuilder->setSessionStore($app['session.store']);
 

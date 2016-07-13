@@ -31,7 +31,7 @@
                             {{ $user->present()->lastActivityDate }}
                         </td>
                         <td class="-right">
-                            {!! HTML::deleteButton(action('Back\FrontUserController@destroy', $user->id)) !!}
+                            {!! Html::deleteButton(action('Back\FrontUserController@destroy', $user->id)) !!}
                         </td>
                     </tr>
                     @endforeach

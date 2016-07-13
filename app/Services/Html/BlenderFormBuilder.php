@@ -3,7 +3,7 @@
 namespace App\Services\Html;
 
 use Form;
-use HTML;
+use Html;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ViewErrorBag;
 
@@ -32,7 +32,7 @@ class BlenderFormBuilder
 
     public function error(string $name): string
     {
-        return HTML::error($this->errors->first($name));
+        return Html::error($this->errors->first($name));
     }
 
     public function text(string $name, bool $required = false, string $locale = ''): string

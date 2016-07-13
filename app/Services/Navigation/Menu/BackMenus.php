@@ -2,7 +2,7 @@
 
 namespace App\Services\Navigation\Menu;
 
-use HTML;
+use Html;
 use Spatie\Menu\Laravel\Link;
 use Spatie\Menu\Laravel\Menu;
 
@@ -55,7 +55,7 @@ class BackMenus
 
         Menu::macro('backUser', function () {
 
-            $avatar = HTML::avatar(current_user(), '-small').
+            $avatar = Html::avatar(current_user(), '-small').
                 el('span.:response-desktop-only', current_user()->email);
 
             return Menu::new()

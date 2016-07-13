@@ -6,7 +6,7 @@
     <section class="+auth">
         <div class="+auth_card">
             <h1 class="+auth_title -small">
-                {!! HTML::avatar($user, '-large +auth_gravatar') !!}<br>
+                {!! Html::avatar($user, '-large +auth_gravatar') !!}<br>
                 {{ fragment('auth.titleChangePassword') }}
             </h1>
 
@@ -25,7 +25,7 @@
             <div class="form_group">
                 {!! Form::label('password_confirmation', fragment('auth.passwordConfirm'), ['class' => '-invers']) !!}
                 {!! Form::password('password_confirmation', [null]) !!}
-                {!! HTML::error($errors->first('password')) !!}
+                {!! Html::error($errors->first('password')) !!}
             </div>
 
             <div class="form_group -buttons">
