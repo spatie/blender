@@ -35,9 +35,40 @@ class CollectionServiceProvider extends ServiceProvider
             }
             return $this;
         });
-        
+
         Collection::macro('range', function ($low, $high, $step = 1): Collection {
             return new Collection(range($low, $high, $step));
+        });
+
+        /**
+         * Returns true if $callback returns false for every item.
+         */
+        Collection::macro('none', function (callable $callback = null): bool {
+            return !$this->contains($callback);
+        });
+
+        /**
+         * Returns true if $callback returns true for every item.
+         *
+         * If $callback is a string regard it as a validation rule.
+         */
+        Collection::macro('validate', function ($callback): bool {
+            if (is_string($callback) || is_array($callback)) {
+
+                $validationRule = $callback;
+
+                $callback = function ($item) use ($validationRule) {
+                    return validate($item, $validationRule);
+                };
+            }
+
+            foreach ($this->items as $item) {
+                if (!$callback($item)) {
+                    return false;
+                }
+            }
+
+            return true;
         });
     }
 }
