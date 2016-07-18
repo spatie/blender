@@ -16,6 +16,8 @@ class CreateTagsTables extends Migration
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);
             $table->timestamps();
+
+            $table->index('type');
         });
 
         Schema::create('taggables', function(Blueprint $table) {
