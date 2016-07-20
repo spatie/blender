@@ -38,10 +38,16 @@ class TranslationLoader extends FileLoader
 
     protected function fragmentsAreAvailable(): bool
     {
-        try {
-            return Schema::hasTable('fragments');
-        } catch (\Exception $e) {
-            return false;
+        static $fragmentTableFound = null;
+
+        if (is_null($fragmentTableFound)) {
+            try {
+                $fragmentTableFound = Schema::hasTable('fragments');
+            } catch (\Exception $e) {
+                $fragmentTableFound = false;
+            }
         }
+
+        return $fragmentTableFound;
     }
 }
