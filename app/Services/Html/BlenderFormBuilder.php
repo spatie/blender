@@ -132,6 +132,22 @@ class BlenderFormBuilder
         ]);
     }
 
+    public function searchableMultiSelect(string $name, $options, string $locale = ''): string
+    {
+        $fieldName = $this->fieldName($name, $locale);
+
+        return $this->group([
+            $this->label($name),
+            Form::select(
+                $fieldName,
+                $options,
+                Form::useInitialValue($this->model, $name, $locale),
+                ['data-select' => 'search', 'multiple' => true]
+            ),
+            $this->error($fieldName, $this->errors),
+        ]);
+    }
+
     public function tags(string $type): string
     {
         return $this->group([
