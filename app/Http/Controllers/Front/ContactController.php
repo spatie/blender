@@ -18,7 +18,7 @@ class ContactController extends Controller
 
     public function handleResponse(FormResponseRequest $request)
     {
-        $formResponse = FormResponse::create($request->all());
+        $formResponse = FormResponse::create($request->except(['g-recaptcha-response']));
 
         event(new ContactFormWasSubmitted($formResponse));
 
