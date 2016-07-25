@@ -202,6 +202,7 @@ return [
         Spatie\BladeJavaScript\BladeJavaScriptServiceProvider::class,
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
         Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
     ],
 
     /*
@@ -270,6 +271,7 @@ return [
         'Newsletter' 		=> Spatie\Newsletter\NewsletterFacade::class,
         'Slack' 			=> Maknz\Slack\Facades\Slack::class,
         'PaginateRoute'     => Spatie\PaginateRoute\PaginateRouteFacade::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];

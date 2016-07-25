@@ -52,6 +52,10 @@
     </div>
 </div>
 
+{!! Recaptcha::render(['lang' => locale()]) !!}
+{!! HTML::error($errors->first('g-recaptcha-response')) !!}
+
+
 <div class="form-line-submit">
     <div class="form-element">
         {!! Form::button(fragment('contact.button'), ['type'=>'submit']) !!}
