@@ -92,5 +92,11 @@ class CollectionServiceProvider extends ServiceProvider
                 return $group;
             })->values();
         });
+
+        Collection::macro('split', function(int $numberOfGroups) {
+            $groupSize = ceil(count($this->items) / $numberOfGroups);
+
+            return $this->chunk($groupSize);
+        });
     }
 }
