@@ -70,5 +70,27 @@ class CollectionServiceProvider extends ServiceProvider
 
             return true;
         });
+
+        Collection::macro('groupByObject', function ($callback, $keyName = 'key') {
+            return Collection::make($this->items)->map(function ($item) use ($callback) {
+                return ['key' => $callback($item), 'item' => $item];
+            })->groupBy(function (array $keyedItem) {
+                $key = $keyedItem['key'];
+
+                return get_class($key) . $key->id;
+            })->map(function (Collection $group) use ($keyName) {
+                return $group->reduce(function (array $result, array $group) use ($keyName) {
+                    $result[$keyName] = $group['key'];
+                    $result['items'][] = $group['item'];
+
+                    return $result;
+                }, []);
+
+            })->map(function (array $group) {
+                $group['items'] = Collection::make($group['items']);
+
+                return $group;
+            })->values();
+        });
     }
 }
