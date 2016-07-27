@@ -2,7 +2,6 @@
 
 use App\Models\Enums\TagType;
 use App\Models\Tag;
-use App\Models\Translations\TagTranslation;
 
 class TagSeeder extends DatabaseSeeder
 {

@@ -4,7 +4,7 @@
     {!! Form::label('name', fragment('form.name'), ['class'=>'required']) !!}
     <div class="form-element">
         {!! Form::text('name', null, ['required', 'min' => 5, 'max' => '10', 'autocomplete' => 'off']) !!}
-        {!! HTML::error($errors->first('name'), 'name') !!}
+        {!! Html::error($errors->first('name'), 'name') !!}
     </div>
 </div>
 
@@ -12,7 +12,7 @@
     {!! Form::label('telephone', fragment('form.telephone'), ['class'=>'required']) !!}
     <div class="form-element">
         {!! Form::text('telephone') !!}
-        {!! HTML::error($errors->first('telephone'), 'telephone') !!}
+        {!! Html::error($errors->first('telephone'), 'telephone') !!}
     </div>
 </div>
 
@@ -20,7 +20,7 @@
     {!! Form::label('email', fragment('form.email'), ['class'=>'required']) !!}
     <div class="form-element">
         {!! Form::email('email') !!}
-        {!! HTML::error($errors->first('email'), 'email') !!}
+        {!! Html::error($errors->first('email'), 'email') !!}
     </div>
 </div>
 
@@ -28,7 +28,7 @@
     {!! Form::label('address', fragment('form.address')) !!}
     <div class="form-element">
         {!! Form::text('address') !!}
-        {!! HTML::error($errors->first('address'), 'address') !!}
+        {!! Html::error($errors->first('address'), 'address') !!}
     </div>
 </div>
 
@@ -36,11 +36,11 @@
     {!! Form::label('postal', fragment('form.postal').' + '.fragment('form.city')) !!}
     <div class="form-element form-element-postal">
         {!! Form::text('postal') !!}
-        {!! HTML::error($errors->first('postal'), 'postal') !!}
+        {!! Html::error($errors->first('postal'), 'postal') !!}
     </div>
     <div class="form-element form-element-city">
         {!! Form::text('city') !!}
-        {!! HTML::error($errors->first('city')) !!}
+        {!! Html::error($errors->first('city')) !!}
     </div>
 </div>
 
@@ -48,9 +48,13 @@
     {!! Form::label('remarks', fragment('contact.remarks')) !!}
     <div class="form-element">
         {!! Form::textarea('remarks') !!}
-        {!! HTML::error($errors->first('remarks'), 'remarks') !!}
+        {!! Html::error($errors->first('remarks'), 'remarks') !!}
     </div>
 </div>
+
+{!! Recaptcha::render(['lang' => locale()]) !!}
+{!! HTML::error($errors->first('g-recaptcha-response')) !!}
+
 
 <div class="form-line-submit">
     <div class="form-element">

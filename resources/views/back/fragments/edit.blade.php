@@ -11,7 +11,7 @@
 
         @if( app()->getLocale() == 'nl')
         <div class="alerts">
-            {!! HTML::info($fragment->description, '-small -inline') !!}
+            {!! Html::info($fragment->description, '-small -inline') !!}
         </div>
         @endif
 

@@ -9,7 +9,7 @@
         <div class="grid">
             <h1>Administrator {{ $user->email }}</h1>
             <div>
-                {!! HTML::avatar($user) !!}
+                {!! Html::avatar($user) !!}
                 <span class="help -small">
                     {{ fragment('back.backUsers.gravatarInfo') }} <a href="https://gravatar.com">gravatar.com</a>
                 </span>

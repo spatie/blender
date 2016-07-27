@@ -8,7 +8,7 @@
 
             <h1>{{ fragment('back.formResponses.title') }}</h1>
 
-            {!! HTML::info(fragment('back.formResponses.info', ['recipients' => implode(', ', (new Illuminate\Support\Collection(config('mail.questionFormRecipients')))->toArray() )]))  !!}
+            {!! Html::info(fragment('back.formResponses.info', ['recipients' => implode(', ', (new Illuminate\Support\Collection(config('mail.questionFormRecipients')))->toArray() )]))  !!}
 
             <div class="form_group -buttons">
                 {!! Form::openButton([

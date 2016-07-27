@@ -31,7 +31,7 @@
                                 </a>
                             </td>
                             <td class="-right">
-                                {!! HTML::deleteButton(action('Back\TagController@destroy', $tag->id)) !!}
+                                {!! Html::deleteButton(action('Back\TagController@destroy', $tag->id)) !!}
                             </td>
                         </tr>
 

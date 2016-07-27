@@ -19,13 +19,13 @@
             <div class="form_group">
                 {!! Form::label('email', fragment('back.auth.email') ) !!}
                 {!! Form::email('email', Input::old('email'), ['autofocus' => true ]) !!}
-                {!! HTML::error($errors->first('email')) !!}
+                {!! Html::error($errors->first('email')) !!}
             </div>
 
             <div class="form_group">
                 {!! Form::label('password', fragment('back.auth.password')) !!}
                 {!! Form::password('password', [ ]) !!}
-                {!! HTML::error($errors->first('password')) !!}
+                {!! Html::error($errors->first('password')) !!}
                 <div class="form_group_help">
                     <a href="{{ action('Back\PasswordController@getEmail') }}">{{ fragment('back.auth.forgotPassword') }}</a>
                 </div>

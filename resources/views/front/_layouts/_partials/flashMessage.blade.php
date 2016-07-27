@@ -1,7 +1,7 @@
-@unless (HTML::flashMessage() == '')
+@unless (Html::flashMessage() == '')
 
     <div class="container message">
-        {!! HTML::flashMessage() !!}
+        {!! Html::flashMessage() !!}
     </div>
 
 @endunless

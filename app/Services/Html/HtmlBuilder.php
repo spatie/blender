@@ -3,7 +3,7 @@
 namespace App\Services\Html;
 
 use App\Services\Auth\User;
-use Illuminate\Html\HtmlBuilder as BaseHtmlBuilder;
+use Collective\Html\HtmlBuilder as BaseHtmlBuilder;
 use Form;
 use Session;
 

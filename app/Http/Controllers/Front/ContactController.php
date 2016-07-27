@@ -18,11 +18,11 @@ class ContactController extends Controller
 
     public function handleResponse(FormResponseRequest $request)
     {
-        $formResponse = FormResponse::create($request->all());
+        $formResponse = FormResponse::create($request->except(['g-recaptcha-response']));
 
         event(new ContactFormWasSubmitted($formResponse));
 
-        app('activity')->log($request->get('email').' vulde het contactformulier in');
+        activity()->log($request->get('email').' vulde het contactformulier in');
 
         flash()->success(fragment('contact.response'));
 

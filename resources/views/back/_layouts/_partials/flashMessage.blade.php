@@ -1,7 +1,7 @@
-@unless (HTML::flashMessage() == '')
+@unless (Html::flashMessage() == '')
 
     <div class="alerts {{ $extraClass or '' }}">
-        {!! HTML::flashMessage() !!}
+        {!! Html::flashMessage() !!}
     </div>
 
 @endunless

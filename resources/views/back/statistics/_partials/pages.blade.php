@@ -21,5 +21,5 @@
         </tbody>
     </table>
 @else
-    {!! HTML::info(fragment('back.statistics.noData')) !!}
+    {!! Html::info(fragment('back.statistics.noData')) !!}
 @endif

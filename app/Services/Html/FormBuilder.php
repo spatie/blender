@@ -7,8 +7,8 @@ use App\Models\Tag;
 use App\Models\Transformers\MediaTransformer;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Html\FormBuilder as BaseFormBuilder;
-use HTML;
+use Collective\Html\FormBuilder as BaseFormBuilder;
+use Html;
 
 class FormBuilder extends BaseFormBuilder
 {
@@ -153,7 +153,7 @@ class FormBuilder extends BaseFormBuilder
 
     public function getLabelForTranslatedField(string $fieldName, string $label, string $locale): string
     {
-        return HTML::decode(
+        return Html::decode(
             $this->label($fieldName, $label.el('span.label_lang', $locale))
         );
     }

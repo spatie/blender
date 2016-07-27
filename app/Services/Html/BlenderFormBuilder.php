@@ -3,7 +3,7 @@
 namespace App\Services\Html;
 
 use Form;
-use HTML;
+use Html;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ViewErrorBag;
 
@@ -32,7 +32,7 @@ class BlenderFormBuilder
 
     public function error(string $name): string
     {
-        return HTML::error($this->errors->first($name));
+        return Html::error($this->errors->first($name));
     }
 
     public function text(string $name, bool $required = false, string $locale = ''): string
@@ -127,6 +127,22 @@ class BlenderFormBuilder
                 $options,
                 Form::useInitialValue($this->model, $name, $locale),
                 ['data-select' => 'search']
+            ),
+            $this->error($fieldName, $this->errors),
+        ]);
+    }
+
+    public function searchableMultiSelect(string $name, $options, string $locale = ''): string
+    {
+        $fieldName = $this->fieldName($name, $locale);
+
+        return $this->group([
+            $this->label($name),
+            Form::select(
+                $fieldName,
+                $options,
+                Form::useInitialValue($this->model, $name, $locale),
+                ['data-select' => 'search', 'multiple' => true]
             ),
             $this->error($fieldName, $this->errors),
         ]);

@@ -201,6 +201,8 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Spatie\BladeJavaScript\BladeJavaScriptServiceProvider::class,
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
+        Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
     ],
 
     /*
@@ -250,8 +252,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Gate'      => Illuminate\Support\Facades\Gate::class,
 
-        'Form'      => Illuminate\Html\FormFacade::class,
-        'HTML'      => Illuminate\Html\HtmlFacade::class,
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
 
         'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
 
@@ -269,6 +271,7 @@ return [
         'Newsletter' 		=> Spatie\Newsletter\NewsletterFacade::class,
         'Slack' 			=> Maknz\Slack\Facades\Slack::class,
         'PaginateRoute'     => Spatie\PaginateRoute\PaginateRouteFacade::class,
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];

@@ -10,12 +10,12 @@
             {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
             <div class="form-element">
                 {!! Form::email('email', old('email'), ['autofocus' => true ]) !!}
-                {!! HTML::error($errors->first('email')) !!}
+                {!! Html::error($errors->first('email')) !!}
             </div>
             {!! Form::label('password', fragment('auth.password'), ['class' => '-invers']) !!}
             <div class="form-element">
                 {!! Form::password('password', [ ]) !!}
-                {!! HTML::error($errors->first('password')) !!}
+                {!! Html::error($errors->first('password')) !!}
                 <div class="form_group_help">
                     <a href="{{ action('Front\PasswordController@getEmail') }}">{{ fragment('auth.forgotPassword') }}</a>
                 </div>
