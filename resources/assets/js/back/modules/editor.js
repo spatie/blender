@@ -17,6 +17,7 @@ function initializeEditor($textarea) {
     }
 
     $textarea.redactor({
+        pastePlainText: true,
         imageUpload: apiUrl + '?redactor=true',
         imageManagerJson: apiUrl,
         buttons: ['html', 'formatting', 'bold', 'italic', 'unorderedlist', 'orderedlist', 'outdent', 'indent', 'link', 'image'],
