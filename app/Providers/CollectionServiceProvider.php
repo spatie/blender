@@ -14,10 +14,6 @@ class CollectionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        Collection::macro('pipe', function ($callback) {
-            return $callback($this);
-        });
-
         Collection::macro('dd', function () {
             dd($this);
         });

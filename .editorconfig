@@ -14,5 +14,8 @@ trim_trailing_whitespace = true
 [{package.json}]
 indent_size = 2
 
+[*.scss]
+indent_size = 2
+
 [*.md]
 trim_trailing_whitespace = false
