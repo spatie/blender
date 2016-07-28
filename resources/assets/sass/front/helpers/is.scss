@@ -1,8 +1,8 @@
-.\:clickable {
+.\:is-clickable {
     cursor: pointer;
 }
 
-.\:unselectable {
+.\:is-unselectable {
      -khtml-user-select:      none;
     -webkit-user-select:      none;
        -moz-user-select: -moz-none;
@@ -10,12 +10,12 @@
             user-select:      none;
 }
 
-.\:hidden {
+.\:is-hidden {
     display: none !important;
     visibility: hidden;
 }
 
-.\:hidden-visually {
+.\:is-hidden-visually {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -26,6 +26,6 @@
     width: 1px;
 }
 
-.\:invisible {
+.\:is-invisible {
     visibility: hidden;
 }

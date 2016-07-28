@@ -1,81 +1,81 @@
 //overrides default stylesheet
 
 .fancybox-opened .fancybox-skin {
-  box-shadow: 0 0 25px rgba($black, .2);
+    box-shadow: 0 0 25px rgba($black, .2);
 }
 
 .fancybox-title-float-wrap {
-  .child {
-    background: rgba($white, .95);
-    border-radius: 0;
-    color: color($gray, dark);
-    font-family: font-family(sans);
-    font-weight: font-weight(normal);
-    text-shadow: none;
-  }
+    .child {
+        background: rgba($white, .95);
+        border-radius: 0;
+        color: color($gray, dark);
+        font-family: font-family(sans);
+        font-weight: font-weight(normal);
+        text-shadow: none;
+    }
 }
 
 .fancybox-overlay {
-  background-color: rgba($black, .5);
+    background-color: rgba($black, .5);
 }
 
 .fancybox-close,
 .fancybox-nav span {
-  @include circle(36px);
+    @include circle(36px);
 
-  background-color: $white;
-  border: none;
-  color: $black;
-  font-family: font-family(icons);
-  font-size: 21px;
+    background-color: $white;
+    border: none;
+    color: $black;
+    font-family: font-family(icons);
+    font-size: 21px;
 }
 
 .fancybox-close {
-  @include mq(s) {
-    display: none;
-  }
+    @include mq(s) {
+        display: none;
+    }
 
-  font-size: 18px;
+    font-size: 18px;
 
-  &:after {
-    content: '\e807'; //cancel
-  }
+    &:after {
+        content: '\e807'; //cancel
+    }
 }
 
 .fancybox-nav {
-  span {
-    margin-top: -18px;
-    position: absolute;
-    top: 50%;
+    span {
+        margin-top: -18px;
+        position: absolute;
+        top: 50%;
 
-    .touchevents & {
-      visibility: visible;
+        .touchevents & {
+            visibility: visible;
+        }
     }
-  }
 }
 
 .fancybox-prev {
-  span {
-    left: 36px;
-    &:after {
-      content: '\e800'; //cancel
-    }
+    span {
+        left: 36px;
+        &:after {
+            content: '\e800'; //cancel
+        }
 
-    .touchevents & {
-      transform: translateX(-54px);
+        .touchevents & {
+            transform: translateX(-54px);
+        }
     }
-  }
 }
 
 .fancybox-next {
-  span {
-    right: 36px;
-    &:after {
-      content: '\e801'; //cancel
-    }
+    span {
+        right: 36px;
+        &:after {
+            content: '\e801'; //cancel
+        }
 
-    .touchevents & {
-      transform: translateX(54px);
+        .touchevents & {
+            transform: translateX(54px);
+        }
     }
-  }
 }

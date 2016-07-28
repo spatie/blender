@@ -1,109 +1,109 @@
 form {
-  //variations
+    //variations
 
 
-  &.-form-button {
-    display: inline-block;
-    vertical-align: middle;
+    &.-form-button {
+        display: inline-block;
+        vertical-align: middle;
 
-    .alert & {
-      margin: 0 1em;
+        .alert & {
+            margin: 0 1em;
+        }
     }
-  }
 }
 
 
 // Container for collection of label & input
 .form_group {
-  @extend .clearfix;
+    @extend .clearfix;
 
-  padding: .75em 0;
+    padding: .75em 0;
 
 
-  //variations
-  &.-buttons {
-    padding: 2em 0;
-  }
+    //variations
+    &.-buttons {
+        padding: 2em 0;
+    }
 
-  &.-media {
-    background: lighten(color($gray, lightest) , 1%);
-    margin: .75em 0;
-    padding: .75em;
-  }
+    &.-media {
+        background: lighten(color($gray, lightest) , 1%);
+        margin: .75em 0;
+        padding: .75em;
+    }
 }
 
 .form_group_help {
-  font-size: font-size(s);
-  margin-top: .5em;
+    font-size: font-size(s);
+    margin-top: .5em;
 }
 
 
 
 fieldset {
-  background: lighten(color($gray, lightest) , 1%);
-  border: 0;
-  margin: .75em -.75em;
-  min-width: 0;
-  padding: .75em;
+    background: lighten(color($gray, lightest) , 1%);
+    border: 0;
+    margin: .75em -.75em;
+    min-width: 0;
+    padding: .75em;
 
-  //variations
-  &.-info {
-    background: rgba(color($blue, lightest) , .75);
-  }
+    //variations
+    &.-info {
+        background: rgba(color($blue, lightest) , .75);
+    }
 
-  //hacks
-  body:not(:-moz-handler-blocked) & {
-    display: table-cell;
-  }
+    //hacks
+    body:not(:-moz-handler-blocked) & {
+        display: table-cell;
+    }
 }
 
 
 legend {
-  color: color($gray);
-  background: lighten(color($gray, lightest) , 1%);
-  padding: .5em 1em;
-  border-radius: 3px;
-  display: table;
-  font-size: font-size(xs);
-  font-weight: font-weight(500);
-  text-align: left;
-  text-transform: uppercase;
+    background: lighten(color($gray, lightest) , 1%);
+    border-radius: 3px;
+    color: color($gray);
+    display: table;
+    font-size: font-size(xs);
+    font-weight: font-weight(500);
+    padding: .5em 1em;
+    text-align: left;
+    text-transform: uppercase;
 }
 
 
 label {
-  font-size: font-size(default);
-  color: color($gray);
+    color: color($gray);
+    font-size: font-size(default);
 
-  //variations
-  &.-invers {
-    color: rgba($white, .5);
-  }
+    //variations
+    &.-invers {
+        color: rgba($white, .5);
+    }
 
-  //context
-  form.-stacked & {
-    display: block;
-    padding-bottom: .5em;
-  }
+    //context
+    form.-stacked & {
+        display: block;
+        padding-bottom: .5em;
+    }
 }
 
 .legend_lang,
 .label_lang {
-  background: $white;
-  border: solid 1px color($gray, light);
-  border-radius: 100%;
-  box-shadow: 0 3px rgba($black, .075);
-  color: color($green, dark);
-  display: inline-block;
-  font-size: font-size(xs);
-  height: 2em;
-  line-height: 1.8; //correction
-  margin: 0 .35em;
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: top;
-  width: 2em;
-  font-weight: font-weight(extrabold);
+    background: $white;
+    border: solid 1px color($gray, light);
+    border-radius: 100%;
+    box-shadow: 0 3px rgba($black, .075);
+    color: color($green, dark);
+    display: inline-block;
+    font-size: font-size(xs);
+    font-weight: font-weight(extrabold);
+    height: 2em;
+    line-height: 1.8; //correction
+    margin: 0 .35em;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: top;
+    width: 2em;
 }
 
 
@@ -124,32 +124,32 @@ input[type='tel'],
 input[type='color'],
 select,
 textarea {
-  border: 2px solid color($gray, light);
-  border-radius: border-radius(s);
-  box-shadow: inset 0 2px rgba(color($gray), .15), 0 2px rgba($black, .075);
-  color: $text-color;
-  display: inline-block;
-  font-weight: font-weight(normal);
-  height: 2.5em;
-  padding: 0 .5em;
-  vertical-align: middle;
+    border: 2px solid color($gray, light);
+    border-radius: border-radius(s);
+    box-shadow: inset 0 2px rgba(color($gray), .15), 0 2px rgba($black, .075);
+    color: $text-color;
+    display: inline-block;
+    font-weight: font-weight(normal);
+    height: 2.5em;
+    padding: 0 .5em;
+    vertical-align: middle;
 
-  &:focus {
-    border: 2px solid color($blue, light);
-    outline: none;
-  }
+    &:focus {
+        border: 2px solid color($blue, light);
+        outline: none;
+    }
 
-  //context
-  form.-stacked & {
-    width: 100%;
-  }
+    //context
+    form.-stacked & {
+        width: 100%;
+    }
 }
 
 input[disabled] {
-    -webkit-text-fill-color: $text-color;
-    -webkit-opacity: 1;
-    color: $text-color;
     box-shadow: none;
+    color: $text-color;
+    -webkit-opacity: 1;
+    -webkit-text-fill-color: $text-color;
 
     label + & {
         margin-top: -.75em; // compensate for label bottom padding
@@ -157,22 +157,22 @@ input[disabled] {
 }
 
 input[type='text'] {
-  &.-datetime,
-  form.-stacked &.-datetime {
-    width: 8em;
-  }
+    &.-datetime,
+    form.-stacked &.-datetime {
+        width: 8em;
+    }
 }
 
 
 input[type='search'] {
-  padding: 0 1em;
+    padding: 0 1em;
 }
 
 textarea {
-  max-width: 100%;
-  padding: .5em;
+    max-width: 100%;
+    padding: .5em;
 }
 
 textarea[data-autosize] {
-  resize: none;
+    resize: none;
 }

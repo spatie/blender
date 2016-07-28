@@ -1,11 +1,12 @@
 {
   "exclude": [
     "node_modules/**",
-    "resources/assets/sass/front/utility/*",
+    "resources/assets/sass/front/utility/functions.scss",
+    "resources/assets/sass/front/utility/mixins.scss",
     "resources/assets/sass/back/utility/*"
   ],
   "always-semicolon": true,
-  "block-indent": "  ",
+  "block-indent": "    ",
   "color-case": "lower",
   "color-shorthand": true,
   "element-case": "lower",

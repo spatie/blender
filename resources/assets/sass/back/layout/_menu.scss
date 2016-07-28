@@ -46,7 +46,6 @@
 }
 
 .menu_home {
-
     float: left;
     font-size: .85rem;
     padding: 1.5em 0;
@@ -63,9 +62,9 @@
 
 .menu_home_front_protocol {
     color: color($gray, lighter);
+    left: 0;
     padding-left: .35em;
     position: absolute;
-    left: 0;
     top: 0;
 }
 
@@ -100,27 +99,23 @@
 }
 
 .menu_groups {
+    @include mq(m) {
+        margin: 0 -4vw;
+    }
 
-   padding: 1em 0;
-   font-size: font-size(s);
-   display:flex;
-   overflow-x: auto;
-
-
-
-    @include mq(m){
-       margin: 0 -4vw;
-   }
+    display: flex;
+    font-size: font-size(s);
+    overflow-x: auto;
+    padding: 1em 0;
 }
 
 .menu_group {
-
+    border-left: solid color($gray, lighter) 2px;
     display: block;
     flex-shrink: 0;
-    vertical-align: top;
-    padding: 0 4em 0 1em;
-    border-left: solid color($gray, lighter) 2px;
     font-weight: font-weight(medium);
+    padding: 0 4em 0 1em;
+    vertical-align: top;
 
     ul {
         @include ul-clean;
@@ -138,24 +133,22 @@
     }
 
     &:before {
-        content: attr(data-menu-group);
-        font-weight: font-weight(extrabold);
-        font-size: 0.75em;
-        text-transform: uppercase;
-        margin: 0 0 .25em 0;
         color: color($gray, light);
+        content: attr(data-menu-group);
         display: block;
-
+        font-size: .75em;
+        font-weight: font-weight(extrabold);
+        margin: 0 0 .25em 0;
+        text-transform: uppercase;
     }
-
 }
 
 .menu_group_title {
-    font-weight: font-weight(extrabold);
-    font-size: 0.75em;
-    text-transform: uppercase;
-    margin: 0 0 .25em 0;
     color: color($gray, light);
+    font-size: .75em;
+    font-weight: font-weight(extrabold);
+    margin: 0 0 .25em 0;
+    text-transform: uppercase;
 }
 
 

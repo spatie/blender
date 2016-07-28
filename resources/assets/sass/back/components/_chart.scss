@@ -1,26 +1,26 @@
 .chart {
-  height: auto;
-  margin-bottom: 2em;
-  width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+    width: 100%;
 }
 
 .chart_legend {
-  font-size: font-size(s);
-  margin-bottom: 1em 0;
-  padding: 1em;
-  text-align: center;
-  width: auto;
+    font-size: font-size(s);
+    margin-bottom: 1em 0;
+    padding: 1em;
+    text-align: center;
+    width: auto;
 }
 
 .chart_legend_item {
-  display: inline-block;
-  margin: 0 1em;
+    display: inline-block;
+    margin: 0 1em;
 }
 
 .chart_legend_bullet {
-  display: inline-block;
-  height: 1em;
-  margin-right: .5em;
-  vertical-align: middle;
-  width: 1em;
+    display: inline-block;
+    height: 1em;
+    margin-right: .5em;
+    vertical-align: middle;
+    width: 1em;
 }

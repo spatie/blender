@@ -1,12 +1,11 @@
 .footer {
-  //background-color: color($gray,lightest);
+    //background-color: color($gray,lightest);
+    @include mq(s) {
+        text-align: center;
+    }
 
-  @include mq(s) {
-    text-align: center;
-  }
-
-  margin-top: 5em;
-  padding: 2em 0;
+    margin-top: 5em;
+    padding: 2em 0;
 
     a {
         border: none;
@@ -17,7 +16,6 @@
             color: color($link, hover);
         }
     }
-
 }
 
 .footer_border {
@@ -26,47 +24,47 @@
 }
 
 .footer_status {
-  font-size: font-size(s);
-  margin: 0 1em;
+    font-size: font-size(s);
+    margin: 0 1em;
 
-
-  &:before {
-    display: inline-block;
-    font-family: font-family(icons);
-    margin-right: .25em;
-  }
-
-  //variations
-  &.-non-production {
-    color: color($orange, light);
 
     &:before {
-      content: '\f0ad';
+        display: inline-block;
+        font-family: font-family(icons);
+        margin-right: .25em;
     }
-  }
-  &.-production {
-    color: color($green, light);
 
-    &:before {
-      content: '\f072';
+    //variations
+    &.-non-production {
+        color: color($orange, light);
+
+        &:before {
+            content: '\f0ad';
+        }
     }
-  }
+    &.-production {
+        color: color($green, light);
+
+        &:before {
+            content: '\f072';
+        }
+    }
 }
 
 .footer_version {
-  text-align: left;
-  font-size: font-size(s);
-  float: left;
+    float: left;
+    font-size: font-size(s);
+    text-align: left;
 }
 
 .footer_colofon {
-  font-size: font-size(s);
-  text-align: center;
-  float: right;
+    float: right;
+    font-size: font-size(s);
+    text-align: center;
 }
 
 .footer_brand {
-  height: auto;
-  vertical-align: middle;
-  width: 1.5em;
+    height: auto;
+    vertical-align: middle;
+    width: 1.5em;
 }

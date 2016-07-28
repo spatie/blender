@@ -1,0 +1,11 @@
+@include footer-is-fixed;
+
+.footer {
+    @include mq(s) {
+        padding-bottom: 80px; //for ios toolbar
+    }
+
+    background-color: color($gray, lightest);
+    padding: gutter() 0;
+    text-align: center;
+}

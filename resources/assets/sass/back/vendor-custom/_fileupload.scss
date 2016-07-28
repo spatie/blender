@@ -11,26 +11,26 @@
  */
 
 .fileinput-button {
-  overflow: hidden;
-  position: relative;
+    overflow: hidden;
+    position: relative;
 }
 .fileinput-button input {
-  cursor: pointer;
-  direction: ltr;
-  -ms-filter: 'alpha(opacity=0)';
-  font-size: 200px;
-  margin: 0;
-  opacity: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
+    cursor: pointer;
+    direction: ltr;
+    -ms-filter: 'alpha(opacity=0)';
+    font-size: 200px;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 /* Fixes for IE < 8 */
 @media screen\9 {
-  .fileinput-button input {
-    filter: alpha(opacity=0);
-    font-size: 100%;
-    height: 100%;
-  }
+    .fileinput-button input {
+        filter: alpha(opacity=0);
+        font-size: 100%;
+        height: 100%;
+    }
 }

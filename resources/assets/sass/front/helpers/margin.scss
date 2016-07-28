@@ -1,0 +1,89 @@
+.\:margin {
+    margin: gutter(m);
+}
+
+.\:margin-small {
+    margin: gutter(s);
+}
+
+.\:margin-large {
+    margin: gutter(l);
+}
+
+.\:margin-left {
+    margin-left: gutter(m);
+}
+
+.\:margin-left-small {
+    margin-left: gutter(s);
+}
+
+.\:margin-left-large {
+    margin-left: gutter(l);
+}
+
+.\:margin-right {
+    margin-right: gutter(m);
+}
+
+.\:margin-right-small {
+    margin-right: gutter(s);
+}
+
+.\:margin-right-large {
+    margin-right: gutter(l);
+}
+
+.\:margin-horizontal {
+    margin-left: gutter(m);
+    margin-right: gutter(m);
+}
+
+.\:margin-horizontal-small {
+    margin-left: gutter(s);
+    margin-right: gutter(s);
+}
+
+.\:margin-horizontal-large {
+    margin-left: gutter(l);
+    margin-right: gutter(l);
+}
+
+.\:margin-top {
+    margin-top: gutter(m);
+}
+
+.\:margin-top-small {
+    margin-top: gutter(s);
+}
+
+.\:margin-top-large {
+    margin-top: gutter(l);
+}
+
+.\:margin-bottom {
+    margin-bottom: gutter(m);
+}
+
+.\:margin-bottom-small {
+    margin-bottom: gutter(s);
+}
+
+.\:margin-bottom-large {
+    margin-bottom: gutter(l);
+}
+
+.\:margin-vertical {
+    margin-bottom: gutter(m);
+    margin-top: gutter(m);
+}
+
+.\:margin-vertical-small {
+    margin-bottom: gutter(s);
+    margin-top: gutter(s);
+}
+
+.\:margin-vertical-large {
+    margin-bottom: gutter(l);
+    margin-top: gutter(l);
+}

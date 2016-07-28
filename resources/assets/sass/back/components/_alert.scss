@@ -1,74 +1,74 @@
 .alerts {
-  margin: 2em 0;
+    margin: 2em 0;
 
-  &.-fixed {
-    margin: 0;
-    opacity: .85;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: z-index(fixed);
-  }
+    &.-fixed {
+        margin: 0;
+        opacity: .85;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: z-index(fixed);
+    }
 }
 
 
 .alert {
-  border-radius:  border-radius(s);
-  padding: 1em;
-  z-index: z-index(above);
-  border-left: 5px solid;
+    border-left: 5px solid;
+    border-radius: border-radius(s);
+    padding: 1em;
+    z-index: z-index(above);
 
-  //variations
-  &.-small,
-  form & {
-    font-size: font-size(s);
-    padding: .75em;
-  }
+    //variations
+    &.-small,
+    form & {
+        font-size: font-size(s);
+        padding: .75em;
+    }
 
-  &.-inline {
-    display: inline-block;
-  }
+    &.-inline {
+        display: inline-block;
+    }
 
-  &.-invers {
-    background: rgba(color($blue, lightest) , .1);
-    color: $white;
-    border-left-color: $white;
-  }
+    &.-invers {
+        background: rgba(color($blue, lightest) , .1);
+        border-left-color: $white;
+        color: $white;
+    }
 
-  &.-warning {
-    background: color($orange,lightest);
-    color: color($orange);
-    border-left-color: color($orange);
-  }
+    &.-warning {
+        background: color($orange,lightest);
+        border-left-color: color($orange);
+        color: color($orange);
+    }
 
-  &.-danger,
-  &.-error {
-    background: color($red, lightest);
-    color: color($red,dark);
-    border-left-color: color($red,dark);
-  }
+    &.-danger,
+    &.-error {
+        background: color($red, lightest);
+        border-left-color: color($red,dark);
+        color: color($red,dark);
+    }
 
-  &.-success {
-    background: color($green, lightest);
-    color: color($green, dark);
-    border-left-color: color($green, dark);
-  }
+    &.-success {
+        background: color($green, lightest);
+        border-left-color: color($green, dark);
+        color: color($green, dark);
+    }
 
-  &.-info {
-    background: color($blue, lightest);
-    color: color($blue);
-    border-left-color: color($blue);
-  }
+    &.-info {
+        background: color($blue, lightest);
+        border-left-color: color($blue);
+        color: color($blue);
+    }
 
-  //context
-  .form & {
-    font-size: font-size(s);
-    margin: .5em 0;
-    padding: .65em 1em;
-  }
+    //context
+    .form & {
+        font-size: font-size(s);
+        margin: .5em 0;
+        padding: .65em 1em;
+    }
 
-  .alerts.-fixed & {
-    border-radius: 0;
-    text-align: center;
-  }
+    .alerts.-fixed & {
+        border-radius: 0;
+        text-align: center;
+    }
 }

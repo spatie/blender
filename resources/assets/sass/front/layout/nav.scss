@@ -1,0 +1,13 @@
+.\$nav-mobile {
+    .nav {
+        li {
+            display: block;
+        }
+    }
+}
+
+.nav {
+    ul {
+        @include ul-clean;
+    }
+}

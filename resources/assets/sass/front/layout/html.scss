@@ -9,77 +9,87 @@
 }
 
 html {
-    background: $white;
+    height: 100%;
 }
 
 body {
-    @include antialiasing(subpixel);
+    @include antialiasing(pixel);
     @include font(sans, normal);
-    @include mq(l) {
-        font-size: font-size(default);
-    }
 
     color: $text-color;
     line-height: $line-height;
 }
 
-/* Frequent used tags */
+// Frequent used tags
 
 h1,
 h2,
 h3 {
-    @include hyphens(false);
+    //line-height: 1.3; //smaller line height for titles
+    margin: 0;
+    text-rendering: optimizeLegibility;
 
-    line-height: 1.2; //smaller line height for titles
-    margin-top: 0;
 
     p + &,
     ul + &,
     ol + & {
-        margin-top: 2em; //margin-top after a text block
+        margin-bottom: gutter(s); //margin-top after a text block
     }
 
     a {
-        border-color: transparent !important;
         //reset links in titles
-        color: inherit !important;
+        //color: inherit !important;
     }
 }
 
 h1 {
-    @include font(sans, extrabold);
-    @include font-size(xl);
+    @include font(sans, medium);
+    @include font-size(xxl);
 }
 
 h2 {
-    @include font(sans, light);
+    @include font(sans, medium);
     @include font-size(l);
 
-    text-transform: uppercase;
+    color: color($gray, darker);
 }
 
 h3 {
-    @include font(sans, bold);
-    @include font-size(m);
+    @include font(sans, normal);
+
+    margin-bottom: .5rem;
+    word-break: break-word;
+
+    & + p {
+        margin-top: 0;
+    }
+}
+
+h4 {
+    @include font(sans, normal);
+
+    margin: 0;
 }
 
 a {
-    border-bottom: solid 1px rgba( color($link, default) , .5) ;
-    color: color($link, default);
-    text-decoration: none;
-
-    &:hover {
-        color: color($link, hover);
-    }
+    @include underline(color($link), color($gray));
 }
 
 p,
 ul,
 ol {
-    margin-bottom: $line-height;
-    margin-top: 0;
-}
+    line-height: $line-height;
+    margin: 0;
+    margin-bottom: gutter(s);
 
+    p + & {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
 
 strong,
 b {
@@ -110,40 +120,45 @@ li {
 img,
 object {
     max-width: 100%;
+    width: 100%;
 }
 
+// Less used tags
 
-/* Less used tags */
-
-abbr[title],
-dfn[title] {
-    border-bottom: 1px dotted color($gray);
-    cursor: help;
-}
-address {
-    background: color($gray,lightest);
-    display: inline-block;
-    margin-bottom: 1.5em;
-    padding: 1em;
-}
-blockquote {
-    display: inline-block;
-    margin-bottom: 1.5em;
-    padding: 1em;
-    p {
-        margin-bottom: 0;
+abbr,
+dfn {
+    &[title] {
+        border-bottom: 1px dotted color($gray);
+        cursor: help;
     }
 }
+
+address {
+    background: color($gray, light);
+    display: inline-block;
+    margin-bottom: 1.5em;
+    padding: 1em;
+}
+
+blockquote {
+    border-left: 1px solid color($gray);
+    display: block;
+    margin: 2rem 0 3rem;
+    padding: 0 1rem;
+
+    p {
+        margin: 0;
+    }
+}
+
 blockquote,
 q {
     quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
-    content: none;
+
+    &:before,
+    &:after {
+        content: '';
+    }
 }
 
 code,
@@ -180,14 +195,9 @@ cite {
     font-style: italic;
 }
 
-hr {
-    border-top: 1px solid color($gray, lighter);
-    margin: 1em 0;
-}
-
 ins,
 mark {
-    @include tag( color($yellow, darkest) , color($yellow, lightest) );
+    @include tag(color($yellow, darkest) , color($yellow, lightest));
 
     text-decoration: none;
 }
@@ -198,13 +208,8 @@ pre {
     padding: 1.5em;
 }
 
-small {
-    font-size: font-size(s);
-}
-
 sub,
 sup {
-    font-size: font-size(xs);
     line-height: 0;
     vertical-align: baseline;
 }
@@ -215,8 +220,4 @@ sub {
 
 sup {
     bottom: 1ex;
-}
-
-time {
-    @include tag( $text-color , color($yellow, lightest) );
 }

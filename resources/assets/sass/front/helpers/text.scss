@@ -1,0 +1,32 @@
+.\:text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.\:text-small {
+    font-size: font-size(s);
+}
+.\:text-large {
+    font-size: font-size(l);
+}
+
+.\:text-uppercase {
+    text-transform: uppercase;
+}
+
+.\:text-super {
+    font-size: font-size(xs);
+    top: -.35em;
+}
+
+.\:text-sub {
+    font-size: font-size(xs);
+    top: .35em;
+}
+
+.\:text-clean {
+    border: 0;
+    text-decoration: none;
+    text-transform: none;
+}

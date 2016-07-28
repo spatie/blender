@@ -1,28 +1,28 @@
 .breadcrumbs {
-  min-height: 1.5em;
+    min-height: 1.5em;
 }
 
 .breadcrumb {
-  @include ul-horizontal;
+    @include ul-horizontal;
 
-  color: color($gray);
-  font-size: font-size(xs);
-  list-style: none;
-  margin-bottom: 2em;
+    color: color($gray);
+    font-size: font-size(xs);
+    list-style: none;
+    margin-bottom: 2em;
 
-  li {
-    padding-right: .5em;
+    li {
+        padding-right: .5em;
 
-    &:before {
-      content: '\f105'; //angle-right
-      display: inline-block;
-      font-family: font-family(icons);
-      opacity: .5;
-      padding-right: .5em;
+        &:before {
+            content: '\f105'; //angle-right
+            display: inline-block;
+            font-family: font-family(icons);
+            opacity: .5;
+            padding-right: .5em;
+        }
+
+        &:first-child:before {
+            display: none;
+        }
     }
-
-    &:first-child:before {
-      display: none;
-    }
-  }
 }

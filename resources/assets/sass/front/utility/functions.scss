@@ -1,65 +1,65 @@
 // Utility functions
 /// Check if key exists in map, and returns the value. Otherwise give the key back.
 @function mapping($map, $key, $parse: false) {
-  @if not map-has-key($map, $key) {
-    @return $key;
-  }
+    @if not map-has-key($map, $key) {
+        @return $key;
+    }
 
-  @if not $parse {
-    @return map-get($map, $key);
-  } @else {
-    @return #{map-get($map, $key)};
-  }
+    @if not $parse {
+        @return map-get($map, $key);
+    } @else {
+        @return #{map-get($map, $key)};
+    }
 }
 
 /// Strip unit from number
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+    @return $value / ($value * 0 + 1);
 }
 
 /// Replace `$search` with `$replace` in `$string`
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+    $index: str-index($string, $search);
 
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-  }
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
 
-  @return $string;
+    @return $string;
 }
 
 // Settings functions
 /// Color shortcut
 @function color($pallete, $key: 'default', $opacity: 1) {
-  @return rgba(mapping($pallete, $key), $opacity);
+    @return rgba(mapping($pallete, $key), $opacity);
 }
 
 /// Font size shortcut
 @function font-size($key: 'default') {
-  @return mapping($font-sizes, $key);
+    @return mapping($font-sizes, $key);
 }
 
 /// Font weight shortcut
 @function font-weight($key: 'normal') {
-  @return mapping($font-weights, $key);
+    @return mapping($font-weights, $key);
 }
 
 /// Font family
 @function font-family($key: 'normal') {
-  @return mapping($font-families, $key, true);
+    @return mapping($font-families, $key, true);
 }
 
 /// Z-index shortcut
 @function z-index($key: 'above') {
-  @return mapping($z-indexes, $key);
+    @return mapping($z-indexes, $key);
 }
 
 /// Border-radius shortcut
 @function border-radius($key: 'm') {
-  @return mapping($border-radius, $key);
+    @return mapping($border-radius, $key);
 }
 
 /// Gutter
 @function gutter($key: 'm') {
-  @return mapping($gutter, $key);
+    @return mapping($gutter, $key);
 }
