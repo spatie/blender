@@ -203,6 +203,7 @@ return [
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
         Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+        Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
     ],
 
     /*

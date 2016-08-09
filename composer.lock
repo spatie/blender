@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bafe840ab49ea3c594c1bb4f35b5d689",
-    "content-hash": "3be7664ed2ebbd7bb19d3ef88e6030a9",
+    "hash": "5a65209e9cf6dc3a7213c47e8e3c8282",
+    "content-hash": "5bee02122d9ce83b7b22163102f12027",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4049,6 +4049,62 @@
                 "spatie"
             ],
             "time": "2016-06-26 21:48:37"
+        },
+        {
+            "name": "spatie/laravel-collection-macros",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-collection-macros.git",
+                "reference": "78f31c9e8393a9d88dedeea7128e5264363a9638"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/78f31c9e8393a9d88dedeea7128e5264363a9638",
+                "reference": "78f31c9e8393a9d88dedeea7128e5264363a9638",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.2",
+                "illuminate/validation": "^5.2",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.5",
+                "orchestra/testbench": "^3.2",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\CollectionMacros\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://github.com/freekmurze",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://github.com/sebastiandedeyne",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A set of useful Laravel collection macros",
+            "homepage": "https://github.com/spatie/laravel-collection-macros",
+            "keywords": [
+                "laravel-collection-macros",
+                "spatie"
+            ],
+            "time": "2016-08-09 13:25:52"
         },
         {
             "name": "spatie/laravel-cookie-consent",
