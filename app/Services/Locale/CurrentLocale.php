@@ -10,8 +10,9 @@ class CurrentLocale
             return config('app.backLocales')[0];
         }
 
-        return static::isValidLocale(app()->request->segment(1)) ? 
-            app()->request->segment(1) : app()->getLocale();
+        return static::isValidLocale(app()->request->segment(1))
+            ? app()->request->segment(1)
+            : app()->getLocale();
     }
 
     public static function getContentLocale(): string
