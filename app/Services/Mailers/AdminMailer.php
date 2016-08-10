@@ -5,6 +5,7 @@ namespace App\Services\Mailers;
 use App\Events\ContactFormWasSubmitted;
 use App\Services\Auth\Back\Events\UserWasCreated;
 use Illuminate\Contracts\Events\Dispatcher;
+use Password;
 
 class AdminMailer
 {
