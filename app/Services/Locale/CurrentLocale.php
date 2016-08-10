@@ -2,6 +2,8 @@
 
 namespace App\Services\Locale;
 
+use Illuminate\Contracts\Encryption\Encrypter;
+
 class CurrentLocale
 {
     public static function determine(): string
@@ -10,9 +12,25 @@ class CurrentLocale
             return config('app.backLocales')[0];
         }
 
-        return static::isValidLocale(app()->request->segment(1))
-            ? app()->request->segment(1)
-            : app()->getLocale();
+        $urlLocale = app()->request->segment(1);
+
+        if (static::isValidLocale($urlLocale)) {
+            return $urlLocale;
+        }
+
+        $cookieLocale = app(Encrypter::class)->decrypt(request()->cookie('locale'));
+
+        if (self::isValidLocale($cookieLocale)) {
+            return $cookieLocale;
+        }
+
+        $browserLocale = collect(request()->getLanguages())->first();
+
+        if (self::isValidLocale($browserLocale)) {
+            return $browserLocale;
+        }
+
+        return app()->getLocale();
     }
 
     public static function getContentLocale(): string
@@ -24,7 +42,7 @@ class CurrentLocale
         return locale();
     }
 
-    protected static function isValidLocale($locale): bool
+    public static function isValidLocale($locale): bool
     {
         if (!is_string($locale)) {
             return false;

@@ -15,7 +15,7 @@ Route::group(['namespace' => 'Back', 'prefix' => 'blender'], function () {
     });
 });
 
-Route::group(['namespace' => 'Front', 'middleware' => 'demoMode'], function () {
+Route::group(['namespace' => 'Front', 'middleware' => ['demoMode', 'rememberLocale']], function () {
 
     $multiLingual = count(config('app.locales')) > 1;
 
