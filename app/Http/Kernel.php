@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\RememberLocale;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Spatie\Authorize\Middleware\Authorize;
 
@@ -35,5 +36,6 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'demoMode' => \Spatie\DemoMode\DemoMode::class,
+        'rememberLocale' => \App\Http\Middleware\RememberLocale::class,
     ];
 }
