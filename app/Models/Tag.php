@@ -32,8 +32,8 @@ class Tag extends ModuleModel implements SortableInterface
     public static function findByNameOrCreate(string $name, TagType $type): Tag
     {
         $existing = self::nonDraft()->get()
-            ->first(function (int $id, Tag $tag) use ($name) {
-                return $tag->translate('name', content_locale()) === $name;
+            ->first(function (int $id, Tag $tag) use ($name, $type) {
+                return $tag->translate('name', content_locale()) === $name && $tag->type === (string) $type;
             });
 
         if ($existing) {
