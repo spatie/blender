@@ -2,6 +2,7 @@
 
 namespace App\Services\Locale;
 
+use Exception;
 use Illuminate\Contracts\Encryption\Encrypter;
 
 class CurrentLocale
@@ -18,10 +19,13 @@ class CurrentLocale
             return $urlLocale;
         }
 
-        $cookieLocale = app(Encrypter::class)->decrypt(request()->cookie('locale'));
+        try {
+            $cookieLocale = app(Encrypter::class)->decrypt(request()->cookie('locale'));
 
-        if (self::isValidLocale($cookieLocale)) {
-            return $cookieLocale;
+            if (self::isValidLocale($cookieLocale)) {
+                return $cookieLocale;
+            }
+        } catch (Exception $exception) {
         }
 
         $browserLocale = collect(request()->getLanguages())->first();
