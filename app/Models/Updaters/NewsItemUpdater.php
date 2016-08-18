@@ -2,14 +2,14 @@
 
 namespace App\Models\Updaters;
 
-use App\Foundation\Models\Updaters\UpdatesMetaTags;
+use App\Foundation\Models\Updaters\UpdatesSeoValues;
 use App\Foundation\Models\Updaters\UpdatesTags;
 use Carbon\Carbon;
 use App\Foundation\Models\Updaters\ModuleModelUpdater;
 
 class NewsItemUpdater extends ModuleModelUpdater
 {
-    use UpdatesMetaTags, UpdatesTags;
+    use UpdatesSeoValues, UpdatesTags;
 
     public function performUpdate()
     {

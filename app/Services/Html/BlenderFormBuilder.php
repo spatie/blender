@@ -239,21 +239,21 @@ class BlenderFormBuilder
         return implode('', $translatedFields);
     }
 
-    public function meta(): string
+    public function seo(): string
     {
         return locales()->map(function ($locale) {
 
-            return collect($this->model->defaultMetaValues())
+            return collect($this->model->defaultSeoValues())
                 ->keys()
                 ->map(function ($attribute) use ($locale) {
 
-                    $fieldName = translate_field_name("meta.{$attribute}", $locale);
+                    $fieldName = translate_field_name("seo.{$attribute}", $locale);
 
                     return $this->group([
-                        Form::label($fieldName, "Meta: {$attribute}"),
+                        Form::label($fieldName, $this->getSeoLabel($attribute)),
                         Form::text(
                             $fieldName,
-                            old($fieldName, $this->model->getTranslation('meta', $locale)[$attribute] ?? '')
+                            old($fieldName, $this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
                         ),
                     ]);
                 })
@@ -262,6 +262,15 @@ class BlenderFormBuilder
                 });
 
         })->implode('');
+    }
+
+    protected function getSeoLabel(string $attribute): string
+    {
+        if (starts_with($attribute, 'meta_')) {
+            return "Meta: " . substr($attribute, 5);
+        }
+
+        return fragment("back.seo.{$attribute}");
     }
 
     public function submit(): string

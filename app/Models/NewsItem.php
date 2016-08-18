@@ -16,7 +16,7 @@ class NewsItem extends ModuleModel
 
     public $tagTypes = [TagType::NEWS_CATEGORY, TagType::NEWS_TAG];
     public $mediaLibraryCollections = ['images', 'downloads'];
-    public $translatable = ['name', 'text', 'url', 'meta'];
+    public $translatable = ['name', 'text', 'url', 'seo_values'];
 
     public function registerMediaConversions()
     {

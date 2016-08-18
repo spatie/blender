@@ -5,7 +5,7 @@ namespace App\Foundation\Models\Base;
 use App\Foundation\Models\Traits\Draftable;
 use App\Foundation\Models\Traits\Presentable;
 use App\Foundation\Models\Traits\HasMedia as HasMediaTrait;
-use App\HasMeta\HasMeta;
+use App\HasMeta\HasSeoValues;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\ModelCleanup\GetsCleanedUp;
@@ -15,7 +15,7 @@ use Spatie\Translatable\HasTranslations;
 
 abstract class ModuleModel extends Model implements HasMediaConversions, GetsCleanedUp
 {
-    use Draftable, Presentable, HasMediaTrait, HasMeta, HasTranslations;
+    use Draftable, Presentable, HasMediaTrait, HasSeoValues, HasTranslations;
 
     protected $guarded = ['id'];
 
@@ -39,18 +39,14 @@ abstract class ModuleModel extends Model implements HasMediaConversions, GetsCle
             ->where('created_at', '<', Carbon::now()->subWeek());
     }
 
-    public function metaValues()
-    {
-        return $this->meta;
-    }
-
-    public function defaultMetaValues(): array
+    public function defaultSeoValues(): array
     {
         return [
             'title' => $this->name,
-            'description' => (string) string($this->text)->tease(155),
-            'og:title' => $this->name,
-            'og:description' => (string) string($this->text)->tease(155),
+            'meta_title' => $this->name,
+            'meta_description' => (string) string($this->text)->tease(155),
+            'meta_og:title' => $this->name,
+            'meta_og:description' => (string) string($this->text)->tease(155),
         ];
     }
 }
