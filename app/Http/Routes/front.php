@@ -2,16 +2,6 @@
 
 use App\Http\Routes\Route as RouteName;
 
-Route::get('meta', function () {
-    $item = App\Models\NewsItem::first();
-
-    dd(
-        $item->meta(),
-        $item->meta('title'),
-        (string) $item->meta()
-    );
-});
-
 Route::get('/', 'HomeController@index')->name(RouteName::HOME);
 
 Route::get(article('contact')->url, 'ContactController@index')->name(RouteName::CONTACT);
