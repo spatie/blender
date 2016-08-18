@@ -12,6 +12,7 @@ class CreateArticlesTable extends Migration
             $table->text('name');
             $table->text('text');
             $table->text('url');
+            $table->text('seo_values');
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);
             $table->integer('parent_id')->unsigned()->nullable();

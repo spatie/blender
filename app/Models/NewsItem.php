@@ -9,14 +9,14 @@ use App\Models\Enums\TagType;
 
 class NewsItem extends ModuleModel
 {
-    use HasTags, HasSlug;
+    use HasSlug, HasTags;
 
     protected $with = ['media', 'tags'];
     protected $dates = ['publish_date'];
 
     public $tagTypes = [TagType::NEWS_CATEGORY, TagType::NEWS_TAG];
     public $mediaLibraryCollections = ['images', 'downloads'];
-    public $translatable = ['name', 'text', 'url'];
+    public $translatable = ['name', 'text', 'url', 'seo_values'];
 
     public function registerMediaConversions()
     {

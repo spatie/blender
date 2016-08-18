@@ -1,6 +1,7 @@
 @extends('front._layouts.master')
 
 @section('title', $article->name)
+@section('meta', $article->meta())
 
 @section('subMenu', Menu::articleSiblings($article))
 

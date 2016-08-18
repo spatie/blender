@@ -13,4 +13,6 @@
 {!! BlenderForm::media('images', 'images') !!}
 {!! BlenderForm::media('downloads', 'downloads') !!}
 
+{!! BlenderForm::seo() !!}
+
 {!! BlenderForm::submit() !!}

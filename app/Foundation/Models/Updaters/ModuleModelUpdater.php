@@ -4,7 +4,7 @@ namespace App\Foundation\Models\Updaters;
 
 class ModuleModelUpdater extends Updater
 {
-    use UpdatesMedia, UpdatesOnlineToggle, UpdatesTranslations;
+    use UpdatesMedia, UpdatesOnlineToggle, UpdatesSeoValues, UpdatesTranslations;
 
     /**
      * @return \Illuminate\Database\Eloquent\Model
@@ -13,6 +13,7 @@ class ModuleModelUpdater extends Updater
     {
         $this->updateTranslations();
         $this->updateOnlineToggle();
+        $this->updateSeoValues();
         $this->updateMedia();
 
         return $this->model;

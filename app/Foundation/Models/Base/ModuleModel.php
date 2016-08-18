@@ -5,6 +5,7 @@ namespace App\Foundation\Models\Base;
 use App\Foundation\Models\Traits\Draftable;
 use App\Foundation\Models\Traits\Presentable;
 use App\Foundation\Models\Traits\HasMedia as HasMediaTrait;
+use App\HasMeta\HasSeoValues;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\ModelCleanup\GetsCleanedUp;
@@ -14,7 +15,7 @@ use Spatie\Translatable\HasTranslations;
 
 abstract class ModuleModel extends Model implements HasMediaConversions, GetsCleanedUp
 {
-    use Draftable, Presentable, HasMediaTrait, HasTranslations;
+    use Draftable, Presentable, HasMediaTrait, HasSeoValues, HasTranslations;
 
     protected $guarded = ['id'];
 
@@ -36,5 +37,20 @@ abstract class ModuleModel extends Model implements HasMediaConversions, GetsCle
         return $query
             ->draft()
             ->where('created_at', '<', Carbon::now()->subWeek());
+    }
+
+    public function defaultSeoValues(): array
+    {
+        return [
+            'title' => $this->name,
+            'meta_title' => $this->name,
+            'meta_description' => (string) string($this->text)->tease(155),
+            'meta_og:title' => $this->name,
+            'meta_og:type' => 'website',
+            'meta_og:description' => (string) string($this->text)->tease(155),
+            'meta_og:image' => $this->hasMedia('images') ?
+                url($this->getFirstMediaUrl('images')) :
+                url('/images/og-image.png'),
+        ];
     }
 }

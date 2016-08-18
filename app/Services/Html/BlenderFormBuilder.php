@@ -5,6 +5,7 @@ namespace App\Services\Html;
 use Form;
 use Html;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Support\ViewErrorBag;
 
 class BlenderFormBuilder
@@ -236,6 +237,40 @@ class BlenderFormBuilder
         }
 
         return implode('', $translatedFields);
+    }
+
+    public function seo(): string
+    {
+        return locales()->map(function ($locale) {
+
+            return collect($this->model->defaultSeoValues())
+                ->keys()
+                ->map(function ($attribute) use ($locale) {
+
+                    $fieldName = translate_field_name("seo.{$attribute}", $locale);
+
+                    return $this->group([
+                        Form::label($fieldName, $this->getSeoLabel($attribute)),
+                        Form::text(
+                            $fieldName,
+                            old($fieldName, $this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
+                        ),
+                    ]);
+                })
+                ->pipe(function (Collection $fields) use ($locale) {
+                    return $this->languageFieldSet($locale, $fields->toArray());
+                });
+
+        })->implode('');
+    }
+
+    protected function getSeoLabel(string $attribute): string
+    {
+        if (starts_with($attribute, 'meta_')) {
+            return "Meta: " . substr($attribute, 5);
+        }
+
+        return fragment("back.seo.{$attribute}");
     }
 
     public function submit(): string
