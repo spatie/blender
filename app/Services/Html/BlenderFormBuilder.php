@@ -5,6 +5,7 @@ namespace App\Services\Html;
 use Form;
 use Html;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Support\ViewErrorBag;
 
 class BlenderFormBuilder
@@ -236,6 +237,31 @@ class BlenderFormBuilder
         }
 
         return implode('', $translatedFields);
+    }
+
+    public function meta(): string
+    {
+        return locales()->map(function ($locale) {
+
+            return collect($this->model->defaultMetaValues())
+                ->keys()
+                ->map(function ($attribute) use ($locale) {
+
+                    $fieldName = translate_field_name("meta.{$attribute}", $locale);
+
+                    return $this->group([
+                        Form::label($fieldName, "Meta: {$attribute}"),
+                        Form::text(
+                            $fieldName,
+                            old($fieldName, $this->model->getTranslation('meta', $locale)[$attribute] ?? '')
+                        ),
+                    ]);
+                })
+                ->pipe(function (Collection $fields) use ($locale) {
+                    return $this->languageFieldSet($locale, $fields->toArray());
+                });
+
+        })->implode('');
     }
 
     public function submit(): string

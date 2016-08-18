@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5a65209e9cf6dc3a7213c47e8e3c8282",
-    "content-hash": "5bee02122d9ce83b7b22163102f12027",
+    "hash": "21d26c4810b5427d3fbd9995912875a4",
+    "content-hash": "8174780de8786d68326fa9bfaee27695",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -5105,6 +5105,52 @@
                 "spatie"
             ],
             "time": "2016-04-29 08:02:56"
+        },
+        {
+            "name": "spatie/regex",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/regex.git",
+                "reference": "24fec1dc15f7cf16da0168bb4b9c65e8305cb711"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/regex/zipball/24fec1dc15f7cf16da0168bb4b9c65e8305cb711",
+                "reference": "24fec1dc15f7cf16da0168bb4b9c65e8305cb711",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Regex\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A sane interface for php's built in preg_* functions",
+            "homepage": "https://github.com/spatie/regex",
+            "keywords": [
+                "regex",
+                "spatie"
+            ],
+            "time": "2016-08-18 08:11:46"
         },
         {
             "name": "spatie/seeders",
