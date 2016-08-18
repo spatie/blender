@@ -10,16 +10,6 @@ trait UpdatesSeoValues
 {
     protected function updateMetaTags()
     {
-        Collection::macro('dump', function (string $comment = '') {
-            if ($comment) {
-                dump($comment);
-            }
-
-            dump($this);
-
-            return $this;
-        });
-
         collect($this->request->all())
             ->filter(function ($value, $fieldName) {
                 // Filter out everything that starts with 'translated_<locale>_seo_'

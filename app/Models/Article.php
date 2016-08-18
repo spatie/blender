@@ -18,7 +18,7 @@ class Article extends ModuleModel
     protected $with = ['media'];
 
     public $mediaLibraryCollections = ['images', 'downloads'];
-    public $translatable = ['name', 'text', 'url'];
+    public $translatable = ['name', 'text', 'url', 'seo_values'];
 
     public function registerMediaConversions()
     {
