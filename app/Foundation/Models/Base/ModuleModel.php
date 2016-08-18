@@ -46,7 +46,11 @@ abstract class ModuleModel extends Model implements HasMediaConversions, GetsCle
             'meta_title' => $this->name,
             'meta_description' => (string) string($this->text)->tease(155),
             'meta_og:title' => $this->name,
+            'meta_og:type' => 'website',
             'meta_og:description' => (string) string($this->text)->tease(155),
+            'meta_og:image' => $this->hasMedia('images') ?
+                url($this->getFirstMediaUrl('images')) :
+                url('/images/og-image.png'),
         ];
     }
 }

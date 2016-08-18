@@ -8,7 +8,7 @@ use Spatie\Regex\Regex;
 
 trait UpdatesSeoValues
 {
-    protected function updateMetaTags()
+    protected function updateSeoValues()
     {
         collect($this->request->all())
             ->filter(function ($value, $fieldName) {
