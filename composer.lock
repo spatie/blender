@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1205e1fdaccfd61068e9d6c2ceb21509",
-    "content-hash": "a265dc96a923d21e8dc9dd8f3fd989fe",
+    "hash": "acd3e0bc0536751e116406b60d430289",
+    "content-hash": "959f2f4050baa983465a96a432690231",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -1218,16 +1218,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "7.5.2",
+            "version": "7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "a03f2f7b9c832eed026995182c3a3100dc4d2938"
+                "reference": "12010105a3c8d7e0c3f40ce6721141c5779a6c42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/a03f2f7b9c832eed026995182c3a3100dc4d2938",
-                "reference": "a03f2f7b9c832eed026995182c3a3100dc4d2938",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/12010105a3c8d7e0c3f40ce6721141c5779a6c42",
+                "reference": "12010105a3c8d7e0c3f40ce6721141c5779a6c42",
                 "shasum": ""
             },
             "require": {
@@ -1276,7 +1276,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2016-08-10 09:28:45"
+            "time": "2016-08-24 13:12:13"
         },
         {
             "name": "giggsey/locale",
@@ -2120,16 +2120,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.0",
+            "version": "v5.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7d116dc5a008e69c97f864af79ac46ab6a8d5895"
+                "reference": "2213ca11f6fa849ca7c96308934cc6881ab434e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7d116dc5a008e69c97f864af79ac46ab6a8d5895",
-                "reference": "7d116dc5a008e69c97f864af79ac46ab6a8d5895",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2213ca11f6fa849ca7c96308934cc6881ab434e8",
+                "reference": "2213ca11f6fa849ca7c96308934cc6881ab434e8",
                 "shasum": ""
             },
             "require": {
@@ -2243,7 +2243,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-23 13:04:04"
+            "time": "2016-08-24 23:23:29"
         },
         {
             "name": "laravelcollective/html",
@@ -2553,6 +2553,73 @@
                 "processing"
             ],
             "time": "2016-08-19 20:49:36"
+        },
+        {
+            "name": "maatwebsite/excel",
+            "version": "2.1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
+                "reference": "01b2a13d83e8c47336dccfdea6e302f988ab8cfd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/01b2a13d83e8c47336dccfdea6e302f988ab8cfd",
+                "reference": "01b2a13d83e8c47336dccfdea6e302f988ab8cfd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "nesbot/carbon": "~1.0",
+                "php": ">=5.5",
+                "phpoffice/phpexcel": "1.8.*",
+                "tijsverkoyen/css-to-inline-styles": "~1.5"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "orchestra/testbench": "3.1.*",
+                "phpseclib/phpseclib": "~1.0",
+                "phpunit/phpunit": "~4.0"
+            },
+            "suggest": {
+                "illuminate/http": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/queue": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/routing": "5.0.*|5.1.*|5.2.*|5.3.*",
+                "illuminate/view": "5.0.*|5.1.*|5.2.*|5.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Maatwebsite/Excel"
+                ],
+                "psr-0": {
+                    "Maatwebsite\\Excel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maatwebsite.nl",
+                    "email": "patrick@maatwebsite.nl"
+                }
+            ],
+            "description": "An eloquent way of importing and exporting Excel and CSV in Laravel 4 with the power of PHPExcel",
+            "keywords": [
+                "PHPExcel",
+                "batch",
+                "csv",
+                "excel",
+                "export",
+                "import",
+                "laravel"
+            ],
+            "time": "2016-08-08 18:29:50"
         },
         {
             "name": "maknz/slack",
@@ -3206,6 +3273,63 @@
             "time": "2015-08-07 21:42:41"
         },
         {
+            "name": "phpoffice/phpexcel",
+            "version": "1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPOffice/PHPExcel.git",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPOffice/PHPExcel/zipball/372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "reference": "372c7cbb695a6f6f1e62649381aeaa37e7e70b32",
+                "shasum": ""
+            },
+            "require": {
+                "ext-xml": "*",
+                "ext-xmlwriter": "*",
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PHPExcel": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL"
+            ],
+            "authors": [
+                {
+                    "name": "Maarten Balliauw",
+                    "homepage": "http://blog.maartenballiauw.be"
+                },
+                {
+                    "name": "Mark Baker"
+                },
+                {
+                    "name": "Franck Lefevre",
+                    "homepage": "http://blog.rootslabs.net"
+                },
+                {
+                    "name": "Erik Tilt"
+                }
+            ],
+            "description": "PHPExcel - OpenXML - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine",
+            "homepage": "http://phpexcel.codeplex.com",
+            "keywords": [
+                "OpenXML",
+                "excel",
+                "php",
+                "spreadsheet",
+                "xls",
+                "xlsx"
+            ],
+            "time": "2015-05-01 07:00:55"
+        },
+        {
             "name": "propaganistas/laravel-phone",
             "version": "2.7.4",
             "source": {
@@ -3703,6 +3827,68 @@
             "time": "2015-06-11 20:43:01"
         },
         {
+            "name": "spatie/fragment-importer",
+            "version": "2.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie-custom/fragment-importer.git",
+                "reference": "494e72dc12078ff73ba9530f7391663880c34da3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/494e72dc12078ff73ba9530f7391663880c34da3",
+                "reference": "494e72dc12078ff73ba9530f7391663880c34da3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.2",
+                "illuminate/support": "^5.2",
+                "maatwebsite/excel": "^2.1",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\FragmentImporter\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\Skeleton\\Test\\": "tests"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "vendor/bin/phpunit"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Import fragments with excel files",
+            "homepage": "https://github.com/spatie/fragment-importer",
+            "keywords": [
+                "fragment-importer",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie-custom/fragment-importer/tree/2.0.4",
+                "issues": "https://github.com/spatie-custom/fragment-importer/issues"
+            },
+            "time": "2016-08-11 09:46:25"
+        },
+        {
             "name": "spatie/html-element",
             "version": "1.0.0",
             "source": {
@@ -3871,22 +4057,22 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "3.10.1",
+            "version": "3.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "e17bed15f5b3f5e52421aa83d3608dc2d4d4d63b"
+                "reference": "1f9f0c55d7643aba7257aef2b2b867f2716ddfaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/e17bed15f5b3f5e52421aa83d3608dc2d4d4d63b",
-                "reference": "e17bed15f5b3f5e52421aa83d3608dc2d4d4d63b",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/1f9f0c55d7643aba7257aef2b2b867f2716ddfaf",
+                "reference": "1f9f0c55d7643aba7257aef2b2b867f2716ddfaf",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^5.1",
-                "illuminate/filesystem": "^5.1.20",
-                "illuminate/support": "^5.1",
+                "illuminate/console": "~5.1.0|~5.2.0|~5.3.0",
+                "illuminate/filesystem": "~5.1.20|~5.2.0|~5.3.0",
+                "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
                 "league/flysystem": "^1.0.8",
                 "php": "^5.5|^7.0",
                 "spatie/db-dumper": "^1.3",
@@ -3930,7 +4116,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2016-08-16 07:43:54"
+            "time": "2016-08-24 12:02:50"
         },
         {
             "name": "spatie/laravel-blade-javascript",
@@ -4418,16 +4604,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "4.8.2",
+            "version": "4.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "de4ca4448a2e00989f72a559e9064774f055f530"
+                "reference": "7fcb591ff0ef2d28b9b622f84f972c642ff3e8f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/de4ca4448a2e00989f72a559e9064774f055f530",
-                "reference": "de4ca4448a2e00989f72a559e9064774f055f530",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/7fcb591ff0ef2d28b9b622f84f972c642ff3e8f9",
+                "reference": "7fcb591ff0ef2d28b9b622f84f972c642ff3e8f9",
                 "shasum": ""
             },
             "require": {
@@ -4481,7 +4667,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2016-08-24 00:06:32"
+            "time": "2016-08-25 08:08:10"
         },
         {
             "name": "spatie/laravel-menu",
@@ -5009,16 +5195,16 @@
         },
         {
             "name": "spatie/regex",
-            "version": "0.1.0",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/regex.git",
-                "reference": "24fec1dc15f7cf16da0168bb4b9c65e8305cb711"
+                "reference": "eefe90511a1a0d8f4a80f232246c501635d66bea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/regex/zipball/24fec1dc15f7cf16da0168bb4b9c65e8305cb711",
-                "reference": "24fec1dc15f7cf16da0168bb4b9c65e8305cb711",
+                "url": "https://api.github.com/repos/spatie/regex/zipball/eefe90511a1a0d8f4a80f232246c501635d66bea",
+                "reference": "eefe90511a1a0d8f4a80f232246c501635d66bea",
                 "shasum": ""
             },
             "require": {
@@ -5048,10 +5234,13 @@
             "description": "A sane interface for php's built in preg_* functions",
             "homepage": "https://github.com/spatie/regex",
             "keywords": [
+                "expression",
+                "expressions",
                 "regex",
+                "regular",
                 "spatie"
             ],
-            "time": "2016-08-18 08:11:46"
+            "time": "2016-08-18 14:18:25"
         },
         {
             "name": "spatie/seeders",
@@ -6922,16 +7111,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.5.2",
+            "version": "5.5.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "46ec2d1522ae8c9a12aca6b7650e0be78bbb0502"
+                "reference": "08745ede58cb02b4043adadc09a01c09e698e3f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/46ec2d1522ae8c9a12aca6b7650e0be78bbb0502",
-                "reference": "46ec2d1522ae8c9a12aca6b7650e0be78bbb0502",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/08745ede58cb02b4043adadc09a01c09e698e3f7",
+                "reference": "08745ede58cb02b4043adadc09a01c09e698e3f7",
                 "shasum": ""
             },
             "require": {
@@ -6996,20 +7185,20 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-08-18 11:10:44"
+            "time": "2016-08-25 04:45:28"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.2.4",
+            "version": "3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "4e83390f64e7ce04fcaec2ce95cd72823b431d19"
+                "reference": "8f444748e174e49d5bd2bd7a9bebbf44edbb55fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/4e83390f64e7ce04fcaec2ce95cd72823b431d19",
-                "reference": "4e83390f64e7ce04fcaec2ce95cd72823b431d19",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/8f444748e174e49d5bd2bd7a9bebbf44edbb55fb",
+                "reference": "8f444748e174e49d5bd2bd7a9bebbf44edbb55fb",
                 "shasum": ""
             },
             "require": {
@@ -7055,7 +7244,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-08-17 09:33:51"
+            "time": "2016-08-24 16:58:26"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -7771,7 +7960,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "fedeisas/laravel-mail-css-inliner": 20
+        "fedeisas/laravel-mail-css-inliner": 20,
+        "maatwebsite/excel": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
