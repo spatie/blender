@@ -11,19 +11,19 @@ class RouteServiceProvider extends ServiceProvider
 {
     protected $namespace = 'App\Http\Controllers';
 
-    public function boot(Router $router)
+    public function boot()
     {
         $this->app->setLocale(CurrentLocale::determine());
 
-        $this->registerMacros($router);
+        $this->registerMacros(app(\Illuminate\Routing\Router::class));
 
-        parent::boot($router);
+        parent::boot();
     }
 
     public function map(Router $router)
     {
         $router->group(['namespace' => $this->namespace], function () {
-            require app_path('Http/Routes/routes.php');
+            require base_path('routes/routes.php');
         });
     }
 

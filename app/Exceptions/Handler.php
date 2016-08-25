@@ -6,7 +6,6 @@ use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as BugsnagExceptionHandler;
 use Illuminate\Http\Response;
-use Illuminate\Foundation\Validation\ValidationException;
 
 class Handler extends ExceptionHandler
 {

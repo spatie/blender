@@ -1,10 +1,8 @@
 <?php
 
-use App\Http\Routes\Route as RouteName;
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/', 'HomeController@index')->name(RouteName::HOME);
-
-Route::get(article('contact')->url, 'ContactController@index')->name(RouteName::CONTACT);
+Route::get(article('contact')->url, 'ContactController@index')->name('contact');
 Route::post(article('contact')->url, 'ContactController@handleResponse');
 
 Route::post('newsletter/api/subscribe', 'NewsletterApiController@subscribe');

@@ -38,4 +38,14 @@ class Kernel extends ConsoleKernel
         $schedule->command('clean:models')->daily();
         $schedule->command('activity:clean')->daily();
     }
+
+    /**
+     * Register the Closure based commands for the application.
+     *
+     * @return void
+     */
+    protected function commands()
+    {
+        require base_path('routes/console.php');
+    }
 }

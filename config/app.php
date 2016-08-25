@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'My Application',
+    'name' => 'Blender',
 
     'env' => env('APP_ENV', 'production'),
 
@@ -177,6 +177,7 @@ return [
         App\Providers\ConfigServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
+        App\Providers\AuthServiceProvider::class,
         App\Providers\BladeDirectiveServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,

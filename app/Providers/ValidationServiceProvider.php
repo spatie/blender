@@ -20,7 +20,7 @@ class ValidationServiceProvider extends ServiceProvider
 
             $exisitingTagNames = app(\App\Repositories\TagRepository::class)
                 ->getAllWithType($tagType)
-                ->lists('name')
+                ->pluck('name')
                 ->toArray();
 
             if (!\Spatie\values_in_array($tagNames, $exisitingTagNames)) {
