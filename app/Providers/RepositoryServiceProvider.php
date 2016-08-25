@@ -63,7 +63,9 @@ class RepositoryServiceProvider extends ServiceProvider
         foreach ($this->cacheRepositories as $repositoryName) {
             $events->listen(
                 "eloquent.saved: App\\Models\\{$repositoryName}",
-                function () {Cache::flush();}
+                function () {
+                    Cache::flush();
+                }
             );
         }
     }

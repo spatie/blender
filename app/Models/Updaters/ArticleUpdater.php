@@ -14,5 +14,4 @@ class ArticleUpdater extends ModuleModelUpdater
 
         $this->model->parent_id = $parentId;
     }
-
 }

@@ -61,7 +61,8 @@ class FormBuilder extends BaseFormBuilder
     {
         $options = array_merge(['class' => 'form-control'], $options);
 
-        return el('label.-checkbox',
+        return el(
+            'label.-checkbox',
             $this->checkbox($fieldName, 1, $this->useInitialValue($subject, $fieldName), $options)
             .' '.$label
         );

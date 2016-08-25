@@ -22,7 +22,7 @@ trait HasSeoValues
     {
         return $this->seo()->filter(function ($value, $key) {
             return starts_with($key, 'meta_');
-        })->map(function ($value, $key): string {
+        })->map(function ($value, $key) : string {
             $key = substr($key, 5);
             $attribute = starts_with($key, 'og:') ? 'property' : 'name';
             return "<meta {$attribute}=\"{$key}\" content=\"{$value}\">";
