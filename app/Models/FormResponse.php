@@ -23,9 +23,7 @@ class FormResponse extends Model
                 });
 
                 $sheet->fromModel(self::all());
-
             });
-
         })->download('xlsx');
     }
 }

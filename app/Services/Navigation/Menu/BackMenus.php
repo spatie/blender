@@ -36,21 +36,17 @@ class BackMenus
                 ->add(Menu::moduleGroup('content')
                     ->module('ArticleController@index', 'articles.title')
                     ->module('NewsItemController@index', 'newsItems.title')
-                    ->module('PersonController@index', 'people.title')
-                )
+                    ->module('PersonController@index', 'people.title'))
                 ->add(Menu::moduleGroup('modules')
                     ->module('FragmentController@index', 'fragments.title')
                     ->module('FormResponseController@showDownloadButton', 'formResponses.title')
-                    ->module('TagController@index', 'tags.title')
-                )
+                    ->module('TagController@index', 'tags.title'))
                 ->add(Menu::moduleGroup('users')
                     ->module('FrontUserController@index', 'frontUsers.title')
-                    ->module('BackUserController@index', 'backUsers.title')
-                )
+                    ->module('BackUserController@index', 'backUsers.title'))
                 ->add(Menu::moduleGroup('system')
                     ->module('ActivitylogController@index', 'log.title')
-                    ->module('StatisticsController@index', 'statistics.menuTitle')
-                );
+                    ->module('StatisticsController@index', 'statistics.menuTitle'));
         });
 
         Menu::macro('backUser', function () {
@@ -62,8 +58,7 @@ class BackMenus
                 ->add(Link::action('Back\BackUserController@edit', $avatar, [current_user()->id]))
                 ->add(Link::action('Back\AuthController@getLogout', el('span.fa.fa-power-off'))
                     ->addClass('menu_circle -log-out')
-                    ->setAttribute('title', 'log out')
-                );
+                    ->setAttribute('title', 'log out'));
         });
     }
 }

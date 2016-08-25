@@ -34,7 +34,7 @@ class Article extends ModuleModel
     {
         return Cache::rememberForever(
             "article.findByTechnicalName.{$technicalName}",
-            function () use ($technicalName): Article {
+            function () use ($technicalName) : Article {
                 $article = static::where('technical_name', $technicalName)->first();
 
                 if ($article === null) {
@@ -50,7 +50,7 @@ class Article extends ModuleModel
     {
         return Cache::rememberForever(
             "article.getWithTechnicalNameLike.{$technicalName}",
-            function () use ($technicalName): Collection {
+            function () use ($technicalName) : Collection {
                 return static::where('technical_name', 'like', "{$technicalName}.%")
                     ->orderBy('order_column')
                     ->get();

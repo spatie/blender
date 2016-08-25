@@ -2,6 +2,18 @@
 
 return [
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application Name
+    |--------------------------------------------------------------------------
+    |
+    | This value is the name of your application. This value is used when the
+    | framework needs to place the application's name in a notification or
+    | any other location as required by the application or its packages.
+    */
+
+    'name' => 'My Application',
+
     'env' => env('APP_ENV', 'production'),
 
     /*
@@ -151,6 +163,7 @@ return [
         Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Hashing\HashServiceProvider::class,
         Illuminate\Mail\MailServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
         Illuminate\Pagination\PaginationServiceProvider::class,
         Illuminate\Pipeline\PipelineServiceProvider::class,
         Illuminate\Queue\QueueServiceProvider::class,
@@ -238,6 +251,7 @@ return [
         'Lang'      => Illuminate\Support\Facades\Lang::class,
         'Log'       => Illuminate\Support\Facades\Log::class,
         'Mail'      => Illuminate\Support\Facades\Mail::class,
+        'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password'  => Illuminate\Support\Facades\Password::class,
         'Queue'     => Illuminate\Support\Facades\Queue::class,
         'Redirect'  => Illuminate\Support\Facades\Redirect::class,
@@ -256,21 +270,21 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
 
-        'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
+        'BlenderForm'   => App\Services\Html\BlenderFormFacade::class,
 
-        'Activity'    		=> Spatie\Activitylog\ActivitylogFacade::class,
-        'Breadcrumbs' 		=> DaveJamesMiller\Breadcrumbs\Facade::class,
-        'Bugsnag' 			=> Bugsnag\BugsnagLaravel\BugsnagFacade::class,
-        'Date'        		=> Jenssegers\Date\Date::class,
-        'Excel'       		=> Maatwebsite\Excel\Facades\Excel::class,
-        'Flash'       		=> Laracasts\Flash\Flash::class,
+        'Activity'          => Spatie\Activitylog\ActivitylogFacade::class,
+        'Breadcrumbs'       => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'Bugsnag'           => Bugsnag\BugsnagLaravel\BugsnagFacade::class,
+        'Date'              => Jenssegers\Date\Date::class,
+        'Excel'             => Maatwebsite\Excel\Facades\Excel::class,
+        'Flash'             => Laracasts\Flash\Flash::class,
         'Fractal'           => Spatie\Fractal\FractalFacade::class,
-        'GlideImage'  		=> Spatie\Glide\GlideImageFacade::class,
+        'GlideImage'        => Spatie\Glide\GlideImageFacade::class,
         'GoogleTagManager'  => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
         'Analytics'         => Spatie\Analytics\AnalyticsFacade::class,
         'Menu'              => Spatie\Menu\Laravel\MenuFacade::class,
-        'Newsletter' 		=> Spatie\Newsletter\NewsletterFacade::class,
-        'Slack' 			=> Maknz\Slack\Facades\Slack::class,
+        'Newsletter'        => Spatie\Newsletter\NewsletterFacade::class,
+        'Slack'             => Maknz\Slack\Facades\Slack::class,
         'PaginateRoute'     => Spatie\PaginateRoute\PaginateRouteFacade::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],

@@ -47,7 +47,6 @@ abstract class DbRepository extends BaseRepository implements Repository
         $locale = content_locale();
 
         if (!isset((new $model())->translatedAttributes)) {
-
             return $this->query()
                 ->online()
                 ->where('url', 'regexp', "\"{$locale}\"\s*:\s*\"{$url}\"")

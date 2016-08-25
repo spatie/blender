@@ -23,7 +23,6 @@ class TagController extends ModuleController
             $carry->get($tag->type)->push($tag);
 
             return $carry;
-
         }, new Collection());
 
         return view('back.tags.index', compact('tags'));

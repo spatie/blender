@@ -18,5 +18,4 @@ interface ArticleRepository extends Repository
     public function firstChild(Article $article): Article;
 
     public function findSpecialArticle(SpecialArticle $specialArticle);
-
 }

@@ -37,7 +37,7 @@ class ArticleController extends ModuleController
             'module' => $this->moduleName,
             'parentMenuItems' => app(ArticleRepository::class)
                 ->getTopLevel()
-                ->filter(function(Article $article) {
+                ->filter(function (Article $article) {
                     return $article->technical_name != SpecialArticle::HOME;
                 })
                 ->pluck('name', 'id')
