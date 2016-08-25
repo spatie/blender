@@ -28,7 +28,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 abstract class User extends Model implements AuthenticatableContract, CanResetPasswordContract, AuthorizableContract
 {
     use Authenticatable, CanResetPassword, Presentable, Authorizable;
-use Notifiable;
+    use Notifiable;
 
     protected $guarded = ['id'];
     protected $hidden = ['password', 'remember_token'];
