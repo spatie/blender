@@ -1,6 +1,6 @@
-<span class="span.fa.fa-power-off">
-    <form id="logout-form" action="{{ logout_url() }}" method="POST">
-        {{ Form::submit('logout', ['class' => 'menu_circle -log-out']) }}
-        {{ csrf_field() }}
-    </form>
-</span>
+<form id="logout-form" action="{{ logout_url() }}" method="POST">
+    <button type=submit title="log out" class="menu_log-out">
+        <span class="fa fa-power-off"></span>
+    </button>
+    {{ csrf_field() }}
+</form>
