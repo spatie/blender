@@ -31,32 +31,32 @@
 
     &.-invers {
         background: rgba(color($blue, lightest) , .1);
-        border-left-color: $white;
+        border-color: $white;
         color: $white;
     }
 
     &.-warning {
         background: color($orange,lightest);
-        border-left-color: color($orange);
+        border-color: color($orange);
         color: color($orange);
     }
 
     &.-danger,
     &.-error {
         background: color($red, lightest);
-        border-left-color: color($red,dark);
+        border-color: color($red,dark);
         color: color($red,dark);
     }
 
     &.-success {
         background: color($green, lightest);
-        border-left-color: color($green, dark);
+        border-color: color($green, dark);
         color: color($green, dark);
     }
 
     &.-info {
         background: color($blue, lightest);
-        border-left-color: color($blue);
+        border-color: color($blue);
         color: color($blue);
     }
 
@@ -69,6 +69,7 @@
 
     .alerts.-fixed & {
         border-radius: 0;
+        border-left-width: 0;
         text-align: center;
     }
 }
