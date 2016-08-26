@@ -7,7 +7,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ResetPassword extends Mailable
+class ResetPassword extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -38,6 +38,6 @@ class ResetPassword extends Mailable
     {
         return $this
             ->subject('Toegang tot ' . config('app.url'))
-            ->view('emails.auth.front.resetPassword');
+            ->view('mails.auth.front.resetPassword');
     }
 }

@@ -187,7 +187,7 @@ return [
         App\Providers\ViewComposerServiceProvider::class,
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
-        App\Services\Mailers\MailerServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,

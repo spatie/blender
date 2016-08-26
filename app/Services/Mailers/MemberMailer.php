@@ -21,7 +21,7 @@ class MemberMailer
         $this->sendTo(
             $event->user->email,
             'Welkom bij ' . config('app.url'),
-            'emails.auth.front.welcome',
+            'email.auth.front.welcome',
             ['userId' => $event->user->id]
         );
     }

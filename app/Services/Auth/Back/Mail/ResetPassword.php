@@ -8,7 +8,7 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ResetPassword extends Mailable
+class ResetPassword extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
@@ -21,7 +21,8 @@ class ResetPassword extends Mailable
     /**
      * Create a new message instance.
      *
-     * @return void
+     * @param \App\Services\Auth\Back\User $user
+     * @param string $token
      */
     public function __construct(User $user, string $token)
     {
@@ -39,6 +40,6 @@ class ResetPassword extends Mailable
     {
         return $this
             ->subject('Toegang tot ' . config('app.url'))
-            ->view('emails.auth.back.resetPassword');
+            ->view('mails.auth.back.resetPassword');
     }
 }

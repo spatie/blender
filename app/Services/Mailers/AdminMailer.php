@@ -30,7 +30,7 @@ class AdminMailer
         $this->sendMail(
             config('mail.recipients.questionForm'),
             'Een nieuwe reactie op ' . config('app.url'),
-            'emails.admin.contactFormSubmitted',
+            'email.admin.contactFormSubmitted',
             $event->formResponse->toArray()
         );
     }
