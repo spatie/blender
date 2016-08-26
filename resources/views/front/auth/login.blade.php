@@ -17,7 +17,7 @@
                 {!! Form::password('password', [ ]) !!}
                 {!! Html::error($errors->first('password')) !!}
                 <div class="form_group_help">
-                    <a href="{{ action('Front\PasswordController@getEmail') }}">{{ fragment('auth.forgotPassword') }}</a>
+                    <a href="{{ action('Front\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ fragment('auth.forgotPassword') }}</a>
                 </div>
             </div>
         </div>

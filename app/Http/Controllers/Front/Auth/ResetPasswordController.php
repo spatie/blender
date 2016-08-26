@@ -50,8 +50,8 @@ class ResetPasswordController extends Controller
 
             return redirect()->to(login_url());
         };
-        
-        return view('back.auth.resetPassword')->with(
+
+        return view('front.auth.resetPassword')->with(
             ['token' => $token, 'email' => $request->email, 'user' => $user]
         );
     }

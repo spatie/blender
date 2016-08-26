@@ -20,6 +20,7 @@
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "doctrine/dbal": "^2.5",
         "fedeisas/laravel-mail-css-inliner": "dev-master#430ebd087347812f75a2476bcedc26ced2f4753f",
+        "filp/whoops": "2.0.*",
         "fzaninotto/faker": "^1.4",
         "greggilbert/recaptcha": "^2.1",
         "guzzlehttp/guzzle": "^6.1",

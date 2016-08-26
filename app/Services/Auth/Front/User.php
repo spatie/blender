@@ -6,7 +6,9 @@ use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\Events\UserWasRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
+use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\User as BaseUser;
+use Mail;
 
 /**
  * @property string $address
@@ -105,5 +107,16 @@ class User extends BaseUser
     public function hasRole(UserRole $role): bool
     {
         return $this->role->equals($role);
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        Mail::to($this->email)->send(new ResetPassword($this, $token));
     }
 }

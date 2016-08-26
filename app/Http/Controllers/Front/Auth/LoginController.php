@@ -44,7 +44,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('back.auth.login');
+        return view('front.auth.login');
     }
 
 

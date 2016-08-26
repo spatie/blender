@@ -72,6 +72,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        //throw new Exception('no registrations in the back');
+
     }
 }
