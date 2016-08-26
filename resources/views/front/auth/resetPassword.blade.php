@@ -10,7 +10,7 @@
                 {{ fragment('auth.titleChangePassword') }}
             </h1>
 
-            {!! Form::open(['class'=>'-stacked +auth_form']) !!}
+            {!! Form::open(['action' => 'Front\Auth\ResetPasswordController@reset', 'class'=>'-stacked +auth_form']) !!}
             {!! Form::hidden('token', $token) !!}
             {!! Form::hidden('email', $user->email) !!}
             <p class="alert -invers">

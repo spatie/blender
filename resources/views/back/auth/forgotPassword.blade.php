@@ -9,7 +9,7 @@
     @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
 
     <div class="+auth_card">
-        {!! Form::open(['class'=>'-stacked +auth_form']) !!}
+        {!! Form::open(['class'=>'-stacked +auth_form', 'action' => 'Back\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
         <h1 class="+auth_title -small">{{ fragment('back.auth.resetPassword.title') }}</h1>
         @if(session('status'))
             <p class="alert -info">

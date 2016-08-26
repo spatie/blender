@@ -11,7 +11,7 @@
                 {{ fragment('back.auth.resetPassword.title') }}
             </h1>
 
-            {!! Form::open(['class'=>'-stacked +auth_form']) !!}
+            {!! Form::open(['action' => 'Back\Auth\ResetPasswordController@reset', 'class'=>'-stacked +auth_form']) !!}
             {!! Form::hidden('token', $token) !!}
             {!! Form::hidden('email', $user->email) !!}
             <p class="alert -info">

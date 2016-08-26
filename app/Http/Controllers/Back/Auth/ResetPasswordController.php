@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers\Back\Auth;
 
+use App\Services\Auth\Back\User;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
 
 class ResetPasswordController extends Controller
 {
+
+    protected $redirectTo = '/blender';
     /*
     |--------------------------------------------------------------------------
     | Password Reset Controller
@@ -27,5 +31,23 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+    /**
+     * Display the password reset view for the given token.
+     *
+     * If no token is present, display the link request form.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  string|null  $token
+     * @return \Illuminate\Http\Response
+     */
+    public function showResetForm(Request $request, $token = null)
+    {
+        abort_unless($user = $user = User::findByToken($token), 403);
+
+        return view('back.auth.resetPassword')->with(
+            ['token' => $token, 'email' => $request->email, 'user' => $user]
+        );
     }
 }

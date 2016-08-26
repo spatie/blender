@@ -8,7 +8,7 @@
     @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
 
     <div class="+auth_card">
-        <h1 class="+auth_title -small">{{ fragment('auth.resetPassword.title') }}</h1>
+        {!! Form::open(['class'=>'-stacked +auth_form', 'action' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
         {!! Form::open(['class'=>'-stacked +auth_form']) !!}
         @if(session('status'))
         <p class="alert -info">
