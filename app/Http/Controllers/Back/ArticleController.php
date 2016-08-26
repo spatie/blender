@@ -16,7 +16,6 @@ class ArticleController extends ModuleController
     protected function make()
     {
         $model = new Article();
-        $model->publish_date = new Carbon();
         $model->save();
 
         return $model;

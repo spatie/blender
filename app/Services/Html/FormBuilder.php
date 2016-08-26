@@ -92,7 +92,7 @@ class FormBuilder extends BaseFormBuilder
     {
         $type = new TagType($type);
 
-        $categories = Tag::getWithType($type)->lists('name', 'name')->toArray();
+        $categories = Tag::getWithType($type)->pluck('name', 'name')->toArray();
         $subjectCategory = $subject->tagsWithType($type)->first()->name ?? null;
 
         return $this->select("{$type}_tags[]", $categories, $subjectCategory, $options);
