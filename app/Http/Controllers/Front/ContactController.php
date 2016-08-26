@@ -22,7 +22,7 @@ class ContactController extends Controller
     {
         $formResponse = FormResponse::create($request->except(['g-recaptcha-response']));
 
-        Mail::to($formResponse->email)->send(new ContactFormSubmitted($formResponse));
+        Mail::send(new ContactFormSubmitted($formResponse));
 
         activity()->log("{$formResponse->email} vulde het contactformulier in");
 

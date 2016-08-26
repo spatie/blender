@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\Article;
 use App\Services\Locale\CurrentLocale;
 use Auth;
+use Exception;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 use Route;
