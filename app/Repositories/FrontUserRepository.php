@@ -8,10 +8,22 @@ use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\User;
 use Illuminate\Support\Collection;
 
-interface FrontUserRepository extends Repository
+class FrontUserRepository extends Repository
 {
     const MODEL = User::class;
 
-    public function getAllWithRole(UserRole $role): Collection;
-    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status): Collection;
+    public function getAllWithRole(UserRole $role): Collection
+    {
+        return $this->query()
+            ->where('role', $role)
+            ->get();
+    }
+
+    public function getAllWithRoleAndStatus(UserRole $role, UserStatus $status): Collection
+    {
+        return $this->query()
+            ->where('role', $role)
+            ->where('status', $status)
+            ->get();
+    }
 }

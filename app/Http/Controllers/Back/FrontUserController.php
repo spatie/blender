@@ -66,7 +66,7 @@ class FrontUserController extends Controller
 
     public function update($id, FrontUserRequest $request)
     {
-        $user = $this->frontUserRepository->findOrAbort($id);
+        abort_unless($user = $this->frontUserRepository->find($id));
 
         UserUpdater::update($user, $request);
 

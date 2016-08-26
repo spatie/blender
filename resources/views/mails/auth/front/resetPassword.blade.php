@@ -1,4 +1,4 @@
-@extends('emails._layouts.master')
+@extends('mails._layouts.master')
 
 @section('content')
     <h1>{{ trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton', [], null, $user->locale) }}</h1>

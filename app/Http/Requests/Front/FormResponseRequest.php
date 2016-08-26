@@ -18,7 +18,7 @@ class FormResponseRequest extends Request
                 'name' => 'required',
                 'telephone' => 'required',
                 'email' => 'required|email',
-                'g-recaptcha-response' => 'required|recaptcha'
+                //'g-recaptcha-response' => 'required|recaptcha'
             ];
     }
 }

@@ -66,7 +66,7 @@ class BackUserController extends Controller
 
     public function update($id, BackUserRequest $request)
     {
-        $user = $this->backUserRepository->findOrAbort($id);
+        abort_unless($user = $this->backUserRepository->find($id), 500);
 
         UserUpdater::update($user, $request);
 
@@ -81,7 +81,7 @@ class BackUserController extends Controller
 
     public function activate($id)
     {
-        $user = $this->backUserRepository->findOrAbort($id);
+        abort_unlees($user = $this->backUserRepository->find($id), 500);
 
         $user->activate();
 
