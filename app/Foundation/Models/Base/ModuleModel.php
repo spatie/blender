@@ -3,9 +3,9 @@
 namespace App\Foundation\Models\Base;
 
 use App\Foundation\Models\Traits\Draftable;
+use App\Foundation\Models\Traits\HasSeoValues;
 use App\Foundation\Models\Traits\Presentable;
 use App\Foundation\Models\Traits\HasMedia as HasMediaTrait;
-use App\HasMeta\HasSeoValues;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\ModelCleanup\GetsCleanedUp;

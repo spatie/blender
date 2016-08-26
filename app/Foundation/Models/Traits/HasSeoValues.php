@@ -1,6 +1,6 @@
 <?php
 
-namespace App\HasMeta;
+namespace App\Foundation\Models\Traits;
 
 trait HasSeoValues
 {
