@@ -64,6 +64,6 @@ class LoginController extends Controller
 
         flash()->info(trans('auth.loggedOut'));
 
-        return redirect(login_url());
+        return redirect('/');
     }
 }

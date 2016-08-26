@@ -52,5 +52,7 @@ class Kernel extends HttpKernel
         'demoMode' => \Spatie\DemoMode\DemoMode::class,
         'rememberLocale' => \App\Http\Middleware\RememberLocale::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ];
 }

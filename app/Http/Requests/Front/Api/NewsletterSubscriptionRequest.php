@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Front;
+namespace App\Http\Requests\Front\Api;
 
 use App\Http\Requests\Request;
 use Illuminate\Contracts\Validation\Validator;

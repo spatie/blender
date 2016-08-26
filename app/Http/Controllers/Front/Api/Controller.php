@@ -1,34 +1,25 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front\Api;
 
+use App\Http\Controllers\Controller as BaseController;
 use Symfony\Component\HttpFoundation\Response;
 
-class ApiController extends Controller
+class Controller extends BaseController
 {
     /**
      * @var int
      */
     protected $statusCode = Response::HTTP_OK;
 
-    /**
-     * @param int $statusCode
-     *
-     * @return self
-     */
-    public function setStatusCode($statusCode)
+    public function setStatusCode(int $statusCode)
     {
         $this->statusCode = $statusCode;
 
         return $this;
     }
 
-    /**
-     * Get the current statuscode.
-     *
-     * @return int
-     */
-    public function getStatusCode()
+    public function getStatusCode(): int
     {
         return $this->statusCode;
     }
@@ -69,7 +60,7 @@ class ApiController extends Controller
      *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function respond($data, $headers = [])
+    public function respond(array $data, array $headers = [])
     {
         return response()->json($data, $this->getStatusCode(), $headers);
     }
