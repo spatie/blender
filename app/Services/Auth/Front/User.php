@@ -4,7 +4,7 @@ namespace App\Services\Auth\Front;
 
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
-use App\Services\Auth\Front\Events\UserWasRegistered;
+use App\Services\Auth\Front\Events\UserRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
 use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\User as BaseUser;
@@ -42,7 +42,7 @@ class User extends BaseUser
             'password',
         ]));
 
-        event(new UserWasRegistered($user));
+        event(new UserRegistered($user));
 
         return $user;
     }

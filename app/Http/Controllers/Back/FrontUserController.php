@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Back;
 
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
-use App\Services\Auth\Front\Events\UserWasCreatedThroughBack;
+use App\Services\Auth\Front\Events\UserCreatedThroughBack;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FrontUserRequest;
 use App\Services\Auth\Front\User;
@@ -48,7 +48,7 @@ class FrontUserController extends Controller
         activity($eventDescription);
         flash()->success(strip_tags($eventDescription).'. '.fragment('back.frontUsers.passwordMailSent'));
 
-        event(new UserWasCreatedThroughBack($user));
+        event(new UserCreatedThroughBack($user));
 
         return redirect()->action('Back\FrontUserController@index');
     }

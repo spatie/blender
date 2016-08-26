@@ -3,11 +3,11 @@
 namespace App\Services\Auth\Back\Events;
 
 use App\Events\Event;
-use App\Services\Auth\Front\User;
+use App\Services\Auth\Back\User;
 
-class UserWasActivated extends Event
+class UserCreated extends Event
 {
-    /** @var \App\Services\Auth\Front\User */
+    /** @var \App\Services\Auth\Back\User */
     public $user;
 
     public function __construct(User $user)

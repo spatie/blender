@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Front\Auth;
 
-use App\User;
+use \App\Services\Auth\Front\User;
 use Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -72,6 +72,6 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
+        return User::register($data);
     }
 }

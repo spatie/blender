@@ -5,7 +5,7 @@ namespace App\Services\Auth\Front\Events;
 use App\Events\Event;
 use App\Services\Auth\Front\User;
 
-class UserWasCreatedThroughBack extends Event
+class UserCreatedThroughBack extends Event
 {
     /** @var \App\Services\Auth\Front\User */
     public $user;

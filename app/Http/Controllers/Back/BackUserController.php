@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Back;
 
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
-use App\Services\Auth\Back\Events\UserWasCreated;
+use App\Services\Auth\Back\Events\UserCreated;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\BackUserRequest;
 use App\Services\Auth\Back\User;
@@ -48,7 +48,7 @@ class BackUserController extends Controller
         activity($eventDescription);
         flash()->success(strip_tags($eventDescription).'. '.fragment('back.backUsers.passwordMailSent'));
 
-        event(new UserWasCreated($user));
+        event(new UserCreated($user));
 
         return redirect(action('Back\BackUserController@index', ['role' => $user->role]));
     }

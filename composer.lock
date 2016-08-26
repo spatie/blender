@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "84411d384a36f2401521ab2eed4b52f3",
-    "content-hash": "e616bb7e1e1a2be0ed72d74dd4d71767",
+    "hash": "9954361ee11c42ef6d315ddceb9d1e17",
+    "content-hash": "922ddbe01aa5d28471f6a8ec96d25415",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -2029,52 +2029,6 @@
             "time": "2015-12-22 15:52:08"
         },
         {
-            "name": "laracasts/presenter",
-            "version": "0.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laracasts/Presenter.git",
-                "reference": "b284f3137f990efd6e95df49d254f1ccc4541e92"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/Presenter/zipball/b284f3137f990efd6e95df49d254f1ccc4541e92",
-                "reference": "b284f3137f990efd6e95df49d254f1ccc4541e92",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "~0.9",
-                "phpspec/phpspec": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Laracasts\\Presenter": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jeffrey Way",
-                    "email": "jeffrey@laracasts.com"
-                }
-            ],
-            "description": "Simple view presenters",
-            "keywords": [
-                "laravel",
-                "presenter",
-                "view"
-            ],
-            "time": "2014-09-13 13:18:07"
-        },
-        {
             "name": "laracasts/utilities",
             "version": "2.1",
             "source": {
@@ -2120,16 +2074,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.3.3",
+            "version": "v5.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "4dbb8bc3897068c392d405bad078f22611f0d95c"
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/4dbb8bc3897068c392d405bad078f22611f0d95c",
-                "reference": "4dbb8bc3897068c392d405bad078f22611f0d95c",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
+                "reference": "7159ffbadc79558a42ece2cdd1ec2e7e13105b5d",
                 "shasum": ""
             },
             "require": {
@@ -2243,7 +2197,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-08-26 11:47:28"
+            "time": "2016-08-26 21:40:26"
         },
         {
             "name": "laravelcollective/html",
@@ -4831,55 +4785,6 @@
                 "newsletter"
             ],
             "time": "2016-08-24 05:54:14"
-        },
-        {
-            "name": "spatie/laravel-or-abort",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-or-abort.git",
-                "reference": "18fa71f436f5c2768c02a7b36be4f9d67fa934d5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-or-abort/zipball/18fa71f436f5c2768c02a7b36be4f9d67fa934d5",
-                "reference": "18fa71f436f5c2768c02a7b36be4f9d67fa934d5",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "^5.0",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\OrAbort\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": ":Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A trait to add OrAbort functions to a class",
-            "homepage": "https://github.com/spatie/laravel-or-abort",
-            "keywords": [
-                "abort",
-                "laravel",
-                "spatie"
-            ],
-            "time": "2015-06-30 11:17:03"
         },
         {
             "name": "spatie/laravel-paginateroute",
