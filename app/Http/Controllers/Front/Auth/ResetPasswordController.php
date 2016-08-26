@@ -44,10 +44,28 @@ class ResetPasswordController extends Controller
      */
     public function showResetForm(Request $request, $token = null)
     {
-        abort_unless($user = $user = User::findByToken($token), 403);
 
-        return view('front.auth.resetPassword')->with(
+        if (! $user = User::findByToken($token)) {
+            flash()->error(trans('passwordReset.invalidToken'));
+
+            return redirect()->to(login_url());
+        };
+        
+        return view('back.auth.resetPassword')->with(
             ['token' => $token, 'email' => $request->email, 'user' => $user]
         );
+    }
+
+    /**
+     * Get the response for a successful password reset.
+     *
+     * @param  string  $response
+     * @return \Illuminate\Http\Response
+     */
+    protected function sendResetResponse($response)
+    {
+        flash()->info(trans($response));
+
+        return redirect($this->redirectPath());
     }
 }
