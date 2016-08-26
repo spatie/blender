@@ -24,17 +24,6 @@
     background-repeat: no-repeat;
     background-size: contain;
 
-    &.-log-out {
-        @include circle(1.5rem);
-
-        background-color: $white;
-        overflow: hidden;
-        vertical-align: middle;
-        &:hover {
-            color: color($orange) !important;
-        }
-    }
-
     &.-front {
         background-image: url('/favicon-96x96.png');
         display: inline-block;
@@ -44,6 +33,24 @@
         width: 1.5rem;
     }
 }
+
+.menu_log-out {
+    @include circle(1.5rem);
+
+    background-color: $white;
+    box-shadow: none !important;
+    overflow: hidden;
+    vertical-align: middle;
+    padding: 0;
+    color: color($gray, dark);
+
+    &:hover {
+        color: color($orange) !important;
+        background-color: $white;
+        filter: none;
+    }
+}
+
 
 .menu_home {
     float: left;

@@ -1,5 +1,5 @@
 .\+auth {
-    @include background-image-tinted('/images/auth-background.jpg' , rgba( $white, .75), top center);
+    @include background-image-tinted('/images/auth-background.jpg' , rgba($white, .9), top center);
 
     color: $text-color;
     min-height: 100vh;
@@ -15,7 +15,7 @@
         width: 90vw;
     }
 
-    width: 40vw;
+    width: 50vw;
 }
 
 .\+auth_gravatar {
@@ -54,13 +54,13 @@
 }
 
 .\+auth_form {
-    background: rgba($white , .15);
-    border-radius: border-radius(m);
+    background-color: rgba($white, .5);
+    border-radius: border-radius(s);
     box-shadow: 0 0 20px rgba(0,0,0,.03);
     margin-left: auto;
     margin-right: auto;
     max-width: 32em;
-    padding: 4em;
+    padding: 3em;
 
     [disabled] {
         color: $white;
