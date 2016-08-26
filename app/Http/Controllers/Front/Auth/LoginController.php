@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front\Auth;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -44,5 +45,25 @@ class LoginController extends Controller
     public function showLoginForm()
     {
         return view('back.auth.login');
+    }
+
+
+    /**
+     * Log the user out of the application.
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->flush();
+
+        $request->session()->regenerate();
+
+        flash()->info(trans('auth.loggedOut'));
+
+        return redirect(login_url());
     }
 }
