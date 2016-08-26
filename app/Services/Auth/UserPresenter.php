@@ -1,18 +1,15 @@
 <?php
 
-namespace App\Services\Auth\Front;
+namespace App\Services\Auth;
 
-use Laracasts\Presenter\Presenter;
-
-/** @mixin \App\Services\Auth\Front\User */
-class UserPresenter extends Presenter
+trait UserPresenter
 {
-    public function avatar(): string
+    public function getAvatarAttribute(): string
     {
         return 'https://www.gravatar.com/avatar/'.md5($this->email).'?d=mm&s=256';
     }
 
-    public function lastActivityDate(): string
+    public function getLastActivityDateAttribute(): string
     {
         if ($this->last_activity === null || $this->last_activity->year == -1) {
             return fragment('back.frontUsers.neverLoggedIn');

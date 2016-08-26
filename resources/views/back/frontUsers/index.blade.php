@@ -25,10 +25,10 @@
                             <a href="{{ action('Back\FrontUserController@edit', [$user->id]) }}">{{ $user->email }}</a>
                         </td>
                         <td>
-                            {{ $user->present()->fullName }}
+                            {{ $user->name }}
                         </td>
                         <td>
-                            {{ $user->present()->lastActivityDate }}
+                            {{ $user->lastActivityDate }}
                         </td>
                         <td class="-right">
                             {!! Html::deleteButton(action('Back\FrontUserController@destroy', $user->id)) !!}

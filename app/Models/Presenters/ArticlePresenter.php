@@ -2,20 +2,16 @@
 
 namespace App\Models\Presenters;
 
-use Laracasts\Presenter\Presenter;
 use Spatie\String\Str;
 
-/**
- * @property \App\Models\Article $entity
- */
-class ArticlePresenter extends Presenter
+trait ArticlePresenter
 {
-    public function tease($characters, $moreTextIndicator = '...'): Str
+    public function getTeaseAttribute($characters, $moreTextIndicator = '...'): Str
     {
-        return string($this->entity->text)->tease($characters, $moreTextIndicator);
+        return string($this->text)->tease($characters, $moreTextIndicator);
     }
 
-    public function meta(): Str
+    public function getMetaAttribute(): Str
     {
         return $this->tease(155);
     }

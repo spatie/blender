@@ -3,14 +3,10 @@
 namespace App\Models\Presenters;
 
 use App\Models\Enums\TagType;
-use Laracasts\Presenter\Presenter;
 
-/**
- * @property \App\Models\Tag $entity
- */
-class TagPresenter extends Presenter
+trait TagPresenter
 {
-    public function allTagTypes(): array
+    public function getAllTagTypesPresenter(): array
     {
         $tagTypes = [];
 

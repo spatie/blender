@@ -1,6 +1,6 @@
 {!! BlenderForm::checkbox('online') !!}
 
-{!! BlenderForm::select('type', $model->present()->allTagTypes) !!}
+{!! BlenderForm::select('type', $model->allTagTypes) !!}
 
 {!! BlenderForm::translated([
     'name' => 'text',

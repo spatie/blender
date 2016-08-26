@@ -57,7 +57,7 @@ class HtmlBuilder extends BaseHtmlBuilder
     {
         return el('span.avatar', [
             'class' => $classes,
-            'style' => "background-image: url('{$user->present()->avatar()}')",
+            'style' => "background-image: url('{$user->avatar}')",
         ], '');
     }
 

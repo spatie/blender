@@ -2,7 +2,6 @@
 
 namespace App\Services\Auth;
 
-use App\Foundation\Models\Traits\Presentable;
 use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -28,7 +27,7 @@ use Illuminate\Notifications\Notifiable;
  */
 abstract class User extends Model implements AuthenticatableContract, CanResetPasswordContract, AuthorizableContract
 {
-    use Authenticatable, CanResetPassword, Presentable, Authorizable, Notifiable;
+    use Authenticatable, CanResetPassword, Authorizable, Notifiable, UserPresenter;
 
     protected $guarded = ['id'];
     protected $hidden = ['password', 'remember_token'];

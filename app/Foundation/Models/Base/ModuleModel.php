@@ -4,7 +4,6 @@ namespace App\Foundation\Models\Base;
 
 use App\Foundation\Models\Traits\Draftable;
 use App\Foundation\Models\Traits\HasSeoValues;
-use App\Foundation\Models\Traits\Presentable;
 use App\Foundation\Models\Traits\HasMedia as HasMediaTrait;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
@@ -15,7 +14,7 @@ use Spatie\Translatable\HasTranslations;
 
 abstract class ModuleModel extends Model implements HasMediaConversions, GetsCleanedUp
 {
-    use Draftable, Presentable, HasMediaTrait, HasSeoValues, HasTranslations;
+    use Draftable, HasMediaTrait, HasSeoValues, HasTranslations;
 
     protected $guarded = ['id'];
 

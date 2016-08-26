@@ -6,10 +6,11 @@ use App\Foundation\Models\Base\ModuleModel;
 use App\Foundation\Models\Traits\HasTags;
 use App\Foundation\Models\Traits\HasSlug;
 use App\Models\Enums\TagType;
+use App\Models\Presenters\NewsItemPresenter;
 
 class NewsItem extends ModuleModel
 {
-    use HasSlug, HasTags;
+    use HasSlug, HasTags, NewsItemPresenter;
 
     protected $with = ['media', 'tags'];
     protected $dates = ['publish_date'];

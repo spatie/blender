@@ -18,7 +18,7 @@
                 @foreach($fragments as $fragment)
                     <tr>
                         <td><a href="{{ action('Back\FragmentController@edit', [$fragment->id]) }}">{{ $fragment->name }}</a></td>
-                        <td  class="-small">{!! $fragment->present()->tease() !!}</td>
+                        <td  class="-small">{!! $fragment->tease !!}</td>
                     </tr>
                 @endforeach
                 </tbody>

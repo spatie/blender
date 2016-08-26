@@ -25,10 +25,10 @@
                             <a href="{{ action('Back\BackUserController@edit', [$user->id]) }}">{{ $user->email }}</a>
                         </td>
                         <td>
-                            {!! Html::avatar($user, '-small') !!}  <span>{{ $user->present()->fullName }}</span>
+                            {!! Html::avatar($user, '-small') !!}  <span>{{ $user->name }}</span>
                         </td>
                         <td>
-                            {{ $user->present()->lastActivityDate }}
+                            {{ $user->lastActivityDate }}
                         </td>
                         <td class="-right">
                             @unless ($user->isCurrentUser())

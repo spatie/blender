@@ -2,16 +2,12 @@
 
 namespace App\Models\Presenters;
 
-use Laracasts\Presenter\Presenter;
 use Spatie\String\Str;
 
-/**
- * @property \App\Models\NewsItem $entity
- */
-class NewsItemPresenter extends Presenter
+trait NewsItemPresenter
 {
-    public function excerpt($length = 200): Str
+    public function getExcerptAttribute($length = 200): Str
     {
-        return string($this->entity->text)->tease($length);
+        return string($this->text)->tease($length);
     }
 }

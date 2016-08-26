@@ -22,7 +22,6 @@ use Mail;
 class User extends BaseUser
 {
     protected $table = 'users_front';
-    protected $presenter = UserPresenter::class;
 
     public static function register(array $input): User
     {

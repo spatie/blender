@@ -5,6 +5,7 @@ namespace app\Models;
 use App\Foundation\Models\Base\ModuleModel;
 use App\Foundation\Models\Traits\HasSlug;
 use App\Models\Enums\SpecialArticle;
+use App\Models\Presenters\ArticlePresenter;
 use Cache;
 use Exception;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -13,7 +14,7 @@ use Illuminate\Support\Collection;
 
 class Article extends ModuleModel
 {
-    use HasSlug;
+    use HasSlug, ArticlePresenter;
 
     protected $with = ['media'];
 
