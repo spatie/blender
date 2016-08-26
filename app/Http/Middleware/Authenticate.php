@@ -24,14 +24,7 @@ class Authenticate
             return response('Unauthorized.', 401);
         }
 
-        if ($request->isFront()) {
-            return redirect()->guest(action('Front\AuthController@getLogin'));
-        }
 
-        if ($request->isBack()) {
-            return redirect()->guest(action('Back\AuthController@getLogin'));
-        }
-
-        throw new Exception('Invalid auth guard specified');
+        return redirect()->guest(login_url());
     }
 }

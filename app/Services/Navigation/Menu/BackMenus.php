@@ -56,9 +56,8 @@ class BackMenus
 
             return Menu::new()
                 ->add(Link::action('Back\BackUserController@edit', $avatar, [current_user()->id]))
-                ->add(Link::action('Back\AuthController@getLogout', el('span.fa.fa-power-off'))
-                    ->addClass('menu_circle -log-out')
-                    ->setAttribute('title', 'log out'));
+                ->html(view('back.auth._partials.logoutForm'));
         });
+
     }
 }

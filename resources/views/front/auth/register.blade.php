@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="grid">
-        <a href="{{ URL::action('Front\AuthController@getLogin') }}">{{ fragment('auth.toLogin') }}</a>
+        <a href="{{ URL::action('Front\Auth\LoginController@showLoginForm') }}">{{ fragment('auth.toLogin') }}</a>
         {!! Form::open() !!}
         <div class="form-line">
             {!! Form::label('first_name', fragment('auth.firstName'), ['class'=>'required']) !!}

@@ -8,9 +8,11 @@ Route::group(['middleware' => ['web']], function() {
         return view('temp/index');
     });
 
+
+
     Route::group(['namespace' => 'Back', 'prefix' => 'blender'], function () {
 
-        require __DIR__.'/back_auth.php';
+        Auth::routes();
 
         Route::group(['middleware' => 'auth'], function () {
             require __DIR__.'/back.php';
@@ -23,7 +25,7 @@ Route::group(['middleware' => ['web']], function() {
 
         Route::group($multiLingual ? ['prefix' => locale()] : [], function () {
             try {
-                require __DIR__.'/front_auth.php';
+                Auth::routes();
                 require __DIR__.'/front.php';
             } catch (Exception $exception) {
                 logger()->warning("Front routes weren't included.");
