@@ -34,7 +34,7 @@ class ContactFormSubmitted extends Mailable implements ShouldQueue
     {
         return $this
             ->to(config('mail.recipients.questionForm'))
-            ->subject('Een nieuwe reactie op ' . config('app.url'))
+            ->subject('Een nieuwe reactie op '.config('app.url'))
             ->view('mails.admin.contactFormSubmitted');
     }
 }

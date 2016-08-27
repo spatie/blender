@@ -19,8 +19,6 @@ class ResetPassword extends Mailable implements ShouldQueue
 
     /**
      * Create a new message instance.
-     *
-     * @return void
      */
     public function __construct(User $user, string $token)
     {
@@ -37,7 +35,7 @@ class ResetPassword extends Mailable implements ShouldQueue
     public function build()
     {
         return $this
-            ->subject('Toegang tot ' . config('app.url'))
+            ->subject('Toegang tot '.config('app.url'))
             ->view('mails.auth.front.resetPassword');
     }
 }

@@ -24,7 +24,7 @@ class StatisticsController extends Controller
                 return [
                     'date' => "{$month}-{$year}",
                     'visitors' => $visitorStatistics->sum('visitors'),
-                    'pageViews' => $visitorStatistics->sum('pageViews')
+                    'pageViews' => $visitorStatistics->sum('pageViews'),
                 ];
             })
             ->values();
@@ -33,6 +33,6 @@ class StatisticsController extends Controller
         $referrers = Analytics::fetchTopReferrers(Period::days(365));
         $browsers = Analytics::fetchTopBrowsers(Period::days(365));
 
-        return view('back.statistics.index') ->with(compact('visitors', 'pages', 'referrers', 'browsers'));
+        return view('back.statistics.index')->with(compact('visitors', 'pages', 'referrers', 'browsers'));
     }
 }

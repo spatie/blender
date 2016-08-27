@@ -58,6 +58,5 @@ class BackMenus
                 ->add(Link::action('Back\BackUserController@edit', $avatar, [current_user()->id]))
                 ->html(view('back.auth._partials.logoutForm'));
         });
-
     }
 }

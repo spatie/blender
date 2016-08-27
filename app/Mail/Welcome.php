@@ -2,7 +2,6 @@
 
 namespace App\Mail;
 
-use App\Models\FormResponse;
 use App\Services\Auth\Front\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
@@ -21,7 +20,6 @@ class Welcome extends Mailable implements ShouldQueue
      */
     public function __construct(User $user)
     {
-
         $this->user = $user;
     }
 
@@ -34,7 +32,7 @@ class Welcome extends Mailable implements ShouldQueue
     {
         return $this
             ->to($this->user->email)
-            ->subject('Welkom bij' . config('app.url'))
+            ->subject('Welkom bij'.config('app.url'))
             ->view('mails.auth.front.welcome');
     }
 }

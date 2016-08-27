@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class ResetPasswordController extends Controller
 {
-
     protected $redirectTo = '/blender';
     /*
     |--------------------------------------------------------------------------
@@ -25,8 +24,6 @@ class ResetPasswordController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -38,19 +35,18 @@ class ResetPasswordController extends Controller
      *
      * If no token is present, display the link request form.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  string|null  $token
+     * @param \Illuminate\Http\Request $request
+     * @param string|null              $token
+     *
      * @return \Illuminate\Http\Response
      */
     public function showResetForm(Request $request, $token = null)
     {
-
-        if (! $user = User::findByToken($token)) {
+        if (!$user = User::findByToken($token)) {
             flash()->error(trans('passwordReset.invalidToken'));
 
             return redirect()->to(login_url());
         };
-
 
         return view('back.auth.resetPassword')->with(
             ['token' => $token, 'email' => $request->email, 'user' => $user]
@@ -60,7 +56,8 @@ class ResetPasswordController extends Controller
     /**
      * Get the response for a successful password reset.
      *
-     * @param  string  $response
+     * @param string $response
+     *
      * @return \Illuminate\Http\Response
      */
     protected function sendResetResponse($response)

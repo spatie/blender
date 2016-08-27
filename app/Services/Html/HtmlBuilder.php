@@ -49,7 +49,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         return el(
             'div.alert.-info',
             ['class' => $classes],
-            el('span.fa.fa-info-circle') . ' ' . $message
+            el('span.fa.fa-info-circle').' '.$message
         );
     }
 

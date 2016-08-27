@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\MediaLibrary;
+namespace App\Services\Medialibrary;
 
 use ColorThief\ColorThief;
 use Illuminate\Contracts\Events\Dispatcher;

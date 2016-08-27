@@ -11,7 +11,6 @@ use Mail;
 
 class EventHandler
 {
-
     public function subscribe(Dispatcher $events)
     {
         $events->listen(UserRegistered::class, function (UserRegistered $event) {
@@ -20,7 +19,7 @@ class EventHandler
 
         $events->listen(UserCreatedThroughBack::class, function (UserCreatedThroughBack $event) {
             Password::broker('front')->sendResetLink(['email' => $event->user->email], function (Message $message) {
-                $message->subject('Welkom bij ' . config('app.url'));
+                $message->subject('Welkom bij '.config('app.url'));
             });
         });
     }

@@ -25,6 +25,7 @@ trait HasSeoValues
         })->map(function ($value, $key) : string {
             $key = substr($key, 5);
             $attribute = starts_with($key, 'og:') ? 'property' : 'name';
+
             return "<meta {$attribute}=\"{$key}\" content=\"{$value}\">";
         })->implode("\n");
     }

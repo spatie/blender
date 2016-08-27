@@ -270,7 +270,7 @@ class BlenderFormBuilder
     protected function getSeoLabel(string $attribute): string
     {
         if (starts_with($attribute, 'meta_')) {
-            return "Meta: " . substr($attribute, 5);
+            return 'Meta: '.substr($attribute, 5);
         }
 
         return fragment("back.seo.{$attribute}");

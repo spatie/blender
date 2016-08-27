@@ -8,8 +8,5 @@ class EventHandler
 {
     public function subscribe(Dispatcher $events)
     {
-
     }
-
-
 }

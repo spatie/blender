@@ -37,12 +37,12 @@ class RouteServiceProvider extends ServiceProvider
 
             $articles = Article::getWithTechnicalNameLike($technicalNamePrefix);
 
-            $router->get(app()->getLocale() . '/' . fragment_slug("navigation.{$technicalNamePrefix}"), function () use ($articles) {
+            $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"), function () use ($articles) {
                 return redirect(route("{$articles->first()->technical_name}"));
             })->name($technicalNamePrefix);
 
             $articles->map(function ($article) use ($technicalNamePrefix, $action, $router) {
-                $router->get(app()->getLocale() . '/' . fragment_slug("navigation.{$technicalNamePrefix}") . '/' . $article->url, $action)->name("{$article->technical_name}");
+                $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}").'/'.$article->url, $action)->name("{$article->technical_name}");
             });
         });
 
@@ -80,9 +80,9 @@ class RouteServiceProvider extends ServiceProvider
              * Frontsite
              */
 
-            Route::group(['namespace' => 'Front'], function() {
+            Route::group(['namespace' => 'Front'], function () {
                 Route::group(['namespace' => 'Api', 'middleware' => 'api', 'prefix' => 'api'], function () {
-                    require base_path('routes/frontApi.php');;
+                    require base_path('routes/frontApi.php');
                 });
 
                 Route::group(['middleware' => ['demoMode', 'rememberLocale', 'web']], function () {
@@ -92,7 +92,7 @@ class RouteServiceProvider extends ServiceProvider
                     Route::group($multiLingual ? ['prefix' => locale()] : [], function () {
                         try {
                             Auth::routes();
-                            require base_path('routes/front.php');;
+                            require base_path('routes/front.php');
                         } catch (Exception $exception) {
                             logger()->warning("Front routes weren't included.");
                         }

@@ -29,8 +29,6 @@ class LoginController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -47,11 +45,11 @@ class LoginController extends Controller
         return view('front.auth.login');
     }
 
-
     /**
      * Log the user out of the application.
      *
-     * @param  Request  $request
+     * @param Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)

@@ -9,7 +9,7 @@ use Illuminate\Support\Collection;
 class PersonRepository extends Repository
 {
     const MODEL = Person::class;
-    
+
     public function getAll(): Collection
     {
         return $this->query()

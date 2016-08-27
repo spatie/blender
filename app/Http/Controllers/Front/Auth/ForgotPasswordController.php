@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Front\Auth;
 
-use Exception;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
@@ -22,8 +21,6 @@ class ForgotPasswordController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {

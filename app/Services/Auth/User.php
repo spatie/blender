@@ -41,6 +41,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     {
         if (is_null($value)) {
             $this->attributes['password'] = null;
+
             return;
         }
 
@@ -49,7 +50,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
 
     public function getNameAttribute(): string
     {
-        return $this->first_name . ' ' . $this->last_name;
+        return $this->first_name.' '.$this->last_name;
     }
 
     public function hasNeverLoggedIn(): bool

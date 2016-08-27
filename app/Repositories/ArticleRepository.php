@@ -2,7 +2,6 @@
 
 namespace App\Repositories;
 
-use App\Foundation\Repositories\CacheRepository;
 use App\Foundation\Repositories\Repository;
 use app\Models\Article;
 use App\Models\Enums\SpecialArticle;
@@ -42,6 +41,7 @@ class ArticleRepository extends Repository
 
     /**
      * @param \App\Models\Enums\SpecialArticle $specialArticle
+     *
      * @return \App\Models\Article|null
      */
     public function findSpecialArticle(SpecialArticle $specialArticle)

@@ -64,7 +64,6 @@ class Article extends ModuleModel
         return !(bool) $this->technical_name;
     }
 
-
     public function children(): HasMany
     {
         return $this->hasMany(self::class, 'parent_id')->orderBy('order_column');
@@ -90,14 +89,14 @@ class Article extends ModuleModel
         $localeSegment = '';
 
         if (locales()->count() > 1) {
-            $localeSegment = "/" . locale();
+            $localeSegment = '/'.locale();
         }
 
         if ($this->technical_name === SpecialArticle::HOME) {
             return $localeSegment;
         }
 
-        $parentUrl = $this->hasParentArticle() ? $this->parentArticle->url . '/' : '';
+        $parentUrl = $this->hasParentArticle() ? $this->parentArticle->url.'/' : '';
 
         return "{$localeSegment}/{$parentUrl}{$this->url}";
     }

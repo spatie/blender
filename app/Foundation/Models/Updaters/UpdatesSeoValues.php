@@ -19,7 +19,7 @@ trait UpdatesSeoValues
 
                 // Replace 'translated_<locale>_seo_<attribute>' with '<locale>_<attribute>'
                 $localeAndAttribute = Regex::replace('/translated_([a-z][a-z])_seo_/', function (MatchResult $matchResult) {
-                    return $matchResult->group(1) . '_';
+                    return $matchResult->group(1).'_';
                 }, $fieldName)->result();
 
                 $localeAndAttribute = explode('_', $localeAndAttribute, 2);

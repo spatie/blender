@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Exception;
 
 class Authenticate
 {
@@ -23,7 +22,6 @@ class Authenticate
         if ($request->ajax()) {
             return response('Unauthorized.', 401);
         }
-
 
         return redirect()->guest(login_url());
     }

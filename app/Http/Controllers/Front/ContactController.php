@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Events\ContactFormWasSubmitted;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Front\FormResponseRequest;
 use App\Mail\ContactFormSubmitted;

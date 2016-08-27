@@ -196,7 +196,7 @@ function el(string $tag, $attributes = null, $contents = null): string
 
 function rgb_to_hex(int $red, int $green, int $blue):  string
 {
-    return '#' . collect([$red, $green, $blue])
+    return '#'.collect([$red, $green, $blue])
         ->map(function (int $decimal) :  string {
             return str_pad(dechex($decimal), 2, STR_PAD_LEFT);
         })
