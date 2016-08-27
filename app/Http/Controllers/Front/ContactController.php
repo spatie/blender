@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Front;
 use App\Events\ContactFormWasSubmitted;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Front\FormResponseRequest;
+use App\Mail\ContactFormSubmitted;
 use App\Models\FormResponse;
+use Mail;
 
 class ContactController extends Controller
 {
@@ -20,9 +22,9 @@ class ContactController extends Controller
     {
         $formResponse = FormResponse::create($request->except(['g-recaptcha-response']));
 
-        event(new ContactFormWasSubmitted($formResponse));
+        Mail::send(new ContactFormSubmitted($formResponse));
 
-        activity()->log($request->get('email').' vulde het contactformulier in');
+        activity()->log("{$formResponse->email} vulde het contactformulier in");
 
         flash()->success(fragment('contact.response'));
 

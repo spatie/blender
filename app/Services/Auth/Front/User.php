@@ -4,9 +4,11 @@ namespace App\Services\Auth\Front;
 
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
-use App\Services\Auth\Front\Events\UserWasRegistered;
+use App\Services\Auth\Front\Events\UserRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
+use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\User as BaseUser;
+use Mail;
 
 /**
  * @property string $address
@@ -20,7 +22,6 @@ use App\Services\Auth\User as BaseUser;
 class User extends BaseUser
 {
     protected $table = 'users_front';
-    protected $presenter = UserPresenter::class;
 
     public static function register(array $input): User
     {
@@ -41,7 +42,7 @@ class User extends BaseUser
             'password',
         ]));
 
-        event(new UserWasRegistered($user));
+        event(new UserRegistered($user));
 
         return $user;
     }
@@ -105,5 +106,16 @@ class User extends BaseUser
     public function hasRole(UserRole $role): bool
     {
         return $this->role->equals($role);
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        Mail::to($this->email)->send(new ResetPassword($this, $token));
     }
 }

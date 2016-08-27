@@ -2,7 +2,7 @@
 
 return [
 
-	/*
+    /*
 	|--------------------------------------------------------------------------
 	| Default Filesystem Disk
 	|--------------------------------------------------------------------------
@@ -15,9 +15,9 @@ return [
 	|
 	*/
 
-	'default' => 'local',
+    'default' => 'local',
 
-	/*
+    /*
 	|--------------------------------------------------------------------------
 	| Default Cloud Filesystem Disk
 	|--------------------------------------------------------------------------
@@ -28,9 +28,9 @@ return [
 	|
 	*/
 
-	'cloud' => 's3',
+    'cloud' => 's3',
 
-	/*
+    /*
 	|--------------------------------------------------------------------------
 	| Filesystem Disks
 	|--------------------------------------------------------------------------
@@ -41,12 +41,12 @@ return [
 	|
 	*/
 
-	'disks' => [
+    'disks' => [
 
-		'local' => [
-			'driver' => 'local',
-			'root'   => storage_path().'/app',
-		],
+        'local' => [
+            'driver' => 'local',
+            'root'   => storage_path().'/app',
+        ],
 
         'backups' => [
             'driver' => 'local',
@@ -66,15 +66,15 @@ return [
             'bucket' => env('S3_BUCKET'),
         ],
 
-		'rackspace' => [
-			'driver'    => 'rackspace',
-			'username'  => 'your-username',
-			'key'       => 'your-key',
-			'container' => 'your-container',
-			'endpoint'  => 'https://identity.api.rackspacecloud.com/v2.0/',
-			'region'    => 'IAD',
-		],
+        'rackspace' => [
+            'driver'    => 'rackspace',
+            'username'  => 'your-username',
+            'key'       => 'your-key',
+            'container' => 'your-container',
+            'endpoint'  => 'https://identity.api.rackspacecloud.com/v2.0/',
+            'region'    => 'IAD',
+        ],
 
-	],
+    ],
 
 ];

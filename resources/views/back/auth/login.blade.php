@@ -16,24 +16,24 @@
                 Blender
             </h1>
 
-            <div class="form_group">
-                {!! Form::label('email', fragment('back.auth.email') ) !!}
-                {!! Form::email('email', Input::old('email'), ['autofocus' => true ]) !!}
-                {!! Html::error($errors->first('email')) !!}
-            </div>
+        <div class="form_group">
+            {!! Form::label('email', fragment('back.auth.email') ) !!}
+            {!! Form::email('email', Input::old('email'), ['autofocus' => true ]) !!}
+            {!! Html::error($errors->first('email')) !!}
+        </div>
 
-            <div class="form_group">
-                {!! Form::label('password', fragment('back.auth.password')) !!}
-                {!! Form::password('password', [ ]) !!}
-                {!! Html::error($errors->first('password')) !!}
-                <div class="form_group_help">
-                    <a href="{{ action('Back\PasswordController@getEmail') }}">{{ fragment('back.auth.forgotPassword') }}</a>
-                </div>
+        <div class="form_group">
+            {!! Form::label('password', fragment('back.auth.password')) !!}
+            {!! Form::password('password', [ ]) !!}
+            {!! Html::error($errors->first('password')) !!}
+            <div class="form_group_help">
+                <a href="{{ action('Back\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ fragment('back.auth.forgotPassword') }}</a>
             </div>
+        </div>
 
-            <div class="form_group -buttons">
+        <div class="form_group -buttons">
             {!! Form::button(fragment('back.auth.login'), ['type'=>'submit', 'class'=>'button -default']) !!}
-            </div>
+        </div>
 
         {!! Form::close() !!}
     </div>

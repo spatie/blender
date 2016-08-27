@@ -18,11 +18,16 @@ trait UsesAuthentication
     {
         $guard = $this->app['auth']->guard($section);
 
-        $this->assertTrue($guard->check(),
-            "Expected {$section} user {$user->id} to be logged in, not no one is.");
+        $this->assertTrue(
+            $guard->check(),
+            "Expected {$section} user {$user->id} to be logged in, not no one is."
+        );
 
-        $this->assertEquals($guard->id(), $user->id,
-            "Expected {$section} user {$user->id} to be logged in, not {$guard->id()} is.");
+        $this->assertEquals(
+            $guard->id(),
+            $user->id,
+            "Expected {$section} user {$user->id} to be logged in, not {$guard->id()} is."
+        );
 
         return $this;
     }

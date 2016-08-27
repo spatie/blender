@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Foundation\Models\Traits\Presentable;
+use App\Models\Presenters\FragmentPresenter;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Translatable\HasTranslations;
 
 class Fragment extends Model
 {
-    use HasTranslations, Presentable, LogsActivity;
+    use HasTranslations, LogsActivity, FragmentPresenter;
 
     public $translatable = ['text'];
 

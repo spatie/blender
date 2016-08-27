@@ -2,7 +2,7 @@
 
 return [
 
-	/*
+    /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
     |--------------------------------------------------------------------------
@@ -13,12 +13,12 @@ return [
     |
     */
 
-	'defaults' => [
-		'guard' => 'front',
-		'passwords' => 'front',
-	],
+    'defaults' => [
+        'guard' => 'front',
+        'passwords' => 'front',
+    ],
 
-	/*
+    /*
     |--------------------------------------------------------------------------
     | Authentication Guards
     |--------------------------------------------------------------------------
@@ -35,18 +35,18 @@ return [
     |
     */
 
-	'guards' => [
-		'front' => [
-			'driver' => 'session',
-			'provider' => 'front',
-		],
+    'guards' => [
+        'front' => [
+            'driver' => 'session',
+            'provider' => 'front',
+        ],
         'back' => [
             'driver' => 'session',
             'provider' => 'back',
         ],
-	],
+    ],
 
-	/*
+    /*
     |--------------------------------------------------------------------------
     | User Providers
     |--------------------------------------------------------------------------
@@ -63,18 +63,18 @@ return [
     |
     */
 
-	'providers' => [
-		'front' => [
-			'driver' => 'eloquent',
-			'model' => App\Services\Auth\Front\User::class,
-		],
+    'providers' => [
+        'front' => [
+            'driver' => 'eloquent',
+            'model' => App\Services\Auth\Front\User::class,
+        ],
         'back' => [
             'driver' => 'eloquent',
             'model' => App\Services\Auth\Back\User::class,
-		],
-	],
+        ],
+    ],
 
-	/*
+    /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
     |--------------------------------------------------------------------------
@@ -93,19 +93,19 @@ return [
     |
     */
 
-	'passwords' => [
-		'front' => [
-			'provider' => 'front',
-			'email' => 'emails.auth.front.passwords',
-			'table' => 'password_resets',
-			'expire' => 60 * 24 * 4,
-		],
-        'back' => [
-            'provider' => 'back',
-            'email' => 'emails.auth.back.passwords',
+    'passwords' => [
+        'front' => [
+            'provider' => 'front',
+            'email' => 'mails.auth.front.passwords',
             'table' => 'password_resets',
             'expire' => 60 * 24 * 4,
         ],
-	],
+        'back' => [
+            'provider' => 'back',
+            'email' => 'mails.auth.back.passwords',
+            'table' => 'password_resets',
+            'expire' => 60 * 24 * 4,
+        ],
+    ],
 
 ];

@@ -4,7 +4,6 @@ namespace App\Http;
 
 use App\Http\Middleware\RememberLocale;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-use Spatie\Authorize\Middleware\Authorize;
 
 class Kernel extends HttpKernel
 {
@@ -15,14 +14,30 @@ class Kernel extends HttpKernel
      */
     protected $middleware = [
         \Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode::class,
-        \Illuminate\Cookie\Middleware\EncryptCookies::class,
-        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
-        \Illuminate\Session\Middleware\StartSession::class,
-        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-        \App\Http\Middleware\LoginAs::class,
-        \App\Http\Middleware\VerifyCsrfToken::class,
-        \App\Http\Middleware\RobotsMiddleware::class,
-        \App\Http\Middleware\SanitizeInput::class,
+
+    ];
+
+    /**
+     * The application's route middleware groups.
+     *
+     * @var array
+     */
+    protected $middlewareGroups = [
+        'web' => [
+            \Illuminate\Cookie\Middleware\EncryptCookies::class,
+            \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+            \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+            \App\Http\Middleware\LoginAs::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\RobotsMiddleware::class,
+            \App\Http\Middleware\SanitizeInput::class,
+        ],
+
+        'api' => [
+            'throttle:60,1',
+            'bindings',
+        ],
     ];
 
     /**
@@ -32,10 +47,12 @@ class Kernel extends HttpKernel
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
-        'can' => Authorize::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'demoMode' => \Spatie\DemoMode\DemoMode::class,
         'rememberLocale' => \App\Http\Middleware\RememberLocale::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
     ];
 }

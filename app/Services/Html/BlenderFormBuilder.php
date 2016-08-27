@@ -84,8 +84,12 @@ class BlenderFormBuilder
     {
         $fieldName = $this->fieldName($name, $locale);
 
-        $contents = Form::checkbox($fieldName, 1, Form::useInitialValue($this->model, $name, $locale),
-            ['class' => 'form-control']).' '.fragment("back.{$this->module}.{$name}");
+        $contents = Form::checkbox(
+            $fieldName,
+            1,
+            Form::useInitialValue($this->model, $name, $locale),
+            ['class' => 'form-control']
+        ).' '.fragment("back.{$this->module}.{$name}");
 
         return $this->group([el('label.-checkbox', $contents)]);
     }
@@ -260,7 +264,6 @@ class BlenderFormBuilder
                 ->pipe(function (Collection $fields) use ($locale) {
                     return $this->languageFieldSet($locale, $fields->toArray());
                 });
-
         })->implode('');
     }
 
@@ -275,14 +278,16 @@ class BlenderFormBuilder
 
     public function submit(): string
     {
-        return el('div.form_group.-buttons',
+        return el(
+            'div.form_group.-buttons',
             Form::submit(fragment("back.{$this->module}.save"), ['class' => 'button -default'])
         );
     }
 
     protected function languageFieldSet($locale, array $elements)
     {
-        return el('fieldset',
+        return el(
+            'fieldset',
             array_merge([el('legend', el('div.legend_lang', $locale))], $elements)
         );
     }

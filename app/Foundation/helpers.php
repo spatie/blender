@@ -152,20 +152,20 @@ function current_back_user()
 function login_url(): string
 {
     return request()->isFront() ?
-        action('Front\AuthController@getLogin') :
-        action('Back\AuthController@getLogin');
+        action('Front\Auth\LoginController@showLoginForm') :
+        action('Back\Auth\LoginController@showLoginForm');
 }
 
 function logout_url(): string
 {
     return request()->isFront() ?
-        action('Front\AuthController@getLogout') :
-        action('Back\AuthController@getLogout');
+        action('Front\Auth\LoginController@logout') :
+        action('Back\Auth\LoginController@logout');
 }
 
 function register_url(): string
 {
-    return action('Front\AuthController@getRegister');
+    return action('Front\Auth\RegisterController@showRegistrationForm');
 }
 
 /**
@@ -197,7 +197,7 @@ function el(string $tag, $attributes = null, $contents = null): string
 function rgb_to_hex(int $red, int $green, int $blue):  string
 {
     return '#' . collect([$red, $green, $blue])
-        ->map(function (int $decimal):  string {
+        ->map(function (int $decimal) :  string {
             return str_pad(dechex($decimal), 2, STR_PAD_LEFT);
         })
         ->implode('');

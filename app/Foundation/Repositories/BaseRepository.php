@@ -3,12 +3,9 @@
 namespace App\Foundation\Repositories;
 
 use Illuminate\Database\Eloquent\Model;
-use Spatie\OrAbort\OrAbort;
 
 abstract class BaseRepository
 {
-    use OrAbort;
-
     public function save(Model $model): bool
     {
         $saved = $model->save();

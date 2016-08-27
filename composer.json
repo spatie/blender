@@ -1,108 +1,110 @@
 {
-  "name": "laravel/laravel",
-  "description": "The Laravel Framework.",
-  "keywords": ["framework", "laravel"],
-  "license": "MIT",
-  "type": "project",
-  "repositories": [
-	{
-	  "type": "composer",
-	  "url": "https://satis.spatie.be/"
-	}
-  ],
-  "require": {
-    "barryvdh/laravel-debugbar": "^2.2",
-    "barryvdh/laravel-ide-helper": "^2.1",
-    "bugsnag/bugsnag-laravel": "^1.4",
-    "davejamesmiller/laravel-breadcrumbs": "^3.0",
-    "doctrine/dbal": "^2.5",
-    "fedeisas/laravel-mail-css-inliner": "dev-master#430ebd087347812f75a2476bcedc26ced2f4753f",
-    "filp/whoops": "2.0.*",
-    "fzaninotto/faker": "^1.4",
-    "greggilbert/recaptcha": "^2.1",
-    "guzzlehttp/guzzle": "^6.1",
-    "jenssegers/date": "^3.2",
-    "ksubileau/color-thief-php": "^1.3",
-    "laracasts/flash": "^1.3",
-    "laracasts/presenter": "^0.2",
-    "laracasts/utilities": "^2.1",
-    "laravel/framework": "5.2.*",
-    "laravelcollective/html": "^5.0",
-    "league/flysystem-aws-s3-v3": "^1.0",
-    "maatwebsite/excel": "^2.1",
-    "maknz/slack": "^1.5",
-    "myclabs/php-enum": "^1.4",
-    "pda/pheanstalk": "^3.0",
-    "propaganistas/laravel-phone": "^2.6",
-    "spatie/array-functions": "^1.1",
-    "spatie/eloquent-sortable": "^1.0",
-    "spatie/fragment-importer": "^2.0.0",
-    "spatie/laravel-activitylog": "^1.0",
-    "spatie/laravel-analytics": "^2.0",
-    "spatie/laravel-backup": "^3.0",
-    "spatie/laravel-blade-javascript": "^1.0",
-    "spatie/laravel-collection-macros": "^1.0",
-    "spatie/laravel-cookie-consent": "^1.0",
-    "spatie/laravel-demo-mode": "^1.0",
-    "spatie/laravel-failed-job-monitor": "^1.0",
-    "spatie/laravel-fractal": "^1.6.1",
-    "spatie/laravel-googletagmanager": "^2.0",
-    "spatie/laravel-link-checker": "^1.0",
-    "spatie/laravel-medialibrary": "^4.0.0",
-    "spatie/laravel-menu": "^1.0.0",
-    "spatie/laravel-model-cleanup": "^1.0",
-    "spatie/laravel-newsletter": "^3.0.0",
-    "spatie/laravel-or-abort": "^1.0",
-    "spatie/laravel-paginateroute": "^2.0",
-    "spatie/laravel-robots-middleware": "^1.0",
-    "spatie/laravel-tail": "^1.0",
-    "spatie/laravel-translatable": "^1.0",
-    "spatie/regex": "^0.1.0",
-    "spatie/seeders": "^4.3",
-    "spatie/string": "^2.0",
-    "themsaid/laravel-mail-preview": "^1.2"
-  },
-  "require-dev": {
-	"mockery/mockery": "^0.9.4",
-	"phpunit/phpunit": "~5.0",
-    "symfony/dom-crawler": "~3.0",
-    "symfony/css-selector": "~3.0",
-    "friendsofphp/php-cs-fixer": "^1.11"
-  },
-  "autoload": {
-	"classmap": [
-	  "database"
-	],
-	"psr-4": {
-	  "App\\": "app/"
-	},
-	"files": [
-	  "app/Foundation/helpers.php"
-	]
-  },
-  "autoload-dev": {
-	"psr-4": {
-	  "App\\Test\\": "tests/"
-	}
-  },
-  "scripts": {
-    "post-root-package-install": [
-      "php -r \"copy('.env.example', '.env');\""
+    "name": "laravel/laravel",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
     ],
-    "post-create-project-cmd": [
-      "php artisan key:generate"
+    "license": "MIT",
+    "type": "project",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://satis.spatie.be/"
+        }
     ],
-    "post-install-cmd": [
-      "Illuminate\\Foundation\\ComposerScripts::postInstall",
-      "php artisan optimize"
-    ],
-    "post-update-cmd": [
-      "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-      "php artisan optimize"
-    ]
-  },
-  "config": {
-	"preferred-install": "dist",
-	"sort-packages": true
-  }
+    "require": {
+        "barryvdh/laravel-debugbar": "^2.2",
+        "barryvdh/laravel-ide-helper": "^2.1",
+        "bugsnag/bugsnag-laravel": "^1.4",
+        "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "doctrine/dbal": "^2.5",
+        "fedeisas/laravel-mail-css-inliner": "dev-master#430ebd087347812f75a2476bcedc26ced2f4753f",
+        "filp/whoops": "2.0.*",
+        "fzaninotto/faker": "^1.4",
+        "greggilbert/recaptcha": "^2.1",
+        "guzzlehttp/guzzle": "^6.1",
+        "jenssegers/date": "^3.2",
+        "ksubileau/color-thief-php": "^1.3",
+        "laracasts/flash": "^1.3",
+        "laracasts/utilities": "^2.1",
+        "laravel/framework": "5.3.*",
+        "laravelcollective/html": "5.3.x-dev",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "maatwebsite/excel": "2.1.x-dev",
+        "maknz/slack": "^1.5",
+        "myclabs/php-enum": "^1.4",
+        "pda/pheanstalk": "^3.0",
+        "propaganistas/laravel-phone": "^2.6",
+        "spatie/array-functions": "^1.1",
+        "spatie/eloquent-sortable": "^1.0",
+        "spatie/fragment-importer": "^2.0.0",
+        "spatie/laravel-activitylog": "^1.0",
+        "spatie/laravel-analytics": "^2.0",
+        "spatie/laravel-backup": "^3.0",
+        "spatie/laravel-blade-javascript": "^1.0",
+        "spatie/laravel-collection-macros": "^1.0",
+        "spatie/laravel-cookie-consent": "^1.0",
+        "spatie/laravel-demo-mode": "^1.0",
+        "spatie/laravel-failed-job-monitor": "^1.0",
+        "spatie/laravel-fractal": "^1.6.1",
+        "spatie/laravel-googletagmanager": "^2.0",
+        "spatie/laravel-link-checker": "^1.0",
+        "spatie/laravel-medialibrary": "^4.0.0",
+        "spatie/laravel-menu": "^1.0.0",
+        "spatie/laravel-model-cleanup": "^1.0",
+        "spatie/laravel-newsletter": "^3.0.0",
+        "spatie/laravel-paginateroute": "^2.0",
+        "spatie/laravel-robots-middleware": "^1.0",
+        "spatie/laravel-tail": "^1.0",
+        "spatie/laravel-translatable": "^1.0",
+        "spatie/regex": "^1.0.0",
+        "spatie/seeders": "^4.3",
+        "spatie/string": "^2.0",
+        "themsaid/laravel-mail-preview": "^1.2",
+        "php": ">=5.6.4"
+    },
+    "require-dev": {
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "~5.0",
+        "symfony/dom-crawler": "~3.0",
+        "symfony/css-selector": "~3.0",
+        "friendsofphp/php-cs-fixer": "^1.11"
+    },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "files": [
+            "app/Foundation/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Test\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "php artisan key:generate"
+        ],
+        "post-install-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            "php artisan optimize"
+        ],
+        "post-update-cmd": [
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            "php artisan optimize"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
 }

@@ -2,16 +2,12 @@
 
 namespace App\Models\Presenters;
 
-use Laracasts\Presenter\Presenter;
 use Spatie\String\Str;
 
-/**
- * @property \App\Models\Fragment $entity
- */
-class FragmentPresenter extends Presenter
+trait FragmentPresenter
 {
-    public function tease(): Str
+    public function getTeaseAttribute(): Str
     {
-        return string($this->entity->text)->tease();
+        return string($this->text)->tease();
     }
 }

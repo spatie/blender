@@ -44,9 +44,10 @@
             <div class="grid_col -width-1/2">
                 <nav class="nav :align-right">
                     @if(current_user())
-                    <a href="{{ current_user()->getProfileUrl() }}">{{ current_user()->first_name }}</a> • <a href="{{ logout_url() }}">{{ fragment('auth.logout') }}</a>
+                       <a href="{{ current_user()->getProfileUrl() }}">{{ current_user()->first_name }}</a> •
+                        @include('front.auth._partials.logoutForm')
                     @else
-                    <a href="{{ register_url() }}">{{ fragment('auth.register') }}</a> • <a href="{{ login_url() }}">{{ fragment('auth.login') }}</a>
+                       <a href="{{ register_url() }}">{{ fragment('auth.register') }}</a> • <a href="{{ login_url() }}">{{ fragment('auth.login') }}</a>
                     @endif
                 </nav>
             </div>

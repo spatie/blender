@@ -65,7 +65,7 @@ class Breadcrumbs
 
         BreadCrumbsManager::register('editBackUserBack', function ($breadcrumbs, $user) {
             $breadcrumbs->parent('backUserListBack', $user);
-            $breadcrumbs->push($user->present()->fullName, action('Back\BackUserController@edit', $user->id));
+            $breadcrumbs->push($user->name, action('Back\BackUserController@edit', $user->id));
         });
 
         BreadCrumbsManager::register('frontUserListBack', function ($breadcrumbs) {
@@ -79,7 +79,7 @@ class Breadcrumbs
 
         BreadCrumbsManager::register('editFrontUserBack', function ($breadcrumbs, $user) {
             $breadcrumbs->parent('frontUserListBack', $user);
-            $breadcrumbs->push($user->present()->fullName, action('Back\FrontUserController@edit', $user->id));
+            $breadcrumbs->push($user->name, action('Back\FrontUserController@edit', $user->id));
         });
     }
 

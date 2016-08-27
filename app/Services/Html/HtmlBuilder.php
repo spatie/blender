@@ -46,7 +46,9 @@ class HtmlBuilder extends BaseHtmlBuilder
             return '';
         }
 
-        return el('div.alert.-info', ['class' => $classes],
+        return el(
+            'div.alert.-info',
+            ['class' => $classes],
             el('span.fa.fa-info-circle') . ' ' . $message
         );
     }
@@ -55,7 +57,7 @@ class HtmlBuilder extends BaseHtmlBuilder
     {
         return el('span.avatar', [
             'class' => $classes,
-            'style' => "background-image: url('{$user->present()->avatar()}')",
+            'style' => "background-image: url('{$user->avatar}')",
         ], '');
     }
 
@@ -78,7 +80,9 @@ class HtmlBuilder extends BaseHtmlBuilder
         $icon = $online ? 'circle' : 'circle-o';
         $title = $online ? 'Online' : 'Offline';
 
-        return el("span.status.-{$state}.-space-right", ['title' => $title],
+        return el(
+            "span.status.-{$state}.-space-right",
+            ['title' => $title],
             el("i.fa.fa-{$icon}")
         );
     }

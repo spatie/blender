@@ -2,7 +2,7 @@
 
 namespace App\Test\Integration\Auth;
 
-use App\Services\Auth\Front\Events\UserWasRegistered;
+use App\Services\Auth\Front\Events\UserRegistered;
 use App\Services\Auth\Front\User;
 use App\Test\Integration\Concerns\UsesAuthentication;
 use App\Test\Integration\TestCase;
@@ -26,7 +26,7 @@ class FrontRegisterTest extends TestCase
             ->type('info@spatie.be', 'email')
             ->type('password', 'password')
             ->type('password', 'password_confirmation')
-            ->expectsEvents(UserWasRegistered::class)
+            ->expectsEvents(UserRegistered::class)
             ->press(fragment('auth.register'))
             ->seePageIs('/nl')
             ->seeInDatabase('users_front', ['email' => 'info@spatie.be'])

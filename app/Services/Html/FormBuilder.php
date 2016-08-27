@@ -61,7 +61,8 @@ class FormBuilder extends BaseFormBuilder
     {
         $options = array_merge(['class' => 'form-control'], $options);
 
-        return el('label.-checkbox',
+        return el(
+            'label.-checkbox',
             $this->checkbox($fieldName, 1, $this->useInitialValue($subject, $fieldName), $options)
             .' '.$label
         );
@@ -79,8 +80,8 @@ class FormBuilder extends BaseFormBuilder
     {
         $type = new TagType($type);
 
-        $tags = Tag::getWithType($type)->lists('name', 'name')->toArray();
-        $subjectTags = $subject->tagsWithType($type)->lists('name', 'name')->toArray();
+        $tags = Tag::getWithType($type)->pluck('name', 'name')->toArray();
+        $subjectTags = $subject->tagsWithType($type)->pluck('name', 'name')->toArray();
 
         $options = array_merge(['multiple', 'data-select' => 'tags'], $options);
 
@@ -91,7 +92,7 @@ class FormBuilder extends BaseFormBuilder
     {
         $type = new TagType($type);
 
-        $categories = Tag::getWithType($type)->lists('name', 'name')->toArray();
+        $categories = Tag::getWithType($type)->pluck('name', 'name')->toArray();
         $subjectCategory = $subject->tagsWithType($type)->first()->name ?? null;
 
         return $this->select("{$type}_tags[]", $categories, $subjectCategory, $options);

@@ -5,7 +5,9 @@ namespace App\Services\Auth\Back;
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\Exceptions\UserIsAlreadyActivated;
+use App\Services\Auth\Back\Mail\ResetPassword;
 use App\Services\Auth\User as BaseUser;
+use Mail;
 
 /**
  * @property \App\Services\Auth\Back\Enums\UserRole $role
@@ -14,7 +16,6 @@ use App\Services\Auth\User as BaseUser;
 class User extends BaseUser
 {
     protected $table = 'users_back';
-    protected $presenter = UserPresenter::class;
 
     public function guardDriver(): string
     {
@@ -75,5 +76,16 @@ class User extends BaseUser
     public function hasRole(UserRole $role): bool
     {
         return $this->role->equals($role);
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        Mail::to($this->email)->send(new ResetPassword($this, $token));
     }
 }

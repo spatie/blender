@@ -14,6 +14,5 @@ class CollectionServiceProvider extends ServiceProvider
      */
     public function register()
     {
-
     }
 }
