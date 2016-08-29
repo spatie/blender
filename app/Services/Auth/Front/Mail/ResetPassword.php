@@ -4,6 +4,7 @@ namespace App\Services\Auth\Front\Mail;
 
 use App\Services\Auth\Front\User;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 

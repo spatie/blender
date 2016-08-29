@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\Back\Auth;
 
 use App\User;
+use Auth;
 use Exception;
+use Password;
 use Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
 
 class RegisterController extends Controller
 {
@@ -63,5 +66,20 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         throw new Exception('no registrations in the back');
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('back');
+    }
+
+    /**
+     * Get the broker to be used during password reset.
+     *
+     * @return \Illuminate\Contracts\Auth\PasswordBroker
+     */
+    public function broker()
+    {
+        return Password::broker('back');
     }
 }

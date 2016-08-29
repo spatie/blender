@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Front\Auth;
 
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Password;
+use App\Http\Controllers\Controller;
+
 
 class LoginController extends Controller
 {
@@ -63,5 +67,20 @@ class LoginController extends Controller
         flash()->info(trans('auth.loggedOut'));
 
         return redirect('/');
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('front');
+    }
+
+    /**
+     * Get the broker to be used during password reset.
+     *
+     * @return \Illuminate\Contracts\Auth\PasswordBroker
+     */
+    public function broker()
+    {
+        return Password::broker('front');
     }
 }

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Front\Auth;
 
 use App\Services\Auth\Front\User;
+use Auth;
+use Password;
 use Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Http\Controllers\Controller;
 
 class RegisterController extends Controller
 {
@@ -73,5 +76,20 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::register($data);
+    }
+
+    protected function guard()
+    {
+        return Auth::guard('front');
+    }
+
+    /**
+     * Get the broker to be used during password reset.
+     *
+     * @return \Illuminate\Contracts\Auth\PasswordBroker
+     */
+    public function broker()
+    {
+        return Password::broker('front');
     }
 }
