@@ -43,7 +43,6 @@ generate  database/migrations/2015_05_26_153558_create_news_items_table.php  dat
 
 # Todos
 echo "ALL DONE!"
-echo "- Todo: Register repository in App\Providers\RepositoryServiceProvider"
 echo "- Todo: Register routes in App\Http\Routes\back.php"
 echo "- Todo: Register breadcrumbs in App\Services\Navigation\Navigation"
 echo "- Todo: Register navigation in App\Services\Navigation\Breadcrumbs"
