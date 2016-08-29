@@ -1,5 +1,7 @@
 .status {
     font-size: font-size(xxs);
+    vertical-align: middle;
+    display: inline-block;
 
     &.-on {
         color: color($green);

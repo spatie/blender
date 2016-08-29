@@ -19,7 +19,10 @@
                 <tbody>
                 @foreach($people as $person)
                     <tr data-row-id="{{ $person->id }}" >
-                        <td><a href="{!! action('Back\PersonController@edit', [$person->id]) !!}">{{ $person->name }}</a></td>
+                        <td>
+                            {!! Html::onlineIndicator($person->online) !!}
+                            <a href="{!! action('Back\PersonController@edit', [$person->id]) !!}">{{ $person->name }}</a>
+                        </td>
                         <td class="-right">
                             {!! Html::deleteButton(action('Back\PersonController@destroy', $person->id)) !!}
                         </td>

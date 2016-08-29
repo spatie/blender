@@ -1,7 +1,7 @@
 @extends('front._layouts.master')
 
 @section('title', fragment('home.title'))
-@section('metaDescription', fragment('home.metaDescription'))
+@section('pageDescription', fragment('home.metaDescription'))
 
 @section('content')
 <main id="home" class="main">

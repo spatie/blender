@@ -1,10 +1,5 @@
 @section('meta')
 
-    @if($hasTitle)
-        <meta name="title" content="@yield('title') - {{ fragment('site.title') }}">
-    @else
-        <meta name="title" content="{{ fragment('site.title') }}">
-    @endif
     <meta name="description" content="@yield('pageDescription')">
 
     <meta property="og:url" content="@yield('canonical', request()->url())">
