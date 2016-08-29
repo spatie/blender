@@ -12,7 +12,7 @@ trait HasSeoValues
     public function seo(string $key = null)
     {
         if (is_null($key)) {
-            return collect($this->defaultSeoValues())->merge($this->seo_values);
+            return collect($this->defaultSeoValues())->merge($this->seo_values ?? []);
         }
 
         return $this->seo()->get($key);
