@@ -26,6 +26,7 @@
     </div>
     <div id="seo">
         {!! BlenderForm::seo() !!}
+        {!! Html::info(fragment('back.seo.help')) !!}
     </div>
 </div>
 

@@ -8,7 +8,7 @@
 
 <section>
     <div class="grid">
-        <h1>{{ $model->name ?: fragment('back.newsItems.new') }} {!! Html::onlineIndicator($model->online) !!}</h1>
+        <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.newsItems.new') }}</h1>
 
         {!! Form::openDraftable([
             'method'=>'PATCH',

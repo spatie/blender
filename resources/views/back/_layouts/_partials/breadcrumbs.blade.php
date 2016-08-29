@@ -1,3 +1,1 @@
-<nav class="breadcrumbs">
-    @yield('breadcrumbs')
-</nav>
+<nav class="breadcrumbs">@yield('breadcrumbs')</nav>

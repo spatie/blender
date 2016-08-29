@@ -7,7 +7,7 @@
 @section('content')
 <section>
     <div class="grid">
-        <h1>{{ $model->name ?: fragment('back.people.new') }} {!! Html::onlineIndicator($model->online) !!}</h1>
+        <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.people.new') }}</h1>
 
         {!! Form::openDraftable([
             'method' =>'PATCH',

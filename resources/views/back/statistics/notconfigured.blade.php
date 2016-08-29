@@ -6,5 +6,6 @@
 <section>
     <div class="grid">
         {!! Html::info(fragment('back.statistics.notConfigured')) !!}
-
+    </div>
+</section>
 @stop
