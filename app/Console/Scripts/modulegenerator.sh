@@ -25,7 +25,6 @@ generate  app/Models/Updaters/NewsItemUpdater.php               app/Models/Updat
 
 # Repositories
 generate  app/Repositories/NewsItemRepository.php             app/Repositories/${singular}Repository.php
-generate  app/Repositories/Database/NewsItemDbRepository.php  app/Repositories/Database/${singular}DbRepository.php
 
 # Http
 generate  app/Http/Controllers/Back/NewsItemController.php  app/Http/Controllers/Back/${singular}Controller.php
