@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9954361ee11c42ef6d315ddceb9d1e17",
-    "content-hash": "922ddbe01aa5d28471f6a8ec96d25415",
+    "hash": "d1d5d387b3bbe6d74f6adecdf3007205",
+    "content-hash": "8e3f17267c6dabfa9233fcc4ad288fbf",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -465,16 +465,16 @@
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/davejamesmiller/laravel-breadcrumbs.git",
-                "reference": "5a5d5d1b1f5780359604f7fde11bbf810ff3e9e4"
+                "reference": "460bf79e83ff9e3db1e3f1c40169d8893893f8ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/davejamesmiller/laravel-breadcrumbs/zipball/5a5d5d1b1f5780359604f7fde11bbf810ff3e9e4",
-                "reference": "5a5d5d1b1f5780359604f7fde11bbf810ff3e9e4",
+                "url": "https://api.github.com/repos/davejamesmiller/laravel-breadcrumbs/zipball/460bf79e83ff9e3db1e3f1c40169d8893893f8ff",
+                "reference": "460bf79e83ff9e3db1e3f1c40169d8893893f8ff",
                 "shasum": ""
             },
             "require": {
@@ -484,7 +484,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "orchestra/testbench": "3.0.*",
+                "orchestra/testbench": "3.2.*|3.3.*",
                 "phpunit/phpunit": "4.*",
                 "satooshi/php-coveralls": "0.6.*"
             },
@@ -506,11 +506,11 @@
                 }
             ],
             "description": "A simple Laravel-style way to create breadcrumbs in Laravel 4+.",
-            "homepage": "https://github.com/davejamesmiller/laravel-breadcrumbs",
+            "homepage": "http://laravel-breadcrumbs.davejamesmiller.com",
             "keywords": [
                 "laravel"
             ],
-            "time": "2015-02-08 21:44:39"
+            "time": "2016-08-28 16:57:03"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1107,7 +1107,7 @@
                 "laravel",
                 "mailer"
             ],
-            "time": "2014-12-09 12:53:44"
+            "time": "2016-05-18 17:21:26"
         },
         {
             "name": "filp/whoops",
@@ -2518,12 +2518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "01b2a13d83e8c47336dccfdea6e302f988ab8cfd"
+                "reference": "b5c91156f6bd29f68f4f2c51186faae4310a5a68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/01b2a13d83e8c47336dccfdea6e302f988ab8cfd",
-                "reference": "01b2a13d83e8c47336dccfdea6e302f988ab8cfd",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/b5c91156f6bd29f68f4f2c51186faae4310a5a68",
+                "reference": "b5c91156f6bd29f68f4f2c51186faae4310a5a68",
                 "shasum": ""
             },
             "require": {
@@ -2577,7 +2577,7 @@
                 "import",
                 "laravel"
             ],
-            "time": "2016-08-08 18:29:50"
+            "time": "2016-08-28 20:25:51"
         },
         {
             "name": "maknz/slack",
@@ -4078,24 +4078,24 @@
         },
         {
             "name": "spatie/laravel-blade-javascript",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-blade-javascript.git",
-                "reference": "3a664d39f123959216f4526537d5ef3d11b553fd"
+                "reference": "eefaa40a74536d33cfbb129bf7c51987140ad2cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-blade-javascript/zipball/3a664d39f123959216f4526537d5ef3d11b553fd",
-                "reference": "3a664d39f123959216f4526537d5ef3d11b553fd",
+                "url": "https://api.github.com/repos/spatie/laravel-blade-javascript/zipball/eefaa40a74536d33cfbb129bf7c51987140ad2cd",
+                "reference": "eefaa40a74536d33cfbb129bf7c51987140ad2cd",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "^5.1",
+                "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
                 "php": "^7.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.2",
+                "orchestra/testbench": "3.1",
                 "phpunit/phpunit": "5.*"
             },
             "type": "library",
@@ -4132,7 +4132,7 @@
                 "laravel-blade-javascript",
                 "spatie"
             ],
-            "time": "2016-08-01 13:11:09"
+            "time": "2016-08-27 12:15:11"
         },
         {
             "name": "spatie/laravel-collection-macros",
@@ -4303,25 +4303,25 @@
         },
         {
             "name": "spatie/laravel-failed-job-monitor",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-failed-job-monitor.git",
-                "reference": "6d64c2de578003e766255d55c6edee30bb1ab123"
+                "reference": "261f8c9420ebddc5ec22bf3e05e300335531bd44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-failed-job-monitor/zipball/6d64c2de578003e766255d55c6edee30bb1ab123",
-                "reference": "6d64c2de578003e766255d55c6edee30bb1ab123",
+                "url": "https://api.github.com/repos/spatie/laravel-failed-job-monitor/zipball/261f8c9420ebddc5ec22bf3e05e300335531bd44",
+                "reference": "261f8c9420ebddc5ec22bf3e05e300335531bd44",
                 "shasum": ""
             },
             "require": {
-                "illuminate/queue": "^5.2",
+                "illuminate/queue": "~5.3.0",
                 "php": "^7.0"
             },
             "require-dev": {
                 "maknz/slack": "^1.5",
-                "orchestra/testbench": "^3.0",
+                "orchestra/testbench": "^3.3",
                 "phpunit/phpunit": "^5.0"
             },
             "suggest": {
@@ -4338,6 +4338,12 @@
                 "MIT"
             ],
             "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
                 {
                     "name": "Jolita Grazyte",
                     "email": "jolita@spatie.be",
@@ -4356,7 +4362,7 @@
                 "slack",
                 "spatie"
             ],
-            "time": "2016-03-02 11:34:09"
+            "time": "2016-08-27 09:19:59"
         },
         {
             "name": "spatie/laravel-fractal",
@@ -7876,7 +7882,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6.4"
+        "php": ">=7.0.0"
     },
     "platform-dev": []
 }
