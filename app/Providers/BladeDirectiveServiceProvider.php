@@ -7,10 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class BladeDirectiveServiceProvider extends ServiceProvider
 {
-    public function register()
-    {
-    }
-
     public function boot()
     {
         Blade::directive('json', function ($expression) {

@@ -8,10 +8,6 @@ use Validator;
 
 class ValidationServiceProvider extends ServiceProvider
 {
-    public function register()
-    {
-    }
-
     public function boot()
     {
         Validator::extend('tags_exist', function ($attribute, $tagNames, $parameters) {

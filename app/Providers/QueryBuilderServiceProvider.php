@@ -17,8 +17,4 @@ class QueryBuilderServiceProvider extends ServiceProvider
             return $this;
         });
     }
-
-    public function register()
-    {
-    }
 }
