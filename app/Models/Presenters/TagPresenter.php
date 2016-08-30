@@ -6,7 +6,7 @@ use App\Models\Enums\TagType;
 
 trait TagPresenter
 {
-    public function getAllTagTypesPresenter(): array
+    public function getAllTagTypesAttribute(): array
     {
         $tagTypes = [];
 

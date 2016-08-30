@@ -5,12 +5,13 @@ namespace App\Models;
 use App\Foundation\Models\Base\ModuleModel;
 use App\Foundation\Models\Traits\HasSlug;
 use App\Models\Enums\TagType;
+use App\Models\Presenters\TagPresenter;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 
 class Tag extends ModuleModel implements SortableInterface
 {
-    use HasSlug, Sortable;
+    use HasSlug, Sortable, TagPresenter;
 
     public $translatable = ['name', 'url'];
 
