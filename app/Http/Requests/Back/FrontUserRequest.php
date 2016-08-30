@@ -15,7 +15,7 @@ class FrontUserRequest extends Request
         ];
 
         if ($this->method() === 'PATCH') {
-            $rules['email'] .= ",{$this->getRouteParameter('frontUsers')}";
+            $rules['email'] .= ",{$this->getRouteParameter('frontUser')}";
         }
 
         return $rules;
