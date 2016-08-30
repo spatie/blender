@@ -28,7 +28,11 @@ class HtmlBuilder extends BaseHtmlBuilder
 
         $attributes = empty($name) ? [] : ['data-validation-error' => $name];
 
-        return el('div.alert.-danger', $attributes, $message);
+        return el(
+            'div.alert.-danger',
+            $attributes,
+            $message
+        );
     }
 
     public function message($message, string $classes = ''): string
@@ -50,6 +54,19 @@ class HtmlBuilder extends BaseHtmlBuilder
             'div.alert.-info',
             ['class' => $classes],
             el('span.fa.fa-info-circle').' '.$message
+        );
+    }
+
+    public function warning($message, string $classes = ''): string
+    {
+        if (empty($message)) {
+            return '';
+        }
+
+        return el(
+            'div.alert.-warning',
+            ['class' => $classes],
+            el('span.fa.fa-exclamation-triangle').' '.$message
         );
     }
 
