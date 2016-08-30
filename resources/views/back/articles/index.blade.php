@@ -21,6 +21,7 @@
                 @foreach($articles as $article)
                     <tr data-row-id="{{ $article->id }}">
                         <td>
+                            {!! Html::onlineIndicator($article->online) !!}
                             <a href="{{ action('Back\ArticleController@edit', [$article->id]) }}">{{ $article->translate('name', content_locale()) }}</a>
                         </td>
                         <td class="-right">

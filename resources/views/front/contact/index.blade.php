@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <h1>{{ $article->title }}</h1>
+    <h1>{{ $article->name }}</h1>
     @include('front.contact._partials.form')
 
 @endsection
