@@ -29,8 +29,8 @@
     @if (current_user())
         @include('back._layouts._partials.menu')
         <div class="grid">
-            @include('back._layouts._partials.breadcrumbs')
             @include('back._layouts._partials.flashMessage')
+            @include('back._layouts._partials.breadcrumbs')
         </div>
     @endif
     <main class="main">

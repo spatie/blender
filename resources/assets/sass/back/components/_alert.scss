@@ -19,8 +19,7 @@
     z-index: z-index(above);
 
     //variations
-    &.-small,
-    form & {
+    &.-small {
         font-size: font-size(s);
         padding: .75em;
     }

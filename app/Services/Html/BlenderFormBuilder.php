@@ -257,7 +257,8 @@ class BlenderFormBuilder
                         Form::label($fieldName, $this->getSeoLabel($attribute)),
                         Form::text(
                             $fieldName,
-                            old($fieldName, $this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
+                            old($fieldName, $this->model->getTranslation('seo_values', $locale)[$attribute] ?? ''),
+                            [ 'placeholder' => $this->model->defaultSeoValues()[$attribute] ]
                         ),
                     ]);
                 })

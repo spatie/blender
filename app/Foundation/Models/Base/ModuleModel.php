@@ -42,7 +42,6 @@ abstract class ModuleModel extends Model implements HasMediaConversions, GetsCle
     {
         return [
             'title' => $this->name,
-            'meta_title' => $this->name,
             'meta_description' => (string) string($this->text)->tease(155),
             'meta_og:title' => $this->name,
             'meta_og:type' => 'website',
