@@ -1,0 +1,39 @@
+@mixin block-reset {
+    display: block !important;
+    float: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+}
+
+@mixin block-cover($position: absolute) {
+    display: block;
+    height: 100%;
+    left: 0;
+    position: $position;
+    top: 0;
+    width: 100%;
+}
+
+@mixin block-tag($color, $background-color) {
+    background-color: $background-color;
+    border-radius: border-radius(s);
+    color: $color;
+    display: inline-block;
+    padding: 0 .25em;
+}
+
+@mixin block-clearfix {
+    zoom: 1;
+
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}

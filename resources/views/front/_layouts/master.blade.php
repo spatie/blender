@@ -32,34 +32,13 @@
 <body>
     @include('googletagmanager::script')
     @include('front._layouts._partials.deprecatedBrowser')
-    <header class="header">
-        <div class="grid">
-            <div class="grid_col -width-1/2">
-                <nav class="nav">
-                    {!! Menu::main() !!}
-                </nav>
-                @yield('subMenu')
-            </div>
-            <div class="grid_col -width-1/2">
-                <nav class="nav :align-right">
-                    @if(current_user())
-                       <a href="{{ current_user()->getProfileUrl() }}">{{ current_user()->first_name }}</a> •
-                        @include('front.auth._partials.logoutForm')
-                    @else
-                       <a href="{{ register_url() }}">{{ fragment('auth.register') }}</a> • <a href="{{ login_url() }}">{{ fragment('auth.login') }}</a>
-                    @endif
-                </nav>
-            </div>
-        </div>
-    </header>
+
+    @include('front._layouts._partials.header')
     @include('front._layouts._partials.flashMessage')
-    @yield('content')
+    @yield('main')
     @include('cookieConsent::index')
-    <footer class="footer">
-        <small>
-            © {{ Date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
-        </small>
-    </footer>
+    @include('front._layouts._partials.footer')
+
     <script src="{{ elixir('front.app.js') }}"></script>
 
 </body>

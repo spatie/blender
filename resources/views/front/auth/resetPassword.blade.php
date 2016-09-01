@@ -1,38 +1,35 @@
-@extends('back._layouts.master')
+@extends('back._layouts.main')
 
 @section('title', fragment('auth.titleChangePassword'))
 
-@section('content')
-    <section class="+auth">
-        <div class="+auth_card">
-            <h1 class="+auth_title -small">
-                {!! Html::avatar($user, '-large +auth_gravatar') !!}<br>
-                {{ fragment('auth.titleChangePassword') }}
-            </h1>
+@section('mainTitle')
+    <h1 class="+auth_title -small">
+        {!! Html::avatar($user, '-large +auth_gravatar') !!}<br>
+        {{ fragment('auth.titleChangePassword') }}
+    </h1>
+@endsection
 
-            {!! Form::open(['action' => 'Front\Auth\ResetPasswordController@reset', 'class'=>'-stacked +auth_form']) !!}
-            {!! Form::hidden('token', $token) !!}
-            {!! Form::hidden('email', $user->email) !!}
-            <p class="alert -invers">
-                {{ fragment('auth.resetInstructions') }}
-            </p>
+@section('mainContent')
 
-            <div class="form_group">
-                {!! Form::label('password', fragment('auth.password'), ['class' => '-invers'] ) !!}
-                {!! Form::password('password', null, ['autofocus' ]) !!}
-            </div>
+    {!! Form::open(['action' => 'Front\Auth\ResetPasswordController@reset']) !!}
+    {!! Form::hidden('token', $token) !!}
+    {!! Form::hidden('email', $user->email) !!}
+    <p class="alert">
+        {{ fragment('auth.resetInstructions') }}
+    </p>
+    <p>
+        {!! Form::label('password', fragment('auth.password') ) !!}
+        {!! Form::password('password', null, ['autofocus' ]) !!}
+    </p>
+    <p>
+        {!! Form::label('password_confirmation', fragment('auth.passwordConfirm')) !!}
+        {!! Form::password('password_confirmation', [null]) !!}
+        {!! Html::error($errors->first('password')) !!}
+    </p>
+    <p>
+        {!! Form::button(trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton'), ['type'=>'submit']) !!}
+    </p>
 
-            <div class="form_group">
-                {!! Form::label('password_confirmation', fragment('auth.passwordConfirm'), ['class' => '-invers']) !!}
-                {!! Form::password('password_confirmation', [null]) !!}
-                {!! Html::error($errors->first('password')) !!}
-            </div>
-
-            <div class="form_group -buttons">
-                {!! Form::button(trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton'), ['type'=>'submit', 'class'=>'button -default']) !!}
-            </div>
-            {!! Form::close() !!}
-        </div>
-    </section>
+    {!! Form::close() !!}
 
 @stop

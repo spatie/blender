@@ -1,0 +1,14 @@
+label,
+.label {
+    @include font-sans-medium;
+
+    display: block;
+    margin-bottom: .25em;
+}
+
+.label--checkbox {
+    @extend .label;
+
+    display: block;
+    margin-bottom: 1em;
+}

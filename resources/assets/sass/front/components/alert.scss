@@ -1,0 +1,64 @@
+.alert {
+  padding: 1em;
+
+  &:empty {
+    padding: 0;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Sizes */
+
+  &.-small {
+    font-size: font-size(s);
+    padding: .5em;
+  }
+
+  &.-medium {
+    font-size: font-size(m);
+    padding: .5em;
+  }
+
+  &.-large {
+    font-size: font-size(l);
+    padding: .5em;
+  }
+
+  /* Type */
+
+  &.-info {
+    background: blue(lightest);
+    color: blue(dark);
+  }
+
+  &.-success {
+    background: green(lightest);
+    color: green(dark);
+  }
+
+  &.-warning {
+    background: yellow();
+    color: white();
+  }
+
+  &.-error,
+  &.-danger {
+    background: red(lightest);
+    color: red();
+  }
+}
+
+.alert--fixed {
+  left: 0;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 100%;
+  z-index: z-index(modal);
+}
