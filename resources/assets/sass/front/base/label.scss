@@ -12,3 +12,11 @@ label,
     display: block;
     margin-bottom: 1em;
 }
+
+.label--required {
+    @extend .label;
+
+    &:after {
+        content: '*'
+    }
+}

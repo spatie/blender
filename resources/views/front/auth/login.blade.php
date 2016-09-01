@@ -7,12 +7,12 @@
         {!! Form::open() !!}
 
         <p>
-            {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
+            {!! Form::label('email', fragment('auth.email')) !!}
             {!! Form::email('email', old('email'), ['autofocus' => true ]) !!}
             {!! Html::error($errors->first('email')) !!}
         </p>
         <p>
-            {!! Form::label('password', fragment('auth.password'), ['class' => '-invers']) !!}
+            {!! Form::label('password', fragment('auth.password')) !!}
                 {!! Form::password('password', [ ]) !!}
                 {!! Html::error($errors->first('password')) !!}
         </p>

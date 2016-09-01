@@ -16,12 +16,12 @@
     </p>
     @endif
     <p>
-        {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
+        {!! Form::label('email', fragment('auth.email')) !!}
         {!! Form::email('email', null, ['autofocus' => true]) !!}
         {!! Html::error($errors->first('email')) !!}
     </p>
     <p>
-        {!! Form::button( fragment('auth.resetPassword.button'), ['type'=>'submit']) !!}
+        {!! Form::button( fragment('auth.resetPassword.button')) !!}
     </p>
     <p>
         <a href="{{ login_url() }}">{{ fragment('auth.toLogin') }}</a>
