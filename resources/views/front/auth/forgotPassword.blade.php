@@ -4,7 +4,7 @@
 
 @section('mainContent')
 
-    {!! Form::open() !!}
+    {!! Form::open(['action' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
 
     @if(session('status'))
     <p class="alert -info">
