@@ -1,4 +1,4 @@
-@extends('back._layouts.main')
+@extends('front._layouts.main')
 
 @section('title', fragment('auth.titleChangePassword'))
 
