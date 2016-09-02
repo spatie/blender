@@ -16,7 +16,7 @@ class FrontMenus
 
         Menu::macro('main', function () {
             return Menu::front()
-                ->addClass('nav navbar-nav')
+                ->addClass('nav__list')
                 ->url('/', 'Home');
         });
 

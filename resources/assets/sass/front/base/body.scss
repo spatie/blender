@@ -1,0 +1,7 @@
+body {
+  @include text-antialiasing(subpixel);
+  @include font-sans;
+
+  color: text-color;
+  line-height: line-height();
+}

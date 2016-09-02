@@ -18,10 +18,7 @@ return [
                  * The list of directories that should be part of the backup. You can
                  * specify individual files as well.
                  */
-                'include' => [
-                    storage_path(),
-                    public_path('media'),
-                ],
+                'include' => [],
 
                 /*
                  * These directories will be excluded from the backup.

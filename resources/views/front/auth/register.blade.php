@@ -1,77 +1,68 @@
-@extends('front._layouts.master')
+@extends('front._layouts.main')
 
 @section('title', fragment('auth.titleRegister'))
 
-@section('content')
-    <div class="grid">
+@section('mainContent')
+    <p>
         <a href="{{ URL::action('Front\Auth\LoginController@showLoginForm') }}">{{ fragment('auth.toLogin') }}</a>
-        {!! Form::open() !!}
-        <div class="form-line">
-            {!! Form::label('first_name', fragment('auth.firstName'), ['class'=>'required']) !!}
-            <div class="form-element">
-                {!! Form::text('first_name') !!}
-                {!! Html::error($errors->first('first_name')) !!}
-            </div>
-            {!! Form::label('last_name', fragment('auth.lastName'), ['class'=>'required']) !!}
-            <div class="form-element">
-                {!! Form::text('last_name') !!}
-                {!! Html::error($errors->first('last_name')) !!}
-            </div>
-        </div>
-        <div class="form-line">
-            {!! Form::label('address', fragment('auth.address'), ['class'=>'required']) !!}
-            <div class="form-element">
-                {!! Form::text('address') !!}
-                {!! Html::error($errors->first('address')) !!}
-            </div>
-            {!! Form::label('postal', fragment('auth.postal'), ['class'=>'required']) !!}
-            <div class="form-element">
-                {!! Form::text('postal') !!}
-                {!! Html::error($errors->first('postal')) !!}
-            </div>
+    </p>
 
-            {!! Form::label('city', fragment('auth.city'), ['class'=>'required']) !!}
-            <div class="form-element">
-                {!! Form::text('city') !!}
-                {!! Html::error($errors->first('city')) !!}
-            </div>
-        </div>
-        {!! Form::label('country', fragment('auth.country'), ['class'=>'required']) !!}
-        <div class="form-element">
-            {!! Form::text('country') !!}
-            {!! Html::error($errors->first('country')) !!}
-        </div>
-        <div class="form-line">
-            {!! Form::label('telephone', fragment('auth.telephone'), ['class'=>'required']) !!}
-            <div class="form-element">
-                {!! Form::text('telephone') !!}
-                {!! Html::error($errors->first('telephone')) !!}
-            </div>
-        </div>
-        <div class="form-line">
-            {!! Form::label('email', fragment('auth.email'), ['class'=>'required']) !!}
-            <div class="form-element">
-                {!! Form::email('email') !!}
-                {!! Html::error($errors->first('email')) !!}
-            </div>
-        </div>
-        <div class="form-line">
-            {!! Form::label('password', fragment('auth.password')) !!}
-            <div class="form-element">
-                {!! Form::password('password', [ ]) !!}
-                {!! Html::error($errors->first('password')) !!}
-            </div>
-        </div>
-        <div class="form-line">
-            {!! Form::label('password_confirmation', fragment('auth.passwordConfirm')) !!}
-            <div class="form-element">
-                {!! Form::password('password_confirmation', [ ]) !!}
-                {!! Html::error($errors->first('password_confirmation')) !!}
-            </div>
-        </div>
-        <div class="form_group -buttons">
-            {!! Form::button(fragment('auth.register'), ['type'=>'submit', 'class'=>'button -default']) !!}
-        </div>
-        {!! Form::close() !!}
-    </div>
+    {!! Form::open() !!}
+
+    <p>
+        {!! Form::label('first_name', fragment('auth.firstName'), ['class'=>'label--required']) !!}
+        {!! Form::text('first_name') !!}
+        {!! Html::error($errors->first('first_name')) !!}
+    </p>
+    <p>
+        {!! Form::label('last_name', fragment('auth.lastName'), ['class'=>'label--required']) !!}
+        {!! Form::text('last_name') !!}
+        {!! Html::error($errors->first('last_name')) !!}
+    </p>
+    <p>
+        {!! Form::label('address', fragment('auth.address'), ['class'=>'label--required']) !!}
+        {!! Form::text('address') !!}
+        {!! Html::error($errors->first('address')) !!}
+    </p>
+    <p>
+        {!! Form::label('postal', fragment('auth.postal'), ['class'=>'label--required']) !!}
+        {!! Form::text('postal') !!}
+        {!! Html::error($errors->first('postal')) !!}
+    </p>
+    <p>
+        {!! Form::label('city', fragment('auth.city'), ['class'=>'label--required']) !!}
+        {!! Form::text('city') !!}
+        {!! Html::error($errors->first('city')) !!}
+    </p>
+    <p>
+        {!! Form::label('country', fragment('auth.country'), ['class'=>'label--required']) !!}
+        {!! Form::text('country') !!}
+        {!! Html::error($errors->first('country')) !!}
+    </p>
+    <p>
+        {!! Form::label('telephone', fragment('auth.telephone'), ['class'=>'label--required']) !!}
+        {!! Form::text('telephone') !!}
+        {!! Html::error($errors->first('telephone')) !!}
+    </p>
+    <p>
+        {!! Form::label('email', fragment('auth.email'), ['class'=>'label--required']) !!}
+        {!! Form::email('email') !!}
+        {!! Html::error($errors->first('email')) !!}
+    </p>
+    <p>
+        {!! Form::label('password', fragment('auth.password')) !!}
+        {!! Form::password('password', [ ]) !!}
+        {!! Html::error($errors->first('password')) !!}
+    </p>
+    <p>
+        {!! Form::label('password_confirmation', fragment('auth.passwordConfirm')) !!}
+        {!! Form::password('password_confirmation', [ ]) !!}
+        {!! Html::error($errors->first('password_confirmation')) !!}
+    </p>
+    <p>
+        {!! Form::button(fragment('auth.register'), ['type'=>'submit']) !!}
+    </p>
+
+    {!! Form::close() !!}
+
 @endsection

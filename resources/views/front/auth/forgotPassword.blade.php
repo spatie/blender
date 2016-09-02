@@ -1,37 +1,32 @@
-@extends('front._layouts.master')
+@extends('front._layouts.main')
 
 @section('title', fragment('auth.titleResetPassword'))
 
-@section('content')
-<section class="+auth">
+@section('mainContent')
 
-    @include('back._layouts._partials.flashMessage', ['extraClass' => '-fixed'])
+    {!! Form::open(['action' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
 
-    <div class="+auth_card">
-        {!! Form::open(['class'=>'-stacked +auth_form', 'action' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
-        {!! Form::open(['class'=>'-stacked +auth_form']) !!}
-        @if(session('status'))
-        <p class="alert -info">
-            {{ session('status') }}
-        </p>
-        @else
-        <p class="alert -invers">
-            {{ fragment('auth.resetPassword.intro') }}
-        </p>
-        @endif
-        <div class="form_group">
-            {!! Form::label('email', fragment('auth.email'), ['class' => '-invers']) !!}
-            {!! Form::email('email', null, ['autofocus' => true]) !!}
-            {!! Html::error($errors->first('email')) !!}
-        </div>
+    @if(session('status'))
+    <p class="alert -info">
+        {{ session('status') }}
+    </p>
+    @else
+    <p class="alert -info">
+        {{ fragment('auth.resetPassword.intro') }}
+    </p>
+    @endif
+    <p>
+        {!! Form::label('email', fragment('auth.email')) !!}
+        {!! Form::email('email', null, ['autofocus' => true]) !!}
+        {!! Html::error($errors->first('email')) !!}
+    </p>
+    <p>
+        {!! Form::button( fragment('auth.resetPassword.button')) !!}
+    </p>
+    <p>
+        <a href="{{ login_url() }}">{{ fragment('auth.toLogin') }}</a>
+    </p>
 
-        <div class="form_group -buttons">
-            {!! Form::button( fragment('auth.resetPassword.button'), ['type'=>'submit', 'class'=>'button -default']) !!}
-        </div>
-        <div class="form_group_help">
-            <a href="{{ login_url() }}">{{ fragment('auth.toLogin') }}</a>
-        </div>
-        {!! Form::close() !!}
-    </div>
-</section>
+    {!! Form::close() !!}
+
 @endsection

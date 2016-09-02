@@ -1,0 +1,17 @@
+@mixin form-placeholder($pseudo: '') {
+    @at-root #{$pseudo}::-webkit-input-placeholder {
+        @content;
+    }
+
+    @at-root #{$pseudo}:-moz-placeholder {
+        @content;
+    }
+
+    @at-root #{$pseudo}::-moz-placeholder {
+        @content;
+    }
+
+    @at-root #{$pseudo}:-ms-input-placeholder {
+        @content;
+    }
+}

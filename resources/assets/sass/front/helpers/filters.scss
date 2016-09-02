@@ -1,9 +1,0 @@
-.\:filter-grayscale {
-    filter: grayscale(100%);
-    opacity: 1;
-
-    .\$viewport-loaded & {
-        opacity: 0;
-        transition: opacity ease-in 1s .8s;
-    }
-}

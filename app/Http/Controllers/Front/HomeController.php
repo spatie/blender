@@ -11,6 +11,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('front.home.index');
+        $article = article('home');
+
+        return view('front.home.index', compact('article'));
     }
 }

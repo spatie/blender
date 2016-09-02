@@ -8,6 +8,7 @@ class ArticleSeeder extends DatabaseSeeder
     {
         $this->truncate((new Article())->getTable());
 
+        $this->seedArticle('Home', 'home');
         $this->seedArticle('Contact', 'contact');
 
         $parentArticle = $this->seedArticle('Parent');
