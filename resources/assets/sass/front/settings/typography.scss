@@ -1,33 +1,83 @@
-/// Font-families
-$font-families: (
-  sans: '-apple-system, "Segoe UI", sans-serif',
-  fixed: 'Consolas, "courier new", courier, monospace',
-  icons: 'fontello'
-);
-
-
-/// Font-weights
 $font-weights: (
-  thin: 100,
-  light: 200,
-  normal: 400,
-  medium: 500,
-  bold: 500,
-  extrabold: 900,
+    thin: 100,
+    light: 200,
+    normal: 400,
+    medium: 600,
+    bold: 700,
+    extrabold: 900,
 );
-
-
-/// Font-sizes
 $font-sizes: (
     xxs: .65em,
     xs: .8em,
-    s: .95em,
+    s: .9em,
     default: 1em,
-    m: 1.1em,
+    m: 1.2em,
     l: 1.5em,
     xl: 2.1em,
-    xxl: 2.8em,
+    xxl: 3.5em,
+);
+$line-heights: (
+    xs: 1.1,
+    s: 1.25,
+    default: 1.5,
+    m: 1.75,
+    l: 2.5
 );
 
-/// Line-height
-$line-height: 1.5;
+@mixin font-icons {
+  font-family: 'fontello';
+}
+
+@mixin font-sans-light {
+  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 200;
+}
+
+@mixin font-sans {
+  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+@mixin font-sans-medium {
+  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin font-sans-bold {
+  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin font-sans-black {
+  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+}
+
+@mixin font-serif {
+  font-family: serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin font-serif-bold {
+  font-family: serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+@mixin font-fixed {
+  font-family: Consolas, 'courier new', courier, monospace;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin font-fixed-bold {
+  font-family: Consolas, 'courier new', courier, monospace;
+  font-style: italic;
+  font-weight: 700;
+}

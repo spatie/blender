@@ -1,69 +1,47 @@
 {!! Form::open(['data-validate']) !!}
 
-<div class="form-line">
+<p>
     {!! Form::label('name', fragment('form.name'), ['class'=>'required']) !!}
-    <div class="form-element">
-        {!! Form::text('name', null, ['required', 'min' => 5, 'max' => '10', 'autocomplete' => 'off']) !!}
-        {!! Html::error($errors->first('name'), 'name') !!}
-    </div>
-</div>
-
-<div class="form-line">
+    {!! Form::text('name', null, ['required', 'min' => 5, 'max' => '10', 'autocomplete' => 'off']) !!}
+    {!! Html::error($errors->first('name'), 'name') !!}
+</p>
+<p>
     {!! Form::label('telephone', fragment('form.telephone'), ['class'=>'required']) !!}
-    <div class="form-element">
-        {!! Form::text('telephone') !!}
-        {!! Html::error($errors->first('telephone'), 'telephone') !!}
-    </div>
-</div>
-
-<div class="form-line">
+    {!! Form::text('telephone') !!}
+    {!! Html::error($errors->first('telephone'), 'telephone') !!}
+</p>
+<p>
     {!! Form::label('email', fragment('form.email'), ['class'=>'required']) !!}
-    <div class="form-element">
-        {!! Form::email('email') !!}
-        {!! Html::error($errors->first('email'), 'email') !!}
-    </div>
-</div>
-
-<div class="form-line">
+    {!! Form::email('email') !!}
+    {!! Html::error($errors->first('email'), 'email') !!}
+</p>
+<p>
     {!! Form::label('address', fragment('form.address')) !!}
-    <div class="form-element">
-        {!! Form::text('address') !!}
-        {!! Html::error($errors->first('address'), 'address') !!}
-    </div>
-</div>
-
-<div class="form-line">
+    {!! Form::text('address') !!}
+    {!! Html::error($errors->first('address'), 'address') !!}
+</p>
+<p>
     {!! Form::label('postal', fragment('form.postal').' + '.fragment('form.city')) !!}
-    <div class="form-element form-element-postal">
-        {!! Form::text('postal') !!}
-        {!! Html::error($errors->first('postal'), 'postal') !!}
-    </div>
-    <div class="form-element form-element-city">
-        {!! Form::text('city') !!}
-        {!! Html::error($errors->first('city')) !!}
-    </div>
-</div>
-
-<div class="form-line">
+    {!! Form::text('postal') !!}
+    {!! Form::text('city') !!}
+    {!! Html::error($errors->first('postal'), 'postal') !!}
+    {!! Html::error($errors->first('city')) !!}
+</p>
+<p>
     {!! Form::label('remarks', fragment('contact.remarks')) !!}
-    <div class="form-element">
-        {!! Form::textarea('remarks') !!}
-        {!! Html::error($errors->first('remarks'), 'remarks') !!}
-    </div>
-</div>
-
+    {!! Form::textarea('remarks') !!}
+    {!! Html::error($errors->first('remarks'), 'remarks') !!}
+</p>
+<p>
 {!! Recaptcha::render(['lang' => locale()]) !!}
 {!! HTML::error($errors->first('g-recaptcha-response')) !!}
-
-
-<div class="form-line-submit">
-    <div class="form-element">
-        {!! Form::button(fragment('contact.button'), ['type'=>'submit']) !!}
-    </div>
-</div>
+</p>
+<p>
+    {!! Form::button(fragment('contact.button'), ['type'=>'submit']) !!}
+</p>
 
 {!! Form::close() !!}
 
-<p class="required-help">
+<p class="alert -info">
     {!! fragment('form.fieldsAreRequired') !!}
 </p>

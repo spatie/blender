@@ -1,89 +1,119 @@
-.\:margin {
-    margin: gutter(m);
+.h-margin {
+  margin: gutter(default);
 }
 
-.\:margin-small {
-    margin: gutter(s);
+.h-margin-small {
+  margin: gutter(s);
 }
 
-.\:margin-large {
-    margin: gutter(l);
+.h-margin-medium {
+  margin: gutter(m);
 }
 
-.\:margin-left {
-    margin-left: gutter(m);
+.h-margin-large {
+  margin: gutter(l);
 }
 
-.\:margin-left-small {
-    margin-left: gutter(s);
+.h-margin-left {
+  margin-left: gutter(default);
 }
 
-.\:margin-left-large {
-    margin-left: gutter(l);
+.h-margin-left-small {
+  margin-left: gutter(s);
 }
 
-.\:margin-right {
-    margin-right: gutter(m);
+.h-margin-left-medium {
+  margin-left: gutter(m);
 }
 
-.\:margin-right-small {
-    margin-right: gutter(s);
+.h-margin-left-large {
+  margin-left: gutter(l);
 }
 
-.\:margin-right-large {
-    margin-right: gutter(l);
+.h-margin-right {
+  margin-right: gutter(default);
 }
 
-.\:margin-horizontal {
-    margin-left: gutter(m);
-    margin-right: gutter(m);
+.h-margin-right-small {
+  margin-right: gutter(s);
 }
 
-.\:margin-horizontal-small {
-    margin-left: gutter(s);
-    margin-right: gutter(s);
+.h-margin-right-medium {
+  margin-right: gutter(m);
 }
 
-.\:margin-horizontal-large {
-    margin-left: gutter(l);
-    margin-right: gutter(l);
+.h-margin-right-large {
+  margin-right: gutter(l);
 }
 
-.\:margin-top {
-    margin-top: gutter(m);
+.h-margin-horizontal {
+  margin-left: gutter(default);
+  margin-right: gutter(default);
 }
 
-.\:margin-top-small {
-    margin-top: gutter(s);
+.h-margin-horizontal-small {
+  margin-left: gutter(s);
+  margin-right: gutter(s);
 }
 
-.\:margin-top-large {
-    margin-top: gutter(l);
+.h-margin-horizontal-medium {
+  margin-left: gutter(m);
+  margin-right: gutter(m);
 }
 
-.\:margin-bottom {
-    margin-bottom: gutter(m);
+.h-margin-horizontal-large {
+  margin-left: gutter(l);
+  margin-right: gutter(l);
 }
 
-.\:margin-bottom-small {
-    margin-bottom: gutter(s);
+.h-margin-top {
+  margin-top: gutter(default);
 }
 
-.\:margin-bottom-large {
-    margin-bottom: gutter(l);
+.h-margin-top-small {
+  margin-top: gutter(s);
 }
 
-.\:margin-vertical {
-    margin-bottom: gutter(m);
-    margin-top: gutter(m);
+.h-margin-top-medium {
+  margin-top: gutter(m);
 }
 
-.\:margin-vertical-small {
-    margin-bottom: gutter(s);
-    margin-top: gutter(s);
+.h-margin-top-large {
+  margin-top: gutter(l);
 }
 
-.\:margin-vertical-large {
-    margin-bottom: gutter(l);
-    margin-top: gutter(l);
+.h-margin-bottom {
+  margin-bottom: gutter(default);
+}
+
+.h-margin-bottom-small {
+  margin-bottom: gutter(s);
+}
+
+.h-margin-bottom-medium {
+  margin-bottom: gutter(m);
+}
+
+.h-margin-bottom-large {
+  margin-bottom: gutter(l);
+}
+
+.h-margin-vertical {
+  margin-bottom: gutter(default);
+  margin-top: gutter(default);
+}
+
+.h-margin-vertical-small {
+  margin-bottom: gutter(s);
+  margin-top: gutter(s);
+}
+
+.h-margin-vertical-medium {
+  margin-bottom: gutter(m);
+  margin-top: gutter(m);
+}
+
+.h-margin-vertical-large {
+  margin-bottom: gutter(l);
+  margin-top: gutter(l);
 }

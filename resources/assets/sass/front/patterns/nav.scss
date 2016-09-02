@@ -1,0 +1,14 @@
+.nav {
+    @include font-sans-bold;
+}
+
+.nav__list {
+    @include list-horizontal;
+
+    li {
+        padding: .5em 1em;
+        border-radius: 3px;
+        background: white();
+        color: blue(darker);
+    }
+}

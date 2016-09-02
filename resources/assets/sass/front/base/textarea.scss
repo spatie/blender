@@ -1,0 +1,7 @@
+textarea {
+    @extend .input;
+
+    max-width: 100%;
+    min-height: 11em;
+    width: 100%;
+}

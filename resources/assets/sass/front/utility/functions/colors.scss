@@ -1,0 +1,39 @@
+@function color($pallete, $key: 'default', $opacity: 1) {
+    @return rgba(mapping($pallete, $key), $opacity);
+}
+
+@function blue($key: 'default', $opacity: 1) {
+    @return rgba(mapping($blue, $key), $opacity);
+}
+
+@function green($key: 'default', $opacity: 1) {
+    @return rgba(mapping($green, $key), $opacity);
+}
+
+@function gray($key: 'default', $opacity: 1) {
+    @return rgba(mapping($gray, $key), $opacity);
+}
+
+@function red($key: 'default', $opacity: 1) {
+    @return rgba(mapping($red, $key), $opacity);
+}
+
+@function yellow($key: 'default', $opacity: 1) {
+    @return rgba(mapping($yellow, $key), $opacity);
+}
+
+@function orange($key: 'default', $opacity: 1) {
+    @return rgba(mapping($orange, $key), $opacity);
+}
+
+@function white($opacity: 1) {
+    @return rgba(mapping($color, white), $opacity);
+}
+
+@function black($opacity: 1) {
+    @return rgba(mapping($color, black), $opacity);
+}
+
+@function text-color($opacity: 1) {
+    @return rgba(mapping($color, text), $opacity);
+}

@@ -1,0 +1,43 @@
+@mixin text-underline($color, $border-color: rgba($color, .25), $border-width: .08em) {
+    border-bottom: solid $border-width $border-color;
+    color: $color;
+    text-decoration: none;
+    transition: .3s color linear, .3s border-color linear;
+}
+
+@mixin text-underline-hover($color, $border-color: rgba($color, .75), $border-width: .08em) {
+    &:hover {
+        border-bottom: solid $border-width $border-color;
+        color: $color;
+    }
+}
+
+@mixin text-hyphens($value: true) {
+    @if $value == true {
+        -webkit-hyphens: auto;
+           -moz-hyphens: auto;
+            -ms-hyphens: auto;
+                hyphens: auto;
+    } @else {
+        -webkit-hyphens: none !important;
+           -moz-hyphens: none !important;
+            -ms-hyphens: none !important;
+                hyphens: none !important;
+    }
+}
+
+@mixin text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin text-antialiasing($value: subpixel) {
+    @if $value == subpixel {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+    @if $value == pixel {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}

@@ -1,0 +1,25 @@
+input,
+.input {
+  @include font-sans;
+  @include form-placeholder() {
+    color: gray(lighter);
+  }
+  @include form-placeholder(':focus') {
+    color: white(0);
+  }
+
+  background: white();
+  border: input(border-width) input(border-color) solid;
+  border-radius: input(border-radius);
+  box-shadow: input(box-shadow);
+  box-sizing: border-box;
+  color: blue(darkest);
+  height: input(height);
+  padding: 0 input(padding);
+  transition: border-color .1s linear;
+
+  &:focus {
+    border-color: input(border-color-focus) !important;
+    outline: 0;
+  }
+}

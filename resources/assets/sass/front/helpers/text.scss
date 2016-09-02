@@ -1,32 +1,43 @@
-.\:text-ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.h-text-small {
+  font-size: font-size(s);
 }
 
-.\:text-small {
-    font-size: font-size(s);
-}
-.\:text-large {
-    font-size: font-size(l);
+.h-text-large {
+  font-size: font-size(l);
 }
 
-.\:text-uppercase {
-    text-transform: uppercase;
+.h-text-uppercase {
+  text-transform: uppercase;
 }
 
-.\:text-super {
-    font-size: font-size(xs);
-    top: -.35em;
+.h-text-super {
+  font-size: font-size(xs);
+  top: -.35em;
 }
 
-.\:text-sub {
-    font-size: font-size(xs);
-    top: .35em;
+.h-text-sub {
+  font-size: font-size(xs);
+  top: .35em;
 }
 
-.\:text-clean {
-    border: 0;
-    text-decoration: none;
-    text-transform: none;
+.h-text-clean {
+  border: 0;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.h-text-ellipsis {
+  @include text-ellipsis;
+}
+
+.h-text-hyphens {
+  @include text-hyphens(true);
+}
+
+.h-text-no-hyphens {
+  @include text-hyphens(false);
+}
+
+.h-text-no-break {
+  white-space: nowrap;
 }

@@ -1,0 +1,23 @@
+@mixin mq($breakpoint, $breakpoints, $query: min-width){
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (#{$query}: #{inspect(map-get($breakpoints, $breakpoint))} ) {
+            @content;
+        }
+    } @else {
+        @media (#{$breakpoint})  {
+            @content;
+        }
+    }
+}
+
+@mixin mq-below($breakpoint, $breakpoints: $breakpoints-horizontal) {
+    @include mq($breakpoint, $breakpoints, max-width){
+        @content;
+    }
+}
+
+@mixin mq-above($breakpoint, $breakpoints: $breakpoints-horizontal) {
+    @include mq($breakpoint, $breakpoints, min-width){
+        @content;
+    }
+}

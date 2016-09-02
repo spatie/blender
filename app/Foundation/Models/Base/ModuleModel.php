@@ -5,11 +5,11 @@ namespace App\Foundation\Models\Base;
 use App\Foundation\Models\Traits\Draftable;
 use App\Foundation\Models\Traits\HasSeoValues;
 use App\Foundation\Models\Traits\HasMedia as HasMediaTrait;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\ModelCleanup\GetsCleanedUp;
-use Illuminate\Database\Eloquent\Builder;
-use Carbon\Carbon;
 use Spatie\Translatable\HasTranslations;
 
 abstract class ModuleModel extends Model implements HasMediaConversions, GetsCleanedUp
