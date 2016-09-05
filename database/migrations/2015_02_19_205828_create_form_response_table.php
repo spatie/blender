@@ -7,7 +7,7 @@ class CreateFormResponseTable extends Migration
 {
     public function up()
     {
-        Schema::create('form_responses', function(Blueprint $table) {
+        Schema::create('form_responses', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 255);
             $table->string('email', 100);
