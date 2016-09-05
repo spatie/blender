@@ -1,54 +1,72 @@
 .grid {
-  @include mq-above(s) {
-    padding: 0 4rem;
-  }
+    @include mq-above(s) {
+        padding: 0 4rem;
+        align-items: flex-start;
+        display: flex;
+    }
 
-  align-items: flex-start;
-  display: flex;
-  margin: 0 auto;
-  max-width: 80rem;
-  padding: 0 1rem;
+    margin: 0 auto;
+    max-width: 80rem;
+    padding: 0 1rem;
 
-  & & {
-    padding: 0;
-  }
+    //subgrid
+    & & {
+        padding: 0;
+
+        @include mq-above(s) {
+            .grid__col:first-child {
+                padding-left: 0;
+            }
+
+            .grid__col:last-child {
+                padding-right: 0;
+            }
+        }
+    }
 }
 
 .grid__col {
-  &.-half {
-    flex-basis: 50%;
-  }
 
-  &.-fourth {
-    flex-basis: 25%;
-  }
+    flex-basis: 100%;
 
-  &.-third {
-    flex-basis: 33.33%;
-  }
-
-  &.-two-third {
-    flex-basis: 66.66%;
-  }
-
-  &.-three-fourth {
-    flex-basis: 75%;
-  }
-
-  &.-push-right {
-    margin-left: auto;
-  }
-
-  &.-padded {
-    padding-left: 2rem;
-    padding-right: 2rem;
-
-    &:first-child {
-      padding-left: 0;
+    @include mq-above(s) {
+        padding: 0 gutter(s);
     }
 
-    &:last-child {
-      padding-right: 0;
+    &.-half {
+        flex-basis: 50%;
     }
-  }
+
+    &.-fourth {
+        flex-basis: 25%;
+    }
+
+    &.-third {
+        flex-basis: 33.33%;
+    }
+
+    &.-two-third {
+        flex-basis: 66.66%;
+    }
+
+    &.-three-fourth {
+        flex-basis: 75%;
+    }
+
+    &.-push-right {
+        margin-left: auto;
+    }
+
+    &.-padded {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
 }
