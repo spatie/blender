@@ -12,7 +12,7 @@ use Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'App\Http\Controllers';
+    protected $namespace = \App\Http\Controllers::class;
 
     public function boot()
     {

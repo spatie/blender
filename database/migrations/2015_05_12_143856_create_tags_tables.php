@@ -5,9 +5,9 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateTagsTables extends Migration
 {
-	public function up()
-	{
-        Schema::create('tags', function(Blueprint $table) {
+    public function up()
+    {
+        Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name');
             $table->text('url');
@@ -20,17 +20,17 @@ class CreateTagsTables extends Migration
             $table->index('type');
         });
 
-        Schema::create('taggables', function(Blueprint $table) {
+        Schema::create('taggables', function (Blueprint $table) {
             $table->integer('tag_id')->unsigned();
             $table->integer('taggable_id')->unsigned();
             $table->string('taggable_type');
 
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });
-	}
+    }
 
-	public function down()
-	{
+    public function down()
+    {
         Schema::drop('taggables');
         Schema::drop('tags');
     }

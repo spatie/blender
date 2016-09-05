@@ -21,7 +21,7 @@ class CreateArticlesTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('articles', function(Blueprint $table) {
+        Schema::table('articles', function (Blueprint $table) {
             $table->foreign('parent_id')->references('id')->on('articles');
         });
     }
