@@ -37,17 +37,6 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     abstract public function getHomeUrl(): string;
     abstract public function getProfileUrl(): string;
 
-    public function setPasswordAttribute(string $value)
-    {
-        if (is_null($value)) {
-            $this->attributes['password'] = null;
-
-            return;
-        }
-
-        $this->attributes['password'] = bcrypt($value);
-    }
-
     public function getNameAttribute(): string
     {
         return $this->first_name.' '.$this->last_name;

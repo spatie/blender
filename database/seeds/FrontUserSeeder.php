@@ -29,10 +29,12 @@ class FrontUserSeeder extends DatabaseSeeder
 
         collect($users)->each(function ($lastName, $firstName) {
 
+            $password = app()->environment('local') ? strtolower($firstName) : string()->random();
+
             factory(User::class)->create([
                 'email' => strtolower($firstName).'@spatie.be',
-                'password' => app()->environment('local') ? strtolower($firstName) : string()->random(),
-                'first_name' => "{$firstName} F.",
+                'password' => bcrypt($password),
+                'first_name' => "{$firstName}",
                 'last_name' => $lastName,
                 'status' => UserStatus::ACTIVE(),
             ]);

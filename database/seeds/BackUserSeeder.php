@@ -24,9 +24,11 @@ class BackUserSeeder extends DatabaseSeeder
 
         collect($users)->each(function ($lastName, $firstName) {
 
+            $password = app()->environment('local') ? strtolower($firstName) : string()->random();
+
             User::create([
                 'email' => strtolower($firstName) . '@spatie.be',
-                'password' => app()->environment('local') ? strtolower($firstName) : string()->random(),
+                'password' => bcrypt($password),
                 'first_name' => $firstName,
                 'last_name' => $lastName,
                 'role' => UserRole::ADMIN(),
