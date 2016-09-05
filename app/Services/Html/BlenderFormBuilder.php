@@ -67,8 +67,9 @@ class BlenderFormBuilder
             'data-editor-medialibrary-url' => action(
                 'Back\MediaLibraryApiController@index',
                 [
-                    'model_name' => get_class($this->model),
+                    'model_name' => ucfirst(get_class($this->model)),
                     'model_id' => $this->model->id,
+                    'redactor=true',
                 ]
             ),
         ];

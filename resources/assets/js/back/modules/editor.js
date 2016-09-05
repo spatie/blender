@@ -10,7 +10,7 @@ function init() {
 }
 
 function initializeEditor($textarea) {
-    const apiUrl = $textarea.data('redactor-medialibrary-url');
+    const apiUrl = $textarea.data('editor-medialibrary-url');
 
     function triggerChange() {
         $textarea.trigger('change'); //trigger change for sisyphus script

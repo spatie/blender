@@ -8,6 +8,7 @@ use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
+use Response;
 use Spatie\MediaLibrary\Media;
 use App\Models\Transformers\MediaTransformer;
 
@@ -17,7 +18,13 @@ class MediaLibraryApiController extends Controller
     {
         $model = $this->getModelFromRequest($request);
 
-        $media = collect($request->file('file'))
+        $files = $request->file('file');
+
+        if (! is_array($files)) {
+            $files = [$files];
+        }
+
+        $media = collect($files)
             ->map(function (UploadedFile $file) use ($model, $request) {
                 return $model
                     ->addMedia($file)
