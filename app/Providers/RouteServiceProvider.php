@@ -85,7 +85,7 @@ class RouteServiceProvider extends ServiceProvider
                     require base_path('routes/frontApi.php');
                 });
 
-                Route::group(['middleware' => ['demoMode', 'rememberLocale', 'web']], function () {
+                Route::group(['middleware' => ['web', 'demoMode', 'rememberLocale']], function () {
 
                     $multiLingual = count(config('app.locales')) > 1;
 
