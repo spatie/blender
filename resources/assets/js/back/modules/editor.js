@@ -1,6 +1,7 @@
 import '../redactor/redactor/redactor.js';
 import '../redactor/langs/nl.js';
 import '../redactor/plugins/imagemanager.js';
+import '../redactor/plugins/source.js';
 import '../redactor/plugins/video.js';
 
 function init() {
@@ -10,24 +11,47 @@ function init() {
 }
 
 function initializeEditor($textarea) {
-    const apiUrl = $textarea.data('editor-medialibrary-url');
+    const apiUrl = $textarea.data('redactor-medialibrary-url');
 
     function triggerChange() {
         $textarea.trigger('change'); //trigger change for sisyphus script
     }
 
+    function setUiIcons(redactor) {
+        // font awesome is used
+        redactor.button.set('image', '<i class="fa fa-image"></i>');
+        redactor.button.set('video', '<i class="fa fa-video-camera"></i>');
+        redactor.button.set('link', '<i class="fa fa-link"></i>');
+        redactor.button.set('lists', '<i class="fa fa-list"></i>');
+        redactor.button.set('format', '<i class="fa fa-paragraph"></i>');
+        redactor.button.set('html', '<i class="fa fa-code"></i>');
+    }
+
     $textarea.redactor({
-        pastePlainText: true,
+        buttonsHide: ['deleted'],
+        callbacks: {
+            focus: triggerChange,
+            change: triggerChange,
+            init: function () {
+                setUiIcons(this);
+            },
+        },
+        formatting: ['p', 'h1', 'h2', 'h3', 'blockquote'],
+        formattingAdd: {
+            'p-intro': {
+                title: 'Intro paragraph',
+                args: ['p', 'class', 'intro'],
+            },
+        },
         imageUpload: apiUrl,
-        imageManagerJson: apiUrl,
-        buttons: ['html', 'formatting', 'bold', 'italic', 'unorderedlist', 'orderedlist', 'outdent', 'indent', 'link', 'image'],
-        formatting: ['p', 'h2', 'h3', 'blockquote'],
+        imageCaption: false,
         lang: 'nl',
-        plugins: ['imagemanager', 'video'],
-        changeCallback: triggerChange,
-        codeKeydownCallback: triggerChange,
+        pastePlainText: true,
+        pasteImages: false,
+        pasteLinks: false,
+        plugins: ['video', 'source'],
     });
 }
 
 export default init;
-export { initializeEditor };
+export {initializeEditor};

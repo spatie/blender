@@ -3,6 +3,10 @@ All notable changes to Blender will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
+## [5.4.5] - 2016-09-14
+### Changed
+- Redactor II
+
 ## [5.4.4] - 2016-06-15
 ### Changed
 - Changed back menu layout

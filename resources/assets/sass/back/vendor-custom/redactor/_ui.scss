@@ -1,0 +1,462 @@
+// ------------------------------------------------------------------
+//
+// UI
+//
+// 01. Base
+// 02. Zindex
+// 03. Fullscreen
+// 04. Placeholder
+// 05. Editor
+// 06. Utility
+// 07. Accessibility
+// 08. Toolbar
+// 09. Air
+// 10. Toolbar & Air
+// 11. Tooltip
+// 12. Structure
+// 13. Upload
+// 14. Progress
+// 15. Animation
+//
+// ------------------------------------------------------------------
+
+
+// =Base
+// ------------------------------------------------------------------
+.redactor-box {
+	position: relative;
+	overflow: visible;
+}
+.redactor-editor,
+.redactor-box {
+	background: #fff;
+
+}
+
+
+// =Zindex
+// ------------------------------------------------------------------
+.redactor-editor,
+.redactor-box,
+.redactor-box textarea {
+	z-index: auto;
+}
+.redactor-link-tooltip {
+    z-index: 99;
+}
+.redactor-toolbar {
+	z-index: 100;
+}
+.redactor-box-fullscreen {
+	z-index: 1051;
+}
+.redactor-air,
+.redactor-dropdown {
+	z-index: 1052;
+}
+#redactor-modal-overlay,
+#redactor-modal-box,
+#redactor-modal {
+	z-index: 1053;
+}
+.redactor-body-fullscreen .redactor-link-tooltip {
+	z-index: 1099;
+}
+
+
+// =Fullscreen
+// ------------------------------------------------------------------
+.redactor-box-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+// =Placeholder
+// ------------------------------------------------------------------
+.redactor-placeholder:after {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	content: attr(placeholder);
+	display: block;
+	color: rgba(0, 0, 0, .3);
+	font-weight: normal !important;
+}
+
+
+// =Editor
+// ------------------------------------------------------------------
+.redactor-editor {
+	position: relative;
+	overflow: auto;
+	margin: 0;
+	padding: 24px 32px 12px 32px;
+	outline: none;
+	white-space: normal;
+
+    border: 2px solid color($gray, light);
+    border-top: 0;
+    box-shadow: 0 3px rgba($black, 0.075);
+    border-radius: 0 0 border-radius(s) border-radius(s);
+}
+.redactor-relative {
+	position: relative;
+}
+.redactor-in {
+	cursor: text;
+}
+.redactor-editor:focus,
+.redactor-in:focus {
+    outline: none;
+}
+
+
+// =Utility
+// ------------------------------------------------------------------
+.redactor-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+.redactor-script-tag {
+	display: none;
+}
+.redactor-editor img {
+	cursor: pointer;
+}
+
+
+// Accessibility
+// ------------------------------------------------------------------
+.redactor-voice-label {
+	display: none;
+}
+
+.redactor-voice-alert {
+	position: absolute;
+	left: -3000px;
+}
+
+
+// =Toolbar
+// ------------------------------------------------------------------
+.redactor-toolbar {
+
+	@include clearfix;
+
+	position: relative;
+	padding: 0 !important;
+
+    background: lighten(color($gray, lightest) , 1%);
+    border: 2px solid color($gray, light);
+    border-bottom: 0;
+    box-shadow: 0 3px rgba($black, 0.075);
+    border-radius: border-radius(s) border-radius(s) 0 0;
+}
+.redactor-toolbar li a {
+	color: color($gray, dark);
+
+	&:hover {
+		outline: none;
+		background-color: color($blue, lighter);
+	}
+	&:active,
+	&.redactor-act {
+		outline: none;
+		background-color: color($gray, lighter);
+	}
+}
+.redactor-toolbar li a.redactor-button-disabled {
+	opacity: 0.3;
+	&:hover {
+		color: #333;
+		outline: none;
+		background-color: transparent !important;
+		cursor: default;
+	}
+}
+.redactor-toolbar li a.redactor-button-focus {
+	color: #fff;
+	background: #000;
+}
+.redactor-toolbar.redactor-toolbar-external {
+	z-index: 999;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+
+// =Air
+// ------------------------------------------------------------------
+.redactor-air {
+
+	position: absolute;
+	background: rgba(0, 0, 0, .9);
+	padding: 0;
+	max-width: 600px;
+	min-width: 200px;
+	border-radius: 4px;
+	border: none;
+}
+.redactor-air li a {
+	color: rgba(255, 255, 255, .75);
+
+	&:hover {
+		outline: none;
+		background-color: rgba(31,120,216,1);
+		color: #fff;
+	}
+	&:active,
+	&.redactor-act {
+		outline: none;
+		background-color: #333;
+		color: rgba(255, 255, 255, .5);
+	}
+}
+.redactor-air li a.redactor-button-disabled {
+	opacity: .3;
+	&:hover {
+		color: rgba(255, 255, 255, .3);
+		outline: none;
+		background-color: transparent !important;
+		cursor: default;
+	}
+}
+.redactor-air li a.redactor-button-focus {
+	color: #333;
+	background: #eee;
+}
+
+
+// =Toolbar & Air
+// ------------------------------------------------------------------
+.redactor-air,
+.redactor-toolbar {
+	font-family: $ui-font-family;
+	margin: 0 !important;
+	list-style: none !important;
+	line-height: 1 !important;
+}
+.redactor-air li,
+.redactor-toolbar li {
+	vertical-align: top;
+	display: inline-block;
+	margin: 0 !important;
+	padding: 0 !important;
+	outline: none;
+	list-style: none !important;
+}
+.redactor-air li a,
+.redactor-toolbar li a {
+	font-size: 13px;
+	display: block;
+	text-align: center;
+	padding: 15px 14px 14px;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	line-height: 1;
+	text-decoration: none;
+	cursor: pointer;
+	zoom: 1;
+
+	&.re-bold {
+		font-weight: bold;
+	}
+	&.re-italic {
+		font-style: italic;
+	}
+	&.re-deleted {
+		text-decoration: line-through;
+	}
+	&.re-underline {
+		text-decoration: underline;
+	}
+}
+
+
+// =Tooltip
+// ------------------------------------------------------------------
+.redactor-link-tooltip {
+
+	font-family: $ui-font-family;
+	position: absolute;
+	padding: 10px;
+	line-height: 1;
+	display: inline-block;
+	background-color: #000;
+	color: #555 !important;
+	font-size: 12px;
+}
+.redactor-link-tooltip a {
+	font-size: 12px;
+	color: #ccc;
+	margin: 0 5px;
+	text-decoration: none;
+
+	&:hover {
+		color: #fff;
+	}
+}
+
+
+// =Structure
+// ------------------------------------------------------------------
+.redactor-structure {
+
+	h1, h2, h3, h4, h5, h6, div {
+		position: relative;
+		&:before {
+			width: 24px;
+			position: absolute;
+			font-size: 10px;
+			font-weight: normal;
+			opacity: .3;
+			left: -32px;
+			text-align: right;
+		}
+	}
+	h1:before  { content: "H1";  }
+	h2:before  { content: "H2";  }
+	h3:before  { content: "H3";  }
+	h4:before  { content: "H4";  }
+	h5:before  { content: "H5";  }
+	h6:before  { content: "H6";  }
+	div:before { content: "DIV"; }
+
+}
+
+
+// =Upload
+// ------------------------------------------------------------------
+#redactor-droparea {
+	position: relative;
+	overflow: hidden;
+	padding: 64px 24px;
+	border: 3px dashed rgba(0, 0, 0, .1);
+}
+#redactor-droparea.drag-hover {
+	background: rgba(200, 222, 250, 0.75);
+}
+#redactor-droparea.drag-drop {
+	background: rgba(250, 248, 200, 0.5);
+}
+#redactor-droparea-placeholder {
+	text-align: center;
+	font-size: 12px;
+	margin-left: 64px;
+	color: rgba(0, 0, 0, .7);
+}
+.redactor-image-dragover {
+	outline: 2px solid color($blue, light);
+}
+
+
+// =Progress
+// ------------------------------------------------------------------
+#redactor-progress {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 1000000;
+	height: 10px;
+}
+#redactor-progress span {
+
+	@include striped-redactor;
+	@include animation-redactor(progress-bar-stripes 2s linear infinite);
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: color($blue, dark);
+	background-size: 40px 40px;
+}
+
+@-webkit-keyframes progress-bar-stripes {
+	from { background-position: 40px 0; }
+	to { background-position: 0 0; }
+}
+@-o-keyframes progress-bar-stripes {
+	from { background-position: 40px 0; }
+	to { background-position: 0 0; }
+}
+@keyframes progress-bar-stripes {
+	from { background-position: 40px 0; }
+	to { background-position: 0 0; }
+}
+
+
+// =Animation
+// ------------------------------------------------------------------
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+// slideUp
+@include keyframe(redactorSlideUp) {
+	to {
+		padding-top: 0;
+		padding-bottom: 0;
+		height: 0;
+	}
+}
+.redactor-slideUp {
+	overflow: hidden;
+	-webkit-animation-name: redactorSlideUp;
+	animation-name: redactorSlideUp;
+}
+
+// slideDown
+@include keyframe(redactorSlideDown) {
+	from {
+		height: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.redactor-slideDown {
+	overflow: hidden;
+	-webkit-animation-name: redactorSlideDown;
+	animation-name: redactorSlideDown;
+}
+
+// fadeIn
+@include keyframe(redactorFadeIn) {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.redactor-fadeIn {
+	-webkit-animation-name: redactorFadeIn;
+	animation-name: redactorFadeIn;
+}
+
+
+// fadeOut
+@include keyframe(redactorFadeOut) {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.redactor-fadeOut {
+	-webkit-animation-name: redactorFadeOut;
+	animation-name: redactorFadeOut;
+}

@@ -12,20 +12,6 @@
     }
 }
 
-@mixin text-hyphens($value: true) {
-    @if $value == true {
-        -webkit-hyphens: auto;
-           -moz-hyphens: auto;
-            -ms-hyphens: auto;
-                hyphens: auto;
-    } @else {
-        -webkit-hyphens: none !important;
-           -moz-hyphens: none !important;
-            -ms-hyphens: none !important;
-                hyphens: none !important;
-    }
-}
-
 @mixin text-ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;

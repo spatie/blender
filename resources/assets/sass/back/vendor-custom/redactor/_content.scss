@@ -1,0 +1,343 @@
+.redactor-editor {
+
+	font-family: $content-font-family;
+	font-size: $font-size;
+	line-height: $base-line;
+	color: $body-color;
+
+	&[dir="rtl"] {
+		direction: rtl;
+		unicode-bidi: embed;
+
+		& ul,
+		& ol {
+			& li {
+				text-align: right;
+			}
+		}
+		ul,
+		ol,
+		ul ul,
+		ol ol,
+		ul ol,
+		ol ul {
+			margin: 0 $base-line 0 0;
+		}
+	}
+
+	@media (max-width: $breakpoint-small) {
+	    font-size: 16px;
+	}
+
+	// links
+	a {
+		color: $link-color;
+		&:focus,
+		&:hover {
+			color: $link-hover-color;
+		}
+	}
+
+	// headings
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: $headings-font-family;
+		font-weight: bold;
+		color: $headings-color;
+		text-rendering: optimizeLegibility;
+		margin: 0;
+		padding: 0;
+		margin-bottom: 16px;
+	}
+	h1 {
+		font-size: $font-size-h1;
+		line-height: 44px;
+	}
+	h2 {
+		font-size: $font-size-h2;
+		line-height: 36px;
+	}
+	h3 {
+		font-size: $font-size-h3;
+		line-height: 32px;
+	}
+	h4 {
+		font-size: $font-size-h4;
+		line-height: $base-line;
+	}
+	h5 {
+		font-size: $font-size-h5;
+		line-height: $base-line;
+	}
+	h6 {
+		font-size: $font-size-h6;
+		line-height: $base-line;
+		text-transform: uppercase;
+	}
+
+
+	// Line height and margin
+	p,
+	ul,
+	ol,
+	dl,
+	blockquote,
+	hr,
+	pre,
+	table,
+	figure,
+	address {
+		padding: 0;
+		margin: 0;
+	}
+	ul,
+	ol,
+	ul ul,
+	ol ol,
+	ul ol,
+	ol ul {
+		margin: 0 0 0 $base-line;
+	}
+	ul li,
+	ol li {
+		text-align: left;
+	}
+	ol ol li {
+		list-style-type: lower-alpha;
+	}
+	ol ol ol li {
+		list-style-type: lower-roman;
+	}
+	p,
+	ul,
+	ol,
+	dl,
+	blockquote,
+	hr,
+	pre,
+	table,
+	figure,
+	address {
+		margin-bottom: 16px;
+	}
+
+	// quote
+	blockquote {
+		position: relative;
+		font-style: italic;
+		color: rgba(0, 0, 0, .6);
+		& cite {
+			font-size: 80%;
+		}
+	}
+
+	@media (min-width: $breakpoint-small) {
+
+		blockquote {
+			padding-left: $base-line;
+			border-left: 1px solid rgba(0, 0, 0, .1);
+		}
+
+	}
+
+
+	// address
+	address {
+		font-style: normal;
+	}
+
+	// definition list
+	dl dt {
+		font-weight: bold;
+	}
+	dd {
+		margin-left: $base-line;
+	}
+
+	// text-level
+	cite {
+		color: rgba(0, 0, 0, .5);
+		font-style: italic;
+	}
+	s,
+	del {
+		text-decoration: line-through;
+	}
+	abbr[title],
+	dfn[title] {
+		border-bottom: 1px dotted #000;
+		cursor: help;
+	}
+	strong,
+	b {
+		font-weight: bold;
+	}
+	em,
+	i {
+		font-style: italic;
+	}
+	sub,
+	sup {
+		font-size: 10px;
+		line-height: 0;
+		position: relative;
+		margin-left: .2rem;
+	}
+	sup {
+		top: -.4rem;
+	}
+	sub {
+		bottom: -.2rem;
+	}
+	figcaption {
+		margin: .3rem 0;
+		font-size: 11px;
+		font-style: italic;
+		text-align: left;
+	}
+	ins,
+	u {
+		text-decoration: underline;
+	}
+	mark {
+		background-color: $mark-background-color;
+		color: #000;
+		text-decoration: none;
+	}
+
+	// сode
+	pre,
+	code,
+	kbd,
+	samp,
+	var,
+	output {
+		font-size: 90%;
+		font-style: normal;
+		font-family: $monospace-font-family;
+	}
+	pre {
+		margin-top: 16px;
+		font-size: 90%;
+		line-height: $base-line;
+		color: rgba(0, 0, 0, .75);
+		overflow: auto;
+		background: rgba(0, 0, 0, .03);
+		padding: 24px;
+		word-wrap: normal;
+	}
+	mark,
+	code,
+	samp,
+	kbd {
+		padding: .2rem .4rem;
+		display: inline-block;
+		line-height: 1;
+		border-radius: 4px;
+	}
+	code {
+		background: $code-background-color;
+	}
+	pre code {
+		font-size: 100%;
+		border: none;
+		padding: 0;
+		background: none;
+		line-height: $base-line;
+	}
+	var {
+		color: rgba(0, 0, 0, .5);
+	}
+	samp {
+		background: #46a9fc;
+		color: rgba(255, 255, 255, .9);
+	}
+	kbd {
+		background: #000;
+		color: rgba(255, 255, 255, .85);
+		white-space: nowrap;
+	}
+
+
+	// Normalize horizontal line
+	hr {
+		display: block;
+		box-sizing: content-box;
+		height: 1px;
+		border: 0;
+		border-top: 1px solid rgba(0, 0, 0, .1);
+	}
+
+	// Responsive media
+	img,
+	video,
+	audio,
+	embed,
+	object {
+		max-width: 100%;
+	}
+	img,
+	video,
+	embed,
+	object {
+		height: auto;
+	}
+	embed,
+	object {
+	    height: 100%;
+	}
+	img {
+		vertical-align: middle;
+		-ms-interpolation-mode: bicubic;
+	}
+
+	// tables
+	table {
+		border-collapse: collapse;
+		max-width: 100%;
+		width: 100%;
+		empty-cells: show;
+
+		caption {
+			text-transform: uppercase;
+			padding: 0;
+			color: rgba(0, 0, 0, .5);
+			font-size: 11px;
+		}
+
+		th,
+		td {
+			border: 1px solid #eee;
+			padding: 16px;
+			padding-bottom: 15px;
+		}
+
+		tfoot th,
+		tfoot td {
+			color: rgba(0, 0, 0, .5);
+		}
+	}
+
+
+	// Responsive embedded objects
+	& .video-container {
+		height: 0;
+		padding-bottom: 56.25%; // ratio 16:9
+		position: relative;
+		margin-bottom: 16px;
+		& iframe,
+		& object,
+		& embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100% !important;
+			height: 100% !important;
+		}
+	}
+
+}

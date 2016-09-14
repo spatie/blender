@@ -31,11 +31,11 @@
 }
 
 .h-text-hyphens {
-  @include text-hyphens(true);
+    hypens: auto;
 }
 
 .h-text-no-hyphens {
-  @include text-hyphens(false);
+    hypens: none;
 }
 
 .h-text-no-break {

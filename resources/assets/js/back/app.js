@@ -1,7 +1,7 @@
 import 'babel-polyfill';
 import 'blender.js/modules/ajax.csrf';
 import 'blender.js/modules/interface.confirm';
-//import 'blender.js/modules/form.autosave';
+import 'blender.js/modules/form.autosave';
 import 'blender.js/modules/form.input.datetimepicker';
 import 'blender.js/modules/form.select';
 import 'blender.js/modules/form.textarea.autosize';
