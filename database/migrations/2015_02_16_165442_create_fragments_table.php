@@ -7,8 +7,7 @@ class CreateFragmentsTable extends Migration
 {
     public function up()
     {
-        Schema::create('fragments', function(Blueprint $table)
-        {
+        Schema::create('fragments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->index();
             $table->text('text');
