@@ -12,10 +12,10 @@
     }
 
     a {
-      @include text-underline(color($link));
+      @include text-underline(link-color());
 
       &:hover {
-        @include text-underline(color($link, hover));
+        @include text-underline(link-color(hover));
       }
     }
   }
