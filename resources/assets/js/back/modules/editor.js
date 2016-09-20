@@ -40,7 +40,7 @@ function initializeEditor($textarea) {
         formattingAdd: {
             'p-intro': {
                 title: 'Intro paragraph',
-                args: ['p', 'class', 'intro'],
+                args: ['p', 'class', 'p--intro'],
             },
         },
         imageUpload: apiUrl,
