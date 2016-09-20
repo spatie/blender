@@ -18,7 +18,6 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\ClearBeanstalkdQueue::class,
         Commands\GenerateModule::class,
-        Commands\PerformScheduledBackup::class,
         Commands\SendSlackMessage::class,
         CheckLinksCommand::class,
         ImportFragments::class,
@@ -32,7 +31,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('backup:scheduled')->dailyAt('03:00');
+        $schedule->command('backup:run')->dailyAt('03:00');
+        $schedule->command('backup:clean')->dailyAt('04:00');
         $schedule->command('analytics:prefetch')->dailyAt('06:00');
         $schedule->command('link-checker:run')->monthly();
         $schedule->command('clean:models')->daily();
