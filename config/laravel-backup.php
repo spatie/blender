@@ -83,7 +83,7 @@ return [
         'notifiable' => \Spatie\Backup\Notifications\Notifiable::class,
 
         'mail' => [
-            'to' => 'your@email.com',
+            'to' => 'freek@spatie.be',
         ],
 
         'slack' => [
@@ -101,7 +101,7 @@ return [
             'name' => env('APP_URL'),
             'disks' => ['local'],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
-            'storageUsedMayNotBeHigherThanMegabytes' => 5000,
+            'storageUsedMayNotBeHigherThanMegabytes' => 1000,
         ],
 
         /*
