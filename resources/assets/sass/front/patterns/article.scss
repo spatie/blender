@@ -1,26 +1,27 @@
 .article {
-  padding: gutter(s) 0;
+    padding: gutter(s) 0;
 
-  &.has-html {
-    h1 {
-      margin-bottom: .5em;
+    &.has-html {
+        h1 {
+            margin-bottom: .5em;
+        }
+
+        p {
+            font-size: font-size(m);
+
+            margin-bottom: 1em;
+        }
+
+        a {
+            @include text-underline(link-color());
+
+            &:hover {
+                @include text-underline(link-color(hover));
+            }
+        }
     }
-
-    p {
-      font-size: font-size(m);
-      margin-bottom: 1em;
-    }
-
-    a {
-      @include text-underline(color($link));
-
-      &:hover {
-        @include text-underline(color($link, hover));
-      }
-    }
-  }
 }
 
 .article__intro {
-  font-size: font-size(m);
+    font-size: font-size(m);
 }

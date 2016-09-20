@@ -3,8 +3,8 @@
 @section('title', fragment('auth.titleChangePassword'))
 
 @section('mainTitle')
-    <h1 class="+auth_title -small">
-        {!! Html::avatar($user, '-large +auth_gravatar') !!}<br>
+    <h1 class="v-auth__title -small">
+        {!! Html::avatar($user, '-large v-auth__gravatar') !!}<br>
         {{ fragment('auth.titleChangePassword') }}
     </h1>
 @endsection

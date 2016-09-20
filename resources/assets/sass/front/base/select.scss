@@ -1,59 +1,69 @@
 select,
 .select {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-      -ms-appearance: none;
-          appearance: none;
-  background: white();
-  border: input(border-color) input(border-width) solid;
-  border-radius: input(border-radius);
-  font-size: 1em;
-  height: input(height);
-  padding: 0 input(height-small) 0 input(padding);
-  text-overflow: '';
+    font-size: 1em;
 
-  &::-ms-expand {
-    display: none;
-  }
+    height: input(height);
+    padding: 0 input(height-small) 0 input(padding);
 
-  &:-moz-focusring {
-    color: transparent;
-    text-shadow: 0 0 0 #000;
-  }
+    background: white();
+    border: input(border-color) input(border-width) solid;
+    border-radius: input(border-radius);
 
-  &:focus {
-    border-color: input(border-color-focus);
-    outline: none !important;
-  }
+    text-overflow: '';
+
+    -webkit-appearance: none;
+       -moz-appearance: none;
+        -ms-appearance: none;
+            appearance: none;
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+    }
+
+    &:focus {
+        border-color: input(border-color-focus);
+        outline: none !important;
+    }
 }
 
 .select__wrapper {
-  background: transparent;
-  border-radius: input(border-radius);
-  box-shadow: input(box-shadow);
-  display: inline-block;
+    display: inline-block;
 
-  &:before {
-    @include font-icons;
+    background: transparent;
+    border-radius: input(border-radius);
+    box-shadow: input(box-shadow);
 
-    background: white();
-    bottom: input(border-width);
-    color: input(border-color);
-    content: '\e81d';
-    height: auto;
-    line-height: input(height);
-    pointer-events: none;
-    position: absolute;
-    right: input(border-width);
-    text-align: center;
-    top: input(border-width);
-    width: input(height-small);
-    z-index: 1;
-  }
-
-  &:hover {
     &:before {
-      color: input(border-color-focus);
+        @include font-icons;
+
+        content: '\e81d';
+
+        line-height: input(height);
+
+        position: absolute;
+        top: input(border-width);
+        right: input(border-width);
+        bottom: input(border-width);
+        width: input(height-small);
+        height: auto;
+        z-index: 1;
+
+        color: input(border-color);
+        background: white();
+
+        text-align: center;
+
+        pointer-events: none;
     }
-  }
+
+    &:hover {
+        &:before {
+            color: input(border-color-focus);
+        }
+    }
 }

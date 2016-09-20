@@ -1,0 +1,37 @@
+.modal {
+    display: none;
+    width: 400px;
+    padding: 20px;
+
+    background: #fff;
+    border: 4px solid #afb0ad;
+    border-radius: 3px;
+    box-shadow: 0 2px 0 #505050;
+}
+
+.modal a.close-modal {
+    display: block;
+    position: absolute;
+    top: -12.5px;
+    right: -12.5px;
+    width: 30px;
+    height: 30px;
+
+    background: url(close.png) no-repeat 0 0;
+
+    text-indent: -9999px;
+}
+
+.modal-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 64px;
+    height: 64px;
+    margin-top: -32px;
+    margin-right: -32px;
+
+    background: url(spinner.gif) #111 no-repeat center center;
+    border-radius: 3px;
+}

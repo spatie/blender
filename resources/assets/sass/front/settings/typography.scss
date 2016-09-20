@@ -25,59 +25,59 @@ $line-heights: (
 );
 
 @mixin font-icons {
-  font-family: 'fontello';
+    font-family: 'fontello';
 }
 
 @mixin font-sans-light {
-  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
-  font-style: normal;
-  font-weight: 200;
+    font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+    font-style: normal;
+    font-weight: 200;
 }
 
 @mixin font-sans {
-  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
-  font-style: normal;
-  font-weight: 300;
+    font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 @mixin font-sans-medium {
-  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
-  font-style: normal;
-  font-weight: 600;
+    font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+    font-style: normal;
+    font-weight: 600;
 }
 
 @mixin font-sans-bold {
-  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
-  font-style: normal;
-  font-weight: 700;
+    font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+    font-style: normal;
+    font-weight: 700;
 }
 
 @mixin font-sans-black {
-  font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
-  font-style: normal;
-  font-weight: 900;
+    font-family: 'Source Sans Pro', -apple-system, 'Segoe UI', sans-serif;
+    font-style: normal;
+    font-weight: 900;
 }
 
 @mixin font-serif {
-  font-family: serif;
-  font-style: normal;
-  font-weight: 400;
+    font-family: serif;
+    font-style: normal;
+    font-weight: 400;
 }
 
 @mixin font-serif-bold {
-  font-family: serif;
-  font-style: normal;
-  font-weight: 700;
+    font-family: serif;
+    font-style: normal;
+    font-weight: 700;
 }
 
 @mixin font-fixed {
-  font-family: Consolas, 'courier new', courier, monospace;
-  font-style: italic;
-  font-weight: 400;
+    font-family: Consolas, 'courier new', courier, monospace;
+    font-style: italic;
+    font-weight: 400;
 }
 
 @mixin font-fixed-bold {
-  font-family: Consolas, 'courier new', courier, monospace;
-  font-style: italic;
-  font-weight: 700;
+    font-family: Consolas, 'courier new', courier, monospace;
+    font-style: italic;
+    font-weight: 700;
 }

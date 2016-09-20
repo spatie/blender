@@ -6,11 +6,12 @@
 
 .fancybox-title-float-wrap {
     .child {
-        background: rgba($white, .95);
-        border-radius: 0;
-        color: color($gray, dark);
         font-family: font-family(sans);
         font-weight: font-weight(normal);
+
+        color: color($gray, dark);
+        background: rgba($white, .95);
+        border-radius: 0;
         text-shadow: none;
     }
 }
@@ -23,19 +24,20 @@
 .fancybox-nav span {
     @include circle(36px);
 
-    background-color: $white;
-    border: none;
-    color: $black;
     font-family: font-family(icons);
     font-size: 21px;
+
+    color: $black;
+    background-color: $white;
+    border: none;
 }
 
 .fancybox-close {
+    font-size: 18px;
+
     @include mq(s) {
         display: none;
     }
-
-    font-size: 18px;
 
     &:after {
         content: '\e807'; //cancel
@@ -44,9 +46,9 @@
 
 .fancybox-nav {
     span {
-        margin-top: -18px;
         position: absolute;
         top: 50%;
+        margin-top: -18px;
 
         .touchevents & {
             visibility: visible;

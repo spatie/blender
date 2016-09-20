@@ -1,14 +1,15 @@
 html {
-  @include mq-below(l) {
-    font-size: 14px;
-  }
-  @include mq-below(m) {
-    font-size: 12px;
-  }
-  @include mq-below(s) {
-    font-size: 12px;
-  }
+    font-size: 16px;
 
-  font-size: 16px;
-  height: 100%;
+    height: 100%;
+
+    @include mq-below(l) {
+        font-size: 14px;
+    }
+    @include mq-below(m) {
+        font-size: 12px;
+    }
+    @include mq-below(s) {
+        font-size: 12px;
+    }
 }

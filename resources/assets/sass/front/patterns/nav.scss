@@ -5,10 +5,12 @@
 .nav__list {
     @include list-horizontal;
 
-    li {
-        padding: .5em 1em;
-        border-radius: 3px;
-        background: white();
+    a {
+        padding: .65em 1em;
+        vertical-align: middle;
+
         color: blue(darker);
+        background: white();
+        border-radius: 3px;
     }
 }

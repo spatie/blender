@@ -14,7 +14,7 @@
                 {!! Html::info(fragment('back.formResponses.info', ['recipients' => implode(', ', (new Illuminate\Support\Collection(config('mail.questionFormRecipients')))->toArray() )]))  !!}
             @endif
 
-            <div class="form_group -buttons">
+            <div class="form__group -buttons">
                 {!! Form::openButton([
                     'action' => 'Back\FormResponseController@download',
                     'method' => 'post',

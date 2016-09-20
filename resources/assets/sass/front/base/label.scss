@@ -17,6 +17,6 @@ label,
     @extend .label;
 
     &:after {
-        content: '*'
+        content: '*';
     }
 }

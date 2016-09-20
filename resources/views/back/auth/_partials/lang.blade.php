@@ -1,3 +1,3 @@
-<nav class="+auth_lang">
+<nav class="v-auth__lang">
     {!! Navigation::getBackLanguageMenu() !!}
 </nav>

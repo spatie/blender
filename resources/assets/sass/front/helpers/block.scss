@@ -1,19 +1,19 @@
 .h-block-reset {
-  @include block-reset;
+    @include block-reset;
 }
 
 .h-block-cover {
-  @include block-cover;
+    @include block-cover;
 }
 
 .h-block-clearfix {
-  @include block-clearfix;
+    @include block-clearfix;
 }
 
 .h-block {
-  display: block;
+    display: block;
 }
 
 .h-block-inline {
-  display: inline-block;
+    display: inline-block;
 }

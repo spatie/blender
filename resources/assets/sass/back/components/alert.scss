@@ -1,0 +1,78 @@
+.alerts {
+    margin: 2em 0;
+}
+
+.alerts--fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    z-index: z-index(fixed);
+
+    opacity: .85;
+}
+
+
+.alert {
+    padding: 1em;
+    z-index: z-index(above);
+
+    border-left: 5px solid;
+    border-radius: border-radius(s);
+
+    //variations
+    &.-small {
+        font-size: font-size(s);
+
+        padding: .75em;
+    }
+
+    &.-inline {
+        display: inline-block;
+    }
+
+    &.-invers {
+        color: $white;
+        background: rgba(color($blue, lightest) , .1);
+        border-color: $white;
+    }
+
+    &.-warning {
+        color: color($orange);
+        background: color($orange,lightest);
+        border-color: color($orange);
+    }
+
+    &.-danger,
+    &.-error {
+        color: color($red,dark);
+        background: color($red, lightest);
+        border-color: color($red,dark);
+    }
+
+    &.-success {
+        color: color($green, dark);
+        background: color($green, lightest);
+        border-color: color($green, dark);
+    }
+
+    &.-info {
+        color: color($blue);
+        background: color($blue, lightest);
+        border-color: color($blue);
+    }
+
+    .form & {
+        font-size: font-size(s);
+
+        margin: .5em 0;
+        padding: .65em 1em;
+    }
+
+    .alerts--fixed & {
+        border-left-width: 0;
+        border-radius: 0;
+
+        text-align: center;
+    }
+}

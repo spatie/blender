@@ -1,0 +1,23 @@
+.avatar {
+    @include circle(2.5rem, inline-block);
+
+    margin-right: .5em;
+    overflow: hidden;
+    vertical-align: middle;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: solid 2px color($gray, lighter);
+
+    //variations
+    &.-small {
+        @include circle(1.5rem, inline-block);
+
+        border-width: 1px;
+    }
+
+    &.-large {
+        @include circle(5rem, inline-block);
+    }
+}

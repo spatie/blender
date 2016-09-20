@@ -1,13 +1,17 @@
 .cookie-consent {
-    background: color($yellow, lightest);
     font-size: font-size(s);
+
     padding: 1em;
+
+    background: color($yellow, lightest);
+
     text-align: center;
 }
 
 .cookie-consent__message {
-    color: color($yellow, dark);
     display: inline-block;
+
+    color: color($yellow, dark);
 
     p {
         margin: 0 ;
@@ -15,14 +19,16 @@
 }
 
 .cookie-consent__agree {
+    font-weight: bold;
+
+    margin: 0 1em;
+    padding: .5em 1em;
+
+    color: color($yellow, lightest);
     background-color: color($yellow, dark);
     border: 0;
     border-radius: border-radius(3px);
     box-shadow: 0 2px 5px color($yellow, dark, .15);
-    color: color($yellow, lightest);
-    font-weight: bold;
-    margin: 0 1em;
-    padding: .5em 1em;
 
     &:hover {
         background-color: color($yellow, darker);

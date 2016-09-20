@@ -1,0 +1,35 @@
+$susy: (
+        flow: ltr,
+        math: fluid,
+        output: float,
+        gutter-position: after,
+        container: 75em,
+        container-position: center,
+        columns: 12,
+        gutters: .25,
+        column-width: false,
+        global-box-sizing: border-box,
+        last-flow: to,
+);
+$breakpoints: (
+        s: (max-width: 640px),
+        m: (max-width: 960px),
+        l: (max-width: 1280px),
+        s-v: (max-height: 640px),
+        m-v: (max-height: 960px),
+        l-v: (max-height: 1280px),
+);
+$z-indexes: (
+        'modal': 5000,
+        'toolbar': 2000,
+        'fixed': 500,
+        'above': 10,
+        'default': 1,
+        'below': -1,
+);
+$border-radius: (
+        s: 3px,
+        m: 7px,
+        l: 15px,
+        xl: 21px,
+);

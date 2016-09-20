@@ -1,0 +1,38 @@
+// MIXINS
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+@mixin transition-redactor($transition: all linear .2s) {
+	-moz-transition: $transition;
+	transition: $transition;
+}
+@mixin box-sizing-redactor($box-model) {
+	-webkit-box-sizing: $box-model;
+	-moz-box-sizing: $box-model;
+	box-sizing: $box-model;
+}
+@mixin striped-redactor($color: rgba(255, 255, 255, .2), $angle: 45deg) {
+	background-image: -webkit-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+	background-image: -o-linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+	background-image: linear-gradient($angle, $color 25%, transparent 25%, transparent 50%, $color 50%, $color 75%, transparent 75%, transparent);
+}
+@mixin animation-redactor($animation) {
+	-webkit-animation: $animation;
+	-o-animation: $animation;
+	animation: $animation;
+}
+// keyframe
+@mixin keyframe($animation) {
+	@-webkit-keyframes #{$animation} {
+		@content;
+	}
+
+	@keyframes #{$animation} {
+		@content;
+	}
+}

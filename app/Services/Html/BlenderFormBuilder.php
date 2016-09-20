@@ -281,7 +281,7 @@ class BlenderFormBuilder
     public function submit(): string
     {
         return el(
-            'div.form_group.-buttons',
+            'div.form__group.-buttons',
             Form::submit(fragment("back.{$this->module}.save"), ['class' => 'button -default'])
         );
     }
@@ -296,7 +296,7 @@ class BlenderFormBuilder
 
     protected function group(array $elements): string
     {
-        return el('div.form_group', $elements);
+        return el('div.form__group', $elements);
     }
 
     protected function parts(array $elements): string

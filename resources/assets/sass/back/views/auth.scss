@@ -1,0 +1,119 @@
+.v-auth {
+    @include background-image-tinted('/images/auth-background.jpg' , rgba($white, .9), top center);
+
+    min-height: 100vh;
+
+    color: $text-color;
+}
+
+.v-auth__card {
+    @include position-center;
+
+    width: 50vw;
+
+    @include mq(s) {
+        position: relative;
+        top: 2em;
+        left: 5vw;
+        width: 90vw;
+
+        transform: none;
+    }
+}
+
+.v-auth__gravatar {
+    position: absolute;
+    top: -2em;
+    left: 50%;
+
+    opacity: .25;
+
+    transform: translateX(-50%);
+
+    filter: sepia(1) hue-rotate(170deg) saturate(.5);
+}
+
+.v-auth__logo {
+    top: -.1em;
+    width: auto;
+    height: 2em;
+    vertical-align: middle;
+}
+
+.v-auth__title {
+    font-size: font-size(m);
+    font-weight: font-weight(extrabold);
+
+    max-width: 10em;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    margin-left: auto;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    @include mq(s) {
+        font-size: 8vw;
+    }
+
+    &.-small {
+        max-width: none;
+    }
+}
+
+.v-auth__form {
+    max-width: 32em;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 3em;
+
+    background-color: rgba($white, .5);
+    border-radius: border-radius(s);
+    box-shadow: 0 0 20px rgba(0,0,0,.03);
+
+    [disabled] {
+        color: $white;
+    }
+}
+
+
+.v-auth__lang {
+    font-size: font-size(xs);
+
+    position: fixed;
+    top: 1em;
+    right: 1em;
+    z-index: z-index(toolbar);
+
+    ul {
+        @include ul_horizontal;
+    }
+
+    a {
+        padding: 0 .25em;
+
+        border-bottom: none;
+
+        text-transform: uppercase;
+    }
+
+    .-active,
+    .active {
+        font-weight: font-weight(bold);
+    }
+}
+
+.v-auth__credit {
+    font-size: font-size(xs);
+    font-weight: font-weight(medium);
+
+    position: fixed;
+    bottom: 3px;
+    left: 3px;
+    z-index: z-index(above);
+
+    opacity: .15;
+
+    transform: rotate(-90deg);
+    transform-origin: 0 0 ;
+}

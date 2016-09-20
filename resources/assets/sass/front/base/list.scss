@@ -1,25 +1,27 @@
 ol,
 ul {
-  line-height: line-height();
-  margin: 0;
-  padding-left: 1.5em;
+    line-height: line-height();
 
-  & ul,
-  & ol {
-    margin-bottom: .5em;
-  }
+    margin: 0;
+    padding-left: 1.5em;
+
+    & ul,
+    & ol {
+        margin-bottom: .5em;
+    }
 }
 
 li {
-  line-height: line-height();
+    line-height: line-height();
 }
 
 dt {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 dd {
-  border-bottom: dotted 1px gray(darkest);
-  margin-bottom: .75em;
-  padding-bottom: .75em;
+    margin-bottom: .75em;
+    padding-bottom: .75em;
+
+    border-bottom: dotted 1px gray(darkest);
 }

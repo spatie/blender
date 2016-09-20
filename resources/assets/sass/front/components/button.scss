@@ -1,67 +1,70 @@
 a.button {
-  display: inline-block;
-  line-height: input(height);
+    line-height: input(height);
+
+    display: inline-block;
 }
 
 button,
 .button {
-  @include font-sans-medium;
+    @include font-sans-medium;
 
-  background-color: gray(light);
-  border-color: transparent;
-  border-radius: input(border-radius);
-  border-style: solid;
-  border-width: input(border-width) !important;
-  color: white();
-  min-height: input(height) !important;
-  padding: 0 1em;
-  transition: border-color .3s linear;
-  vertical-align: middle;
+    min-height: input(height) !important;
+    padding: 0 1em;
+    vertical-align: middle;
 
-  &:hover {
-    border-color: gray(dark, .25);
     color: white();
-  }
+    background-color: gray(light);
+    border-color: transparent;
+    border-style: solid;
+    border-width: input(border-width) !important;
+    border-radius: input(border-radius);
 
-  &:focus {
-    border-color: blue(light) !important;
-    outline: 0;
-  }
-
-  &:active {
-    transform: translateY(1px);
-  }
-
-  &.-blue {
-    background-color: blue();
+    transition: border-color .3s linear;
 
     &:hover {
-      border-color: blue(darker, .25);
+        color: white();
+        border-color: gray(dark, .25);
     }
-  }
 
-  &.-white {
-    background-color: blue();
-    color: white();
-
-    &:hover {
-      border-color: white();
+    &:focus {
+        border-color: blue(light) !important;
+        outline: 0;
     }
-  }
 
-  &.-blue-dark {
-    background-color: blue(darkest, .5);
-
-    &:hover {
-      border-color: blue(darkest);
+    &:active {
+        transform: translateY(1px);
     }
-  }
 
-  &.-rounded {
-    border-radius: input(height);
-  }
+    &.-blue {
+        background-color: blue();
 
-  &.-stretch {
-    width: 100%;
-  }
+        &:hover {
+            border-color: blue(darker, .25);
+        }
+    }
+
+    &.-white {
+        color: white();
+        background-color: blue();
+
+        &:hover {
+            border-color: white();
+        }
+    }
+
+    &.-blue-dark {
+        background-color: blue(darkest, .5);
+
+        &:hover {
+            border-color: blue(darkest);
+        }
+    }
+
+    &.-rounded {
+        border-radius: input(height);
+    }
+
+    &.-stretch {
+        width: 100%;
+    }
 }

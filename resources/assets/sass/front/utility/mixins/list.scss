@@ -1,7 +1,8 @@
 @mixin list-horizontal {
-    list-style: none;
     margin: 0;
     padding-left: 0;
+
+    list-style: none;
 
     li {
         display: inline-block;
@@ -9,7 +10,8 @@
 }
 
 @mixin list-clean {
-    list-style: none;
     margin: 0;
     padding-left: 0;
+
+    list-style: none;
 }

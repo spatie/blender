@@ -2,7 +2,7 @@
 
 <div class="chart" data-chart>
     <canvas id="daily-visitors" width=1000 height=250></canvas>
-    <div class="chart_legend" id="daily-visitors-legend">
+    <div class="chart__legend" id="daily-visitors-legend">
     </div>
 </div>
 

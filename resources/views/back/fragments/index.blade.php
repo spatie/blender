@@ -24,7 +24,7 @@
                 </tbody>
             </table>
 
-            <div class="form_group -buttons">
+            <div class="form__group -buttons">
                 {!! Form::openButton([
                     'action' => 'Back\FragmentController@download',
                     'method' => 'post'

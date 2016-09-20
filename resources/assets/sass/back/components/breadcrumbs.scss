@@ -1,0 +1,34 @@
+.breadcrumbs {
+    min-height: 1.5em;
+}
+
+.breadcrumb {
+    @include ul-horizontal;
+
+    font-size: font-size(xs);
+
+    margin-bottom: 2em;
+
+    color: color($gray);
+
+    list-style: none;
+
+    li {
+        padding-right: .5em;
+
+        &:before {
+            content: '\f105'; //angle-right
+
+            font-family: font-family(icons);
+
+            display: inline-block;
+            padding-right: .5em;
+
+            opacity: .5;
+        }
+
+        &:first-child:before {
+            display: none;
+        }
+    }
+}

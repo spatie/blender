@@ -1,0 +1,110 @@
+// usefull aliases: parent has minimum height of all floating children
+.grid__row,
+.clearfix {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: '';
+
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+//default grid classes
+.grid {
+    @include container();
+
+    padding: 0 4vw;
+
+
+    &.-full-page {
+        width: 100%;
+        min-height: 100vh;
+    }
+}
+
+.grid__col {
+    &.-width-1\/6 {
+        @include span(2);
+
+        @include mq(s) {
+            @include block-reset;
+        }
+    }
+    &.-width-5\/6 {
+        @include span(10);
+
+        @include mq(s) {
+            @include block-reset;
+        }
+    }
+
+    &.-width-1\/4 {
+        @include span(3);
+
+        @include mq(s) {
+            @include block-reset;
+        }
+    }
+
+    &.-width-3\/4 {
+        @include span(9);
+
+        @include mq(m) {
+            @include block-reset;
+        }
+    }
+
+    &.-width-1\/3 {
+        @include span(4);
+
+        @include mq(s) {
+            @include block-reset;
+        }
+    }
+
+    &.-width-2\/3 {
+        @include span(8);
+
+        @include mq(s) {
+            @include block-reset;
+        }
+    }
+
+    &.-width-2\/3-centered {
+        @include push(2);
+        @include span(8);
+
+        @include mq(s) {
+            @include block-reset;
+        }
+    }
+
+    &.-width-1\/2 {
+        @include span(6);
+
+        @include mq(s) {
+            @include span(12);
+        }
+        @include mq(s) {
+            @include block-reset;
+        }
+    }
+
+
+    &.-last {
+        @include last;
+    }
+
+    &.-push-1\/4 {
+        @include push(3);
+
+        @include mq(m) {
+            @include push(0);
+        }
+    }
+}

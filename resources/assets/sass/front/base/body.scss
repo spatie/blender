@@ -1,7 +1,8 @@
 body {
-  @include text-antialiasing(subpixel);
-  @include font-sans;
+    @include text-antialiasing(subpixel);
+    @include font-sans;
 
-  color: text-color;
-  line-height: line-height();
+    line-height: line-height();
+
+    color: text-color;
 }
