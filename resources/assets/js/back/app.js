@@ -34,7 +34,7 @@ if ($('[data-chart]').size()) {
 
 // Uncomment if redactor files are present
 
-if ($('[data-editor]').size()) {
-    require.ensure([], () => { require('./modules/editor').default(); }, 'back.editor');
-}
+//if ($('[data-editor]').size()) {
+//    require.ensure([], () => { require('./modules/editor').default(); }, 'back.editor');
+//}
 
