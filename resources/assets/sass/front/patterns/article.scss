@@ -7,9 +7,13 @@
         }
 
         p {
-            font-size: font-size(m);
+            font-size: font-size();
 
             margin-bottom: 1em;
+        }
+
+        .p--intro {
+            font-size: font-size(m);
         }
 
         a {
@@ -20,8 +24,4 @@
             }
         }
     }
-}
-
-.article__intro {
-    font-size: font-size(m);
 }
