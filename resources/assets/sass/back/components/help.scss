@@ -1,0 +1,7 @@
+.help {
+    color: color($gray);
+
+    &.-small {
+        font-size: font-size(s);
+    }
+}

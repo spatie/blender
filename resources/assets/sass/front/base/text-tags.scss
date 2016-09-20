@@ -1,77 +1,81 @@
 strong,
 b {
-  @include font-sans-medium;
+    @include font-sans-medium;
 
-  em,
-  i,
-  i &,
-  em & {
-    font-style: italic;
-  }
+    em,
+    i,
+    i &,
+    em & {
+        font-style: italic;
+    }
 }
 
 
 em,
 i {
-  font-style: italic;
+    font-style: italic;
 }
 
 /* less used */
 
 abbr,
 dfn {
-  &[title] {
-    border-bottom: 1px dotted gray();
-    cursor: help;
-  }
+    &[title] {
+        border-bottom: 1px dotted gray();
+
+        cursor: help;
+    }
 }
 
 address {
-  display: inline-block;
-  margin-bottom: 1.5em;
-  padding: 1em;
+    display: inline-block;
+    margin-bottom: 1.5em;
+    padding: 1em;
 }
 
 code,
 kbd,
 samp,
 var {
-  @include font-fixed;
+    @include font-fixed;
 
-  background: gray(darkest);
-  border-radius: border-radius(s);
-  color: white();
-  display: inline-block;
-  padding: .05em .5em;
+    display: inline-block;
+    padding: .05em .5em;
+
+    color: white();
+    background: gray(darkest);
+    border-radius: border-radius(s);
 }
 
 del {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 ins,
 mark {
-  @include block-tag(yellow(darkest) , yellow(lightest));
+    @include block-tag(yellow(darkest) , yellow(lightest));
 
-  text-decoration: none;
+    text-decoration: none;
 }
 
 pre {
-  border-bottom: 1px dotted gray(darkest);
-  border-top: 1px dotted gray(darkest);
-  padding: 1.5em;
+    padding: 1.5em;
+
+    border-top: 1px dotted gray(darkest);
+    border-bottom: 1px dotted gray(darkest);
 }
 
 sub,
 sup {
-  line-height: 0;
-  vertical-align: baseline;
+    line-height: 0;
+
+    vertical-align: baseline;
 }
 
 sub {
-  top: .5ex;
+    top: .5ex;
 }
 
 sup {
-  bottom: 1ex;
+    bottom: 1ex;
 }

@@ -1,0 +1,24 @@
+$font-families: (
+        sans : '"Open Sans", -apple-system, \'Segoe UI\', sans-serif',
+        fixed : 'Consolas, \'courier new\', courier, monospace',
+        icons: 'Fontawesome'
+);
+$font-weights: (
+        thin : 100,
+        light: 300,
+        normal: 400,
+        medium: 500,
+        bold: 700,
+        extrabold: 900,
+);
+$font-sizes: (
+        xxs : .65rem,
+        xs : .75rem,
+        s: .85rem,
+        default: 1rem,
+        m: 1.2rem,
+        l: 1.8rem,
+        xl: 2.5rem,
+        xxl: 4rem,
+);
+$line-height: 1.5;

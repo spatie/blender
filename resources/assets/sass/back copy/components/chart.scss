@@ -1,0 +1,26 @@
+.chart {
+    height: auto;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+.chart__legend {
+    font-size: font-size(s);
+    margin-bottom: 1em 0;
+    padding: 1em;
+    text-align: center;
+    width: auto;
+}
+
+.chart__legend__item {
+    display: inline-block;
+    margin: 0 1em;
+}
+
+.chart__legend__bullet {
+    display: inline-block;
+    height: 1em;
+    margin-right: .5em;
+    vertical-align: middle;
+    width: 1em;
+}

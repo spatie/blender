@@ -1,42 +1,54 @@
 @mixin shape-circle($size, $display: inline-block, $color: transparent) {
+    content: '';
+
+    line-height: $size;
+
+    display: inline-block;
+    width: $size;
+    height: $size;
+    overflow: hidden;
+
     background-color: $color;
     border-radius: 100%;
-    content: '';
-    display: inline-block;
-    height: $size;
-    line-height: $size;
-    overflow: hidden;
+
     text-align: center;
-    width: $size;
 }
 
 @mixin shape-rectangle($aspect-ratio, $display: inline-block, $color: transparent) {
-    background-color: $color;
     content: '';
+
     display: block;
-    height: 0;
-    overflow: hidden;
-    padding-bottom: $aspect-ratio;
     width: 100%;
+    height: 0;
+    padding-bottom: $aspect-ratio;
+    overflow: hidden;
+
+    background-color: $color;
 }
 
 @mixin shape-square($size, $display: inline-block, $color: transparent) {
-    background-color: $color;
     content: '';
-    display: inline-block;
-    height: $size;
+
     line-height: $size;
-    overflow: hidden;
-    text-align: center;
+
+    display: inline-block;
     width: $size;
+    height: $size;
+    overflow: hidden;
+
+    background-color: $color;
+
+    text-align: center;
 }
 
 @mixin shape-triangle-down($size, $display: inline-block, $color: transparent) {
+    content: '';
+
+    display: $display;
+    width: 0;
+    height: 0;
+
     border-color: $color transparent transparent transparent;
     border-style: solid;
     border-width: $size;
-    content: '';
-    display: $display;
-    height: 0;
-    width: 0;
 }

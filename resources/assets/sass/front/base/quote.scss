@@ -1,24 +1,24 @@
 blockquote {
-  display: block;
-  margin: 0 0 1em;
-  padding: 0;
+    display: block;
+    margin: 0 0 1em;
+    padding: 0;
 
-  p {
-    margin: 0;
-  }
+    p {
+        margin: 0;
+    }
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 
-  &:before,
-  &:after {
-    content: '';
-  }
+    &:before,
+    &:after {
+        content: '';
+    }
 }
 
 q,
 cite {
-  font-style: italic;
+    font-style: italic;
 }

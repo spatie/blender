@@ -1,0 +1,60 @@
+.tabs {
+    border-bottom: solid 2px color($gray, lighter);
+    margin: 1em 0;
+    padding: 0 2em 2em;
+}
+
+.tabs__menu {
+    font-size: font-size(s);
+    font-weight: font-weight(bold);
+    margin: 1em -2em 2em;
+
+    ul {
+        @include ul-horizontal;
+
+        border-bottom: solid 2px color($gray, lighter);
+        display: block;
+        padding: 0 0 0 1em;
+        vertical-align: top;
+    }
+
+    li {
+        background: color($gray, lightest);
+        border: solid 2px color($gray, lightest);
+        border-bottom: 0;
+        border-radius: 2px 3px 0 0;
+        margin: 0 .5em;
+        vertical-align: bottom;
+
+        a {
+            color: color($gray);
+        }
+
+        &.ui-tabs-active,
+        &.-active {
+            border-color: color($gray, lighter);
+            border-bottom: solid 2px $white;
+            box-shadow: none;
+            bottom: -2px;
+
+
+            a{
+                background: $white;
+                color: color($gray, darker);
+                font-weight: font-weight(extrabold);
+            }
+        }
+    }
+
+    a {
+        border-bottom: none;
+        color: color($gray, dark);
+        display: inline-block;
+        padding: .5em 1em;
+        outline: none;
+
+        &:hover {
+            color: color($gray, darker);
+        }
+    }
+}

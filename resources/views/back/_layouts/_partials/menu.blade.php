@@ -1,25 +1,25 @@
 <div class="menu">
     <div class="grid">
         <div class="clearfix">
-            <nav class="menu_home">
+            <nav class="menu__home">
 
-                <a class="menu_home_dashboard" href="{{ URL::action('Back\DashboardController@index') }}">
-                    <span class="menu_circle -front"></span>
+                <a class="menu__home__dashboard" href="{{ URL::action('Back\DashboardController@index') }}">
+                    <span class="menu__circle -front"></span>
                     {{ fragment('back.dashboard.title') }}
                 </a>
 
-                <a class="menu_home_front" href="{{ URL::to('/') }}" target="blender">
-                    <span class="menu_home_front_protocol"><span
+                <a class="menu__home__front" href="{{ URL::to('/') }}" target="blender">
+                    <span class="menu__home__front__protocol"><span
                             class="fa {{ Request::isSecure() ? 'fa-lock': 'fa-unlock' }}"></span></span>
-                    <span class="menu_home_front_host">{{ Request::getHost() }}</span>
+                    <span class="menu__home__front__host">{{ Request::getHost() }}</span>
                 </a>
 
             </nav>
-            <nav class="menu_user">
+            <nav class="menu__user">
                 {!! Menu::backUser() !!}
             </nav>
         </div>
-        <nav class="menu_main">
+        <nav class="menu__main">
             {!! Menu::backMain() !!}
         </nav>
     </div>

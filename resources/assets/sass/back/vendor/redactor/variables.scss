@@ -1,0 +1,60 @@
+// ------------------------------------------------------------------
+//
+// VARIABLES
+//
+// 01. Breakpoints
+// 02. Baseline
+// 03. FontFamily
+// 04. FontSize
+// 05. Headings
+// 06. TextColors
+// 07. BackgroundColors
+//
+// ------------------------------------------------------------------
+
+
+// =Breakpoints
+// ------------------------------------------------------------------
+$breakpoint-small: 768px;
+
+
+// =Baseline
+// ------------------------------------------------------------------
+$base-line: 24px;
+
+// =FontFamily
+// ------------------------------------------------------------------
+$ui-font-family: font-family(sans);
+$content-font-family: $ui-font-family;
+$headings-font-family: $ui-font-family;
+$monospace-font-family: font-family(fixed);
+
+
+// =FontSize
+// ------------------------------------------------------------------
+$font-size: 15px;
+
+
+// =Headings
+// ------------------------------------------------------------------
+$font-size-h1: 40px;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
+$font-size-h4: 18px;
+$font-size-h5: 16px;
+$font-size-h6: 14px;
+
+
+// =TextColors
+// ------------------------------------------------------------------
+$body-color: $text-color;
+$headings-color: $text-color;
+$link-color: color($link);
+$link-hover-color: color($link, hover);
+
+
+// =BackgroundColors
+// ------------------------------------------------------------------
+$body-background-color: #fff;
+$code-background-color: rgba(0, 0, 0, .05);
+$mark-background-color: #ffd61e;

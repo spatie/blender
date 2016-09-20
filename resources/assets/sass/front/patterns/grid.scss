@@ -1,13 +1,13 @@
 .grid {
-    @include mq-above(s) {
-        padding: 0 4rem;
-        align-items: flex-start;
-        display: flex;
-    }
-
-    margin: 0 auto;
     max-width: 80rem;
+    margin: 0 auto;
     padding: 0 1rem;
+
+    @include mq-above(s) {
+        display: flex;
+        align-items: flex-start;
+        padding: 0 4rem;
+    }
 
     //subgrid
     & & {
@@ -26,7 +26,6 @@
 }
 
 .grid__col {
-
     flex-basis: 100%;
 
     @include mq-above(s) {
@@ -58,8 +57,8 @@
     }
 
     &.-padded {
-        padding-left: 2rem;
         padding-right: 2rem;
+        padding-left: 2rem;
 
         &:first-child {
             padding-left: 0;

@@ -18,10 +18,10 @@ class BackMenus
 
         Menu::macro('moduleGroup', function ($title) {
             return Menu::back()
-                ->addParentClass('menu_group')
+                ->addParentClass('menu__group')
                 ->setParentAttribute('data-menu-group', fragment("back.nav.{$title}"))
                 ->registerFilter(function (Link $link) {
-                    $link->addParentClass('menu_group_item');
+                    $link->addParentClass('menu__group__item');
                 });
         });
 
@@ -31,7 +31,7 @@ class BackMenus
 
         Menu::macro('backMain', function () {
             return Menu::back()
-                ->addClass('menu_groups')
+                ->addClass('menu__groups')
                 ->setAttribute('data-menu-groups')
                 ->add(Menu::moduleGroup('content')
                     ->module('ArticleController@index', 'articles.title')

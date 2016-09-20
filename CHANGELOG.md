@@ -3,6 +3,10 @@ All notable changes to Blender will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 See also [http://keepachangelog.com].
 
+## [5.4.6] - 2016-09-20
+### Changed
+- Back CSS BEM syntax
+
 ## [5.4.5] - 2016-09-14
 ### Changed
 - Redactor II

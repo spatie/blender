@@ -1,6 +1,6 @@
 .alert {
-    padding: 1em;
     margin: 0;
+    padding: 1em;
 
     &:empty {
         padding: 0;
@@ -18,50 +18,54 @@
 
     &.-small {
         font-size: font-size(s);
+
         padding: .5em;
     }
 
     &.-medium {
         font-size: font-size(m);
+
         padding: .5em;
     }
 
     &.-large {
         font-size: font-size(l);
+
         padding: .5em;
     }
 
     /* Type */
 
     &.-info {
-        background: blue(lightest);
         color: blue(dark);
+        background: blue(lightest);
     }
 
     &.-success {
-        background: green(lightest);
         color: green(dark);
+        background: green(lightest);
     }
 
     &.-warning {
-        background: yellow();
         color: white();
+        background: yellow();
     }
 
     &.-error,
     &.-danger {
-        background: red(lightest);
         color: red();
+        background: red(lightest);
     }
 }
 
 .alerts--fixed {
-    left: 0;
     position: fixed;
-    text-align: center;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: z-index(modal);
+
+    text-align: center;
 
     .alert {
         margin: 0;
@@ -69,8 +73,10 @@
 }
 
 .alerts__close {
-    color: inherit;
+    @include center-vertical();
+
     position: absolute;
     right: 1em;
-    @include center-vertical();
+
+    color: inherit;
 }
