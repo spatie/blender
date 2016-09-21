@@ -8,7 +8,7 @@ return [
          * The name of this application. You can use this name to monitor
          * the backups.
          */
-        'name' => config('app.name'),
+        'name' => str_replace('https://', '', env('APP_URL')),
 
         'source' => [
 
@@ -98,7 +98,7 @@ return [
      */
     'monitorBackups' => [
         [
-            'name' => config('app.name'),
+            'name' => str_replace('https://', '', env('APP_URL')),
             'disks' => ['backups'],
             'newestBackupsShouldNotBeOlderThanDays' => 1,
             'storageUsedMayNotBeHigherThanMegabytes' => 1000,
