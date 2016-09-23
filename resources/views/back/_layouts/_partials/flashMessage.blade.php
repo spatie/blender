@@ -1,6 +1,6 @@
 @unless (Html::flashMessage() == '')
 
-    <div class="{{ $extraClass or alerts }}">
+    <div class="{{ $extraClass or 'alerts' }}">
         {!! Html::flashMessage() !!}
     </div>
 
