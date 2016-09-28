@@ -26,6 +26,7 @@
 }
 
 .footer__status {
+    @include tag(color($green), color($green, lightest));
     font-size: font-size(s);
 
     margin: 0 1em;
@@ -40,14 +41,12 @@
 
     //variations
     &.-non-production {
-        color: color($orange, light);
-
         &:before {
             content: '\f0ad';
         }
     }
     &.-production {
-        color: color($green, light);
+        @include tag(color($orange), color($orange, lightest));
 
         &:before {
             content: '\f072';
