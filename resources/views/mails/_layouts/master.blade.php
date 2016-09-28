@@ -6,7 +6,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Blender e-mail</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Lato:200,300,700,900,300italic');
         /* -------------------------------------
                 GLOBAL
         ------------------------------------- */
