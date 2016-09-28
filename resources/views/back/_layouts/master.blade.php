@@ -10,11 +10,7 @@
     <meta name="description" content="@yield('pageDescription')">
     <title>@yield('pageTitle')</title>
 
-    @if(! app()->environment('production'))
-        <script src="{{ elixir('back.style.js') }}"></script>
-    @else
-        <link rel="stylesheet" href="{{ elixir('back.style.css') }}">
-    @endif
+    <link rel="stylesheet" href="{{ elixir('back.style.css') }}">
 
     <script src="{{ elixir('back.vendor.js') }}"></script>
     <script src="{{ elixir('back.head.js') }}"></script>
