@@ -2,12 +2,16 @@
 
 namespace App\Providers;
 
-use Illuminate\Contracts\Events\Dispatcher;
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as IlluminateEventServiceProvider;
 
-class EventServiceProvider extends ServiceProvider
+class EventServiceProvider extends IlluminateEventServiceProvider
 {
-    public function boot(Dispatcher $events)
+    public function boot()
+    {
+        parent::boot();
+    }
+
+    public function subscribe($events)
     {
         $events->subscribe(\App\Notifications\Eventhandler::class);
         $events->subscribe(\App\Mail\Eventhandler::class);
