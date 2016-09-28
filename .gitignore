@@ -19,4 +19,4 @@ _ide_helper*.php
 /public/media
 
 # REMOVE THIS LINE IN PROJECTS
-/resources/assets/js/back/redactor
+/resources/assets/js/redactor
