@@ -6,14 +6,17 @@ use Illuminate\Foundation\Support\Providers\EventServiceProvider as IlluminateEv
 
 class EventServiceProvider extends IlluminateEventServiceProvider
 {
+    protected $listen = [
+
+    ];
+
+    protected $subscribe = [
+        \App\Notifications\Eventhandler::class,
+        \App\Mail\Eventhandler::class),
+    ];
+
     public function boot()
     {
         parent::boot();
-    }
-
-    public function subscribe($events)
-    {
-        $events->subscribe(\App\Notifications\Eventhandler::class);
-        $events->subscribe(\App\Mail\Eventhandler::class);
     }
 }
