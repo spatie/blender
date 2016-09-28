@@ -24,7 +24,6 @@ generateAssets
 cloneRepository
 uploadGeneratedAssets
 runComposer
-runNpm
 updateSymlinks
 optimizeInstallation
 updatePermissions
@@ -33,7 +32,6 @@ migrateDatabase
 insertNewFragments
 blessNewRelease
 cleanOldReleases
-regenerateLocalAssets
 finishDeploy
 @endmacro
 
@@ -44,7 +42,6 @@ deployOnlyCode
 @macro('deploy-assets')
 generateAssets
 uploadGeneratedAssetsToCurrentDir
-regenerateLocalAssets
 @endmacro
 
 @task('startDeployment', ['on' => 'local'])
@@ -92,12 +89,6 @@ scp -r public/build {{ $server }}:{{ $newReleaseDir }}/public
 {{ logMessage('start runComposer') }}
 cd {{ $newReleaseDir }};
 composer install --prefer-dist --no-scripts --no-dev -q -o;
-@endtask
-
-@task('runNpm', ['on' => 'remote'])
-{{ logMessage('start runNpm') }}
-cd {{ $newReleaseDir }};
-npm install --progress=false --production
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
@@ -182,11 +173,6 @@ sudo supervisorctl restart all
 {{ logMessage('start uploadGeneratedAssetsToCurrentDir') }}
 scp -r public/build {{ $server }}:{{ $currentDir }}/public
 php artisan cache:clear
-@endtask
-
-@task('regenerateLocalAssets', ['on' => 'local'])
-{{ logMessage('regenerating local assets') }}
-gulp
 @endtask
 
 @after
