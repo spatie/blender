@@ -16,11 +16,7 @@
         @endif
     </title>
 
-    @if(! app()->environment('production'))
-        <script src="{{ elixir('front.style.js') }}"></script>
-    @else
-        <link rel="stylesheet" href="{{ elixir('front.style.css') }}">
-    @endif
+    <link rel="stylesheet" href="{{ elixir('front.style.css') }}">
 
     <script src="{{ elixir('front.head.js') }}"></script>
 
