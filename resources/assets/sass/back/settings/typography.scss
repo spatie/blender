@@ -1,15 +1,15 @@
 $font-families: (
-        sans : '"Open Sans", -apple-system, \'Segoe UI\', sans-serif',
-        fixed : 'Consolas, \'courier new\', courier, monospace',
-        icons: 'Fontawesome'
+    sans : '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+    fixed : 'Consolas, "Liberation Mono", Menlo, Courier, monospace',
+    icons: 'Fontawesome'
 );
 $font-weights: (
         thin : 100,
         light: 300,
         normal: 400,
         medium: 500,
-        bold: 700,
-        extrabold: 900,
+        bold: 600,
+        extrabold: 700,
 );
 $font-sizes: (
         xxs : .65rem,

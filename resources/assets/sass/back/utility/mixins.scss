@@ -95,7 +95,7 @@
 }
 
 @mixin tag($color, $background-color, $paddingH: .5em, $paddingV: 0) {
-    @include font(display, normal);
+    @include font(sans, normal);
 
     display: inline-block;
     margin-right: -$paddingH/2;
