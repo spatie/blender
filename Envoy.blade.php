@@ -24,7 +24,6 @@ generateAssets
 cloneRepository
 uploadGeneratedAssets
 runComposer
-runNpm
 updateSymlinks
 optimizeInstallation
 updatePermissions
@@ -92,12 +91,6 @@ scp -r public/build {{ $server }}:{{ $newReleaseDir }}/public
 {{ logMessage('start runComposer') }}
 cd {{ $newReleaseDir }};
 composer install --prefer-dist --no-scripts --no-dev -q -o;
-@endtask
-
-@task('runNpm', ['on' => 'remote'])
-{{ logMessage('start runNpm') }}
-cd {{ $newReleaseDir }};
-npm install --progress=false --production
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
