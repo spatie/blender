@@ -4,7 +4,7 @@ namespace App\Models\Presenters;
 
 use Spatie\String\Str;
 
-trait FragmentPresenter
+trait LanguageLinePresenter
 {
     public function getTeaseAttribute(): Str
     {

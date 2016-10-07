@@ -3,31 +3,36 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivityLogTable extends Migration
+class CreateLanguageLinesTable extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
     public function up()
     {
-        Schema::create('activity_log', function (Blueprint $table) {
+        Schema::create('language_lines', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('log_name')->nullable();
-            $table->string('description');
-            $table->integer('subject_id')->nullable();
-            $table->string('subject_type')->nullable();
-            $table->integer('causer_id')->nullable();
-            $table->string('causer_type')->nullable();
-            $table->text('properties')->nullable();
+            $table->string('group');
+            $table->index('group');
+            $table->string('key');
+            $table->text('text');
+            $table->string('description')->nullable();
+            $table->boolean('contains_html')->default(false);
+            $table->boolean('hidden')->default(false);
+            $table->boolean('draft')->default(true);
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
     public function down()
     {
-        Schema::drop('activity_log');
+        Schema::drop('language_lines');
     }
 }
