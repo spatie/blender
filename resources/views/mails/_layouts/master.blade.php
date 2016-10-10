@@ -6,14 +6,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Blender e-mail</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Lato:200,300,700,900,300italic');
         /* -------------------------------------
                 GLOBAL
         ------------------------------------- */
         * {
             margin: 0;
             padding: 0;
-            font-family: "Lato", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             font-size: 100%;
             font-weight: 300;
             line-height: 1.6;
@@ -27,6 +26,7 @@
         body {
             -webkit-font-smoothing: antialiased;
             -webkit-text-size-adjust: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
             width: 100%!important;
             height: 100%;
         }
@@ -42,33 +42,19 @@
         .btn-primary {
             text-decoration: none;
             color: #FFF;
-            background-color: #13869e;
-            border: solid #13869e;
-            border-width: 10px 20px;
             line-height: 2;
-            font-weight: 700;
             margin-right: 10px;
             text-align: center;
             cursor: pointer;
             display: inline-block;
+            font-weight: 600;
+            height: 2.5em;
+            padding: 0 1em;
+            vertical-align: middle;
+            background: #5ebbae;
+            border: transparent 1px solid;
             border-radius: 3px;
-            box-shadow: 0 2px rgba(0,0,0, 0.075);
-        }
-
-        .btn-secondary {
-            text-decoration: none;
-            color: #FFF;
-            background-color: #aaa;
-            border: solid #aaa;
-            border-width: 10px 20px;
-            line-height: 2;
-            font-weight: 700;
-            margin-right: 10px;
-            text-align: center;
-            cursor: pointer;
-            display: inline-block;
-            border-radius: 25px;
-            box-shadow: 0 2px rgba(0,0,0, 0.075);
+            box-shadow: inset -1px -1px rgba(34, 34, 34, 0.15), 0 2px rgba(34, 34, 34, 0.075);
         }
 
         .last {
@@ -120,7 +106,6 @@
                 TYPOGRAPHY
         ------------------------------------- */
         h1, h2, h3 {
-            font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
             color: #20365a;
             margin: 40px 0 10px;
             line-height: 1.2;
@@ -128,7 +113,7 @@
 
         h1 {
             font-size: 36px;
-            font-weight: 900;
+            font-weight: 700;
         }
         h2 {
             font-size: 28px;

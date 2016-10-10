@@ -12,11 +12,11 @@ Route::post('formresponses', 'FormResponseController@download');
 
 Route::get('statistics', 'StatisticsController@index')->name('statistics');
 
-Route::module('backUsers', 'BackUser');
-Route::module('frontUsers', 'FrontUser');
+Route::module('administrators', 'BackUser');
+Route::module('members', 'FrontUser');
 
 Route::module('articles', 'Article', true);
-Route::module('newsItems', 'NewsItem');
+Route::module('news', 'NewsItem');
 Route::module('people', 'Person', true);
 Route::module('tags', 'Tag', true);
 

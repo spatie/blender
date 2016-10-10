@@ -32,7 +32,6 @@ migrateDatabase
 insertNewFragments
 blessNewRelease
 cleanOldReleases
-regenerateLocalAssets
 finishDeploy
 @endmacro
 
@@ -43,7 +42,6 @@ deployOnlyCode
 @macro('deploy-assets')
 generateAssets
 uploadGeneratedAssetsToCurrentDir
-regenerateLocalAssets
 @endmacro
 
 @task('startDeployment', ['on' => 'local'])
@@ -175,11 +173,6 @@ sudo supervisorctl restart all
 {{ logMessage('start uploadGeneratedAssetsToCurrentDir') }}
 scp -r public/build {{ $server }}:{{ $currentDir }}/public
 php artisan cache:clear
-@endtask
-
-@task('regenerateLocalAssets', ['on' => 'local'])
-{{ logMessage('regenerating local assets') }}
-gulp
 @endtask
 
 @after
