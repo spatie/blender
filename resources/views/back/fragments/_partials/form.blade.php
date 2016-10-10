@@ -5,7 +5,7 @@
         @if($fragment->contains_html)
         {!! Form::redactor($fragment, 'text', $locale) !!}
         @else
-        {!! Form::textarea(translate_field_name('text', $locale), Form::useInitialValue($fragment, 'text', $locale), [
+        {!! Form::textarea(translate_field_name('text', $locale), $fragment->getTranslation($locale), [
             'data-autosize',
             'rows' => '2',
         ]) !!}

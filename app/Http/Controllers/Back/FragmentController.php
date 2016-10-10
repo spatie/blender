@@ -43,7 +43,11 @@ class FragmentController extends Controller
     {
         $fragment = Fragment::find($id);
 
-        FragmentUpdater::update($fragment, $request);
+        foreach (locales() as $locale) {
+            $requestAttribute = "translated_{$locale}_text";
+
+            $fragment->setTranslation($locale, $request->get($requestAttribute));
+        }
 
         $fragment->save();
         app('cache')->flush();

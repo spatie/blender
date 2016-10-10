@@ -8,6 +8,11 @@ trait FragmentPresenter
 {
     public function getTeaseAttribute(): Str
     {
-        return string($this->text)->tease();
+        return string($this->getTranslation(app()->getLocale()))->tease();
+    }
+
+    public function getFullNameAttribute(): string
+    {
+        return $this->group.'.'.$this->key;
     }
 }
