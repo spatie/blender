@@ -5,11 +5,18 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateFragmentsTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('fragments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->index();
+            $table->string('group');
+            $table->index('group');
+            $table->string('key');
             $table->text('text');
             $table->string('description')->nullable();
             $table->boolean('contains_html')->default(false);
@@ -19,8 +26,13 @@ class CreateFragmentsTable extends Migration
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
-        Schema::drop('fragments');
+        Schema::drop('language_lines');
     }
 }
