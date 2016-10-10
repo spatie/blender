@@ -58,7 +58,7 @@
         "spatie/laravel-robots-middleware": "^1.0",
         "spatie/laravel-tail": "^1.0",
         "spatie/laravel-translatable": "^1.0",
-        "spatie/laravel-translation-loader": "dev-master",
+        "spatie/laravel-translation-loader": "^1.0",
         "spatie/regex": "^1.0.0",
         "spatie/seeders": "^4.3",
         "spatie/string": "^2.0",

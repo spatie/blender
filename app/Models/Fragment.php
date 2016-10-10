@@ -14,6 +14,10 @@ class Fragment extends LanguageLine
 
     protected static $recordEvents = ['updated'];
 
+    public $casts = [
+        'contains_html' => 'boolean',
+    ];
+
     public function getDescriptionForEvent(string $eventName): string
     {
         $link = link_to_action('Back\\FragmentController@edit', $this->name, [$this->id]);
