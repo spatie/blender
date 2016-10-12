@@ -29,7 +29,9 @@ new Vue({
 // Heavy components coming up
 
 if ($('[data-chart]').size()) {
-    require.ensure([], () => { require('./modules/chart').default(); }, 'back.chart');
+    require.ensure([], () => {
+        require('./modules/chart').default();
+    }, 'back.chart');
 }
 
 // Uncomment if redactor files are present
