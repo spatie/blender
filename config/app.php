@@ -172,7 +172,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        App\Services\Locale\LocaleServiceProvider::class,
+        Spatie\TranslationLoader\TranslationServiceProvider::class,
         App\Services\Navigation\NavigationServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,

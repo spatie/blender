@@ -11,7 +11,12 @@
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
   },
+  "scripts": {
+    "lint": "eslint resources/assets/js",
+    "lint:fix": "eslint resources/assets/js"
+  },
   "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
     "blender-gulp": "^2.3.1",
@@ -23,7 +28,8 @@
     "client-side-validation": "^1.0.0",
     "dom-storage": "^2.0.2",
     "dotenv": "^1.2.0",
-    "eslint": "^2.9.0",
+    "eslint": "^3.7.1",
+    "eslint-config-spatie": "1.0.0",
     "gulp": "^3.9.0",
     "jquery": "^2.1.4",
     "normalize-css": "^2.3.1",
@@ -31,10 +37,5 @@
     "vue": "^1.0.26",
     "vuex": "2.0.0-rc.3",
     "webfontloader": "^1.6.10"
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
   }
 }
