@@ -19,7 +19,7 @@ trait HasSeoValues
         return $this->seo()->get($key);
     }
 
-    public function renderMetaTags(): string
+    public function renderSeoTags(): string
     {
         return $this->seo()->filter(function ($value, $key) {
             return starts_with($key, 'meta_');

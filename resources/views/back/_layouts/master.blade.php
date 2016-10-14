@@ -15,7 +15,7 @@
     <script src="{{ elixir('back.vendor.js') }}"></script>
     <script src="{{ elixir('back.head.js') }}"></script>
 
-    @include('front._layouts._partials.favicons')
+    @include('front._layouts._partials.head.favicons')
 </head>
 <body>
     @include('front._layouts._partials.deprecatedBrowser')

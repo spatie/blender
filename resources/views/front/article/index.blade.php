@@ -1,7 +1,7 @@
 @extends('front._layouts.main')
 
 @section('title', $article->seo('title'))
-@section('meta', $article->renderMetaTags())
+@section('seo', $article->renderSeoTags())
 
 @section('subMenu', Menu::articleSiblings($article))
 

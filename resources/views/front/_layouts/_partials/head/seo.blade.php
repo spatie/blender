@@ -1,4 +1,4 @@
-@section('meta')
+@section('seo')
 
     <meta name="description" content="@yield('pageDescription')">
 

@@ -2,28 +2,16 @@
 <html lang="{{ locale() }}" data-viewport>
 @include('front._layouts._partials.hiddenCredits')
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="canonical" href="@yield('canonical', request()->url())" />
-
-    <title>
-        @if($hasTitle)
-            @yield('title') - {{ fragment('site.title') }}
-        @else
-            {{ fragment('site.title') }}
-        @endif
-    </title>
+    @include('front._layouts._partials.head.meta')
 
     <link rel="stylesheet" href="{{ elixir('front.style.css') }}">
-
     <script src="{{ elixir('front.head.js') }}"></script>
 
-    @include('front._layouts._partials.hreflang')
-    @include('front._layouts._partials.meta')
-    @include('front._layouts._partials.favicons')
-    @include('front._layouts._partials.bugsnag')
+    @include('front._layouts._partials.head.title')
+    @include('front._layouts._partials.head.seo')
+    @include('front._layouts._partials.head.hreflang')
+    @include('front._layouts._partials.head.favicons')
+    @include('front._layouts._partials.head.bugsnag')
 </head>
 <body>
     @include('googletagmanager::script')
