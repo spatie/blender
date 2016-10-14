@@ -20,6 +20,7 @@ class Breadcrumbs
         'newsItem' => 'newsItems',
         'person' => 'people',
         'tag' => 'tags',
+        'redirect' => 'redirects',
     ];
 
     /**
