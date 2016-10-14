@@ -11,17 +11,13 @@
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
   },
-  "scripts": {
-    "lint": "eslint resources/assets/js",
-    "lint:fix": "eslint resources/assets/js"
-  },
   "devDependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-polyfill": "^6.9.1",
     "babel-preset-es2015": "^6.9.0",
-    "blender-gulp": "^2.3.1",
-    "blender-media": "^2.1.0",
     "blender-css": "^1.0.0",
+    "blender-gulp": "^2.4.1",
+    "blender-media": "^2.1.0",
     "blender.js": "^1.3.0",
     "browsernizr": "1.0.2",
     "chart.js": "^1.0.2",
