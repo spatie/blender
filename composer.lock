@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "59a3272c941c5bc97b0e53e3d2cad2b7",
-    "content-hash": "af4db7d5fb10c7deda98bb8a53ee029f",
+    "hash": "94b4e5cc735f3d1efc568d252ea54191",
+    "content-hash": "b53bb108e3e433586b1ac561bac0ba7a",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4818,6 +4818,57 @@
             "time": "2016-08-01 13:59:37"
         },
         {
+            "name": "spatie/laravel-missing-page-redirector",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-missing-page-redirector.git",
+                "reference": "ee230fd5e1bbdf7f722045f60956fd769dd54ccd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-missing-page-redirector/zipball/ee230fd5e1bbdf7f722045f60956fd769dd54ccd",
+                "reference": "ee230fd5e1bbdf7f722045f60956fd769dd54ccd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.3.0",
+                "illuminate/routing": "~5.3.0",
+                "illuminate/support": "~5.3.0",
+                "php": "^7.0",
+                "spatie/url": "^1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.3",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\MissingPageRedirector\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Redirect missing pages in your Laravel application",
+            "homepage": "https://github.com/spatie/laravel-missing-page-redirector",
+            "keywords": [
+                "laravel-missing-page-redirector",
+                "spatie"
+            ],
+            "time": "2016-10-14 09:01:01"
+        },
+        {
             "name": "spatie/laravel-model-cleanup",
             "version": "1.1.0",
             "source": {
@@ -5457,6 +5508,53 @@
                 "string"
             ],
             "time": "2016-10-04 15:31:55"
+        },
+        {
+            "name": "spatie/url",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/url.git",
+                "reference": "87a1409244c5e825be088418071bb44be752e09f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/url/zipball/87a1409244c5e825be088418071bb44be752e09f",
+                "reference": "87a1409244c5e825be088418071bb44be752e09f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "psr/http-message": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Url\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Parse, build and manipulate URL's",
+            "homepage": "https://github.com/spatie/url",
+            "keywords": [
+                "spatie",
+                "url"
+            ],
+            "time": "2016-10-07 14:47:45"
         },
         {
             "name": "swiftmailer/swiftmailer",

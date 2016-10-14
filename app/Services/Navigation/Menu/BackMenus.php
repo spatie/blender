@@ -46,6 +46,7 @@ class BackMenus
                     ->module('BackUserController@index', 'backUsers.title'))
                 ->add(Menu::moduleGroup('system')
                     ->module('ActivitylogController@index', 'log.title')
+                    ->module('RedirectController@index', 'redirects.title')
                     ->module('StatisticsController@index', 'statistics.menuTitle'));
         });
 
