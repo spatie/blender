@@ -19,6 +19,7 @@ Route::module('articles', 'Article', true);
 Route::module('news', 'NewsItem');
 Route::module('people', 'Person', true);
 Route::module('tags', 'Tag', true);
+Route::module('redirects', 'Redirect', true);
 
 Route::get('api/media', 'MediaLibraryApiController@index');
 Route::post('api/media', 'MediaLibraryApiController@add');
