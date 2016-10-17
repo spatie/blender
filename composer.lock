@@ -59,16 +59,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.13",
+            "version": "3.19.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "57b0efed8fcf5d8c854bc1c26cf4a685af9108d9"
+                "reference": "83e9522a0a1abce0b1a0c2971428a5bd975a212d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/57b0efed8fcf5d8c854bc1c26cf4a685af9108d9",
-                "reference": "57b0efed8fcf5d8c854bc1c26cf4a685af9108d9",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/83e9522a0a1abce0b1a0c2971428a5bd975a212d",
+                "reference": "83e9522a0a1abce0b1a0c2971428a5bd975a212d",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-10-06 21:17:44"
+            "time": "2016-10-13 18:56:16"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3128,16 +3128,16 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v3.3.2",
+            "version": "v3.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "73b9e2f3591db2c1be416bd37e41f69992cbbfb0"
+                "reference": "bbed8ed7d023b6125cf92bb32fb88c079d8ea345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/73b9e2f3591db2c1be416bd37e41f69992cbbfb0",
-                "reference": "73b9e2f3591db2c1be416bd37e41f69992cbbfb0",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/bbed8ed7d023b6125cf92bb32fb88c079d8ea345",
+                "reference": "bbed8ed7d023b6125cf92bb32fb88c079d8ea345",
                 "shasum": ""
             },
             "require": {
@@ -3187,7 +3187,7 @@
                 "orchestral",
                 "testing"
             ],
-            "time": "2016-09-17 03:07:27"
+            "time": "2016-10-16 12:00:43"
         },
         {
             "name": "paragonie/random_compat",
@@ -3512,16 +3512,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0"
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/5277094ed527a1c4477177d102fe4c53551953e0",
-                "reference": "5277094ed527a1c4477177d102fe4c53551953e0",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
+                "reference": "4ebe3a8bf773a19edfe0a84b6585ba3d401b724d",
                 "shasum": ""
             },
             "require": {
@@ -3555,7 +3555,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-09-19 16:02:08"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "psy/psysh",
@@ -4023,16 +4023,16 @@
         },
         {
             "name": "spatie/laravel-activitylog",
-            "version": "1.9.2",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-activitylog.git",
-                "reference": "4e06ac112327be673d3a3da9f3260f31ef790ac9"
+                "reference": "909d61ac043dc5c46a7f225966b07eeeb85771f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/4e06ac112327be673d3a3da9f3260f31ef790ac9",
-                "reference": "4e06ac112327be673d3a3da9f3260f31ef790ac9",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/909d61ac043dc5c46a7f225966b07eeeb85771f9",
+                "reference": "909d61ac043dc5c46a7f225966b07eeeb85771f9",
                 "shasum": ""
             },
             "require": {
@@ -4083,7 +4083,7 @@
                 "spatie",
                 "user"
             ],
-            "time": "2016-09-27 07:33:56"
+            "time": "2016-10-11 21:59:00"
         },
         {
             "name": "spatie/laravel-analytics",
@@ -4324,16 +4324,16 @@
         },
         {
             "name": "spatie/laravel-cookie-consent",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-cookie-consent.git",
-                "reference": "c1592b7f9e5ab92884e81514209ab60e09f7d36a"
+                "reference": "a2ed5e851bd9e17139053d71ff0f2317a6fda22e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/c1592b7f9e5ab92884e81514209ab60e09f7d36a",
-                "reference": "c1592b7f9e5ab92884e81514209ab60e09f7d36a",
+                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/a2ed5e851bd9e17139053d71ff0f2317a6fda22e",
+                "reference": "a2ed5e851bd9e17139053d71ff0f2317a6fda22e",
                 "shasum": ""
             },
             "require": {
@@ -4381,7 +4381,7 @@
                 "law",
                 "spatie"
             ],
-            "time": "2016-10-06 05:40:21"
+            "time": "2016-10-11 21:46:14"
         },
         {
             "name": "spatie/laravel-demo-mode",
@@ -4701,16 +4701,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "4.9.2",
+            "version": "4.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "8799c17ca99c49718d7effe49de06b55117e8662"
+                "reference": "a88001a88db0b2c644a2776b2e8a47fc6fb059fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/8799c17ca99c49718d7effe49de06b55117e8662",
-                "reference": "8799c17ca99c49718d7effe49de06b55117e8662",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/a88001a88db0b2c644a2776b2e8a47fc6fb059fa",
+                "reference": "a88001a88db0b2c644a2776b2e8a47fc6fb059fa",
                 "shasum": ""
             },
             "require": {
@@ -4763,7 +4763,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2016-10-06 05:42:25"
+            "time": "2016-10-13 07:36:35"
         },
         {
             "name": "spatie/laravel-menu",
@@ -4927,16 +4927,16 @@
         },
         {
             "name": "spatie/laravel-newsletter",
-            "version": "3.0.5",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "46b5435857c3165d449eb2eaef653f0d48c1bf2c"
+                "reference": "f4dc3961c0f5639be9ac611af23ed464cbf7e0f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/46b5435857c3165d449eb2eaef653f0d48c1bf2c",
-                "reference": "46b5435857c3165d449eb2eaef653f0d48c1bf2c",
+                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/f4dc3961c0f5639be9ac611af23ed464cbf7e0f1",
+                "reference": "f4dc3961c0f5639be9ac611af23ed464cbf7e0f1",
                 "shasum": ""
             },
             "require": {
@@ -4973,7 +4973,7 @@
                 "mailchimp",
                 "newsletter"
             ],
-            "time": "2016-09-20 06:44:19"
+            "time": "2016-10-16 23:27:23"
         },
         {
             "name": "spatie/laravel-paginateroute",
