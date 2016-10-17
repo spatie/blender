@@ -16,7 +16,7 @@ function init() {
 
 
         //ADDON for legend
-        let $legend = $('#' + chartData.graphName + '-legend');
+        const $legend = $('#' + chartData.graphName + '-legend');
         if ($legend.length) {
             $(chartData.chart.datasets).each(function () {
                 var $legendLine = $('<div></div>').addClass('chart__legend__item');

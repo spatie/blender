@@ -54,4 +54,4 @@ function initializeEditor($textarea) {
 }
 
 export default init;
-export {initializeEditor};
+export { initializeEditor };

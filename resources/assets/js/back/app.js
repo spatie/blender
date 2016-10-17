@@ -1,4 +1,5 @@
-import 'babel-polyfill';
+import 'es6-symbol/implement';
+
 import 'blender.js/modules/ajax.csrf';
 import 'blender.js/modules/interface.confirm';
 //import 'blender.js/modules/form.autosave';
@@ -28,7 +29,7 @@ new Vue({
 
 // Heavy components coming up
 
-if ($('[data-chart]').size()) {
+if ($('[data-chart]').length) {
     require.ensure([], () => {
         require('./modules/chart').default();
     }, 'back.chart');
@@ -36,7 +37,9 @@ if ($('[data-chart]').size()) {
 
 // Uncomment if redactor files are present
 
-//if ($('[data-editor]').size()) {
-//    require.ensure([], () => { require('./modules/editor').default(); }, 'back.editor');
+//if ($('[data-editor]').length) {
+//    require.ensure([], () => {
+//        require('./modules/editor').default();
+//    }, 'back.editor');
 //}
 
