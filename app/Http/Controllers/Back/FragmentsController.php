@@ -8,7 +8,7 @@ use App\Models\Fragment;
 use App\Models\Updaters\FragmentUpdater;
 use Spatie\FragmentImporter\Exporter;
 
-class FragmentController extends Controller
+class FragmentsController extends Controller
 {
     public function index()
     {

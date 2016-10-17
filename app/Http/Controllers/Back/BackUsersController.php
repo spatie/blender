@@ -11,7 +11,7 @@ use App\Services\Auth\Back\User;
 use App\Services\Auth\Back\UserUpdater;
 use App\Repositories\BackUserRepository;
 
-class BackUserController extends Controller
+class BackUsersController extends Controller
 {
     /** @var \App\Repositories\BackUserRepository */
     protected $backUserRepository;

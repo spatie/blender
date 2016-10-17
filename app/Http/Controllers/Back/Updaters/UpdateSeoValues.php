@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Foundation\Models\Updaters;
+namespace App\Http\Controllers\Back\Updaters;
 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Collection;
 use Spatie\Regex\MatchResult;
 use Spatie\Regex\Regex;
 
-trait UpdatesSeoValues
+trait UpdateSeoValues
 {
-    protected function updateSeoValues()
+    protected function updateSeoValues(Model $model, FormRequest $request)
     {
-        collect($this->request->all())
+        collect($request->all())
             ->filter(function ($value, $fieldName) {
                 // Filter out everything that starts with 'translated_<locale>_seo_'
                 return Regex::match('/^translated_([a-z][a-z])_seo_/', $fieldName)->hasMatch();
@@ -36,8 +38,8 @@ trait UpdatesSeoValues
                     return [$values['attribute'], $values['value']];
                 });
             })
-            ->each(function ($values, $locale) {
-                $this->model->setTranslation('seo_values', $locale, $values);
+            ->each(function ($values, $locale) use ($model) {
+                $model->setTranslation('seo_values', $locale, $values);
             });
     }
 }

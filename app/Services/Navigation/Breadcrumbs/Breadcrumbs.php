@@ -16,11 +16,11 @@ class Breadcrumbs
      * @var array
      */
     protected $modules = [
-        'article' => 'articles',
-        'newsItem' => 'newsItems',
-        'person' => 'people',
-        'tag' => 'tags',
-        'redirect' => 'redirects',
+        'articles',
+        'news',
+        'people',
+        'tags',
+        'redirects',
     ];
 
     /**
@@ -36,8 +36,8 @@ class Breadcrumbs
         $this->registerFragmentBreadcrumbs();
         $this->registerUserBreadcrumbs();
 
-        foreach ($this->modules as $singular => $plural) {
-            $this->module($singular, $plural);
+        foreach ($this->modules as $name) {
+            $this->module($name);
         }
     }
 
@@ -84,33 +84,29 @@ class Breadcrumbs
         });
     }
 
-    /**
-     * @param string $singular
-     * @param string $plural
-     */
-    protected function module($singular, $plural)
+    protected function module(string $name)
     {
-        $ucname = ucfirst($singular);
+        $controller = 'Back\\'.ucfirst($name).'Controller';
 
         BreadCrumbsManager::register(
-            "{$singular}ListBack",
-            function ($breadcrumbs) use ($ucname, $plural) {
+            "{$name}ListBack",
+            function ($breadcrumbs) use ($name, $controller) {
                 $breadcrumbs->push(
-                    fragment("back.{$plural}.title"),
-                    action("Back\\{$ucname}Controller@index")
+                    fragment("back.{$name}.title"),
+                    action("{$controller}@index")
                 );
             }
         );
 
         BreadCrumbsManager::register(
-            "{$singular}Back",
-            function ($breadcrumbs, $model) use ($singular, $ucname, $plural) {
-                $breadcrumbs->parent("{$singular}ListBack");
+            "{$name}Back",
+            function ($breadcrumbs, $model) use ($name, $controller) {
+                $breadcrumbs->parent("{$name}ListBack");
 
                 $breadcrumbs->push(
-                    $model->isDraft() ? fragment("back.{$plural}.new") :
+                    $model->isDraft() ? fragment("back.{$name}.new") :
                         (isset($model->name) ? $model->name : ucfirst(fragment('back.change'))),
-                    action("Back\\{$ucname}Controller@create")
+                        action("{$controller}@index")
                 );
             }
         );

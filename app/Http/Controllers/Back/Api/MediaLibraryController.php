@@ -12,7 +12,7 @@ use Response;
 use Spatie\MediaLibrary\Media;
 use App\Models\Transformers\MediaTransformer;
 
-class MediaLibraryApiController extends Controller
+class MediaLibraryController extends Controller
 {
     public function add(AddMediaRequest $request)
     {

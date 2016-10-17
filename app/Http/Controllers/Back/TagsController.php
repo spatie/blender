@@ -2,15 +2,25 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Http\Requests\Back\TagRequest;
 use App\Models\Tag;
 use Illuminate\Support\Collection;
 
-class TagController extends ModuleController
+class TagsController extends ModuleController
 {
-    protected $modelName = 'Tag';
-    protected $moduleName = 'tags';
-
     protected $redirectToIndex = true;
+
+    protected function make(): Tag
+    {
+        return Tag::create();
+    }
+
+    protected function updateFromRequest(Tag $tag, TagRequest $request)
+    {
+        $tag->type = $request->get('type');
+
+        $this->updateModel($tag);
+    }
 
     public function index()
     {
@@ -26,18 +36,5 @@ class TagController extends ModuleController
         }, new Collection());
 
         return view('back.tags.index', compact('tags'));
-    }
-
-    /**
-     * Return a fresh instance of the model (called on `create()`).
-     *
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    protected function make()
-    {
-        $model = new Tag();
-        $model->save();
-
-        return $model;
     }
 }

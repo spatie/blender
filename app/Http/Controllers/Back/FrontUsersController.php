@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Back;
+namespace App\Http\Controllers\Back\Api;
 
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
@@ -11,7 +11,7 @@ use App\Services\Auth\Front\User;
 use App\Services\Auth\Front\UserUpdater;
 use App\Repositories\FrontUserRepository;
 
-class FrontUserController extends Controller
+class FrontUsersController extends Controller
 {
     /** @var \App\Repositories\FrontUserRepository */
     protected $frontUserRepository;

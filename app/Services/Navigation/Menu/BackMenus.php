@@ -35,7 +35,7 @@ class BackMenus
                 ->setAttribute('data-menu-groups')
                 ->add(Menu::moduleGroup('content')
                     ->module('ArticleController@index', 'articles.title')
-                    ->module('NewsItemController@index', 'newsItems.title')
+                    ->module('NewsController@index', 'news.title')
                     ->module('PersonController@index', 'people.title'))
                 ->add(Menu::moduleGroup('modules')
                     ->module('FragmentController@index', 'fragments.title')
@@ -56,8 +56,20 @@ class BackMenus
                 el('span.:response-desktop-only', current_user()->email);
 
             return Menu::new()
-                ->add(Link::action('Back\BackUserController@edit', $avatar, [current_user()->id]))
+                ->add(Link::toAction('Back\BackUserController@edit', $avatar, [current_user()->id]))
                 ->html(view('back.auth._partials.logoutForm'));
+        });
+
+        Menu::macro('breadcrumbs', function (array $breadcrumbs) {
+            return Menu::build($breadcrumbs, function (Menu $menu, $actionWithParameters, $label) {
+                if (! is_array($actionWithParameters)) {
+                    $actionWithParameters = [$actionWithParameters];
+                }
+
+                $action = array_shift($actionWithParameters);
+
+                return $menu->action($action, $label, $actionWithParameters);
+            })->addClass('breadcrumb')->setActiveFromRequest('/blender');
         });
     }
 }

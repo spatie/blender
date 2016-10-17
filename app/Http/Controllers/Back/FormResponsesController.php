@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Controller;
 use App\Models\FormResponse;
 
-class FormResponseController extends Controller
+class FormResponsesController extends Controller
 {
     public function showDownloadButton()
     {

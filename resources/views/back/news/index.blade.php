@@ -1,29 +1,29 @@
 @extends('back._layouts.master')
 
-@section('pageTitle', fragment('back.newsItems.title'))
+@section('pageTitle', fragment('back.news.title'))
 
 @section('content')
 <section>
     <div class="grid">
-        <h1>{{ fragment('back.newsItems.title') }}</h1>
-        <a href="{{ action('Back\NewsItemController@create') }}" class="button">{{ fragment('back.newsItems.new') }}</a>
+        <h1>{{ fragment('back.news.title') }}</h1>
+        <a href="{{ action('Back\NewsController@create') }}" class="button">{{ fragment('back.news.new') }}</a>
 
         <table data-datatable data-order='[[ 1, "desc" ]]'>
             <thead>
             <tr>
-                <th>{{ fragment('back.newsItems.name') }}</th>
-                <th>{{ fragment('back.newsItems.publish_date') }}</th>
+                <th>{{ fragment('back.news.name') }}</th>
+                <th>{{ fragment('back.news.publish_date') }}</th>
                 <th data-orderable="false"></th>
             </tr>
             </thead>
             <tbody>
 
-            @foreach($newsItems as $newsItem)
+            @foreach($models as $newsItem)
 
                 <tr data-row-id="{{ $newsItem->id }}">
                     <td>
                         {!! Html::onlineIndicator($newsItem->online) !!}
-                        <a href="{{ action('Back\NewsItemController@edit', [$newsItem->id]) }}">
+                        <a href="{{ action('Back\NewsController@edit', [$newsItem->id]) }}">
                             {{ $newsItem->name }}
                         </a>
                     </td>
@@ -31,7 +31,7 @@
                         {{ $newsItem->publish_date->format('d/m/Y') }}
                     </td>
                     <td class="-right">
-                        {!! Html::deleteButton(action('Back\NewsItemController@destroy', $newsItem->id)) !!}
+                        {!! Html::deleteButton(action('Back\NewsController@destroy', $newsItem->id)) !!}
                     </td>
                 </tr>
 

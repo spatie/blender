@@ -16,7 +16,7 @@ Route::module('administrators', 'BackUser');
 Route::module('members', 'FrontUser');
 
 Route::module('articles', 'Article', true);
-Route::module('news', 'NewsItem');
+Route::module('news', 'News');
 Route::module('people', 'Person', true);
 Route::module('tags', 'Tag', true);
 Route::module('redirects', 'Redirect', true);

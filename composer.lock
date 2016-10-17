@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "94b4e5cc735f3d1efc568d252ea54191",
-    "content-hash": "b53bb108e3e433586b1ac561bac0ba7a",
+    "hash": "d6688a1ce57d5cd0f40624cde9351bfb",
+    "content-hash": "67266ef79534594ace519362a14b16c2",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4767,16 +4767,16 @@
         },
         {
             "name": "spatie/laravel-menu",
-            "version": "1.3.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "b84850e10a9fc9cd20606d19ef4333073d32c44c"
+                "reference": "429f33448628294ed4290ad965f40d5e7a3ff39d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/b84850e10a9fc9cd20606d19ef4333073d32c44c",
-                "reference": "b84850e10a9fc9cd20606d19ef4333073d32c44c",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/429f33448628294ed4290ad965f40d5e7a3ff39d",
+                "reference": "429f33448628294ed4290ad965f40d5e7a3ff39d",
                 "shasum": ""
             },
             "require": {
@@ -4784,11 +4784,10 @@
                 "illuminate/contracts": "~5.1.14|~5.2.0|~5.3.0",
                 "illuminate/support": "~5.1.14|~5.2.0|~5.3.0",
                 "php": "^7.0",
-                "spatie/menu": "^1.2.1"
+                "spatie/menu": "^2.0.0"
             },
             "require-dev": {
-                "fzaninotto/faker": "~1.4",
-                "orchestra/testbench": "^3.1",
+                "orchestra/testbench": "^3.3",
                 "phpunit/phpunit": "^5.2"
             },
             "type": "library",
@@ -4815,7 +4814,7 @@
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2016-08-01 13:59:37"
+            "time": "2016-10-11 09:00:50"
         },
         {
             "name": "spatie/laravel-missing-page-redirector",
@@ -5251,21 +5250,22 @@
         },
         {
             "name": "spatie/menu",
-            "version": "1.4.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/menu.git",
-                "reference": "f97fa911baa18af0fa99b8148e5b6445920a556e"
+                "reference": "e8442e616824d9e5800bbffbc271a4cec98d0d02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/f97fa911baa18af0fa99b8148e5b6445920a556e",
-                "reference": "f97fa911baa18af0fa99b8148e5b6445920a556e",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/e8442e616824d9e5800bbffbc271a4cec98d0d02",
+                "reference": "e8442e616824d9e5800bbffbc271a4cec98d0d02",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
-                "spatie/html-element": "^1.0.0"
+                "spatie/html-element": "^1.0.0",
+                "spatie/url": "^1.0.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.2.10"
@@ -5295,7 +5295,7 @@
                 "navigation",
                 "spatie"
             ],
-            "time": "2016-09-02 14:18:21"
+            "time": "2016-10-11 09:05:09"
         },
         {
             "name": "spatie/pdf-to-image",
