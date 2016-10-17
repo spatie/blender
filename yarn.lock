@@ -4,7 +4,7 @@ abbrev@1:
   version "1.0.9"
   resolved "https://npm.spatie.be/abbrev/-/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"
 
-acorn-jsx@^3.0.0:
+acorn-jsx@^3.0.0, acorn-jsx@^3.0.1:
   version "3.0.1"
   resolved "https://npm.spatie.be/acorn-jsx/-/acorn-jsx-3.0.1.tgz#afdf9488fb1ecefc8348f6fb22f464e32a58b36b"
   dependencies:
@@ -27,8 +27,8 @@ ajv-keywords@^1.0.0:
   resolved "https://npm.spatie.be/ajv-keywords/-/ajv-keywords-1.1.1.tgz#02550bc605a3e576041565628af972e06c549d50"
 
 ajv@^4.7.0:
-  version "4.7.7"
-  resolved "https://npm.spatie.be/ajv/-/ajv-4.7.7.tgz#4980d5f65ce90a2579532eec66429f320dea0321"
+  version "4.8.0"
+  resolved "https://npm.spatie.be/ajv/-/ajv-4.8.0.tgz#011df5c4a08edb29574a477269afb15a6f97abe5"
   dependencies:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
@@ -636,8 +636,8 @@ babel@^6.5.0:
   resolved "https://npm.spatie.be/babel/-/babel-6.5.2.tgz#59140607438270920047ff56f02b2d8630c2d129"
 
 babylon@^6.11.0:
-  version "6.11.6"
-  resolved "https://npm.spatie.be/babylon/-/babylon-6.11.6.tgz#56dc52e624882841c7fe095257fbcb4a5bb61ae1"
+  version "6.12.0"
+  resolved "https://npm.spatie.be/babylon/-/babylon-6.12.0.tgz#953e6202e58062f7f5041fc8037e4bd4e17140a9"
 
 balanced-match@^0.4.1:
   version "0.4.2"
@@ -683,9 +683,9 @@ blender-css@^1.0.0:
   version "1.0.0"
   resolved "https://npm.spatie.be/blender-css/-/blender-css-1.0.0.tgz#e4c9bdd9be31de4ff285a2b4624643ac5e885d37"
 
-blender-gulp@^2.3.1:
-  version "2.4.1"
-  resolved "https://npm.spatie.be/blender-gulp/-/blender-gulp-2.4.1.tgz#7b48c8f67139c12a442e83d6a9960261809cb8d8"
+blender-gulp@^2.4.2:
+  version "2.4.2"
+  resolved "https://npm.spatie.be/blender-gulp/-/blender-gulp-2.4.2.tgz#de3a23006a6542c8c26f054fa6a33eccdbe495c0"
   dependencies:
     autoprefixer "^6.3.1"
     babel "^6.5.0"
@@ -722,14 +722,14 @@ blender-media@^2.1.0:
     font-awesome-filetypes "^1.0.1"
 
 blender.js@^1.3.0:
-  version "1.3.2"
-  resolved "https://npm.spatie.be/blender.js/-/blender.js-1.3.2.tgz#ae349d052c412de4d23921f9edf9fb2374d5a625"
+  version "1.3.4"
+  resolved "https://npm.spatie.be/blender.js/-/blender.js-1.3.4.tgz#d92a77c821d29bf7ca44d820ec452e1ec5f25f35"
   dependencies:
     autosize "^3.0.8"
     blueimp-file-upload "^9.10.5"
     datatables "^1.10.7"
     google-maps "^3.1.0"
-    jquery "^2.1.4"
+    jquery "^2.1.4 || ^3.0.0"
     jquery-confirm "^1.5.1"
     jquery-datetimepicker "^2.5.1"
     jquery-ui "^1.11.0"
@@ -744,8 +744,8 @@ block-stream@*:
     inherits "~2.0.0"
 
 blueimp-file-upload@^9.10.5:
-  version "9.12.5"
-  resolved "https://npm.spatie.be/blueimp-file-upload/-/blueimp-file-upload-9.12.5.tgz#d148b134787ecea06456abc7ece84e3e3b3c26ab"
+  version "9.12.6"
+  resolved "https://npm.spatie.be/blueimp-file-upload/-/blueimp-file-upload-9.12.6.tgz#0ad01e949d4232452e8b5d4c92e948caa9b7b155"
 
 boom@2.x.x:
   version "2.10.1"
@@ -830,8 +830,8 @@ camelcase@^3.0.0:
   resolved "https://npm.spatie.be/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
 caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
-  version "1.0.30000557"
-  resolved "https://npm.spatie.be/caniuse-db/-/caniuse-db-1.0.30000557.tgz#4a36c82f81b06fdd78461bfb1d3dc35afaa6deae"
+  version "1.0.30000559"
+  resolved "https://npm.spatie.be/caniuse-db/-/caniuse-db-1.0.30000559.tgz#afbd68916dd23bfd549c26520c78631fb5e2e393"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -859,8 +859,8 @@ chart.js@^1.0.2:
   resolved "https://npm.spatie.be/chart.js/-/chart.js-1.1.1.tgz#a9b17054220bd45cbdb176fd6bcb8783ef871a7d"
 
 chokidar@^1.0.0:
-  version "1.6.0"
-  resolved "https://npm.spatie.be/chokidar/-/chokidar-1.6.0.tgz#90c32ad4802901d7713de532dc284e96a63ad058"
+  version "1.6.1"
+  resolved "https://npm.spatie.be/chokidar/-/chokidar-1.6.1.tgz#2f4447ab5e96e50fb3d789fd90d4c72e0e4c70c2"
   dependencies:
     anymatch "^1.3.0"
     async-each "^1.0.0"
@@ -905,12 +905,6 @@ cli-cursor@^1.0.1:
 cli-width@^2.0.0:
   version "2.1.0"
   resolved "https://npm.spatie.be/cli-width/-/cli-width-2.1.0.tgz#b234ca209b29ef66fc518d9b98d5847b00edf00a"
-
-client-side-validation@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.spatie.be/client-side-validation/-/client-side-validation-1.0.0.tgz#c3db9bdd369a511333f568c96881517140a15d83"
-  dependencies:
-    is_js "^0.8.0"
 
 cliui@^2.1.0:
   version "2.1.0"
@@ -1344,17 +1338,26 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-spatie@1.0.0:
-  version "1.0.0"
-  resolved "https://npm.spatie.be/eslint-config-spatie/-/eslint-config-spatie-1.0.0.tgz#9ab6a972b00da569ff641c0b8b36f44e75fa162c"
+eslint-config-spatie@^1.0.0:
+  version "1.2.2"
+  resolved "https://npm.spatie.be/eslint-config-spatie/-/eslint-config-spatie-1.2.2.tgz#32fa2635621dfbce222a799760d8a39fcd966451"
+  optionalDependencies:
+    eslint-plugin-react "^6.4.1"
 
 eslint-loader@^1.5.0:
-  version "1.5.0"
-  resolved "https://npm.spatie.be/eslint-loader/-/eslint-loader-1.5.0.tgz#824b7c9911a633fc1260f863c6ea571224d10412"
+  version "1.6.0"
+  resolved "https://npm.spatie.be/eslint-loader/-/eslint-loader-1.6.0.tgz#38f9a1e6c602a4f1f3f3516289726e5d26e6e165"
   dependencies:
     find-cache-dir "^0.1.1"
     loader-utils "^0.2.7"
     object-assign "^4.0.1"
+
+eslint-plugin-react@^6.4.1:
+  version "6.4.1"
+  resolved "https://npm.spatie.be/eslint-plugin-react/-/eslint-plugin-react-6.4.1.tgz#7d1aade747db15892f71eee1fea4addf97bcfa2b"
+  dependencies:
+    doctrine "^1.2.2"
+    jsx-ast-utils "^1.3.1"
 
 eslint@^2.7.0:
   version "2.13.1"
@@ -1395,8 +1398,8 @@ eslint@^2.7.0:
     user-home "^2.0.0"
 
 eslint@^3.7.1:
-  version "3.7.1"
-  resolved "https://npm.spatie.be/eslint/-/eslint-3.7.1.tgz#7faa84599e0fea422f04bc32db49054051a3f11a"
+  version "3.8.0"
+  resolved "https://npm.spatie.be/eslint/-/eslint-3.8.0.tgz#4fbbf6833d66654860c23a099c47a0f086de34b7"
   dependencies:
     chalk "^1.1.3"
     concat-stream "^1.4.6"
@@ -1420,7 +1423,7 @@ eslint@^3.7.1:
     lodash "^4.0.0"
     mkdirp "^0.5.0"
     natural-compare "^1.4.0"
-    optionator "^0.8.1"
+    optionator "^0.8.2"
     path-is-inside "^1.0.1"
     pluralize "^1.2.1"
     progress "^1.1.8"
@@ -2158,16 +2161,12 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://npm.spatie.be/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-is_js@^0.8.0:
-  version "0.8.0"
-  resolved "https://npm.spatie.be/is_js/-/is_js-0.8.0.tgz#9023ac8e1739a396fbf0aa0fefd46264eaf0f9a2"
-
 is-absolute@^0.2.3:
-  version "0.2.5"
-  resolved "https://npm.spatie.be/is-absolute/-/is-absolute-0.2.5.tgz#994142b9f468d27c14fbf0cd30fe77db934ca76d"
+  version "0.2.6"
+  resolved "https://npm.spatie.be/is-absolute/-/is-absolute-0.2.6.tgz#20de69f3db942ef2d87b9c2da36f172235b1b5eb"
   dependencies:
     is-relative "^0.2.1"
-    is-windows "^0.1.1"
+    is-windows "^0.2.0"
 
 is-arrayish@^0.2.1:
   version "0.2.1"
@@ -2294,10 +2293,6 @@ is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://npm.spatie.be/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
-is-windows@^0.1.1:
-  version "0.1.1"
-  resolved "https://npm.spatie.be/is-windows/-/is-windows-0.1.1.tgz#be310715431cfabccc54ab3951210fa0b6d01abe"
-
 is-windows@^0.2.0:
   version "0.2.0"
   resolved "https://npm.spatie.be/is-windows/-/is-windows-0.2.0.tgz#de1aa6d63ea29dd248737b69f1ff8b8002d2108c"
@@ -2358,7 +2353,7 @@ jquery@^2.1.4:
   version "2.2.4"
   resolved "https://npm.spatie.be/jquery/-/jquery-2.2.4.tgz#2c89d6889b5eac522a7eea32c14521559c6cbf02"
 
-"jquery@>= 1.7.2", jquery@>=1.7:
+"jquery@^2.1.4 || ^3.0.0", "jquery@>= 1.7.2", jquery@>=1.7:
   version "3.1.1"
   resolved "https://npm.spatie.be/jquery/-/jquery-3.1.1.tgz#347c1c21c7e004115e0a4da32cece041fad3c8a3"
 
@@ -2446,6 +2441,13 @@ jstransform@^11.0.3:
     esprima-fb "^15001.1.0-dev-harmony-fb"
     object-assign "^2.0.0"
     source-map "^0.4.2"
+
+jsx-ast-utils@^1.3.1:
+  version "1.3.2"
+  resolved "https://npm.spatie.be/jsx-ast-utils/-/jsx-ast-utils-1.3.2.tgz#dff658782705352111f9865d40471bc4a955961e"
+  dependencies:
+    acorn-jsx "^3.0.1"
+    object-assign "^4.1.0"
 
 kind-of@^3.0.2:
   version "3.0.4"
@@ -3064,7 +3066,7 @@ optimist@~0.6.0:
     minimist "~0.0.1"
     wordwrap "~0.0.2"
 
-optionator@^0.8.1:
+optionator@^0.8.1, optionator@^0.8.2:
   version "0.8.2"
   resolved "https://npm.spatie.be/optionator/-/optionator-0.8.2.tgz#364c5e409d3f4d6301d6c0b4c05bba50180aeb64"
   dependencies:
@@ -3668,8 +3670,8 @@ source-list-map@^0.1.4, source-list-map@~0.1.0:
   resolved "https://npm.spatie.be/source-list-map/-/source-list-map-0.1.6.tgz#e1e6f94f0b40c4d28dcf8f5b8766e0e45636877f"
 
 source-map-support@^0.4.2:
-  version "0.4.3"
-  resolved "https://npm.spatie.be/source-map-support/-/source-map-support-0.4.3.tgz#693c8383d4389a4569486987c219744dfc601685"
+  version "0.4.4"
+  resolved "https://npm.spatie.be/source-map-support/-/source-map-support-0.4.4.tgz#0df5765a05a560c91bc8f8641cf79f2affc0322e"
   dependencies:
     source-map "^0.5.3"
 
