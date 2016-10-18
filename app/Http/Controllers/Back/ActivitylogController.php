@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Pagination\Paginator;
 use Spatie\Activitylog\Models\Activity;
 
-class ActivitylogController extends Controller
+class ActivitylogController
 {
     public function index()
     {

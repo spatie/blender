@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FragmentRequest;
 use App\Models\Fragment;
-use App\Models\Updaters\FragmentUpdater;
 use Spatie\FragmentImporter\Exporter;
 
-class FragmentsController extends Controller
+class FragmentsController
 {
     public function index()
     {

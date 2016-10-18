@@ -122,7 +122,7 @@ abstract class ModuleController
         $query = call_user_func("{$this->model}::query")->nonDraft();
 
         if (array_key_exists(SortableInterface::class, class_implements($this->model))) {
-            return $query->orderBy('order_column', 'asc');
+            $query->orderBy('order_column', 'asc');
         }
 
         return $query->get();

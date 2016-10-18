@@ -2,18 +2,18 @@
 
 @section('pageTitle', 'Nieuwe gebruiker')
 
-@section('breadcrumbs', Breadcrumbs::render('newBackUserBack'))
+@section('breadcrumbs', Breadcrumbs::render('administratorsCreateBack'))
 
 @section('content')
     <section>
         <div class="grid">
-            <h1>{{ fragment("back.backUsers.new") }}</h1>
+            <h1>{{ fragment("back.administrators.new") }}</h1>
 
             {!! Form::open([
-                'url' => action('Back\BackUserController@store'),
+                'url' => action('Back\AdministratorsController@store'),
                 'class' =>'-stacked'
             ]) !!}
-                @include("back.backUsers._partials.form")
+                @include("back.administrators._partials.form")
             {!! Form::close() !!}
         </div>
     </section>

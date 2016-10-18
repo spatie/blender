@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
 use Analytics;
 use Spatie\Analytics\Period;
 
-class StatisticsController extends Controller
+class StatisticsController
 {
     public function index()
     {

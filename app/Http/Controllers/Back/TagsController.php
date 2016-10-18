@@ -19,7 +19,7 @@ class TagsController extends ModuleController
     {
         $tag->type = $request->get('type');
 
-        $this->updateModel($tag);
+        $this->updateModel($tag, $request);
     }
 
     public function index()

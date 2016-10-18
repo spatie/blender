@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Back;
 
 use Analytics;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Collection;
 use Spatie\Activitylog\Models\Activity;
 use Spatie\Analytics\Period;
 
-class DashboardController extends Controller
+class DashboardController
 {
     public function index()
     {

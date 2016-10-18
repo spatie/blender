@@ -5,13 +5,12 @@ namespace App\Http\Controllers\Back\Api;
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\FrontUserRequest;
 use App\Services\Auth\Front\User;
 use App\Services\Auth\Front\UserUpdater;
 use App\Repositories\FrontUserRepository;
 
-class FrontUsersController extends Controller
+class MembersController
 {
     /** @var \App\Repositories\FrontUserRepository */
     protected $frontUserRepository;
@@ -25,12 +24,12 @@ class FrontUsersController extends Controller
     {
         $users = $this->frontUserRepository->getAll();
 
-        return view('back.frontUsers.index')->with(compact('users'));
+        return view('back.members.index')->with(compact('users'));
     }
 
     public function create()
     {
-        return view('back.frontUsers.create', ['user' => new User()]);
+        return view('back.members.create', ['user' => new User()]);
     }
 
     public function store(FrontUserRequest $request)
@@ -46,7 +45,7 @@ class FrontUsersController extends Controller
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.fragment('back.frontUsers.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.fragment('back.members.passwordMailSent'));
 
         event(new UserCreatedThroughBack($user));
 
@@ -61,7 +60,7 @@ class FrontUsersController extends Controller
             abort(404);
         }
 
-        return view('back.frontUsers.edit')->with(compact('user'));
+        return view('back.members.edit')->with(compact('user'));
     }
 
     public function update($id, FrontUserRequest $request)
@@ -105,6 +104,6 @@ class FrontUsersController extends Controller
             $name = $user->email;
         }
 
-        return trans("back.events.$event", ['model' => fragment('back.frontUsers.member'), 'name' => $name]);
+        return trans("back.events.$event", ['model' => fragment('back.members.member'), 'name' => $name]);
     }
 }

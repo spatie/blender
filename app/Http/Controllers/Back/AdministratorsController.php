@@ -5,13 +5,12 @@ namespace App\Http\Controllers\Back;
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\Events\UserCreated;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\BackUserRequest;
 use App\Services\Auth\Back\User;
 use App\Services\Auth\Back\UserUpdater;
 use App\Repositories\BackUserRepository;
 
-class BackUsersController extends Controller
+class AdministratorsController
 {
     /** @var \App\Repositories\BackUserRepository */
     protected $backUserRepository;
@@ -25,12 +24,12 @@ class BackUsersController extends Controller
     {
         $users = $this->backUserRepository->getAll();
 
-        return view('back.backUsers.index')->with(compact('users'));
+        return view('back.administrators.index')->with(compact('users'));
     }
 
     public function create()
     {
-        return view('back.backUsers.create', ['user' => new User()]);
+        return view('back.administrators.create', ['user' => new User()]);
     }
 
     public function store(BackUserRequest $request)
@@ -46,7 +45,7 @@ class BackUsersController extends Controller
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.fragment('back.backUsers.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.fragment('back.administrators.passwordMailSent'));
 
         event(new UserCreated($user));
 
@@ -61,7 +60,7 @@ class BackUsersController extends Controller
             abort(404);
         }
 
-        return view('back.backUsers.edit')->with(compact('user'));
+        return view('back.administrators.edit')->with(compact('user'));
     }
 
     public function update($id, BackUserRequest $request)
@@ -118,6 +117,6 @@ class BackUsersController extends Controller
             $name = $user->email;
         }
 
-        return trans("back.events.$event", ['model' => fragment('back.backUsers.administrator'), 'name' => $name]);
+        return trans("back.events.$event", ['model' => fragment('back.administrators.administrator'), 'name' => $name]);
     }
 }

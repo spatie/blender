@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
 use App\Models\FormResponse;
 
-class FormResponsesController extends Controller
+class FormResponsesController
 {
     public function showDownloadButton()
     {
-        return view('back.formResponse.index');
+        return view('back.formResponses.index');
     }
 
     public function download()

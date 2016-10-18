@@ -16,7 +16,7 @@
 
             <div class="form__group -buttons">
                 {!! Form::openButton([
-                    'action' => 'Back\FormResponseController@download',
+                    'action' => 'Back\FormResponsesController@download',
                     'method' => 'post',
                 ]) !!}
                     {{ fragment('back.formResponses.download') }}

@@ -2,7 +2,7 @@
 
 @section('pageTitle', $user->email)
 
-@section('breadcrumbs', Breadcrumbs::render('editBackUserBack', $user))
+@section('breadcrumbs', Breadcrumbs::render('administratorsEditBack', $user))
 
 @section('content')
     <section>
@@ -11,15 +11,15 @@
             <div>
                 {!! Html::avatar($user) !!}
                 <span class="help -small">
-                    {{ fragment('back.backUsers.gravatarInfo') }} <a href="https://gravatar.com">gravatar.com</a>
+                    {{ fragment('back.administrators.gravatarInfo') }} <a href="https://gravatar.com">gravatar.com</a>
                 </span>
             </div>
             {!! Form::model(
                 $user,
-                ['method' => 'PATCH', 'action' => ['Back\BackUserController@update', $user->id] ,
+                ['method' => 'PATCH', 'action' => ['Back\AdministratorsController@update', $user->id] ,
                 'class' => '-stacked'
             ]) !!}
-                @include("back.backUsers._partials.form")
+                @include("back.administrators._partials.form")
             {!! Form::close() !!}
         </div>
     </section>

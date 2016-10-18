@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('breadcrumbs', Breadcrumbs::render('tagBack', $model))
+@section('breadcrumbs', Breadcrumbs::render('tagsBack', $model))
 
 @section('pageTitle', fragment('back.tags.title'))
 
@@ -11,7 +11,7 @@
 
         {!! Form::openDraftable([
             'method'=>'PATCH',
-            'action'=> ['Back\TagController@update', $model->id],
+            'action'=> ['Back\TagsController@update', $model->id],
             'class' => '-stacked'
         ], $model) !!}
 

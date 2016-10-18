@@ -11,7 +11,7 @@
 
         {!! Form::openDraftable([
             'method' =>'PATCH',
-            'action' => ['Back\PersonController@update', $model->id],
+            'action' => ['Back\PeopleController@update', $model->id],
             'class' => '-stacked',
         ], $model) !!}
 

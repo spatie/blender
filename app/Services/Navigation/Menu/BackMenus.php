@@ -34,19 +34,19 @@ class BackMenus
                 ->addClass('menu__groups')
                 ->setAttribute('data-menu-groups')
                 ->add(Menu::moduleGroup('content')
-                    ->module('ArticleController@index', 'articles.title')
+                    ->module('ArticlesController@index', 'articles.title')
                     ->module('NewsController@index', 'news.title')
-                    ->module('PersonController@index', 'people.title'))
+                    ->module('PeopleController@index', 'people.title'))
                 ->add(Menu::moduleGroup('modules')
-                    ->module('FragmentController@index', 'fragments.title')
-                    ->module('FormResponseController@showDownloadButton', 'formResponses.title')
-                    ->module('TagController@index', 'tags.title'))
+                    ->module('FragmentsController@index', 'fragments.title')
+                    ->module('FormResponsesController@showDownloadButton', 'formResponses.title')
+                    ->module('TagsController@index', 'tags.title'))
                 ->add(Menu::moduleGroup('users')
-                    ->module('FrontUserController@index', 'frontUsers.title')
-                    ->module('BackUserController@index', 'backUsers.title'))
+                    ->module('MembersController@index', 'members.title')
+                    ->module('AdministratorsController@index', 'administrators.title'))
                 ->add(Menu::moduleGroup('system')
                     ->module('ActivitylogController@index', 'log.title')
-                    ->module('RedirectController@index', 'redirects.title')
+                    ->module('RedirectsController@index', 'redirects.title')
                     ->module('StatisticsController@index', 'statistics.menuTitle'));
         });
 
@@ -56,7 +56,7 @@ class BackMenus
                 el('span.:response-desktop-only', current_user()->email);
 
             return Menu::new()
-                ->add(Link::toAction('Back\BackUserController@edit', $avatar, [current_user()->id]))
+                ->action('Back\AdministratorsController@edit', $avatar, [current_user()->id])
                 ->html(view('back.auth._partials.logoutForm'));
         });
 

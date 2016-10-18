@@ -18,7 +18,7 @@ class ArticlesController extends ModuleController
     {
         $article->parent_id = $request->get('parent_id');
 
-        $this->updateModel($article);
+        $this->updateModel($article, $request);
     }
 
     public function edit(int $id)

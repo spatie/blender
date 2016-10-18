@@ -50,7 +50,7 @@ class FormBuilder extends BaseFormBuilder
             array_merge($options, [
                 'data-editor',
                 'data-editor-medialibrary-url' => action(
-                    'Back\MediaLibraryApiController@add',
+                    'Back\Api\MediaLibraryController@add',
                     [short_class_name($subject), $subject->id, 'redactor']
                 ),
             ])
@@ -124,7 +124,7 @@ class FormBuilder extends BaseFormBuilder
         return el('media', array_merge($associated, [
             'collection' => $collection,
             'type' => $type,
-            'upload-url' => action('Back\MediaLibraryApiController@add'),
+            'upload-url' => action('Back\Api\MediaLibraryController@add'),
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialMedia),
             ':data' => htmlspecialchars($this->getAssociatedMediaData($associated)),
