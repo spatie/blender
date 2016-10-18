@@ -21,7 +21,6 @@ function logMessage($message) {
 @macro('deploy')
 startDeployment
 cloneRepository
-uploadGeneratedAssets
 runComposer
 runYarn
 buildAssets
@@ -68,11 +67,6 @@ git read-tree -mu HEAD
 # Mark release
 cd {{ $newReleaseDir }}
 echo "{{ $newReleaseName }}" > public/release-name.txt
-@endtask
-
-@task('uploadGeneratedAssets', ['on' => 'local'])
-{{ logMessage('start uploadGeneratedAssets') }}
-scp -r public/build {{ $server }}:{{ $newReleaseDir }}/public
 @endtask
 
 @task('runComposer', ['on' => 'remote'])
