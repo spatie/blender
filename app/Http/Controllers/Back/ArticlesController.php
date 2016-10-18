@@ -6,8 +6,9 @@ use App\Http\Requests\Back\ArticleRequest;
 use App\Models\Article;
 use App\Models\Enums\SpecialArticle;
 use App\Repositories\ArticleRepository;
+use Spatie\Blender\Model\Controller;
 
-class ArticlesController extends ModuleController
+class ArticlesController extends Controller
 {
     protected function make(): Article
     {

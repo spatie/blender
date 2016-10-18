@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Back;
 use App\Http\Requests\Back\TagRequest;
 use App\Models\Tag;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Controller;
 
-class TagsController extends ModuleController
+class TagsController extends Controller
 {
     protected $redirectToIndex = true;
 

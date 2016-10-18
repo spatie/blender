@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Back;
 use App\Http\Requests\Back\NewsItemRequest;
 use App\Models\NewsItem;
 use Carbon\Carbon;
+use Spatie\Blender\Model\Controller;
 
-class NewsController extends ModuleController
+class NewsController extends Controller
 {
     protected function make(): NewsItem
     {

@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Back;
 
 use App\Http\Requests\Back\RedirectRequest;
 use App\Models\Redirect;
+use Spatie\Blender\Model\Controller;
 
-class RedirectsController extends ModuleController
+class RedirectsController extends Controller
 {
     protected function make(): Redirect
     {
