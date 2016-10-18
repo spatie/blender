@@ -20,7 +20,6 @@ function logMessage($message) {
 
 @macro('deploy')
 startDeployment
-generateAssets
 cloneRepository
 uploadGeneratedAssets
 runComposer
@@ -39,10 +38,6 @@ finishDeploy
 
 @macro('deploy-code')
 deployOnlyCode
-@endmacro
-
-@macro('deploy-assets')
-deployOnlyAssets
 @endmacro
 
 @task('startDeployment', ['on' => 'local'])
@@ -95,7 +90,7 @@ yarn
 @task('generateAssets', ['on' => 'remote'])
 {{ logMessage('start generateAssets') }}
 cd {{ $newReleaseDir }};
-gulp --production &> /dev/null
+gulp --production
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
@@ -175,15 +170,6 @@ git pull origin master
 php artisan cache:clear
 sudo service php7.0-fpm restart
 sudo supervisorctl restart all
-@endtask
-
-@task('deployOnlyAssets',['on' => 'remote'])
-{{ logMessage('deployOnlyAssets') }}
-cd {{ $currentDir }}
-git pull origin master
-yarn
-gulp --production &> /dev/null
-php artisan cache:clear
 @endtask
 
 @after
