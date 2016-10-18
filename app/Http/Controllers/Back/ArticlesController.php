@@ -17,7 +17,7 @@ class ArticlesController extends Controller
 
     protected function updateFromRequest(Article $article, ArticleRequest $request)
     {
-        $article->parent_id = $request->get('parent_id');
+        $article->parent_id = $request->get('parent_id') ?: null;
 
         $this->updateModel($article, $request);
     }
