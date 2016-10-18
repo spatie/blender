@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Back;
+namespace App\Http\Controllers\Back\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\AddMediaRequest;
