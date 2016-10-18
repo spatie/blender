@@ -20,10 +20,10 @@ function logMessage($message) {
 
 @macro('deploy')
 startDeployment
-generateAssets
 cloneRepository
-uploadGeneratedAssets
 runComposer
+runYarn
+buildAssets
 updateSymlinks
 optimizeInstallation
 updatePermissions
@@ -39,21 +39,10 @@ finishDeploy
 deployOnlyCode
 @endmacro
 
-@macro('deploy-assets')
-generateAssets
-uploadGeneratedAssetsToCurrentDir
-@endmacro
-
 @task('startDeployment', ['on' => 'local'])
 {{ logMessage('start deployment') }}
 git checkout master
 git pull origin master
-@endtask
-
-@task('generateAssets', ['on' => 'local'])
-{{ logMessage('start generateAssets') }}
-npm install &> /dev/null
-gulp --production &> /dev/null
 @endtask
 
 @task('cloneRepository', ['on' => 'remote'])
@@ -80,15 +69,22 @@ cd {{ $newReleaseDir }}
 echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
-@task('uploadGeneratedAssets', ['on' => 'local'])
-{{ logMessage('start uploadGeneratedAssets') }}
-scp -r public/build {{ $server }}:{{ $newReleaseDir }}/public
-@endtask
-
 @task('runComposer', ['on' => 'remote'])
 {{ logMessage('start runComposer') }}
 cd {{ $newReleaseDir }};
 composer install --prefer-dist --no-scripts --no-dev -q -o;
+@endtask
+
+@task('runYarn', ['on' => 'remote'])
+{{ logMessage('start runYarn') }}
+cd {{ $newReleaseDir }};
+yarn
+@endtask
+
+@task('generateAssets', ['on' => 'remote'])
+{{ logMessage('start generateAssets') }}
+cd {{ $newReleaseDir }};
+gulp --production
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
@@ -165,16 +161,11 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 {{ logMessage('start deployOnlyCode') }}
 cd {{ $currentDir }}
 git pull origin master
+php artisan cache:clear
 sudo service php7.0-fpm restart
 sudo supervisorctl restart all
 @endtask
 
-@task('uploadGeneratedAssetsToCurrentDir', ['on' => 'local'])
-{{ logMessage('start uploadGeneratedAssetsToCurrentDir') }}
-scp -r public/build {{ $server }}:{{ $currentDir }}/public
-php artisan cache:clear
-@endtask
-
 @after
-@slack(env('SLACK_ENDPOINT'), '#deployments', "Deployment on {$server}: {$baseDir} {$newReleaseName} by {$user}: {$task} done")
+@slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "Deployment on {$server}: {$baseDir} {$newReleaseName} by {$user}: {$task} done")
 @endafter

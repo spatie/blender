@@ -9,7 +9,8 @@ class EventServiceProvider extends IlluminateEventServiceProvider
     protected $listen = [];
 
     protected $subscribe = [
-        \App\Notifications\Eventhandler::class,
-        \App\Mail\Eventhandler::class,
+        \App\Notifications\EventHandler::class,
+        \App\Mail\EventHandler::class,
     ];
 }
+

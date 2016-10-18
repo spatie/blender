@@ -195,7 +195,6 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Maknz\Slack\SlackServiceProvider::class,
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
