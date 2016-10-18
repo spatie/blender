@@ -105,7 +105,7 @@ ln -nfs {{ $baseDir }}/.env .env;
 @endtask
 
 @task('optimizeInstallation', ['on' => 'remote'])
-{{ logMessage("\u{1F517}  Optimizing installation") }}
+{{ logMessage("\u{1F517}  Optimizing installation...") }}
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
 php artisan optimize;
