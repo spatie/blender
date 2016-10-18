@@ -17,14 +17,14 @@ class BackUserRequest extends Request
         ];
     }
 
-    public function getEmailValidationRule(): Rule
+    public function getEmailValidationRule(): string
     {
         $uniqueRule = Rule::unique('users_back', 'email');
 
         if ($this->method() === 'PATCH') {
-            $uniqueRule = $uniqueRule->where(function ($query) {
-                $query->where('email', $this->getRouteParameter('backUser'));
-            });
+            $userId = $this->getRouteParameter('administrator');
+
+            $uniqueRule = $uniqueRule->ignore($userId);
         }
 
         return "required|email|{$uniqueRule}";

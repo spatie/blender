@@ -16,14 +16,14 @@ class FrontUserRequest extends Request
         ];
     }
 
-    public function getEmailValidationRule(): Rule
+    public function getEmailValidationRule(): string
     {
         $uniqueRule = Rule::unique('users_front', 'email');
 
         if ($this->method() === 'PATCH') {
-            $uniqueRule = $uniqueRule->where(function ($query) {
-                $query->where('email', $this->getRouteParameter('frontUser'));
-            });
+            $userId = $this->getRouteParameter('member');
+
+            $uniqueRule = $uniqueRule->ignore($userId);
         }
 
         return "required|email|{$uniqueRule}";
