@@ -28,7 +28,6 @@ class FrontUserSeeder extends DatabaseSeeder
         ];
 
         collect($users)->each(function ($lastName, $firstName) {
-
             $password = app()->environment('local') ? strtolower($firstName) : string()->random();
 
             factory(User::class)->create([

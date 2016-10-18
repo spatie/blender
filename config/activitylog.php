@@ -1,4 +1,5 @@
 <?php
+
 return [
     'alsoLogInDefaultLog' => true,
     'deleteRecordsOlderThanMonths' => 2,

@@ -5,7 +5,6 @@ use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\User;
 
 $factory->define(User::class, function () {
-
     $person = faker()->person();
 
     return [

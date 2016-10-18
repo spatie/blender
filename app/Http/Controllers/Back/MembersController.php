@@ -7,7 +7,6 @@ use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack;
 use App\Http\Requests\Back\FrontUserRequest;
 use App\Services\Auth\Front\User;
-use App\Services\Auth\Front\UserUpdater;
 use App\Repositories\FrontUserRepository;
 
 class MembersController
@@ -59,7 +58,7 @@ class MembersController
     {
         $user = $this->frontUserRepository->find($id);
 
-        if (!$user) {
+        if (! $user) {
             abort(404);
         }
 

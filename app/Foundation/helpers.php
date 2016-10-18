@@ -35,7 +35,7 @@ function current_user()
  */
 function current_front_user()
 {
-    if (!auth()->guard('front')->check()) {
+    if (! auth()->guard('front')->check()) {
         return;
     }
 
@@ -47,7 +47,7 @@ function current_front_user()
  */
 function current_back_user()
 {
-    if (!auth()->guard('back')->check()) {
+    if (! auth()->guard('back')->check()) {
         return;
     }
 
@@ -158,14 +158,13 @@ function translate_field_name(string $name, string $locale = ''): string
  */
 function validate($fields, $rules): bool
 {
-    if (!is_array($fields)) {
+    if (! is_array($fields)) {
         $fields = ['default' => $fields];
     }
 
-    if (!is_array($rules)) {
+    if (! is_array($rules)) {
         $rules = ['default' => $rules];
     }
 
     return Validator::make($fields, $rules)->passes();
 }
-

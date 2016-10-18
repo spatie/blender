@@ -19,7 +19,7 @@ class ValidationServiceProvider extends ServiceProvider
                 ->pluck('name')
                 ->toArray();
 
-            if (!\Spatie\values_in_array($tagNames, $exisitingTagNames)) {
+            if (! \Spatie\values_in_array($tagNames, $exisitingTagNames)) {
                 return false;
             }
 

@@ -12,9 +12,7 @@ class FormResponse extends Model
     public static function downloadAll()
     {
         Excel::create('Responses '.date('Y-m-d'), function ($excel) {
-
             $excel->sheet('Responses', function ($sheet) {
-
                 $sheet->freezeFirstRow();
 
                 $sheet->cells('A1:Z1', function ($cells) {

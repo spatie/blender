@@ -32,7 +32,7 @@ class ConfigServiceProvider extends ServiceProvider
         }
 
         try {
-            if (!class_exists('Memcached')) {
+            if (! class_exists('Memcached')) {
                 throw new Exception();
             }
 

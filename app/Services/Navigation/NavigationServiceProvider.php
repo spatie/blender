@@ -24,7 +24,6 @@ class NavigationServiceProvider extends ServiceProvider
     protected function registerSection()
     {
         Request::macro('section', function () {
-
             if (request()->segment(1) === 'blender') {
                 return 'back';
             }

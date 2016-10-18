@@ -34,7 +34,9 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     protected $dates = ['last_activity'];
 
     abstract public function guardDriver(): string;
+
     abstract public function getHomeUrl(): string;
+
     abstract public function getProfileUrl(): string;
 
     public function getNameAttribute(): string
@@ -56,7 +58,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
 
     public function isCurrentUser(): bool
     {
-        if (!$this->id) {
+        if (! $this->id) {
             return false;
         }
 

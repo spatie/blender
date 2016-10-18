@@ -6,7 +6,7 @@ return [
      *
      */
     'source' => [
-        'path' => public_path() . '/content/media',
+        'path' => public_path().'/content/media',
     ],
 
     /*
@@ -28,5 +28,5 @@ return [
     /*
      * The maximum allowed total image size in pixels
      */
-    'maxSize' => 2000 * 2000
+    'maxSize' => 2000 * 2000,
 ];

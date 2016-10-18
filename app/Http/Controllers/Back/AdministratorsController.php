@@ -7,7 +7,6 @@ use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\Events\UserCreated;
 use App\Http\Requests\Back\BackUserRequest;
 use App\Services\Auth\Back\User;
-use App\Services\Auth\Back\UserUpdater;
 use App\Repositories\BackUserRepository;
 
 class AdministratorsController
@@ -63,7 +62,7 @@ class AdministratorsController
     {
         $user = $this->backUserRepository->find($id);
 
-        if (!$user) {
+        if (! $user) {
             abort(404);
         }
 

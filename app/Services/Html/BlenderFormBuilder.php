@@ -247,11 +247,9 @@ class BlenderFormBuilder
     public function seo(): string
     {
         return locales()->map(function ($locale) {
-
             return collect($this->model->defaultSeoValues())
                 ->keys()
                 ->map(function ($attribute) use ($locale) {
-
                     $fieldName = translate_field_name("seo.{$attribute}", $locale);
 
                     return $this->group([
@@ -259,7 +257,7 @@ class BlenderFormBuilder
                         Form::text(
                             $fieldName,
                             old($fieldName, $this->model->getTranslation('seo_values', $locale)[$attribute] ?? ''),
-                            [ 'placeholder' => $this->model->defaultSeoValues()[$attribute] ]
+                            ['placeholder' => $this->model->defaultSeoValues()[$attribute]]
                         ),
                     ]);
                 })

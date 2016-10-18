@@ -69,7 +69,7 @@ abstract class Repository
 
         $locale = content_locale();
 
-        if (!isset((new $model())->translatedAttributes)) {
+        if (! isset((new $model())->translatedAttributes)) {
             return $this->query()
                 ->online()
                 ->where('url', 'regexp', "\"{$locale}\"\s*:\s*\"{$url}\"")

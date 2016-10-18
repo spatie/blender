@@ -7,7 +7,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         parent::run();
-        
+
         Cache::flush();
 
         $this->call(BackUserSeeder::class);

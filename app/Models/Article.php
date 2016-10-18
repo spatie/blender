@@ -61,7 +61,7 @@ class Article extends ModuleModel
 
     public function isDeletable(): bool
     {
-        return !(bool) $this->technical_name;
+        return ! (bool) $this->technical_name;
     }
 
     public function children(): HasMany
@@ -81,7 +81,7 @@ class Article extends ModuleModel
 
     public function hasParentArticle(): bool
     {
-        return !is_null($this->parentArticle);
+        return ! is_null($this->parentArticle);
     }
 
     public function getFullUrlAttribute(): string
