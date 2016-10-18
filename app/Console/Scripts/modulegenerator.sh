@@ -21,7 +21,6 @@ function generate() {
 # Model & related objects
 generate  app/Models/NewsItem.php                               app/Models/${singular}.php
 generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Presenters/${singular}Presenter.php
-generate  app/Models/Updaters/NewsItemUpdater.php               app/Models/Updaters/${singular}Updater.php
 
 # Repositories
 generate  app/Repositories/NewsItemRepository.php             app/Repositories/${singular}Repository.php
@@ -43,7 +42,7 @@ generate  database/migrations/2015_05_26_153558_create_news_items_table.php  dat
 
 # Todos
 echo "ALL DONE!"
-echo "- Todo: Register routes in App\Http\Routes\back.php"
-echo "- Todo: Register breadcrumbs in App\Services\Navigation\Navigation"
-echo "- Todo: Register navigation in App\Services\Navigation\Breadcrumbs"
 echo "- Todo: Register seeder in DatabaseSeeder"
+echo "- Todo: Register Blender routes in routes\back.php"
+echo "- Todo: Register Blender breadcrumbs in App\Services\Navigation\BreadCrumbs"
+echo "- Todo: Register Blender navigation in App\Services\Navigation\Menu\BackMenus"
