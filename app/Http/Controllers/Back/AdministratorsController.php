@@ -36,7 +36,14 @@ class AdministratorsController
     {
         $user = new User();
 
-        UserUpdater::update($user, $request);
+        $user->email = $request->get('email');
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->locale = $request->get('locale', 'nl');
+
+        if ($request->has('password')) {
+            $user->password = $request->get('password');
+        }
 
         $user->role = UserRole::ADMIN();
         $user->status = UserStatus::ACTIVE();
@@ -44,12 +51,12 @@ class AdministratorsController
         $this->backUserRepository->save($user);
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
-        activity($eventDescription);
+        activity()->on($user)->log($eventDescription);
         flash()->success(strip_tags($eventDescription).'. '.fragment('back.administrators.passwordMailSent'));
 
         event(new UserCreated($user));
 
-        return redirect(action('Back\BackUserController@index', ['role' => $user->role]));
+        return redirect(action('Back\AdministratorsController@index', ['role' => $user->role]));
     }
 
     public function edit($id)
@@ -67,15 +74,22 @@ class AdministratorsController
     {
         abort_unless($user = $this->backUserRepository->find($id), 500);
 
-        UserUpdater::update($user, $request);
+        $user->email = $request->get('email');
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->locale = $request->get('locale', 'nl');
+
+        if ($request->has('password')) {
+            $user->password = $request->get('password');
+        }
 
         $this->backUserRepository->save($user);
 
         $eventDescription = $this->getEventDescriptionFor('updated', $user);
-        activity($eventDescription);
+        activity()->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
-        return redirect()->action('Back\BackUserController@index');
+        return redirect()->action('Back\AdministratorsController@index');
     }
 
     public function activate($id)
@@ -102,14 +116,14 @@ class AdministratorsController
         activity($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
-        return redirect()->action('Back\BackUserController@index');
+        return redirect()->action('Back\AdministratorsController@index');
     }
 
     protected function getEventDescriptionFor(string $event, User $user): string
     {
         $name = sprintf(
             '<a href="%s">%s</a>',
-            action('Back\BackUserController@edit', [$user->id]),
+            action('Back\AdministratorsController@edit', [$user->id]),
             $user->email
         );
 

@@ -16,7 +16,7 @@ class BackUserRequest extends Request
         ];
 
         if ($this->method() === 'PATCH') {
-            $rules['email'] .= ",{$this->getRouteParameter('backUser')}";
+            $rules['email'] .= ",{$this->getRouteParameter('administrator')}";
         }
 
         return $rules;

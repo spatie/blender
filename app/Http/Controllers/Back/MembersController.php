@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Back\Api;
+namespace App\Http\Controllers\Back;
 
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
@@ -36,7 +36,10 @@ class MembersController
     {
         $user = new User();
 
-        UserUpdater::update($user, $request);
+        $user->email = $request->get('email');
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->locale = $request->get('locale', 'nl');
 
         $user->role = UserRole::MEMBER();
         $user->status = UserStatus::ACTIVE();
@@ -49,7 +52,7 @@ class MembersController
 
         event(new UserCreatedThroughBack($user));
 
-        return redirect()->action('Back\FrontUserController@index');
+        return redirect()->action('Back\MembersController@index');
     }
 
     public function edit($id)
@@ -67,36 +70,38 @@ class MembersController
     {
         abort_unless($user = $this->frontUserRepository->find($id), 500);
 
-        UserUpdater::update($user, $request);
+        $user->email = $request->get('email');
+        $user->first_name = $request->get('first_name');
+        $user->last_name = $request->get('last_name');
+        $user->locale = $request->get('locale', 'nl');
 
         $this->frontUserRepository->save($user);
 
         $eventDescription = $this->getEventDescriptionFor('updated', $user);
-        activity($eventDescription);
+        activity()->on($user)->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
-        return redirect()->action('Back\FrontUserController@index');
+        return redirect()->action('Back\MembersController@index');
     }
 
     public function destroy($id)
     {
         $user = $this->frontUserRepository->find($id);
 
-        $eventDescription = $this->getEventDescriptionFor('deleted', $user);
-
         $this->frontUserRepository->delete($user);
 
-        activity($eventDescription);
+        $eventDescription = $this->getEventDescriptionFor('deleted', $user);
+        activity()->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
-        return redirect()->action('Back\FrontUserController@index');
+        return redirect()->action('Back\MembersController@index');
     }
 
     protected function getEventDescriptionFor(string $event, User $user): string
     {
         $name = sprintf(
             '<a href="%s">%s</a>',
-            action('Back\FrontUserController@edit', [$user->id]),
+            action('Back\MembersController@edit', [$user->id]),
             $user->email
         );
 

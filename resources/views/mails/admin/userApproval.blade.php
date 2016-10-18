@@ -9,7 +9,7 @@
     <span>
         Een nieuwe gebruiker met emailadres {{ $user->email }} heeft zich aangemeld.
 
-        U kan deze gebruiker goedkeuren <a href="{{URL::action('Back\FrontUserController@edit', [$user->id]) }} ">in de backsite</a>.
+        U kan deze gebruiker goedkeuren <a href="{{URL::action('Back\MembersController@edit', [$user->id]) }} ">in de backsite</a>.
     </span>
 
 @endsection

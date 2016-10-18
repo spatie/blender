@@ -7,14 +7,10 @@ use DaveJamesMiller\Breadcrumbs\Manager;
 
 class Breadcrumbs
 {
-    /**
-     * @var \DaveJamesMiller\Breadcrumbs\Manager
-     */
+    /** @var \DaveJamesMiller\Breadcrumbs\Manager */
     protected $manager;
 
-    /**
-     * @var array
-     */
+    /** @var array */
     protected $modules = [
         'articles',
         'news',
@@ -23,9 +19,6 @@ class Breadcrumbs
         'redirects',
     ];
 
-    /**
-     * @param \DaveJamesMiller\Breadcrumbs\Manager $manager
-     */
     public function __construct(Manager $manager)
     {
         $this->manager = $manager;
@@ -44,12 +37,12 @@ class Breadcrumbs
     protected function registerFragmentBreadcrumbs()
     {
         BreadCrumbsManager::register('fragmentsBack', function ($breadcrumbs) {
-            $breadcrumbs->push(fragment('back.fragments.title'), action('Back\FragmentController@index'));
+            $breadcrumbs->push(fragment('back.fragments.title'), action('Back\FragmentsController@index'));
         });
 
         BreadCrumbsManager::register('fragmentsDetailBack', function ($breadcrumbs, $string) {
-            $breadcrumbs->parent('fragments');
-            $breadcrumbs->push($string->name, action('Back\FragmentController@edit', $string->id));
+            $breadcrumbs->parent('fragmentsBack');
+            $breadcrumbs->push($string->name, action('Back\FragmentsController@edit', $string->id));
         });
     }
 
@@ -59,7 +52,7 @@ class Breadcrumbs
             $breadcrumbs->push(fragment('back.administrators.title'), action('Back\AdministratorsController@index'));
         });
 
-        BreadCrumbsManager::register('administratorsNewBack', function ($breadcrumbs) {
+        BreadCrumbsManager::register('administratorsCreateBack', function ($breadcrumbs) {
             $breadcrumbs->parent('administratorsListBack');
             $breadcrumbs->push(fragment('back.administrators.new'), action('Back\AdministratorsController@create'));
         });
@@ -74,12 +67,12 @@ class Breadcrumbs
         });
 
         BreadCrumbsManager::register('membersNewBack', function ($breadcrumbs) {
-            $breadcrumbs->parent('frontUserListBack');
+            $breadcrumbs->parent('membersListBack');
             $breadcrumbs->push(fragment('back.members.new'), action('Back\MembersController@create'));
         });
 
         BreadCrumbsManager::register('membersEditBack', function ($breadcrumbs, $user) {
-            $breadcrumbs->parent('frontUserListBack', $user);
+            $breadcrumbs->parent('membersListBack', $user);
             $breadcrumbs->push($user->name, action('Back\MembersController@edit', $user->id));
         });
     }

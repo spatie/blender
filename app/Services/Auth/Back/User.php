@@ -29,7 +29,7 @@ class User extends BaseUser
 
     public function getProfileUrl(): string
     {
-        return action('Back\BackUserController@edit', ['id' => $this->id]);
+        return action('Back\AdministratorsController@edit', $this->id);
     }
 
     public function getStatusAttribute(): UserStatus

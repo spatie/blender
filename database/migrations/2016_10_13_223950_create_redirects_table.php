@@ -18,6 +18,7 @@ class CreateRedirectsTable extends Migration
             $table->string('old_url');
             $table->string('new_url');
             $table->boolean('draft')->default(true);
+            $table->boolean('online')->default(true);
             $table->integer('order_column')->nullable();
             $table->timestamps();
         });

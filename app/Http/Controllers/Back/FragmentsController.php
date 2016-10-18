@@ -27,7 +27,7 @@ class FragmentsController
         $fragment = new Fragment();
         $fragment->save();
 
-        return redirect()->action('Back\FragmentController@edit', [$fragment->id]);
+        return redirect()->action('Back\FragmentsController@edit', [$fragment->id]);
     }
 
     public function edit($id)
@@ -54,7 +54,7 @@ class FragmentsController
 
         flash()->success(strip_tags($eventDescription));
 
-        return redirect()->action('Back\FragmentController@index');
+        return redirect()->action('Back\FragmentsController@index');
     }
 
     public function download()

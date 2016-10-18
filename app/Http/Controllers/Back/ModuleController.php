@@ -19,25 +19,22 @@ abstract class ModuleController
     use Updaters\UpdateTranslations;
 
     /** @var string */
-    protected $model, $module;
+    protected $modelClass, $moduleName;
 
     /** @var bool */
     protected $redirectToIndex = false;
 
     public function __construct()
     {
-        $this->model = (string) (new ReflectionClass($this))
-            ->getMethod('make')
-            ->getReturnType();
-
-        $this->module = explode('_', snake_case(short_class_name($this), '_'), 2)[0];
+        $this->modelClass = $this->determineModelClass();
+        $this->moduleName = $this->determineModuleName();
     }
 
     public function index()
     {
         $models = $this->all();
 
-        return view("back.{$this->module}.index")->with('models', $models);
+        return view("back.{$this->moduleName}.index")->with('models', $models);
     }
 
     public function create()
@@ -62,18 +59,14 @@ abstract class ModuleController
             return redirect()->to($this->action('edit', $id));
         }
 
-        return view("back.{$this->module}.edit")
+        return view("back.{$this->moduleName}.edit")
             ->with('model', $model)
-            ->with('module', $this->module);
+            ->with('module', $this->moduleName);
     }
 
     public function update(int $id)
     {
-        $formRequest = (new ReflectionClass($this))
-            ->getMethod('updateFromRequest')
-            ->getParameters()[1]
-            ->getClass()
-            ->getName();
+        $formRequest = $this->determineUpdateRequestClass();
 
         $request = app()->make($formRequest);
 
@@ -109,23 +102,44 @@ abstract class ModuleController
 
     public function changeOrder(Request $request)
     {
-        call_user_func([$this->model, 'setNewOrder'], $request->get('ids'));
+        call_user_func([$this->modelClass, 'setNewOrder'], $request->get('ids'));
     }
 
     protected function find(int $id): Model
     {
-        return call_user_func("{$this->model}::find", $id);
+        return call_user_func("{$this->modelClass}::findOrFail", $id);
     }
 
     protected function all(): Collection
     {
-        $query = call_user_func("{$this->model}::query")->nonDraft();
+        $query = call_user_func("{$this->modelClass}::query")->nonDraft();
 
-        if (array_key_exists(SortableInterface::class, class_implements($this->model))) {
+        if (array_key_exists(SortableInterface::class, class_implements($this->modelClass))) {
             $query->orderBy('order_column', 'asc');
         }
 
         return $query->get();
+    }
+
+    protected function determineModelClass(): string
+    {
+        return (new ReflectionClass($this))
+            ->getMethod('make')
+            ->getReturnType();
+    }
+
+    protected function determineModuleName(): string
+    {
+        return explode('_', snake_case(short_class_name($this), '_'), 2)[0];
+    }
+
+    protected function determineUpdateRequestClass(): string
+    {
+        return (new ReflectionClass($this))
+            ->getMethod('updateFromRequest')
+            ->getParameters()[1]
+            ->getClass()
+            ->getName();
     }
 
     protected function updateModel(Model $model, FormRequest $request)
@@ -141,7 +155,7 @@ abstract class ModuleController
 
     protected function updatedEventDescriptionFor($model): string
     {
-        $modelName = fragment("back.{$this->module}.singular");
+        $modelName = fragment("back.{$this->moduleName}.singular");
 
         $linkToModel = el('a', ['href' => $this->action('edit', $model->id)], $model->name);
 
@@ -154,12 +168,12 @@ abstract class ModuleController
 
     protected function deletedEventDescriptionFor($model): string
     {
-        $modelName = fragment("back.{$this->module}.singular");
+        $modelName = fragment("back.{$this->moduleName}.singular");
 
         return fragment('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
     }
 
-    protected function action(string $action, $parameters): string
+    protected function action(string $action, $parameters = []): string
     {
         return action('\\'.static::class.'@'.$action, $parameters);
     }
