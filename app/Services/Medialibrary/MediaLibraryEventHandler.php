@@ -4,6 +4,7 @@ namespace App\Services\Medialibrary;
 
 use ColorThief\ColorThief;
 use Illuminate\Contracts\Events\Dispatcher;
+use Spatie\Color\Rgb;
 use Spatie\MediaLibrary\Events\MediaHasBeenAdded;
 
 class MediaLibraryEventHandler
@@ -22,7 +23,9 @@ class MediaLibraryEventHandler
 
         $dominantColor = ColorThief::getColor($media->getPath());
 
-        $media->setCustomProperty('dominantColor', rgb_to_hex(...$dominantColor));
+        $hexColor = (new Rgb(...$dominantColor))->toHex();
+
+        $media->setCustomProperty('dominantColor', $hexColor);
 
         $media->save();
     }

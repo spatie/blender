@@ -2,113 +2,14 @@
 
 use Illuminate\Support\Collection;
 
-function locale(): string
-{
-    return app()->getLocale();
-}
-
-function locales(): Collection
-{
-    return collect(config('app.locales'));
-}
-
-function content_locale(): string
-{
-    return \App\Services\Locale\CurrentLocale::getContentLocale();
-}
-
-function fragment($name, array $replacements = []): string
-{
-    return trans($name, $replacements);
-}
-
-function fragment_slug($name, array $replacements = []): string
-{
-    $translation = fragment($name, $replacements);
-
-    return str_slug($translation);
-}
-
-function translate_field_name(string $name, string $locale = ''): string
-{
-    $locale = $locale ?? content_locale();
-
-    return "translated_{$locale}_{$name}";
-}
-
 function article(string $technicalName): App\Models\Article
 {
     return App\Models\Article::findByTechnicalName($technicalName);
 }
 
-function carbon(string $date, string $format = 'Y-m-d H:i:s'): Carbon\Carbon
+function content_locale(): string
 {
-    return Carbon\Carbon::createFromFormat($format, $date);
-}
-
-function diff_date_for_humans(Carbon\Carbon $date): string
-{
-    return (new Jenssegers\Date\Date($date->timestamp))->ago();
-}
-
-function roman_year(int $year = null): string
-{
-    if (!is_numeric($year)) {
-        $year = date('Y');
-    }
-
-    $result = '';
-
-    $romanNumerals = [
-        'M' => 1000,
-        'CM' => 900,
-        'D' => 500,
-        'CD' => 400,
-        'C' => 100,
-        'XC' => 90,
-        'L' => 50,
-        'XL' => 40,
-        'X' => 10,
-        'IX' => 9,
-        'V' => 5,
-        'IV' => 4,
-        'I' => 1,
-    ];
-
-    foreach ($romanNumerals as $roman => $yearNumber) {
-        // Divide to get  matches
-        $matches = intval($year / $yearNumber);
-
-        // Assign the roman char * $matches
-        $result .= str_repeat($roman, $matches);
-
-        // Substract from the number
-        $year = $year % $yearNumber;
-    }
-
-    return $result;
-}
-
-function short_class_name($object): string
-{
-    $objectProperties = new \ReflectionClass($object);
-
-    return $objectProperties->getShortName();
-}
-
-function class_constants($object, string $startsWithFilter = ''): array
-{
-    $objectProperties = new \ReflectionClass($object);
-
-    $constants = $objectProperties->getConstants();
-
-    if ($startsWithFilter == '') {
-        return $constants;
-    }
-
-    return array_filter($constants, function ($key) use ($startsWithFilter) {
-        return starts_with(strtolower($key), strtolower($startsWithFilter));
-    }, ARRAY_FILTER_USE_KEY);
+    return \App\Services\Locale\CurrentLocale::getContentLocale();
 }
 
 /**
@@ -126,10 +27,12 @@ function current_user()
         return current_back_user();
     }
 
-    throw new \Exception('Request was neither for front or back');
+    throw new \Exception('Coud not determine current user');
 }
 
-/** @return \App\Services\Auth\Front\User|null */
+/**
+ * @return \App\Services\Auth\Front\User|null
+ */
 function current_front_user()
 {
     if (!auth()->guard('front')->check()) {
@@ -139,7 +42,9 @@ function current_front_user()
     return auth()->guard('front')->user();
 }
 
-/** @return \App\Services\Auth\Back\User|null */
+/**
+ * @return \App\Services\Auth\Back\User|null
+ */
 function current_back_user()
 {
     if (!auth()->guard('back')->check()) {
@@ -147,6 +52,38 @@ function current_back_user()
     }
 
     return auth()->guard('back')->user();
+}
+
+function diff_date_for_humans(Carbon\Carbon $date): string
+{
+    return (new Jenssegers\Date\Date($date->timestamp))->ago();
+}
+
+function el(string $tag, $attributes = null, $contents = null): string
+{
+    return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
+}
+
+function fragment($name, array $replacements = []): string
+{
+    return trans($name, $replacements);
+}
+
+function fragment_slug($name, array $replacements = []): string
+{
+    $translation = fragment($name, $replacements);
+
+    return str_slug($translation);
+}
+
+function locale(): string
+{
+    return app()->getLocale();
+}
+
+function locales(): Collection
+{
+    return collect(config('app.locales'));
 }
 
 function login_url(): string
@@ -163,9 +100,52 @@ function logout_url(): string
         action('Back\Auth\LoginController@logout');
 }
 
+function roman_year(int $year = null): string
+{
+    $year = $year ?? date('Y');
+
+    $romanNumerals = [
+        'M' => 1000,
+        'CM' => 900,
+        'D' => 500,
+        'CD' => 400,
+        'C' => 100,
+        'XC' => 90,
+        'L' => 50,
+        'XL' => 40,
+        'X' => 10,
+        'IX' => 9,
+        'V' => 5,
+        'IV' => 4,
+        'I' => 1,
+    ];
+
+    $result = '';
+
+    foreach ($romanNumerals as $roman => $yearNumber) {
+        // Divide to get  matches
+        $matches = intval($year / $yearNumber);
+
+        // Assign the roman char * $matches
+        $result .= str_repeat($roman, $matches);
+
+        // Substract from the number
+        $year = $year % $yearNumber;
+    }
+
+    return $result;
+}
+
 function register_url(): string
 {
     return action('Front\Auth\RegisterController@showRegistrationForm');
+}
+
+function translate_field_name(string $name, string $locale = ''): string
+{
+    $locale = $locale ?? content_locale();
+
+    return "translated_{$locale}_{$name}";
 }
 
 /**
@@ -189,16 +169,3 @@ function validate($fields, $rules): bool
     return Validator::make($fields, $rules)->passes();
 }
 
-function el(string $tag, $attributes = null, $contents = null): string
-{
-    return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
-}
-
-function rgb_to_hex(int $red, int $green, int $blue):  string
-{
-    return '#'.collect([$red, $green, $blue])
-        ->map(function (int $decimal) :  string {
-            return str_pad(dechex($decimal), 2, STR_PAD_LEFT);
-        })
-        ->implode('');
-}

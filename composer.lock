@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c93877d354e7ffe839ccab89e5449f15",
-    "content-hash": "38e7d75a1e20dacd011553988188e682",
+    "hash": "de26d570155b6ab57ce43e4a57b8054e",
+    "content-hash": "e003632cfc791869c433f451135d9afc",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3708,6 +3708,54 @@
                 "spatie"
             ],
             "time": "2016-03-08 14:44:54"
+        },
+        {
+            "name": "spatie/color",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/color.git",
+                "reference": "caf09faf0c3d9d388260907be0423863a408467e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/color/zipball/caf09faf0c3d9d388260907be0423863a408467e",
+                "reference": "caf09faf0c3d9d388260907be0423863a408467e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Color\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A little library to handle color conversions",
+            "homepage": "https://github.com/spatie/color",
+            "keywords": [
+                "color",
+                "conversion",
+                "rgb",
+                "spatie"
+            ],
+            "time": "2016-10-17 08:24:30"
         },
         {
             "name": "spatie/crawler",
