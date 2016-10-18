@@ -32,5 +32,8 @@
     "vue": "^1.0.26",
     "vuex": "2.0.0-rc.3",
     "webfontloader": "^1.6.10"
+  },
+  "dependencies": {
+    "webpack": "^1.12"
   }
 }
