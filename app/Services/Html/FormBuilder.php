@@ -14,8 +14,6 @@ class FormBuilder extends BaseFormBuilder
 {
     public function openDraftable(array $options, Model $subject): string
     {
-        class_nam
-
         $identifier = class_basename($subject).'_'.($subject->isDraft() ? 'new' : $subject->id);
 
         $options = array_merge($options, [
