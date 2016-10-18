@@ -3,12 +3,11 @@
 namespace App\Models;
 
 use App\Models\Presenters\FragmentPresenter;
-use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\TranslationLoader\LanguageLine;
 
 class Fragment extends LanguageLine
 {
-    use LogsActivity, FragmentPresenter;
+    use FragmentPresenter;
 
     protected static $logAttributes = ['name', 'text'];
 
@@ -27,5 +26,10 @@ class Fragment extends LanguageLine
         $link = link_to_action('Back\\FragmentController@edit', $this->fullName, [$this->id]);
 
         return "Fragment '{$link}' werd bijgewerkt";
+    }
+
+    public function getNameAttribute(): string
+    {
+        return "{$this->group}.{$this->key}";
     }
 }

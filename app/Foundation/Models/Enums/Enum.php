@@ -9,7 +9,7 @@ abstract class Enum extends BaseEnum
 {
     public function doesntEqual(Enum $enum): bool
     {
-        return !$this->equals($enum);
+        return ! $this->equals($enum);
     }
 
     public static function toCollection():  Collection

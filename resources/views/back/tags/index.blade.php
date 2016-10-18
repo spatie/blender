@@ -6,13 +6,10 @@
     <section>
         <div class="grid">
             <h1>{{ fragment('back.tags.title') }}</h1>
-            <a href="{{ URL::action('Back\TagController@create') }}" class="button">{{ fragment('back.tags.new') }}</a>
+            <a href="{{ URL::action('Back\TagsController@create') }}" class="button">{{ fragment('back.tags.new') }}</a>
 
             @foreach($tags as $name => $type)
-
-
-
-                <table data-sortable="{{ URL::action('Back\TagController@changeOrder') }}">
+                <table data-sortable="{{ URL::action('Back\TagsController@changeOrder') }}">
                     <caption>{{ fragment("back.tags.types.{$name}") }}</caption>
                     <thead>
                     <tr>
@@ -26,12 +23,12 @@
 
                         <tr data-row-id="{{ $tag->id }}" >
                             <td>
-                                <a href="{{ Url::action('Back\TagController@edit', [$tag->id]) }}">
+                                <a href="{{ Url::action('Back\TagsController@edit', [$tag->id]) }}">
                                     {{ $tag->name }}
                                 </a>
                             </td>
                             <td class="-right">
-                                {!! Html::deleteButton(action('Back\TagController@destroy', $tag->id)) !!}
+                                {!! Html::deleteButton(action('Back\TagsController@destroy', $tag->id)) !!}
                             </td>
                         </tr>
 

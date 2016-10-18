@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "39d18bea844f91397c7217d393c8b0a9",
-    "content-hash": "1a240ec2f5d8747cc2e3cb9e530c9e56",
+    "hash": "de26d570155b6ab57ce43e4a57b8054e",
+    "content-hash": "e003632cfc791869c433f451135d9afc",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4761,16 +4761,16 @@
         },
         {
             "name": "spatie/laravel-menu",
-            "version": "1.3.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "b84850e10a9fc9cd20606d19ef4333073d32c44c"
+                "reference": "429f33448628294ed4290ad965f40d5e7a3ff39d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/b84850e10a9fc9cd20606d19ef4333073d32c44c",
-                "reference": "b84850e10a9fc9cd20606d19ef4333073d32c44c",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/429f33448628294ed4290ad965f40d5e7a3ff39d",
+                "reference": "429f33448628294ed4290ad965f40d5e7a3ff39d",
                 "shasum": ""
             },
             "require": {
@@ -4778,11 +4778,10 @@
                 "illuminate/contracts": "~5.1.14|~5.2.0|~5.3.0",
                 "illuminate/support": "~5.1.14|~5.2.0|~5.3.0",
                 "php": "^7.0",
-                "spatie/menu": "^1.2.1"
+                "spatie/menu": "^2.0.0"
             },
             "require-dev": {
-                "fzaninotto/faker": "~1.4",
-                "orchestra/testbench": "^3.1",
+                "orchestra/testbench": "^3.3",
                 "phpunit/phpunit": "^5.2"
             },
             "type": "library",
@@ -4809,7 +4808,7 @@
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2016-08-01 13:59:37"
+            "time": "2016-10-11 09:00:50"
         },
         {
             "name": "spatie/laravel-missing-page-redirector",
@@ -5245,21 +5244,22 @@
         },
         {
             "name": "spatie/menu",
-            "version": "1.4.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/menu.git",
-                "reference": "f97fa911baa18af0fa99b8148e5b6445920a556e"
+                "reference": "e8442e616824d9e5800bbffbc271a4cec98d0d02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/f97fa911baa18af0fa99b8148e5b6445920a556e",
-                "reference": "f97fa911baa18af0fa99b8148e5b6445920a556e",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/e8442e616824d9e5800bbffbc271a4cec98d0d02",
+                "reference": "e8442e616824d9e5800bbffbc271a4cec98d0d02",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
-                "spatie/html-element": "^1.0.0"
+                "spatie/html-element": "^1.0.0",
+                "spatie/url": "^1.0.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^5.2.10"
@@ -5289,7 +5289,7 @@
                 "navigation",
                 "spatie"
             ],
-            "time": "2016-09-02 14:18:21"
+            "time": "2016-10-11 09:05:09"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -5392,16 +5392,16 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/seeders.git",
-                "reference": "e2245ec0c48585ee78f9284e73139b0735da6158"
+                "reference": "efa7b948fdf37214b9318938e9b007f24bb7f9ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/e2245ec0c48585ee78f9284e73139b0735da6158",
-                "reference": "e2245ec0c48585ee78f9284e73139b0735da6158",
+                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/efa7b948fdf37214b9318938e9b007f24bb7f9ba",
+                "reference": "efa7b948fdf37214b9318938e9b007f24bb7f9ba",
                 "shasum": ""
             },
             "require": {
@@ -5445,10 +5445,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/seeders/tree/4.3.1",
+                "source": "https://github.com/spatie-custom/seeders/tree/4.3.2",
                 "issues": "https://github.com/spatie-custom/seeders/issues"
             },
-            "time": "2016-07-07 10:28:25"
+            "time": "2016-10-18 10:49:21"
         },
         {
             "name": "spatie/string",

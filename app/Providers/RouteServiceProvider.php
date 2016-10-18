@@ -25,12 +25,13 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function registerMacros(Router $router)
     {
-        $router->macro('module', function ($slug, $className, $sortable = false) use ($router) {
+        $router->macro('module', function ($module, $sortable = false) use ($router) {
+            $controller = ucfirst($module).'Controller';
             if ($sortable) {
-                $router->patch("{$slug}/changeOrder", "{$className}Controller@changeOrder");
+                $router->patch("{$module}/changeOrder", $controller.'@changeOrder');
             }
 
-            $router->resource($slug, "{$className}Controller");
+            $router->resource($module, $controller);
         });
 
         $router->macro('articleList', function ($technicalNamePrefix, $action) use ($router) {

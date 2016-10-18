@@ -17,7 +17,7 @@ class ArticleSeeder extends DatabaseSeeder
         $this->seedArticle('Child 2', null, $parentArticle);
     }
 
-    public function seedArticle(string $name, string $technicalName = null, Article $parentArticle = null) : Article
+    public function seedArticle(string $name, string $technicalName = null, Article $parentArticle = null): Article
     {
         $article = factory(Article::class)->create([
             'name' => faker()->translate($name),
@@ -26,7 +26,9 @@ class ArticleSeeder extends DatabaseSeeder
             'parent_id' => $parentArticle ? $parentArticle->id : null,
         ]);
 
-        $this->addImages($article);
+        if (static::$withMedia) {
+            $this->addImages($article);
+        }
 
         return $article;
     }

@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('breadcrumbs', Breadcrumbs::render('articleBack', $model))
+@section('breadcrumbs', Breadcrumbs::render('articlesBack', $model))
 
 @section('pageTitle', fragment('back.articles.title'))
 
@@ -11,7 +11,7 @@
 
     {!! Form::openDraftable([
         'method'=>'PATCH',
-        'action'=> ['Back\ArticleController@update', $model->id],
+        'action'=> ['Back\ArticlesController@update', $model->id],
         'class' => '-stacked'
     ], $model) !!}
 

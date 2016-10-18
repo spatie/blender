@@ -17,7 +17,7 @@
                 <tbody>
                 @foreach($fragments as $fragment)
                     <tr>
-                        <td><a href="{{ action('Back\FragmentController@edit', [$fragment->id]) }}">{{ $fragment->fullName }}</a></td>
+                        <td><a href="{{ action('Back\FragmentsController@edit', [$fragment->id]) }}">{{ $fragment->fullName }}</a></td>
                         <td  class="-small">{!! $fragment->tease !!}</td>
                     </tr>
                 @endforeach
@@ -26,7 +26,7 @@
 
             <div class="form__group -buttons">
                 {!! Form::openButton([
-                    'action' => 'Back\FragmentController@download',
+                    'action' => 'Back\FragmentsController@download',
                     'method' => 'post'
                 ]) !!}
                     {{ fragment('back.fragments.download') }}

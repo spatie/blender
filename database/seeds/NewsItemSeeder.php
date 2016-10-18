@@ -11,12 +11,12 @@ class NewsItemSeeder extends DatabaseSeeder
         $this->seedRandomNewsItems();
     }
 
-    public function seedRandomNewsItems($amount = 10, $withMedia = true)
+    public function seedRandomNewsItems($amount = 10)
     {
         return factory(NewsItem::class, $amount)
             ->create()
-            ->each(function ($newsItem) use ($withMedia) {
-                if ($withMedia) {
+            ->each(function ($newsItem) {
+                if (static::$withMedia) {
                     $this->addImages($newsItem, 1, 3);
                 }
             });

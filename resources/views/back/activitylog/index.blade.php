@@ -24,7 +24,13 @@
                     <tr>
                         <td>{{ diff_date_for_humans($logItem->created_at) }}</td>
                         <td>{!! $logItem->description !!}</td>
-                        <td>{!! ($logItem->causer ? link_to_action('Back\BackUserController@edit', $logItem->causer->email, [$logItem->causer->id]) : '') !!}</td>
+                        <td>
+                            @if($logItem->causer)
+                                <a href="{{ action('Back\AdministratorsController@edit', $logItem->causer->id) }}">
+                                    {{ $logItem->causer->email }}
+                                </a>
+                            @endif
+                        </td>
                     </tr>
                 @endforeach
 

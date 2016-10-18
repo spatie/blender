@@ -16,25 +16,26 @@ function generate() {
     sed -i '' "s/newsItem/${lcsingular}/g" "$2"
     sed -i '' "s/news_items/${lcplural}/g" "$2"
     sed -i '' "s/news_item/${lcsingular}/g" "$2"
+    sed -i '' "s/News/${plural}/g" "$2"
+    sed -i '' "s/news/${lcplural}/g" "$2"
 }
 
 # Model & related objects
 generate  app/Models/NewsItem.php                               app/Models/${singular}.php
 generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Presenters/${singular}Presenter.php
-generate  app/Models/Updaters/NewsItemUpdater.php               app/Models/Updaters/${singular}Updater.php
 
 # Repositories
 generate  app/Repositories/NewsItemRepository.php             app/Repositories/${singular}Repository.php
 
 # Http
-generate  app/Http/Controllers/Back/NewsItemController.php  app/Http/Controllers/Back/${singular}Controller.php
+generate  app/Http/Controllers/Back/NewsController.php  app/Http/Controllers/Back/${singular}Controller.php
 generate  app/Http/Requests/Back/NewsItemRequest.php        app/Http/Requests/Back/${singular}Request.php
 
 # Views
 mkdir -p resources/views/back/${lcplural}/_partials
-generate  resources/views/back/newsItems/_partials/form.blade.php  resources/views/back/${lcplural}/_partials/form.blade.php
-generate  resources/views/back/newsItems/index.blade.php           resources/views/back/${lcplural}/index.blade.php
-generate  resources/views/back/newsItems/edit.blade.php            resources/views/back/${lcplural}/edit.blade.php
+generate  resources/views/back/news/_partials/form.blade.php  resources/views/back/${lcplural}/_partials/form.blade.php
+generate  resources/views/back/news/index.blade.php           resources/views/back/${lcplural}/index.blade.php
+generate  resources/views/back/news/edit.blade.php            resources/views/back/${lcplural}/edit.blade.php
 
 # Database
 generate  database/factories/NewsItemFactory.php                            database/factories/${singular}Factory.php
@@ -43,7 +44,7 @@ generate  database/migrations/2015_05_26_153558_create_news_items_table.php  dat
 
 # Todos
 echo "ALL DONE!"
-echo "- Todo: Register routes in App\Http\Routes\back.php"
-echo "- Todo: Register breadcrumbs in App\Services\Navigation\Navigation"
-echo "- Todo: Register navigation in App\Services\Navigation\Breadcrumbs"
 echo "- Todo: Register seeder in DatabaseSeeder"
+echo "- Todo: Register Blender routes in routes\back.php"
+echo "- Todo: Register Blender breadcrumbs in App\Services\Navigation\BreadCrumbs"
+echo "- Todo: Register Blender navigation in App\Services\Navigation\Menu\BackMenus"

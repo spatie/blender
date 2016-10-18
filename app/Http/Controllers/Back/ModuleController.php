@@ -2,115 +2,162 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Cache;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Collection;
+use ReflectionClass;
 use Spatie\EloquentSortable\SortableInterface;
 
-abstract class ModuleController extends Controller
+abstract class ModuleController
 {
-    /** @var string */
-    protected $modelName = null;
+    use Updaters\UpdateMedia;
+    use Updaters\UpdateOnlineToggle;
+    use Updaters\UpdatePublishDate;
+    use Updaters\UpdateSeoValues;
+    use Updaters\UpdateTags;
+    use Updaters\UpdateTranslations;
 
     /** @var string */
-    protected $moduleName = null;
+    protected $modelClass, $moduleName;
 
     /** @var bool */
     protected $redirectToIndex = false;
 
-    /** @return \Illuminate\Database\Eloquent\Model */
-    abstract protected function make();
+    public function __construct()
+    {
+        $this->modelClass = $this->determineModelClass();
+        $this->moduleName = $this->determineModuleName();
+    }
 
     public function index()
     {
-        $models = $this->query()->get();
+        $models = $this->all();
 
-        $data = [
-            $this->moduleName => $models,
-        ];
-
-        return view("back.{$this->moduleName}.index", $data);
+        return view("back.{$this->moduleName}.index")->with('models', $models);
     }
 
     public function create()
     {
         $model = $this->make();
 
-        return redirect()->action("Back\\{$this->modelName}Controller@edit", [$model->id]);
+        return redirect()->to($this->action('edit', $model->id));
     }
 
     public function show($id)
     {
-        return redirect()->action("Back\\{$this->modelName}Controller@edit", [$id]);
+        return redirect()->to($this->action('edit', $id));
     }
 
-    public function edit(Request $request, int $id)
+    public function edit(int $id)
     {
         $model = $this->find($id);
 
-        if ($request->has('revert')) {
+        if (request()->has('revert')) {
             $model->clearTemporaryMedia();
 
-            return redirect()->action("Back\\{$this->modelName}Controller@edit", [$id]);
+            return redirect()->to($this->action('edit', $id));
         }
 
-        $data = [
-            'model' => $model,
-            'module' => $this->moduleName,
-        ];
-
-        return view("back.{$this->moduleName}.edit", $data);
+        return view("back.{$this->moduleName}.edit")
+            ->with('model', $model)
+            ->with('module', $this->moduleName);
     }
 
     public function update(int $id)
     {
-        $request = app()->make("App\\Http\\Requests\\Back\\{$this->modelName}Request");
+        $formRequest = $this->determineUpdateRequestClass();
+
+        $request = app()->make($formRequest);
 
         $model = $this->find($id);
 
-        call_user_func("App\\Models\\Updaters\\{$this->modelName}Updater::update", $model, $request);
+        $this->updateFromRequest($model, $request);
 
-        $model->save();
-        app('cache')->flush();
+        Cache::flush();
 
-        $eventDescription = $this->getUpdatedEventDescription($model);
-
+        $eventDescription = $this->updatedEventDescriptionFor($model);
         activity()->on($model)->log($eventDescription);
-
         flash()->success(strip_tags($eventDescription));
 
-        if ($this->redirectToIndex) {
-            return redirect()->action("Back\\{$this->modelName}Controller@index");
-        }
-
-        return redirect()->action("Back\\{$this->modelName}Controller@edit", [$model->id]);
+        return redirect()->to(
+            $this->redirectToIndex ? $this->action('index') : $this->action('edit', $model->id)
+        );
     }
 
     public function destroy($id)
     {
         $model = $this->query()->find($id);
 
-        $eventDescription = $this->getDeletedEventDescription($model);
-        activity()->on($model)->log($eventDescription);
+        $eventDescription = $this->deletedEventDescriptionFor($model);
+        activity()->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         $model->delete();
-        app('cache')->flush();
 
-        return redirect()->action("Back\\{$this->modelName}Controller@index");
+        Cache::flush();
+
+        return redirect()->to($this->action('index'));
     }
 
     public function changeOrder(Request $request)
     {
-        $model = "\\App\\Models\\{$this->modelName}";
-
-        $model::setNewOrder($request->get('ids'));
+        call_user_func([$this->modelClass, 'setNewOrder'], $request->get('ids'));
     }
 
-    protected function getUpdatedEventDescription($model)
+    protected function find(int $id): Model
+    {
+        return call_user_func("{$this->modelClass}::findOrFail", $id);
+    }
+
+    protected function all(): Collection
+    {
+        $query = call_user_func("{$this->modelClass}::query")->nonDraft();
+
+        if (array_key_exists(SortableInterface::class, class_implements($this->modelClass))) {
+            $query->orderBy('order_column', 'asc');
+        }
+
+        return $query->get();
+    }
+
+    protected function determineModelClass(): string
+    {
+        return (new ReflectionClass($this))
+            ->getMethod('make')
+            ->getReturnType();
+    }
+
+    protected function determineModuleName(): string
+    {
+        return explode('_', snake_case(short_class_name($this), '_'), 2)[0];
+    }
+
+    protected function determineUpdateRequestClass(): string
+    {
+        return (new ReflectionClass($this))
+            ->getMethod('updateFromRequest')
+            ->getParameters()[1]
+            ->getClass()
+            ->getName();
+    }
+
+    protected function updateModel(Model $model, FormRequest $request)
+    {
+        $this->updateTranslations($model, $request);
+        $this->updateMedia($model, $request);
+        $this->updateOnlineToggle($model, $request);
+        $this->updatePublishDate($model, $request);
+        $this->updateSeoValues($model, $request);
+
+        $model->save();
+    }
+
+    protected function updatedEventDescriptionFor($model): string
     {
         $modelName = fragment("back.{$this->moduleName}.singular");
 
-        $linkToModel = link_to_action("Back\\{$this->modelName}Controller@edit", $model->name, ['id' => $model->id]);
+        $linkToModel = el('a', ['href' => $this->action('edit', $model->id)], $model->name);
 
         if ($model->wasDraft) {
             return fragment('back.events.created', ['model' => $modelName, 'name' => $linkToModel]);
@@ -119,30 +166,15 @@ abstract class ModuleController extends Controller
         return fragment('back.events.updated', ['model' => $modelName, 'name' => $linkToModel]);
     }
 
-    protected function getDeletedEventDescription($model)
+    protected function deletedEventDescriptionFor($model): string
     {
         $modelName = fragment("back.{$this->moduleName}.singular");
 
         return fragment('back.events.deleted', ['model' => $modelName, 'name' => $model->name]);
     }
 
-    protected function find(int $id)
+    protected function action(string $action, $parameters = []): string
     {
-        $class = "App\\Models\\{$this->modelName}";
-
-        return call_user_func("{$class}::find", $id);
-    }
-
-    protected function query()
-    {
-        $class = "App\\Models\\{$this->modelName}";
-
-        $query = call_user_func("{$class}::query")->nonDraft();
-
-        if (array_key_exists(SortableInterface::class, class_implements($class))) {
-            return $query->orderBy('order_column', 'asc');
-        }
-
-        return $query;
+        return action('\\'.static::class.'@'.$action, $parameters);
     }
 }

@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('breadcrumbs', Breadcrumbs::render('redirectBack', $model))
+@section('breadcrumbs', Breadcrumbs::render('redirectsBack', $model))
 
 @section('pageTitle', fragment('back.redirects.title'))
 
@@ -13,7 +13,7 @@
 
         {!! Form::openDraftable([
             'method'=>'PATCH',
-            'action'=> ['Back\RedirectController@update', $model->id],
+            'action'=> ['Back\RedirectsController@update', $model->id],
             'class' => '-stacked'
         ], $model) !!}
 

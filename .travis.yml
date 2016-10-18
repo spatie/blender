@@ -1,16 +1,16 @@
 language: php
 
 php:
-  - 7.0.3
+  - 7.0
+  - 7.1
 
 before_script:
   - travis_retry composer self-update
   - composer install
-  - nvm install 5
-  - npm set registry http://npm.spatie.be
-  - npm set ca null
-  - npm cache clean
-  - npm install
+  - nvm install 6
+  - npm install -g yarn
+  - yarn config set "https://npm.spatie.be"
+  - yarn
   - gulp
 
 script:
