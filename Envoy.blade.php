@@ -12,7 +12,7 @@ $newReleaseDir = "{$releasesDir}/{$newReleaseName}";
 $user = get_current_user();
 
 function logMessage($message) {
-  return "echo '\033[32m" .$message. "\033[0m';\n";
+return "echo '\033[32m" .$message. "\033[0m';\n";
 }
 @endsetup
 
@@ -23,7 +23,6 @@ startDeployment
 cloneRepository
 runComposer
 runYarn
-buildAssets
 updateSymlinks
 optimizeInstallation
 updatePermissions
@@ -39,14 +38,16 @@ finishDeploy
 deployOnlyCode
 @endmacro
 
+
+
 @task('startDeployment', ['on' => 'local'])
-{{ logMessage('start deployment') }}
+{{ logMessage("\u{1F3C3}  Starting deployment...") }}
 git checkout master
 git pull origin master
 @endtask
 
 @task('cloneRepository', ['on' => 'remote'])
-{{ logMessage('start cloneRepository') }}
+{{ logMessage("\u{1F300}  Cloning repository...") }}
 [ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
 cd {{ $releasesDir }};
 
@@ -70,25 +71,25 @@ echo "{{ $newReleaseName }}" > public/release-name.txt
 @endtask
 
 @task('runComposer', ['on' => 'remote'])
-{{ logMessage('start runComposer') }}
+{{ logMessage("\u{1F69A}  Running Composer...") }}
 cd {{ $newReleaseDir }};
 composer install --prefer-dist --no-scripts --no-dev -q -o;
 @endtask
 
 @task('runYarn', ['on' => 'remote'])
-{{ logMessage('start runYarn') }}
+{{ logMessage("\u{1F4E6}  Running Yarn...") }}
 cd {{ $newReleaseDir }};
 yarn
 @endtask
 
 @task('generateAssets', ['on' => 'remote'])
-{{ logMessage('start generateAssets') }}
+{{ logMessage("\u{1F305}  Generating assets...") }}
 cd {{ $newReleaseDir }};
 gulp --production
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
-{{ logMessage('start updateSymlinks') }}
+{{ logMessage("\u{2728}  Updating symlinks to persistent data...") }}
 # Remove the storage directory and replace with persistent data
 rm -rf {{ $newReleaseDir }}/storage;
 cd {{ $newReleaseDir }};
@@ -105,33 +106,33 @@ ln -nfs {{ $baseDir }}/.env .env;
 @endtask
 
 @task('optimizeInstallation', ['on' => 'remote'])
-{{ logMessage('start optimizeInstallation') }}
+{{ logMessage("\u{1F517}  Optimizing installation") }}
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
 php artisan optimize;
 @endtask
 
 @task('updatePermissions', ['on' => 'remote'])
-{{ logMessage('start updatePermissions') }}
+{{ logMessage("\u{1F512}  Updating permissions...") }}
 cd {{ $newReleaseDir }};
 find . -type d -exec chmod 775 {} \;
 find . -type f -exec chmod 664 {} \;
 @endtask
 
 @task('backupDatabase', ['on' => 'remote'])
-{{ logMessage('start backupDatabase') }}
+{{ logMessage("\u{1F4C0}  Backing up database...") }}
 cd {{ $currentDir }}
 php artisan backup:run
 @endtask
 
 @task('migrateDatabase', ['on' => 'remote'])
-{{ logMessage('start migrateDatabase') }}
+{{ logMessage("\u{1F648}  Migrating database...") }}
 cd {{ $newReleaseDir }};
 php artisan migrate --force;
 @endtask
 
 @task('blessNewRelease', ['on' => 'remote'])
-{{ logMessage('start blessNewRelease') }}
+{{ logMessage("\u{1F64F}  Blessing new release...") }}
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 php artisan cache:clear
@@ -140,13 +141,13 @@ sudo supervisorctl restart all
 @endtask
 
 @task('insertNewFragments', ['on' => 'remote'])
-{{ logMessage('start insertNewFragments') }}
+{{ logMessage("\u{3299}  Inserting new fragments...") }}
 cd {{ $newReleaseDir }};
 php artisan fragments:import;
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
-{{ logMessage('start cleanOldReleases') }}
+{{ logMessage("\u{1F6BE}  Cleaning old release...") }}
 # Delete all but the 5 most recent.
 cd {{ $releasesDir }}
 ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" sudo chown -R forge .;
@@ -154,7 +155,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 @endtask
 
 @task('finishDeploy', ['on' => 'local'])
-{{ logMessage("Application deployed") }}
+{{ logMessage("\u{1F680}  Application deployed!") }}
 @endtask
 
 @task('deployOnlyCode',['on' => 'remote'])
