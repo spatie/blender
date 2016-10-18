@@ -140,7 +140,7 @@ sudo supervisorctl restart all
 @endtask
 
 @task('insertNewFragments', ['on' => 'remote'])
-{{ logMessage("\u{3299}  Inserting new fragments...") }}
+{{ logMessage("\u{3299} Inserting new fragments...") }}
 cd {{ $newReleaseDir }};
 php artisan fragments:import;
 @endtask
