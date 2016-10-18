@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\SendReminderEmail;
 use Illuminate\Console\Command;
 use Queue;
 use Symfony\Component\Console\Input\InputArgument;
