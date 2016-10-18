@@ -2,9 +2,9 @@
 
 namespace App\Repositories;
 
-use App\Foundation\Repositories\Repository;
 use App\Models\Person;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Repository;
 
 class PersonRepository extends Repository
 {

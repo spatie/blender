@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "de26d570155b6ab57ce43e4a57b8054e",
-    "content-hash": "e003632cfc791869c433f451135d9afc",
+    "hash": "3ade5bf2b4147664b30bacd8715d72c3",
+    "content-hash": "469f0e63c285cc4f1ab37c7c4dfb27b7",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3710,6 +3710,67 @@
             "time": "2016-03-08 14:44:54"
         },
         {
+            "name": "spatie/blender-model",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie-custom/blender-model.git",
+                "reference": "de2b096465b569ba1da83e60a753d8032a9795fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/de2b096465b569ba1da83e60a753d8032a9795fd",
+                "reference": "de2b096465b569ba1da83e60a753d8032a9795fd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^5.3",
+                "illuminate/support": "^5.3",
+                "nesbot/carbon": "^1.21",
+                "php": "^7.0",
+                "spatie/eloquent-sortable": "^2.1",
+                "spatie/laravel-medialibrary": "^4.9",
+                "spatie/laravel-model-cleanup": "^1.1",
+                "spatie/laravel-translatable": "^1.1",
+                "spatie/regex": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Blender\\Model\\": "src"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Base model for entities in our Blender Laravel template",
+            "homepage": "https://github.com/spatie/blender-model",
+            "keywords": [
+                "blender",
+                "blender-model",
+                "spatie"
+            ],
+            "support": {
+                "source": "https://github.com/spatie-custom/blender-model/tree/1.0.0",
+                "issues": "https://github.com/spatie-custom/blender-model/issues"
+            },
+            "time": "2016-10-18 13:22:55"
+        },
+        {
             "name": "spatie/color",
             "version": "1.0.2",
             "source": {
@@ -3863,16 +3924,16 @@
         },
         {
             "name": "spatie/eloquent-sortable",
-            "version": "1.1.2",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/eloquent-sortable.git",
-                "reference": "be5a7496c8293b651b88ea8ff0b2d147b530e32f"
+                "reference": "4ff632873416fe3f96566fce8a359dd3dfb1f920"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/be5a7496c8293b651b88ea8ff0b2d147b530e32f",
-                "reference": "be5a7496c8293b651b88ea8ff0b2d147b530e32f",
+                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/4ff632873416fe3f96566fce8a359dd3dfb1f920",
+                "reference": "4ff632873416fe3f96566fce8a359dd3dfb1f920",
                 "shasum": ""
             },
             "require": {
@@ -3880,7 +3941,9 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "codeception/codeception": "~2.0"
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
             },
             "type": "library",
             "autoload": {
@@ -3908,7 +3971,7 @@
                 "sort",
                 "sortable"
             ],
-            "time": "2015-06-11 20:43:01"
+            "time": "2016-03-21 16:41:52"
         },
         {
             "name": "spatie/fragment-importer",

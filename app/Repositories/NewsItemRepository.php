@@ -2,10 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Foundation\Repositories\Repository;
 use App\Models\NewsItem;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Repository;
 
 class NewsItemRepository extends Repository
 {

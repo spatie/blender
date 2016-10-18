@@ -2,12 +2,12 @@
 
 namespace App\Repositories;
 
-use App\Foundation\Repositories\Repository;
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Repository;
 
 class BackUserRepository extends Repository
 {

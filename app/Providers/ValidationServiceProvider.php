@@ -28,7 +28,7 @@ class ValidationServiceProvider extends ServiceProvider
 
         Validator::extend('enum', function ($attribute, $value, $parameters) {
 
-            /** @var \App\Foundation\Models\Enums\Enum $class */
+            /** @var \App\Foundation\Enums\Enum $class */
             $class = $parameters[0];
 
             return $class::isValid($value);

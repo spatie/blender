@@ -2,10 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Foundation\Repositories\Repository;
-use app\Models\Article;
+use App\Models\Article;
 use App\Models\Enums\SpecialArticle;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Repository;
 
 class ArticleRepository extends Repository
 {
