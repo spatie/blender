@@ -146,7 +146,7 @@ php artisan fragments:import;
 @endtask
 
 @task('cleanOldReleases', ['on' => 'remote'])
-{{ logMessage("\u{1F6BE}  Cleaning old release...") }}
+{{ logMessage("\u{1F6BE}  Cleaning up old releases...") }}
 # Delete all but the 5 most recent.
 cd {{ $releasesDir }}
 ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" sudo chown -R forge .;
