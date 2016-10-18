@@ -2,19 +2,66 @@
 
 use Illuminate\Support\Collection;
 
-function locale(): string
+function article(string $technicalName): App\Models\Article
 {
-    return app()->getLocale();
-}
-
-function locales(): Collection
-{
-    return collect(config('app.locales'));
+    return App\Models\Article::findByTechnicalName($technicalName);
 }
 
 function content_locale(): string
 {
     return \App\Services\Locale\CurrentLocale::getContentLocale();
+}
+
+/**
+ * @return \App\Services\Auth\Back\User|\App\Services\Auth\Front\User|null
+ *
+ * @throws \Exception
+ */
+function current_user()
+{
+    if (request()->isFront()) {
+        return current_front_user();
+    }
+
+    if (request()->isBack()) {
+        return current_back_user();
+    }
+
+    throw new \Exception('Coud not determine current user');
+}
+
+/**
+ * @return \App\Services\Auth\Front\User|null
+ */
+function current_front_user()
+{
+    if (!auth()->guard('front')->check()) {
+        return;
+    }
+
+    return auth()->guard('front')->user();
+}
+
+/**
+ * @return \App\Services\Auth\Back\User|null
+ */
+function current_back_user()
+{
+    if (!auth()->guard('back')->check()) {
+        return;
+    }
+
+    return auth()->guard('back')->user();
+}
+
+function diff_date_for_humans(Carbon\Carbon $date): string
+{
+    return (new Jenssegers\Date\Date($date->timestamp))->ago();
+}
+
+function el(string $tag, $attributes = null, $contents = null): string
+{
+    return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
 }
 
 function fragment($name, array $replacements = []): string
@@ -29,21 +76,28 @@ function fragment_slug($name, array $replacements = []): string
     return str_slug($translation);
 }
 
-function translate_field_name(string $name, string $locale = ''): string
+function locale(): string
 {
-    $locale = $locale ?? content_locale();
-
-    return "translated_{$locale}_{$name}";
+    return app()->getLocale();
 }
 
-function article(string $technicalName): App\Models\Article
+function locales(): Collection
 {
-    return App\Models\Article::findByTechnicalName($technicalName);
+    return collect(config('app.locales'));
 }
 
-function diff_date_for_humans(Carbon\Carbon $date): string
+function login_url(): string
 {
-    return (new Jenssegers\Date\Date($date->timestamp))->ago();
+    return request()->isFront() ?
+        action('Front\Auth\LoginController@showLoginForm') :
+        action('Back\Auth\LoginController@showLoginForm');
+}
+
+function logout_url(): string
+{
+    return request()->isFront() ?
+        action('Front\Auth\LoginController@logout') :
+        action('Back\Auth\LoginController@logout');
 }
 
 function roman_year(int $year = null): string
@@ -82,61 +136,16 @@ function roman_year(int $year = null): string
     return $result;
 }
 
-/**
- * @return \App\Services\Auth\Back\User|\App\Services\Auth\Front\User|null
- *
- * @throws \Exception
- */
-function current_user()
-{
-    if (request()->isFront()) {
-        return current_front_user();
-    }
-
-    if (request()->isBack()) {
-        return current_back_user();
-    }
-
-    throw new \Exception('Coud not determine current user');
-}
-
-/** @return \App\Services\Auth\Front\User|null */
-function current_front_user()
-{
-    if (!auth()->guard('front')->check()) {
-        return;
-    }
-
-    return auth()->guard('front')->user();
-}
-
-/** @return \App\Services\Auth\Back\User|null */
-function current_back_user()
-{
-    if (!auth()->guard('back')->check()) {
-        return;
-    }
-
-    return auth()->guard('back')->user();
-}
-
-function login_url(): string
-{
-    return request()->isFront() ?
-        action('Front\Auth\LoginController@showLoginForm') :
-        action('Back\Auth\LoginController@showLoginForm');
-}
-
-function logout_url(): string
-{
-    return request()->isFront() ?
-        action('Front\Auth\LoginController@logout') :
-        action('Back\Auth\LoginController@logout');
-}
-
 function register_url(): string
 {
     return action('Front\Auth\RegisterController@showRegistrationForm');
+}
+
+function translate_field_name(string $name, string $locale = ''): string
+{
+    $locale = $locale ?? content_locale();
+
+    return "translated_{$locale}_{$name}";
 }
 
 /**
@@ -160,7 +169,3 @@ function validate($fields, $rules): bool
     return Validator::make($fields, $rules)->passes();
 }
 
-function el(string $tag, $attributes = null, $contents = null): string
-{
-    return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
-}
