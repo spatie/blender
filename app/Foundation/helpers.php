@@ -41,11 +41,6 @@ function article(string $technicalName): App\Models\Article
     return App\Models\Article::findByTechnicalName($technicalName);
 }
 
-function carbon(string $date, string $format = 'Y-m-d H:i:s'): Carbon\Carbon
-{
-    return Carbon\Carbon::createFromFormat($format, $date);
-}
-
 function diff_date_for_humans(Carbon\Carbon $date): string
 {
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
@@ -53,11 +48,7 @@ function diff_date_for_humans(Carbon\Carbon $date): string
 
 function roman_year(int $year = null): string
 {
-    if (!is_numeric($year)) {
-        $year = date('Y');
-    }
-
-    $result = '';
+    $year = $year ?? date('Y');
 
     $romanNumerals = [
         'M' => 1000,
@@ -75,6 +66,8 @@ function roman_year(int $year = null): string
         'I' => 1,
     ];
 
+    $result = '';
+
     foreach ($romanNumerals as $roman => $yearNumber) {
         // Divide to get  matches
         $matches = intval($year / $yearNumber);
@@ -87,28 +80,6 @@ function roman_year(int $year = null): string
     }
 
     return $result;
-}
-
-function short_class_name($object): string
-{
-    $objectProperties = new \ReflectionClass($object);
-
-    return $objectProperties->getShortName();
-}
-
-function class_constants($object, string $startsWithFilter = ''): array
-{
-    $objectProperties = new \ReflectionClass($object);
-
-    $constants = $objectProperties->getConstants();
-
-    if ($startsWithFilter == '') {
-        return $constants;
-    }
-
-    return array_filter($constants, function ($key) use ($startsWithFilter) {
-        return starts_with(strtolower($key), strtolower($startsWithFilter));
-    }, ARRAY_FILTER_USE_KEY);
 }
 
 /**
@@ -126,7 +97,7 @@ function current_user()
         return current_back_user();
     }
 
-    throw new \Exception('Request was neither for front or back');
+    throw new \Exception('Coud not determine current user');
 }
 
 /** @return \App\Services\Auth\Front\User|null */
@@ -192,13 +163,4 @@ function validate($fields, $rules): bool
 function el(string $tag, $attributes = null, $contents = null): string
 {
     return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
-}
-
-function rgb_to_hex(int $red, int $green, int $blue):  string
-{
-    return '#'.collect([$red, $green, $blue])
-        ->map(function (int $decimal) :  string {
-            return str_pad(dechex($decimal), 2, STR_PAD_LEFT);
-        })
-        ->implode('');
 }

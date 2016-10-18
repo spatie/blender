@@ -14,7 +14,9 @@ class FormBuilder extends BaseFormBuilder
 {
     public function openDraftable(array $options, Model $subject): string
     {
-        $identifier = short_class_name($subject).'_'.($subject->isDraft() ? 'new' : $subject->id);
+        class_nam
+
+        $identifier = class_basename($subject).'_'.($subject->isDraft() ? 'new' : $subject->id);
 
         $options = array_merge($options, [
             'data-autosave' => '',
