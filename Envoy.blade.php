@@ -159,7 +159,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 @endtask
 
 @task('deployOnlyCode',['on' => 'remote'])
-{{ logMessage('start deployOnlyCode') }}
+{{ logMessage("\u{1F4BB}  Deploying code changes...") }}
 cd {{ $currentDir }}
 git pull origin master
 php artisan cache:clear
