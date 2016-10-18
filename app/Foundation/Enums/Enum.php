@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Foundation\Models\Enums;
+namespace App\Foundation\Enums;
 
 use Illuminate\Support\Collection;
 use MyCLabs\Enum\Enum as BaseEnum;

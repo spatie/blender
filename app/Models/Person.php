@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Foundation\Models\Base\ModuleModel;
-use App\Foundation\Models\Traits\HasSlug;
+use Spatie\Blender\Model\Model;
+use Spatie\Blender\Model\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
-use Spatie\EloquentSortable\SortableInterface;
+use Spatie\EloquentSortable\SortableTrait;
 
-class Person extends ModuleModel implements SortableInterface
+class Person extends Model implements Sortable
 {
-    use Sortable, HasSlug;
+    use HasSlug, SortableTrait;
 
     protected $with = ['media'];
 

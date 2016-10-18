@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use App\Foundation\Models\Base\ModuleModel;
-use App\Foundation\Models\Traits\HasTags;
-use App\Foundation\Models\Traits\HasSlug;
 use App\Models\Enums\TagType;
 use App\Models\Presenters\NewsItemPresenter;
+use Spatie\Blender\Model\Model;
+use Spatie\Blender\Model\Traits\HasSlug;
+use Spatie\Blender\Model\Traits\HasTags;
 
-class NewsItem extends ModuleModel
+class NewsItem extends Model
 {
     use HasSlug, HasTags, NewsItemPresenter;
 

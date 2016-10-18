@@ -2,11 +2,11 @@
 
 namespace App\Repositories;
 
-use App\Foundation\Repositories\Repository;
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\User;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Repository;
 
 class FrontUserRepository extends Repository
 {

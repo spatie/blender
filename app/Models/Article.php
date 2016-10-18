@@ -1,9 +1,7 @@
 <?php
 
-namespace app\Models;
+namespace App\Models;
 
-use App\Foundation\Models\Base\ModuleModel;
-use App\Foundation\Models\Traits\HasSlug;
 use App\Models\Enums\SpecialArticle;
 use App\Models\Presenters\ArticlePresenter;
 use Cache;
@@ -11,8 +9,10 @@ use Exception;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Model;
+use Spatie\Blender\Model\Traits\HasSlug;
 
-class Article extends ModuleModel
+class Article extends Model
 {
     use HasSlug, ArticlePresenter;
 

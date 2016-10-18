@@ -2,7 +2,7 @@
 
 namespace App\Services\Auth\Back\Enums;
 
-use App\Foundation\Models\Enums\Enum;
+use App\Foundation\Enums\Enum;
 
 /**
  * @method static ACTIVE()

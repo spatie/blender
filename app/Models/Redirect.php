@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Foundation\Models\Base\ModuleModel;
 use Illuminate\Support\Collection;
+use Spatie\Blender\Model\Model;
 use Spatie\EloquentSortable\Sortable;
-use Spatie\EloquentSortable\SortableInterface;
+use Spatie\EloquentSortable\SortableTrait;
 
-class Redirect extends ModuleModel implements SortableInterface
+class Redirect extends Model implements Sortable
 {
-    use Sortable;
+    use SortableTrait;
 
     protected $guarded = ['id'];
 
