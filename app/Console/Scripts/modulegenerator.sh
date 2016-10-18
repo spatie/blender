@@ -16,6 +16,8 @@ function generate() {
     sed -i '' "s/newsItem/${lcsingular}/g" "$2"
     sed -i '' "s/news_items/${lcplural}/g" "$2"
     sed -i '' "s/news_item/${lcsingular}/g" "$2"
+    sed -i '' "s/News/${plural}/g" "$2"
+    sed -i '' "s/news/${lcplural}/g" "$2"
 }
 
 # Model & related objects
@@ -26,14 +28,14 @@ generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Prese
 generate  app/Repositories/NewsItemRepository.php             app/Repositories/${singular}Repository.php
 
 # Http
-generate  app/Http/Controllers/Back/NewsItemController.php  app/Http/Controllers/Back/${singular}Controller.php
+generate  app/Http/Controllers/Back/NewsController.php  app/Http/Controllers/Back/${singular}Controller.php
 generate  app/Http/Requests/Back/NewsItemRequest.php        app/Http/Requests/Back/${singular}Request.php
 
 # Views
 mkdir -p resources/views/back/${lcplural}/_partials
-generate  resources/views/back/newsItems/_partials/form.blade.php  resources/views/back/${lcplural}/_partials/form.blade.php
-generate  resources/views/back/newsItems/index.blade.php           resources/views/back/${lcplural}/index.blade.php
-generate  resources/views/back/newsItems/edit.blade.php            resources/views/back/${lcplural}/edit.blade.php
+generate  resources/views/back/news/_partials/form.blade.php  resources/views/back/${lcplural}/_partials/form.blade.php
+generate  resources/views/back/news/index.blade.php           resources/views/back/${lcplural}/index.blade.php
+generate  resources/views/back/news/edit.blade.php            resources/views/back/${lcplural}/edit.blade.php
 
 # Database
 generate  database/factories/NewsItemFactory.php                            database/factories/${singular}Factory.php
