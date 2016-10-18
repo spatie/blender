@@ -18,14 +18,14 @@ class FrontUserRequest extends Request
 
     public function getEmailValidationRule(): Rule
     {
-        $emailRule = Rule::unique('users_front', 'email');
+        $uniqueRule = Rule::unique('users_front', 'email');
 
         if ($this->method() === 'PATCH') {
-            $emailRule = $emailRule->where(function ($query) {
+            $uniqueRule = $uniqueRule->where(function ($query) {
                 $query->where('email', $this->getRouteParameter('frontUser'));
             });
         }
 
-        return $emailRule;
+        return "required|email|{$uniqueRule}";
     }
 }
