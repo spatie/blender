@@ -11,10 +11,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Spatie\Blender\Model\Model;
 use Spatie\Blender\Model\Traits\HasSlug;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 
-class Article extends Model
+class Article extends Model implements Sortable
 {
-    use HasSlug, ArticlePresenter;
+    use ArticlePresenter, HasSlug, SortableTrait;
 
     protected $with = ['media'];
 
