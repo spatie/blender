@@ -2,10 +2,33 @@
 
 namespace App\Foundation\Repositories;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 
-abstract class Repository extends BaseRepository
+abstract class Repository
 {
+    public function save(Model $model): bool
+    {
+        $saved = $model->save();
+
+        if ($saved) {
+            app('cache')->flush();
+        }
+
+        return $saved;
+    }
+
+    public function delete(Model $model): bool
+    {
+        $deleted = $model->delete();
+
+        if ($deleted) {
+            app('cache')->flush();
+        }
+
+        return $deleted;
+    }
+
     public function getAll(): Collection
     {
         return $this->query()->get();
@@ -58,5 +81,10 @@ abstract class Repository extends BaseRepository
             ->online()
             ->whereTranslation('url', $url, $locale)
             ->first();
+    }
+
+    protected function query()
+    {
+        return call_user_func(static::MODEL.'::query');
     }
 }

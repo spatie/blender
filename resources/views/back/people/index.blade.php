@@ -7,9 +7,9 @@
         <div class="grid">
             <h1>{{ fragment('back.people.title') }}</h1>
 
-            <a href="{{ action('Back\PersonController@create') }}" class="button">{{ fragment('back.people.new') }}</a>
+            <a href="{{ action('Back\PeopleController@create') }}" class="button">{{ fragment('back.people.new') }}</a>
 
-            <table data-sortable="{{ action('Back\PersonController@changeOrder') }}">
+            <table data-sortable="{{ action('Back\PeopleController@changeOrder') }}">
                 <thead>
                 <tr>
                     <th>{{ fragment('back.people.name') }}</th>
@@ -17,14 +17,14 @@
                 </tr>
 
                 <tbody>
-                @foreach($people as $person)
+                @foreach($models as $person)
                     <tr data-row-id="{{ $person->id }}" >
                         <td>
                             {!! Html::onlineIndicator($person->online) !!}
-                            <a href="{!! action('Back\PersonController@edit', [$person->id]) !!}">{{ $person->name }}</a>
+                            <a href="{!! action('Back\PeopleController@edit', [$person->id]) !!}">{{ $person->name }}</a>
                         </td>
                         <td class="-right">
-                            {!! Html::deleteButton(action('Back\PersonController@destroy', $person->id)) !!}
+                            {!! Html::deleteButton(action('Back\PeopleController@destroy', $person->id)) !!}
                         </td>
                     </tr>
                 @endforeach

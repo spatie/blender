@@ -5,6 +5,7 @@ namespace App\Test\Integration;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Spatie\Seeders\DatabaseSeeder;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -15,10 +16,13 @@ abstract class TestCase extends BaseTestCase
     {
         parent::setUp();
 
+        DatabaseSeeder::$withMedia = false;
+
         $this->artisan('migrate');
+        $this->artisan('db:seed', ['--class' => 'ArticleSeeder']);
     }
 
-    public function createApplication() : Application
+    public function createApplication(): Application
     {
         file_put_contents(__DIR__.'/../../storage/database.sqlite', null);
 

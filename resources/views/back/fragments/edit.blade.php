@@ -2,7 +2,7 @@
 
 @section('pageTitle', 'Wijzig vaste tekst')
 
-@section('breadcrumbs', Breadcrumbs::render('fragmentDetail', $fragment))
+@section('breadcrumbs', Breadcrumbs::render('fragmentsDetailBack', $fragment))
 
 @section('content')
 <section>
@@ -17,7 +17,7 @@
 
         {!! Form::open([
             'method'=>'PATCH',
-            'action' => ['Back\FragmentController@update', $fragment->id],
+            'action' => ['Back\FragmentsController@update', $fragment->id],
             'class' =>'-stacked']
         ) !!}
         @include('back.fragments._partials.form')

@@ -65,7 +65,7 @@ class BlenderFormBuilder
         $options = [
             'data-editor' => '',
             'data-editor-medialibrary-url' => action(
-                'Back\MediaLibraryApiController@index',
+                'Back\Api\MediaLibraryController@index',
                 [
                     'model_name' => ucfirst(get_class($this->model)),
                     'model_id' => $this->model->id,

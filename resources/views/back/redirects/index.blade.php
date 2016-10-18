@@ -6,10 +6,10 @@
     <section>
         <div class="grid">
             <h1>{{ fragment('back.redirects.title') }}</h1>
-            <a href="{{ action('Back\RedirectController@create') }}"
+            <a href="{{ action('Back\RedirectsController@create') }}"
                class="button">{{ fragment('back.redirects.new') }}</a>
 
-            <table data-sortable="{{ action('Back\RedirectController@changeOrder') }}">
+            <table data-sortable="{{ action('Back\RedirectsController@changeOrder') }}">
                 <thead>
                 <tr>
                     <th>{{ fragment('back.redirects.old_url') }}</th>
@@ -19,14 +19,14 @@
                 </thead>
                 <tbody>
 
-                @foreach($redirects as $redirect)
+                @foreach($models as $redirect)
                     <tr data-row-id="{{ $redirect->id }}">
                         <td>
-                            <a href="{{ action('Back\RedirectController@edit', [$redirect->id]) }}">{{ $redirect->old_url }}</a>
+                            <a href="{{ action('Back\RedirectsController@edit', [$redirect->id]) }}">{{ $redirect->old_url }}</a>
                             <td>{{ $redirect->new_url }}</td>
                         </td>
                         <td class="-right">
-                            {!! Html::deleteButton(action('Back\RedirectController@destroy', $redirect->id)) !!}
+                            {!! Html::deleteButton(action('Back\RedirectsController@destroy', $redirect->id)) !!}
                         </td>
                     </tr>
                 @endforeach
