@@ -130,7 +130,7 @@ abstract class ModuleController
 
     protected function determineModuleName(): string
     {
-        return explode('_', snake_case(short_class_name($this), '_'), 2)[0];
+        return explode('_', snake_case(class_basename($this), '_'), 2)[0];
     }
 
     protected function determineUpdateRequestClass(): string
