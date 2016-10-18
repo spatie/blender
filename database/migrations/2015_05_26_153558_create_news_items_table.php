@@ -12,7 +12,7 @@ class CreateNewsItemsTable extends Migration
             $table->text('name');
             $table->text('text');
             $table->text('url');
-            $table->text('seo_values');
+            $table->text('seo_values')->nullable();
             $table->datetime('publish_date');
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);
