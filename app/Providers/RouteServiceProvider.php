@@ -35,7 +35,6 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $router->macro('articleList', function ($technicalNamePrefix, $action) use ($router) {
-
             $articles = Article::getWithTechnicalNameLike($technicalNamePrefix);
 
             $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"), function () use ($articles) {
@@ -58,7 +57,6 @@ class RouteServiceProvider extends ServiceProvider
              * Special routes
              */
             Route::group(['middleware' => 'web'], function () {
-
                 Route::demoAccess('/demo');
 
                 Route::get('coming-soon', function () {
@@ -87,7 +85,6 @@ class RouteServiceProvider extends ServiceProvider
                 });
 
                 Route::group(['middleware' => ['web', 'demoMode', 'rememberLocale']], function () {
-
                     $multiLingual = count(config('app.locales')) > 1;
 
                     Route::group($multiLingual ? ['prefix' => locale()] : [], function () {

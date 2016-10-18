@@ -39,7 +39,7 @@ class CurrentLocale
 
     public static function getContentLocale(): string
     {
-        if (!static::isValidLocale(locale())) {
+        if (! static::isValidLocale(locale())) {
             return config('app.locales')[0];
         }
 
@@ -48,7 +48,7 @@ class CurrentLocale
 
     public static function isValidLocale($locale): bool
     {
-        if (!is_string($locale)) {
+        if (! is_string($locale)) {
             return false;
         }
 

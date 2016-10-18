@@ -13,7 +13,7 @@ trait UpdateTranslations
             foreach ($model->getTranslatableAttributes() as $fieldName) {
                 $translatedFieldName = translate_field_name($fieldName, $locale);
 
-                if (!$request->has($translatedFieldName)) {
+                if (! $request->has($translatedFieldName)) {
                     continue;
                 }
 

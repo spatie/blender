@@ -69,6 +69,7 @@ class Handler extends ExceptionHandler
 
         $_ENV = [];
     }
+
     /**
      * Convert an authentication exception into an unauthenticated response.
      *

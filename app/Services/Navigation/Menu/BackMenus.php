@@ -51,7 +51,6 @@ class BackMenus
         });
 
         Menu::macro('backUser', function () {
-
             $avatar = Html::avatar(current_user(), '-small').
                 el('span.:response-desktop-only', current_user()->email);
 

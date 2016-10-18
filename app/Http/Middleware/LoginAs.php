@@ -18,7 +18,7 @@ class LoginAs
             return $next($request);
         }
 
-        if (!$this->canLoginAs()) {
+        if (! $this->canLoginAs()) {
             throw new Exception("You can't log in as a specific user right now");
         }
 
@@ -29,15 +29,15 @@ class LoginAs
     {
         // Just to be sure...
 
-        if (!app()->environment('local')) {
+        if (! app()->environment('local')) {
             return false;
         }
 
-        if (!ends_with(request()->getHost(), '.dev')) {
+        if (! ends_with(request()->getHost(), '.dev')) {
             return false;
         }
 
-        if (!in_array(env('DB_USERNAME'), ['homestead', 'root'])) {
+        if (! in_array(env('DB_USERNAME'), ['homestead', 'root'])) {
             return false;
         }
 
@@ -61,7 +61,7 @@ class LoginAs
 
     protected function getUser(string $identifier): Authenticatable
     {
-        if (!str_contains($identifier, '@')) {
+        if (! str_contains($identifier, '@')) {
             $identifier .= '@spatie.be';
         }
 

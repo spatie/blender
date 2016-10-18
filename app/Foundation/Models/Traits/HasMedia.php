@@ -17,7 +17,7 @@ trait HasMedia
      */
     protected function updateMediaLibraryFields($attributes)
     {
-        if (!isset($this->mediaLibraryCollections)) {
+        if (! isset($this->mediaLibraryCollections)) {
             return;
         }
 

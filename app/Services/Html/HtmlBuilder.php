@@ -11,7 +11,7 @@ class HtmlBuilder extends BaseHtmlBuilder
 {
     public function flashMessage(): string
     {
-        if (!Session::has('flash_notification.message')) {
+        if (! Session::has('flash_notification.message')) {
             return '';
         }
 

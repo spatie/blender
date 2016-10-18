@@ -20,6 +20,5 @@ class NewsItemSeeder extends DatabaseSeeder
                     $this->addImages($newsItem, 1, 3);
                 }
             });
-        ;
     }
 }

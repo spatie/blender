@@ -20,11 +20,11 @@ class TranslationLoader extends FileLoader
      */
     public function load($locale, $group, $namespace = null): array
     {
-        if (!is_null($namespace) && $namespace !== '*') {
+        if (! is_null($namespace) && $namespace !== '*') {
             return $this->loadNamespaced($locale, $group, $namespace);
         }
 
-        if (!$this->fragmentsAreAvailable()) {
+        if (! $this->fragmentsAreAvailable()) {
             return [];
         }
 

@@ -13,4 +13,3 @@ class EventServiceProvider extends IlluminateEventServiceProvider
         \App\Mail\EventHandler::class,
     ];
 }
-

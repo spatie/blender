@@ -58,11 +58,11 @@ class MediaLibraryController extends Controller
 
     protected function getModelFromRequest(Request $request)
     {
-        if (!isset($request['model_name'])) {
+        if (! isset($request['model_name'])) {
             throw new Exception('No model name provided');
         }
 
-        if (!isset($request['model_id'])) {
+        if (! isset($request['model_id'])) {
             throw new Exception('No model id provided');
         }
 
