@@ -23,6 +23,7 @@ startDeployment
 cloneRepository
 runComposer
 runYarn
+generateAssets
 updateSymlinks
 optimizeInstallation
 updatePermissions
@@ -37,8 +38,6 @@ finishDeploy
 @macro('deploy-code')
 deployOnlyCode
 @endmacro
-
-
 
 @task('startDeployment', ['on' => 'local'])
 {{ logMessage("\u{1F3C3}  Starting deployment...") }}
@@ -159,7 +158,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 @endtask
 
 @task('deployOnlyCode',['on' => 'remote'])
-{{ logMessage('start deployOnlyCode') }}
+{{ logMessage("\u{1F4BB}  Deploying code changes...") }}
 cd {{ $currentDir }}
 git pull origin master
 php artisan cache:clear
