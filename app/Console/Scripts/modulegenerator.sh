@@ -28,7 +28,7 @@ generate  app/Models/Presenters/NewsItemPresenter.php           app/Models/Prese
 generate  app/Repositories/NewsItemRepository.php             app/Repositories/${singular}Repository.php
 
 # Http
-generate  app/Http/Controllers/Back/NewsController.php  app/Http/Controllers/Back/${singular}Controller.php
+generate  app/Http/Controllers/Back/NewsController.php      app/Http/Controllers/Back/${plural}Controller.php
 generate  app/Http/Requests/Back/NewsItemRequest.php        app/Http/Requests/Back/${singular}Request.php
 
 # Views
