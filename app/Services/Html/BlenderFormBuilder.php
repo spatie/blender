@@ -231,11 +231,16 @@ class BlenderFormBuilder
 
         $translatedFields = [];
 
-        foreach (config('app.locales') as $locale) {
+        foreach (locales() as $locale) {
             $fieldset = [];
 
             foreach ($fields as $name => $type) {
                 $fieldset[] = $this->$type($name, false, $locale);
+            }
+
+            if (locales()->count() === 1) {
+                $translatedFields[] = $this->group($fieldset);
+                continue;
             }
 
             $translatedFields[] = $this->languageFieldSet($locale, $fieldset);
