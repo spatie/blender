@@ -1,10 +1,16 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateMediaTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('media', function (Blueprint $table) {
@@ -16,13 +22,18 @@ class CreateMediaTable extends Migration
             $table->string('file_name');
             $table->string('disk');
             $table->integer('size');
-            $table->text('manipulations');
-            $table->text('custom_properties');
+            $table->json('manipulations');
+            $table->json('custom_properties');
             $table->integer('order_column');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::drop('media');

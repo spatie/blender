@@ -1,18 +1,24 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateNewsItemsTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('news_items', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('name');
-            $table->text('text');
-            $table->text('url');
-            $table->text('seo_values')->nullable();
+            $table->json('name')->nullable();
+            $table->json('text')->nullable();
+            $table->json('url')->nullable();
+            $table->json('seo_values')->nullable();
             $table->datetime('publish_date');
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);
@@ -20,6 +26,11 @@ class CreateNewsItemsTable extends Migration
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::drop('news_items');

@@ -1,18 +1,24 @@
 <?php
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 class CreateArticlesTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('name');
-            $table->text('text');
-            $table->text('url');
-            $table->text('seo_values')->nullable();
+            $table->json('name')->nullable();
+            $table->json('text')->nullable();
+            $table->json('url')->nullable();
+            $table->json('seo_values')->nullable();
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);
             $table->integer('parent_id')->unsigned()->nullable();
@@ -26,6 +32,11 @@ class CreateArticlesTable extends Migration
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::drop('articles');
