@@ -28,6 +28,7 @@ class ArticlesController extends Controller
     {
         if ($model->isSpecialArticle()) {
             $model->online = true;
+
             return;
         }
 
