@@ -2,7 +2,7 @@
 
 @section('pageTitle', fragment('back.members.new'))
 
-@section('breadcrumbs', '')
+@section('breadcrumbs', Html::backToIndex('Back\MembersController@index'))
 
 @section('content')
     <section>

@@ -2,7 +2,7 @@
 
 @section('pageTitle', 'Wijzig vaste tekst')
 
-@section('breadcrumbs', '')
+@section('breadcrumbs', Html::backToIndex('Back\FragmentsController@index'))
 
 @section('content')
 <section>

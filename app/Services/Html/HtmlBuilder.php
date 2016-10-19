@@ -103,4 +103,9 @@ class HtmlBuilder extends BaseHtmlBuilder
             el("i.fa.fa-{$icon}")
         );
     }
+
+    public function backToIndex(string $action, array $parameters = []): string
+    {
+        return el('a', ['href' => action($action, $parameters)], '&#8592; '.fragment('back.backToIndex'));
+    }
 }

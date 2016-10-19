@@ -2,7 +2,7 @@
 
 @section('pageTitle', $user->email)
 
-@section('breadcrumbs', '')
+@section('breadcrumbs', Html::backToIndex('Back\AdministratorsController@index'))
 
 @section('content')
     <section>

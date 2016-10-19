@@ -2,6 +2,8 @@
 
 @section('pageTitle', 'Nieuwe gebruiker')
 
+@section('breadcrumbs', Html::backToIndex('Back\AdministratorsController@index'))
+
 @section('content')
     <section>
         <div class="grid">

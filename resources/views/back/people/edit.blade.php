@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('breadcrumbs', '')
+@section('breadcrumbs', Html::backToIndex('Back\PeopleController@index'))
 
 @section('pageTitle', fragment('back.people.title'))
 
