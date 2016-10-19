@@ -216,6 +216,7 @@ return [
         Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
+        Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
     ],
 
     /*
