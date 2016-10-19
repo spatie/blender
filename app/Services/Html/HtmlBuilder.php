@@ -98,7 +98,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         $title = $online ? 'Online' : 'Offline';
 
         return el(
-            "span.status.-{$state}.-space-right",
+            "span.status.-{$state}",
             ['title' => $title],
             el("i.fa.fa-{$icon}")
         );
@@ -106,6 +106,6 @@ class HtmlBuilder extends BaseHtmlBuilder
 
     public function backToIndex(string $action, array $parameters = []): string
     {
-        return el('a', ['href' => action($action, $parameters)], '&#8592; '.fragment('back.backToIndex'));
+        return el('a.breadcrumb--back', ['href' => action($action, $parameters)], fragment('back.backToIndex'));
     }
 }
