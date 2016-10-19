@@ -18,7 +18,6 @@
         "barryvdh/laravel-debugbar": "^2.2",
         "barryvdh/laravel-ide-helper": "^2.1",
         "bugsnag/bugsnag-laravel": "^1.4",
-        "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "doctrine/dbal": "^2.5",
         "fedeisas/laravel-mail-css-inliner": "^1.5",
         "filp/whoops": "2.0.*",

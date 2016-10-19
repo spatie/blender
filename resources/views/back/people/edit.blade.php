@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('breadcrumbs', Breadcrumbs::render('peopleBack', $model))
+@section('breadcrumbs', '')
 
 @section('pageTitle', fragment('back.people.title'))
 

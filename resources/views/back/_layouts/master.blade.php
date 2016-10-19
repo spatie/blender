@@ -24,7 +24,9 @@
         @include('back._layouts._partials.menu')
         <div class="grid">
             @include('back._layouts._partials.flashMessage')
-            @include('back._layouts._partials.breadcrumbs')
+            <nav class="breadcrumbs">
+                @yield('breadcrumbs')
+            </nav>
         </div>
     @endif
     <main class="main">

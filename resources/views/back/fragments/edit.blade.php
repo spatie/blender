@@ -2,7 +2,7 @@
 
 @section('pageTitle', 'Wijzig vaste tekst')
 
-@section('breadcrumbs', Breadcrumbs::render('fragmentsDetailBack', $fragment))
+@section('breadcrumbs', '')
 
 @section('content')
 <section>

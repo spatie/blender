@@ -2,7 +2,7 @@
 
 @section('pageTitle', $user->email)
 
-@section('breadcrumbs', Breadcrumbs::render('administratorsEditBack', $user))
+@section('breadcrumbs', '')
 
 @section('content')
     <section>

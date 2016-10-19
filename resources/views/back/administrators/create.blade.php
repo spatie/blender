@@ -2,8 +2,6 @@
 
 @section('pageTitle', 'Nieuwe gebruiker')
 
-@section('breadcrumbs', Breadcrumbs::render('administratorsCreateBack'))
-
 @section('content')
     <section>
         <div class="grid">

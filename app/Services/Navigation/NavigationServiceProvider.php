@@ -2,7 +2,6 @@
 
 namespace App\Services\Navigation;
 
-use App\Services\Navigation\Breadcrumbs\Breadcrumbs;
 use App\Services\Navigation\Menu\BackMenus;
 use App\Services\Navigation\Menu\FrontMenus;
 use Illuminate\Http\Request;
@@ -18,7 +17,6 @@ class NavigationServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->bootMenus();
-        $this->bootBreadcrumbs();
     }
 
     protected function registerSection()
@@ -44,10 +42,5 @@ class NavigationServiceProvider extends ServiceProvider
     {
         $this->app->make(FrontMenus::class)->register();
         $this->app->make(BackMenus::class)->register();
-    }
-
-    protected function bootBreadcrumbs()
-    {
-        $this->app->make(Breadcrumbs::class)->register();
     }
 }
