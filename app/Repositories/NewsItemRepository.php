@@ -9,23 +9,36 @@ use Spatie\Blender\Model\Repository;
 
 class NewsItemRepository extends Repository
 {
-    const MODEL = NewsItem::class;
-
     public function getAll(): Collection
     {
-        return $this->query()
+        return NewsItem::orderBy('publish_date', 'desc')->get();
+    }
+
+    public function getAllOnline(): Collection
+    {
+        return NewsItem::online()
             ->orderBy('publish_date', 'desc')
-            ->nonDraft()
             ->get();
     }
 
     public function getLatest(int $amount): Collection
     {
-        return $this->query()
+        return NewsItem::online()
             ->orderBy('publish_date', 'desc')
-            ->online()
             ->take($amount)
             ->get();
+    }
+
+    public function findOnline(int $id): NewsItem
+    {
+        return NewsItem::online()->findOrFail($id);
+    }
+
+    public function findByUrl(string $url): NewsItem
+    {
+        return NewsItem::online()
+            ->where('url->'.content_locale(), $url)
+            ->firstOrFail();
     }
 
     /**
@@ -33,8 +46,7 @@ class NewsItemRepository extends Repository
      */
     public function findNext(NewsItem $newsItem)
     {
-        return $this->query()
-            ->online()
+        return NewsItem::online()
             ->where('publish_date', '>', $newsItem->publish_date)
             ->orderBy('publish_date', 'desc')
             ->first();
@@ -45,8 +57,7 @@ class NewsItemRepository extends Repository
      */
     public function findPrevious(NewsItem $newsItem)
     {
-        return $this->query()
-            ->online()
+        return NewsItem::online()
             ->where('publish_date', '<', $newsItem->publish_date)
             ->orderBy('publish_date', 'desc')
             ->first();
@@ -54,8 +65,6 @@ class NewsItemRepository extends Repository
 
     public function paginate(int $perPage): Paginator
     {
-        return $this->query()
-            ->online()
-            ->paginate($perPage);
+        return NewsItem::online()->paginate($perPage);
     }
 }

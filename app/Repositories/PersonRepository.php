@@ -4,16 +4,18 @@ namespace App\Repositories;
 
 use App\Models\Person;
 use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Repository;
 
-class PersonRepository extends Repository
+class PersonRepository
 {
-    const MODEL = Person::class;
-
     public function getAll(): Collection
     {
-        return $this->query()
-            ->orderBy('order_column')
+        return Person::orderBy('publish_date', 'desc')->get();
+    }
+
+    public function getAllOnline(): Collection
+    {
+        return Person::online()
+            ->orderBy('publish_date', 'desc')
             ->get();
     }
 }

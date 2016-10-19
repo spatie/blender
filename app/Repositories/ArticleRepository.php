@@ -5,37 +5,30 @@ namespace App\Repositories;
 use App\Models\Article;
 use App\Models\Enums\SpecialArticle;
 use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Repository;
 
-class ArticleRepository extends Repository
+class ArticleRepository
 {
-    const MODEL = Article::class;
-
-    public function query()
-    {
-        return parent::query()
-            ->nonDraft()
-            ->orderBy('order_column');
-    }
-
     public function getTopLevel(): Collection
     {
-        return $this->query()
+        return Article::all()
             ->whereNull('parent_id')
+            ->orderBy('order_column')
             ->get();
     }
 
     public function getSiblings(Article $article): Collection
     {
-        return $this->query()
+        return Article::all()
             ->where('parent_id', $article->parent_id)
+            ->orderBy('order_column')
             ->get();
     }
 
     public function firstChild(Article $article): Article
     {
-        return $this->query()
+        return Article::all()
             ->where('parent_id', $article->id)
+            ->orderBy('order_column')
             ->first();
     }
 
