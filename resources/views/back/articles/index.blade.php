@@ -25,7 +25,7 @@
                             <a href="{{ action('Back\ArticlesController@edit', [$article->id]) }}">{{ $article->translate('name', content_locale()) }}</a>
                         </td>
                         <td class="-right">
-                            @if($article->isDeletable())
+                            @if(! $article->isSpecialArticle())
                                 {!! Html::deleteButton(action('Back\ArticlesController@destroy', $article->id)) !!}
                             @endif
                         </td>

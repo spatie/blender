@@ -61,9 +61,9 @@ class Article extends Model implements Sortable
         );
     }
 
-    public function isDeletable(): bool
+    public function isSpecialArticle(): bool
     {
-        return ! (bool) $this->technical_name;
+        return ! empty($this->technical_name);
     }
 
     public function children(): HasMany

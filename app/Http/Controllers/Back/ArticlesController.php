@@ -6,6 +6,8 @@ use App\Http\Requests\Back\ArticleRequest;
 use App\Models\Article;
 use App\Models\Enums\SpecialArticle;
 use App\Repositories\ArticleRepository;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Http\FormRequest;
 use Spatie\Blender\Model\Controller;
 
 class ArticlesController extends Controller
@@ -20,6 +22,16 @@ class ArticlesController extends Controller
         $article->parent_id = $request->get('parent_id') ?: null;
 
         $this->updateModel($article, $request);
+    }
+
+    protected function updateOnlineToggle(Model $model, FormRequest $request)
+    {
+        if ($model->isSpecialArticle()) {
+            $model->online = true;
+            return;
+        }
+
+        parent::updateOnlineToggle($model, $request);
     }
 
     public function edit(int $id)

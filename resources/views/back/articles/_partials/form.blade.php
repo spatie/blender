@@ -13,12 +13,13 @@
             'name' => 'text',
             'text' => 'redactor',
         ]) !!}
-
         {!! BlenderForm::media('images', 'images') !!}
         {!! BlenderForm::media('downloads', 'downloads') !!}
     </div>
     <div id="settings">
-        {!! BlenderForm::checkbox('online') !!}
+        @if(! $model->isSpecialArticle())
+            {!! BlenderForm::checkbox('online') !!}
+        @endif
         {!! BlenderForm::select('parent_id', $parentMenuItems) !!}
     </div>
     <div id="seo">
