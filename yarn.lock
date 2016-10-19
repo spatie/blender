@@ -702,9 +702,9 @@ blender-gulp@^2.5.0:
     style-loader "^0.13.0"
     webpack-manifest-plugin "^0.5.0"
 
-blender-media@^2.1.0:
-  version "2.1.0"
-  resolved "https://npm.spatie.be/blender-media/-/blender-media-2.1.0.tgz#e4fcde93f3667beef283b7d7898aca68fc0ea710"
+blender-media@^2.1.1:
+  version "2.1.1"
+  resolved "https://npm.spatie.be/blender-media/-/blender-media-2.1.1.tgz#0008575c0ac0485392b49a147e9fc85f063d864f"
   dependencies:
     dragula "^3.7.1"
     dragula-constrain "^1.0.0"
@@ -820,8 +820,8 @@ camelcase@^3.0.0:
   resolved "https://npm.spatie.be/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
 caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000554:
-  version "1.0.30000559"
-  resolved "https://npm.spatie.be/caniuse-db/-/caniuse-db-1.0.30000559.tgz#afbd68916dd23bfd549c26520c78631fb5e2e393"
+  version "1.0.30000560"
+  resolved "https://npm.spatie.be/caniuse-db/-/caniuse-db-1.0.30000560.tgz#7f886302e912d15a6e53b81d6ab13de9dba95ee8"
 
 caseless@~0.11.0:
   version "0.11.0"
@@ -1187,6 +1187,13 @@ doctrine@^1.2.2:
     esutils "^2.0.2"
     isarray "^1.0.0"
 
+dom-serializer@0:
+  version "0.1.0"
+  resolved "https://npm.spatie.be/dom-serializer/-/dom-serializer-0.1.0.tgz#073c697546ce0780ce23be4a28e293e40bc30c82"
+  dependencies:
+    domelementtype "~1.1.1"
+    entities "~1.1.1"
+
 dom-storage@^2.0.2:
   version "2.0.2"
   resolved "https://npm.spatie.be/dom-storage/-/dom-storage-2.0.2.tgz#ed17cbf68abd10e0aef8182713e297c5e4b500b0"
@@ -1194,6 +1201,27 @@ dom-storage@^2.0.2:
 domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://npm.spatie.be/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
+
+domelementtype@^1.3.0, domelementtype@1:
+  version "1.3.0"
+  resolved "https://npm.spatie.be/domelementtype/-/domelementtype-1.3.0.tgz#b17aed82e8ab59e52dd9c19b1756e0fc187204c2"
+
+domelementtype@~1.1.1:
+  version "1.1.3"
+  resolved "https://npm.spatie.be/domelementtype/-/domelementtype-1.1.3.tgz#bd28773e2642881aec51544924299c5cd822185b"
+
+domhandler@^2.3.0:
+  version "2.3.0"
+  resolved "https://npm.spatie.be/domhandler/-/domhandler-2.3.0.tgz#2de59a0822d5027fabff6f032c2b25a2a8abe738"
+  dependencies:
+    domelementtype "1"
+
+domutils@^1.5.1:
+  version "1.5.1"
+  resolved "https://npm.spatie.be/domutils/-/domutils-1.5.1.tgz#dcd8488a26f563d61079e48c9f7b7e32373682cf"
+  dependencies:
+    dom-serializer "0"
+    domelementtype "1"
 
 dotenv@^1.2.0:
   version "1.2.0"
@@ -1243,6 +1271,10 @@ enhanced-resolve@~0.9.0:
     graceful-fs "^4.1.2"
     memory-fs "^0.2.0"
     tapable "^0.1.8"
+
+entities@^1.1.1, entities@~1.1.1:
+  version "1.1.1"
+  resolved "https://npm.spatie.be/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
 
 envify@^3.4.0:
   version "3.4.1"
@@ -1329,10 +1361,12 @@ escope@^3.6.0:
     estraverse "^4.1.1"
 
 eslint-config-spatie@^1.0.0:
-  version "1.2.3"
-  resolved "https://npm.spatie.be/eslint-config-spatie/-/eslint-config-spatie-1.2.3.tgz#539262e1f157ba0577ae5ab8f371d3f06738a1cc"
+  version "1.2.4"
+  resolved "https://npm.spatie.be/eslint-config-spatie/-/eslint-config-spatie-1.2.4.tgz#06b1bd7e13dffd5bc056d71a03707b8699fabb82"
   optionalDependencies:
+    eslint-plugin-html "^1.5.3"
     eslint-plugin-react "^6.4.1"
+    eslint-plugin-vue "^0.1.1"
 
 eslint-loader@^1.5.0:
   version "1.6.0"
@@ -1342,12 +1376,24 @@ eslint-loader@^1.5.0:
     loader-utils "^0.2.7"
     object-assign "^4.0.1"
 
+eslint-plugin-html@^1.5.3:
+  version "1.5.3"
+  resolved "https://npm.spatie.be/eslint-plugin-html/-/eslint-plugin-html-1.5.3.tgz#f2bc82afb169ed8bbca6563f3d11632cd79f9a5f"
+  dependencies:
+    htmlparser2 "^3.8.2"
+
 eslint-plugin-react@^6.4.1:
   version "6.4.1"
   resolved "https://npm.spatie.be/eslint-plugin-react/-/eslint-plugin-react-6.4.1.tgz#7d1aade747db15892f71eee1fea4addf97bcfa2b"
   dependencies:
     doctrine "^1.2.2"
     jsx-ast-utils "^1.3.1"
+
+eslint-plugin-vue@^0.1.1:
+  version "0.1.1"
+  resolved "https://npm.spatie.be/eslint-plugin-vue/-/eslint-plugin-vue-0.1.1.tgz#45521b3c584bd41cf26b44a614b9510b6181a302"
+  dependencies:
+    parse5 "^2.1.5"
 
 eslint@^2.7.0:
   version "2.13.1"
@@ -2031,6 +2077,17 @@ home-or-tmp@^1.0.0:
 hosted-git-info@^2.1.4:
   version "2.1.5"
   resolved "https://npm.spatie.be/hosted-git-info/-/hosted-git-info-2.1.5.tgz#0ba81d90da2e25ab34a332e6ec77936e1598118b"
+
+htmlparser2@^3.8.2:
+  version "3.9.2"
+  resolved "https://npm.spatie.be/htmlparser2/-/htmlparser2-3.9.2.tgz#1bdf87acca0f3f9e53fa4fcceb0f4b4cbb00b338"
+  dependencies:
+    domelementtype "^1.3.0"
+    domhandler "^2.3.0"
+    domutils "^1.5.1"
+    entities "^1.1.1"
+    inherits "^2.0.1"
+    readable-stream "^2.0.2"
 
 http-browserify@^1.3.2:
   version "1.7.0"
@@ -3131,6 +3188,10 @@ parse-json@^2.2.0:
   dependencies:
     error-ex "^1.2.0"
 
+parse5@^2.1.5:
+  version "2.2.2"
+  resolved "https://npm.spatie.be/parse5/-/parse5-2.2.2.tgz#27f04785e9aee58aa824bc0a31c3049c3e39c51e"
+
 path-array@^1.0.0:
   version "1.0.1"
   resolved "https://npm.spatie.be/path-array/-/path-array-1.0.1.tgz#7e2f0f35f07a2015122b868b7eac0eb2c4fec271"
@@ -3808,8 +3869,8 @@ svgo@^0.7.0:
     whet.extend "~0.9.9"
 
 table@^3.7.8:
-  version "3.8.2"
-  resolved "https://npm.spatie.be/table/-/table-3.8.2.tgz#47726825bdd73de25aa3fda1c28910ca999c95cc"
+  version "3.8.3"
+  resolved "https://npm.spatie.be/table/-/table-3.8.3.tgz#2bbc542f0fda9861a755d3947fefd8b3f513855f"
   dependencies:
     ajv "^4.7.0"
     ajv-keywords "^1.0.0"
@@ -4040,9 +4101,9 @@ vue@^1.0.26:
   dependencies:
     envify "^3.4.0"
 
-vuex@2.0.0-rc.3:
-  version "2.0.0-rc.3"
-  resolved "https://npm.spatie.be/vuex/-/vuex-2.0.0-rc.3.tgz#a8eef7b416e1079d3873126d444f6a8072a951b2"
+vuex@^2.0.0:
+  version "2.0.0"
+  resolved "https://npm.spatie.be/vuex/-/vuex-2.0.0.tgz#26befa44de220f009e432d1027487bff29571cee"
 
 watchpack@^0.2.1:
   version "0.2.9"
