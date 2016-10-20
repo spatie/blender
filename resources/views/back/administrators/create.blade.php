@@ -2,7 +2,7 @@
 
 @section('pageTitle', 'Nieuwe gebruiker')
 
-@section('breadcrumbs', Breadcrumbs::render('administratorsCreateBack'))
+@section('breadcrumbs', Html::backToIndex('Back\AdministratorsController@index'))
 
 @section('content')
     <section>

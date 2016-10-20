@@ -27,8 +27,8 @@ ajv-keywords@^1.0.0:
   resolved "https://npm.spatie.be/ajv-keywords/-/ajv-keywords-1.1.1.tgz#02550bc605a3e576041565628af972e06c549d50"
 
 ajv@^4.7.0:
-  version "4.8.0"
-  resolved "https://npm.spatie.be/ajv/-/ajv-4.8.0.tgz#011df5c4a08edb29574a477269afb15a6f97abe5"
+  version "4.8.1"
+  resolved "https://npm.spatie.be/ajv/-/ajv-4.8.1.tgz#708213577289a84a8148e66daa980c32da6a562e"
   dependencies:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
@@ -672,8 +672,8 @@ bl@~1.1.2:
     readable-stream "~2.0.5"
 
 blender-css@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.spatie.be/blender-css/-/blender-css-1.0.0.tgz#e4c9bdd9be31de4ff285a2b4624643ac5e885d37"
+  version "1.1.2"
+  resolved "https://npm.spatie.be/blender-css/-/blender-css-1.1.2.tgz#5f1dd99259f65c28c8ee0853d388faa0b3b9a8cc"
 
 blender-gulp@^2.5.0:
   version "2.5.3"
@@ -3189,8 +3189,8 @@ parse-json@^2.2.0:
     error-ex "^1.2.0"
 
 parse5@^2.1.5:
-  version "2.2.2"
-  resolved "https://npm.spatie.be/parse5/-/parse5-2.2.2.tgz#27f04785e9aee58aa824bc0a31c3049c3e39c51e"
+  version "2.2.3"
+  resolved "https://npm.spatie.be/parse5/-/parse5-2.2.3.tgz#0c4fc41c1000c5e6b93d48b03f8083837834e9f6"
 
 path-array@^1.0.0:
   version "1.0.1"
