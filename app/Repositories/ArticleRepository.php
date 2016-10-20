@@ -5,47 +5,31 @@ namespace App\Repositories;
 use App\Models\Article;
 use App\Models\Enums\SpecialArticle;
 use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Repository;
+use Illuminate\Support\Facades\Cache;
 
-class ArticleRepository extends Repository
+class ArticleRepository
 {
-    const MODEL = Article::class;
-
-    public function query()
+    public static function getTopLevel(): Collection
     {
-        return parent::query()
-            ->nonDraft()
-            ->orderBy('order_column');
-    }
-
-    public function getTopLevel(): Collection
-    {
-        return $this->query()
-            ->whereNull('parent_id')
+        return Article::where('parent_id', null)
+            ->orderBy('order_column')
             ->get();
     }
 
-    public function getSiblings(Article $article): Collection
+    public static function findByUrl(string $url): Article
     {
-        return $this->query()
-            ->where('parent_id', $article->parent_id)
-            ->get();
+        return Article::online()
+            ->where('url->'.content_locale(), $url)
+            ->firstOrFail();
     }
 
-    public function firstChild(Article $article): Article
+    public static function findSpecialArticle(SpecialArticle $specialArticle): Article
     {
-        return $this->query()
-            ->where('parent_id', $article->id)
-            ->first();
-    }
-
-    /**
-     * @param \App\Models\Enums\SpecialArticle $specialArticle
-     *
-     * @return \App\Models\Article|null
-     */
-    public function findSpecialArticle(SpecialArticle $specialArticle)
-    {
-        return $this->query()->where('technical_name', $specialArticle)->first();
+        return Cache::rememberForever(
+            "article.specialArticle.{$specialArticle}",
+            function () use ($specialArticle) {
+                return Article::where('technical_name', $specialArticle)->firstOrFail();
+            }
+        );
     }
 }

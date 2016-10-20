@@ -7,4 +7,5 @@ use App\Foundation\Enums\Enum;
 class SpecialArticle extends Enum
 {
     const HOME = 'home';
+    const CONTACT = 'contact';
 }

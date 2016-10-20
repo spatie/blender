@@ -2,9 +2,9 @@
 
 use Illuminate\Support\Collection;
 
-function article(string $technicalName): App\Models\Article
+function article(\App\Models\Enums\SpecialArticle $specialArticle): App\Models\Article
 {
-    return App\Models\Article::findByTechnicalName($technicalName);
+    return App\Repositories\ArticleRepository::findSpecialArticle($specialArticle);
 }
 
 function content_locale(): string

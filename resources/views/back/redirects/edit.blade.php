@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('breadcrumbs', Breadcrumbs::render('redirectsBack', $model))
+@section('breadcrumbs', Html::backToIndex('Back\RedirectsController@index'))
 
 @section('pageTitle', fragment('back.redirects.title'))
 

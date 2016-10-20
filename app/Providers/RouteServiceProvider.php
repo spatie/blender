@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\Article;
 use App\Services\Locale\CurrentLocale;
 use Auth;
 use Exception;
@@ -32,18 +31,6 @@ class RouteServiceProvider extends ServiceProvider
             }
 
             $router->resource($module, $controller);
-        });
-
-        $router->macro('articleList', function ($technicalNamePrefix, $action) use ($router) {
-            $articles = Article::getWithTechnicalNameLike($technicalNamePrefix);
-
-            $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"), function () use ($articles) {
-                return redirect(route("{$articles->first()->technical_name}"));
-            })->name($technicalNamePrefix);
-
-            $articles->map(function ($article) use ($technicalNamePrefix, $action, $router) {
-                $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}").'/'.$article->url, $action)->name("{$article->technical_name}");
-            });
         });
 
         $this->app['paginateroute']->registerMacros();

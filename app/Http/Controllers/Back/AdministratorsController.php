@@ -7,21 +7,12 @@ use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\Events\UserCreated;
 use App\Http\Requests\Back\BackUserRequest;
 use App\Services\Auth\Back\User;
-use App\Repositories\BackUserRepository;
 
 class AdministratorsController
 {
-    /** @var \App\Repositories\BackUserRepository */
-    protected $backUserRepository;
-
-    public function __construct(BackUserRepository $backUserRepository)
-    {
-        $this->backUserRepository = $backUserRepository;
-    }
-
     public function index()
     {
-        $users = $this->backUserRepository->getAll();
+        $users = User::all();
 
         return view('back.administrators.index')->with(compact('users'));
     }
@@ -47,7 +38,7 @@ class AdministratorsController
         $user->role = UserRole::ADMIN();
         $user->status = UserStatus::ACTIVE();
 
-        $this->backUserRepository->save($user);
+        $user->save();
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity()->on($user)->log($eventDescription);
@@ -60,18 +51,14 @@ class AdministratorsController
 
     public function edit($id)
     {
-        $user = $this->backUserRepository->find($id);
-
-        if (! $user) {
-            abort(404);
-        }
+        $user = User::findOrFail($id);
 
         return view('back.administrators.edit')->with(compact('user'));
     }
 
     public function update($id, BackUserRequest $request)
     {
-        abort_unless($user = $this->backUserRepository->find($id), 500);
+        $user = User::findOrFail($id);
 
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
@@ -82,7 +69,7 @@ class AdministratorsController
             $user->password = $request->get('password');
         }
 
-        $this->backUserRepository->save($user);
+        $user->save();
 
         $eventDescription = $this->getEventDescriptionFor('updated', $user);
         activity()->log($eventDescription);
@@ -93,7 +80,7 @@ class AdministratorsController
 
     public function activate($id)
     {
-        abort_unlees($user = $this->backUserRepository->find($id), 500);
+        $user = User::findOrFail($id);
 
         $user->activate();
 
@@ -106,11 +93,11 @@ class AdministratorsController
 
     public function destroy($id)
     {
-        $user = $this->backUserRepository->find($id);
+        $user = User::findOrFail($id);
 
         $eventDescription = $this->getEventDescriptionFor('deleted', $user);
 
-        $this->backUserRepository->delete($user);
+        $user->delete();
 
         activity($eventDescription);
         flash()->success(strip_tags($eventDescription));

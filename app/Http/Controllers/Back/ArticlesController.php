@@ -37,8 +37,7 @@ class ArticlesController extends Controller
 
     public function edit(int $id)
     {
-        $parentMenuItems = app(ArticleRepository::class)
-            ->getTopLevel()
+        $parentMenuItems = ArticleRepository::getTopLevel()
             ->filter(function (Article $article) {
                 return $article->technical_name != SpecialArticle::HOME;
             })

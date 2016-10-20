@@ -46,5 +46,4 @@ generate  database/migrations/2015_05_26_153558_create_news_items_table.php  dat
 echo "ALL DONE!"
 echo "- Todo: Register seeder in DatabaseSeeder"
 echo "- Todo: Register Blender routes in routes\back.php"
-echo "- Todo: Register Blender breadcrumbs in App\Services\Navigation\BreadCrumbs"
 echo "- Todo: Register Blender navigation in App\Services\Navigation\Menu\BackMenus"

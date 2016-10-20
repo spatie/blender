@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Enums\SpecialArticle;
 use App\Models\Presenters\ArticlePresenter;
-use Cache;
 use Exception;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -14,6 +13,12 @@ use Spatie\Blender\Model\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
 
+/**
+ * @property \App\Models\Article $parent
+ * @property \Illuminate\Support\Collection $children
+ * @property \App\Models\Article $firstChild
+ * @property \Illuminate\Support\Collection $siblings
+ */
 class Article extends Model implements Sortable
 {
     use ArticlePresenter, HasSlug, SortableTrait;
@@ -33,34 +38,6 @@ class Article extends Model implements Sortable
             ->performOnCollections('images');
     }
 
-    public static function findByTechnicalName(string $technicalName): Article
-    {
-        return Cache::rememberForever(
-            "article.findByTechnicalName.{$technicalName}",
-            function () use ($technicalName) : Article {
-                $article = static::where('technical_name', $technicalName)->first();
-
-                if ($article === null) {
-                    throw new Exception("Article `{$technicalName}` not found");
-                }
-
-                return $article;
-            }
-        );
-    }
-
-    public static function getWithTechnicalNameLike(string $technicalName): Collection
-    {
-        return Cache::rememberForever(
-            "article.getWithTechnicalNameLike.{$technicalName}",
-            function () use ($technicalName) : Collection {
-                return static::where('technical_name', 'like', "{$technicalName}.%")
-                    ->orderBy('order_column')
-                    ->get();
-            }
-        );
-    }
-
     public function isSpecialArticle(): bool
     {
         return ! empty($this->technical_name);
@@ -76,14 +53,30 @@ class Article extends Model implements Sortable
         return count($this->children);
     }
 
-    public function parentArticle(): BelongsTo
+    public function getFirstChildAttribute(): Article
+    {
+        if (! $this->hasChildren()) {
+            throw new Exception("Article `{$this->id}` doesn't have any children.");
+        }
+
+        return $this->children->sortBy('order_column')->first();
+    }
+
+    public function getSiblingsAttribute(): Collection
+    {
+        return self::where('parent_id', $this->parent_id)
+            ->orderBy('order_column')
+            ->get();
+    }
+
+    public function parent(): BelongsTo
     {
         return $this->belongsTo(self::class, 'parent_id');
     }
 
-    public function hasParentArticle(): bool
+    public function hasParent(): bool
     {
-        return ! is_null($this->parentArticle);
+        return ! is_null($this->parent);
     }
 
     public function getFullUrlAttribute(): string
@@ -98,7 +91,7 @@ class Article extends Model implements Sortable
             return $localeSegment;
         }
 
-        $parentUrl = $this->hasParentArticle() ? $this->parentArticle->url.'/' : '';
+        $parentUrl = $this->hasParent() ? $this->parent->url.'/' : '';
 
         return "{$localeSegment}/{$parentUrl}{$this->url}";
     }

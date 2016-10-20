@@ -24,6 +24,7 @@
                         <a href="{{ login_url() }}">{{ fragment('auth.login') }}</a>
                     </li>
                 @endif
+                </ul>
             </nav>
         </div>
     </div>

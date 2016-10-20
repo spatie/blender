@@ -1,6 +1,6 @@
 @extends('back._layouts.master')
 
-@section('breadcrumbs', Breadcrumbs::render('tagsBack', $model))
+@section('breadcrumbs', Html::backToIndex('Back\TagsController@index'))
 
 @section('pageTitle', fragment('back.tags.title'))
 

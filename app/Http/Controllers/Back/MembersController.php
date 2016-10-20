@@ -7,21 +7,12 @@ use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack;
 use App\Http\Requests\Back\FrontUserRequest;
 use App\Services\Auth\Front\User;
-use App\Repositories\FrontUserRepository;
 
 class MembersController
 {
-    /** @var \App\Repositories\FrontUserRepository */
-    protected $frontUserRepository;
-
-    public function __construct(FrontUserRepository $frontUserRepository)
-    {
-        $this->frontUserRepository = $frontUserRepository;
-    }
-
     public function index()
     {
-        $users = $this->frontUserRepository->getAll();
+        $users = User::all();
 
         return view('back.members.index')->with(compact('users'));
     }
@@ -43,7 +34,7 @@ class MembersController
         $user->role = UserRole::MEMBER();
         $user->status = UserStatus::ACTIVE();
 
-        $this->frontUserRepository->save($user);
+        $user->save();
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity($eventDescription);
@@ -56,25 +47,21 @@ class MembersController
 
     public function edit($id)
     {
-        $user = $this->frontUserRepository->find($id);
-
-        if (! $user) {
-            abort(404);
-        }
+        $user = User::findOrFail($id);
 
         return view('back.members.edit')->with(compact('user'));
     }
 
     public function update($id, FrontUserRequest $request)
     {
-        abort_unless($user = $this->frontUserRepository->find($id), 500);
+        $user = User::findOrFail($id);
 
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
         $user->locale = $request->get('locale', 'nl');
 
-        $this->frontUserRepository->save($user);
+        $user->save();
 
         $eventDescription = $this->getEventDescriptionFor('updated', $user);
         activity()->on($user)->log($eventDescription);
@@ -85,9 +72,9 @@ class MembersController
 
     public function destroy($id)
     {
-        $user = $this->frontUserRepository->find($id);
+        $user = User::findOrFail($id);
 
-        $this->frontUserRepository->delete($user);
+        $user->delete();
 
         $eventDescription = $this->getEventDescriptionFor('deleted', $user);
         activity()->log($eventDescription);

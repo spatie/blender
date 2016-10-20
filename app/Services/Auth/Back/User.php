@@ -87,4 +87,13 @@ class User extends BaseUser
     {
         Mail::to($this->email)->send(new ResetPassword($this, $token));
     }
+
+    public function delete()
+    {
+        if (current_back_user() && current_back_user()->id === $this->id) {
+            abort(406);
+        }
+
+        return parent::delete();
+    }
 }
