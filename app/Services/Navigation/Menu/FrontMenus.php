@@ -3,7 +3,6 @@
 namespace App\Services\Navigation\Menu;
 
 use app\Models\Article;
-use App\Repositories\ArticleRepository;
 use Spatie\Menu\Laravel\Menu;
 
 class FrontMenus

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Models\Enums\SpecialArticle;
 use App\Models\Presenters\ArticlePresenter;
-use Cache;
 use Exception;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -65,7 +64,7 @@ class Article extends Model implements Sortable
 
     public function getSiblingsAttribute(): Collection
     {
-        return Article::where('parent_id', $this->parent_id)
+        return self::where('parent_id', $this->parent_id)
             ->orderBy('order_column')
             ->get();
     }
