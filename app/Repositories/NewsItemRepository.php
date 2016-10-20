@@ -8,12 +8,24 @@ use Illuminate\Support\Collection;
 
 class NewsItemRepository
 {
+    public static function getAllOnline(): Collection
+    {
+        return NewsItem::online()
+            ->orderBy('publish_date', 'desc')
+            ->get();
+    }
+
     public static function getLatest(int $amount): Collection
     {
         return NewsItem::online()
             ->orderBy('publish_date', 'desc')
             ->take($amount)
             ->get();
+    }
+
+    public static function findOnline(int $id): NewsItem
+    {
+        return NewsItem::online()->findOrFail($id);
     }
 
     public static function findByUrl(string $url): NewsItem
