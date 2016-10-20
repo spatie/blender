@@ -37,7 +37,7 @@ class ArticleSeeder extends DatabaseSeeder
 
         $article->push();
 
-         $this->addImages($article);
+        $this->addImages($article);
     }
 
     public function seedRandomArticles($amount = 10, $withImages = false)

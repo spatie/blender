@@ -12,7 +12,7 @@ class ModuleTestCase extends BaseModuleTestCase
     public function currentUser()
     {
         return factory(User::class)->create([
-            'role' => UserRole::ADMIN,
+            'role'   => UserRole::ADMIN,
             'status' => UserStatus::ACTIVE,
         ]);
     }

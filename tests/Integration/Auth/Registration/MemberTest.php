@@ -24,16 +24,15 @@ class MemberTest extends FrontTestCase
             ->type('123456789', 'password')
             ->type('123456789', 'password_confirmation')
 
-            ->press(trans('auth.register.member.submit'))
-        ;
+            ->press(trans('auth.register.member.submit'));
 
         $this->seeInDatabase('users', [
             'first_name' => $testUser->first_name,
-            'last_name' => $testUser->last_name,
-            'email' => $testUser->email,
-            'status' => UserStatus::WAITING_FOR_APPROVAL,
-            'role' => UserRole::MEMBER,
-            'locale' => 'nl',
+            'last_name'  => $testUser->last_name,
+            'email'      => $testUser->email,
+            'status'     => UserStatus::WAITING_FOR_APPROVAL,
+            'role'       => UserRole::MEMBER,
+            'locale'     => 'nl',
         ]);
     }
 }

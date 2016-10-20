@@ -69,7 +69,7 @@ class UserController extends Controller
 
         $user = $this->userRepository->save($user);
 
-        $eventDescription =  trans('back-users.passwordMailSent');
+        $eventDescription = trans('back-users.passwordMailSent');
 
         Activity::log($eventDescription);
         flash()->success(strip_tags($eventDescription));

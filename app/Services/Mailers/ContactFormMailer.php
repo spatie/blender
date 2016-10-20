@@ -2,8 +2,8 @@
 
 namespace App\Services\Mailers;
 
-use Request;
 use Log;
+use Request;
 
 class ContactFormMailer extends Mailer
 {

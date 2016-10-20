@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'locales' => ['nl', 'fr'],
+    'locales'     => ['nl', 'fr'],
     'backLocales' => ['nl', 'en'],
 
 
@@ -247,26 +247,26 @@ return [
         /*
          * Application Facades...
          */
-        'Navigation'	=> App\Services\Navigation\NavigationFacade::class,
-        'BlenderForm'	=> App\Services\Html\BlenderFormFacade::class,
+        'Navigation'     => App\Services\Navigation\NavigationFacade::class,
+        'BlenderForm'    => App\Services\Html\BlenderFormFacade::class,
 
         /*
          * Third party Facades...
          */
-        'Clockwork'         => Clockwork\Support\Laravel\Facade::class,
-        'Flash'       		=> Laracasts\Flash\Flash::class,
-        'Activity'    		=> Spatie\Activitylog\ActivitylogFacade::class,
-        'Date'        		=> Jenssegers\Date\Date::class,
-        'Menu'        		=> Menu\Menu::class,
-        'Breadcrumbs' 		=> DaveJamesMiller\Breadcrumbs\Facade::class,
-        'GlideImage'  		=> Spatie\Glide\GlideImageFacade::class,
-        'Excel'       		=> Maatwebsite\Excel\Facades\Excel::class,
-        'LaravelAnalytics' 	=> Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
-        'Bugsnag' 			=> Bugsnag\BugsnagLaravel\BugsnagFacade::class,
-        'Newsletter' 		=> Spatie\Newsletter\NewsletterFacade::class,
-        'Slack' 			=> Maknz\Slack\Facades\Slack::class,
-        'GoogleTagManager'  => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
-        'Fractal'           => Spatie\Fractal\FractalFacade::class,
+        'Clockwork'           => Clockwork\Support\Laravel\Facade::class,
+        'Flash'               => Laracasts\Flash\Flash::class,
+        'Activity'            => Spatie\Activitylog\ActivitylogFacade::class,
+        'Date'                => Jenssegers\Date\Date::class,
+        'Menu'                => Menu\Menu::class,
+        'Breadcrumbs'         => DaveJamesMiller\Breadcrumbs\Facade::class,
+        'GlideImage'          => Spatie\Glide\GlideImageFacade::class,
+        'Excel'               => Maatwebsite\Excel\Facades\Excel::class,
+        'LaravelAnalytics'    => Spatie\LaravelAnalytics\LaravelAnalyticsFacade::class,
+        'Bugsnag'             => Bugsnag\BugsnagLaravel\BugsnagFacade::class,
+        'Newsletter'          => Spatie\Newsletter\NewsletterFacade::class,
+        'Slack'               => Maknz\Slack\Facades\Slack::class,
+        'GoogleTagManager'    => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
+        'Fractal'             => Spatie\Fractal\FractalFacade::class,
     ],
 
 ];

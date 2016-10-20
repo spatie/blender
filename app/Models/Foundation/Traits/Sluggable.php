@@ -44,7 +44,7 @@ trait Sluggable
             ->where('id', '<>', ($this->exists ? $this->id : 0))
             ->first()) {
             $slug = $originalSlug.$config['separator'].$i++;
-        };
+        }
 
         return $slug;
     }

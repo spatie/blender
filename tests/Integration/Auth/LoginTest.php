@@ -30,8 +30,8 @@ class LoginTest extends TestCase
         $password = 'test12345';
 
         $user = factory(User::class)->create([
-            'role' => $role,
-            'status' => UserStatus::WAITING_FOR_APPROVAL,
+            'role'     => $role,
+            'status'   => UserStatus::WAITING_FOR_APPROVAL,
             'password' => $password,
         ]);
 
@@ -60,7 +60,7 @@ class LoginTest extends TestCase
         $this->call('GET', 'blender');
 
         $role == UserRole::ADMIN
-            ?  $this->onPage('blender')
+            ? $this->onPage('blender')
             : $this->seeStatusCode(Response::HTTP_UNAUTHORIZED);
     }
 
@@ -72,8 +72,8 @@ class LoginTest extends TestCase
         $password = 'test12345';
 
         $user = factory(User::class)->create([
-            'role' => UserRole::MEMBER,
-            'status' => UserStatus::ACTIVE,
+            'role'     => UserRole::MEMBER,
+            'status'   => UserStatus::ACTIVE,
             'password' => $password,
         ]);
 
@@ -89,7 +89,7 @@ class LoginTest extends TestCase
 
     public function isLoggedIn($user)
     {
-        $errorMessage =  "Failed to assert that user {$user->id} is logged in.";
+        $errorMessage = "Failed to assert that user {$user->id} is logged in.";
 
         $this->assertTrue(auth()->check(), $errorMessage);
 

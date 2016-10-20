@@ -12,12 +12,12 @@ return [
     |
     */
 
-    'password'=> 'Wachtwoorden moeten minstens 8 karakters lang zijn.',
-    'user'=> 'Er is geen gebruiker met dat e-mailadres.',
-    'token'=> 'Deze link is niet geldig.',
-    'sent'=> 'We hebben je een mail verstuurd met daarin een link waarmee je je wachtwoord kan wijzigen.',
-    'reset'=> 'Your password has been reset!',
-    'subjectEmail'=> 'Uw wachtwoord op ' . config('app.url'),
-    'subjectEmailNewUser'=> 'Toegang tot ' . config('app.url'),
-    'throttle'=> 'Teveel login pogingen. Je kan opnieuw proberen binnen :seconds seconden.',
+    'password'            => 'Wachtwoorden moeten minstens 8 karakters lang zijn.',
+    'user'                => 'Er is geen gebruiker met dat e-mailadres.',
+    'token'               => 'Deze link is niet geldig.',
+    'sent'                => 'We hebben je een mail verstuurd met daarin een link waarmee je je wachtwoord kan wijzigen.',
+    'reset'               => 'Your password has been reset!',
+    'subjectEmail'        => 'Uw wachtwoord op '.config('app.url'),
+    'subjectEmailNewUser' => 'Toegang tot '.config('app.url'),
+    'throttle'            => 'Teveel login pogingen. Je kan opnieuw proberen binnen :seconds seconden.',
 ];

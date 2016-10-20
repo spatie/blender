@@ -18,20 +18,20 @@ class UserSeeder extends DatabaseSeeder
     protected function seedAdmins()
     {
         $users = [
-            'Willem' => 'Van Bockstal',
-            'Freek' => 'Van der Herten',
-            'Rogier' => 'De Boevé',
+            'Willem'    => 'Van Bockstal',
+            'Freek'     => 'Van der Herten',
+            'Rogier'    => 'De Boevé',
             'Sebastian' => 'De Deyne',
         ];
 
         foreach ($users as $firstName => $lastName) {
             factory(User::class)->create([
-                'email' => strtolower($firstName).'@spatie.be',
-                'password' => app()->env == 'local' ? strtolower($firstName) : string()->random(),
+                'email'      => strtolower($firstName).'@spatie.be',
+                'password'   => app()->env == 'local' ? strtolower($firstName) : string()->random(),
                 'first_name' => $firstName,
-                'last_name' => $lastName,
-                'role' => UserRole::ADMIN,
-                'status' => UserStatus::ACTIVE,
+                'last_name'  => $lastName,
+                'role'       => UserRole::ADMIN,
+                'status'     => UserStatus::ACTIVE,
             ]);
         }
     }
@@ -45,16 +45,16 @@ class UserSeeder extends DatabaseSeeder
         }
     }
 
-    protected function seedUserWithRole($role, $amount = 20) {
-        foreach(range(1,20) as $index) {
-
+    protected function seedUserWithRole($role, $amount = 20)
+    {
+        foreach (range(1, 20) as $index) {
             $baseEmail = "{$role}{$index}";
 
             factory(User::class)->create([
-                'email' => "{$baseEmail}@spatie.be",
+                'email'    => "{$baseEmail}@spatie.be",
                 'password' => $baseEmail,
-                'role' => $role,
-                'status' => $this->faker->boolean(80) ? UserStatus::ACTIVE : UserStatus::WAITING_FOR_APPROVAL,
+                'role'     => $role,
+                'status'   => $this->faker->boolean(80) ? UserStatus::ACTIVE : UserStatus::WAITING_FOR_APPROVAL,
             ]);
         }
     }

@@ -2,8 +2,8 @@
 
 namespace App\Services\Html;
 
-use Illuminate\Html\HtmlBuilder as BaseHtmlBuilder;
 use Form;
+use Illuminate\Html\HtmlBuilder as BaseHtmlBuilder;
 use Session;
 
 class HtmlBuilder extends BaseHtmlBuilder
@@ -15,22 +15,22 @@ class HtmlBuilder extends BaseHtmlBuilder
 
     public function error($message)
     {
-        return ($message == '' ? '' : '<div class="alert -danger">'.$message.'</div>');
+        return $message == '' ? '' : '<div class="alert -danger">'.$message.'</div>';
     }
 
     public function message($message)
     {
-        return ($message == '' ? '' : '<div class="alert -success">'.$message.'</div>');
+        return $message == '' ? '' : '<div class="alert -success">'.$message.'</div>';
     }
 
     public function info($message, $size = '')
     {
-        return ($message == '' ? '' : '<div class="alert -info '.$size.'"><span class="fa fa-info-circle"></span> '.$message.'</div>');
+        return $message == '' ? '' : '<div class="alert -info '.$size.'"><span class="fa fa-info-circle"></span> '.$message.'</div>';
     }
 
     public function avatar($user, $class = '')
     {
-        return ('<span class="avatar '.$class.'" style="background-image: url(\''.$user->present()->avatar.'\')" /></span>');
+        return '<span class="avatar '.$class.'" style="background-image: url(\''.$user->present()->avatar.'\')" /></span>';
     }
 
     public function formButton($url, $buttonHtml, $method, $submitButtonOptions = [])

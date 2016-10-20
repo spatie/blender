@@ -7,15 +7,15 @@ use App\Models\Enums\UserRole;
 use App\Models\Enums\UserStatus;
 use App\Models\Foundation\Traits\Presentable;
 use Carbon\Carbon;
+use Event;
 use Exception;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
-use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\Access\Authorizable;
-use Event;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract, AuthorizableContract
 {
@@ -110,7 +110,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      */
     public function isCurrentUser()
     {
-        return ($this->id === auth()->id());
+        return $this->id === auth()->id();
     }
 
     public function hasRole($role)
@@ -134,9 +134,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     /**
      * Return the url to where the user must be redirected after log in.
      *
-     * @return string
-     *
      * @throws Exception
+     *
+     * @return string
      */
     public function getHomeUrl()
     {
@@ -151,9 +151,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
      * Return the url to where the user must be redirected when clicking
      * the email address in the navigation.
      *
-     * @return string
-     *
      * @throws \Exception
+     *
+     * @return string
      */
     public function getProfileUrl()
     {

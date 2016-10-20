@@ -4,8 +4,8 @@ namespace App\Listeners;
 
 use App\Events\UserWasCreated;
 use Illuminate\Contracts\Auth\PasswordBroker;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 
 class SendPasswordEmail implements ShouldQueue
 {

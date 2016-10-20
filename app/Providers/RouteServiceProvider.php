@@ -68,9 +68,9 @@ class RouteServiceProvider extends ServiceProvider
     {
         $router->group(
             [
-                'namespace' => $this->namespace.'\Back',
+                'namespace'  => $this->namespace.'\Back',
                 'middleware' => 'can:viewBacksite',
-                'prefix' => 'blender',
+                'prefix'     => 'blender',
             ],
             function ($router) {
                 require app_path('Http/Routes/back.php');
@@ -85,7 +85,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $router->group(
             [
-                'namespace' => $this->namespace.'\Front',
+                'namespace'  => $this->namespace.'\Front',
                 'middleware' => 'sanitizeInput',
             ],
             function ($router) {
@@ -136,10 +136,9 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         $router->macro('articleList', function ($technicalNamePrefix, $action) use ($router) {
-
             $articles = app(ArticleRepository::class)->getWithTechnicalNameLike($technicalNamePrefix);
 
-            $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"),  function () use ($articles) {
+            $router->get(app()->getLocale().'/'.fragment_slug("navigation.{$technicalNamePrefix}"), function () use ($articles) {
                 return redirect(route("{$articles->first()->technical_name}"));
             })->name($technicalNamePrefix);
 

@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreatePeopleTable extends Migration
 {
@@ -12,7 +12,7 @@ class CreatePeopleTable extends Migration
      */
     public function up()
     {
-        Schema::create('people', function(Blueprint $table) {
+        Schema::create('people', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('url');
@@ -22,7 +22,7 @@ class CreatePeopleTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('person_translations', function(Blueprint $table) {
+        Schema::create('person_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->text('text');
             $table->string('locale')->index();
@@ -30,7 +30,7 @@ class CreatePeopleTable extends Migration
             $table->integer('person_id')->unsigned();
             $table->foreign('person_id')->references('id')->on('people')->onDelete('cascade');
 
-            $table->unique(['person_id','locale']);
+            $table->unique(['person_id', 'locale']);
         });
     }
 

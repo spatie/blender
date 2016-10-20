@@ -39,9 +39,9 @@ class UserDbRepository extends DbRepository implements UserRepository
      *
      * @param \Illuminate\Database\Eloquent\Model $user
      *
-     * @return bool
-     *
      * @throws \Exception
+     *
+     * @return bool
      */
     public function delete(Model $user)
     {

@@ -10,7 +10,7 @@ class TestTransformer extends TransformerAbstract
     public function transform(Article $article)
     {
         return [
-            'id' => $article->id,
+            'id'   => $article->id,
             'name' => $article->name,
         ];
     }

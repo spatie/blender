@@ -89,7 +89,6 @@ class BlenderFormBuilder
         return $this->wrapInFormGroup($label, $text, $errors);
     }
 
-
     /**
      * @param string $name
      * @param bool   $required
@@ -100,7 +99,7 @@ class BlenderFormBuilder
     public function redactor($name, $required = false, $locale = null)
     {
         $options = [
-            'data-redactor' => '',
+            'data-redactor'                  => '',
             'data-redactor-medialibrary-url' => action(
                 'Back\MediaLibraryApiController@add',
                 [short_class_name($this->model), $this->model->id, 'redactor']

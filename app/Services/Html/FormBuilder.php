@@ -4,9 +4,9 @@ namespace App\Services\Html;
 
 use App\Repositories\TagRepository;
 use Carbon\Carbon;
-use Illuminate\Html\FormBuilder as BaseFormBuilder;
-use HTML;
 use Form;
+use HTML;
+use Illuminate\Html\FormBuilder as BaseFormBuilder;
 use URL;
 
 class FormBuilder extends BaseFormBuilder
@@ -19,8 +19,8 @@ class FormBuilder extends BaseFormBuilder
 
             $options = array_merge($options, [
                 'data-autosave' => '',
-                'name' => $draftableIdentifier,
-                'id' => $draftableIdentifier,
+                'name'          => $draftableIdentifier,
+                'id'            => $draftableIdentifier,
             ]);
             unset($options['subject']);
         }
@@ -35,7 +35,7 @@ class FormBuilder extends BaseFormBuilder
             Form::useInitialValue($subject, $fieldName, $locale),
             array_merge($options,
                 [
-                    'data-redactor' => '',
+                    'data-redactor'                  => '',
                     'data-redactor-medialibrary-url' => URL::action('Back\MediaLibraryApiController@add', [short_class_name($subject), $subject->id, 'redactor']),
                 ]));
     }
@@ -144,20 +144,20 @@ class FormBuilder extends BaseFormBuilder
         return Form::textarea($collectionName, $subject->getMedia($collectionName)->toJson(), [
             'data-parts' => json_encode(
                 [
-                    'debug' => true,
-                    'primaryKeyName' => 'id',
-                    'orderRows' => true,
+                    'debug'            => true,
+                    'primaryKeyName'   => 'id',
+                    'orderRows'        => true,
                     'dataTableOptions' => [
                         'searching' => false,
-                        'info' => false,
+                        'info'      => false,
                     ],
                     'columns' => $columns,
-                    'upload' => [
-                        'url' => $serverURL,
-                        'label' => $onlyImages ? trans('back.addImage') : trans('back.addFile'),
+                    'upload'  => [
+                        'url'        => $serverURL,
+                        'label'      => $onlyImages ? trans('back.addImage') : trans('back.addFile'),
                         'validation' => [
                             'acceptFileTypes' => ($onlyImages ? 'images' : ''),
-                            'maxFileSize' => config('mediaLibrary.maxFileSize'),
+                            'maxFileSize'     => config('mediaLibrary.maxFileSize'),
                         ],
                     ],
                 ], JSON_FORCE_OBJECT),

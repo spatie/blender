@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
 use App\Models\Enums\TagType;
+use App\Models\Foundation\Base\ModuleModel;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableInterface;
 

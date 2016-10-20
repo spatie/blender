@@ -85,7 +85,7 @@ class ApiController extends Controller
     {
         return $this->respond(
             [
-                'error' => $message,
+                'error'       => $message,
                 'status_code' => $this->getStatusCode(),
             ]
         );
