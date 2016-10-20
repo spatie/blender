@@ -35,6 +35,8 @@ class RegisterController extends Controller
      */
     public function showRegistrationForm()
     {
+        die('front auth not active');
+
         return view('front.auth.register');
     }
 
