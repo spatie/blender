@@ -27,10 +27,9 @@ class FrontMenus
         });
 
         Menu::macro('articleSiblings', function (Article $article) {
-            return app(ArticleRepository::class)->getSiblings($article)
-                ->reduce(function (Menu $menu, Article $article) {
-                    return $menu->url($article->fullUrl, $article->name);
-                }, Menu::front());
+            return $article->siblings->reduce(function (Menu $menu, Article $article) {
+                return $menu->url($article->fullUrl, $article->name);
+            }, Menu::front());
         });
     }
 }

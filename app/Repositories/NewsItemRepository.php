@@ -5,23 +5,10 @@ namespace App\Repositories;
 use App\Models\NewsItem;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Repository;
 
-class NewsItemRepository extends Repository
+class NewsItemRepository
 {
-    public function getAll(): Collection
-    {
-        return NewsItem::orderBy('publish_date', 'desc')->get();
-    }
-
-    public function getAllOnline(): Collection
-    {
-        return NewsItem::online()
-            ->orderBy('publish_date', 'desc')
-            ->get();
-    }
-
-    public function getLatest(int $amount): Collection
+    public static function getLatest(int $amount): Collection
     {
         return NewsItem::online()
             ->orderBy('publish_date', 'desc')
@@ -29,12 +16,7 @@ class NewsItemRepository extends Repository
             ->get();
     }
 
-    public function findOnline(int $id): NewsItem
-    {
-        return NewsItem::online()->findOrFail($id);
-    }
-
-    public function findByUrl(string $url): NewsItem
+    public static function findByUrl(string $url): NewsItem
     {
         return NewsItem::online()
             ->where('url->'.content_locale(), $url)
@@ -44,7 +26,7 @@ class NewsItemRepository extends Repository
     /**
      * @return \App\Models\NewsItem|null
      */
-    public function findNext(NewsItem $newsItem)
+    public static function findNext(NewsItem $newsItem)
     {
         return NewsItem::online()
             ->where('publish_date', '>', $newsItem->publish_date)
@@ -55,7 +37,7 @@ class NewsItemRepository extends Repository
     /**
      * @return \App\Models\NewsItem|null
      */
-    public function findPrevious(NewsItem $newsItem)
+    public static function findPrevious(NewsItem $newsItem)
     {
         return NewsItem::online()
             ->where('publish_date', '<', $newsItem->publish_date)
@@ -63,7 +45,7 @@ class NewsItemRepository extends Repository
             ->first();
     }
 
-    public function paginate(int $perPage): Paginator
+    public static function paginate(int $perPage): Paginator
     {
         return NewsItem::online()->paginate($perPage);
     }

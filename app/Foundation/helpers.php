@@ -4,7 +4,7 @@ use Illuminate\Support\Collection;
 
 function article(string $technicalName): App\Models\Article
 {
-    return App\Models\Article::findByTechnicalName($technicalName);
+    return App\Repositories\ArticleRepository::findByTechnicalName($technicalName);
 }
 
 function content_locale(): string

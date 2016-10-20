@@ -5,40 +5,48 @@ namespace App\Repositories;
 use App\Models\Article;
 use App\Models\Enums\SpecialArticle;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Cache;
 
 class ArticleRepository
 {
-    public function getTopLevel(): Collection
+    public static function getTopLevel(): Collection
     {
-        return Article::all()
-            ->whereNull('parent_id')
+        return Article::where('parent_id', null)
             ->orderBy('order_column')
             ->get();
     }
 
-    public function getSiblings(Article $article): Collection
+    public static function findByUrl(string $url): Article
     {
-        return Article::all()
-            ->where('parent_id', $article->parent_id)
-            ->orderBy('order_column')
-            ->get();
+        return Article::online()
+            ->where('url->'.content_locale(), $url)
+            ->firstOrFail();
     }
 
-    public function firstChild(Article $article): Article
+    public static function findSpecialArticle(SpecialArticle $specialArticle): Article
     {
-        return Article::all()
-            ->where('parent_id', $article->id)
-            ->orderBy('order_column')
-            ->first();
+        return Article::where('technical_name', $specialArticle)->firstOrFail();
     }
 
-    /**
-     * @param \App\Models\Enums\SpecialArticle $specialArticle
-     *
-     * @return \App\Models\Article|null
-     */
-    public function findSpecialArticle(SpecialArticle $specialArticle)
+    public static function findByTechnicalName(string $technicalName): Article
     {
-        return $this->query()->where('technical_name', $specialArticle)->first();
+        return Cache::rememberForever(
+            "article.findByTechnicalName.{$technicalName}",
+            function () use ($technicalName) {
+                return Article::where('technical_name', $technicalName)->firstOrFail();
+            }
+        );
+    }
+
+    public static function getWithTechnicalNameLike(string $technicalName): Collection
+    {
+        return Cache::rememberForever(
+            "article.getWithTechnicalNameLike.{$technicalName}",
+            function () use ($technicalName) {
+                return Article::where('technical_name', 'like', "{$technicalName}.%")
+                    ->orderBy('order_column')
+                    ->get();
+            }
+        );
     }
 }

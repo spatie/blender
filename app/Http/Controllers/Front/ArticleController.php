@@ -11,11 +11,10 @@ class ArticleController extends Controller
     {
         $articleUrl = collect($articleUrls)->last();
 
-        /* @var $article \App\Models\Article */
-        abort_unless($article = app(ArticleRepository::class)->findByUrl($articleUrl), 404);
+        $article = ArticleRepository::findByUrl($articleUrl);
 
         if ($article->hasChildren()) {
-            return redirect(app(ArticleRepository::class)->firstChild($article)->fullUrl);
+            return redirect($article->firstChild->fullUrl);
         }
 
         return view('front.article.index')->with(compact('article'));
