@@ -6,8 +6,9 @@
 <section>
     <div class="grid">
         <h1>{{ fragment('back.news.title') }}</h1>
-        <a href="{{ action('Back\NewsController@create') }}" class="button">{{ fragment('back.news.new') }}</a>
-
+        <a href="{{ action('Back\NewsController@create') }}" class="button">
+            {{ fragment('back.news.new') }}
+        </a>
         <table data-datatable data-order='[[ 1, "desc" ]]'>
             <thead>
             <tr>
@@ -17,9 +18,7 @@
             </tr>
             </thead>
             <tbody>
-
             @foreach($models as $newsItem)
-
                 <tr data-row-id="{{ $newsItem->id }}">
                     <td>
                         {!! Html::onlineIndicator($newsItem->online) !!}
@@ -34,12 +33,9 @@
                         {!! Html::deleteButton(action('Back\NewsController@destroy', $newsItem->id)) !!}
                     </td>
                 </tr>
-
             @endforeach
-
             </tbody>
         </table>
-
     </div>
 </section>
 @stop
