@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\Article;
 use App\Services\Locale\CurrentLocale;
 use Auth;
 use Exception;
