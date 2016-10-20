@@ -5,36 +5,42 @@ namespace App\Repositories;
 use App\Models\NewsItem;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Repository;
 
-class NewsItemRepository extends Repository
+class NewsItemRepository
 {
-    const MODEL = NewsItem::class;
-
-    public function getAll(): Collection
+    public static function getAllOnline(): Collection
     {
-        return $this->query()
+        return NewsItem::online()
             ->orderBy('publish_date', 'desc')
-            ->nonDraft()
             ->get();
     }
 
-    public function getLatest(int $amount): Collection
+    public static function getLatest(int $amount): Collection
     {
-        return $this->query()
+        return NewsItem::online()
             ->orderBy('publish_date', 'desc')
-            ->online()
             ->take($amount)
             ->get();
+    }
+
+    public static function findOnline(int $id): NewsItem
+    {
+        return NewsItem::online()->findOrFail($id);
+    }
+
+    public static function findByUrl(string $url): NewsItem
+    {
+        return NewsItem::online()
+            ->where('url->'.content_locale(), $url)
+            ->firstOrFail();
     }
 
     /**
      * @return \App\Models\NewsItem|null
      */
-    public function findNext(NewsItem $newsItem)
+    public static function findNext(NewsItem $newsItem)
     {
-        return $this->query()
-            ->online()
+        return NewsItem::online()
             ->where('publish_date', '>', $newsItem->publish_date)
             ->orderBy('publish_date', 'desc')
             ->first();
@@ -43,19 +49,16 @@ class NewsItemRepository extends Repository
     /**
      * @return \App\Models\NewsItem|null
      */
-    public function findPrevious(NewsItem $newsItem)
+    public static function findPrevious(NewsItem $newsItem)
     {
-        return $this->query()
-            ->online()
+        return NewsItem::online()
             ->where('publish_date', '<', $newsItem->publish_date)
             ->orderBy('publish_date', 'desc')
             ->first();
     }
 
-    public function paginate(int $perPage): Paginator
+    public static function paginate(int $perPage): Paginator
     {
-        return $this->query()
-            ->online()
-            ->paginate($perPage);
+        return NewsItem::online()->paginate($perPage);
     }
 }
