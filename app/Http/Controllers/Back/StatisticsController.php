@@ -13,7 +13,7 @@ class StatisticsController
             return view('back.statistics.notconfigured');
         }
 
-        $visitors = Analytics::fetchVisitorsAndPageViews(Period::days(365))
+        $visitors = Analytics::fetchTotalVisitorsAndPageViews(Period::days(365))
             ->groupBy(function (array $visitorStatistics) {
                 return $visitorStatistics['date']->format('Y-m');
             })

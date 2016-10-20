@@ -19,7 +19,7 @@ class DashboardController
             return $view;
         }
 
-        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(14));
+        $analyticsData = Analytics::fetchTotalVisitorsAndPageViews(Period::days(14));
 
         $dates = $analyticsData->pluck('date');
         $visitors = $analyticsData->pluck('visitors');

@@ -33,8 +33,8 @@ class PrefetchAnalyticsData extends Command
             return;
         }
 
-        Analytics::fetchVisitorsAndPageViews(Period::days(14));
-        Analytics::fetchVisitorsAndPageViews(Period::days(365));
+        Analytics::fetchTotalVisitorsAndPageViews(Period::days(14));
+        Analytics::fetchTotalVisitorsAndPageViews(Period::days(365));
         Analytics::fetchMostVisitedPages(Period::days(365));
         Analytics::fetchTopReferrers(Period::days(365));
         Analytics::fetchTopBrowsers(Period::days(365));

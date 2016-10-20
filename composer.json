@@ -41,7 +41,7 @@
         "spatie/eloquent-sortable": "^2.1",
         "spatie/fragment-importer": "^3.0",
         "spatie/laravel-activitylog": "^1.0",
-        "spatie/laravel-analytics": "^2.0",
+        "spatie/laravel-analytics": "^2.3",
         "spatie/laravel-backup": "^4.0",
         "spatie/laravel-blade-javascript": "^1.0",
         "spatie/laravel-collection-macros": "^1.0",

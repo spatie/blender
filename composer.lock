@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3ade5bf2b4147664b30bacd8715d72c3",
-    "content-hash": "469f0e63c285cc4f1ab37c7c4dfb27b7",
+    "hash": "79b507fe7cad93735f9d496c914e6572",
+    "content-hash": "aac76f26e5a2beabf5898ab6345f5bcb",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -59,16 +59,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.19.16",
+            "version": "3.19.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5161b8956e0c0f8e4260edbfe36c1a78392e4934"
+                "reference": "089ce29c428ce330b8e9eba8bbe8f2bdbb8b8af5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5161b8956e0c0f8e4260edbfe36c1a78392e4934",
-                "reference": "5161b8956e0c0f8e4260edbfe36c1a78392e4934",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/089ce29c428ce330b8e9eba8bbe8f2bdbb8b8af5",
+                "reference": "089ce29c428ce330b8e9eba8bbe8f2bdbb8b8af5",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2016-10-17 20:08:45"
+            "time": "2016-10-18 20:29:12"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -462,55 +462,6 @@
                 "preload"
             ],
             "time": "2015-11-09 22:51:51"
-        },
-        {
-            "name": "davejamesmiller/laravel-breadcrumbs",
-            "version": "3.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/davejamesmiller/laravel-breadcrumbs.git",
-                "reference": "460bf79e83ff9e3db1e3f1c40169d8893893f8ff"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/davejamesmiller/laravel-breadcrumbs/zipball/460bf79e83ff9e3db1e3f1c40169d8893893f8ff",
-                "reference": "460bf79e83ff9e3db1e3f1c40169d8893893f8ff",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.*",
-                "illuminate/view": "5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "orchestra/testbench": "3.2.*|3.3.*",
-                "phpunit/phpunit": "4.*",
-                "satooshi/php-coveralls": "0.6.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DaveJamesMiller\\Breadcrumbs\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT License"
-            ],
-            "authors": [
-                {
-                    "name": "Dave James Miller",
-                    "email": "dave@davejamesmiller.com",
-                    "homepage": "http://davejamesmiller.com/"
-                }
-            ],
-            "description": "A simple Laravel-style way to create breadcrumbs in Laravel 4+.",
-            "homepage": "http://laravel-breadcrumbs.davejamesmiller.com",
-            "keywords": [
-                "laravel"
-            ],
-            "time": "2016-08-28 16:57:03"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2259,20 +2210,20 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.29",
+            "version": "1.0.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "b732cc946c48cf102ddffd41ffcd54901a28ccdb"
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/b732cc946c48cf102ddffd41ffcd54901a28ccdb",
-                "reference": "b732cc946c48cf102ddffd41ffcd54901a28ccdb",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
+                "reference": "1b5c4a0031697f46e779a9d1b309c2e1b24daeab",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0"
+                "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
@@ -2338,7 +2289,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-10-17 23:14:19"
+            "time": "2016-10-19 20:38:46"
         },
         {
             "name": "league/flysystem-aws-s3-v3",
@@ -3924,25 +3875,25 @@
         },
         {
             "name": "spatie/eloquent-sortable",
-            "version": "2.1.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/eloquent-sortable.git",
-                "reference": "4ff632873416fe3f96566fce8a359dd3dfb1f920"
+                "reference": "590ad27b040cf2093a4b649438f413983041874a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/4ff632873416fe3f96566fce8a359dd3dfb1f920",
-                "reference": "4ff632873416fe3f96566fce8a359dd3dfb1f920",
+                "url": "https://api.github.com/repos/spatie/eloquent-sortable/zipball/590ad27b040cf2093a4b649438f413983041874a",
+                "reference": "590ad27b040cf2093a4b649438f413983041874a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/support": "~4.2|5.*",
-                "php": ">=5.4.0"
+                "illuminate/support": "~5.1.0|~5.2.0|~5.3.0",
+                "php": ">=5.6.0"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.0",
-                "phpunit/phpunit": "4.*",
+                "orchestra/testbench": "~3.1.0|~3.2.0|~3.3.0",
+                "phpunit/phpunit": "5.*",
                 "scrutinizer/ocular": "~1.1"
             },
             "type": "library",
@@ -3971,7 +3922,7 @@
                 "sort",
                 "sortable"
             ],
-            "time": "2016-03-21 16:41:52"
+            "time": "2016-10-19 15:11:00"
         },
         {
             "name": "spatie/fragment-importer",
@@ -4149,16 +4100,16 @@
         },
         {
             "name": "spatie/laravel-analytics",
-            "version": "2.2.2",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-analytics.git",
-                "reference": "50531d2ee760d67b19100450b1f89e7615338c5b"
+                "reference": "18e4132ec94e07288affe8cf46d79308d408e926"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-analytics/zipball/50531d2ee760d67b19100450b1f89e7615338c5b",
-                "reference": "50531d2ee760d67b19100450b1f89e7615338c5b",
+                "url": "https://api.github.com/repos/spatie/laravel-analytics/zipball/18e4132ec94e07288affe8cf46d79308d408e926",
+                "reference": "18e4132ec94e07288affe8cf46d79308d408e926",
                 "shasum": ""
             },
             "require": {
@@ -4202,20 +4153,20 @@
                 "retrieve",
                 "spatie"
             ],
-            "time": "2016-08-23 15:06:52"
+            "time": "2016-10-20 09:38:38"
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "af2ef212ec0c392708f1ffcd6ad6ff797e29d013"
+                "reference": "b1d2efe940e19d4f9ca3e7227113185f2d37ba43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/af2ef212ec0c392708f1ffcd6ad6ff797e29d013",
-                "reference": "af2ef212ec0c392708f1ffcd6ad6ff797e29d013",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/b1d2efe940e19d4f9ca3e7227113185f2d37ba43",
+                "reference": "b1d2efe940e19d4f9ca3e7227113185f2d37ba43",
                 "shasum": ""
             },
             "require": {
@@ -4267,7 +4218,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2016-10-02 06:12:24"
+            "time": "2016-10-19 13:54:11"
         },
         {
             "name": "spatie/laravel-blade-javascript",
@@ -5455,16 +5406,16 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "4.3.2",
+            "version": "4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/seeders.git",
-                "reference": "efa7b948fdf37214b9318938e9b007f24bb7f9ba"
+                "reference": "08edaeed5c2f280300960f53ef65f48dc24ef7c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/efa7b948fdf37214b9318938e9b007f24bb7f9ba",
-                "reference": "efa7b948fdf37214b9318938e9b007f24bb7f9ba",
+                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/08edaeed5c2f280300960f53ef65f48dc24ef7c4",
+                "reference": "08edaeed5c2f280300960f53ef65f48dc24ef7c4",
                 "shasum": ""
             },
             "require": {
@@ -5508,10 +5459,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/seeders/tree/4.3.2",
+                "source": "https://github.com/spatie-custom/seeders/tree/4.3.3",
                 "issues": "https://github.com/spatie-custom/seeders/issues"
             },
-            "time": "2016-10-18 10:49:21"
+            "time": "2016-10-19 15:08:19"
         },
         {
             "name": "spatie/string",
