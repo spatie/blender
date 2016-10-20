@@ -89,7 +89,7 @@ class RouteServiceProvider extends ServiceProvider
 
                     Route::group($multiLingual ? ['prefix' => locale()] : [], function () {
                         try {
-                            Auth::routes();
+                            // Auth::routes();
                             require base_path('routes/front.php');
                         } catch (Exception $exception) {
                             logger()->warning("Front routes weren't included.");
