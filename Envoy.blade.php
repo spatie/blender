@@ -78,6 +78,8 @@ composer install --prefer-dist --no-scripts --no-dev -q -o;
 @task('runYarn', ['on' => 'remote'])
 {{ logMessage("\u{1F4E6}  Running Yarn...") }}
 cd {{ $newReleaseDir }};
+yarn config set registry "https://npm.spatie.be"
+yarn config set ignore-engines true
 yarn
 @endtask
 
@@ -162,7 +164,6 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 cd {{ $currentDir }}
 git pull origin master
 php artisan cache:clear
-sudo service php7.0-fpm restart
 sudo supervisorctl restart all
 @endtask
 
