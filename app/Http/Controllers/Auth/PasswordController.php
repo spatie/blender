@@ -111,7 +111,7 @@ class PasswordController extends Controller
      *
      * @return Response
      */
-    public function getReset($token = null, UserRepository $userRepository)
+    public function getReset($token, UserRepository $userRepository)
     {
         if (is_null($token)) {
             throw new NotFoundHttpException();
@@ -138,8 +138,8 @@ class PasswordController extends Controller
     public function postReset(Request $request)
     {
         $this->validate($request, [
-            'token' => 'required',
-            'email' => 'required',
+            'token'    => 'required',
+            'email'    => 'required',
             'password' => 'required|confirmed|min:8',
         ]);
 
@@ -153,7 +153,6 @@ class PasswordController extends Controller
             $user->save();
 
             $this->auth->login($user);
-
         });
 
         if ($this->auth->user()->cannot('login')) {

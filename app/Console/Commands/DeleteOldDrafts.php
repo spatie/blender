@@ -31,7 +31,7 @@ class DeleteOldDrafts extends Command
     public function handle()
     {
         array_map(function ($draftableModelClass) {
-                $this->deleteOldDraftsForModelClass($draftableModelClass);
+            $this->deleteOldDraftsForModelClass($draftableModelClass);
         }, $this->getAllDraftableModelClassNames());
 
         Log::info('old drafts deleted');
@@ -40,7 +40,7 @@ class DeleteOldDrafts extends Command
     private function getAllDraftableModelClassNames()
     {
         return array_filter($this->getAllModelClassNames(), function ($modelClass) {
-            return  (in_array(Draftable::class, class_uses($modelClass)));
+            return  in_array(Draftable::class, class_uses($modelClass));
         });
     }
 

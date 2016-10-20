@@ -15,6 +15,7 @@ class ArticleListController extends Controller
     {
         $this->articleRepository = $articleRepository;
     }
+
     /**
      * @return \Illuminate\Http\Response
      */

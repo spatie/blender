@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Database;
 
-use App\Models\Tag;
 use App\Models\Foundation\Traits\HasTags;
+use App\Models\Tag;
 use App\Repositories\TagRepository;
 
 class TagDbRepository extends DbRepository implements TagRepository

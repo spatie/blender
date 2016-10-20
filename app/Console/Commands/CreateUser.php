@@ -29,11 +29,11 @@ class CreateUser extends Command
     public function handle()
     {
         $user = User::create([
-            'email' => $this->argument('email'),
+            'email'      => $this->argument('email'),
             'first_name' => $this->argument('firstName'),
-            'last_name' => $this->argument('lastName'),
-            'password' => $this->argument('password') ?: null,
-            'admin' => true,
+            'last_name'  => $this->argument('lastName'),
+            'password'   => $this->argument('password') ?: null,
+            'admin'      => true,
         ]);
 
         $this->info("User {$user->email} has been created!");

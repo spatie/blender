@@ -17,9 +17,9 @@ trait Presentable
     protected $presenterInstance;
 
     /**
-     * @return mixed
-     *
      * @throws Exception
+     *
+     * @return mixed
      */
     public function present()
     {

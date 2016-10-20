@@ -2,8 +2,8 @@
 
 namespace App\Repositories\Cache;
 
-use App\Repositories\FragmentRepository;
 use App\Repositories\Database\FragmentDbRepository;
+use App\Repositories\FragmentRepository;
 use Illuminate\Contracts\Cache\Repository as Cache;
 
 class FragmentCacheRepository extends CacheRepository implements FragmentRepository

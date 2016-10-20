@@ -37,9 +37,9 @@ class FragmentDbRepository extends DbRepository implements FragmentRepository
     /**
      * Get the base database query.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
-     *
      * @throws \Exception
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query()
     {

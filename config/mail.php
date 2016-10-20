@@ -3,7 +3,7 @@
 return [
 
     // Note: this is overwritten for non-production envirnments in the ConfigServiceProvider
-    'questionFormRecipients' => [ 'technical@spatie.be'],
+    'questionFormRecipients' => ['technical@spatie.be'],
 
     /*
     |--------------------------------------------------------------------------

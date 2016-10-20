@@ -28,11 +28,9 @@ class AuthServiceProvider extends ServiceProvider
         parent::registerPolicies($gate);
 
         $gate->before(function ($user, $ability) {
-
-           if (! $user->hasStatus(UserStatus::ACTIVE)) {
-               return false;
-           };
-
+            if (!$user->hasStatus(UserStatus::ACTIVE)) {
+                return false;
+            }
         });
 
         $gate->define('login', function ($user) {

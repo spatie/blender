@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateArticlesTables extends Migration
 {
@@ -29,7 +29,7 @@ class CreateArticlesTables extends Migration
             $table->string('url');
             $table->string('name');
             $table->text('text');
-            $table->unique(['article_id','locale']);
+            $table->unique(['article_id', 'locale']);
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
         });
     }

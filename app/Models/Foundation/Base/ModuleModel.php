@@ -3,10 +3,10 @@
 namespace App\Models\Foundation\Base;
 
 use App\Models\Foundation\Traits\Draftable;
+use App\Models\Foundation\Traits\HasMedia as HasMediaTrait;
 use App\Models\Foundation\Traits\HasOnlineToggle;
 use App\Models\Foundation\Traits\HasTags;
 use App\Models\Foundation\Traits\Presentable;
-use App\Models\Foundation\Traits\HasMedia as HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\MediaLibrary\MediaRepository;
 

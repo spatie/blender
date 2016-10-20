@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Activity;
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Http\Request;
-use Activity;
 
 class AuthController extends Controller
 {

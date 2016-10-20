@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateFragmentsTables extends Migration
 {
@@ -12,8 +12,7 @@ class CreateFragmentsTables extends Migration
      */
     public function up()
     {
-        Schema::create('fragments', function(Blueprint $table)
-        {
+        Schema::create('fragments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable();
@@ -23,14 +22,13 @@ class CreateFragmentsTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('fragment_translations', function(Blueprint $table)
-        {
+        Schema::create('fragment_translations', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('fragment_id')->unsigned();
             $table->text('text');
             $table->string('locale')->index();
 
-            $table->unique(['fragment_id','locale']);
+            $table->unique(['fragment_id', 'locale']);
             $table->foreign('fragment_id')->references('id')->on('fragments')->onDelete('cascade');
         });
     }

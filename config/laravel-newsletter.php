@@ -36,8 +36,8 @@ return [
                  * These values will be used when creating a new campaign.
                  */
                 'fromEmail' => env('MAILCHIMP_FROM_EMAIL'),
-                'fromName' => env('MAILCHIMP_FROM_NAME'),
-                'toName' => env('MAILCHIMP_TO_NAME'),
+                'fromName'  => env('MAILCHIMP_FROM_NAME'),
+                'toName'    => env('MAILCHIMP_TO_NAME'),
             ],
         ],
     ],

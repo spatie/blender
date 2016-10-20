@@ -15,9 +15,9 @@ class FormResponseRequest extends Request
     {
         return
             [
-                'name' => 'required',
+                'name'      => 'required',
                 'telephone' => 'required',
-                'email' => 'required|email',
+                'email'     => 'required|email',
             ];
     }
 }

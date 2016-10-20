@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use App\Models\Foundation\Base\ModuleModel;
 use App\Models\Enums\TagType;
+use App\Models\Foundation\Base\ModuleModel;
+use App\Models\Foundation\Interfaces\HasTags as HasTagsInterface;
 use App\Models\Foundation\Traits\HasOnlineToggle;
 use App\Models\Foundation\Traits\HasTags;
-use App\Models\Foundation\Interfaces\HasTags as HasTagsInterface;
 use Carbon\Carbon;
 
 class NewsItem extends ModuleModel implements HasTagsInterface

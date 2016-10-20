@@ -29,7 +29,7 @@ class RegistrationController extends Controller
     public function saveUser(RegistrationRequest $request, $registrationRole)
     {
         $user = User::create(array_merge($request->except('password_confirmation', '_token'), [
-            'role' => $registrationRole,
+            'role'   => $registrationRole,
             'status' => UserStatus::WAITING_FOR_APPROVAL,
         ]));
 

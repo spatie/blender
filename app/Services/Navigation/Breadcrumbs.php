@@ -16,10 +16,10 @@ class Breadcrumbs
      * @var array
      */
     protected $modules = [
-        'article' => 'articles',
+        'article'  => 'articles',
         'newsItem' => 'newsItems',
-        'person' => 'people',
-        'tag' => 'tags',
+        'person'   => 'people',
+        'tag'      => 'tags',
     ];
 
     /**
@@ -55,7 +55,6 @@ class Breadcrumbs
     protected function registerUserBreadcrumbs()
     {
         BreadCrumbsManager::register('userListBack', function ($breadcrumbs, $user) {
-
             $breadcrumbs->push(trans('back-users.title'), '/blender/user/admin');
             $breadcrumbs->push(trans("back-users.role.{$user->role}.plural"), action('Back\UserController@index', ['role' => $user->role]));
         });

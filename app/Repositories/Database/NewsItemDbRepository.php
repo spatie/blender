@@ -61,8 +61,7 @@ class NewsItemDbRepository extends DbRepository implements NewsItemRepository
                 $query
                     ->where('url', $url)
                     ->where('locale', $locale ?: content_locale());
-            })
-        ;
+            });
 
         return $query->first();
     }

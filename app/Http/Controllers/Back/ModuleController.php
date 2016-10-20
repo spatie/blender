@@ -91,7 +91,7 @@ abstract class ModuleController extends Controller
         $model = $this->repository->findById($id);
 
         $data = [
-            'model' => $model,
+            'model'  => $model,
             'module' => $this->moduleName,
         ];
 

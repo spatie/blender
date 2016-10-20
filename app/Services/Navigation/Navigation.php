@@ -25,7 +25,6 @@ class Navigation
 
     public function getFrontMainMenu()
     {
-
         $menu = Menu::handler('main', ['class' => 'nav navbar-nav'])
             ->add('/', 'Home');
 
@@ -52,7 +51,7 @@ class Navigation
         }
 
         $menu = $this->setActiveMenuItem($menu, function ($item) {
-            return (app()->getLocale() == explode('/', trim($item->getContent()->getUrl(), '/'))[0]);
+            return app()->getLocale() == explode('/', trim($item->getContent()->getUrl(), '/'))[0];
         });
 
         return $menu;

@@ -6,8 +6,8 @@ use Faker\Generator;
 
 $factory->define(Person::class, function (Generator $faker) {
     return [
-        'name' => $faker->name,
-        'draft' => false,
+        'name'   => $faker->name,
+        'draft'  => false,
         'online' => true,
     ];
 });

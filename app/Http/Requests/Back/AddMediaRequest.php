@@ -16,7 +16,7 @@ class AddMediaRequest extends Request
     {
         $rules = [
             'collection' => 'required',
-            'file' => 'required|max:'.config('mediaLibrary.maxFileSize'),
+            'file'       => 'required|max:'.config('mediaLibrary.maxFileSize'),
         ];
 
         return $rules;

@@ -16,15 +16,13 @@ class TagController extends ModuleController
     public function index()
     {
         $tags = $this->repository->getAll()->reduce(function (Collection $carry, Tag $tag) {
-
-            if (! $carry->has($tag->type)) {
+            if (!$carry->has($tag->type)) {
                 $carry->put($tag->type, new Collection());
             }
 
             $carry->get($tag->type)->push($tag);
 
             return $carry;
-
         }, new Collection());
 
         return view('back.tags.index', compact('tags'));
