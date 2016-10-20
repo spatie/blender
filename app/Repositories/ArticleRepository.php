@@ -25,27 +25,10 @@ class ArticleRepository
 
     public static function findSpecialArticle(SpecialArticle $specialArticle): Article
     {
-        return Article::where('technical_name', $specialArticle)->firstOrFail();
-    }
-
-    public static function findByTechnicalName(string $technicalName): Article
-    {
         return Cache::rememberForever(
-            "article.findByTechnicalName.{$technicalName}",
-            function () use ($technicalName) {
-                return Article::where('technical_name', $technicalName)->firstOrFail();
-            }
-        );
-    }
-
-    public static function getWithTechnicalNameLike(string $technicalName): Collection
-    {
-        return Cache::rememberForever(
-            "article.getWithTechnicalNameLike.{$technicalName}",
-            function () use ($technicalName) {
-                return Article::where('technical_name', 'like', "{$technicalName}.%")
-                    ->orderBy('order_column')
-                    ->get();
+            "article.specialArticle.{$specialArticle}",
+            function () use ($specialArticle) {
+                return Article::where('technical_name', $specialArticle)->firstOrFail();
             }
         );
     }
