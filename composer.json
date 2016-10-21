@@ -38,7 +38,7 @@
         "spatie/array-functions": "^1.1",
         "spatie/blender-model": "^1.0.0",
         "spatie/color": "^1.0",
-        "spatie/eloquent-sortable": "^2.1",
+        "spatie/eloquent-sortable": "^3.0",
         "spatie/fragment-importer": "^3.0",
         "spatie/laravel-activitylog": "^1.0",
         "spatie/laravel-analytics": "^2.3",
