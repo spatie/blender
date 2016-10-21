@@ -78,6 +78,7 @@ composer install --prefer-dist --no-scripts --no-dev -q -o;
 @task('runYarn', ['on' => 'remote'])
 {{ logMessage("\u{1F4E6}  Running Yarn...") }}
 cd {{ $newReleaseDir }};
+yarn config set ignore-engines true
 yarn
 @endtask
 
