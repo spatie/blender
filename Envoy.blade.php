@@ -89,7 +89,7 @@ gulp --production
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])
-{{ logMessage("\u{2728}  Updating symlinks to persistent data...") }}
+{{ logMessage("\u{1F517} Updating symlinks to persistent data...") }}
 # Remove the storage directory and replace with persistent data
 rm -rf {{ $newReleaseDir }}/storage;
 cd {{ $newReleaseDir }};
@@ -106,7 +106,7 @@ ln -nfs {{ $baseDir }}/.env .env;
 @endtask
 
 @task('optimizeInstallation', ['on' => 'remote'])
-{{ logMessage("\u{1F517}  Optimizing installation...") }}
+{{ logMessage("\u{2728} Optimizing installation...") }}
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
 php artisan optimize;
