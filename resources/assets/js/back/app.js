@@ -22,7 +22,7 @@ new Vue({
         media(resolve) {
             require.ensure([], require => {
                 resolve(require('blender-media').default);
-            }, 'front.blender-media');
+            }, 'back.blender-media');
         },
     },
 });
