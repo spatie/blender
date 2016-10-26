@@ -12,19 +12,15 @@ import 'blender.js/modules/table.sortable';
 import 'blender.js/modules/tabs';
 
 import Vue from 'vue';
-import Vuex from 'vuex';
 
-Vue.use(Vuex);
+Vue.component('media', (resolve) => {
+    require.ensure([], require => {
+        resolve(require('blender-media').default);
+    }, 'back.blender-media');
+});
 
 new Vue({
-    el: 'body',
-    components: {
-        media(resolve) {
-            require.ensure([], require => {
-                resolve(require('blender-media').default);
-            }, 'back.blender-media');
-        },
-    },
+    el: '#app',
 });
 
 // Heavy components coming up
@@ -38,8 +34,8 @@ if ($('[data-chart]').length) {
 // Uncomment if redactor files are present
 
 if ($('[data-editor]').length) {
-   require.ensure([], () => {
-       require('./modules/editor').default();
-   }, 'back.editor');
+    require.ensure([], () => {
+        require('./modules/editor').default();
+    }, 'back.editor');
 }
 

@@ -23,4 +23,8 @@ config.plugins.push(new webpack.ProvidePlugin({
     jQuery: 'jquery',
 }));
 
+config.resolve.alias = {
+    'vue$': 'vue/dist/vue.js',
+};
+
 module.exports = config;

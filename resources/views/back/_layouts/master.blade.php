@@ -29,7 +29,7 @@
             </nav>
         </div>
     @endif
-    <main class="main">
+    <main class="main" id="app">
         @yield('content')
     </main>
     @if (current_user())
