@@ -1,41 +1,16 @@
-<html>
-<head>
-    <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+@extends('front._layouts.main')
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            color: #B0BEC5;
-            display: table;
-            font-weight: 100;
-            font-family: 'Lato';
-        }
+@section('title', fragment('error.title') )
 
-        .container {
-            text-align: center;
-            display: table-cell;
-            vertical-align: middle;
-        }
+@section('mainTitle')
+    <h1>{{ fragment('error.title') }}</h1>
+@endsection
 
-        .content {
-            text-align: center;
-            display: inline-block;
-        }
-
-        .title {
-            font-size: 72px;
-            margin-bottom: 40px;
-        }
-    </style>
-</head>
-<body>
-<div class="container">
-    <div class="content">
-        <div class="title">You don't have permission to perform this action.</div>
-    </div>
-</div>
-</body>
-</html>
+@section('mainContent')
+    <p>
+        {{ fragment('error.text.401') }}
+    </p>
+    <p>
+        <a class=button href="{{ route('home') }}">{{ fragment('error.button') }}</a>
+    </p>
+@endsection
