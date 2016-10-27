@@ -2,7 +2,6 @@
 
 namespace App\Services\Html;
 
-use App\Models\Enums\TagType;
 use App\Models\Tag;
 use App\Models\Transformers\MediaTransformer;
 use Carbon\Carbon;
@@ -78,8 +77,6 @@ class FormBuilder extends BaseFormBuilder
 
     public function tags($subject, string $type, array $options = []): string
     {
-        $type = new TagType($type);
-
         $tags = Tag::getWithType($type)->pluck('name', 'name')->toArray();
         $subjectTags = $subject->tagsWithType($type)->pluck('name', 'name')->toArray();
 
@@ -90,8 +87,6 @@ class FormBuilder extends BaseFormBuilder
 
     public function category($subject, $type, array $options = []): string
     {
-        $type = new TagType($type);
-
         $categories = Tag::getWithType($type)->pluck('name', 'name')->toArray();
         $subjectCategory = $subject->tagsWithType($type)->first()->name ?? null;
 

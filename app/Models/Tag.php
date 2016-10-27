@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\Enums\TagType;
 use App\Models\Presenters\TagPresenter;
+use Spatie\Blender\Model\Traits\Draftable;
 use Spatie\Tags\Tag as SpatieTag;
 
 class Tag extends SpatieTag
 {
-    use TagPresenter;
+    use TagPresenter, Draftable;
 
     /**
-     * @param string|TagType $type
+     * @param string $type
      *
      * @return bool
      */
