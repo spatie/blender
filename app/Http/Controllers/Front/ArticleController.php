@@ -7,11 +7,11 @@ use App\Repositories\ArticleRepository;
 
 class ArticleController extends Controller
 {
-    public function index(...$articleUrls)
+    public function index(...$articleSlugs)
     {
-        $articleUrl = collect($articleUrls)->last();
+        $articleSlug = collect($articleSlugs)->last();
 
-        $article = ArticleRepository::findByUrl($articleUrl);
+        $article = ArticleRepository::findBySlug($articleSlug);
 
         if ($article->hasChildren()) {
             return redirect($article->firstChild->fullUrl);
