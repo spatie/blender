@@ -13,6 +13,10 @@
       'name' => 'text',
       'text' => 'redactor',
   ]) !!}
+
+        {!! BlenderForm::category('news_category') !!}
+        {!! BlenderForm::tags('news_tag') !!}
+
         {!! BlenderForm::media('images', 'images') !!}
         {!! BlenderForm::media('downloads', 'downloads') !!}
     </div>
@@ -21,8 +25,7 @@
 
         {!! BlenderForm::date('publish_date') !!}
 
-        {!! BlenderForm::category('news_category') !!}
-        {!! BlenderForm::tags('news_tag') !!}
+
     </div>
     <div id="seo">
         {!! BlenderForm::seo() !!}
