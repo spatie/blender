@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Enums\TagType;
 use App\Models\Presenters\NewsItemPresenter;
 use Spatie\Blender\Model\Model;
 use Spatie\Blender\Model\Traits\HasSlug;
