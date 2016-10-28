@@ -121,14 +121,15 @@ class FormBuilder extends BaseFormBuilder
             'id' => $subject->id,
         ])->toJson();
 
-        return el('media', array_merge($associated, [
-            'collection' => $collection,
-            'type' => $type,
-            'upload-url' => action('Back\Api\MediaLibraryController@add'),
-            ':model' => htmlspecialchars($model),
-            ':initial' => htmlspecialchars($initialMedia),
-            ':data' => htmlspecialchars($this->getAssociatedMediaData($associated)),
-        ]), '');
+        return el('div', [
+            'class' => 'js-blender-media',
+            'data-collection' => $collection,
+            'data-type' => $type,
+            'data-upload-url' => action('Back\Api\MediaLibraryController@add'),
+            'data-model' => htmlspecialchars($model),
+            'data-initial' => htmlspecialchars($initialMedia),
+            'data-associated-data' => htmlspecialchars($this->getAssociatedMediaData($associated)),
+        ], '');
     }
 
     protected function getAssociatedMediaData($associated = []): string
