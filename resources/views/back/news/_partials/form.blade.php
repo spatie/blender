@@ -24,8 +24,6 @@
         {!! BlenderForm::checkbox('online') !!}
 
         {!! BlenderForm::date('publish_date') !!}
-
-
     </div>
     <div id="seo">
         {!! BlenderForm::seo() !!}
