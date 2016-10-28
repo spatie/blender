@@ -22,12 +22,6 @@ if ($('[data-chart]').length) {
     }, 'back.chart');
 }
 
-if ($('[data-chart]').length) {
-    require.ensure([], () => {
-        require('./modules/chart').default();
-    }, 'back.chart');
-}
-
 // Uncomment if redactor files are present
 
 if ($('[data-editor]').length) {
