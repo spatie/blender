@@ -10,13 +10,15 @@ import 'blender.js/modules/table.datatables';
 import 'blender.js/modules/table.sortable';
 import 'blender.js/modules/tabs';
 
-if (document.querySelector('.js-blender-media')) {
+import { query } from './util/dom';
+
+if (query('blender-media')) {
     require.ensure([], () => {
         require('./modules/media').default();
     }, 'back.media');
 }
 
-if ($('[data-chart]').length) {
+if (query('blender-chart')) {
     require.ensure([], () => {
         require('./modules/chart').default();
     }, 'back.chart');
@@ -24,8 +26,8 @@ if ($('[data-chart]').length) {
 
 // Uncomment if redactor files are present
 
-if ($('[data-editor]').length) {
-    require.ensure([], () => {
-        require('./modules/editor').default();
-    }, 'back.editor');
-}
+// if (query('blender-editor')) {
+//     require.ensure([], () => {
+//         require('./modules/editor').default();
+//     }, 'back.editor');
+// }
