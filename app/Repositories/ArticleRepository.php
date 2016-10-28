@@ -18,7 +18,7 @@ class ArticleRepository
 
     public static function findByUrl(string $url): Article
     {
-        $article =  Article::online()
+        $article = Article::online()
             ->where('url->'.content_locale(), $url)
             ->first();
 
