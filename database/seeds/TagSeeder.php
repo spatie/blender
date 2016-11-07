@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Enums\TagType;
 use App\Models\Tag;
 
 class TagSeeder extends DatabaseSeeder

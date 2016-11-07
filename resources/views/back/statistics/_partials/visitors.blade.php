@@ -1,9 +1,10 @@
 <h2>{{ fragment('back.statistics.visitors') }}</h2>
-<div class="chart" data-chart>
+
+<blender-chart class="chart">
     <canvas id="visitors" width=1000 height=250></canvas>
     <div class="chart__legend" id="visitors-legend">
     </div>
-</div>
+</blender-chart>
 
 @section('extraJs')
     @parent

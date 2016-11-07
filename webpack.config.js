@@ -23,8 +23,10 @@ config.plugins.push(new webpack.ProvidePlugin({
     jQuery: 'jquery',
 }));
 
-config.resolve.alias = {
-    'vue$': 'vue/dist/vue.js',
-};
+// Uncomment if you want to use the runtime version of Vue
+
+// config.resolve.alias = {
+//     'vue$': 'vue/dist/vue.js',
+// };
 
 module.exports = config;

@@ -116,14 +116,14 @@ class FormBuilder extends BaseFormBuilder
             'id' => $subject->id,
         ])->toJson();
 
-        return el('media', array_merge($associated, [
+        return el('blender-media', [
             'collection' => $collection,
             'type' => $type,
             'upload-url' => action('Back\Api\MediaLibraryController@add'),
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialMedia),
-            ':data' => htmlspecialchars($this->getAssociatedMediaData($associated)),
-        ]), '');
+            ':associated' => htmlspecialchars($this->getAssociatedMediaData($associated)),
+        ], '');
     }
 
     protected function getAssociatedMediaData($associated = []): string

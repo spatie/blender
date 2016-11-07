@@ -221,7 +221,7 @@ class BlenderFormBuilder
 
         return $this->group([
             $this->label($name),
-            el('div.locationpicker', ['data-locationpicker', 'data-api-key'=> env('GOOGLE_MAPS_API_KEY') ], $form),
+            el('div.locationpicker', ['data-locationpicker', 'data-api-key' => env('GOOGLE_MAPS_API_KEY')], $form),
         ]);
     }
 
