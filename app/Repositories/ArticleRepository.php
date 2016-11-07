@@ -18,9 +18,13 @@ class ArticleRepository
 
     public static function findBySlug(string $url): Article
     {
-        return Article::online()
+        $article =  Article::online()
             ->where('url->'.content_locale(), $url)
-            ->firstOrFail();
+            ->first();
+
+        abort_unless($article, 404);
+
+        return $article;
     }
 
     public static function findSpecialArticle(SpecialArticle $specialArticle): Article

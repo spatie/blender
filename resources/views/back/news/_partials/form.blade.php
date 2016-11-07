@@ -9,10 +9,10 @@
         </ul>
     </nav>
     <div id="content">
-        {!! BlenderForm::translated([
-      'name' => 'text',
-      'text' => 'redactor',
-  ]) !!}
+       {!! BlenderForm::translated([
+         'name' => 'text',
+         'text' => 'redactor',
+        ]) !!}
 
         {!! BlenderForm::category('news_category') !!}
         {!! BlenderForm::tags('news_tag') !!}
