@@ -2,50 +2,31 @@
 
 namespace App\Models;
 
-use App\Models\Enums\TagType;
 use App\Models\Presenters\TagPresenter;
-use Spatie\Blender\Model\Model;
-use Spatie\Blender\Model\Traits\HasSlug;
-use Spatie\EloquentSortable\Sortable;
-use Spatie\EloquentSortable\SortableTrait;
+use Spatie\Blender\Model\Traits\Draftable;
+use Spatie\Tags\Tag as SpatieTag;
 
-class Tag extends Model implements Sortable
+class Tag extends SpatieTag
 {
-    use HasSlug, SortableTrait, TagPresenter;
+    use TagPresenter, Draftable;
 
-    public $translatable = ['name', 'url'];
-
-    public function hasType(TagType $type): bool
+    /**
+     * @param string $type
+     *
+     * @return bool
+     */
+    public function hasType(string $type): bool
     {
-        return $this->type === $type->getValue();
+        return $this->type === $type;
     }
 
-    public function scopeWithType($query, TagType $type)
+    public static function findOrCreate($name, string $type = null, string $locale = null): Tag
     {
-        return $query->nonDraft()->where('type', $type->getValue());
-    }
-
-    public static function getWithType(TagType $type)
-    {
-        return static::withType($type)->get();
-    }
-
-    public static function findByNameOrCreate(string $name, TagType $type): Tag
-    {
-        $existing = self::nonDraft()->get()
-            ->first(function (Tag $tag, int $id) use ($name, $type) {
-                return $tag->translate('name', content_locale()) === $name && $tag->type === (string) $type;
-            });
-
-        if ($existing) {
-            return $existing;
+        if ($existingTag = parent::findFromString($name, $type)) {
+            return $existingTag;
         }
 
-        $tag = new static([
-            'type' => $type,
-            'draft' => false,
-            'online' => true,
-        ]);
+        $tag = parent::findOrCreate($name, $type);
 
         $tag->setTranslations('name', array_fill_keys(config('app.locales'), $name));
 

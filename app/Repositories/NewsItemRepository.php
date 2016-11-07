@@ -28,10 +28,10 @@ class NewsItemRepository
         return NewsItem::online()->findOrFail($id);
     }
 
-    public static function findByUrl(string $url): NewsItem
+    public static function findBySlug(string $slug): NewsItem
     {
         return NewsItem::online()
-            ->where('url->'.content_locale(), $url)
+            ->where('slug->'.content_locale(), $slug)
             ->firstOrFail();
     }
 

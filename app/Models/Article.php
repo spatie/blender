@@ -26,7 +26,7 @@ class Article extends Model implements Sortable
     protected $with = ['media'];
 
     public $mediaLibraryCollections = ['images', 'downloads'];
-    public $translatable = ['name', 'text', 'url', 'seo_values'];
+    public $translatable = ['name', 'text', 'slug', 'seo_values'];
 
     public function registerMediaConversions()
     {

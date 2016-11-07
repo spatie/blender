@@ -9,13 +9,13 @@ class TagSeeder extends DatabaseSeeder
     {
         $this->truncate((new Tag())->getTable(), 'taggables');
 
-        $this->seedTags(TagType::NEWS_CATEGORY(), [
+        $this->seedTags('newsCategory', [
             'Categorie 1',
             'Categorie 2',
             'Categorie 3',
         ]);
 
-        $this->seedTags(TagType::NEWS_TAG(), [
+        $this->seedTags('newsTag', [
             'Tag 1',
             'Tag 2',
             'Tag 3',
