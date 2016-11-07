@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c9157c366d7ad0dd61e862f70d2f7b91",
-    "content-hash": "3a04c32c8eb52fccb6632ed0fc5375e4",
+    "hash": "afd7077d740553d6fa24abcc9b821425",
+    "content-hash": "50519df324c70936508384bdfd7c10e3",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3662,16 +3662,16 @@
         },
         {
             "name": "spatie/blender-model",
-            "version": "1.0.9",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/blender-model.git",
-                "reference": "2c212b914987043f686a40ebed378b7c89f3ac49"
+                "reference": "500fa70e61edd1f4b4a04f43bc4da709c9400b21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/2c212b914987043f686a40ebed378b7c89f3ac49",
-                "reference": "2c212b914987043f686a40ebed378b7c89f3ac49",
+                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/500fa70e61edd1f4b4a04f43bc4da709c9400b21",
+                "reference": "500fa70e61edd1f4b4a04f43bc4da709c9400b21",
                 "shasum": ""
             },
             "require": {
@@ -3716,10 +3716,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/blender-model/tree/1.0.9",
+                "source": "https://github.com/spatie-custom/blender-model/tree/2.0.1",
                 "issues": "https://github.com/spatie-custom/blender-model/issues"
             },
-            "time": "2016-10-25 14:21:32"
+            "time": "2016-11-07 13:10:35"
         },
         {
             "name": "spatie/color",
