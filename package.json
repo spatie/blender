@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-preset-es2015": "^6.9.0",
     "blender-css": "^1.0.0",
@@ -30,9 +30,7 @@
     "normalize-css": "^2.3.1",
     "viewport-utility": "^1.2.2",
     "vue": "^2.0.0",
-    "webfontloader": "^1.6.10"
-  },
-  "dependencies": {
+    "webfontloader": "^1.6.10",
     "webpack": "^1.12"
   }
 }

@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->increments('id');
             $table->json('name')->nullable();
             $table->json('text')->nullable();
-            $table->json('url')->nullable();
+            $table->json('slug')->nullable();
             $table->json('seo_values')->nullable();
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);
