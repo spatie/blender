@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Presenters\NewsItemPresenter;
 use Spatie\Blender\Model\Model;
 use Spatie\Blender\Model\Traits\HasSlug;
-use Spatie\Blender\Model\Traits\HasTags;
+use Spatie\Tags\HasTags;
 
 class NewsItem extends Model
 {
