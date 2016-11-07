@@ -16,7 +16,7 @@ class CreateTagsTables extends Migration
         Schema::create('tags', function (Blueprint $table) {
             $table->increments('id');
             $table->json('name')->nullable();
-            $table->json('url')->nullable();
+            $table->json('slug')->nullable();
             $table->string('type')->nullable();
             $table->integer('order_column')->nullable();
             $table->boolean('draft')->default(true);
