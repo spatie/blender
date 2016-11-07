@@ -1,5 +1,3 @@
-import { trimStart } from 'lodash';
-
 export function query(scope, selector) {
     if (selector === undefined) {
         selector = scope;
@@ -31,8 +29,8 @@ export function prop(el, name) {
 export function props(el) {
     const props = {};
 
-    for (const attribute of el.attributes) {
-        const name = trimStart(attribute.name, ':');
+    for (let i = 0; i < el.attributes.length; i++) {
+        const name = el.attributes[i].name.replace(/^:/m, '');
         props[name] = prop(el, name);
     }
 
