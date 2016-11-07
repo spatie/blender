@@ -58,7 +58,7 @@
         "spatie/laravel-newsletter": "^3.0.0",
         "spatie/laravel-paginateroute": "^2.0",
         "spatie/laravel-robots-middleware": "^1.0",
-        "spatie/laravel-tags": "dev-master",
+        "spatie/laravel-tags": "^1.0.0",
         "spatie/laravel-tail": "^1.0",
         "spatie/laravel-translatable": "^1.0",
         "spatie/laravel-translation-loader": "^1.0",
