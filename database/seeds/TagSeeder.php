@@ -22,7 +22,7 @@ class TagSeeder extends DatabaseSeeder
         ]);
     }
 
-    public function seedTags(TagType $type, array $names)
+    public function seedTags($type, array $names)
     {
         foreach ($names as $i => $name) {
             Tag::create([
