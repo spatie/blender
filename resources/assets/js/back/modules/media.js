@@ -1,6 +1,6 @@
 import Media from 'blender-media';
 import Vue from 'vue';
-import { props, queryAll } from '../util/dom';
+import { props, queryAll } from 'spatie-dom';
 
 export default function init() {
     queryAll('blender-media').forEach(el => mountMedia(el));

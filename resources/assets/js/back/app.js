@@ -10,7 +10,7 @@ import 'blender.js/modules/table.datatables';
 import 'blender.js/modules/table.sortable';
 import 'blender.js/modules/tabs';
 
-import { query } from './util/dom';
+import { query } from 'spatie-dom';
 
 if (query('blender-media')) {
     require.ensure([], () => {
