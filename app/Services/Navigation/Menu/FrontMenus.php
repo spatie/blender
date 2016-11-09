@@ -20,9 +20,9 @@ class FrontMenus
         });
 
         Menu::macro('language', function () {
-            return locales()->reduce(function (Menu $menu, string $locale) {
-                $menu->url($locale, $locale);
-            }, Menu::front());
+            return Menu::build(locales(), function (Menu $menu, string $locale) {
+                return $menu->url($locale, strtoupper($locale));
+            })->setActiveFromRequest();
         });
 
         Menu::macro('articleSiblings', function (Article $article) {
