@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Reset assured: this will be part of blender-model eventually
+ * Reset assured: this will be part of blender-model eventually.
  */
 namespace App\Models\Traits;
 
@@ -10,7 +10,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasContentBlocks
 {
-
     public function contentBlocks(): MorphMany
     {
         return $this->morphMany(ContentBlock::class, 'model');
@@ -21,8 +20,7 @@ trait HasContentBlocks
      */
     protected function updateContentBlocks($attributes)
     {
-        foreach($attributes as $contentBlockAttributes)
-        {
+        foreach ($attributes as $contentBlockAttributes) {
             $contentBlockAttributes = array_merge(['temp' => false], $contentBlockAttributes);
 
             $this->updateContentBlock($contentBlockAttributes);

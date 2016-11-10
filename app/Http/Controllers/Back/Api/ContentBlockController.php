@@ -7,7 +7,6 @@ use App\Models\ContentBlock;
 use App\Models\Transformers\ContentBlockTransformer;
 use Exception;
 use Illuminate\Http\Request;
-use Response;
 
 class ContentBlockController extends Controller
 {
