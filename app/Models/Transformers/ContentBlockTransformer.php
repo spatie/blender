@@ -11,7 +11,7 @@ class ContentBlockTransformer extends TransformerAbstract
     {
         $attributes =  [
             'id' => $contentBlock->id,
-            'name' => $contentBlock->name,
+            'name' => $contentBlock->getTra,
             'text' => $contentBlock->text,
             'type' => $contentBlock->type,
         ];

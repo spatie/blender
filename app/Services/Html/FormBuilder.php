@@ -133,8 +133,6 @@ class FormBuilder extends BaseFormBuilder
             ->transformWith(new ContentBlockTransformer())
             ->toJson();
 
-        dd($initialContentBlocks);
-
         $model = collect([
             'name' => get_class($subject),
             'id' => $subject->id,
