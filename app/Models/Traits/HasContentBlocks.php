@@ -7,13 +7,29 @@ namespace App\Models\Traits;
 
 use App\Models\ContentBlock;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Support\Collection;
 
 trait HasContentBlocks
 {
 
     public function contentBlocks(): MorphMany
     {
-        return $this->morphMany(ContentBlock::class, 'model');
+        return $this
+            ->morphMany(ContentBlock::class, 'model')
+            ->orderBy('order_column', 'desc');
+    }
+
+    public function getCollectionNames(): array
+    {
+        return $this->contentBlockCollections ?? ['default'];
+    }
+
+    public function getContentBlocksForCollection($collectionName): Collection
+    {
+        return $this->contentBlocks
+            ->filter(function (ContentBlock $contentBlock) use ($collectionName) {
+                return $contentBlock->collection_name === $collectionName;
+            });
     }
 
     /**
@@ -21,13 +37,20 @@ trait HasContentBlocks
      */
     protected function updateContentBlocks($attributes)
     {
-        foreach($attributes as $contentBlockAttributes)
-        {
-            $contentBlockAttributes = array_merge(['temp' => false], $contentBlockAttributes);
+        foreach ($this->getCollectionNames() as $collectionName) {
 
-            $this->updateContentBlock($contentBlockAttributes);
+            foreach ($attributes[$collectionName] as $collectionValues) {
+
+                foreach ($collectionValues as $contentBlockValues)
+                    $contentBlockAttributes = array_merge(['temp' => false], $contentBlockValues);
+
+                ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues($contentBlockValues);
+
+                $this->updateContentBlock($contentBlockAttributes);
+            }
         }
     }
+
 
     public function deleteTemporaryContentBlocks()
     {

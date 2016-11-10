@@ -3,6 +3,7 @@
 namespace App\Services\Html;
 
 use App\Models\Tag;
+use App\Models\Transformers\ContentBlockTransformer;
 use App\Models\Transformers\MediaTransformer;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -123,6 +124,29 @@ class FormBuilder extends BaseFormBuilder
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialMedia),
             ':associated' => htmlspecialchars($this->getAssociatedMediaData($associated)),
+        ], '');
+    }
+
+    public function contentBlocks(Model $subject, string $collectionName, string $editor): string {
+        $initialContentBlocks = fractal()
+            ->collection($subject->getContentBlocksForCollection($collectionName))
+            ->transformWith(new ContentBlockTransformer())
+            ->toJson();
+
+        dd($initialContentBlocks);
+
+        $model = collect([
+            'name' => get_class($subject),
+            'id' => $subject->id,
+        ])->toJson();
+
+        return el('content-blocks', [
+            'collection' => $collectionName,
+            'editor' => $editor,
+            'create-url' => action('Back\Api\ContentBlockController@add'),
+            'upload-url' => action('Back\Api\MediaLibraryController@add'),
+            ':model' => htmlspecialchars($model),
+            ':initial' => htmlspecialchars($initialContentBlocks),
         ], '');
     }
 

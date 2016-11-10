@@ -26,7 +26,6 @@ Route::group(['prefix' => 'api'], function() {
     Route::get('media', 'Api\MediaLibraryController@index');
     Route::post('media', 'Api\MediaLibraryController@add');
 
-    Route::get('contentblocks', 'ContentBlockController@index');
-    Route::post('contentblocks', 'ContentBlockController@add');
+    Route::post('contentblocks', 'Api\ContentBlockController@add');
 });
 

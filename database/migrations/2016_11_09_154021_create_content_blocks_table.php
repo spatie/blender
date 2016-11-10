@@ -17,6 +17,8 @@ class CreateContentBlocksTable extends Migration
             $table->increments('id');
             $table->string('model_type');
             $table->integer('model_id');
+            $table->string('collection_name')->nullable();
+            $table->string('type')->nullable();
             $table->json('name')->nullable();
             $table->json('text')->nullable();
             $table->json('properties')->nullable();

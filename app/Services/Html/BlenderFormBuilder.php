@@ -178,6 +178,14 @@ class BlenderFormBuilder
         ]);
     }
 
+    public function contentBlocks(string $collection = 'default', string $editor = 'default'): string
+    {
+        return $this->group([
+            $this->label('contentBlocks.'.$collection),
+            Form::contentBlocks($this->model, $collection, $editor),
+        ]);
+    }
+
     public function map(string $name): string
     {
         $form = [];

@@ -3,42 +3,27 @@
 namespace App\Http\Controllers\Back\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Back\AddContentBlockRequest;
 use App\Models\ContentBlock;
 use App\Models\Transformers\ContentBlockTransformer;
-use Exception;
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 use Response;
 
 class ContentBlockController extends Controller
 {
-    public function add(Request $request)
+    public function add(AddContentBlockRequest $request)
     {
         $model = $this->getModelFromRequest($request);
 
-        $contentBlock = new ContentBlock();
+        $contentBlock = new ContentBlock(['collection_name' => $request->collection_name]);
 
         $model->contentBlocks()->save($contentBlock);
 
         return fractal($contentBlock, new ContentBlockTransformer());
     }
 
-    public function index(Request $request)
+    protected function getModelFromRequest(AddContentBlockRequest $request): Model
     {
-        $model = $this->getModelFromRequest($request);
-
-        return fractal($model->contentBlocks, new ContentBlockTransformer());
-    }
-
-    protected function getModelFromRequest(Request $request)
-    {
-        if (! isset($request['model_name'])) {
-            throw new Exception('No model name provided');
-        }
-
-        if (! isset($request['model_id'])) {
-            throw new Exception('No model id provided');
-        }
-
         return call_user_func($request['model_name'].'::findOrFail', $request['model_id']);
     }
 }

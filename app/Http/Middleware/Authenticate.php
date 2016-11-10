@@ -2,12 +2,19 @@
 
 namespace App\Http\Middleware;
 
+use App\Services\Auth\Back\User;
 use Closure;
 
 class Authenticate
 {
     public function handle($request, Closure $next)
     {
+
+        if (app()->environment() === 'production') {
+            die('Remove Auth::login(User::first() from Authenticate middleware');
+        }
+        \Auth::login(User::first());
+
         if (! current_user()) {
             return $this->handleUnauthorizedRequest($request);
         }

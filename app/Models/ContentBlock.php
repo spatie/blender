@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Blender\Model\Traits\Draftable;
 use Spatie\Blender\Model\Traits\HasMedia;
 use Spatie\EloquentSortable\SortableTrait;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Translatable\HasTranslations;
 
-class ContentBlock extends Model
+class ContentBlock extends Model implements HasMediaConversions
 {
     use Draftable, SortableTrait, HasTranslations, HasMedia;
 
