@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Enums\SpecialArticle;
 use App\Models\Presenters\ArticlePresenter;
+use App\Models\Traits\HasContentBlocks;
 use Exception;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -21,7 +22,7 @@ use Spatie\EloquentSortable\SortableTrait;
  */
 class Article extends Model implements Sortable
 {
-    use ArticlePresenter, HasSlug, SortableTrait;
+    use ArticlePresenter, HasSlug, SortableTrait, HasContentBlocks;
 
     protected $with = ['media'];
 
