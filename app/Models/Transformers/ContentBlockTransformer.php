@@ -9,7 +9,7 @@ class ContentBlockTransformer extends TransformerAbstract
 {
     public function transform(ContentBlock $contentBlock)
     {
-        $attributes =  [
+        $attributes = [
             'id' => $contentBlock->id,
             'type' => $contentBlock->type,
         ];
@@ -19,7 +19,7 @@ class ContentBlockTransformer extends TransformerAbstract
 
     protected function getMediaAttributes(ContentBlock $contentBlock): array
     {
-        return array_reduce($contentBlock->mediaLibraryCollections, function($mediaAttributes, $collectionName) use ($contentBlock) {
+        return array_reduce($contentBlock->mediaLibraryCollections, function ($mediaAttributes, $collectionName) use ($contentBlock) {
             $mediaAttributes[$collectionName] = $contentBlock->getMedia($collectionName);
 
             return $mediaAttributes;
