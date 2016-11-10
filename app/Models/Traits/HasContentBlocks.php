@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Reset assured: this will be part of blender-model eventually
+ * Reset assured: this will be part of blender-model eventually.
  */
 namespace App\Models\Traits;
 
@@ -11,7 +11,6 @@ use Illuminate\Support\Collection;
 
 trait HasContentBlocks
 {
-
     public function contentBlocks(): MorphMany
     {
         return $this
@@ -38,11 +37,10 @@ trait HasContentBlocks
     protected function updateContentBlocks($attributes)
     {
         foreach ($this->getCollectionNames() as $collectionName) {
-
             foreach ($attributes[$collectionName] as $collectionValues) {
-
-                foreach ($collectionValues as $contentBlockValues)
+                foreach ($collectionValues as $contentBlockValues) {
                     $contentBlockAttributes = array_merge(['temp' => false], $contentBlockValues);
+                }
 
                 ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues($contentBlockValues);
 
@@ -50,7 +48,6 @@ trait HasContentBlocks
             }
         }
     }
-
 
     public function deleteTemporaryContentBlocks()
     {
