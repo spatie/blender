@@ -21,6 +21,8 @@ class ArticlesController extends Controller
     {
         $article->parent_id = $request->get('parent_id') ?: null;
 
+        $article->syncContentBlocks($request);
+
         $this->updateModel($article, $request);
     }
 

@@ -14,7 +14,11 @@ class ContentBlockTransformer extends TransformerAbstract
             'type' => $contentBlock->type,
         ];
 
-        return array_merge($attributes, $this->getMediaAttributes($contentBlock), $this->getTranslatedAttributes());
+        return array_merge(
+            $attributes,
+            $this->getMediaAttributes($contentBlock),
+            $this->getTranslatedAttributes($contentBlock)
+        );
     }
 
     protected function getMediaAttributes(ContentBlock $contentBlock): array
@@ -28,7 +32,7 @@ class ContentBlockTransformer extends TransformerAbstract
 
     protected function getTranslatedAttributes(ContentBlock $contentBlock): array
     {
-        return array_reduce($this->translatable, function($translatables, $attribute) use ($contentBlock) {
+        return array_reduce($contentBlock->translatable, function($translatables, $attribute) use ($contentBlock) {
             foreach(config('app.locales') as $locale) {
                 $translatables[$attribute][$locale] = $contentBlock->getTranslation($attribute, $locale);
 

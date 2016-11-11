@@ -5,6 +5,7 @@
  */
 namespace App\Models\Traits;
 
+use App\Http\Requests\Request;
 use App\Models\ContentBlock;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Collection;
@@ -32,23 +33,25 @@ trait HasContentBlocks
             });
     }
 
-    /**
-     * @param array $attributes
-     */
-    protected function updateContentBlocks($attributes)
+    public function syncContentBlocks(Request $request)
     {
         foreach ($this->getCollectionNames() as $collectionName) {
 
-            foreach ($attributes[$collectionName] as $collectionValues) {
+            if ($request->has("contentBlocks.{$collectionName}")) {
 
-                foreach ($collectionValues as $contentBlockValues)
-                    $contentBlockAttributes = array_merge(['temp' => false], $contentBlockValues);
+                foreach ($request->get("contentBlocks.{$collectionName}") as $collectionValues) {
 
-                ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues($contentBlockValues);
+                    foreach ($collectionValues as $contentBlockValues)
+                        $contentBlockAttributes = array_merge(['temp' => false], $contentBlockValues);
 
-                $this->updateContentBlock($contentBlockAttributes);
+                    ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues($contentBlockValues);
+
+                    $this->updateContentBlock($contentBlockAttributes);
+                }
             }
         }
+
+        $this->deleteTemporaryContentBlocks();
     }
 
 
