@@ -127,7 +127,8 @@ class FormBuilder extends BaseFormBuilder
         ], '');
     }
 
-    public function contentBlocks(Model $subject, string $collectionName, string $editor): string {
+    public function contentBlocks(Model $subject, string $collectionName, string $editor): string
+    {
         $initialContentBlocks = fractal()
             ->collection($subject->getContentBlocksForCollection($collectionName))
             ->transformWith(new ContentBlockTransformer())

@@ -5,7 +5,7 @@ namespace App\Http\Requests\Back;
 use App\Http\Requests\Request;
 use Illuminate\Contracts\Validation\Validator;
 
-class AddContentBlockRequest extends Request
+class ContentBlockRequest extends Request
 {
     public function rules(): array
     {

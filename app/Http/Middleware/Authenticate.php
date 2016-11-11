@@ -9,7 +9,6 @@ class Authenticate
 {
     public function handle($request, Closure $next)
     {
-
         if (app()->environment() === 'production') {
             die('Remove Auth::login(User::first() from Authenticate middleware');
         }
