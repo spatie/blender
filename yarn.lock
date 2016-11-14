@@ -683,8 +683,8 @@ blender-gulp@^2.5.0:
     webpack-manifest-plugin "^0.5.0"
 
 blender-media@^3.0.0:
-  version "3.0.2"
-  resolved "https://npm.spatie.be/blender-media/-/blender-media-3.0.2.tgz#d02404faf8a9a6161ddb26964333fb2ea8f7daee"
+  version "3.0.3"
+  resolved "https://npm.spatie.be/blender-media/-/blender-media-3.0.3.tgz#330d422dcb3da8fe815fcf539175e2f8c3f88741"
   dependencies:
     dragula "^3.7.1"
     dragula-constrain "^1.0.0"
