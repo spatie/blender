@@ -41,7 +41,7 @@ class ContentBlock extends Model implements HasMediaConversions
            }
         });
 
-        foreach($this->mediaLibraryCollections as $collectionName) {
+        foreach($this->getMediaCollectionNames() as $collectionName) {
             $this->updateMedia($values[$collectionName], $collectionName);
         }
 
@@ -53,3 +53,4 @@ class ContentBlock extends Model implements HasMediaConversions
         return $this->subject->getContentBlockMediaCollectionNames();
     }
 }
+
