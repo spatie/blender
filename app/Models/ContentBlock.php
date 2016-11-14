@@ -35,13 +35,13 @@ class ContentBlock extends Model implements HasMediaConversions
     {
         $this->type = $values['type'];
 
-        collect($this->translatable)->each(function(string $attribute) use ($values) {
-           foreach(config('app.locales') as $locale) {
-               $this->setTranslation($attribute, $locale, $values['attribute'][$locale]);
-           }
+        collect($this->translatable)->each(function (string $attribute) use ($values) {
+            foreach (config('app.locales') as $locale) {
+                $this->setTranslation($attribute, $locale, $values['attribute'][$locale]);
+            }
         });
 
-        foreach($this->mediaLibraryCollections as $collectionName) {
+        foreach ($this->mediaLibraryCollections as $collectionName) {
             $this->updateMedia($values[$collectionName], $collectionName);
         }
 

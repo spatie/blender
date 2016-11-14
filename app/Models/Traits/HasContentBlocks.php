@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Reset assured: this will be part of blender-model eventually
+ * Reset assured: this will be part of blender-model eventually.
  */
 namespace App\Models\Traits;
 
@@ -40,13 +40,11 @@ trait HasContentBlocks
     public function syncContentBlocks(Request $request)
     {
         foreach ($this->getContentBlockCollectionNames() as $collectionName) {
-
             if ($request->has("contentBlocks.{$collectionName}")) {
-
                 foreach ($request->get("contentBlocks.{$collectionName}") as $collectionValues) {
-
-                    foreach ($collectionValues as $contentBlockValues)
+                    foreach ($collectionValues as $contentBlockValues) {
                         $contentBlockAttributes = array_merge(['draft' => false], $contentBlockValues);
+                    }
 
                     ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues($contentBlockValues);
                 }
@@ -55,7 +53,6 @@ trait HasContentBlocks
 
         $this->deleteTemporaryContentBlocks();
     }
-
 
     public function deleteTemporaryContentBlocks()
     {
