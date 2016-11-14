@@ -7,7 +7,6 @@ use App\Http\Requests\Back\AddContentBlockRequest;
 use App\Models\ContentBlock;
 use App\Models\Transformers\ContentBlockTransformer;
 use Illuminate\Database\Eloquent\Model;
-use Response;
 
 class ContentBlockController extends Controller
 {
