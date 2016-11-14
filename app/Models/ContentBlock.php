@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Spatie\Blender\Model\Traits\Draftable;
 use Spatie\Blender\Model\Traits\HasMedia;
 use Spatie\EloquentSortable\SortableTrait;
@@ -13,9 +14,12 @@ class ContentBlock extends Model implements HasMediaConversions
 {
     use Draftable, SortableTrait, HasTranslations, HasMedia;
 
-    public $mediaLibraryCollections = ['images', 'downloads'];
-
     public $translatable = ['name', 'text'];
+
+    public function subject(): MorphTo
+    {
+        return $this->morphTo('model');
+    }
 
     public function registerMediaConversions()
     {
@@ -42,5 +46,10 @@ class ContentBlock extends Model implements HasMediaConversions
         }
 
         $this->save();
+    }
+
+    public function getMediaCollectionNames(): array
+    {
+        return $this->subject->getContentBlockMediaCollectionNames();
     }
 }
