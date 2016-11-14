@@ -122,7 +122,7 @@ class FormBuilder extends BaseFormBuilder
             'upload-url' => action('Back\Api\MediaLibraryController@add'),
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialMedia),
-            ':associated' => htmlspecialchars($this->getAssociatedMediaData($associated)),
+            ':data' => htmlspecialchars($this->getAssociatedMediaData($associated)),
         ], '');
     }
 

@@ -24,7 +24,6 @@ config.plugins.push(new webpack.ProvidePlugin({
 }));
 
 // Uncomment if you want to use the runtime version of Vue
-
 // config.resolve.alias = {
 //     'vue$': 'vue/dist/vue.js',
 // };
