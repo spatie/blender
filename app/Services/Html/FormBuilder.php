@@ -139,7 +139,7 @@ class FormBuilder extends BaseFormBuilder
             'id' => $subject->id,
         ])->toJson();
 
-        return el('content-blocks', [
+        return el('blender-content-blocks', [
             'collection' => $collectionName,
             'editor' => $editor,
             'create-url' => action('Back\Api\ContentBlockController@add'),

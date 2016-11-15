@@ -18,6 +18,12 @@ if (query('blender-media')) {
     }, 'back.media');
 }
 
+if (query('blender-content-blocks')) {
+    require.ensure([], () => {
+        require('./content-blocks').default();
+    }, 'back.media');
+}
+
 if (query('blender-chart')) {
     require.ensure([], () => {
         require('./modules/chart').default();
