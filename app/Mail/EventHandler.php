@@ -2,8 +2,9 @@
 
 namespace App\Mail;
 
-use App\Services\Auth\Front\Events\UserCreatedThroughBack;
-use App\Services\Auth\Front\Events\UserRegistered;
+use App\Services\Auth\Back\Events\UserCreated as BackUserCreated;
+use App\Services\Auth\Front\Events\UserCreatedThroughBack as FrontUserCreatedThroughBack;
+use App\Services\Auth\Front\Events\UserRegistered as FrontUserRegistered;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Password;
@@ -13,12 +14,18 @@ class EventHandler
 {
     public function subscribe(Dispatcher $events)
     {
-        $events->listen(UserRegistered::class, function (UserRegistered $event) {
+        $events->listen(FrontUserRegistered::class, function (FrontUserRegistered $event) {
             Mail::send(new Welcome($event->user));
         });
 
-        $events->listen(UserCreatedThroughBack::class, function (UserCreatedThroughBack $event) {
+        $events->listen(FrontUserCreatedThroughBack::class, function (FrontUserCreatedThroughBack $event) {
             Password::broker('front')->sendResetLink(['email' => $event->user->email], function (Message $message) {
+                $message->subject('Welkom bij '.config('app.url'));
+            });
+        });
+
+        $events->listen(BackUserCreated::class, function (BackUserCreated $event) {
+            Password::broker('back')->sendResetLink(['email' => $event->user->email], function (Message $message) {
                 $message->subject('Welkom bij '.config('app.url'));
             });
         });
