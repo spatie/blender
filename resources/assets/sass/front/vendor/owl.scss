@@ -9,19 +9,19 @@
     position: absolute;
     top: 28vh;
 
-    color: $black;
+    color: black();
     opacity: 0;
 
     transition: all .5s linear;
 
-    @include mq(s) {
-        @include circle(36px);
+    @include mq-below(s) {
+        @include shape-circle(36px);
 
         font-size: 21px;
 
         top: 18vh;
 
-        background: $white;
+        background: white();
     }
 
 
@@ -43,7 +43,7 @@
 
     transform: translateY(-50%) translateX(10px);
 
-    @include mq(s) {
+    @include mq-below(s) {
         left: -18px;
 
         transform: translateY(-50%) translateX(-10px);
@@ -54,7 +54,7 @@
 
     transform: translateY(-50%) translateX(-10px);
 
-    @include mq(s) {
+    @include mq-below(s) {
         right: -18px;
 
         transform: translateY(-50%) translateX(10px);

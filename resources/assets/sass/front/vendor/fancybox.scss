@@ -1,7 +1,7 @@
 //overrides default stylesheet
 
 .fancybox-opened .fancybox-skin {
-    box-shadow: 0 0 25px rgba($black, .2);
+    box-shadow: 0 0 25px black(.2);
 }
 
 .fancybox-title-float-wrap {
@@ -9,33 +9,33 @@
         font-family: font-family(sans);
         font-weight: font-weight(normal);
 
-        color: color($gray, dark);
-        background: rgba($white, .95);
+        color: gray(dark);
+        background: white(.95);
         border-radius: 0;
         text-shadow: none;
     }
 }
 
 .fancybox-overlay {
-    background-color: rgba($black, .5);
+    background-color: black(.5);
 }
 
 .fancybox-close,
 .fancybox-nav span {
-    @include circle(36px);
+    @include shape-circle(36px);
 
     font-family: font-family(icons);
     font-size: 21px;
 
-    color: $black;
-    background-color: $white;
+    color: black();
+    background-color: white();
     border: none;
 }
 
 .fancybox-close {
     font-size: 18px;
 
-    @include mq(s) {
+    @include mq-below(s) {
         display: none;
     }
 
