@@ -5,7 +5,7 @@ namespace App\Services\Html;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \App\Services\Html\BlenderBuilder
+ * @see \App\Services\Html\BlenderFormBuilder
  */
 class BlenderFormFacade extends Facade
 {
