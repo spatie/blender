@@ -115,8 +115,7 @@ php artisan optimize;
 @task('updatePermissions', ['on' => 'remote'])
 {{ logMessage("\u{1F512}  Updating permissions...") }}
 cd {{ $newReleaseDir }};
-find . -type d -exec chmod 775 {} \;
-find . -type f -exec chmod 664 {} \;
+chmod -R 774 .;
 @endtask
 
 @task('backupDatabase', ['on' => 'remote'])
