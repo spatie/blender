@@ -40,25 +40,34 @@ trait HasContentBlocks
     public function syncContentBlocks(Request $request)
     {
         foreach ($this->getContentBlockCollectionNames() as $collectionName) {
-            if ($request->has("contentBlocks.{$collectionName}")) {
-                foreach ($request->get("contentBlocks.{$collectionName}") as $collectionValues) {
-                    foreach ($collectionValues as $contentBlockValues) {
-                        $contentBlockAttributes = array_merge(['draft' => false], $contentBlockValues);
-                    }
-
-                    ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues($contentBlockValues);
-                }
+            if ($request->has("content_blocks_{$collectionName}")) {
+                $data = json_decode($request->get("content_blocks_{$collectionName}"), true);
+                $this->syncContentBlockCollection($data, $collectionName);
             }
         }
 
         $this->deleteTemporaryContentBlocks();
     }
 
+    protected function syncContentBlockCollection(array $data, string $collection)
+    {
+        $contentBlocks = collect($data)->map(function (array $contentBlockAttributes): ContentBlock {
+            return ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues(
+                array_merge(['draft' => false], $contentBlockAttributes)
+            );
+        });
+
+        $this->contentBlocks()
+            ->where('collection_name', $collection)
+            ->whereNotIn('id', $contentBlocks->pluck('id')->toArray())
+            ->delete();
+        }
+
     public function deleteTemporaryContentBlocks()
     {
         $this->contentBlocks()->get()
             ->filter(function (ContentBlock $contentBlock) {
-                return $contentBlock->temp;
+                return $contentBlock->draft;
             })
             ->each(function (ContentBlock $contentBlock) {
                 $contentBlock->delete();

@@ -1,44 +1,62 @@
 <template>
     <div>
-        <textarea :value="store.export"></textarea>
+        <table>
+            <thead>
+                <th></th>
+                <th>Title</th>
+                <th>Layout</th>
+                <th></th>
+            </thead>
+            <tbody
+                v-for="block in blocks"
+                is="content-block"
+                :attributes="block"
+                :open="isOpen(block)"
+                @close="close(block)"
+            ></tbody>
+        </table>
+        <a href="#" @click.prevent="store.createBlock">
+            Blok toevoegen
+        </a>
     </div>
 </template>
 
 <script>
-import { cloneDeep } from 'lodash';
-import { expose } from 'vue-expose-inject';
-import Store from '../Store';
-import Vue from 'vue';
+import ContentBlock from './ContentBlock';
+import { inject } from 'vue-expose-inject';
 
 export default {
 
-    mixins: [expose],
-
-    props: {
-        collection: { type: String, required: true },
-        editor: { type: String, required: true },
-        createUrl: { type: String, required: true },
-        uploadUrl: { type: String, required: true },
-        model: { type: Object, required: true },
-        initial: { type: Array, required: true },
-        associatedData: { type: Object, default: () => ({}) },
-    },
-
     data() {
-        const store = new Vue(Store);
-        
-        store.hydrate({
-            collection: this.collection,
-            blocks: cloneDeep(this.initial),
-            model: cloneDeep(this.model),
-            associatedData: cloneDeep(this.associatedData),
-        });
-
-        return { store };
+        return {
+            currentlyOpen: null,
+        };
     },
 
-    expose() {
-        return ['store'];
+    components: {
+        ContentBlock,
+    },
+
+    computed: {
+        ...inject(['store']),
+        
+        blocks() {
+            return this.store.blocks;
+        },
+    },
+
+    methods: {
+        isOpen({ id }) {
+            return this.currentlyOpen === id;
+        },
+
+        close({ id }) {
+            if (! this.isOpen(id)) {
+                return;
+            }
+
+            this.currentlyOpen = null;
+        },
     },
 };
 </script>

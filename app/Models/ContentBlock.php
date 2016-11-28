@@ -15,6 +15,7 @@ class ContentBlock extends Model implements HasMediaConversions
     use Draftable, SortableTrait, HasTranslations, HasMedia;
 
     public $translatable = ['name', 'text'];
+    protected $guarded = [];
 
     public function subject(): MorphTo
     {
@@ -37,7 +38,7 @@ class ContentBlock extends Model implements HasMediaConversions
 
         collect($this->translatable)->each(function (string $attribute) use ($values) {
             foreach (config('app.locales') as $locale) {
-                $this->setTranslation($attribute, $locale, $values['attribute'][$locale]);
+                $this->setTranslation($attribute, $locale, $values[$attribute][$locale] ?? '');
             }
         });
 
@@ -46,6 +47,8 @@ class ContentBlock extends Model implements HasMediaConversions
         }
 
         $this->save();
+
+        return $this;
     }
 
     public function getMediaCollectionNames(): array

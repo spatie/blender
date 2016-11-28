@@ -143,7 +143,8 @@ class FormBuilder extends BaseFormBuilder
             'collection' => $collectionName,
             'editor' => $editor,
             'create-url' => action('Back\Api\ContentBlockController@add'),
-            'upload-url' => action('Back\Api\MediaLibraryController@add'),
+            'media-url' => action('Back\Api\MediaLibraryController@add'),
+            'content-locale' => content_locale(),
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialContentBlocks),
         ], '');

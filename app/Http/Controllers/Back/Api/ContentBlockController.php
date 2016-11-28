@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Back\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Back\AddContentBlockRequest;
+use App\Http\Requests\Back\ContentBlockRequest;
 use App\Models\ContentBlock;
 use App\Models\Transformers\ContentBlockTransformer;
 use Illuminate\Database\Eloquent\Model;
 
 class ContentBlockController extends Controller
 {
-    public function add(AddContentBlockRequest $request)
+    public function add(ContentBlockRequest $request)
     {
         $model = $this->getModelFromRequest($request);
 
@@ -21,7 +21,7 @@ class ContentBlockController extends Controller
         return fractal($contentBlock, new ContentBlockTransformer());
     }
 
-    protected function getModelFromRequest(AddContentBlockRequest $request): Model
+    protected function getModelFromRequest(ContentBlockRequest $request): Model
     {
         return call_user_func($request['model_name'].'::findOrFail', $request['model_id']);
     }
