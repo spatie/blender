@@ -61,7 +61,7 @@ trait HasContentBlocks
             ->where('collection_name', $collection)
             ->whereNotIn('id', $contentBlocks->pluck('id')->toArray())
             ->delete();
-        }
+    }
 
     public function deleteTemporaryContentBlocks()
     {
