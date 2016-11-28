@@ -1,65 +1,102 @@
 <template>
     <tbody>
-        <tr :style="{ background: markedForRemoval ? 'red' : '' }">
+        <tr :style="{ background: isMarkedForRemoval ? 'red' : '' }">
             <td></td>
-            <td>{{ title }}</td>
-            <td>{{ layout }}</td>
+            <td @click="open">{{ name }}</td>
+            <td class="-remark">{{ type }}</td>
             <td>
-                <a href="#" @click.prevent="edit">Edit</a>
-                <a href="#" @click.prevent="toggleRemove">Remove</a>
+                <span v-if="! isMarkedForRemoval">
+                    <a
+                        v-if="isOpen"
+                        href="#"
+                        @click.prevent="close"
+                    >Sluit</a>
+                    <a
+                        v-else
+                        href="#"
+                        @click.prevent="open"
+                    >Wijzig</a>
+                </span>
+                <span v-if="! isOpen">
+                    <a
+                        v-if="isMarkedForRemoval"
+                        href="#"
+                        @click.prevent="restore"
+                    >Herstel</a>
+                    <a
+                        v-else
+                        href="#"
+                        @click.prevent="markForRemoval"
+                    >Verwijder</a>
+                </span>
             </td>
         </tr>
-        <tr v-if="open">
+        <tr v-if="isOpen">
             <td colspan="4">
-
+                <editor
+                    :block="block"
+                    :data="data"
+                ></editor>
             </td>
         </tr>
     </tbody>
 </template>
 
 <script>
-import { inject } from 'vue-expose-inject'; 
+import Editor from './Editor';
+import { getTranslation } from '../helpers.js';
 
 export default {
 
     props: {
-        open: {
-            required: true,
-            type: Boolean,
-        },
-        attributes: {
+        block: {
             required: true,
             type: Object,
         },
+        data: {
+            required: true,
+            type: Object,
+        },
+        isOpen: {
+            required: true,
+            type: Boolean,
+        },
+    },
+
+    components: {
+        Editor,
     },
 
     computed: {
-        ...inject(['store']),
+        name() {
+            return getTranslation(this.block.name, this.data.contentLocale, '[geen titel]');
+        },
+
+        type() {
+            return this.block.type || '[geen type]';
+        },
         
-        title() {
-            if (! this.attributes.name[this.store.contentLocale]) {
-                return '[geen titel]';
-            }
-
-            return this.attributes.title;
-        },
-
-        layout() {
-            return this.attributes.layout;
-        },
-
-        markedForRemoval() {
-            return this.attributes.markedForRemoval;
+        isMarkedForRemoval() {
+            return this.block.markedForRemoval;
         },
     },
 
     methods: {
-        edit() {
-            this.$emit('open');
+        open() {
+            this.$emit('open', { id: this.block.id });
         },
 
-        toggleRemove() {
-            this.attributes.markedForRemoval = !this.attributes.markedForRemoval;
+        close() {
+            this.$emit('close', { id: this.block.id });
+        },
+
+        markForRemoval() {
+            this.block.markedForRemoval = true;
+            this.close();
+        },
+
+        restore() {
+            this.block.markedForRemoval = false;
         },
     },
 };

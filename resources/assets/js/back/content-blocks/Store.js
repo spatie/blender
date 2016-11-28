@@ -7,10 +7,9 @@ const Store = {
         return {
             collection: '',
             createUrl: '',
-            mediaUrl: '',
             model: '',
             contentLocale: '',
-            associatedData: {},
+            data: {},
             blocks: [],
         };
     },
@@ -24,13 +23,13 @@ const Store = {
     },
 
     methods: {
-        initialize({ collection, createUrl, mediaUrl, model, contentLocale, associatedData }) {
+        init({ collection, createUrl, model, data, initial }) {
             this.collection = collection;
             this.createUrl = createUrl;
-            this.mediaUrl = mediaUrl;
             this.model = model;
-            this.contentLocale = contentLocale;
-            this.associatedData = associatedData;
+            this.data = data;
+
+            this.addBlocks(initial);
         },
 
         addBlocks(blocks) {

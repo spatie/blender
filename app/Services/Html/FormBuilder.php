@@ -2,6 +2,7 @@
 
 namespace App\Services\Html;
 
+use App\Models\ContentBlock;
 use App\Models\Tag;
 use App\Models\Transformers\ContentBlockTransformer;
 use App\Models\Transformers\MediaTransformer;
@@ -123,11 +124,11 @@ class FormBuilder extends BaseFormBuilder
             'upload-url' => action('Back\Api\MediaLibraryController@add'),
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialMedia),
-            ':data' => htmlspecialchars($this->getAssociatedMediaData($associated)),
+            ':data' => htmlspecialchars($this->getAssociatedData($associated)),
         ], '');
     }
 
-    public function contentBlocks(Model $subject, string $collectionName, string $editor): string
+    public function contentBlocks(Model $subject, string $collectionName, string $editor, array $associated = []): string
     {
         $initialContentBlocks = fractal()
             ->collection($subject->getContentBlocksForCollection($collectionName))
@@ -139,22 +140,27 @@ class FormBuilder extends BaseFormBuilder
             'id' => $subject->id,
         ])->toJson();
 
+        $associatedData = $this->getAssociatedData(array_merge($associated, [
+            'mediaUrl' => action('Back\Api\MediaLibraryController@add'),
+            'className' => ContentBlock::class,
+        ]));
+
         return el('blender-content-blocks', [
             'collection' => $collectionName,
             'editor' => $editor,
             'create-url' => action('Back\Api\ContentBlockController@add'),
-            'media-url' => action('Back\Api\MediaLibraryController@add'),
-            'content-locale' => content_locale(),
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialContentBlocks),
+            ':data' => htmlspecialchars($associatedData),
         ], '');
     }
 
-    protected function getAssociatedMediaData($associated = []): string
+    protected function getAssociatedData($associated = []): string
     {
         $associated = collect($associated);
 
         $associated->put('locales', config('app.locales'));
+        $associated->put('contentLocale', content_locale());
 
         return $associated->toJson();
     }

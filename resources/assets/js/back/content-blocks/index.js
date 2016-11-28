@@ -1,4 +1,5 @@
-import App from './App';
+import ContentBlocks from './components/ContentBlocks';
+import createStore from './Store';
 import Vue from 'vue';
 import { props, queryAll } from 'spatie-dom';
 
@@ -7,10 +8,14 @@ export default function init() {
 }
 
 function mountContentBlocks(el) {
+    const store = createStore();
+
+    store.init(props(el));
+    
     new Vue({
         el,
         render(createElement) {
-            return createElement(App, { props: props(el) });
+            return createElement(ContentBlocks, { props: { store } });
         },
     });
 }

@@ -1,31 +1,33 @@
 <template>
     <div>
         <table>
-            <thead>
-                <th></th>
-                <th>Title</th>
-                <th>Layout</th>
-                <th></th>
-            </thead>
             <tbody
-                v-for="block in blocks"
+                v-for="block in store.blocks"
                 is="content-block"
-                :attributes="block"
-                :open="isOpen(block)"
-                @close="close(block)"
+                :block="block"
+                :data="store.data"
+                :is-open="isOpen(block)"
+                @open="open"
+                @close="close"
             ></tbody>
         </table>
         <a href="#" @click.prevent="store.createBlock">
             Blok toevoegen
         </a>
+        <textarea
+            :name="'content_blocks_' + store.collection"
+            :value="store.export"
+            style="display: none"
+        ></textarea>
     </div>
 </template>
 
 <script>
 import ContentBlock from './ContentBlock';
-import { inject } from 'vue-expose-inject';
 
 export default {
+
+    props: ['store'],
 
     data() {
         return {
@@ -37,21 +39,21 @@ export default {
         ContentBlock,
     },
 
-    computed: {
-        ...inject(['store']),
-        
-        blocks() {
-            return this.store.blocks;
-        },
-    },
-
     methods: {
         isOpen({ id }) {
             return this.currentlyOpen === id;
         },
 
+        open({ id }) {
+            if (this.isOpen(id)) {
+                return;
+            }
+
+            this.currentlyOpen = id;
+        },
+
         close({ id }) {
-            if (! this.isOpen(id)) {
+            if (! this.isOpen({ id })) {
                 return;
             }
 

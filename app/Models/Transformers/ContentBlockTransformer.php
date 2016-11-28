@@ -23,8 +23,8 @@ class ContentBlockTransformer extends TransformerAbstract
 
     protected function getMediaAttributes(ContentBlock $contentBlock): array
     {
-        return array_reduce($contentBlock->getMediaCollectionNames(), function ($mediaAttributes, $collectionName) use ($contentBlock) {
-            $mediaAttributes[$collectionName] = $contentBlock->getMedia($collectionName);
+        return array_reduce($contentBlock->getMediaLibraryCollectionNames(), function ($mediaAttributes, $collectionName) use ($contentBlock) {
+            $mediaAttributes[$collectionName] = fractal($contentBlock->getMedia($collectionName), new MediaTransformer())->toArray();
 
             return $mediaAttributes;
         }, []);
