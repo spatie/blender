@@ -1,4 +1,4 @@
-import 'es6-symbol/implement';
+import 'babel-polyfill';
 
 import 'blender.js/modules/ajax.csrf';
 import 'blender.js/modules/interface.confirm';
