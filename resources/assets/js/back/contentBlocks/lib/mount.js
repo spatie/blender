@@ -1,16 +1,16 @@
 import ContentBlocks from './components/ContentBlocks';
-import createStore from './Store';
-import Vue from 'vue';
+import createStore from './createStore';
+import { isString } from 'lodash';
 import { props, queryAll } from 'spatie-dom';
+import Vue from 'vue';
 
-export default function init() {
-    queryAll('blender-content-blocks').forEach(el => mountContentBlocks(el));
-}
+export default function mount(el, options = {}) {
+    if (isString(el)) {
+        return queryAll(el).map(el => mount(el, props(el)));
+    }
 
-function mountContentBlocks(el) {
     const store = createStore();
-
-    store.init(props(el));
+    store.init(options);
     
     new Vue({
         el,

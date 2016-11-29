@@ -125,6 +125,7 @@ class FormBuilder extends BaseFormBuilder
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialMedia),
             ':data' => htmlspecialchars($this->getAssociatedData($associated)),
+            ':debug' => htmlspecialchars(json_encode(config('app.debug', false))),
         ], '');
     }
 
@@ -142,7 +143,9 @@ class FormBuilder extends BaseFormBuilder
 
         $associatedData = $this->getAssociatedData(array_merge($associated, [
             'mediaUrl' => action('Back\Api\MediaLibraryController@add'),
-            'className' => ContentBlock::class,
+            'mediaModel' => ContentBlock::class,
+            'locales' => config('app.locales'),
+            'contentLocale' => content_locale(),
         ]));
 
         return el('blender-content-blocks', [

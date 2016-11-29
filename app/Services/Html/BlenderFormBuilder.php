@@ -170,11 +170,11 @@ class BlenderFormBuilder
         ]);
     }
 
-    public function media(string $collection, string $type, array $associated = []): string
+    public function media(string $collection, array $associated = []): string
     {
         return $this->group([
             $this->label($collection),
-            Form::media($this->model, $collection, $type, $associated),
+            Form::media($this->model, $collection, $this->model->mediaLibraryCollectionType($collection), $associated),
         ]);
     }
 

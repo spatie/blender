@@ -1,5 +1,8 @@
 {
     "extends": "spatie",
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
     "globals": {
         "$": true,
         "jQuery": true

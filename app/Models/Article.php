@@ -26,7 +26,10 @@ class Article extends Model implements Sortable
 
     protected $with = ['media'];
 
-    public $mediaLibraryCollections = ['images', 'downloads'];
+    protected $mediaLibraryCollections = [
+        'images' => 'images',
+        'downloads' => 'downloads',
+    ];
 
     public $contentBlockMediaLibraryCollections = ['images'];
 

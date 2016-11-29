@@ -13,8 +13,8 @@
             'name' => 'text',
             'text' => 'redactor',
         ]) !!}
-        {!! BlenderForm::media('images', 'images') !!}
-        {!! BlenderForm::media('downloads', 'downloads') !!}
+        {!! BlenderForm::media('images') !!}
+        {!! BlenderForm::media('downloads') !!}
 
         {!! BlenderForm::contentBlocks() !!}
     </div>

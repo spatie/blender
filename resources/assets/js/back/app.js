@@ -20,8 +20,8 @@ if (query('blender-media')) {
 
 if (query('blender-content-blocks')) {
     require.ensure([], () => {
-        require('./content-blocks').default();
-    }, 'back.media');
+        require('./modules/contentBlocks').default();
+    }, 'back.contentBlocks');
 }
 
 if (query('blender-chart')) {

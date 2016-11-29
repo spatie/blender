@@ -8,7 +8,6 @@ const Store = {
             collection: '',
             createUrl: '',
             model: '',
-            contentLocale: '',
             data: {},
             blocks: [],
         };
@@ -39,14 +38,14 @@ const Store = {
             ];
         },
 
-        createBlock() {
-            return axios.post(this.createUrl, {
+        async createBlock() {
+            const { data: block } = await axios.post(this.createUrl, {
                 model_name: this.model.name,
                 model_id: this.model.id,
                 collection_name: this.collection,
-            }).then(({ data: block }) => {
-                this.addBlocks([block]);
             });
+            
+            this.addBlocks([block]);
         },
     },
 };

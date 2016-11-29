@@ -10,7 +10,7 @@
     <div id="content">
         {!! BlenderForm::text('name') !!}
 
-        {!! BlenderForm::media('images', 'image') !!}
+        {!! BlenderForm::media('images') !!}
     </div>
     <div id="settings">
         {!! BlenderForm::checkbox('online') !!}

@@ -1,4 +1,4 @@
-import createStore from '../Store';
+import createStore from '../lib/createStore';
 
 describe('Store', () => {
 
@@ -6,7 +6,7 @@ describe('Store', () => {
 
     beforeEach(() => {
         store = createStore();
-        store.initialize({
+        store.init({
             collection: 'default',
             createUrl: 'http://blender.dev/blender/api/contentblocks',
             mediaUrl: 'http://blender.dev/blender/api/media',
@@ -14,14 +14,16 @@ describe('Store', () => {
                 name: '\\App\\Models\\Article',
                 id: 1,
             },
+            data: {
+                locales: ['nl', 'en'],
+                contentLocale: 'nl',
+            },
+            initial: [],
         });
     });
 
     it('can be initialized', () => {
-        expect(store.collection).toBe('default');
-        expect(store.createUrl).toBe('http://blender.dev/blender/api/contentblocks');
-        expect(store.mediaUrl).toBe('http://blender.dev/blender/api/media');
-        expect(store.model).toEqual({ name: '\\App\\Models\\Article', id: 1 });
+        expect(store.$data).toMatchSnapshot();
     });
 
     it('can add an array of existing blocks', () => {
@@ -34,14 +36,13 @@ describe('Store', () => {
 
         store.addBlocks([block]);
 
-        expect(store.blocks.length).toBe(1);
-        expect(store.blocks[0]).toEqual(block);
+        expect(store.blocks).toMatchSnapshot();
     });
 
     it('can create a new block', async () => {
         
         await store.createBlock();
 
-        expect(store.blocks.length).toBe(1);
+        expect(store.blocks).toMatchSnapshot();
     });
 });

@@ -1,0 +1,37 @@
+exports[`Store can add an array of existing blocks 1`] = `
+Array [
+  Object {
+    "id": 1,
+    "layout": "image-left",
+    "markedForRemoval": false,
+    "title": "Lego",
+  },
+]
+`;
+
+exports[`Store can be initialized 1`] = `
+Object {
+  "blocks": Array [],
+  "collection": "default",
+  "createUrl": "http://blender.dev/blender/api/contentblocks",
+  "data": Object {
+    "contentLocale": "nl",
+    "locales": Array [
+      "nl",
+      "en",
+    ],
+  },
+  "model": Object {
+    "id": 1,
+    "name": "\\App\\Models\\Article",
+  },
+}
+`;
+
+exports[`Store can create a new block 1`] = `
+Array [
+  Object {
+    "markedForRemoval": false,
+  },
+]
+`;
