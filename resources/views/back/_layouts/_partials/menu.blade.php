@@ -4,7 +4,7 @@
             <nav class="menu__home">
 
                 <a class="menu__home__dashboard" href="{{ URL::action('Back\DashboardController@index') }}">
-                    <span class="menu__circle -front"></span>
+                    <span class="menu__home__dashboard__icon"></span>
                     {{ fragment('back.dashboard.title') }}
                 </a>
 

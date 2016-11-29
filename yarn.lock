@@ -362,7 +362,7 @@ babel-helpers@^6.16.0:
     babel-runtime "^6.0.0"
     babel-template "^6.16.0"
 
-babel-jest, babel-jest@^17.0.2:
+babel-jest@^17.0.2:
   version "17.0.2"
   resolved "https://npm.spatie.be/babel-jest/-/babel-jest-17.0.2.tgz#8d51e0d03759713c331f108eb0b2eaa4c6efff74"
   dependencies:
@@ -412,7 +412,7 @@ babel-plugin-syntax-object-rest-spread@^6.8.0:
   version "6.13.0"
   resolved "https://npm.spatie.be/babel-plugin-syntax-object-rest-spread/-/babel-plugin-syntax-object-rest-spread-6.13.0.tgz#fd6536f2bce13836ffa3a5458c4903a597bb3bf5"
 
-babel-plugin-transform-async-to-generator:
+babel-plugin-transform-async-to-generator@^6.16.0:
   version "6.16.0"
   resolved "https://npm.spatie.be/babel-plugin-transform-async-to-generator/-/babel-plugin-transform-async-to-generator-6.16.0.tgz#19ec36cb1486b59f9f468adfa42ce13908ca2999"
   dependencies:
@@ -611,7 +611,7 @@ babel-plugin-transform-strict-mode@^6.18.0:
     babel-runtime "^6.0.0"
     babel-types "^6.18.0"
 
-babel-polyfill:
+babel-polyfill@^6.16.0:
   version "6.16.0"
   resolved "https://npm.spatie.be/babel-polyfill/-/babel-polyfill-6.16.0.tgz#2d45021df87e26a374b6d4d1a9c65964d17f2422"
   dependencies:
@@ -744,9 +744,9 @@ binary-extensions@^1.0.0:
   version "1.7.0"
   resolved "https://npm.spatie.be/binary-extensions/-/binary-extensions-1.7.0.tgz#6c1610db163abfb34edfe42fa423343a1e01185d"
 
-blender-css@^1.0.0:
-  version "1.2.3"
-  resolved "https://npm.spatie.be/blender-css/-/blender-css-1.2.3.tgz#cb8c5007cb003ce19da43cec27fc3b3c6fbc6310"
+blender-css@^2.0.0:
+  version "2.0.2"
+  resolved "https://npm.spatie.be/blender-css/-/blender-css-2.0.2.tgz#fc4bee7ca4a2223fce7c850544b1a1f37fcd4939"
 
 blender-gulp@^3.0.0:
   version "3.1.0"
@@ -1682,8 +1682,8 @@ eslint@^2.7.0:
     user-home "^2.0.0"
 
 eslint@^3.7.1:
-  version "3.11.0"
-  resolved "https://npm.spatie.be/eslint/-/eslint-3.11.0.tgz#41d34f8b3e69949beee5c097ff4e75ad13ba2d00"
+  version "3.11.1"
+  resolved "https://npm.spatie.be/eslint/-/eslint-3.11.1.tgz#408be581041385cba947cd8d1cd2227782b55dbf"
   dependencies:
     babel-code-frame "^6.16.0"
     chalk "^1.1.3"
@@ -2412,7 +2412,7 @@ htmlparser2@^3.8.2:
     inherits "^2.0.1"
     readable-stream "^2.0.2"
 
-htmltidy:
+htmltidy@^0.0.6:
   version "0.0.6"
   resolved "https://npm.spatie.be/htmltidy/-/htmltidy-0.0.6.tgz#1074e2b8ef1ac5aad1e16c3cb1478cf229989d68"
 
@@ -2813,12 +2813,6 @@ istanbul@^0.4.5:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
-jest:
-  version "17.0.3"
-  resolved "https://npm.spatie.be/jest/-/jest-17.0.3.tgz#89c43b30b0aaad42462e9ea701352dacbad4a354"
-  dependencies:
-    jest-cli "^17.0.3"
-
 jest-changed-files@^17.0.2:
   version "17.0.2"
   resolved "https://npm.spatie.be/jest-changed-files/-/jest-changed-files-17.0.2.tgz#f5657758736996f590a51b87e5c9369d904ba7b7"
@@ -2993,6 +2987,12 @@ jest-util@^17.0.2:
     jest-file-exists "^17.0.0"
     jest-mock "^17.0.2"
     mkdirp "^0.5.1"
+
+jest@^17.0.3:
+  version "17.0.3"
+  resolved "https://npm.spatie.be/jest/-/jest-17.0.3.tgz#89c43b30b0aaad42462e9ea701352dacbad4a354"
+  dependencies:
+    jest-cli "^17.0.3"
 
 jodid25519@^1.0.0:
   version "1.0.2"
@@ -3748,14 +3748,14 @@ node-notifier@^4.6.1:
     which "^1.0.5"
 
 node-pre-gyp@^0.6.29:
-  version "0.6.31"
-  resolved "https://npm.spatie.be/node-pre-gyp/-/node-pre-gyp-0.6.31.tgz#d8a00ddaa301a940615dbcc8caad4024d58f6017"
+  version "0.6.32"
+  resolved "https://npm.spatie.be/node-pre-gyp/-/node-pre-gyp-0.6.32.tgz#fc452b376e7319b3d255f5f34853ef6fd8fe1fd5"
   dependencies:
     mkdirp "~0.5.1"
     nopt "~3.0.6"
-    npmlog "^4.0.0"
+    npmlog "^4.0.1"
     rc "~1.1.6"
-    request "^2.75.0"
+    request "^2.79.0"
     rimraf "~2.5.4"
     semver "~5.3.0"
     tar "~2.2.1"
@@ -3820,7 +3820,7 @@ normalize-url@^1.4.0:
     query-string "^4.1.0"
     sort-keys "^1.0.0"
 
-npmlog@^4.0.0:
+npmlog@^4.0.0, npmlog@^4.0.1:
   version "4.0.1"
   resolved "https://npm.spatie.be/npmlog/-/npmlog-4.0.1.tgz#d14f503b4cd79710375553004ba96e6662fbc0b8"
   dependencies:
@@ -4571,7 +4571,7 @@ replace-ext@0.0.1:
   version "0.0.1"
   resolved "https://npm.spatie.be/replace-ext/-/replace-ext-0.0.1.tgz#29bbd92078a739f0bcce2b4ee41e837953522924"
 
-request@^2.55.0, request@^2.61.0, request@^2.75.0, request@2:
+request@^2.55.0, request@^2.61.0, request@^2.79.0, request@2:
   version "2.79.0"
   resolved "https://npm.spatie.be/request/-/request-2.79.0.tgz#4dfe5bf6be8b8cdc37fcf93e04b65577722710de"
   dependencies:
@@ -5034,8 +5034,8 @@ through2@^0.6.1:
     xtend ">=4.0.0 <4.1.0-0"
 
 through2@^2.0.0:
-  version "2.0.2"
-  resolved "https://npm.spatie.be/through2/-/through2-2.0.2.tgz#316d3a4f444af641496aa7f45a713be72576baf4"
+  version "2.0.3"
+  resolved "https://npm.spatie.be/through2/-/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
   dependencies:
     readable-stream "^2.1.5"
     xtend "~4.0.1"
@@ -5175,8 +5175,8 @@ util@^0.10.3, util@~0.10.3, util@0.10.3:
     inherits "2.0.1"
 
 uuid@^3.0.0:
-  version "3.0.0"
-  resolved "https://npm.spatie.be/uuid/-/uuid-3.0.0.tgz#6728fc0459c450d796a99c31837569bdf672d728"
+  version "3.0.1"
+  resolved "https://npm.spatie.be/uuid/-/uuid-3.0.1.tgz#6544bba2dfda8c1cf17e629a3a305e2bb1fee6c1"
 
 v8flags@^2.0.2:
   version "2.0.11"
@@ -5281,8 +5281,8 @@ vue-template-compiler@^2.0.5:
     he "^1.1.0"
 
 vue-template-es2015-compiler@^1.2.2:
-  version "1.3.0"
-  resolved "https://npm.spatie.be/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.3.0.tgz#4a0f2a0bbef8b5731f78add8263cd86fe4f643ca"
+  version "1.3.2"
+  resolved "https://npm.spatie.be/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.3.2.tgz#c04080227514929ba540de7a7a93ac430467bdc0"
 
 vue@^2.0.0:
   version "2.1.3"

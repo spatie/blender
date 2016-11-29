@@ -27,7 +27,7 @@
     color: color($yellow, lightest);
     background-color: color($yellow, dark);
     border: 0;
-    border-radius: border-radius(3px);
+    border-radius: border-radius(s);
     box-shadow: 0 2px 5px color($yellow, dark, .15);
 
     &:hover {
