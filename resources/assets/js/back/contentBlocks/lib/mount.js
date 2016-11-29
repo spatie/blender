@@ -1,4 +1,4 @@
-import ContentBlocks from './components/ContentBlocks';
+import ContentBlocks from '../components/ContentBlocks';
 import createStore from './createStore';
 import { isString } from 'lodash';
 import { props, queryAll } from 'spatie-dom';

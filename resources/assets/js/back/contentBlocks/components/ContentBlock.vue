@@ -44,7 +44,7 @@
 
 <script>
 import Editor from './Editor';
-import { getTranslation } from '../helpers.js';
+import { getTranslation } from '../lib/helpers.js';
 
 export default {
 
