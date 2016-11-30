@@ -1,36 +1,28 @@
 <template>
     <div>
-        <div v-for="locale in data.locales">
-            <input type="text" v-model="block.name[locale]">
-        </div>
-        <media
-            collection="images"
-            type="images"
-            :uploadUrl="data.mediaUrl"
-            :model="mediaModel"
-            :initial="block.images"
-        ></media>
+        <fieldset v-for="locale in locales">
+            <legend>
+                <div class="legend_lang">{{ locale }}<div>
+            </legend>
+            <div class="form_group">
+                <label :for="'block_' + block.id + '_name_' + block.locale">
+                    Naam
+                </label>
+                <input
+                    type="text"
+                    v-model="block.name[locale]"
+                    :id="'block_' + block.id + '_name_' + block.locale"
+                >
+            </div>
+        </fieldset>
     </div>
 </template>
 
 <script>
-import Media from 'blender-media';
+import editor from '../mixins/editor';
 
 export default {
 
-    props: ['block', 'data'],
-
-    components: {
-        Media,
-    },
-
-    computed: {
-        mediaModel() {
-            return {
-                name: this.data.className,
-                id: this.block.id,
-            };
-        },
-    },
+    mixins: [editor],
 };
 </script>

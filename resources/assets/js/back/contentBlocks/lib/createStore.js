@@ -10,6 +10,7 @@ const Store = {
             model: '',
             data: {},
             blocks: [],
+            debug: false,
         };
     },
 
@@ -22,11 +23,12 @@ const Store = {
     },
 
     methods: {
-        init({ collection, createUrl, model, data, initial }) {
+        init({ collection, createUrl, model, data, initial, debug = false }) {
             this.collection = collection;
             this.createUrl = createUrl;
             this.model = model;
             this.data = data;
+            this.debug = debug;
 
             this.addBlocks(initial);
         },
@@ -46,6 +48,11 @@ const Store = {
             });
             
             this.addBlocks([block]);
+        },
+
+        sendExportToConsole() {
+            // eslint-disable-next-line no-console
+            console.log(window.__contentBlocks = JSON.parse(this.export));
         },
     },
 };

@@ -16,15 +16,20 @@ class ContentBlockTransformer extends TransformerAbstract
 
         return array_merge(
             $attributes,
-            $this->getMediaAttributes($contentBlock),
+            ['media' => $this->getMediaAttributes($contentBlock)],
             $this->getTranslatedAttributes($contentBlock)
         );
     }
 
     protected function getMediaAttributes(ContentBlock $contentBlock): array
     {
-        return array_reduce($contentBlock->getMediaLibraryCollectionNames(), function ($mediaAttributes, $collectionName) use ($contentBlock) {
-            $mediaAttributes[$collectionName] = fractal($contentBlock->getMedia($collectionName), new MediaTransformer())->toArray();
+        return array_reduce($contentBlock->mediaLibraryCollectionNames(), function ($mediaAttributes, $collectionName) use ($contentBlock) {
+
+            $mediaAttributes[] = [
+                'collection' => $collectionName,
+                'type' => $contentBlock->mediaLibraryCollectionType($collectionName),
+                'media' => fractal($contentBlock->getMedia($collectionName), new MediaTransformer())->toArray(),
+            ]; 
 
             return $mediaAttributes;
         }, []);

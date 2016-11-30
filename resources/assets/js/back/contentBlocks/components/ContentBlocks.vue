@@ -14,6 +14,13 @@
         <a href="#" @click.prevent="store.createBlock">
             Blok toevoegen
         </a>
+        <a
+            v-if="store.debug"
+            href="#"
+            @click.prevent="store.sendExportToConsole"
+        >
+            Debug
+        </a>
         <textarea
             :name="'content_blocks_' + store.collection"
             :value="store.export"

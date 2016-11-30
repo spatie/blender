@@ -45,7 +45,7 @@ class ContentBlock extends Model implements HasMediaConversions
             }
         });
 
-        foreach ($this->getMediaCollectionNames() as $collectionName) {
+        foreach ($this->getMediaLibraryCollectionNames() as $collectionName) {
             $this->updateMedia($values[$collectionName], $collectionName);
         }
 
@@ -54,8 +54,13 @@ class ContentBlock extends Model implements HasMediaConversions
         return $this;
     }
 
-    public function getMediaLibraryCollectionNames(): array
+    public function mediaLibraryCollectionType(string $name): string
     {
-        return $this->subject->getContentBlockMediaLibraryCollectionNames();
+        return $this->subject->getContentBlockMediaLibraryCollections()[$name];
+    }
+
+    public function mediaLibraryCollectionNames(): array
+    {
+        return array_keys($this->subject->getContentBlockMediaLibraryCollections());
     }
 }

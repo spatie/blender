@@ -24,7 +24,7 @@ trait HasContentBlocks
         return $this->contentBlockCollections ?? ['default'];
     }
 
-    public function getContentBlockMediaLibraryCollectionNames(): array
+    public function getContentBlockMediaLibraryCollections(): array
     {
         return $this->contentBlockMediaLibraryCollections ?? [];
     }

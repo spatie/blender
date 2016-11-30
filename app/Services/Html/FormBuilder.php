@@ -155,6 +155,7 @@ class FormBuilder extends BaseFormBuilder
             ':model' => htmlspecialchars($model),
             ':initial' => htmlspecialchars($initialContentBlocks),
             ':data' => htmlspecialchars($associatedData),
+            ':debug' => config('app.debug', false),
         ], '');
     }
 

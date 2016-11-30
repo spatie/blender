@@ -31,7 +31,9 @@ class Article extends Model implements Sortable
         'downloads' => 'downloads',
     ];
 
-    public $contentBlockMediaLibraryCollections = ['images'];
+    public $contentBlockMediaLibraryCollections = [
+        'image' => 'image',
+    ];
 
     public $translatable = ['name', 'text', 'slug', 'seo_values'];
 

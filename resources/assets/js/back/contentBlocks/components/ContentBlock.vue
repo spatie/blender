@@ -1,6 +1,6 @@
 <template>
     <tbody>
-        <tr :style="{ background: isMarkedForRemoval ? 'red' : '' }">
+        <tr :class="{ '-is-disabled': isMarkedForRemoval }">
             <td></td>
             <td @click="open">{{ name }}</td>
             <td class="-remark">{{ type }}</td>
