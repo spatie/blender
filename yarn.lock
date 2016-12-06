@@ -776,8 +776,8 @@ blender-gulp@^3.0.0:
     webpack-manifest-plugin "^0.5.0"
 
 blender-media@^3.2.0-beta:
-  version "3.2.0-beta.3"
-  resolved "https://npm.spatie.be/blender-media/-/blender-media-3.2.0-beta.3.tgz#da217607db53339e050fca5bcd30d4965a4ed49e"
+  version "3.2.0-beta.5"
+  resolved "https://npm.spatie.be/blender-media/-/blender-media-3.2.0-beta.5.tgz#ec693ef775f4dd03a2a9a9f81030c81e01fa5446"
   dependencies:
     babel-core "^6.18.2"
     dragula "^3.7.1"

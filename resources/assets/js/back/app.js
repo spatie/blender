@@ -18,11 +18,11 @@ if (query('blender-media')) {
     }, 'back.media');
 }
 
-// if (query('blender-content-blocks')) {
-//     require.ensure([], () => {
-//         require('./modules/contentBlocks').default();
-//     }, 'back.contentBlocks');
-// }
+if (query('blender-content-blocks')) {
+    require.ensure([], () => {
+        require('./modules/contentBlocks').default();
+    }, 'back.contentBlocks');
+}
 
 if (query('blender-chart')) {
     require.ensure([], () => {

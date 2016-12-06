@@ -16,7 +16,15 @@
                 >
             </div>
         </fieldset>
-        
+        <media
+            v-for="media in block.media"
+            :type="media.type"
+            :collection="media.collection"
+            :uploadUrl="media.uploadUrl"
+            :model="media.model"
+            :value="media.media"
+            :data="{}"
+        ></media>
     </div>
 </template>
 
