@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Back\Auth;
 
 use Auth;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Password;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Password;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {

@@ -2,10 +2,10 @@
 
 namespace App\Test\Integration;
 
-use Illuminate\Contracts\Console\Kernel;
-use Illuminate\Foundation\Application;
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Spatie\Seeders\DatabaseSeeder;
+use Illuminate\Foundation\Application;
+use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
