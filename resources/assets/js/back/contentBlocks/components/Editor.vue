@@ -5,24 +5,36 @@
                 <div class="legend_lang">{{ locale }}<div>
             </legend>
             <div class="form_group">
-                <label :for="'block_' + block.id + '_name_' + block.locale">
+                <label :for="label('name', locale)">
                     Naam
                 </label>
                 <input
                     type="text"
-                    v-model="block.name[locale]"
-                    :id="'block_' + block.id + '_name_' + block.locale"
+                    :id="label('name', locale)"
+                    :value="getTranslation('name', locale)"
+                    @input="setTranslation('name', locale, $event.target.value)"
                 >
             </div>
         </fieldset>
+        
     </div>
 </template>
 
 <script>
 import editor from '../mixins/editor';
+import Media from 'blender-media';
 
 export default {
 
     mixins: [editor],
+
+    components: {
+        Media,
+    },
+
+    created() {
+        this.initializeTranslations('name');
+        this.initializeTranslations('text');
+    },
 };
 </script>

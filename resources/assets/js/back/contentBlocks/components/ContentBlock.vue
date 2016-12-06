@@ -45,6 +45,7 @@
 <script>
 import Editor from './Editor';
 import { getTranslation } from '../lib/helpers.js';
+import Vue from 'vue';
 
 export default {
 
@@ -91,12 +92,12 @@ export default {
         },
 
         markForRemoval() {
-            this.block.markedForRemoval = true;
+            Vue.set(this.block, 'markedForRemoval', true);
             this.close();
         },
 
         restore() {
-            this.block.markedForRemoval = false;
+            Vue.set(this.block, 'markedForRemoval', false);
         },
     },
 };

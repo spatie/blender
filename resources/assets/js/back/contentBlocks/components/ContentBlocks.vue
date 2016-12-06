@@ -2,43 +2,70 @@
     <div>
         <table>
             <tbody
-                v-for="block in store.blocks"
+                v-for="block in blocks"
                 is="content-block"
                 :block="block"
-                :data="store.data"
+                :data="data"
                 :is-open="isOpen(block)"
                 @open="open"
                 @close="close"
             ></tbody>
         </table>
-        <a href="#" @click.prevent="store.createBlock">
+        <a href="#" @click.prevent="createBlock">
             Blok toevoegen
         </a>
         <a
-            v-if="store.debug"
+            v-if="debug"
             href="#"
-            @click.prevent="store.sendExportToConsole"
+            @click.prevent="sendExportToConsole"
         >
             Debug
         </a>
         <textarea
-            :name="'content_blocks_' + store.collection"
-            :value="store.export"
+            :name="'content_blocks_' + collection"
+            :value="exportable"
             style="display: none"
         ></textarea>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
 import ContentBlock from './ContentBlock';
 
 export default {
 
-    props: ['store'],
+    props: {
+        collection: {
+            required: true,
+            type: String,
+        },
+        createUrl: {
+            required: true,
+            type: String,
+        },
+        model: {
+            required: true,
+            type: Object,
+        },
+        data: {
+            required: true,
+            type: Object,
+        },
+        input: {
+            required: true,
+            type: Array,
+        },
+        debug: {
+            default: false,
+            type: Boolean,
+        },
+    },
 
     data() {
         return {
-            currentlyOpen: null,
+            blocks: this.input,
+            currentlyEditingBlock: null,
         };
     },
 
@@ -46,9 +73,17 @@ export default {
         ContentBlock,
     },
 
+    computed: {
+        exportable() {
+            return JSON.stringify(
+                this.blocks.filter(b => b.markedForRemoval === false)
+            );
+        },
+    },
+
     methods: {
         isOpen({ id }) {
-            return this.currentlyOpen === id;
+            return this.currentlyEditingBlock === id;
         },
 
         open({ id }) {
@@ -56,7 +91,7 @@ export default {
                 return;
             }
 
-            this.currentlyOpen = id;
+            this.currentlyEditingBlock = id;
         },
 
         close({ id }) {
@@ -64,7 +99,22 @@ export default {
                 return;
             }
 
-            this.currentlyOpen = null;
+            this.currentlyEditingBlock = null;
+        },
+
+        createBlock() {
+            axios
+                .post(this.createUrl, {
+                    model_name: this.model.name,
+                    model_id: this.model.id,
+                    collection_name: this.collection,
+                })
+                .then(({ data: block }) => this.blocks.push(block));
+        },
+
+        sendExportToConsole() {
+            // eslint-disable-next-line no-console
+            console.log(window.__contentBlocks = JSON.parse(this.export));
         },
     },
 };

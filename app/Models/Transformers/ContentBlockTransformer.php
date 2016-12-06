@@ -28,6 +28,11 @@ class ContentBlockTransformer extends TransformerAbstract
                 'collection' => $collectionName,
                 'type' => $contentBlock->mediaLibraryCollectionType($collectionName),
                 'media' => fractal($contentBlock->getMedia($collectionName), new MediaTransformer())->toArray(),
+                'model' => [
+                    'name' => ContentBlock::class,
+                    'id' => $contentBlock->id,
+                ],
+                'uploadUrl' => action('Back\Api\MediaLibraryController@add'),
             ];
 
             return $mediaAttributes;

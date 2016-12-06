@@ -142,8 +142,6 @@ class FormBuilder extends BaseFormBuilder
         ])->toJson();
 
         $associatedData = $this->getAssociatedData(array_merge($associated, [
-            'mediaUrl' => action('Back\Api\MediaLibraryController@add'),
-            'mediaModel' => ContentBlock::class,
             'locales' => config('app.locales'),
             'contentLocale' => content_locale(),
         ]));
@@ -153,9 +151,9 @@ class FormBuilder extends BaseFormBuilder
             'editor' => $editor,
             'create-url' => action('Back\Api\ContentBlockController@add'),
             ':model' => htmlspecialchars($model),
-            ':initial' => htmlspecialchars($initialContentBlocks),
+            ':input' => htmlspecialchars($initialContentBlocks),
             ':data' => htmlspecialchars($associatedData),
-            ':debug' => config('app.debug', false),
+            ':debug' => htmlspecialchars(json_encode(config('app.debug', false))),
         ], '');
     }
 
