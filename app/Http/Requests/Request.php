@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
+use Route;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Route;
 
 abstract class Request extends FormRequest
 {
