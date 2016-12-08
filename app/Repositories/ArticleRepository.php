@@ -16,10 +16,10 @@ class ArticleRepository
             ->get();
     }
 
-    public static function findBySlug(string $url): Article
+    public static function findBySlug(string $slug): Article
     {
         $article = Article::online()
-            ->where('url->'.content_locale(), $url)
+            ->where('slug->'.content_locale(), $slug)
             ->first();
 
         abort_unless($article, 404);
