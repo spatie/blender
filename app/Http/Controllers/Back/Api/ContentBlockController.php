@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Back\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Back\ContentBlockRequest;
 use App\Models\ContentBlock;
-use App\Models\Transformers\ContentBlockTransformer;
+use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Requests\Back\ContentBlockRequest;
+use App\Models\Transformers\ContentBlockTransformer;
 
 class ContentBlockController extends Controller
 {

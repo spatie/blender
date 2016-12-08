@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\Auth\Back\User;
 use Closure;
+use App\Services\Auth\Back\User;
 
 class Authenticate
 {
