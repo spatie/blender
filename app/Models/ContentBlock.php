@@ -3,12 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Spatie\Blender\Model\Traits\Draftable;
-use Spatie\Blender\Model\Traits\HasMedia;
-use Spatie\EloquentSortable\SortableTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\Translatable\HasTranslations;
+use Spatie\Blender\Model\Traits\HasMedia;
+use Spatie\Blender\Model\Traits\Draftable;
+use Spatie\EloquentSortable\SortableTrait;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class ContentBlock extends Model implements HasMediaConversions
 {

@@ -3,12 +3,13 @@
 /**
  * Reset assured: this will be part of blender-model eventually.
  */
+
 namespace App\Models\Traits;
 
-use App\Http\Requests\Request;
 use App\Models\ContentBlock;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
+use App\Http\Requests\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 trait HasContentBlocks
 {
