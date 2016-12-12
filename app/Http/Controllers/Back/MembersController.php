@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Services\Auth\Front\User;
 use App\Services\Auth\Front\Enums\UserRole;
+use App\Http\Requests\Back\FrontUserRequest;
 use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack;
-use App\Http\Requests\Back\FrontUserRequest;
-use App\Services\Auth\Front\User;
 
 class MembersController
 {

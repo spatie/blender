@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Services\Auth\Back\User;
 use App\Services\Auth\Back\Enums\UserRole;
+use App\Http\Requests\Back\BackUserRequest;
 use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\Events\UserCreated;
-use App\Http\Requests\Back\BackUserRequest;
-use App\Services\Auth\Back\User;
 
 class AdministratorsController
 {
