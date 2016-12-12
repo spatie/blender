@@ -30,48 +30,35 @@ trait HasContentBlocks
         return $this->contentBlockMediaLibraryCollections ?? [];
     }
 
-    public function getContentBlocksForCollection($collectionName): Collection
+    public function getContentBlocksForCollection($collection): Collection
     {
-        return $this->contentBlocks
-            ->filter(function (ContentBlock $contentBlock) use ($collectionName) {
-                return $contentBlock->collection_name === $collectionName;
-            });
+        return $this->contentBlocks->where('collection_name', $collection);
     }
 
     public function syncContentBlocks(Request $request)
     {
-        foreach ($this->getContentBlockCollectionNames() as $collectionName) {
-            if ($request->has("content_blocks_{$collectionName}")) {
-                $data = json_decode($request->get("content_blocks_{$collectionName}"), true);
-                $this->syncContentBlockCollection($data, $collectionName);
+        foreach ($this->getContentBlockCollectionNames() as $collection) {
+            if (! $request->has("content_blocks_{$collection}")) {
+                continue;
             }
-        }
 
-        $this->deleteTemporaryContentBlocks();
+            $this->syncContentBlockCollection(
+                json_decode($request->get("content_blocks_{$collection}"), true),
+                $collection
+            );
+        }
     }
 
     protected function syncContentBlockCollection(array $data, string $collection)
     {
-        $contentBlocks = collect($data)->map(function (array $contentBlockAttributes): ContentBlock {
-            return ContentBlock::findOrFail($contentBlockAttributes['id'])->updateWithValues(
-                array_merge(['draft' => false], $contentBlockAttributes)
-            );
+        $contentBlocks = collect($data)->map(function (array $attributes): ContentBlock {
+            return ContentBlock::findOrFail($attributes['id'])
+                ->updateWithAttributes($attributes);
         });
 
         $this->contentBlocks()
             ->where('collection_name', $collection)
-            ->whereNotIn('id', $contentBlocks->pluck('id')->toArray())
+            ->whereNotIn('id', $contentBlocks->pluck('id'))
             ->delete();
-    }
-
-    public function deleteTemporaryContentBlocks()
-    {
-        $this->contentBlocks()->get()
-            ->filter(function (ContentBlock $contentBlock) {
-                return $contentBlock->draft;
-            })
-            ->each(function (ContentBlock $contentBlock) {
-                $contentBlock->delete();
-            });
     }
 }

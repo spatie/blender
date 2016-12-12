@@ -35,23 +35,9 @@ class ContentBlock extends Model implements HasMediaConversions
             ->performOnCollections('images');
     }
 
-    public function updateWithValues($values)
+    public function mediaLibraryCollectionNames(): array
     {
-        $this->type = $values['type'];
-
-        collect($this->translatable)->each(function (string $attribute) use ($values) {
-            foreach (config('app.locales') as $locale) {
-                $this->setTranslation($attribute, $locale, $values[$attribute][$locale] ?? '');
-            }
-        });
-
-        foreach ($this->getMediaLibraryCollectionNames() as $collectionName) {
-            $this->updateMedia($values[$collectionName], $collectionName);
-        }
-
-        $this->save();
-
-        return $this;
+        return array_keys($this->subject->getContentBlockMediaLibraryCollections());
     }
 
     public function mediaLibraryCollectionType(string $name): string
@@ -59,8 +45,25 @@ class ContentBlock extends Model implements HasMediaConversions
         return $this->subject->getContentBlockMediaLibraryCollections()[$name];
     }
 
-    public function mediaLibraryCollectionNames(): array
+    public function updateWithAttributes(array $values)
     {
-        return array_keys($this->subject->getContentBlockMediaLibraryCollections());
+        $this->draft = false;
+        $this->type = $values['type'];
+
+        foreach ($this->translatable as $attribute) {
+            $this->setTranslations($attribute, $values[$attribute] ?? []);
+        }
+
+        foreach ($this->mediaLibraryCollectionNames() as $collection) {
+            $media = collect($values['media'])
+                ->where('collection', $collection)
+                ->first()['media'] ?? [];
+
+            $this->updateMedia($media, $collection);
+        }
+
+        $this->save();
+
+        return $this;
     }
 }

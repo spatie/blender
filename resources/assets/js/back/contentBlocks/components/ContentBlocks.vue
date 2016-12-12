@@ -76,7 +76,7 @@ export default {
     computed: {
         exportable() {
             return JSON.stringify(
-                this.blocks.filter(b => b.markedForRemoval === false)
+                this.blocks.filter(b => b.markedForRemoval !== true)
             );
         },
     },
@@ -114,7 +114,7 @@ export default {
 
         sendExportToConsole() {
             // eslint-disable-next-line no-console
-            console.log(window.__contentBlocks = JSON.parse(this.export));
+            console.log(window.__contentBlocks = JSON.parse(this.exportable));
         },
     },
 };

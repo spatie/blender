@@ -4,7 +4,7 @@
             <legend>
                 <div class="legend_lang">{{ locale }}<div>
             </legend>
-            <div class="form_group">
+            <div class="form__group">
                 <label :for="label('name', locale)">
                     Naam
                 </label>
@@ -14,6 +14,15 @@
                     :value="getTranslation('name', locale)"
                     @input="setTranslation('name', locale, $event.target.value)"
                 >
+            </div>
+            <div class="form__group">
+                <label :for="label('name', locale)">
+                    Tekst
+                </label>
+                <redactor
+                    :value="getTranslation('text', locale)"
+                    @input="setTranslation('text', locale, $event)"
+                ></redactor>
             </div>
         </fieldset>
         <media
@@ -31,6 +40,7 @@
 <script>
 import editor from '../mixins/editor';
 import Media from 'blender-media';
+import Redactor from './Redactor';
 
 export default {
 
@@ -38,6 +48,7 @@ export default {
 
     components: {
         Media,
+        Redactor,
     },
 
     created() {

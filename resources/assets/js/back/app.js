@@ -30,10 +30,8 @@ if (query('blender-chart')) {
     }, 'back.chart');
 }
 
-// Uncomment if redactor files are present
-
-// if (query('[data-editor]')) {
-//     require.ensure([], () => {
-//         require('./modules/editor').default();
-//     }, 'back.editor');
-// }
+if (query('[data-editor]')) {
+    require.ensure([], () => {
+        require('./modules/editor').default();
+    }, 'back.editor');
+}
