@@ -48,7 +48,7 @@
         "spatie/laravel-cookie-consent": "^1.0",
         "spatie/laravel-demo-mode": "^1.0",
         "spatie/laravel-failed-job-monitor": "^2.0",
-        "spatie/laravel-fractal": "^2.0.0",
+        "spatie/laravel-fractal": "^3.0.0",
         "spatie/laravel-googletagmanager": "^2.0",
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-medialibrary": "^4.0.0",
