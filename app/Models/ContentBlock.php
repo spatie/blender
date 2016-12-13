@@ -55,11 +55,10 @@ class ContentBlock extends Model implements HasMediaConversions
         }
 
         foreach ($this->mediaLibraryCollectionNames() as $collection) {
-            $media = collect($values['media'])
-                ->where('collection', $collection)
-                ->first()['media'] ?? [];
-
-            $this->updateMedia($media, $collection);
+            if (! isset($values[$collection])) {
+                continue;
+            }
+            $this->updateMedia($values[$collection], $collection);
         }
 
         $this->save();

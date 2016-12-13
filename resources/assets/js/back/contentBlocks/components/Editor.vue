@@ -1,59 +1,53 @@
 <template>
     <div>
-        <fieldset v-for="locale in locales">
-            <legend>
-                <div class="legend_lang">{{ locale }}<div>
-            </legend>
-            <div class="form__group">
-                <label :for="label('name', locale)">
-                    Naam
-                </label>
-                <input
-                    type="text"
-                    :id="label('name', locale)"
-                    :value="getTranslation('name', locale)"
-                    @input="setTranslation('name', locale, $event.target.value)"
-                >
-            </div>
-            <div class="form__group">
-                <label :for="label('name', locale)">
-                    Tekst
-                </label>
-                <redactor
-                    :value="getTranslation('text', locale)"
-                    @input="setTranslation('text', locale, $event)"
-                ></redactor>
-            </div>
-        </fieldset>
+        <select v-model="block.type">
+            <option
+                v-for="(label, type) in types"
+                :value="type"
+            >{{ label }}</option>
+        </select>
+        <locale
+            v-for="locale in locales"
+            :locale="locale"
+        >
+            <div
+                v-for="(type, field) in translatableAttributes"
+                :is="getFieldType(type)"
+                label="Label"
+                :value="block[field][locale]"
+            ></div>
+        </locale>
         <media
-            v-for="media in block.media"
-            :type="media.type"
-            :collection="media.collection"
-            :uploadUrl="media.uploadUrl"
-            :model="media.model"
-            :value="media.media"
-            :data="{}"
+            v-for="(type, collection) in mediaLibraryCollections"
+            v-model="block[collection]"
+            :type="type"
+            :collection="collection"
+            :uploadUrl="data.mediaUploadUrl"
+            :model="{ name: data.mediaModel, id: block.id }"
         ></media>
     </div>
 </template>
 
 <script>
 import editor from '../mixins/editor';
-import Media from 'blender-media';
-import Redactor from './Redactor';
 
 export default {
 
     mixins: [editor],
 
-    components: {
-        Media,
-        Redactor,
+    types: {
+        imageLeft: 'Afbeelding links',
+        imageRight: 'Afbeelding rechts',
+        noImage: 'Geen afbeelding',
     },
 
-    created() {
-        this.initializeTranslations('name');
-        this.initializeTranslations('text');
+    translatableAttributes: {
+        name: 'text',
+        text: 'redactor',
+    },
+
+    mediaLibraryCollections: {
+        image: 'image',
     },
 };
 </script>

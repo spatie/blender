@@ -43,8 +43,8 @@
 </template>
 
 <script>
+import { forEach, keys, pick } from 'lodash';
 import Editor from './Editor';
-import { getTranslation } from '../lib/helpers.js';
 import Vue from 'vue';
 
 export default {
@@ -68,17 +68,50 @@ export default {
         Editor,
     },
 
+    created() {
+        if (! this.editor.types) {
+            throw new Error('Please provide a set of types for the content ' +
+                'blocks editor instance.');
+        }
+
+        if (! this.editor.translatableAttributes) {
+            throw new Error('Please provide a set of translatable attributes ' + 
+                'for the content blocks editor instance.');
+        }
+
+        if (! this.editor.mediaLibraryCollections) {
+            throw new Error('Please provide a set of medialibrary collections ' + 
+                'for the content blocks editor instance.');
+        }
+
+        if (! this.block.type) {
+            this.block.type = Object.keys(this.editor.types)[0];
+        }
+
+        forEach(this.editor.translatableAttributes, (_, key) => {
+            this.initializeTranslations(key);
+        });
+    },
+
     computed: {
         name() {
-            return getTranslation(this.block.name, this.data.contentLocale, '[geen titel]');
+            return this.block.name[this.data.contentLocale] || '[geen titel]';
         },
 
         type() {
-            return this.block.type || '[geen type]';
+            return this.editor.types[this.block.type];
         },
-        
+
+        locales() {
+            return this.data.locales;
+        },
+
         isMarkedForRemoval() {
             return this.block.markedForRemoval;
+        },
+
+        editor() {
+            return Editor;
         },
     },
 
@@ -98,6 +131,19 @@ export default {
 
         restore() {
             Vue.set(this.block, 'markedForRemoval', false);
+        },
+
+        initializeTranslations(key, defaultValue = '') {
+            let translations = this.block[key] || {};
+            
+            const blueprint = this.locales.reduce((translations, locale) => {
+                translations[locale] = defaultValue;
+                return translations;
+            }, {});
+
+            translations = pick({ ...blueprint, ...translations }, keys(blueprint));
+
+            Vue.set(this.block, key, translations);
         },
     },
 };

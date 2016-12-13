@@ -1,36 +1,47 @@
-import { keys, pick } from 'lodash';
+import Media from 'blender-media';
+import Locale from '../components/forms/Locale';
+import Redactor from '../components/forms/Redactor';
+import PlainText from '../components/forms/PlainText';
 import Vue from 'vue';
 
 export default {
 
     props: ['block', 'data'],
 
+    components: {
+        Media,
+        Locale,
+        Redactor,
+        PlainText,
+    },
+
     computed: {
+        types() {
+            return this.$options.types;
+        },
+        
+        translatableAttributes() {
+            return this.$options.translatableAttributes;
+        },
+        
+        mediaLibraryCollections() {
+            return this.$options.mediaLibraryCollections;
+        },
+        
         locales() {
             return this.data.locales;
         },
     },
 
     methods: {
-        label(name, locale = null) {
-            if (! locale) {
-                return `block_${this.block.id}_${name}`;
+        getFieldType(type) {
+            switch (type) {
+                case 'redactor':
+                    return 'redactor';
+                case 'text':
+                default:
+                    return 'plain-text';
             }
-
-            return `block_${this.block.id}_${name}_${locale}`;
-        },
-
-        initializeTranslations(key, defaultValue = '') {
-            let translations = this.block[key] || {};
-            
-            const blueprint = this.locales.reduce((translations, locale) => {
-                translations[locale] = defaultValue;
-                return translations;
-            }, {});
-
-            translations = pick({ ...blueprint, ...translations }, keys(blueprint));
-
-            Vue.set(this.block, key, translations);
         },
 
         getTranslation(key, locale) {

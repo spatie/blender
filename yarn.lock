@@ -1639,9 +1639,9 @@ escope@^3.6.0:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
 
-eslint-config-spatie@^1.0.0:
+eslint-config-spatie@^1.2.7:
   version "1.2.7"
-  resolved "https://npm.spatie.be/eslint-config-spatie/-/eslint-config-spatie-1.2.7.tgz#3d7ba50427e5aa549156f39d2e25a78efe76436f"
+  resolved "https://registry.npmjs.org/eslint-config-spatie/-/eslint-config-spatie-1.2.7.tgz#3d7ba50427e5aa549156f39d2e25a78efe76436f"
   optionalDependencies:
     eslint-plugin-html "^1.5.3"
     eslint-plugin-react "^6.4.1"
@@ -4453,7 +4453,7 @@ read-pkg@^1.0.0:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.1.0, readable-stream@^2.1.5:
+"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.1.0, readable-stream@^2.1.5:
   version "2.2.2"
   resolved "https://npm.spatie.be/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
   dependencies:
@@ -4465,7 +4465,7 @@ read-pkg@^1.0.0:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readable-stream@^2.0.1, readable-stream@~2.0.0:
+readable-stream@^2.0.1, readable-stream@^2.0.5, readable-stream@~2.0.0:
   version "2.0.6"
   resolved "https://npm.spatie.be/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:

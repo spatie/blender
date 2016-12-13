@@ -143,6 +143,8 @@ class FormBuilder extends BaseFormBuilder
         $associatedData = $this->getAssociatedData(array_merge($associated, [
             'locales' => config('app.locales'),
             'contentLocale' => content_locale(),
+            'mediaModel' => ContentBlock::class,
+            'mediaUploadUrl' => action('Back\Api\MediaLibraryController@add'),
         ]));
 
         return el('blender-content-blocks', [

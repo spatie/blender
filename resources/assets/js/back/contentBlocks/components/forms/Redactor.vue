@@ -1,3 +1,15 @@
+<template>
+    <div class="form__group">
+        <label>
+            {{ label }}
+            <textarea
+                :value="value"
+                ref="textarea"
+            ></textarea>
+        </label>
+</template>
+
+<script>
 const defaultSettings = {
     buttonsHide: ['deleted'],
     callbacks: {
@@ -28,11 +40,11 @@ const defaultSettings = {
 export default {
 
     props: {
-        name: {
-            type: String,
-            default: null,
-        },
         value: {
+            type: String,
+            required: true, 
+        },
+        label: {
             type: String,
             required: true, 
         },
@@ -42,30 +54,19 @@ export default {
         },
     },
 
-    render(h) {
-        return h('textarea', {
-            attrs: {
-                name: this.name,
-            },
-            domProps: {
-                value: this.value,
-            },
-            ref: 'textarea',
-        }, '');
-    },
-
     mounted() {
         const settings = { ...defaultSettings, ...this.settings };
 
         settings.callbacks = settings.callbacks || {};
-        settings.callbacks.change = this.handleInput;
+        settings.callbacks.change = this.emitInput;
         
         $(this.$refs.textarea).redactor(settings);
     },
 
     methods: {
-        handleInput(value) {
+        emitInput(value) {
             this.$emit('input', value);
         },
     },
 };
+</script>
