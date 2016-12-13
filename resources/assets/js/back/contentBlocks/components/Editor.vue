@@ -10,20 +10,21 @@
             v-for="locale in locales"
             :locale="locale"
         >
-            <div
-                v-for="(type, field) in translatableAttributes"
-                :is="getFieldType(type)"
-                label="Label"
-                :value="block[field][locale]"
-            ></div>
+            <div v-for="(type, field) in translatableAttributes">
+                <div
+                    :is="getFieldType(type)"
+                    label="Label"
+                    v-model="block[field][locale]"
+                ></div>
+            </div>
         </locale>
         <media
             v-for="(type, collection) in mediaLibraryCollections"
-            v-model="block[collection]"
             :type="type"
             :collection="collection"
             :uploadUrl="data.mediaUploadUrl"
             :model="{ name: data.mediaModel, id: block.id }"
+            v-model="block[collection]"
         ></media>
     </div>
 </template>

@@ -89,7 +89,7 @@ return [
     |
     */
 
-    'locales' => ['nl', 'fr'],
+    'locales' => ['nl', 'fr', 'zh'],
     'backLocales' => ['nl'],
     'fragmentLocales' => ['nl'],
 

@@ -50,6 +50,8 @@ class ContentBlock extends Model implements HasMediaConversions
         $this->draft = false;
         $this->type = $values['type'];
 
+        dd($values);
+
         foreach ($this->translatable as $attribute) {
             $this->setTranslations($attribute, $values[$attribute] ?? []);
         }

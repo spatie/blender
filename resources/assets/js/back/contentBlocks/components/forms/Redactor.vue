@@ -57,16 +57,14 @@ export default {
     mounted() {
         const settings = { ...defaultSettings, ...this.settings };
 
-        settings.callbacks = settings.callbacks || {};
-        settings.callbacks.change = this.emitInput;
-        
-        $(this.$refs.textarea).redactor(settings);
-    },
+        const $textarea = $(this.$refs.textarea);
+        const emitInput = () => this.$emit('input', $textarea.val());
 
-    methods: {
-        emitInput(value) {
-            this.$emit('input', value);
-        },
+        $textarea.redactor(settings);
+
+        $textarea.on('change.callback.redactor', () => {
+            emitInput();
+        });
     },
 };
 </script>
