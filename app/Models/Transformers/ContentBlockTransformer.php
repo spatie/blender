@@ -35,9 +35,9 @@ class ContentBlockTransformer extends TransformerAbstract
         return array_reduce($contentBlock->translatable, function ($translatables, $attribute) use ($contentBlock) {
             foreach (config('app.locales') as $locale) {
                 $translatables[$attribute][$locale] = $contentBlock->getTranslation($attribute, $locale);
-
-                return $translatables;
             }
+
+            return $translatables;
         }, []);
     }
 }

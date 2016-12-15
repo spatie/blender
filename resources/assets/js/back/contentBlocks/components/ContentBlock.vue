@@ -1,7 +1,12 @@
 <template>
     <tbody>
         <tr :class="{ '-is-disabled': isMarkedForRemoval }">
-            <td></td>
+            <td>
+                <i
+                    v-if="! isOpen && ! isMarkedForRemoval"
+                    class="js-handle fa fa-arrows-v"
+                ></i>
+            </td>
             <td @click="open">{{ name }}</td>
             <td class="-remark">{{ type }}</td>
             <td>
@@ -69,6 +74,7 @@ export default {
     },
 
     created() {
+
         if (! this.editor.types) {
             throw new Error('Please provide a set of types for the content ' +
                 'blocks editor instance.');

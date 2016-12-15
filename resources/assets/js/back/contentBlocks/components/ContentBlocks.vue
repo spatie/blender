@@ -1,6 +1,6 @@
 <template>
     <div>
-        <table>
+        <table ref="table">
             <tbody
                 v-for="block in blocks"
                 is="content-block"
@@ -9,6 +9,8 @@
                 :is-open="isOpen(block)"
                 @open="open"
                 @close="close"
+                :data-block-id="block.id"
+                class="js-content-blocks-row"
             ></tbody>
         </table>
         <a href="#" @click.prevent="createBlock">
@@ -32,6 +34,10 @@
 <script>
 import axios from 'axios';
 import ContentBlock from './ContentBlock';
+import { matches, queryAll } from 'spatie-dom';
+import dragula from 'dragula';
+import constrain from 'dragula-constrain';
+
 
 export default {
 
@@ -73,6 +79,34 @@ export default {
         ContentBlock,
     },
 
+    mounted() {
+        this.sortable = dragula([this.$refs.table], {
+            moves(element, container, handleElement) {
+                return matches(handleElement, '.js-handle');
+            },
+        });
+        
+        constrain(this.sortable);
+
+        console.log('foo');
+
+        this.sortable.on('drop', function () {
+            
+            const order = queryAll('.js-content-blocks-row', this.$el)
+                .map(row => row.dataset.blockId)
+                .reduce((order, blockId) => {
+                    order[blockId] = Object.keys(order).length;
+                    return order;
+                }, {});
+
+            this.reorder(order);
+        }.bind(this));
+    },
+    
+    beforeDestroy() {
+        this.sortable.destroy();
+    },
+
     computed: {
         exportable() {
             return JSON.stringify(
@@ -100,6 +134,10 @@ export default {
             }
 
             this.currentlyEditingBlock = null;
+        },
+
+        reorder(order) {
+            console.log(order);
         },
 
         createBlock() {

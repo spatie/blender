@@ -24,6 +24,8 @@
     "css-loader": "^0.26.0",
     "dom-storage": "^2.0.2",
     "dotenv": "^1.2.0",
+    "dragula": "^3.7.2",
+    "dragula-constrain": "^1.0.0",
     "eslint": "^3.7.1",
     "eslint-config-spatie": "^1.2.7",
     "gulp": "^3.9.0",

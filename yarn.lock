@@ -207,14 +207,14 @@ atoa@1.0.0:
   resolved "https://npm.spatie.be/atoa/-/atoa-1.0.0.tgz#0cc0e91a480e738f923ebc103676471779b34a49"
 
 autoprefixer@^6.3.1:
-  version "6.5.3"
-  resolved "https://npm.spatie.be/autoprefixer/-/autoprefixer-6.5.3.tgz#2d853af66d04449fcf50db3066279ab54c3e4b01"
+  version "6.5.4"
+  resolved "https://npm.spatie.be/autoprefixer/-/autoprefixer-6.5.4.tgz#1386eb6708ccff36aefff70adc694ecfd60af1b0"
   dependencies:
     browserslist "~1.4.0"
-    caniuse-db "^1.0.30000578"
+    caniuse-db "^1.0.30000597"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
-    postcss "^5.2.5"
+    postcss "^5.2.6"
     postcss-value-parser "^3.2.3"
 
 autosize@^3.0.8:
@@ -935,7 +935,7 @@ camelcase@^3.0.0:
   version "3.0.0"
   resolved "https://npm.spatie.be/camelcase/-/camelcase-3.0.0.tgz#32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a"
 
-caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000578:
+caniuse-db@^1.0.30000539, caniuse-db@^1.0.30000597:
   version "1.0.30000597"
   resolved "https://npm.spatie.be/caniuse-db/-/caniuse-db-1.0.30000597.tgz#b52e6cbe9dc83669affb98501629feaee1af6588"
 
@@ -1276,8 +1276,8 @@ cssesc@^0.1.0:
   resolved "https://npm.spatie.be/cssesc/-/cssesc-0.1.0.tgz#c814903e45623371a0477b40109aaafbeeaddbb4"
 
 "cssnano@>=2.6.1 <4":
-  version "3.8.2"
-  resolved "https://npm.spatie.be/cssnano/-/cssnano-3.8.2.tgz#318551275d965956876847c16534e0ffe37bb5e6"
+  version "3.9.1"
+  resolved "https://npm.spatie.be/cssnano/-/cssnano-3.9.1.tgz#41422bb5390d85a94ad4db03cc1a188bf68744fe"
   dependencies:
     autoprefixer "^6.3.1"
     decamelize "^1.1.2"
@@ -1497,7 +1497,7 @@ dragula-constrain@^1.0.0:
   version "1.0.0"
   resolved "https://npm.spatie.be/dragula-constrain/-/dragula-constrain-1.0.0.tgz#16c587032f3fde1fad8af8c2420a2d8866dadf83"
 
-dragula@^3.7.1:
+dragula@^3.7.1, dragula@^3.7.2:
   version "3.7.2"
   resolved "https://npm.spatie.be/dragula/-/dragula-3.7.2.tgz#4a35c9d3981ffac1a949c29ca7285058e87393ce"
   dependencies:
@@ -1641,7 +1641,7 @@ escope@^3.6.0:
 
 eslint-config-spatie@^1.2.7:
   version "1.2.7"
-  resolved "https://registry.npmjs.org/eslint-config-spatie/-/eslint-config-spatie-1.2.7.tgz#3d7ba50427e5aa549156f39d2e25a78efe76436f"
+  resolved "https://npm.spatie.be/eslint-config-spatie/-/eslint-config-spatie-1.2.7.tgz#3d7ba50427e5aa549156f39d2e25a78efe76436f"
   optionalDependencies:
     eslint-plugin-html "^1.5.3"
     eslint-plugin-react "^6.4.1"
@@ -1714,8 +1714,8 @@ eslint@^2.7.0:
     user-home "^2.0.0"
 
 eslint@^3.7.1:
-  version "3.12.0"
-  resolved "https://npm.spatie.be/eslint/-/eslint-3.12.0.tgz#1dfa4ef0082e35feed90a0fb1f7996d1d426b249"
+  version "3.12.1"
+  resolved "https://npm.spatie.be/eslint/-/eslint-3.12.1.tgz#507a609fe251dfefd58fda03e6dbd7e851c07581"
   dependencies:
     babel-code-frame "^6.16.0"
     chalk "^1.1.3"
@@ -3861,8 +3861,8 @@ normalize-url@^1.4.0:
     set-blocking "~2.0.0"
 
 npmlog@^4.0.0, npmlog@^4.0.1:
-  version "4.0.1"
-  resolved "https://npm.spatie.be/npmlog/-/npmlog-4.0.1.tgz#d14f503b4cd79710375553004ba96e6662fbc0b8"
+  version "4.0.2"
+  resolved "https://npm.spatie.be/npmlog/-/npmlog-4.0.2.tgz#d03950e0e78ce1527ba26d2a7592e9348ac3e75f"
   dependencies:
     are-we-there-yet "~1.1.2"
     console-control-strings "~1.1.0"
@@ -4325,7 +4325,7 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.5:
+postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.19, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.2.6:
   version "5.2.6"
   resolved "https://npm.spatie.be/postcss/-/postcss-5.2.6.tgz#a252cd67cd52585035f17e9ad12b35137a7bdd9e"
   dependencies:
@@ -4453,7 +4453,7 @@ read-pkg@^1.0.0:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
-"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.0.2, readable-stream@^2.1.0, readable-stream@^2.1.5:
+"readable-stream@^2.0.0 || ^1.1.13", readable-stream@^2.1.0, readable-stream@^2.1.5:
   version "2.2.2"
   resolved "https://npm.spatie.be/readable-stream/-/readable-stream-2.2.2.tgz#a9e6fec3c7dda85f8bb1b3ba7028604556fc825e"
   dependencies:
@@ -4465,7 +4465,7 @@ read-pkg@^1.0.0:
     string_decoder "~0.10.x"
     util-deprecate "~1.0.1"
 
-readable-stream@^2.0.1, readable-stream@^2.0.5, readable-stream@~2.0.0:
+readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@~2.0.0:
   version "2.0.6"
   resolved "https://npm.spatie.be/readable-stream/-/readable-stream-2.0.6.tgz#8f90341e68a53ccc928788dacfcd11b36eb9b78e"
   dependencies:
@@ -4765,11 +4765,11 @@ select2@^4.0.0:
     almond "~0.3.1"
     jquery-mousewheel "~3.1.13"
 
-"semver@2 || 3 || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@~5.3.0:
+"semver@2 || 3 || 4 || 5", "semver@2.x || 3.x || 4 || 5", semver@^5.1.0, semver@^5.3.0, semver@~5.3.0:
   version "5.3.0"
   resolved "https://npm.spatie.be/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
 
-"semver@2.x || 3.x || 4 || 5", semver@^4.1.0:
+semver@^4.1.0:
   version "4.3.6"
   resolved "https://npm.spatie.be/semver/-/semver-4.3.6.tgz#300bc6e0e86374f7ba61068b5b1ecd57fc6532da"
 
@@ -4872,8 +4872,8 @@ sparkles@^1.0.0:
   resolved "https://npm.spatie.be/sparkles/-/sparkles-1.0.0.tgz#1acbbfb592436d10bbe8f785b7cc6f82815012c3"
 
 spatie-dom@^1.0.0:
-  version "1.0.0"
-  resolved "https://npm.spatie.be/spatie-dom/-/spatie-dom-1.0.0.tgz#835b3edc84ee12e50baaa7cb3b9330625f6ea051"
+  version "1.1.0"
+  resolved "https://npm.spatie.be/spatie-dom/-/spatie-dom-1.1.0.tgz#006cb3a4f3a4d13a59e46b5091ecd318d9dcc4f5"
 
 spdx-correct@~1.0.0:
   version "1.0.2"
@@ -5160,8 +5160,8 @@ tunnel-agent@~0.4.1:
   resolved "https://npm.spatie.be/tunnel-agent/-/tunnel-agent-0.4.3.tgz#6373db76909fe570e08d73583365ed828a74eeeb"
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
-  version "0.14.4"
-  resolved "https://npm.spatie.be/tweetnacl/-/tweetnacl-0.14.4.tgz#8c9dbfb52795686f166cd2023794bcf103d13c2b"
+  version "0.14.5"
+  resolved "https://npm.spatie.be/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
 
 type-check@~0.3.2:
   version "0.3.2"
@@ -5338,19 +5338,19 @@ vue-style-loader@^1.0.0:
     loader-utils "^0.2.7"
 
 vue-template-compiler@^2.1.3:
-  version "2.1.4"
-  resolved "https://npm.spatie.be/vue-template-compiler/-/vue-template-compiler-2.1.4.tgz#ce99cb9c2f5842062d3b744c716224b613f198d4"
+  version "2.1.5"
+  resolved "https://npm.spatie.be/vue-template-compiler/-/vue-template-compiler-2.1.5.tgz#9555412e47b795fffdb9445c5b1645f9195b1f68"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
 
 vue-template-es2015-compiler@^1.2.2:
-  version "1.3.2"
-  resolved "https://npm.spatie.be/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.3.2.tgz#c04080227514929ba540de7a7a93ac430467bdc0"
+  version "1.4.0"
+  resolved "https://npm.spatie.be/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.4.0.tgz#7b88853ca4bf8d84ae54ab9e56771de271e60198"
 
 vue@^2.0.0:
-  version "2.1.4"
-  resolved "https://npm.spatie.be/vue/-/vue-2.1.4.tgz#d490f8fcf696847d8cf7f8eb9168e9a5dd806bfc"
+  version "2.1.5"
+  resolved "https://npm.spatie.be/vue/-/vue-2.1.5.tgz#d2568d3e5093cf1486eef44cf37177e3f51d568d"
 
 walker@~1.0.5:
   version "1.0.7"
