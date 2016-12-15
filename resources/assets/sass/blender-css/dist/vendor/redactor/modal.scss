@@ -1,0 +1,283 @@
+// ------------------------------------------------------------------
+//
+// MODAL
+//
+// ------------------------------------------------------------------
+
+#redactor-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: auto;
+
+    background-color: rgba(0, 0, 0, .6);
+}
+#redactor-modal-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#redactor-modal {
+    position: relative;
+    margin: auto;
+    margin-top: 16px;
+    padding: 0;
+
+    color: #000;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .35);
+
+    font-family: $ui-font-family;
+    font-size: 14px;
+
+    @media (max-width: 768px) {
+        font-size: 16px !important;
+    }
+
+    & #redactor-modal-header {
+        padding: 20px 24px;
+
+        color: #000;
+        background: #f5f5f5;
+        border-bottom: 1px solid rgba(0, 0, 0, .05);
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+
+        font-size: 16px;
+        font-weight: bold;
+    }
+    & #redactor-modal-close {
+        position: absolute;
+        top: 10px;
+        right: 4px;
+        width: 30px;
+        height: 40px;
+        padding: 0;
+
+        color: rgba(0, 0, 0, .4);
+        background: none;
+        border: 0;
+        box-shadow: none;
+        outline: none;
+
+        font-size: 30px;
+        font-weight: 300;
+        text-align: center;
+
+        cursor: pointer;
+
+        -webkit-appearance: none;
+        &:hover {
+            color: #000;
+        }
+    }
+    & #redactor-modal-body {
+        padding: 40px 48px 24px 48px;
+        overflow: auto;
+
+        & section {
+            margin-bottom: 24px;
+        }
+        & label {
+            display: block;
+            margin-bottom: 4px;
+
+            font-size: 12px;
+            font-weight: bold;
+            & .desc {
+                color: rgba(0, 0, 0, .5);
+
+                font-weight: normal;
+            }
+            &.checkbox {
+                font-size: inherit;
+                font-weight: normal;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: 24px;
+        }
+    }
+
+    & select,
+    & input[type='text'],
+    & input[type='password'],
+    & input[type='email'],
+    & input[type='url'],
+    & textarea {
+        box-sizing: border-box;
+        position: relative;
+        width: 100%;
+        height: 40px;
+        margin: 0;
+        padding: 8px;
+        z-index: 2;
+
+        color: #333;
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        box-shadow: none;
+
+        font-family: $ui-font-family;
+        font-size: 14px;
+
+        @media (max-width: 768px) {
+            font-size: 16px;
+        }
+
+        &:focus {
+            @include transition-redactor(border .3s ease-in);
+
+            border-color: #aaa;
+            outline: none;
+        }
+    }
+    & textarea {
+        display: block;
+
+        line-height: 1.4em;
+    }
+
+    & button {
+        height: 40px;
+        margin: 0;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        padding: 13px 24px 14px 24px;
+
+        color: #000;
+        background-color: #eee;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        outline: none;
+
+        font-family: $ui-font-family;
+        font-size: 13px;
+        font-weight: normal;
+        line-height: 1;
+        text-align: center;
+        text-decoration: none;
+
+        cursor: pointer;
+
+        &:hover {
+            color: #777;
+            background: none;
+            background: #ddd;
+
+            text-decoration: none;
+        }
+
+        &.redactor-modal-button-offset {
+            margin-left: 24px;
+        }
+
+        &#redactor-modal-button-delete {
+            color: #fff;
+            background: color($red);
+            &:hover {
+                filter: brightness(95%);
+            }
+        }
+        &#redactor-modal-button-action {
+            color: #fff;
+            background: none;
+            background-color: color($green);
+            &:hover {
+                filter: brightness(95%);
+            }
+        }
+    }
+
+    & .redactor-group {
+        @include clearfix;
+    }
+    & .redactor-modal-tab-side {
+        width: 26%;
+        float: left;
+        margin-right: 6%;
+    }
+    & .redactor-modal-tab-area {
+        width: 66%;
+        float: left;
+    }
+
+    @media (max-width: 768px) {
+        & .redactor-modal-tab-side {
+            width: auto;
+            float: none;
+            margin-right: 0;
+            margin-bottom: 24px;
+        }
+        & .redactor-modal-tab-area {
+            width: auto;
+            float: none;
+        }
+    }
+}
+
+#redactor-modal-tabber {
+    margin-bottom: 40px;
+
+    font-size: 12px;
+    & a {
+        margin-right: -1px;
+        padding: 8px 15px;
+
+        color: #000;
+        border: 1px solid #ddd;
+
+        line-height: 1;
+        text-decoration: none;
+        &:hover {
+            color: #fff;
+            background-color: rgba(31,120,216,1);
+            border-color: rgba(31,120,216,1);
+        }
+        &.active {
+            color: rgba(0, 0, 0, .5);
+            background-color: rgba(0, 0, 0, .05);
+            border-color: #ddd;
+
+            cursor: default;
+        }
+    }
+}
+
+#redactor-modal-list {
+    max-height: 250px;
+    margin-left: 0;
+    padding-left: 0;
+    overflow-x: auto;
+
+    list-style: none;
+    & li {
+        border-bottom: 1px solid rgba(0, 0, 0, .07);
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    & a {
+        display: block;
+        position: relative;
+        padding: 10px 5px;
+
+        color: #000;
+
+        font-size: 13px;
+        text-decoration: none;
+        &:hover {
+            background-color: #eee;
+        }
+    }
+}

@@ -1,0 +1,364 @@
+.redactor-editor {
+    color: $body-color;
+
+    font-family: $content-font-family;
+    font-size: $font-size;
+    line-height: $base-line;
+
+    &[dir='rtl'] {
+        direction: rtl;
+        unicode-bidi: embed;
+
+        & ul,
+        & ol {
+            & li {
+                text-align: right;
+            }
+        }
+        ul,
+        ol,
+        ul ul,
+        ol ol,
+        ul ol,
+        ol ul {
+            margin: 0 $base-line 0 0;
+        }
+    }
+
+    @media (max-width: $breakpoint-small) {
+        font-size: 16px;
+    }
+
+    // links
+    a {
+        color: $link-color;
+        &:focus,
+        &:hover {
+            color: $link-hover-color;
+        }
+    }
+
+    // headings
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        margin-bottom: 16px;
+        padding: 0;
+
+        color: $headings-color;
+
+        font-family: $headings-font-family;
+        font-weight: bold;
+        text-rendering: optimizeLegibility;
+    }
+    h1 {
+        font-size: $font-size-h1;
+        line-height: 44px;
+    }
+    h2 {
+        font-size: $font-size-h2;
+        line-height: 36px;
+    }
+    h3 {
+        font-size: $font-size-h3;
+        line-height: 32px;
+    }
+    h4 {
+        font-size: $font-size-h4;
+        line-height: $base-line;
+    }
+    h5 {
+        font-size: $font-size-h5;
+        line-height: $base-line;
+    }
+    h6 {
+        font-size: $font-size-h6;
+        line-height: $base-line;
+        text-transform: uppercase;
+    }
+
+
+    // Line height and margin
+    p,
+    ul,
+    ol,
+    dl,
+    blockquote,
+    hr,
+    pre,
+    table,
+    figure,
+    address {
+        margin: 0;
+        padding: 0;
+    }
+    ul,
+    ol,
+    ul ul,
+    ol ol,
+    ul ol,
+    ol ul {
+        margin: 0 0 0 $base-line;
+    }
+    ul li,
+    ol li {
+        text-align: left;
+    }
+    ol ol li {
+        list-style-type: lower-alpha;
+    }
+    ol ol ol li {
+        list-style-type: lower-roman;
+    }
+    p,
+    ul,
+    ol,
+    dl,
+    blockquote,
+    hr,
+    pre,
+    table,
+    figure,
+    address {
+        margin-bottom: 16px;
+    }
+
+    // quote
+    blockquote {
+        position: relative;
+
+        color: rgba(0, 0, 0, .6);
+
+        font-style: italic;
+        & cite {
+            font-size: 80%;
+        }
+    }
+
+    @media (min-width: $breakpoint-small) {
+        blockquote {
+            padding-left: $base-line;
+
+            border-left: 1px solid rgba(0, 0, 0, .1);
+        }
+    }
+
+
+    // address
+    address {
+        font-style: normal;
+    }
+
+    // definition list
+    dl dt {
+        font-weight: bold;
+    }
+    dd {
+        margin-left: $base-line;
+    }
+
+    // text-level
+    cite {
+        color: rgba(0, 0, 0, .5);
+
+        font-style: italic;
+    }
+    s,
+    del {
+        text-decoration: line-through;
+    }
+    abbr[title],
+    dfn[title] {
+        border-bottom: 1px dotted #000;
+
+        cursor: help;
+    }
+    strong,
+    b {
+        font-weight: bold;
+    }
+    em,
+    i {
+        font-style: italic;
+    }
+    sub,
+    sup {
+        position: relative;
+        margin-left: .2rem;
+
+        font-size: 10px;
+        line-height: 0;
+    }
+    sup {
+        top: -.4rem;
+    }
+    sub {
+        bottom: -.2rem;
+    }
+    figcaption {
+        margin: .3rem 0;
+
+        font-size: 11px;
+        font-style: italic;
+        text-align: left;
+    }
+    ins,
+    u {
+        text-decoration: underline;
+    }
+    mark {
+        color: #000;
+        background-color: $mark-background-color;
+
+        text-decoration: none;
+    }
+
+    // сode
+    pre,
+    code,
+    kbd,
+    samp,
+    var,
+    output {
+        font-family: $monospace-font-family;
+        font-size: 90%;
+        font-style: normal;
+    }
+    pre {
+        margin-top: 16px;
+        padding: 24px;
+        overflow: auto;
+
+        color: rgba(0, 0, 0, .75);
+        background: rgba(0, 0, 0, .03);
+
+        font-size: 90%;
+        line-height: $base-line;
+        word-wrap: normal;
+    }
+    mark,
+    code,
+    samp,
+    kbd {
+        display: inline-block;
+        padding: .2rem .4rem;
+
+        border-radius: 4px;
+
+        line-height: 1;
+    }
+    code {
+        background: $code-background-color;
+    }
+    pre code {
+        padding: 0;
+
+        background: none;
+        border: none;
+
+        font-size: 100%;
+        line-height: $base-line;
+    }
+    var {
+        color: rgba(0, 0, 0, .5);
+    }
+    samp {
+        color: rgba(255, 255, 255, .9);
+        background: #46a9fc;
+    }
+    kbd {
+        color: rgba(255, 255, 255, .85);
+        background: #000;
+
+        white-space: nowrap;
+    }
+
+
+    // Normalize horizontal line
+    hr {
+        box-sizing: content-box;
+        display: block;
+        height: 1px;
+
+        border: 0;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    // Responsive media
+    img,
+    video,
+    audio,
+    embed,
+    object {
+        max-width: 100%;
+    }
+    img,
+    video,
+    embed,
+    object {
+        height: auto;
+    }
+    embed,
+    object {
+        height: 100%;
+    }
+    img {
+        vertical-align: middle;
+
+        -ms-interpolation-mode: bicubic;
+    }
+
+    // tables
+    table {
+        width: 100%;
+        max-width: 100%;
+
+        border-collapse: collapse;
+
+        empty-cells: show;
+
+        caption {
+            padding: 0;
+
+            color: rgba(0, 0, 0, .5);
+
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+
+        th,
+        td {
+            padding: 16px;
+            padding-bottom: 15px;
+
+            border: 1px solid #eee;
+        }
+
+        tfoot th,
+        tfoot td {
+            color: rgba(0, 0, 0, .5);
+        }
+    }
+
+
+    // Responsive embedded objects
+    & .video-container {
+        position: relative;
+        height: 0;
+        margin-bottom: 16px;
+        padding-bottom: 56.25%; // ratio 16:9
+        & iframe,
+        & object,
+        & embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    }
+}

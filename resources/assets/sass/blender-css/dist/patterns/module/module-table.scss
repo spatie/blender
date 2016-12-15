@@ -1,0 +1,113 @@
+.module__table {
+    width: 100%;
+    margin: 0;
+
+    border-collapse: collapse;
+    background-color: $white-off;
+}
+
+.module__row {
+    border-bottom: 2px solid color($gray, lightest) !important;
+    background-color: transparent !important;
+
+    &.-is-disabled {
+        background-color: color($red, lightest) !important;
+        border-color: darken(color($red, lightest), 2%) !important;
+    }
+
+    &.gu-mirror {
+        background-color: color($blue, lightest) !important;
+    }
+
+    .gu-transit & {
+        background: transparent !important;
+    }
+}
+
+.module__column {
+    padding: .5em;
+
+    &.-stretch {
+        width: 100%;
+    }
+
+    &.-no-wrap {
+        white-space: nowrap;
+    }
+}
+
+.module__column--drag {
+    padding: .5em;
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+.module__column--drag__icon {
+    cursor: grab;
+
+    color: color($gray, light);
+
+    &:hover {
+        color: color($blue, light);
+    }
+
+    &:before {
+        /*provide more 'grab' area */
+        padding: 1em .5em;
+    }
+
+    &.-is-disabled {
+        visibility: hidden;
+    }
+}
+
+.module__column--thumb {
+    width: module(thumb-width);
+    padding: .5em 0;
+
+    vertical-align: middle;
+}
+
+.module__column--editor {
+    width: 100%;
+    padding: 0 .5em;
+
+    vertical-align: middle;
+}
+
+.module__column--actions {
+    padding: 0 1em;
+
+    text-align: right;
+    vertical-align: middle;
+}
+
+.module__column--actions__icon {
+    display: inline-block;
+
+    width: 1em;
+
+    border: 0;
+
+    &.-delete {
+        color: color($gray, light);
+
+        &:hover {
+            color: color($red);
+        }
+    }
+
+    &.-restore {
+        color: color($red, light);
+
+        &:hover {
+            color: color($red);
+        }
+    }
+
+    &:focus {
+        color: color($gray);
+        outline: 0;
+    }
+}

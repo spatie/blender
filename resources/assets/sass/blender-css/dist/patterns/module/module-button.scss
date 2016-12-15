@@ -1,0 +1,42 @@
+.module__button {
+    @extend .button.-gray;
+}
+
+.module__button--delete {
+    @extend .button.-danger;
+
+  float: right;
+
+}
+
+.module__button--debug {
+
+  font-size: .8em;
+
+  height: 2em;
+  margin: 0;
+  margin-left: .5em;
+  padding: 0;
+
+  cursor: pointer;
+
+  color: color($red, light);
+  border: 0;
+  background: none;
+  box-shadow: none;
+    text-transform: uppercase;
+
+  &:hover {
+    color: color($red);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    top: 0;
+
+    box-shadow: none;
+  }
+}

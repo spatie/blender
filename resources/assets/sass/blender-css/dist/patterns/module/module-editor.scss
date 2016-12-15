@@ -1,0 +1,31 @@
+.module__editor {
+  display: flex;
+
+  width: 100%;
+
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &.-justified {
+    & .module__editor__column {
+      flex-grow: 1;
+    }
+  }
+}
+
+.module__editor__column {
+  display: flex;
+
+  padding: .5em;
+
+  align-items: center;
+
+  &.-stretch {
+    flex-grow: 1;
+  }
+
+  &.-stacked {
+    display: block;
+  }
+}

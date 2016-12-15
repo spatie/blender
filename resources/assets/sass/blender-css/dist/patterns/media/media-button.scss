@@ -1,0 +1,11 @@
+.media__button {
+  @extend .module__button;
+}
+
+.media__button--delete {
+    @extend .module__button--delete;
+}
+
+.media__button--debug {
+    @extend .module__button--debug;
+}

@@ -1,0 +1,23 @@
+.module__upload__table {
+  width: 100%;
+  margin: 0;
+
+  border-collapse: collapse;
+
+  background-color: $white-off;
+}
+
+.module__upload__row {
+    border-top: 2px solid color($gray, lightest);
+    border-bottom: 2px solid color($gray, lightest);
+}
+
+.module__upload__column--thumb {
+  padding: .5em 1em .5em 2.5em;
+}
+
+.module__upload__column--progress {
+  width: 100%;
+  padding-right: 1em;
+  padding-left: 0;
+}

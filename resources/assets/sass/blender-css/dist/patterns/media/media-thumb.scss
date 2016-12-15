@@ -1,0 +1,15 @@
+.media__thumb {
+  @extend .module__thumb;
+}
+
+.media__thumb__image {
+    @extend .module__thumb__image;
+}
+
+.media__thumb__file {
+    @extend .module__thumb__file;
+}
+
+.media__thumb__file__icon {
+    @extend .module__thumb__file__icon;
+}

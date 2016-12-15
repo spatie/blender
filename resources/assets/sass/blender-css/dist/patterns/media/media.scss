@@ -1,0 +1,7 @@
+.media {
+  @extend .module;
+}
+
+.media__actions {
+    @extend .module__actions;
+}

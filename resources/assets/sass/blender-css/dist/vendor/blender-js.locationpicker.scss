@@ -1,0 +1,21 @@
+
+.locationpicker_map {
+    width: 100%;
+    height: 250px;
+    margin: 1em 0;
+
+    border: 2px solid color($gray, light);
+    border-radius: border-radius(s);
+    box-shadow: 0 3px rgba($black, .075);
+}
+
+.locationpicker_tools {
+    margin-top: -2em;
+
+    font-size: font-size(s);
+}
+
+.locationpicker_search {
+    width: 15em !important;
+    margin-right: .5em;
+}

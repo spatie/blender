@@ -1,0 +1,33 @@
+.h-clickable {
+    cursor: pointer;
+}
+
+.h-unselectable {
+            user-select:      none;
+       -moz-user-select: -moz-none;
+        -ms-user-select:      none;
+    -webkit-user-select:      none;
+
+     -khtml-user-select:      none;
+}
+
+.h-hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.h-hidden-visually {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+
+    border: 0;
+}
+
+.h-invisible {
+    visibility: hidden;
+}

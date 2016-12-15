@@ -1,0 +1,30 @@
+.status {
+    display: inline-block;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    vertical-align: middle;
+
+    font-size: font-size(xxs);
+
+    &.-on {
+        color: color($green);
+    }
+
+    &.-off {
+        color: color($gray);
+    }
+
+    &:first-child {
+        margin-left: 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    h1 & {
+        @include position-center-vertical;
+
+        left: -1.5em;
+    }
+}

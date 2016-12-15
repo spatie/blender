@@ -1,0 +1,31 @@
+.media__table {
+  @extend .module__table;
+}
+
+.media__row {
+    @extend .module__row;
+}
+
+.media__column--drag {
+    @extend .module__column--drag;
+}
+
+.media__column--drag__icon {
+    @extend .module__column--drag__icon;
+}
+
+.media__column--thumb {
+    @extend .module__column--thumb;
+}
+
+.media__column--editor {
+    @extend .module__column--editor;
+}
+
+.media__column--actions {
+    @extend .module__column--actions;
+}
+
+.media__column--actions__icon {
+    @extend .module__column--actions__icon;
+}

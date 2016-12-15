@@ -1,0 +1,238 @@
+* {
+    box-sizing: border-box;
+    position: relative;
+
+    &:after,
+    &:before {
+        box-sizing: border-box;
+    }
+}
+
+html {
+    background: $white;
+}
+
+body {
+    @include antialiasing(subpixel);
+    @include font(sans, normal);
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    color: $text-color;
+
+    line-height: $line-height;
+
+    @include mq(l) {
+        font-size: font-size(default);
+    }
+}
+
+h1,
+h2,
+h3 {
+    @include hyphens(false);
+
+    margin-top: 0;
+
+    line-height: 1.2; //smaller line height for titles
+
+    p + &,
+    ul + &,
+    ol + &,
+    form + & {
+        margin-top: 4rem;
+    }
+
+    a {
+        //reset links in titles
+        color: inherit !important;
+        border-color: transparent !important;
+    }
+}
+
+h1 {
+    @include font(sans, extrabold);
+    @include font-size(xl);
+}
+
+h2 {
+    @include font(sans, light);
+    @include font-size(l);
+
+    margin-top: 4rem;
+
+    text-transform: uppercase;
+}
+
+h3 {
+    @include font(sans, bold);
+    @include font-size(m);
+}
+
+a {
+    color: color($link, default);
+    border-bottom: solid 1px rgba( color($link, default) , .5) ;
+
+    text-decoration: none;
+
+    &:hover {
+        color: color($link, hover);
+    }
+}
+
+p,
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: $line-height;
+}
+
+
+strong,
+b {
+    font-weight: font-weight(bold);
+
+    em,
+    i,
+    i &,
+    em & {
+        font-style: italic;
+    }
+}
+
+ol,
+ul {
+    padding-left: 1.5em;
+
+    & ul,
+    & ol {
+        margin-bottom: .5em;
+    }
+}
+
+li {
+    line-height: $line-height;
+}
+
+img,
+object {
+    max-width: 100%;
+}
+
+
+/// Less used tags
+
+abbr[title],
+dfn[title] {
+    border-bottom: 1px dotted color($gray);
+
+    cursor: help;
+}
+address {
+    display: inline-block;
+    margin-bottom: 1.5em;
+    padding: 1em;
+
+    background: color($gray,lightest);
+}
+blockquote {
+    display: inline-block;
+    margin-bottom: 1.5em;
+    padding: 1em;
+    p {
+        margin-bottom: 0;
+    }
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+code,
+kbd,
+samp,
+var {
+    @include font(fixed, normal);
+
+    display: inline-block;
+    padding: .05em .5em;
+
+    color: $white;
+    background: color($gray, darkest);
+    border-radius: border-radius(s);
+}
+
+del {
+    text-decoration: line-through;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-bottom: .75em;
+    padding-bottom: .75em;
+
+    border-bottom: dotted 1px color($gray, darkest);
+}
+
+em,
+i,
+q,
+cite {
+    font-style: italic;
+}
+
+hr {
+    margin: 1em 0;
+
+    border-top: 1px solid color($gray, lighter);
+}
+
+ins,
+mark {
+    @include tag( color($yellow, darkest) , color($yellow, lightest) );
+
+    text-decoration: none;
+}
+
+pre {
+    padding: 1.5em;
+
+    border-top: 1px dotted color($gray, darkest);
+    border-bottom: 1px dotted color($gray, darkest);
+}
+
+small {
+    font-size: font-size(s);
+}
+
+sub,
+sup {
+    vertical-align: baseline;
+
+    font-size: font-size(xs);
+    line-height: 0;
+}
+
+sub {
+    top: .5ex;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+time {
+    @include tag( $text-color , color($yellow, lightest) );
+}

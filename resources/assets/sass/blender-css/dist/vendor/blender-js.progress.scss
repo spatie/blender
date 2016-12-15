@@ -1,0 +1,44 @@
+.progress {
+    width: 100%;
+    height: 2em;
+    overflow: hidden;
+
+    background-color: color($green, lightest);
+    border-radius: 2em;
+}
+
+.progress_bar {
+    height: 100%;
+
+    background-color: color($green, light);
+    border-top-left-radius: 1em;
+    border-bottom-left-radius: 1em;
+
+    transition: all .3s ease-in-out;
+}
+
+.-working {
+    width: 2em;
+    margin: 0 auto;
+
+    border: solid 4px color($green, light);
+
+    animation: bubble .6s infinite linear;
+
+    .progress_bar {
+        display: none;
+    }
+}
+
+@keyframes bubble {
+    from {
+        opacity: 1;
+
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+
+        transform: scale(1);
+    }
+}

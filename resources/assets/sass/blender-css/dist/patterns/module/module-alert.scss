@@ -1,0 +1,25 @@
+.module__alert {
+  margin: 1em;
+  padding: 1em;
+    display: flex;
+    align-items: center;
+
+  color: color($gray);
+  border-radius: 3px;
+  background: color($gray, lighter, .25);
+
+  &.-error {
+    color: color($red);
+    background: color($red, lightest);
+  }
+}
+
+.module__alert__message {
+  padding: .5em 0;
+  flex-grow: 1;
+}
+
+.module__alert__delete {
+  color: inherit;
+  border: 0;
+}

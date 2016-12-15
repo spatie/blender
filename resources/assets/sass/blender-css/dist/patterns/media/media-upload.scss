@@ -1,0 +1,15 @@
+.media__upload__table {
+  @extend .module__upload__table;
+}
+
+.media__upload__row {
+    @extend .module__upload__row;
+}
+
+.media__upload__column--thumb {
+    @extend .module__upload__column--thumb;
+}
+
+.media__upload__column--progress {
+    @extend .module__upload__column--progress;
+}

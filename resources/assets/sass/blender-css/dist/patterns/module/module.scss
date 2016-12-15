@@ -1,0 +1,28 @@
+.module {
+    user-select: none;
+    background: $white-off;
+    padding: 1em 0;
+
+    & * {
+        position: relative;
+
+        box-sizing: border-box;
+    }
+
+    & :before,
+    & :after {
+        box-sizing: border-box;
+    }
+
+    & + & {
+        margin-top: 2em;
+    }
+}
+
+.module__actions {
+    margin: 1em;
+
+    .dz-drag-hover & {
+        opacity: 1;
+    }
+}

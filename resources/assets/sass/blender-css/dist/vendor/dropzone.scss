@@ -1,0 +1,14 @@
+
+.dz-drag-hover {
+    overflow: hidden;
+
+    background: color($green, default, .25);
+    border-color: color($green, default);
+
+    cursor: copy;
+
+
+    & > * {
+        opacity: .2;
+    }
+}

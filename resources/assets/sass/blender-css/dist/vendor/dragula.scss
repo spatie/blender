@@ -1,0 +1,38 @@
+.gu-mirror {
+  position: fixed !important;
+  z-index: 9999 !important;
+
+  margin: 0 !important;
+
+  color: color($gray);
+  border-color: color($blue, lighter) !important;
+  box-shadow: module(shadow);
+
+  & * {
+    position: relative;
+
+    box-sizing: border-box;
+  }
+
+  & :before,
+  & :after {
+    box-sizing: border-box;
+  }
+
+  & .module__column--drag__icon {
+    color: color($blue, light);
+  }
+}
+
+.gu-hide {
+  display: none !important;
+}
+
+.gu-unselectable {
+  user-select: none !important;
+}
+
+.gu-transit {
+  opacity: .35;
+  background-color: color($gray, lighter);
+}

@@ -1,0 +1,79 @@
+a.button {
+    line-height: 2.5em;
+}
+
+button,
+.button {
+    display: inline-block;
+    height: 2.5em;
+    padding: 0 1em;
+    vertical-align: middle;
+
+    color: $white;
+    background: color($green);
+    border: transparent 1px solid;
+    border-radius: border-radius(s);
+    box-shadow: inset -1px -1px rgba($black, .15), 0 2px rgba($black, .075);
+    filter: brightness(100%);
+
+    font-weight: font-weight(bold);
+
+    //state
+    &:hover {
+        color: $white;
+        filter: brightness(95%);
+    }
+
+    &:active {
+        top: 1px;
+
+        border-color: transparent !important;
+        box-shadow: inset 0 1px 0 rgba($black, .15);
+    }
+
+    &:focus {
+        border-color: color($blue, light);
+        outline: none;
+    }
+
+    &[disabled] {
+        top: 0 !important;
+
+        box-shadow: inset -1px -1px rgba($black, .15), 0 2px rgba($black, .075) !important;
+        filter: none !important;
+        opacity: .5;
+
+        cursor: default;
+    }
+
+
+    //variations
+    &.-small {
+        height: 1.65em;
+        padding: 0 .4em;
+
+        font-size: font-size(s);
+        line-height: 1.5em;
+    }
+
+    &.-warning {
+        background: color($orange, light);
+    }
+
+    &.-danger {
+        background: color($red);
+    }
+
+    &.-gray {
+        background: color($gray, light);
+    }
+
+    &.-blue {
+        background: color($blue, light);
+    }
+
+    //context
+    & + & {
+        margin-left: .5em;
+    }
+}

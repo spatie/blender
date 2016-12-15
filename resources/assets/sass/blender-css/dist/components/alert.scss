@@ -1,0 +1,87 @@
+.alerts {
+    margin: 2em 0;
+}
+
+.alerts--fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    z-index: z-index(fixed);
+
+    opacity: .85;
+}
+
+
+.alert {
+    padding: 1em;
+    z-index: z-index(above);
+
+    background: color($gray, lightest);
+    border-right: 0;
+    border-left: 5px solid;
+    border-radius: border-radius(s);
+
+    //variations
+    &.-small {
+        padding: .75em;
+
+        font-size: font-size(s);
+    }
+
+    &.-inline {
+        display: inline-block;
+    }
+
+    &.-invers {
+        color: $white;
+        background: rgba(color($blue, lightest) , .1);
+        border-left-color: $white;
+    }
+
+    &.-warning {
+        color: color($orange);
+        background: color($orange,lightest);
+        border-left-color: color($orange);
+    }
+
+    &.-danger,
+    &.-error {
+        color: color($red,dark);
+        background: color($red, lightest);
+        border-left-color: color($red,dark);
+    }
+
+    &.-success {
+        color: color($green, dark);
+        background: color($green, lightest);
+        border-left-color: color($green, dark);
+    }
+
+    &.-info {
+        color: color($blue);
+        background: color($blue, lightest);
+        border-left-color: color($blue);
+    }
+
+    .form & {
+        margin: .5em 0;
+        padding: .65em 1em;
+
+        font-size: font-size(s);
+    }
+
+    & + & {
+        margin-top: .25em;
+    }
+
+    .alerts--fixed & {
+        margin-top: 0;
+
+        border-left-width: 0;
+        border-radius: 0;
+
+        text-align: center;
+    }
+}

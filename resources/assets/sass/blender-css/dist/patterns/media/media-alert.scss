@@ -1,0 +1,11 @@
+.media__alert {
+  @extend .module__alert;
+}
+
+.media__alert__message {
+    @extend .module__alert__message;
+}
+
+.media__alert__delete {
+    @extend .module__alert__delete;
+}

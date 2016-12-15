@@ -1,0 +1,171 @@
+// ------------------------------------------------------------------
+//
+// DROPDOWN
+//
+// 01. Base
+// 02. InlineFormat
+// 03. BlockFormat
+//
+// ------------------------------------------------------------------
+
+// =Base
+// ------------------------------------------------------------------
+.redactor-dropdown {
+    min-width: 220px;
+    max-height: 254px;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+
+    color: #000;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+
+    font-family: $ui-font-family;
+    font-size: 14px;
+    list-style: none;
+}
+.redactor-dropdown li {
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+
+    &:last-child {
+        border-bottom: none;
+    }
+    &:hover {
+        background-color: color($blue, lighter);
+        & a {
+            text-decoration: none;
+        }
+    }
+    &.redactor-dropdown-link-inactive {
+        background: none;
+
+        & a,
+        & a:hover {
+            color: #000 !important;
+            background: none;
+            background: none;
+            opacity: .4;
+
+            cursor: default;
+        }
+    }
+}
+.redactor-dropdown a {
+    display: block;
+    padding: 16px 16px 15px 16px;
+
+    color: #000;
+    border: none;
+
+    text-decoration: none;
+
+    & span {
+        display: inline-block;
+        padding: 1px 4px;
+
+        border-radius: 3px;
+
+        line-height: 1.4;
+    }
+    &:focus {
+        outline: none;
+    }
+    &.selected {
+        color: #fff;
+        background-color: #000;
+    }
+    &.redactor-dropdown-link-selected {
+        color: #fff;
+        background: #000;
+    }
+}
+
+
+// InlineFormat
+// ------------------------------------------------------------------
+.redactor-dropdown-box-inline {
+    & .redactor-dropdown-marked span {
+        color: #000;
+        background-color: $mark-background-color;
+
+        text-decoration: none;
+    }
+    & .redactor-dropdown-code span {
+        background: $code-background-color;
+
+        font-family: $monospace-font-family;
+    }
+    & .redactor-dropdown-sample span {
+        color: rgba(255, 255, 255, .9);
+        background: #46a9fc;
+
+        font-family: $monospace-font-family;
+    }
+    & .redactor-dropdown-variable span {
+        color: rgba(0, 0, 0, .5);
+
+        font-family: $monospace-font-family;
+    }
+    & .redactor-dropdown-shortcut span {
+        color: rgba(255, 255, 255, .85);
+        background: #000;
+
+        font-family: $monospace-font-family;
+        white-space: nowrap;
+    }
+    & .redactor-dropdown-cite span {
+        color: rgba(0, 0, 0, .5);
+
+        font-style: italic;
+    }
+    & .redactor-dropdown-sup span,
+    & .redactor-dropdown-sub span {
+        font-size: 12px;
+    }
+}
+
+
+// BlockFormat
+// ------------------------------------------------------------------
+.redactor-dropdown-box-format {
+    & .redactor-dropdown-blockquote {
+        color: rgba(0, 0, 0, .4);
+
+        font-style: italic;
+    }
+    & .redactor-dropdown-pre {
+        font-family: monospace, sans-serif;
+    }
+    & .redactor-dropdown-h1,
+    & .redactor-dropdown-h2,
+    & .redactor-dropdown-h3,
+    & .redactor-dropdown-h4,
+    & .redactor-dropdown-h5,
+    & .redactor-dropdown-h6 {
+        font-weight: bold;
+        line-height: $base-line;;
+    }
+    & .redactor-dropdown-h1 {
+        font-size: $font-size-h1;
+        line-height: 32px;
+    }
+    & .redactor-dropdown-h2 {
+        font-size: $font-size-h2;
+        line-height: 32px;
+    }
+    & .redactor-dropdown-h3 {
+        font-size: $font-size-h3;
+    }
+    & .redactor-dropdown-h4 {
+        font-size: $font-size-h4;
+    }
+    & .redactor-dropdown-h5 {
+        font-size: $font-size-h5;
+    }
+    & .redactor-dropdown-h6 {
+        font-size: $font-size-h6;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
+}

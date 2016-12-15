@@ -1,0 +1,7 @@
+.media__editor {
+  @extend .module__editor;
+}
+
+.media__editor__column {
+    @extend .module__editor__column;
+}

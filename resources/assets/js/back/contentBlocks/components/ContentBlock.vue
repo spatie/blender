@@ -1,50 +1,58 @@
 <template>
-    <tbody>
-        <tr :class="{ '-is-disabled': isMarkedForRemoval }">
-            <td>
-                <i
-                    v-if="! isOpen && ! isMarkedForRemoval"
-                    class="js-handle fa fa-arrows-v"
-                ></i>
-            </td>
-            <td @click="open">{{ name }}</td>
-            <td class="-remark">{{ type }}</td>
-            <td>
-                <span v-if="! isMarkedForRemoval">
-                    <a
-                        v-if="isOpen"
-                        href="#"
-                        @click.prevent="close"
-                    >Sluit</a>
-                    <a
-                        v-else
-                        href="#"
-                        @click.prevent="open"
-                    >Wijzig</a>
-                </span>
-                <span v-if="! isOpen">
-                    <a
-                        v-if="isMarkedForRemoval"
-                        href="#"
-                        @click.prevent="restore"
-                    >Herstel</a>
-                    <a
-                        v-else
-                        href="#"
-                        @click.prevent="markForRemoval"
-                    >Verwijder</a>
-                </span>
-            </td>
-        </tr>
         <tr v-if="isOpen">
-            <td colspan="4">
+            <td class="module__column--editor" colspan="4">
                 <editor
                     :block="block"
                     :data="data"
                 ></editor>
             </td>
         </tr>
-    </tbody>
+        <tr v-else :class="{ '-is-disabled': isMarkedForRemoval }">
+            <td class="module__column--drag">
+                <i
+                    v-if="! isOpen && ! isMarkedForRemoval"
+                    class="js-handle fa fa-arrows-v module__column--drag__icon"
+                ></i>
+            </td>
+            <td class="module__column -stretch" @click="open">
+                <a
+                    v-if="! isMarkedForRemoval"
+                    href="#"
+                    @click.prevent="open">{{ name }}</a>
+                <span v-else>
+                    {{ name }}
+                </span>
+            </td>
+            <td class="module__column -no-wrap">{{ type }}</td>
+            <td  class="module__column--actions">
+                <span v-if="! isMarkedForRemoval">
+                    <a
+                        v-if="isOpen"
+                        href="#"
+                        @click.prevent="close"
+                    >Sluit</a>
+                </span>
+                <span v-if="! isOpen">
+                    <a
+                        v-if="isMarkedForRemoval"
+                        href="#"
+                        @click.prevent="restore"
+                        class="media__column--actions__icon -restore"
+                    >
+                        <i class="fa fa-undo"></i>
+                    </a>
+                    <a
+                        v-else
+                        href="#"
+                        @click.prevent="markForRemoval"
+                        class="media__column--actions__icon -delete"
+                    >
+                        <i class="fa fa-remove"></i>
+                    </a>
+                </span>
+            </td>
+        </tr>
+
 </template>
 
 <script>
@@ -81,12 +89,12 @@ export default {
         }
 
         if (! this.editor.translatableAttributes) {
-            throw new Error('Please provide a set of translatable attributes ' + 
+            throw new Error('Please provide a set of translatable attributes ' +
                 'for the content blocks editor instance.');
         }
 
         if (! this.editor.mediaLibraryCollections) {
-            throw new Error('Please provide a set of medialibrary collections ' + 
+            throw new Error('Please provide a set of medialibrary collections ' +
                 'for the content blocks editor instance.');
         }
 
@@ -141,7 +149,7 @@ export default {
 
         initializeTranslations(key, defaultValue = '') {
             let translations = this.block[key] || {};
-            
+
             const blueprint = this.locales.reduce((translations, locale) => {
                 translations[locale] = defaultValue;
                 return translations;

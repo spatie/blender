@@ -1,0 +1,218 @@
+@mixin mq($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media #{inspect(map-get($breakpoints, $breakpoint))} {
+            @content;
+        }
+    } @else {
+        @media (#{$breakpoint}) {
+            @content;
+        }
+    }
+}
+
+@mixin block-reset {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+
+    transform: none !important;
+}
+
+@mixin position-center-horizontal($position: absolute) {
+    position: $position;
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+@mixin position-center-vertical($position: absolute) {
+    position: $position;
+    top: 50%;
+
+    transform: translateY(-50%);
+}
+
+@mixin position-center($position: absolute) {
+    position: $position;
+    top: 50%;
+    left: 50%;
+
+    transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin font($family: sans, $weight: normal) {
+    font-family: font-family($family);
+    font-weight: font-weight($weight);
+}
+
+@mixin font-size($size: default) {
+    font-size: font-size($size);
+}
+
+@mixin underline($color,$border-color: $color) {
+    color: $color;
+    border-bottom: solid .125em rgba($border-color, .15);
+
+    text-decoration: none;
+
+    transition: .3s color linear, .3s border-color linear;
+}
+
+@mixin underline-hover($color,$border-color: $color) {
+    &:hover {
+        color: $color;
+        border-bottom: solid .125em rgba($border-color, .5);
+    }
+}
+
+@mixin hyphens($value: true) {
+    @if $value == true {
+                hyphens: auto;
+
+        -webkit-hyphens: auto;
+           -moz-hyphens: auto;
+            -ms-hyphens: auto;
+    }
+    @else {
+                hyphens: none !important;
+
+        -webkit-hyphens: none !important;
+           -moz-hyphens: none !important;
+            -ms-hyphens: none !important;
+    }
+}
+
+@mixin antialiasing($value: subpixel) {
+    @if $value == subpixel {
+        -webkit-font-smoothing: subpixel-antialiased;
+    }
+    @if $value == pixel {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+@mixin tag($color, $background-color, $paddingH: .5em, $paddingV: 0) {
+    @include font(sans, normal);
+
+    display: inline-block;
+    margin-right: -$paddingH/2;
+    margin-left: -$paddingH/2;
+    padding: $paddingV $paddingH;
+
+    color: $color;
+    background-color: $background-color;
+    border-bottom: none;
+    border-radius: border-radius(s);
+
+    transition: all .3s ease-out;
+}
+
+@mixin ul-horizontal() {
+    margin: 0;
+    padding-left: 0;
+
+    list-style: none;
+
+    li {
+        display: inline-block;
+    }
+}
+
+@mixin ul-clean() {
+    margin: 0;
+    padding-left: 0;
+
+    list-style: none;
+}
+
+@mixin gradient-vertical($start, $stop, $from: 0, $to: 100%) {
+    background: $start; /* old browsers */
+    background: -webkit-linear-gradient(top, $start $from,$stop $to); /* Chrome 10-25, Safari 5.1-6 */
+    background:         linear-gradient(to bottom, $start $from, $stop $to); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin gradient-horizontal($start, $stop, $from: 0, $to: 100%) {
+    background: $start; /* old browsers */
+    background: -webkit-linear-gradient(left, $start $from,$stop $to); /* Chrome 10-25, Safari 5.1-6 */
+    background:         linear-gradient(to right, $start $from, $stop $to); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+@mixin circle($size, $display: 'inline-block') {
+    display: inline-block;
+    width: $size;
+    height: $size;
+    overflow: hidden;
+
+    border-radius: 100%;
+
+    line-height: $size;
+    text-align: center;
+}
+
+@mixin square($size, $display: 'inline-block') {
+    display: inline-block;
+    width: $size;
+    height: $size;
+    overflow: hidden;
+
+    line-height: $size;
+    text-align: center;
+}
+
+@mixin rectangle($aspect-ratio, $display: 'inline-block') {
+    display: block;
+    width: 100%;
+    height: 0;
+    padding-bottom: $aspect-ratio;
+    overflow: hidden;
+}
+
+@mixin cover() {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+@mixin background-svg($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat) {
+    @include background-image($image, $background-position, $background-size, $background-repeat);
+}
+
+@mixin background-image($image, $background-position: center center, $background-size: contain, $background-repeat: no-repeat) {
+    background-image: url('#{$image}');
+    background-position: $background-position;
+    background-repeat: $background-repeat;
+    background-size: $background-size;
+}
+
+@mixin background-image-tinted($image,$rgba, $background-position: center center) {
+    background: linear-gradient(
+    $rgba,
+    $rgba
+    ),
+    url('#{$image}');
+    background-position: $background-position;
+    background-size: cover;
+}
+
+@mixin prefixed-placeholder($pseudo: '') {
+    @at-root #{$pseudo}::-webkit-input-placeholder {
+        @content;
+    }
+
+    @at-root #{$pseudo}:-moz-placeholder {
+        @content;
+    }
+
+    @at-root #{$pseudo}::-moz-placeholder {
+        @content;
+    }
+
+    @at-root #{$pseudo}:-ms-input-placeholder {
+        @content;
+    }
+}

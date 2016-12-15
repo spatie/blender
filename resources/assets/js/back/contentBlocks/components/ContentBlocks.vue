@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <table ref="table">
-            <tbody
+    <div class="module">
+        <table ref="table" class="module__table">
+            <tr
                 v-for="block in blocks"
                 is="content-block"
                 :block="block"
@@ -10,19 +10,21 @@
                 @open="open"
                 @close="close"
                 :data-block-id="block.id"
-                class="js-content-blocks-row"
-            ></tbody>
+                class="js-content-blocks-row module__row"
+            ></tr>
         </table>
-        <a href="#" @click.prevent="createBlock">
-            Blok toevoegen
-        </a>
-        <a
-            v-if="debug"
-            href="#"
-            @click.prevent="sendExportToConsole"
-        >
-            Debug
-        </a>
+        <div class="module__actions">
+            <button class="module__button" @click.prevent="createBlock">
+                Blok toevoegen
+            </button>
+            <button class="module__button--debug"
+                v-if="debug"
+                href="#"
+                @click.prevent="sendExportToConsole"
+            >
+                Debug
+            </button>
+        </div>
         <textarea
             :name="'content_blocks_' + collection"
             :value="exportable"
@@ -85,13 +87,13 @@ export default {
                 return matches(handleElement, '.js-handle');
             },
         });
-        
+
         constrain(this.sortable);
 
         console.log('foo');
 
         this.sortable.on('drop', function () {
-            
+
             const order = queryAll('.js-content-blocks-row', this.$el)
                 .map(row => row.dataset.blockId)
                 .reduce((order, blockId) => {
@@ -102,7 +104,7 @@ export default {
             this.reorder(order);
         }.bind(this));
     },
-    
+
     beforeDestroy() {
         this.sortable.destroy();
     },

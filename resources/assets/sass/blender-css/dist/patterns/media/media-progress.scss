@@ -1,0 +1,11 @@
+.media__progress {
+  @extend .module__progress;
+}
+
+.media__progress__bar {
+    @extend .module__progress__bar;
+}
+
+.media__progress__name {
+    @extend .module__progress__name;
+}
