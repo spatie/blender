@@ -16,7 +16,7 @@
     }
 
     &.gu-mirror {
-        background-color: color($blue, lightest) !important;
+        background-color: color($green, lightest) !important;
     }
 
     .gu-transit & {
@@ -49,7 +49,7 @@
     color: color($gray, light);
 
     &:hover {
-        color: color($blue, light);
+        color: color($green, light);
     }
 
     &:before {

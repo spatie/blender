@@ -5,7 +5,7 @@
   margin: 0 !important;
 
   color: color($gray);
-  border-color: color($blue, lighter) !important;
+  border-color: color($green, lighter) !important;
   box-shadow: module(shadow);
 
   & * {
@@ -20,7 +20,7 @@
   }
 
   & .module__column--drag__icon {
-    color: color($blue, light);
+    color: color($green, light);
   }
 }
 
