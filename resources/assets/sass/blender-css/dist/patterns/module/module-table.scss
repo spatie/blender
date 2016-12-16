@@ -3,11 +3,11 @@
     margin: 0;
 
     border-collapse: collapse;
-    background-color: $white-off;
+    background-color: transparent;
 }
 
 .module__row {
-    border-bottom: 2px solid color($gray, lightest) !important;
+    border-bottom: 2px solid color($gray, lighter, .5) !important;
     background-color: transparent !important;
 
     &.-is-disabled {
@@ -74,6 +74,23 @@
     padding: 0 .5em;
 
     vertical-align: middle;
+
+    &.-active {
+        background-color: lighten(color($green, lightest), 5%);
+        padding: 0 1em;
+
+        fieldset,
+        legend,
+        .module {
+            background-color: color($green, lightest);
+        }
+
+        .module__column--editor__close {
+            text-align: right;
+            padding-top: 1em;
+        }
+
+    }
 }
 
 .module__column--actions {
@@ -83,15 +100,16 @@
     vertical-align: middle;
 }
 
-.module__column--actions__icon {
+.module__column__icon {
     display: inline-block;
 
     width: 1em;
 
     border: 0;
 
+    color: color($gray, default, .5);
+
     &.-delete {
-        color: color($gray, light);
 
         &:hover {
             color: color($red);
@@ -106,8 +124,9 @@
         }
     }
 
+    &:hover,
     &:focus {
-        color: color($gray);
+        color: color($gray, dark, .5);
         outline: 0;
     }
 }

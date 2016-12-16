@@ -4,9 +4,9 @@
     display: flex;
     align-items: center;
 
-  color: color($gray);
+  color: color($gray, dark);
   border-radius: 3px;
-  background: color($gray, lighter, .25);
+  background: rgba(black, .05);
 
   &.-error {
     color: color($red);

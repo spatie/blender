@@ -2,19 +2,4 @@
     textarea {
         height: 5em;
     }
-
-    label {
-        font-size: .8em;
-
-        display: flex;
-
-        height: 2.5em;
-        padding: .5em .5em .5em 0;
-
-        text-transform: uppercase;
-
-        color: color($gray);
-
-        align-items: center;
-    }
 }

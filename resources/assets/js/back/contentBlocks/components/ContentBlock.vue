@@ -1,6 +1,16 @@
 <template>
         <tr v-if="isOpen">
-            <td class="module__column--editor" colspan="4">
+            <td class="module__column--editor -active" colspan="4">
+                <div class="module__column--editor__close">
+                    <a
+                        href="#"
+                        @click.prevent="close"
+                        class="module__column__icon"
+
+                    >
+                        <i class="fa fa-close"></i>
+                    </a>
+                </div>
                 <editor
                     :block="block"
                     :data="data"
@@ -25,19 +35,12 @@
             </td>
             <td class="module__column -no-wrap">{{ type }}</td>
             <td  class="module__column--actions">
-                <span v-if="! isMarkedForRemoval">
-                    <a
-                        v-if="isOpen"
-                        href="#"
-                        @click.prevent="close"
-                    >Sluit</a>
-                </span>
                 <span v-if="! isOpen">
                     <a
                         v-if="isMarkedForRemoval"
                         href="#"
                         @click.prevent="restore"
-                        class="media__column--actions__icon -restore"
+                        class="module__column__icon -restore"
                     >
                         <i class="fa fa-undo"></i>
                     </a>
@@ -45,9 +48,9 @@
                         v-else
                         href="#"
                         @click.prevent="markForRemoval"
-                        class="media__column--actions__icon -delete"
+                        class="module__column__icon -delete"
                     >
-                        <i class="fa fa-remove"></i>
+                        <i class="fa fa-trash"></i>
                     </a>
                 </span>
             </td>

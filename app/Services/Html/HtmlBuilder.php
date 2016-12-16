@@ -88,7 +88,7 @@ class HtmlBuilder extends BaseHtmlBuilder
             [
                 'class' => 'button -danger -small',
             ]
-        ).el('span.fa.fa-remove').Form::closeButton();
+        ).el('span.fa.fa-trash').Form::closeButton();
     }
 
     public function onlineIndicator(bool $online): string

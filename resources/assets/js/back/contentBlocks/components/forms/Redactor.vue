@@ -2,11 +2,12 @@
     <div class="form__group">
         <label>
             {{ label }}
-            <textarea
-                :value="value"
-                ref="textarea"
-            ></textarea>
         </label>
+        <textarea
+            :value="value"
+            ref="textarea"
+        ></textarea>
+    </div>
 </template>
 
 <script>
@@ -42,11 +43,11 @@ export default {
     props: {
         value: {
             type: String,
-            required: true, 
+            required: true,
         },
         label: {
             type: String,
-            required: true, 
+            required: true,
         },
         settings: {
             type: Object,

@@ -26,9 +26,9 @@
 .redactor-box {
     position: relative;
     overflow: visible;
+    background: transparent;
 }
-.redactor-editor,
-.redactor-box {
+.redactor-editor {
     background: #fff;
 }
 
@@ -154,7 +154,7 @@
     position: relative;
     padding: 0 !important;
 
-    background: $white-off;
+    background: transparent;
     border: 2px solid color($gray, light);
     border-bottom: 0;
     border-radius: border-radius(s) border-radius(s) 0 0;

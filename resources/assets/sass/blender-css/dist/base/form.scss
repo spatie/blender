@@ -77,7 +77,7 @@ legend {
 
 
 label {
-    color: color($gray);
+    color: color($gray, dark);
 
     font-size: font-size(default);
 
@@ -161,8 +161,10 @@ input[disabled] {
     color: $text-color;
     box-shadow: none;
 
-    -webkit-opacity: 1;
     -webkit-text-fill-color: $text-color;
+    -webkit-opacity: .5;
+    opacity: .5;
+    mix-blend-mode: multiply;
 }
 
 input[type='text'] {
