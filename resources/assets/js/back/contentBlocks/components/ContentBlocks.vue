@@ -40,7 +40,6 @@ import { matches, queryAll } from 'spatie-dom';
 import dragula from 'dragula';
 import constrain from 'dragula-constrain';
 
-
 export default {
 
     props: {

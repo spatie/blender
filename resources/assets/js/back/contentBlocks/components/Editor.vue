@@ -13,19 +13,24 @@
                 <div v-for="(type, field) in translatableAttributes">
                     <div
                         :is="getFieldType(type)"
-                        label="Label"
+                        :label="getLabel(field)"
                         v-model="block[field][locale]"
                     ></div>
                 </div>
             </locale>
-            <media
+            <div
                 v-for="(type, collection) in mediaLibraryCollections"
-                :type="type"
-                :collection="collection"
-                :uploadUrl="data.mediaUploadUrl"
-                :model="{ name: data.mediaModel, id: block.id }"
-                v-model="block[collection]"
-            ></media>
+                class="form__group"
+            >
+                <label>{{ getLabel(collection) }}</label>
+                <media
+                    :type="type"
+                    :collection="collection"
+                    :uploadUrl="data.mediaUploadUrl"
+                    :model="{ name: data.mediaModel, id: block.id }"
+                    v-model="block[collection]"
+                ></media>
+            </div>
         </div>
     </div>
 </template>
@@ -53,10 +58,22 @@ export default {
         image: 'image',
     },
 
+    labels: {
+        name: 'Naam',
+        text: 'Tekst',
+        image: 'Afbeelding',
+    },
+
     mounted() {
         $('[data-select]', this.$el)
             .select2()
             .on('change', e => this.block.type = e.target.value);
+    },
+
+    methods: {
+        getLabel(key) {
+            return this.$options.labels[key];
+        },
     },
 };
 </script>

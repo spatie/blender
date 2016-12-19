@@ -1,61 +1,62 @@
 <template>
-        <tr v-if="isOpen">
-            <td class="module__column--editor -active" colspan="4">
-                <div class="module__column--editor__close">
-                    <a
-                        href="#"
-                        @click.prevent="close"
-                        class="module__column__icon"
-
-                    >
-                        <i class="fa fa-close"></i>
-                    </a>
-                </div>
-                <editor
-                    :block="block"
-                    :data="data"
-                ></editor>
-            </td>
-        </tr>
-        <tr v-else :class="{ '-is-disabled': isMarkedForRemoval }">
-            <td class="module__column--drag">
-                <i
-                    v-if="! isOpen && ! isMarkedForRemoval"
-                    class="js-handle fa fa-arrows-v module__column--drag__icon"
-                ></i>
-            </td>
-            <td class="module__column -stretch" @click="open">
+    <tr v-if="isOpen" :id="domId">
+        <td class="module__column--editor -active" colspan="4">
+            <div class="module__column--editor__close">
                 <a
-                    v-if="! isMarkedForRemoval"
                     href="#"
-                    @click.prevent="open">{{ name }}</a>
-                <span v-else>
-                    {{ name }}
-                </span>
-            </td>
-            <td class="module__column -no-wrap">{{ type }}</td>
-            <td  class="module__column--actions">
-                <span v-if="! isOpen">
-                    <a
-                        v-if="isMarkedForRemoval"
-                        href="#"
-                        @click.prevent="restore"
-                        class="module__column__icon -restore"
-                    >
-                        <i class="fa fa-undo"></i>
-                    </a>
-                    <a
-                        v-else
-                        href="#"
-                        @click.prevent="markForRemoval"
-                        class="module__column__icon -delete"
-                    >
-                        <i class="fa fa-trash"></i>
-                    </a>
-                </span>
-            </td>
-        </tr>
+                    @click.prevent="close"
+                    class="module__column__icon"
 
+                >
+                    <i class="fa fa-close"></i>
+                </a>
+            </div>
+            <h3>{{ name }}</h3>
+            <editor
+                :block="block"
+                :data="data"
+            ></editor>
+        </td>
+    </tr>
+    <tr v-else :class="{ '-is-disabled': isMarkedForRemoval }" :id="domId">
+        <td class="module__column--drag">
+            <i
+                v-if="! isOpen && ! isMarkedForRemoval"
+                class="js-handle fa fa-arrows-v module__column--drag__icon"
+            ></i>
+        </td>
+        <td class="module__column -stretch" @click="open">
+            <a
+                v-if="! isMarkedForRemoval"
+                :href="'#' + domId"
+                @click="open"
+            >{{ name }}</a>
+            <span v-else>
+                {{ name }}
+            </span>
+        </td>
+        <td class="module__column -no-wrap">{{ type }}</td>
+        <td  class="module__column--actions">
+            <span v-if="! isOpen">
+                <a
+                    v-if="isMarkedForRemoval"
+                    href="#"
+                    @click.prevent="restore"
+                    class="module__column__icon -restore"
+                >
+                    <i class="fa fa-undo"></i>
+                </a>
+                <a
+                    v-else
+                    href="#"
+                    @click.prevent="markForRemoval"
+                    class="module__column__icon -delete"
+                >
+                    <i class="fa fa-trash"></i>
+                </a>
+            </span>
+        </td>
+    </tr>
 </template>
 
 <script>
@@ -129,6 +130,10 @@ export default {
 
         editor() {
             return Editor;
+        },
+
+        domId() {
+            return 'content-blocks-' + this.block.collection + '-' + this.block.id;
         },
     },
 
