@@ -16,7 +16,8 @@
     }
 
     &.gu-mirror {
-        background-color: color($green, lightest) !important;
+        background-color: color($blue, lightest) !important;
+        border-color: color($blue, lighter) !important;
     }
 
     .gu-transit & {
@@ -48,8 +49,9 @@
 
     color: color($gray, light);
 
+    .gu-mirror &,
     &:hover {
-        color: color($green, light);
+        color: color($blue, light);
     }
 
     &:before {
@@ -60,6 +62,7 @@
     &.-is-disabled {
         visibility: hidden;
     }
+
 }
 
 .module__column--thumb {
@@ -86,9 +89,8 @@
 
         .module__column--editor__close {
             text-align: right;
-            padding-top: .5em;
             margin-right: -1em;
-            top: 0;
+            top: 1em;
             right: 0;
             position: sticky;
         }
