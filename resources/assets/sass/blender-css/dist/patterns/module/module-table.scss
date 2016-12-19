@@ -76,18 +76,17 @@
     vertical-align: middle;
 
     &.-active {
-        background-color: lighten(color($green, lightest), 5%);
         padding: 0 2em;
 
         fieldset,
         legend,
         .module {
-            background-color: color($green, lightest);
+            background-color: darken($white-off, 3%);
         }
 
         .module__column--editor__close {
             text-align: right;
-            padding-top: 1em;
+            padding-top: .5em;
             margin-right: -1em;
             top: 0;
             right: 0;
