@@ -17,7 +17,7 @@
 
     &.gu-mirror {
         background-color: color($blue, lightest) !important;
-        border-color: transparent !important;
+        border-color: color($blue, lighter) !important;
     }
 
     .gu-transit & {
@@ -80,7 +80,6 @@
 
     &.-active {
         padding: 0 2em 0 1em;
-        border-left: solid 2px color($blue, light);
 
         fieldset,
         legend,
@@ -91,7 +90,7 @@
         .module__column--editor__close {
             text-align: right;
             margin-right: -1em;
-            top: 1em;
+            padding-top: .5em;
             right: 0;
             position: sticky;
         }
