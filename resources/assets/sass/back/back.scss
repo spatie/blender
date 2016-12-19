@@ -1,16 +1,3 @@
 @charset 'UTF-8';
 
-@import '~susy/sass/susy';
-@import '~normalize-css/normalize';
-@import '~datatables/media/css/jquery.dataTables';
-@import '~jquery-confirm/css/jquery-confirm';
-@import '~select2/dist/css/select2';
-
-@import '../blender-css/dist/utility/**';
-@import '../blender-css/dist/settings/**';
-@import '../blender-css/dist/helpers/**';
-@import '../blender-css/dist/base/**';
-@import '../blender-css/dist/components/**';
-@import '../blender-css/dist/patterns/**';
-@import '../blender-css/dist/vendor/*';
-@import '../blender-css/dist/views/**';
+@import '~@spatie/blender-css/dist/blender';

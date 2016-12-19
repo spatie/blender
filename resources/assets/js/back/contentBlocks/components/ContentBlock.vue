@@ -30,6 +30,7 @@
                 v-if="! isMarkedForRemoval"
                 :href="'#' + domId"
                 @click="open"
+                class="js-open-content-block"
             >{{ name }}</a>
             <span v-else>
                 {{ name }}

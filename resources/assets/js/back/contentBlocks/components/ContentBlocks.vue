@@ -107,7 +107,7 @@ export default {
         orderedBlocks() {
             return sortBy(this.blocks, 'orderColumn');
         },
-        
+
         exportable() {
             return box(this.blocks)
                 .map(blocks => blocks.filter(b => b.markedForRemoval !== true))
