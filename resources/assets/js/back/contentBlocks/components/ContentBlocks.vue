@@ -90,8 +90,6 @@ export default {
 
         constrain(this.sortable);
 
-        console.log('foo');
-
         this.sortable.on('drop', function () {
 
             const order = queryAll('.js-content-blocks-row', this.$el)
