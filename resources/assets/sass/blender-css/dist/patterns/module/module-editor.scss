@@ -12,6 +12,10 @@
       flex-grow: 1;
     }
   }
+
+    .redactor-editor {
+        user-select: all;
+    }
 }
 
 .module__editor__column {

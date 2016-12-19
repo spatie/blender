@@ -3,13 +3,12 @@
   margin: 0;
 
   border-collapse: collapse;
-
-  background-color: $white-off;
+  background-color: transparent;
 }
 
 .module__upload__row {
-    border-top: 2px solid color($gray, lightest);
-    border-bottom: 2px solid color($gray, lightest);
+    border-bottom: 2px solid color($gray, lighter, .5) !important;
+    background-color: transparent !important;
 }
 
 .module__upload__column--thumb {

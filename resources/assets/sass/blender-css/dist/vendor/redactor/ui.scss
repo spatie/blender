@@ -151,7 +151,9 @@
 .redactor-toolbar {
     @include clearfix;
 
-    position: relative;
+    position: sticky;
+    top: 0;
+    left: 0;
     padding: 0 !important;
 
     background: white;
