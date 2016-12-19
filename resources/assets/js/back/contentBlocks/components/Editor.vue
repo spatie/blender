@@ -2,12 +2,10 @@
     <div class="module__editor>">
         <div class="module__editor__column -stacked">
             <label>Type</label>
-            <select data-select="select" v-model="block.type">
-                <option
-                    v-for="(label, type) in types"
-                    :value="type"
-                >{{ label }}</option>
-            </select>
+            <select2
+                v-model="block.type"
+                :options="types"
+            ></select2>
             <locale
                 v-for="locale in locales"
                 :locale="locale"
@@ -33,6 +31,7 @@
 </template>
 
 <script>
+import $ from 'jquery';
 import editor from '../mixins/editor';
 
 export default {
@@ -52,6 +51,12 @@ export default {
 
     mediaLibraryCollections: {
         image: 'image',
+    },
+
+    mounted() {
+        $('[data-select]', this.$el)
+            .select2()
+            .on('change', e => this.block.type = e.target.value);
     },
 };
 </script>
