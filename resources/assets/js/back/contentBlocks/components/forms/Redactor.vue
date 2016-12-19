@@ -36,6 +36,7 @@ const defaultSettings = {
     pasteImages: false,
     pasteLinks: false,
     plugins: ['video', 'source'],
+    toolbarFixed: false, 
 };
 
 export default {
