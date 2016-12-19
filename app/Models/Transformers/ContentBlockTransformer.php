@@ -12,6 +12,7 @@ class ContentBlockTransformer extends TransformerAbstract
         $attributes = [
             'id' => $contentBlock->id,
             'type' => $contentBlock->type,
+            'orderColumn' => $contentBlock->order_column,
         ];
 
         return array_merge(

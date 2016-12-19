@@ -65,4 +65,13 @@ class ContentBlock extends Model implements HasMediaConversions
 
         return $this;
     }
+
+    public function setOrder(int $i)
+    {
+        $this->order_column = $i;
+
+        $this->save();
+
+        return $this;
+    }
 }

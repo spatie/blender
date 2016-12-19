@@ -2,7 +2,7 @@
     <div class="module">
         <table ref="table" class="module__table">
             <tr
-                v-for="block in blocks"
+                v-for="block in orderedBlocks"
                 is="content-block"
                 :block="block"
                 :data="data"
@@ -37,6 +37,8 @@
 import axios from 'axios';
 import ContentBlock from './ContentBlock';
 import { matches, queryAll } from 'spatie-dom';
+import { find, sortBy } from 'lodash';
+import { box } from '../lib/util';
 import dragula from 'dragula';
 import constrain from 'dragula-constrain';
 
@@ -90,16 +92,11 @@ export default {
         constrain(this.sortable);
 
         this.sortable.on('drop', function () {
-
-            const order = queryAll('.js-content-blocks-row', this.$el)
-                .map(row => row.dataset.blockId)
-                .reduce((order, blockId) => {
-                    order[blockId] = Object.keys(order).length;
-                    return order;
-                }, {});
-
-            this.reorder(order);
+            this.setOrder(this.getOrderFromDOM());
+            this.sortable.cancel(true);
         }.bind(this));
+
+        this.setOrder(this.getOrderFromDOM());
     },
 
     beforeDestroy() {
@@ -107,10 +104,16 @@ export default {
     },
 
     computed: {
+        orderedBlocks() {
+            return sortBy(this.blocks, 'orderColumn');
+        },
+        
         exportable() {
-            return JSON.stringify(
-                this.blocks.filter(b => b.markedForRemoval !== true)
-            );
+            return box(this.blocks)
+                .map(blocks => blocks.filter(b => b.markedForRemoval !== true))
+                .map(blocks => sortBy(blocks, 'orderColumn'))
+                .map(blocks => JSON.stringify(blocks))
+                .fold();
         },
     },
 
@@ -135,8 +138,15 @@ export default {
             this.currentlyEditingBlock = null;
         },
 
-        reorder(order) {
-            console.log(order);
+        setOrder(order) {
+            order.forEach((id, order) => {
+                find(this.blocks, { id }).orderColumn = order;
+            });
+        },
+
+        getOrderFromDOM() {
+            return queryAll('.js-content-blocks-row', this.$el)
+                .map(row => parseInt(row.dataset.blockId));
         },
 
         createBlock() {

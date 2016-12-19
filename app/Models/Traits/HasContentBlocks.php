@@ -51,9 +51,10 @@ trait HasContentBlocks
 
     protected function syncContentBlockCollection(array $data, string $collection)
     {
-        $contentBlocks = collect($data)->map(function (array $attributes): ContentBlock {
+        $contentBlocks = collect($data)->map(function (array $attributes, int $i): ContentBlock {
             return ContentBlock::findOrFail($attributes['id'])
-                ->updateWithAttributes($attributes);
+                ->updateWithAttributes($attributes)
+                ->setOrder($i);
         });
 
         $this->contentBlocks()
