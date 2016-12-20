@@ -1,8 +1,5 @@
 {
     "extends": "spatie/vue",
-    "parserOptions": {
-        "ecmaVersion": 2017
-    },
     "globals": {
         "$": true,
         "jQuery": true

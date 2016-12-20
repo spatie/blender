@@ -3,7 +3,6 @@
     "es2015"
   ],
   "plugins": [
-    "transform-object-rest-spread",
-    "transform-async-to-generator"  
+    "transform-object-rest-spread"
   ]
 }
