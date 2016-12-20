@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use Spatie\Translatable\HasTranslations;
 use Spatie\Blender\Model\Traits\HasMedia;
 use Spatie\Blender\Model\Traits\Draftable;
@@ -58,7 +59,17 @@ class ContentBlock extends Model implements HasMediaConversions
             if (! isset($values[$collection])) {
                 continue;
             }
-            $this->updateMedia($values[$collection], $collection);
+
+            $media = array_filter($values[$collection], function ($media) {
+                return ($media['markedForRemoval'] ?? false) !== true;
+            });
+
+            $updatedMedia = $this->updateMedia($media, $collection);
+
+            $this->media()
+                ->whereCollectionName($collection)
+                ->whereNotIn('id', Arr::pluck($updatedMedia, 'id'))
+                ->delete();
         }
 
         $this->save();
