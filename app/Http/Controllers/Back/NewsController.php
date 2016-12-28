@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Requests\Back\NewsItemRequest;
-use App\Models\NewsItem;
 use Carbon\Carbon;
+use App\Models\NewsItem;
 use Spatie\Blender\Model\Controller;
+use App\Http\Requests\Back\NewsItemRequest;
 
 class NewsController extends Controller
 {
