@@ -2,10 +2,10 @@
 
 namespace App\Services\Navigation;
 
-use App\Services\Navigation\Menu\BackMenus;
-use App\Services\Navigation\Menu\FrontMenus;
 use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
+use App\Services\Navigation\Menu\BackMenus;
+use App\Services\Navigation\Menu\FrontMenus;
 
 class NavigationServiceProvider extends ServiceProvider
 {
