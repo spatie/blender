@@ -2,11 +2,8 @@
 
 namespace App\Console;
 
-use App\Console\Commands\PrefetchAnalyticsData;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
-use Spatie\FragmentImporter\Commands\ImportFragments;
-use Spatie\LinkChecker\CheckLinksCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,11 +13,11 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\ClearBeanstalkdQueue::class,
-        Commands\GenerateModule::class,
-        CheckLinksCommand::class,
-        ImportFragments::class,
-        PrefetchAnalyticsData::class,
+        \App\Console\Commands\ClearBeanstalkdQueue::class,
+        \App\Console\Commands\GenerateModule::class,
+        \Spatie\LinkChecker\CheckLinksCommand::class,
+        \Spatie\FragmentImporter\Commands\ImportFragments::class,
+        \App\Console\Commands\PrefetchAnalyticsData::class,
     ];
 
     /**
@@ -30,12 +27,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('backup:run')->dailyAt('03:00');
-        $schedule->command('backup:clean')->dailyAt('04:00');
-        $schedule->command('analytics:prefetch')->dailyAt('06:00');
-        $schedule->command('link-checker:run')->monthly();
-        $schedule->command('clean:models')->daily();
-        $schedule->command('activity:clean')->daily();
+        $schedule->command(\Spatie\Backup\Commands\BackupCommand::class)->dailyAt('03:00');
+        $schedule->command(\Spatie\Backup\Commands\CleanupCommand::class)->dailyAt('04:00');
+        $schedule->command(\Spatie\LinkChecker\CheckLinksCommand::class)->monthly();
+        $schedule->command(\Spatie\ModelCleanup\CleanUpModelsCommand::class)->daily();
+        $schedule->command(\Spatie\Activitylog\CleanActivitylogCommand::class)->daily();
+        $schedule->command(\App\Console\Commands\PrefetchAnalyticsData::class)->dailyAt('06:00');
     }
 
     /**
