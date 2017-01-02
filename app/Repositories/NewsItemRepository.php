@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use App\Models\NewsItem;
-use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Support\Collection;
+use Illuminate\Contracts\Pagination\Paginator;
 
 class NewsItemRepository
 {
