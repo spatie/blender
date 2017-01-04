@@ -2,12 +2,12 @@
 
 namespace App\Providers;
 
-use App\Services\Locale\CurrentLocale;
 use Auth;
-use Exception;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Routing\Router;
 use Route;
+use Exception;
+use Illuminate\Routing\Router;
+use App\Services\Locale\CurrentLocale;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
