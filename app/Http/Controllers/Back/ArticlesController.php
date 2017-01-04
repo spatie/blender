@@ -41,6 +41,9 @@ class ArticlesController extends Controller
             ->filter(function (Article $article) {
                 return $article->technical_name != SpecialArticle::HOME;
             })
+            ->reject(function(Article $article) use ($id) {
+                return $article->id === $id;
+            })
             ->pluck('name', 'id')
             ->prepend('Geen', 0);
 
