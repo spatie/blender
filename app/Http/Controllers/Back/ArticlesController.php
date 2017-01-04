@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Requests\Back\ArticleRequest;
 use App\Models\Article;
 use App\Models\Enums\SpecialArticle;
+use Spatie\Blender\Model\Controller;
 use App\Repositories\ArticleRepository;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Requests\Back\ArticleRequest;
 use Illuminate\Foundation\Http\FormRequest;
-use Spatie\Blender\Model\Controller;
 
 class ArticlesController extends Controller
 {
