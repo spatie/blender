@@ -4211,16 +4211,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "b9c68dcc1eb1f0ca8e1d887f00a1031e6a0fd136"
+                "reference": "1ccfebfcd52580d5a99db7fefc41c41223019419"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/b9c68dcc1eb1f0ca8e1d887f00a1031e6a0fd136",
-                "reference": "b9c68dcc1eb1f0ca8e1d887f00a1031e6a0fd136",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/1ccfebfcd52580d5a99db7fefc41c41223019419",
+                "reference": "1ccfebfcd52580d5a99db7fefc41c41223019419",
                 "shasum": ""
             },
             "require": {
@@ -4274,7 +4274,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2016-12-11T07:43:22+00:00"
+            "time": "2017-01-02T19:43:49+00:00"
         },
         {
             "name": "spatie/laravel-blade-javascript",

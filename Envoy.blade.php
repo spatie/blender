@@ -26,7 +26,6 @@ runYarn
 generateAssets
 updateSymlinks
 optimizeInstallation
-updatePermissions
 backupDatabase
 migrateDatabase
 insertNewFragments
@@ -110,12 +109,6 @@ ln -nfs {{ $baseDir }}/.env .env;
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
 php artisan optimize;
-@endtask
-
-@task('updatePermissions', ['on' => 'remote'])
-{{ logMessage("\u{1F512}  Updating permissions...") }}
-cd {{ $newReleaseDir }};
-chmod -R 774 .;
 @endtask
 
 @task('backupDatabase', ['on' => 'remote'])
