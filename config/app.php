@@ -178,7 +178,6 @@ return [
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
         App\Providers\AuthServiceProvider::class,
-        App\Providers\BladeDirectiveServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
