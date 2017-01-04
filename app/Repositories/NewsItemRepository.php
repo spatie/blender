@@ -8,31 +8,26 @@ use Illuminate\Support\Collection;
 
 class NewsItemRepository
 {
-    public static function getAllOnline(): Collection
+    public static function getAll(): Collection
     {
-        return NewsItem::online()
-            ->orderBy('publish_date', 'desc')
-            ->get();
+        return NewsItem::orderBy('publish_date', 'desc')->get();
     }
 
     public static function getLatest(int $amount): Collection
     {
-        return NewsItem::online()
-            ->orderBy('publish_date', 'desc')
+        return NewsItem::orderBy('publish_date', 'desc')
             ->take($amount)
             ->get();
     }
 
-    public static function findOnline(int $id): NewsItem
+    public static function findById(int $id): NewsItem
     {
-        return NewsItem::online()->findOrFail($id);
+        return NewsItem::findOrFail($id);
     }
 
     public static function findBySlug(string $slug): NewsItem
     {
-        return NewsItem::online()
-            ->where('slug->'.content_locale(), $slug)
-            ->firstOrFail();
+        return NewsItem::where('slug->'.content_locale(), $slug)->firstOrFail();
     }
 
     /**
