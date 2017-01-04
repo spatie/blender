@@ -82,7 +82,7 @@
             "App\\": "app/"
         },
         "files": [
-            "app/Foundation/helpers.php"
+            "app/helpers.php"
         ]
     },
     "autoload-dev": {
