@@ -26,7 +26,7 @@ class ArticleRepository
         return $article;
     }
 
-    public static function findSpecialArticle(SpecialArticle $specialArticle): Article
+    public static function findSpecialArticle(string $specialArticle): Article
     {
         return Cache::rememberForever(
             "article.specialArticle.{$specialArticle}",

@@ -2,9 +2,7 @@
 
 namespace App\Models\Enums;
 
-use App\Foundation\Enums\Enum;
-
-class SpecialArticle extends Enum
+class SpecialArticle
 {
     const HOME = 'home';
     const CONTACT = 'contact';
