@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Back;
 
-use Illuminate\Contracts\Pagination\Paginator;
 use Spatie\Activitylog\Models\Activity;
+use Illuminate\Contracts\Pagination\Paginator;
 
 class ActivitylogController
 {

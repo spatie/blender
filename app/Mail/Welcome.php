@@ -2,9 +2,9 @@
 
 namespace App\Mail;
 
-use App\Services\Auth\Front\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
+use App\Services\Auth\Front\User;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
