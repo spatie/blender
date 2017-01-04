@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Requests\Back\RedirectRequest;
 use App\Models\Redirect;
 use Spatie\Blender\Model\Controller;
+use App\Http\Requests\Back\RedirectRequest;
 
 class RedirectsController extends Controller
 {
