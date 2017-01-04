@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Models\Presenters\FragmentPresenter;
 use Spatie\TranslationLoader\LanguageLine;
+use App\Models\Presenters\FragmentPresenter;
 
 class Fragment extends LanguageLine
 {
