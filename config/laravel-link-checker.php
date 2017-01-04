@@ -24,7 +24,6 @@ return [
      */
     'reporters' => [
 
-
         'mail' => [
 
             /*
