@@ -4,9 +4,9 @@ namespace App\Services\Html;
 
 use Form;
 use Html;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ViewErrorBag;
+use Illuminate\Database\Eloquent\Model;
 
 class BlenderFormBuilder
 {
