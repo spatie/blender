@@ -15,8 +15,6 @@ class RouteServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->app->setLocale(CurrentLocale::determine());
-
         $this->registerMacros(app(\Illuminate\Routing\Router::class));
 
         parent::boot();

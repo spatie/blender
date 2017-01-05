@@ -179,6 +179,7 @@ return [
 
         App\Providers\AuthServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
+        App\Providers\LocaleServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
         App\Providers\ValidationServiceProvider::class,
