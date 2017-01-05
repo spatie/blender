@@ -7,9 +7,6 @@ use App\Models\Enums\SpecialArticle;
 
 class HomeController extends Controller
 {
-    /**
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $article = article(SpecialArticle::HOME);
