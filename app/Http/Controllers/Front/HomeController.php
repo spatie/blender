@@ -12,7 +12,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $article = article(SpecialArticle::HOME());
+        $article = article(SpecialArticle::HOME);
 
         return view('front.home.index', compact('article'));
     }

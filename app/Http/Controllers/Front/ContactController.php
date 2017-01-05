@@ -13,7 +13,7 @@ class ContactController extends Controller
 {
     public function index()
     {
-        $article = article(SpecialArticle::CONTACT());
+        $article = article(SpecialArticle::CONTACT);
 
         return view('front.contact.index', compact('article'));
     }
