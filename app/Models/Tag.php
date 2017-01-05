@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use Spatie\Tags\Tag as SpatieTag;
 use App\Models\Presenters\TagPresenter;
 use Spatie\Blender\Model\Traits\Draftable;
-use Spatie\Tags\Tag as SpatieTag;
 
 class Tag extends SpatieTag
 {

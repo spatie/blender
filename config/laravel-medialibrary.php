@@ -26,7 +26,6 @@ return [
      */
     'custom_url_generator_class' => App\Services\Medialibrary\MediaLibraryUrlGenerator::class,
 
-
     's3' => [
         /*
          * The domain that should be prepended when generating urls.
