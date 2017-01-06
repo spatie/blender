@@ -31,7 +31,7 @@ class FrontMenus
             }, Menu::front());
         });
 
-        Menu::macro('article', function($article) {
+        Menu::macro('article', function ($article) {
             $article = $article instanceof Article ? $article : article($article);
 
             return $this->url($article->url, $article->name);
