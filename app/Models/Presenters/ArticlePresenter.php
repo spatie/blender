@@ -6,9 +6,9 @@ use Spatie\String\Str;
 
 trait ArticlePresenter
 {
-    public function getTeaseAttribute($characters, $moreTextIndicator = '...'): Str
+    public function getExcerptAttribute(): Str
     {
-        return string($this->text)->tease($characters, $moreTextIndicator);
+        return string($this->text)->tease(200);
     }
 
     public function getMetaAttribute(): Str

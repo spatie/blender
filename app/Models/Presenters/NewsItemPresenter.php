@@ -6,8 +6,8 @@ use Spatie\String\Str;
 
 trait NewsItemPresenter
 {
-    public function getExcerptAttribute($length = 200): Str
+    public function getExcerptAttribute(): Str
     {
-        return string($this->text)->tease($length);
+        return string($this->text)->tease(200);
     }
 }
