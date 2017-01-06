@@ -14,7 +14,7 @@ class ArticleController extends Controller
         $article = ArticleRepository::findBySlug($articleSlug);
 
         if ($article->hasChildren()) {
-            return redirect($article->first_child->fullUrl);
+            return redirect($article->first_child->url);
         }
 
         return view('front.article.index')->with(compact('article'));
