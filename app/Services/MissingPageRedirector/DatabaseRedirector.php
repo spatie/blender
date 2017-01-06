@@ -3,8 +3,8 @@
 namespace App\Services\MissingPageRedirector;
 
 use App\Models\Redirect;
-use Spatie\MissingPageRedirector\Redirector\Redirector;
 use Symfony\Component\HttpFoundation\Request;
+use Spatie\MissingPageRedirector\Redirector\Redirector;
 
 class DatabaseRedirector implements Redirector
 {
@@ -15,4 +15,3 @@ class DatabaseRedirector implements Redirector
         })->toArray();
     }
 }
-

@@ -2,9 +2,9 @@
 
 namespace App\Services\Medialibrary;
 
+use Spatie\Color\Rgb;
 use ColorThief\ColorThief;
 use Illuminate\Contracts\Events\Dispatcher;
-use Spatie\Color\Rgb;
 use Spatie\MediaLibrary\Events\MediaHasBeenAdded;
 
 class MediaLibraryEventHandler
