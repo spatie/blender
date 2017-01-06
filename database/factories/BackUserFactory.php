@@ -1,8 +1,8 @@
 <?php
 
+use App\Services\Auth\Back\User;
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
-use App\Services\Auth\Back\User;
 
 $factory->define(User::class, function () {
     $person = faker()->person();
