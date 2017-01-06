@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Spatie\Blender\Model\Model;
-use Spatie\Blender\Model\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
+use Spatie\Blender\Model\Traits\HasSlug;
 use Spatie\EloquentSortable\SortableTrait;
 
 class Person extends Model implements Sortable
