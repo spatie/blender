@@ -30,8 +30,8 @@ class BackUserSeeder extends DatabaseSeeder
                 'password' => bcrypt($password),
                 'first_name' => $firstName,
                 'last_name' => $lastName,
-                'role' => UserRole::ADMIN(),
-                'status' => UserStatus::ACTIVE(),
+                'role' => UserRole::ADMIN,
+                'status' => UserStatus::ACTIVE,
             ]);
         });
     }

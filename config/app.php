@@ -188,6 +188,7 @@ return [
         App\Services\Html\HtmlServiceProvider::class,
         App\Providers\EventServiceProvider::class,
 
+        Spatie\Blender\Model\BlenderModelServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,

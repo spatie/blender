@@ -31,8 +31,8 @@ class MembersController
         $user->last_name = $request->get('last_name');
         $user->locale = $request->get('locale', 'nl');
 
-        $user->role = UserRole::MEMBER();
-        $user->status = UserStatus::ACTIVE();
+        $user->role = UserRole::MEMBER;
+        $user->status = UserStatus::ACTIVE;
 
         $user->save();
 

@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Article;
+use App\Models\Enums\SpecialArticle;
 
 class ArticleSeeder extends DatabaseSeeder
 {
@@ -8,8 +9,8 @@ class ArticleSeeder extends DatabaseSeeder
     {
         $this->truncate((new Article())->getTable());
 
-        $this->seedArticle('Home', 'home');
-        $this->seedArticle('Contact', 'contact');
+        $this->seedArticle('Home', SpecialArticle::HOME);
+        $this->seedArticle('Contact', SpecialArticle::CONTACT);
 
         $parentArticle = $this->seedArticle('Parent');
 

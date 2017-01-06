@@ -3692,9 +3692,9 @@ sparkles@^1.0.0:
   version "1.0.0"
   resolved "https://npm.spatie.be/sparkles/-/sparkles-1.0.0.tgz#1acbbfb592436d10bbe8f785b7cc6f82815012c3"
 
-spatie-dom@^0.1.1:
-  version "0.1.1"
-  resolved "https://npm.spatie.be/spatie-dom/-/spatie-dom-0.1.1.tgz#62287d757b49b4cdea68879268d3b3d91aae7d3f"
+spatie-dom@^1.0.0:
+  version "1.1.0"
+  resolved "https://npm.spatie.be/spatie-dom/-/spatie-dom-1.1.0.tgz#006cb3a4f3a4d13a59e46b5091ecd318d9dcc4f5"
 
 spdx-correct@~1.0.0:
   version "1.0.2"

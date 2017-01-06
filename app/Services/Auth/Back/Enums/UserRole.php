@@ -2,12 +2,7 @@
 
 namespace App\Services\Auth\Back\Enums;
 
-use App\Foundation\Enums\Enum;
-
-/**
- * @method static ADMIN()
- */
-class UserRole extends Enum
+class UserRole
 {
     const ADMIN = 'admin';
 }

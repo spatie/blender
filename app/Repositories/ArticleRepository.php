@@ -31,7 +31,13 @@ class ArticleRepository
         return Cache::rememberForever(
             "article.specialArticle.{$specialArticle}",
             function () use ($specialArticle) {
-                return Article::where('technical_name', $specialArticle)->firstOrFail();
+                $article = Article::where('technical_name', $specialArticle)->first();
+
+                if (! $article) {
+                    throw new Exception("There is no article with technical_name `{$specialArticle}`");
+                }
+
+                return $article;
             }
         );
     }
