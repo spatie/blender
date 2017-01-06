@@ -17,8 +17,8 @@ $factory->define(User::class, function () {
 
         'locale' => 'nl',
 
-        'role' => UserRole::MEMBER(),
-        'status' => UserStatus::ACTIVE(),
+        'role' => UserRole::MEMBER,
+        'status' => UserStatus::ACTIVE,
 
         'address' => faker()->address,
         'postal' => faker()->postcode,

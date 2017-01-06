@@ -15,7 +15,7 @@ $factory->define(User::class, function () {
 
         'locale' => 'nl',
 
-        'role' => UserRole::ADMIN(),
-        'status' => UserStatus::ACTIVE(),
+        'role' => UserRole::ADMIN,
+        'status' => UserStatus::ACTIVE,
     ];
 });
