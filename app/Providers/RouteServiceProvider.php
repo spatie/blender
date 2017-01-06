@@ -77,7 +77,7 @@ class RouteServiceProvider extends ServiceProvider
                             Auth::routes();
                             require base_path('routes/front.php');
                         } catch (Exception $exception) {
-                            logger()->warning("Front routes weren't included.");
+                            logger()->warning("Front routes weren't included because {$exception->getMessage()}.");
                         }
                     });
 
