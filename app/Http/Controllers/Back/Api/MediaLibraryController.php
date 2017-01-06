@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Back\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Back\AddMediaRequest;
+use Response;
 use Exception;
 use Illuminate\Http\Request;
+use Spatie\MediaLibrary\Media;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
-use Response;
-use Spatie\MediaLibrary\Media;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Back\AddMediaRequest;
 use App\Models\Transformers\MediaTransformer;
 
 class MediaLibraryController extends Controller
