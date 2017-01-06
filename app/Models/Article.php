@@ -79,7 +79,7 @@ class Article extends Model implements Sortable
         return ! is_null($this->parent);
     }
 
-    public function getFullUrlAttribute(): string
+    public function getUrlAttribute(): string
     {
         $localeSegment = '';
 
