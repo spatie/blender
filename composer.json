@@ -53,6 +53,7 @@
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-medialibrary": "^4.0.0",
         "spatie/laravel-menu": "^2.0.0",
+        "spatie/laravel-migrate-fresh": "^1.0",
         "spatie/laravel-missing-page-redirector": "^1.0",
         "spatie/laravel-model-cleanup": "^1.0",
         "spatie/laravel-newsletter": "^3.0.0",

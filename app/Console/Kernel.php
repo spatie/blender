@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\MigrateFresh\Commands\MigrateFresh;
 
 class Kernel extends ConsoleKernel
 {
@@ -18,6 +19,7 @@ class Kernel extends ConsoleKernel
         \Spatie\LinkChecker\CheckLinksCommand::class,
         \Spatie\FragmentImporter\Commands\ImportFragments::class,
         \App\Console\Commands\PrefetchAnalyticsData::class,
+        \Spatie\MigrateFresh\Commands\MigrateFresh::class,
     ];
 
     /**

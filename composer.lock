@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b4926b36a1d23e2753d67407f862b1f",
+    "content-hash": "2f277b4af0c81b2fee8a84aba3d7f522",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4880,6 +4880,58 @@
                 "spatie"
             ],
             "time": "2016-12-02T09:17:03+00:00"
+        },
+        {
+            "name": "spatie/laravel-migrate-fresh",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-migrate-fresh.git",
+                "reference": "aa58dddfefc87d2e2fafda6c10182486105ad58f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-migrate-fresh/zipball/aa58dddfefc87d2e2fafda6c10182486105ad58f",
+                "reference": "aa58dddfefc87d2e2fafda6c10182486105ad58f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "^5.3",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.3",
+                "phpunit/phpunit": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\MigrateFresh\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A command to build up the database from scratch",
+            "homepage": "https://github.com/spatie/laravel-migrate-fresh",
+            "keywords": [
+                "database",
+                "eloquent",
+                "fresh",
+                "laravel-migrate-fresh",
+                "migrate",
+                "spatie"
+            ],
+            "time": "2017-01-09T16:03:32+00:00"
         },
         {
             "name": "spatie/laravel-missing-page-redirector",
