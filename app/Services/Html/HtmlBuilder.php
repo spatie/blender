@@ -2,10 +2,10 @@
 
 namespace App\Services\Html;
 
-use App\Services\Auth\User;
-use Collective\Html\HtmlBuilder as BaseHtmlBuilder;
 use Form;
 use Session;
+use App\Services\Auth\User;
+use Collective\Html\HtmlBuilder as BaseHtmlBuilder;
 
 class HtmlBuilder extends BaseHtmlBuilder
 {
