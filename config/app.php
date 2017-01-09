@@ -93,7 +93,6 @@ return [
     'backLocales' => ['nl'],
     'fragmentLocales' => ['nl'],
 
-
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
