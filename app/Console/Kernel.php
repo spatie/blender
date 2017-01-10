@@ -2,10 +2,7 @@
 
 namespace App\Console;
 
-use Spatie\LinkChecker\CheckLinksCommand;
 use Illuminate\Console\Scheduling\Schedule;
-use App\Console\Commands\PrefetchAnalyticsData;
-use Spatie\FragmentImporter\Commands\ImportFragments;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel

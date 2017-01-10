@@ -15,4 +15,3 @@ class DatabaseRedirector implements Redirector
         })->toArray();
     }
 }
-
