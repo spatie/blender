@@ -2,9 +2,9 @@
 
 namespace App\Http\ViewComposers\Back;
 
-use App\Services\Html\BlenderFormBuilder;
 use Illuminate\Contracts\View\View;
 use function spatie\array_keys_exist;
+use App\Services\Html\BlenderFormBuilder;
 
 class BlenderFormComposer
 {
