@@ -12,7 +12,7 @@
     "url": "git@github.com:spatie-custom/blender.git"
   },
   "dependencies": {
-    "@spatie/blender-content-blocks": "^1.0.0-beta",
+    "@spatie/blender-content-blocks": "^1.0.0",
     "@spatie/blender-css": "^3.0.0",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-polyfill": "^6.16.0",

@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@spatie/blender-content-blocks@^1.0.0-beta":
-  version "1.0.0-beta.5"
-  resolved "https://registry.npmjs.org/@spatie/blender-content-blocks/-/blender-content-blocks-1.0.0-beta.5.tgz#3d1da9626c53aa2bc85ae6581a7e7271ebf15db8"
+"@spatie/blender-content-blocks@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@spatie/blender-content-blocks/-/blender-content-blocks-1.0.0.tgz#8a207c9c4435a8fba7f0e205ba0ae7e5165ecc78"
   dependencies:
     axios "^0.15.3"
     babel-core "^6.18.2"
@@ -14,8 +14,8 @@
     font-awesome-filetypes "^1.0.1"
 
 "@spatie/blender-css@^3.0.0":
-  version "3.0.2"
-  resolved "https://registry.npmjs.org/@spatie/blender-css/-/blender-css-3.0.2.tgz#a56676e4692ee69f823f1d412a5ef13a2ae1a46a"
+  version "3.0.3"
+  resolved "https://registry.npmjs.org/@spatie/blender-css/-/blender-css-3.0.3.tgz#c8ea8703cf03e9e9dd74fb439ca7a3a20e9fc7c1"
 
 abbrev@1:
   version "1.0.9"
