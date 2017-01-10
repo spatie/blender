@@ -17,8 +17,8 @@
         {!! BlenderForm::category('news_category') !!}
         {!! BlenderForm::tags('news_tag') !!}
 
-        {!! BlenderForm::media('images') !!}
-        {!! BlenderForm::media('downloads') !!}
+        {!! BlenderForm::media('images', 'images') !!}
+        {!! BlenderForm::media('downloads', 'downloads') !!}
     </div>
     <div id="settings">
         {!! BlenderForm::checkbox('online') !!}

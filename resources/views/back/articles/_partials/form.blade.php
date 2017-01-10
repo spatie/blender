@@ -13,8 +13,8 @@
             'name' => 'text',
             'text' => 'redactor',
         ]) !!}
-        {!! BlenderForm::media('images') !!}
-        {!! BlenderForm::media('downloads') !!}
+        {!! BlenderForm::media('images', 'images') !!}
+        {!! BlenderForm::media('downloads', 'downloads') !!}
     </div>
     <div id="settings">
         @if(! $model->isSpecialArticle())

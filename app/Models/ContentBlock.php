@@ -38,7 +38,7 @@ class ContentBlock extends Model implements HasMediaConversions
             ->setWidth(740);
     }
 
-    public function mediaLibraryCollectionNames(): array
+    public function mediaLibraryCollections(): array
     {
         return array_keys($this->subject->getContentBlockMediaLibraryCollections());
     }
@@ -57,7 +57,7 @@ class ContentBlock extends Model implements HasMediaConversions
             $this->setTranslations($attribute, $values[$attribute] ?? []);
         }
 
-        foreach ($this->mediaLibraryCollectionNames() as $collection) {
+        foreach ($this->mediaLibraryCollections() as $collection) {
             if (! isset($values[$collection])) {
                 continue;
             }

@@ -7,9 +7,9 @@ use Carbon\Carbon;
 use App\Models\Tag;
 use App\Models\ContentBlock;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Transformers\MediaTransformer;
 use Collective\Html\FormBuilder as BaseFormBuilder;
-use App\Models\Transformers\ContentBlockTransformer;
+use Spatie\Blender\Model\Transformers\MediaTransformer;
+use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
 
 class FormBuilder extends BaseFormBuilder
 {
