@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-const config = require('blender-gulp/config/webpack');
+const config = require('blender-gulp/config/webpack')();
 
 config.entry = {
     'back.vendor': ['jquery'],
