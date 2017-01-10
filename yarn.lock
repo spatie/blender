@@ -2,6 +2,17 @@
 # yarn lockfile v1
 
 
+"@spatie/blender-content-blocks@^1.0.0-beta":
+  version "1.0.0-beta.5"
+  resolved "https://registry.npmjs.org/@spatie/blender-content-blocks/-/blender-content-blocks-1.0.0-beta.5.tgz#3d1da9626c53aa2bc85ae6581a7e7271ebf15db8"
+  dependencies:
+    axios "^0.15.3"
+    babel-core "^6.18.2"
+    dragula "^3.7.1"
+    dragula-constrain "^1.0.0"
+    dropzone "^4.3.0"
+    font-awesome-filetypes "^1.0.1"
+
 "@spatie/blender-css@^3.0.0":
   version "3.0.2"
   resolved "https://registry.npmjs.org/@spatie/blender-css/-/blender-css-3.0.2.tgz#a56676e4692ee69f823f1d412a5ef13a2ae1a46a"
@@ -1378,7 +1389,7 @@ dragula-constrain@^1.0.0:
   version "1.0.0"
   resolved "https://npm.spatie.be/dragula-constrain/-/dragula-constrain-1.0.0.tgz#16c587032f3fde1fad8af8c2420a2d8866dadf83"
 
-dragula@^3.7.1, dragula@^3.7.2:
+dragula@^3.7.1:
   version "3.7.2"
   resolved "https://npm.spatie.be/dragula/-/dragula-3.7.2.tgz#4a35c9d3981ffac1a949c29ca7285058e87393ce"
   dependencies:

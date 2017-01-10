@@ -20,6 +20,7 @@ if (query('blender-media')) {
 
 if (query('blender-content-blocks')) {
     require.ensure([], () => {
+        require('select2');
         require('./modules/contentBlocks').default();
     }, 'back.contentBlocks');
 }

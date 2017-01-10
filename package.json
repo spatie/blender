@@ -12,8 +12,8 @@
     "url": "git@github.com:spatie-custom/blender.git"
   },
   "dependencies": {
+    "@spatie/blender-content-blocks": "^1.0.0-beta",
     "@spatie/blender-css": "^3.0.0",
-    "axios": "^0.15.3",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.9.0",
@@ -26,8 +26,6 @@
     "css-loader": "^0.26.0",
     "dom-storage": "^2.0.2",
     "dotenv": "^1.2.0",
-    "dragula": "^3.7.2",
-    "dragula-constrain": "^1.0.0",
     "eslint": "^3.7.1",
     "eslint-config-spatie": "^1.2.7",
     "gulp": "^3.9.0",
