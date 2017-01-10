@@ -5,6 +5,7 @@ namespace App\Services\Html;
 use Html;
 use Carbon\Carbon;
 use App\Models\Tag;
+use App\Models\ContentBlock;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Transformers\MediaTransformer;
 use Collective\Html\FormBuilder as BaseFormBuilder;
@@ -131,7 +132,7 @@ class FormBuilder extends BaseFormBuilder
     public function contentBlocks(Model $subject, string $collectionName, string $editor, array $associated = []): string
     {
         $initialContentBlocks = fractal()
-            ->collection($subject->getContentBlocksForCollection($collectionName))
+            ->collection($subject->getContentBlocks($collectionName))
             ->transformWith(new ContentBlockTransformer())
             ->toJson();
 
