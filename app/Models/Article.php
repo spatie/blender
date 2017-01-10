@@ -7,7 +7,6 @@ use Spatie\Blender\Model\Model;
 use Illuminate\Support\Collection;
 use App\Models\Enums\SpecialArticle;
 use Spatie\EloquentSortable\Sortable;
-use App\Models\Traits\HasContentBlocks;
 use Spatie\Blender\Model\Traits\HasSlug;
 use Spatie\EloquentSortable\SortableTrait;
 use App\Models\Presenters\ArticlePresenter;
@@ -22,7 +21,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Article extends Model implements Sortable
 {
-    use ArticlePresenter, HasSlug, SortableTrait, HasContentBlocks;
+    use ArticlePresenter, HasSlug, SortableTrait;
 
     protected $with = ['media'];
 

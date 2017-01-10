@@ -15,8 +15,6 @@
         ]) !!}
         {!! BlenderForm::media('images') !!}
         {!! BlenderForm::media('downloads') !!}
-
-        {!! BlenderForm::contentBlocks() !!}
     </div>
     <div id="settings">
         @if(! $model->isSpecialArticle())
