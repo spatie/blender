@@ -15,9 +15,7 @@ class Person extends Model implements Sortable
 
     public $translatable = ['text'];
 
-    protected $mediaLibraryCollections = [
-        'images' => 'images',
-    ];
+    protected $mediaLibraryCollections = ['images'];
 
     public function registerMediaConversions()
     {

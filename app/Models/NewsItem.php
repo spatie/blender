@@ -17,10 +17,7 @@ class NewsItem extends Model
     public $tagTypes = ['newsCategory', 'newsTag'];
     public $translatable = ['name', 'text', 'slug', 'seo_values'];
 
-    protected $mediaLibraryCollections = [
-        'images' => 'images',
-        'downloads' => 'downloads',
-    ];
+    protected $mediaLibraryCollections = ['images', 'downloads'];
 
     public function registerMediaConversions()
     {
