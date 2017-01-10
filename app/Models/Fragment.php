@@ -23,7 +23,7 @@ class Fragment extends LanguageLine
 
     public function getDescriptionForEvent(string $eventName): string
     {
-        $link = link_to_action('Back\\FragmentController@edit', $this->fullName, [$this->id]);
+        $link = link_to_action('Back\\FragmentController@edit', $this->full_name, [$this->id]);
 
         return "Fragment '{$link}' werd bijgewerkt";
     }

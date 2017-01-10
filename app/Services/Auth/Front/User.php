@@ -26,8 +26,8 @@ class User extends BaseUser
     public static function register(array $input): User
     {
         $defaults = [
-            'role' => UserRole::MEMBER(),
-            'status' => UserStatus::ACTIVE(),
+            'role' => UserRole::MEMBER,
+            'status' => UserStatus::ACTIVE,
         ];
 
         $user = static::create($defaults + array_only($input, [
@@ -62,50 +62,50 @@ class User extends BaseUser
         return url('/');
     }
 
-    public function getStatusAttribute(): UserStatus
+    public function getStatusAttribute(): string
     {
-        return new UserStatus($this->attributes['status']);
+        return $this->attributes['status'];
     }
 
-    public function setStatusAttribute(UserStatus $status)
+    public function setStatusAttribute(string $status)
     {
-        $this->attributes['status'] = $status->getValue();
+        $this->attributes['status'] = $status;
     }
 
-    public function hasStatus(UserStatus $status): bool
+    public function hasStatus(string $status): bool
     {
-        return $this->status->equals($status);
+        return $this->status === $status;
     }
 
     public function isActive(): bool
     {
-        return $this->hasStatus(UserStatus::ACTIVE());
+        return $this->hasStatus(UserStatus::ACTIVE);
     }
 
     public function activate(): User
     {
-        if ($this->status->doesntEqual(UserStatus::WAITING_FOR_APPROVAL())) {
+        if ($this->status !== UserStatus::WAITING_FOR_APPROVAL) {
             throw new UserIsAlreadyActivated();
         }
 
-        $this->status = UserStatus::ACTIVE();
+        $this->status = UserStatus::ACTIVE;
 
         return $this;
     }
 
-    public function getRoleAttribute(): UserRole
+    public function getRoleAttribute(): string
     {
-        return new UserRole($this->attributes['role']);
+        return $this->attributes['role'];
     }
 
-    public function setRoleAttribute(UserRole $role)
+    public function setRoleAttribute(string $role)
     {
-        $this->attributes['role'] = $role->getValue();
+        $this->attributes['role'] = $role;
     }
 
-    public function hasRole(UserRole $role): bool
+    public function hasRole($role): bool
     {
-        return $this->role->equals($role);
+        return $this->role === $role;
     }
 
     /**

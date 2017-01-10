@@ -17,7 +17,8 @@ trait HasContentBlocks
     {
         return $this
             ->morphMany(ContentBlock::class, 'model')
-            ->orderBy('order_column', 'desc');
+            ->whereDraft(false)
+            ->orderBy('order_column');
     }
 
     public function getContentBlockCollectionNames(): array
@@ -30,7 +31,7 @@ trait HasContentBlocks
         return $this->contentBlockMediaLibraryCollections ?? [];
     }
 
-    public function getContentBlocksForCollection($collection): Collection
+    public function getContentBlocks($collection = 'default'): Collection
     {
         return $this->contentBlocks->where('collection_name', $collection);
     }

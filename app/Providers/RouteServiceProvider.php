@@ -15,8 +15,6 @@ class RouteServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $this->app->setLocale(CurrentLocale::determine());
-
         $this->registerMacros(app(\Illuminate\Routing\Router::class));
 
         parent::boot();
@@ -79,7 +77,7 @@ class RouteServiceProvider extends ServiceProvider
                             Auth::routes();
                             require base_path('routes/front.php');
                         } catch (Exception $exception) {
-                            logger()->warning("Front routes weren't included.");
+                            logger()->warning("Front routes weren't included because {$exception->getMessage()}.");
                         }
                     });
 

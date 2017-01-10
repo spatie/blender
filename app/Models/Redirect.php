@@ -15,7 +15,7 @@ class Redirect extends Model implements Sortable
 
     public static function getAll(): Collection
     {
-        return static::nonDraft()->orderBy('order_column')->get();
+        return static::orderBy('order_column')->get();
     }
 
     public function getNameAttribute()

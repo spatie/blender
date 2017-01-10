@@ -27,8 +27,14 @@ class FrontMenus
 
         Menu::macro('articleSiblings', function (Article $article) {
             return $article->siblings->reduce(function (Menu $menu, Article $article) {
-                return $menu->url($article->fullUrl, $article->name);
+                return $menu->url($article->url, $article->name);
             }, Menu::front());
+        });
+
+        Menu::macro('article', function($article) {
+            $article = $article instanceof Article ? $article : article($article);
+
+            return $this->url($article->url, $article->name);
         });
     }
 }

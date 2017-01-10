@@ -6,5 +6,5 @@ return [
      * The default serializer to be used when performing a transformation.
      * Leave empty to use the Fractal's default.
      */
-    'default_serializer' => Spatie\Fractal\ArraySerializer::class,
+    'default_serializer' => \Spatie\Fractalistic\ArraySerializer::class,
 ];

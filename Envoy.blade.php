@@ -26,7 +26,6 @@ runYarn
 generateAssets
 updateSymlinks
 optimizeInstallation
-updatePermissions
 backupDatabase
 migrateDatabase
 insertNewFragments
@@ -112,12 +111,6 @@ php artisan clear-compiled;
 php artisan optimize;
 @endtask
 
-@task('updatePermissions', ['on' => 'remote'])
-{{ logMessage("\u{1F512}  Updating permissions...") }}
-cd {{ $newReleaseDir }};
-chmod -R 774 .;
-@endtask
-
 @task('backupDatabase', ['on' => 'remote'])
 {{ logMessage("\u{1F4C0}  Backing up database...") }}
 cd {{ $currentDir }}
@@ -135,6 +128,7 @@ php artisan migrate --force;
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 php artisan cache:clear
+
 sudo service php7.0-fpm restart
 sudo supervisorctl restart all
 @endtask
@@ -166,5 +160,5 @@ sudo supervisorctl restart all
 @endtask
 
 @after
-@slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "Deployment on {$server}: {$baseDir} {$newReleaseName} by {$user}: {$task} done")
+@slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "{$server}: {$baseDir} release {$newReleaseName} by {$user}: {$task} done")
 @endafter

@@ -11,11 +11,4 @@ class PersonRepository
     {
         return Person::orderBy('publish_date', 'desc')->get();
     }
-
-    public static function getAllOnline(): Collection
-    {
-        return Person::online()
-            ->orderBy('publish_date', 'desc')
-            ->get();
-    }
 }

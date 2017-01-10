@@ -25,7 +25,7 @@ class TagsController extends Controller
 
     public function index()
     {
-        $tags = Tag::nonDraft()->get()->reduce(function (Collection $carry, Tag $tag) {
+        $tags = Tag::get()->reduce(function (Collection $carry, Tag $tag) {
             if (! $carry->has($tag->type)) {
                 $carry->put($tag->type, new Collection());
             }

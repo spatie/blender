@@ -14,6 +14,7 @@
                 <tr>
                     <th>{{ fragment('back.articles.name') }}</th>
                     <th data-orderable="false"></th>
+                    <th data-orderable="false"></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,11 @@
                         <td>
                             {!! Html::onlineIndicator($article->online) !!}
                             <a href="{{ action('Back\ArticlesController@edit', [$article->id]) }}">{{ $article->translate('name', content_locale()) }}</a>
+                        </td>
+                        <td>
+                            @if($article->parent)
+                                Kind van "{{ $article->parent->name }}"
+                            @endif
                         </td>
                         <td class="-right">
                             @if(! $article->isSpecialArticle())

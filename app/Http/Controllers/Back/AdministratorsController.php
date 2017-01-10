@@ -35,8 +35,8 @@ class AdministratorsController
             $user->password = $request->get('password');
         }
 
-        $user->role = UserRole::ADMIN();
-        $user->status = UserStatus::ACTIVE();
+        $user->role = UserRole::ADMIN;
+        $user->status = UserStatus::ACTIVE;
 
         $user->save();
 

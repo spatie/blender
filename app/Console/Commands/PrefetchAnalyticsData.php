@@ -29,7 +29,10 @@ class PrefetchAnalyticsData extends Command
      */
     public function handle()
     {
+        $this->info('Prefetching analytics data...');
+
         if (empty(config('laravel-analytics.view_id'))) {
+            $this->warn('No view id configured!');
             return;
         }
 

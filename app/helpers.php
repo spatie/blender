@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Collection;
 
-function article(\App\Models\Enums\SpecialArticle $specialArticle): App\Models\Article
+function article(string $specialArticle): App\Models\Article
 {
     return App\Repositories\ArticleRepository::findSpecialArticle($specialArticle);
 }

@@ -6,9 +6,9 @@ use Spatie\String\Str;
 
 trait FragmentPresenter
 {
-    public function getTeaseAttribute(): Str
+    public function getExcerptAttribute(): Str
     {
-        return string($this->getTranslation(app()->getLocale()))->tease();
+        return string($this->text)->tease(200);
     }
 
     public function getFullNameAttribute(): string

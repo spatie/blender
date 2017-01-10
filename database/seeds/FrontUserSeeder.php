@@ -35,7 +35,7 @@ class FrontUserSeeder extends DatabaseSeeder
                 'password' => bcrypt($password),
                 'first_name' => "{$firstName}",
                 'last_name' => $lastName,
-                'status' => UserStatus::ACTIVE(),
+                'status' => UserStatus::ACTIVE,
             ]);
         });
     }

@@ -88,7 +88,7 @@ class Article extends Model implements Sortable
         return ! is_null($this->parent);
     }
 
-    public function getFullUrlAttribute(): string
+    public function getUrlAttribute(): string
     {
         $localeSegment = '';
 
@@ -100,8 +100,8 @@ class Article extends Model implements Sortable
             return $localeSegment;
         }
 
-        $parentUrl = $this->hasParent() ? $this->parent->url.'/' : '';
+        $parentSlug = $this->hasParent() ? $this->parent->slug.'/' : '';
 
-        return "{$localeSegment}/{$parentUrl}{$this->url}";
+        return "{$localeSegment}/{$parentSlug}{$this->slug}";
     }
 }

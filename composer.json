@@ -36,7 +36,7 @@
         "pda/pheanstalk": "^3.0",
         "propaganistas/laravel-phone": "^2.6",
         "spatie/array-functions": "^1.1",
-        "spatie/blender-model": "^3.0.0",
+        "spatie/blender-model": "^4.0.0",
         "spatie/color": "^1.0",
         "spatie/eloquent-sortable": "^3.0",
         "spatie/fragment-importer": "^3.0",
@@ -48,11 +48,12 @@
         "spatie/laravel-cookie-consent": "^1.0",
         "spatie/laravel-demo-mode": "^1.0",
         "spatie/laravel-failed-job-monitor": "^2.0",
-        "spatie/laravel-fractal": "^2.0.0",
+        "spatie/laravel-fractal": "^3.0.0",
         "spatie/laravel-googletagmanager": "^2.0",
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-medialibrary": "^4.0.0",
         "spatie/laravel-menu": "^2.0.0",
+        "spatie/laravel-migrate-fresh": "^1.0",
         "spatie/laravel-missing-page-redirector": "^1.0",
         "spatie/laravel-model-cleanup": "^1.0",
         "spatie/laravel-newsletter": "^3.0.0",
@@ -82,7 +83,7 @@
             "App\\": "app/"
         },
         "files": [
-            "app/Foundation/helpers.php"
+            "app/helpers.php"
         ]
     },
     "autoload-dev": {

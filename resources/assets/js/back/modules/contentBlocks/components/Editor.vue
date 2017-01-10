@@ -46,7 +46,6 @@ export default {
     types: {
         imageLeft: 'Afbeelding links',
         imageRight: 'Afbeelding rechts',
-        noImage: 'Geen afbeelding',
     },
 
     translatableAttributes: {
@@ -59,7 +58,7 @@ export default {
     },
 
     labels: {
-        name: 'Naam',
+        name: 'Titel',
         text: 'Tekst',
         image: 'Afbeelding',
     },
