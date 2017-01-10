@@ -40,7 +40,7 @@ class ContentBlock extends Model implements HasMediaConversions
 
     public function mediaLibraryCollections(): array
     {
-        return array_keys($this->subject->getContentBlockMediaLibraryCollections());
+        return $this->subject->getContentBlockMediaLibraryCollections();
     }
 
     public function mediaLibraryCollectionType(string $name): string
