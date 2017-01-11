@@ -22,14 +22,4 @@ class CreateFailedJobsTable extends Migration
             $table->timestamp('failed_at');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::drop('failed_jobs');
-    }
 }
