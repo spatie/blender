@@ -6,7 +6,7 @@ use App\Models\ContentBlock;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Requests\Back\ContentBlockRequest;
-use App\Models\Transformers\ContentBlockTransformer;
+use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
 
 class ContentBlockController extends Controller
 {
