@@ -1,4 +1,4 @@
-@extends('back._layouts.main')
+@extends('back._layouts.master')
 
 @section('title', fragment('error.title') )
 
