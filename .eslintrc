@@ -1,5 +1,5 @@
 {
-    "extends": "spatie",
+    "extends": "spatie/vue",
     "globals": {
         "$": true,
         "jQuery": true

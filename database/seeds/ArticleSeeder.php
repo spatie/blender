@@ -29,6 +29,7 @@ class ArticleSeeder extends DatabaseSeeder
 
         if (static::$withMedia) {
             $this->addImages($article);
+            $this->addContentBlocks($article);
         }
 
         return $article;

@@ -178,6 +178,14 @@ class BlenderFormBuilder
         ]);
     }
 
+    public function contentBlocks(string $collection = 'default', string $editor = 'default'): string
+    {
+        return $this->group([
+            $this->label('contentBlocks.'.$collection),
+            Form::contentBlocks($this->model, $collection, $editor),
+        ]);
+    }
+
     public function map(string $name): string
     {
         $form = [];
@@ -293,7 +301,7 @@ class BlenderFormBuilder
     {
         return el(
             'fieldset',
-            array_merge([el('legend', el('div.legend_lang', $locale))], $elements)
+            array_merge([el('legend', el('div.legend__lang', $locale))], $elements)
         );
     }
 

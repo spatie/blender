@@ -88,7 +88,7 @@ class HtmlBuilder extends BaseHtmlBuilder
             [
                 'class' => 'button--delete-row',
             ]
-        ).el('span.fa.fa-remove').Form::closeButton();
+        ).el('span.fa.fa-trash').Form::closeButton();
     }
 
     public function onlineIndicator(bool $online): string

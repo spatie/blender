@@ -1,4 +1,6 @@
-import 'es6-symbol/implement';
+import 'babel-polyfill';
 import viewport from 'viewport-utility';
 
-viewport.init();
+viewport.init({
+    classPrefix: 'is-',
+});

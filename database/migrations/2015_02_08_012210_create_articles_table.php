@@ -31,14 +31,4 @@ class CreateArticlesTable extends Migration
             $table->foreign('parent_id')->references('id')->on('articles');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::drop('articles');
-    }
 }
