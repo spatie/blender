@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Presenters\NewsItemPresenter;
+use Spatie\Tags\HasTags;
 use Spatie\Blender\Model\Model;
 use Spatie\Blender\Model\Traits\HasSlug;
-use Spatie\Tags\HasTags;
+use App\Models\Presenters\NewsItemPresenter;
 
 class NewsItem extends Model
 {
@@ -15,8 +15,9 @@ class NewsItem extends Model
     protected $dates = ['publish_date'];
 
     public $tagTypes = ['newsCategory', 'newsTag'];
-    public $mediaLibraryCollections = ['images', 'downloads'];
     public $translatable = ['name', 'text', 'slug', 'seo_values'];
+
+    protected $mediaLibraryCollections = ['images', 'downloads'];
 
     public function registerMediaConversions()
     {

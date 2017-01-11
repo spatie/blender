@@ -1,4 +1,4 @@
-import 'es6-symbol/implement';
+import 'babel-polyfill';
 
 import 'blender.js/modules/ajax.csrf';
 import 'blender.js/modules/interface.confirm';
@@ -18,16 +18,21 @@ if (query('blender-media')) {
     }, 'back.media');
 }
 
+if (query('blender-content-blocks')) {
+    require.ensure([], () => {
+        require('select2');
+        require('./modules/contentBlocks').default();
+    }, 'back.contentBlocks');
+}
+
 if (query('blender-chart')) {
     require.ensure([], () => {
         require('./modules/chart').default();
     }, 'back.chart');
 }
 
-// Uncomment if redactor files are present
-
-// if (query('[data-editor]')) {
-//     require.ensure([], () => {
-//         require('./modules/editor').default();
-//     }, 'back.editor');
-// }
+if (query('[data-editor]')) {
+    require.ensure([], () => {
+        require('./modules/editor').default();
+    }, 'back.editor');
+}

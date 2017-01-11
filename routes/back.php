@@ -21,5 +21,9 @@ Route::module('people', true);
 Route::module('tags', true);
 Route::module('redirects', true);
 
-Route::get('api/media', 'Api\MediaLibraryController@index');
-Route::post('api/media', 'Api\MediaLibraryController@add');
+Route::group(['prefix' => 'api'], function () {
+    Route::get('media', 'Api\MediaLibraryController@index');
+    Route::post('media', 'Api\MediaLibraryController@add');
+
+    Route::post('contentblocks', 'Api\ContentBlockController@add');
+});

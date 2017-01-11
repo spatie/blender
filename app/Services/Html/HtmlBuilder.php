@@ -2,10 +2,10 @@
 
 namespace App\Services\Html;
 
-use App\Services\Auth\User;
-use Collective\Html\HtmlBuilder as BaseHtmlBuilder;
 use Form;
 use Session;
+use App\Services\Auth\User;
+use Collective\Html\HtmlBuilder as BaseHtmlBuilder;
 
 class HtmlBuilder extends BaseHtmlBuilder
 {
@@ -88,7 +88,7 @@ class HtmlBuilder extends BaseHtmlBuilder
             [
                 'class' => 'button -danger -small',
             ]
-        ).el('span.fa.fa-remove').Form::closeButton();
+        ).el('span.fa.fa-trash').Form::closeButton();
     }
 
     public function onlineIndicator(bool $online): string

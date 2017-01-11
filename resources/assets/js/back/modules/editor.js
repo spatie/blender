@@ -50,6 +50,7 @@ function initializeEditor($textarea) {
         pasteImages: false,
         pasteLinks: false,
         plugins: ['video', 'source'],
+        toolbarFixed: false, // no script, with sticky css
     });
 }
 
