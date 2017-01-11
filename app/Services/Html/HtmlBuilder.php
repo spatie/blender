@@ -86,7 +86,7 @@ class HtmlBuilder extends BaseHtmlBuilder
                 'method' => 'delete',
             ],
             [
-                'class' => 'button -danger -small',
+                'class' => 'button--delete-row',
             ]
         ).el('span.fa.fa-remove').Form::closeButton();
     }
