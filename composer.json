@@ -63,7 +63,7 @@
         "spatie/laravel-translatable": "^1.0",
         "spatie/laravel-translation-loader": "^1.0",
         "spatie/regex": "^1.0.0",
-        "spatie/seeders": "^4.3",
+        "spatie/seeders": "^4.4",
         "spatie/string": "^2.0",
         "themsaid/laravel-mail-preview": "^1.2"
     },
