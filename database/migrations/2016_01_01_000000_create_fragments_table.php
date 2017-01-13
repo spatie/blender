@@ -21,6 +21,7 @@ class CreateFragmentsTable extends Migration
             $table->json('text');
             $table->string('description')->nullable();
             $table->boolean('contains_html')->default(false);
+            $table->boolean('contains_image')->default(false);
             $table->boolean('hidden')->default(false);
             $table->boolean('draft')->default(true);
             $table->timestamps();
