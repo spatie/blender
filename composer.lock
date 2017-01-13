@@ -3620,16 +3620,16 @@
         },
         {
             "name": "spatie/blender-model",
-            "version": "4.2.7",
+            "version": "4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/blender-model.git",
-                "reference": "81c9d6101a9cd9beff3681eee265b533385a4fc2"
+                "reference": "962742bc2f785cdd1306284b30649f609bfcf4ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/81c9d6101a9cd9beff3681eee265b533385a4fc2",
-                "reference": "81c9d6101a9cd9beff3681eee265b533385a4fc2",
+                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/962742bc2f785cdd1306284b30649f609bfcf4ab",
+                "reference": "962742bc2f785cdd1306284b30649f609bfcf4ab",
                 "shasum": ""
             },
             "require": {
@@ -3676,10 +3676,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/blender-model/tree/4.2.7",
+                "source": "https://github.com/spatie-custom/blender-model/tree/4.2.8",
                 "issues": "https://github.com/spatie-custom/blender-model/issues"
             },
-            "time": "2017-01-12T15:46:48+00:00"
+            "time": "2017-01-13T14:07:24+00:00"
         },
         {
             "name": "spatie/color",
