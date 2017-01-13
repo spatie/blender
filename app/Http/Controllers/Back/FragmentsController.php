@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Fragment;
+use Spatie\Blender\Model\Updaters\UpdateMedia;
 use Spatie\FragmentImporter\Exporter;
 use App\Http\Requests\Back\FragmentRequest;
 
 class FragmentsController
 {
+    use UpdateMedia;
+
     public function index()
     {
         $fragments = Fragment::where('hidden', false)->get();
@@ -48,6 +51,7 @@ class FragmentsController
         }
 
         $fragment->save();
+        $this->updateMedia($fragment, $request);
         app('cache')->flush();
 
         $eventDescription = fragment('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);

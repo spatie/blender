@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Fragment;
 use Illuminate\Support\Collection;
 
 function article(string $specialArticle): App\Models\Article
@@ -74,6 +75,27 @@ function fragment_slug($name, array $replacements = []): string
     $translation = fragment($name, $replacements);
 
     return str_slug($translation);
+}
+
+function fragment_image($name, $conversion = 'thumb'): string
+{
+    if (! str_contains($name, '.')) {
+        return $name;
+    }
+
+    [$group, $key]= explode('.', $name, 2);
+
+    $fragment = Fragment::with('media')
+        ->where('group', $group)
+        ->where('key', $key)
+        ->first();
+
+
+    if(! $fragment) {
+        return $name;
+    }
+    
+    return $fragment->getFirstMediaUrl('images', $conversion);
 }
 
 function locale(): string

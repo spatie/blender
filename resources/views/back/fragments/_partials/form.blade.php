@@ -11,6 +11,8 @@
         ]) !!}
         @endif
 
+        {!! Form::media($fragment, 'images', 'image') !!}
+
         {!! Html::error($errors->first(translate_field_name('text', $locale))) !!}
     </div>
 @endforeach

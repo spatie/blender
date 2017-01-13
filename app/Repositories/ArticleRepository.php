@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Article;
+use Exception;
 use Illuminate\Support\Collection;
 use App\Models\Enums\SpecialArticle;
 use Illuminate\Support\Facades\Cache;
