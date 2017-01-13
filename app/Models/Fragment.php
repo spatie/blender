@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Spatie\Blender\Model\Traits\HasMedia;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use Spatie\TranslationLoader\LanguageLine;
 use App\Models\Presenters\FragmentPresenter;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Fragment extends LanguageLine implements HasMediaConversions
 {

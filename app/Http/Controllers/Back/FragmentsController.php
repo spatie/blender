@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Fragment;
-use Spatie\Blender\Model\Updaters\UpdateMedia;
 use Spatie\FragmentImporter\Exporter;
 use App\Http\Requests\Back\FragmentRequest;
+use Spatie\Blender\Model\Updaters\UpdateMedia;
 
 class FragmentsController
 {
