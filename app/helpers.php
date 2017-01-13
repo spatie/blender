@@ -94,7 +94,7 @@ function fragment_image($name, $conversion = 'thumb'): string
     if(! $fragment) {
         return $name;
     }
-    
+
     return $fragment->getFirstMediaUrl('images', $conversion);
 }
 
