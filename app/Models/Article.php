@@ -39,9 +39,13 @@ class Article extends Model implements Sortable
             ->performOnCollections('images');
     }
 
-    public function isSpecialArticle(): bool
+    public function isSpecialArticle($specialArticleName = ''): bool
     {
-        return ! empty($this->technical_name);
+        if ($specialArticleName === '') {
+            return ! empty($this->technical_name);
+        }
+
+        return $this->technical_name === $specialArticleName;
     }
 
     public function children(): HasMany
