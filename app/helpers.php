@@ -83,18 +83,17 @@ function fragment_image($name, $conversion = 'thumb'): string
         return $name;
     }
 
-    [$group, $key]= explode('.', $name, 2);
+    [$group, $key] = explode('.', $name, 2);
 
     $fragment = Fragment::with('media')
         ->where('group', $group)
         ->where('key', $key)
         ->first();
 
-
-    if(! $fragment) {
+    if (! $fragment) {
         return $name;
     }
-    
+
     return $fragment->getFirstMediaUrl('images', $conversion);
 }
 
