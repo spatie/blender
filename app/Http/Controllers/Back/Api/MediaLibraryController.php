@@ -10,7 +10,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\AddMediaRequest;
-use App\Models\Transformers\MediaTransformer;
+use Spatie\Blender\Model\Transformers\MediaTransformer;
 
 class MediaLibraryController extends Controller
 {

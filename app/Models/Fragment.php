@@ -2,16 +2,20 @@
 
 namespace App\Models;
 
+use Spatie\Blender\Model\Traits\HasMedia;
 use Spatie\TranslationLoader\LanguageLine;
 use App\Models\Presenters\FragmentPresenter;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
-class Fragment extends LanguageLine
+class Fragment extends LanguageLine implements HasMediaConversions
 {
-    use FragmentPresenter;
+    use FragmentPresenter, HasMedia;
 
     protected static $logAttributes = ['name', 'text'];
 
     protected static $recordEvents = ['updated'];
+
+    protected $mediaLibraryCollections = ['images'];
 
     public $casts = [
         'contains_html' => 'boolean',
@@ -31,5 +35,18 @@ class Fragment extends LanguageLine
     public function getNameAttribute(): string
     {
         return "{$this->group}.{$this->key}";
+    }
+
+    public function registerMediaConversions()
+    {
+        $this->addMediaConversion('admin')
+            ->setWidth(368)
+            ->setHeight(232)
+            ->nonQueued();
+
+        $this->addMediaConversion('thumb')
+            ->setWidth(368)
+            ->setHeight(232)
+            ->performOnCollections('images');
     }
 }
