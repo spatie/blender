@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Back\Api;
 use Response;
 use Exception;
 use Illuminate\Http\Request;
-use Spatie\Blender\Model\Transformers\MediaTransformer;
 use Spatie\MediaLibrary\Media;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Back\AddMediaRequest;
+use Spatie\Blender\Model\Transformers\MediaTransformer;
 
 class MediaLibraryController extends Controller
 {
