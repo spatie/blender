@@ -301,7 +301,7 @@ class BlenderFormBuilder
     {
         return el(
             'fieldset',
-            array_merge([el('legend', el('div.legend_lang', $locale))], $elements)
+            array_merge([el('legend', el('div.legend__lang', $locale))], $elements)
         );
     }
 

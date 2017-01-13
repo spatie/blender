@@ -184,7 +184,7 @@ class FormBuilder extends BaseFormBuilder
     public function getLabelForTranslatedField(string $fieldName, string $label, string $locale): string
     {
         return Html::decode(
-            $this->label($fieldName, $label.el('span.label_lang', $locale))
+            $this->label($fieldName, $label.el('span.label__lang', $locale))
         );
     }
 }
