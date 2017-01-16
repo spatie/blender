@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const config = require('blender-gulp/config/webpack')();
 
 config.entry = {
-    'back.vendor': ['jquery'],
     'back.head': './js/back/head.js',
     'back.app': './js/back/app.js',
     'back.style': './sass/back/back.scss',
@@ -12,20 +11,14 @@ config.entry = {
     'front.style': './sass/front/front.scss',
 };
 
-config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
-    name: 'back.vendor',
-    chunks: ['back.head', 'back.app', 'back.editor', 'back.chart'],
-    filename: 'back.vendor.js',
-}));
-
 config.plugins.push(new webpack.ProvidePlugin({
     $: 'jquery',
     jQuery: 'jquery',
 }));
 
-// Uncomment if you want to use the runtime version of Vue
-// config.resolve.alias = {
-//     'vue$': 'vue/dist/vue.js',
-// };
+config.resolve.alias = {
+    'vue$': 'vue/dist/vue.js',
+};
 
 module.exports = config;
+
