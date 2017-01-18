@@ -10,7 +10,6 @@ function init() {
             bezierCurve: false,
             responsive: true,
             scaleShowVerticalLines: false,
-            scaleFontFamily: 'Lato, sans-serif',
             scaleFontColor: '#9699a1',
         });
 
