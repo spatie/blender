@@ -113,7 +113,7 @@ php artisan optimize;
 
 @task('backupDatabase', ['on' => 'remote'])
 {{ logMessage("\u{1F4C0}  Backing up database...") }}
-cd {{ $currentDir }}
+cd {{ $newReleaseDir }}
 php artisan backup:run
 @endtask
 
