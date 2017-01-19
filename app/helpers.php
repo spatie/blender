@@ -157,6 +157,23 @@ function roman_year(int $year = null): string
     return $result;
 }
 
+function carbon(string $date = null, string $format = null): Carbon
+{
+    if (func_num_args() === 0) {
+        return Carbon::now();
+    }
+
+    if (is_null($date)) {
+        throw new InvalidArgumentException("Date can't be null");
+    }
+
+    if (is_null($format)) {
+        return Carbon::parse($date);
+    }
+
+    return Carbon::createFromFormat($format, $date);
+}
+
 function register_url(): string
 {
     return action('Front\Auth\RegisterController@showRegistrationForm');
