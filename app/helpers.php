@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Fragment;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 
 function article(string $specialArticle): App\Models\Article
@@ -55,7 +56,7 @@ function current_back_user()
     return auth()->guard('back')->user();
 }
 
-function diff_date_for_humans(Carbon\Carbon $date): string
+function diff_date_for_humans(Carbon $date): string
 {
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
 }
