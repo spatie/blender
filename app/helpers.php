@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Fragment;
 use Carbon\Carbon;
+use App\Models\Fragment;
 use Illuminate\Support\Collection;
 
 function article(string $specialArticle): App\Models\Article
