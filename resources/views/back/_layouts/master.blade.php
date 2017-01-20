@@ -12,7 +12,6 @@
 
     <link rel="stylesheet" href="{{ elixir('back.style.css') }}">
 
-    <script src="{{ elixir('back.vendor.js') }}"></script>
     <script src="{{ elixir('back.head.js') }}"></script>
 
     @include('front._layouts._partials.head.favicons')
