@@ -5,7 +5,6 @@ namespace App\Repositories;
 use Exception;
 use App\Models\Article;
 use Illuminate\Support\Collection;
-use App\Models\Enums\SpecialArticle;
 use Illuminate\Support\Facades\Cache;
 
 class ArticleRepository
