@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Article;
-use App\Models\Enums\SpecialArticle;
 
 class ArticleSeeder extends DatabaseSeeder
 {
@@ -13,7 +12,7 @@ class ArticleSeeder extends DatabaseSeeder
             ['Home', 'home'],
             ['Contact', 'contact'],
         ])->each(function ($attributes) {
-           $this->seedArticle(...$attributes);
+            $this->seedArticle(...$attributes);
         });
 
         $parent = $this->seedArticle('Parent');
