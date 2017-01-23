@@ -42,7 +42,7 @@ class HtmlServiceProvider extends ServiceProvider
     protected function registerFormBuilder()
     {
         $this->app->singleton('form', function ($app) {
-            $formBuilder = new FormBuilder($app['html'], $app['url'], view(), $app['session.store']->getToken());
+            $formBuilder = new FormBuilder($app['html'], $app['url'], view(), $app['session.store']->token());
 
             $formBuilder->setSessionStore($app['session.store']);
 
