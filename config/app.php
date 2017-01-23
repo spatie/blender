@@ -190,7 +190,6 @@ return [
         Spatie\Blender\Model\BlenderModelServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
-        Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
@@ -271,7 +270,6 @@ return [
 
         'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
-        'Breadcrumbs'=> DaveJamesMiller\Breadcrumbs\Facade::class,
         'Bugsnag' => Bugsnag\BugsnagLaravel\BugsnagFacade::class,
         'Date' => Jenssegers\Date\Date::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
@@ -283,6 +281,5 @@ return [
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
         'PaginateRoute' => Spatie\PaginateRoute\PaginateRouteFacade::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
-        'Slack' => Maknz\Slack\Facades\Slack::class,
     ],
 ];
