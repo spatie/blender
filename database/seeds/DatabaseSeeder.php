@@ -18,4 +18,11 @@ class DatabaseSeeder extends Seeder
         $this->call(PersonSeeder::class);
         $this->call(NewsItemSeeder::class);
     }
+
+    protected function times(int $times, callable $callback)
+    {
+        foreach (range(0, $times) as $i) {
+            $callback();
+        }
+    }
 }

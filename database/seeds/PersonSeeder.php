@@ -6,19 +6,24 @@ class PersonSeeder extends DatabaseSeeder
 {
     public function run()
     {
-        $this->truncate((new Person())->getTable());
+        $this->truncate(Person::class);
 
-        $this->seedRandomPeople(25, false);
+        collect()->range(0, 10)->each(function () {
+            $this->createPerson();
+        });
     }
 
-    public function seedRandomPeople($amount = 10, $withImages = true)
+    public function createPerson(array $attributes = []): Person
     {
-        return factory(Person::class, $amount)
-            ->create()
-            ->each(function ($person) use ($withImages) {
-                if ($withImages) {
-                    $this->addImages($person, 1, 1);
-                }
-            });
+        $person = Person::create($attributes + [
+            'name' => faker()->name,
+            'text' => faker()->translate(faker()->sentences(2)),
+            'online' => faker()->mostly(),
+            'draft' => false,
+        ]);
+
+        $this->addImages($person, 1, 1);
+
+        return $person;
     }
 }

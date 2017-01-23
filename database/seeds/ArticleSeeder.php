@@ -7,30 +7,35 @@ class ArticleSeeder extends DatabaseSeeder
 {
     public function run()
     {
-        $this->truncate((new Article())->getTable());
+        $this->truncate(Article::class);
 
-        $this->seedArticle('Home', SpecialArticle::HOME);
-        $this->seedArticle('Contact', SpecialArticle::CONTACT);
+        collect([
+            ['Home', 'home'],
+            ['Contact', 'contact'],
+        ])->each(function ($attributes) {
+           $this->seedArticle(...$attributes);
+        });
 
-        $parentArticle = $this->seedArticle('Parent');
+        $parent = $this->seedArticle('Parent');
 
-        $this->seedArticle('Child 1', null, $parentArticle);
-        $this->seedArticle('Child 2', null, $parentArticle);
+        $this->seedArticle('Child 1', null, $parent);
+        $this->seedArticle('Child 2', null, $parent);
     }
 
-    public function seedArticle(string $name, string $technicalName = null, Article $parentArticle = null): Article
+    public function seedArticle(string $name, string $technicalName = null, Article $parent = null): Article
     {
-        $article = factory(Article::class)->create([
+        $article = Article::create([
             'name' => faker()->translate($name),
             'technical_name' => $technicalName,
+            'text' => faker()->translate(faker()->text()),
             'online' => true,
-            'parent_id' => $parentArticle ? $parentArticle->id : null,
+            'draft' => false,
+            'parent_id' => $parent ? $parent->id : null,
         ]);
 
-        if (static::$withMedia) {
-            $this->addImages($article);
-            $this->addContentBlocks($article);
-        }
+        $this->addImages($article);
+
+        $this->addContentBlocks($article);
 
         return $article;
     }
