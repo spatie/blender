@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "91249c6ba8169388198a82eb7c4ba307",
+    "content-hash": "028b1343481993ed6d13ecf466e7c6eb",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.20.13",
+            "version": "3.21.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "343c6c96468de5087ae5e7df4ccee2668857a5aa"
+                "reference": "3f371482c631b24c6e7168e745653f4b47942481"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/343c6c96468de5087ae5e7df4ccee2668857a5aa",
-                "reference": "343c6c96468de5087ae5e7df4ccee2668857a5aa",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3f371482c631b24c6e7168e745653f4b47942481",
+                "reference": "3f371482c631b24c6e7168e745653f4b47942481",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-01-04T18:20:17+00:00"
+            "time": "2017-01-20T21:24:50+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -635,28 +635,29 @@
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "doctrine/coding-standard": "~0.1@dev",
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -697,20 +698,20 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14T22:21:58+00:00"
+            "time": "2017-01-03T10:49:41+00:00"
         },
         {
             "name": "doctrine/common",
-            "version": "v2.7.1",
+            "version": "v2.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "5954c297e9d93ff84554906c2fbbc2a133c43941"
+                "reference": "930297026c8009a567ac051fd545bf6124150347"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/5954c297e9d93ff84554906c2fbbc2a133c43941",
-                "reference": "5954c297e9d93ff84554906c2fbbc2a133c43941",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/930297026c8009a567ac051fd545bf6124150347",
+                "reference": "930297026c8009a567ac051fd545bf6124150347",
                 "shasum": ""
             },
             "require": {
@@ -770,20 +771,20 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2016-12-03T08:15:01+00:00"
+            "time": "2017-01-13T14:02:13+00:00"
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.6",
+            "version": "v2.5.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "a526d0df58daa8ab6802244bf3227f532e0deb45"
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/a526d0df58daa8ab6802244bf3227f532e0deb45",
-                "reference": "a526d0df58daa8ab6802244bf3227f532e0deb45",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
+                "reference": "0d2f8187d4b4c7b72d8e2acba359e25c36feaf5e",
                 "shasum": ""
             },
             "require": {
@@ -841,7 +842,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2016-12-04T05:53:43+00:00"
+            "time": "2017-01-19T13:27:33+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -2402,16 +2403,16 @@
         },
         {
             "name": "league/glide",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/glide.git",
-                "reference": "93bfc82142c62bf3d18420cc6c0fc0b1a8f82274"
+                "reference": "ae6351088b148ed73ebd1270e312b07fd35dd37d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/glide/zipball/93bfc82142c62bf3d18420cc6c0fc0b1a8f82274",
-                "reference": "93bfc82142c62bf3d18420cc6c0fc0b1a8f82274",
+                "url": "https://api.github.com/repos/thephpleague/glide/zipball/ae6351088b148ed73ebd1270e312b07fd35dd37d",
+                "reference": "ae6351088b148ed73ebd1270e312b07fd35dd37d",
                 "shasum": ""
             },
             "require": {
@@ -2459,7 +2460,7 @@
                 "manipulation",
                 "processing"
             ],
-            "time": "2016-11-14T16:36:03+00:00"
+            "time": "2017-01-19T01:26:54+00:00"
         },
         {
             "name": "maatwebsite/excel",
@@ -2734,16 +2735,16 @@
         },
         {
             "name": "mtdowling/cron-expression",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mtdowling/cron-expression.git",
-                "reference": "c9ee7886f5a12902b225a1a12f36bb45f9ab89e5"
+                "reference": "9504fa9ea681b586028adaaa0877db4aecf32bad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mtdowling/cron-expression/zipball/c9ee7886f5a12902b225a1a12f36bb45f9ab89e5",
-                "reference": "c9ee7886f5a12902b225a1a12f36bb45f9ab89e5",
+                "url": "https://api.github.com/repos/mtdowling/cron-expression/zipball/9504fa9ea681b586028adaaa0877db4aecf32bad",
+                "reference": "9504fa9ea681b586028adaaa0877db4aecf32bad",
                 "shasum": ""
             },
             "require": {
@@ -2754,8 +2755,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Cron": "src/"
+                "psr-4": {
+                    "Cron\\": "src/Cron/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -2774,7 +2775,7 @@
                 "cron",
                 "schedule"
             ],
-            "time": "2016-01-26T21:23:30+00:00"
+            "time": "2017-01-23T04:29:33+00:00"
         },
         {
             "name": "mtdowling/jmespath.php",
@@ -2833,26 +2834,32 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.21.0",
+            "version": "1.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "7b08ec6f75791e130012f206e3f7b0e76e18e3d7"
+                "reference": "7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7b08ec6f75791e130012f206e3f7b0e76e18e3d7",
-                "reference": "7b08ec6f75791e130012f206e3f7b0e76e18e3d7",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc",
+                "reference": "7cdf42c0b1cc763ab7e4c33c47a24e27c66bfccc",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "symfony/translation": "~2.6|~3.0"
+                "symfony/translation": "~2.6 || ~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0|~5.0"
+                "friendsofphp/php-cs-fixer": "~2",
+                "phpunit/phpunit": "~4.0 || ~5.0"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.23-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Carbon\\": "src/Carbon/"
@@ -2876,7 +2883,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-11-04T20:07:17+00:00"
+            "time": "2017-01-16T07:55:07+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2931,16 +2938,16 @@
         },
         {
             "name": "orchestra/database",
-            "version": "v3.3.4",
+            "version": "v3.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/database.git",
-                "reference": "2e96665cc400078404282b5a3d4c48e6420b7c38"
+                "reference": "b42d1d444613786564eb2986d39f475769681730"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/database/zipball/2e96665cc400078404282b5a3d4c48e6420b7c38",
-                "reference": "2e96665cc400078404282b5a3d4c48e6420b7c38",
+                "url": "https://api.github.com/repos/orchestral/database/zipball/b42d1d444613786564eb2986d39f475769681730",
+                "reference": "b42d1d444613786564eb2986d39f475769681730",
                 "shasum": ""
             },
             "require": {
@@ -2981,7 +2988,7 @@
                 "orchestra-platform",
                 "orchestral"
             ],
-            "time": "2016-09-06T01:45:20+00:00"
+            "time": "2017-01-01T03:17:40+00:00"
         },
         {
             "name": "orchestra/testbench",
@@ -3416,16 +3423,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.0",
+            "version": "v0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "4a8860e13aa68a4bbf2476c014f8a1f14f1bf991"
+                "reference": "701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4a8860e13aa68a4bbf2476c014f8a1f14f1bf991",
-                "reference": "4a8860e13aa68a4bbf2476c014f8a1f14f1bf991",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a",
+                "reference": "701e8a1cc426ee170f1296f5d9f6b8a26ad25c4a",
                 "shasum": ""
             },
             "require": {
@@ -3455,7 +3462,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.8.x-dev"
+                    "dev-develop": "0.9.x-dev"
                 }
             },
             "autoload": {
@@ -3485,7 +3492,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2016-12-07T17:15:07+00:00"
+            "time": "2017-01-15T17:54:13+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -3731,26 +3738,26 @@
         },
         {
             "name": "spatie/crawler",
-            "version": "1.3.1",
+            "version": "2.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "c83bef7eecc247f67a0a0a96957c9fb2ebb0806d"
+                "reference": "26498c69944b2dfc896bf6f30d00f300df289410"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/c83bef7eecc247f67a0a0a96957c9fb2ebb0806d",
-                "reference": "c83bef7eecc247f67a0a0a96957c9fb2ebb0806d",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/26498c69944b2dfc896bf6f30d00f300df289410",
+                "reference": "26498c69944b2dfc896bf6f30d00f300df289410",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.2",
-                "illuminate/support": "^5.1",
-                "php": ">=5.6.0",
-                "symfony/dom-crawler": "^2.7|^3.0"
+                "php": "^7.0",
+                "symfony/dom-crawler": "^3.0",
+                "tightenco/collect": "^5.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.0"
+                "phpunit/phpunit": "^5.0"
             },
             "type": "library",
             "extra": {
@@ -3781,7 +3788,7 @@
                 "spatie",
                 "website"
             ],
-            "time": "2016-09-13T13:13:44+00:00"
+            "time": "2016-12-30T17:56:21+00:00"
         },
         {
             "name": "spatie/db-dumper",
@@ -3887,20 +3894,20 @@
         },
         {
             "name": "spatie/fractalistic",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/fractalistic.git",
-                "reference": "7e38d628a24e55df5e546bafb96fe47eb0cb9e2c"
+                "reference": "59a2e7dfbd49e58b7de7d5621c1e7365786809f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/fractalistic/zipball/7e38d628a24e55df5e546bafb96fe47eb0cb9e2c",
-                "reference": "7e38d628a24e55df5e546bafb96fe47eb0cb9e2c",
+                "url": "https://api.github.com/repos/spatie/fractalistic/zipball/59a2e7dfbd49e58b7de7d5621c1e7365786809f9",
+                "reference": "59a2e7dfbd49e58b7de7d5621c1e7365786809f9",
                 "shasum": ""
             },
             "require": {
-                "league/fractal": "^0.14.0",
+                "league/fractal": "^0.14.0|^0.15.0",
                 "php": "^5.6|^7.0"
             },
             "require-dev": {
@@ -3934,7 +3941,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2016-12-09T14:50:06+00:00"
+            "time": "2017-01-19T20:51:03+00:00"
         },
         {
             "name": "spatie/fragment-importer",
@@ -4048,16 +4055,16 @@
         },
         {
             "name": "spatie/laravel-activitylog",
-            "version": "1.10.3",
+            "version": "1.10.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-activitylog.git",
-                "reference": "de6b83fad893c6f1e2c003a52f3c8f5386dd43e5"
+                "reference": "ead89be577b25a8e6eed04784e62d1873c6a639f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/de6b83fad893c6f1e2c003a52f3c8f5386dd43e5",
-                "reference": "de6b83fad893c6f1e2c003a52f3c8f5386dd43e5",
+                "url": "https://api.github.com/repos/spatie/laravel-activitylog/zipball/ead89be577b25a8e6eed04784e62d1873c6a639f",
+                "reference": "ead89be577b25a8e6eed04784e62d1873c6a639f",
                 "shasum": ""
             },
             "require": {
@@ -4108,7 +4115,7 @@
                 "spatie",
                 "user"
             ],
-            "time": "2016-11-26T16:01:12+00:00"
+            "time": "2017-01-20T19:22:55+00:00"
         },
         {
             "name": "spatie/laravel-analytics",
@@ -4169,16 +4176,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.3.2",
+            "version": "4.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "1ccfebfcd52580d5a99db7fefc41c41223019419"
+                "reference": "45968cd99334841633e57835c9fc584a05f60b19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/1ccfebfcd52580d5a99db7fefc41c41223019419",
-                "reference": "1ccfebfcd52580d5a99db7fefc41c41223019419",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/45968cd99334841633e57835c9fc584a05f60b19",
+                "reference": "45968cd99334841633e57835c9fc584a05f60b19",
                 "shasum": ""
             },
             "require": {
@@ -4232,7 +4239,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2017-01-02T19:43:49+00:00"
+            "time": "2017-01-22T18:09:13+00:00"
         },
         {
             "name": "spatie/laravel-blade-javascript",
@@ -4519,16 +4526,16 @@
         },
         {
             "name": "spatie/laravel-fractal",
-            "version": "3.1.3",
+            "version": "3.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-fractal.git",
-                "reference": "3e53f5f8bda0c0a953dab668aae6189be1865df6"
+                "reference": "c3e9ea034333ec87f9f4a24a5fcccd732139c0c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/3e53f5f8bda0c0a953dab668aae6189be1865df6",
-                "reference": "3e53f5f8bda0c0a953dab668aae6189be1865df6",
+                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/c3e9ea034333ec87f9f4a24a5fcccd732139c0c6",
+                "reference": "c3e9ea034333ec87f9f4a24a5fcccd732139c0c6",
                 "shasum": ""
             },
             "require": {
@@ -4572,7 +4579,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2017-01-11T20:42:46+00:00"
+            "time": "2017-01-20T19:17:57+00:00"
         },
         {
             "name": "spatie/laravel-glide",
@@ -4669,26 +4676,26 @@
         },
         {
             "name": "spatie/laravel-link-checker",
-            "version": "1.0.1",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-link-checker.git",
-                "reference": "2a21a72ca68a7997f8b03250425174d9dc346966"
+                "reference": "31f05d3ae61c810ad973d9e90ad0eb3164f37ee4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-link-checker/zipball/2a21a72ca68a7997f8b03250425174d9dc346966",
-                "reference": "2a21a72ca68a7997f8b03250425174d9dc346966",
+                "url": "https://api.github.com/repos/spatie/laravel-link-checker/zipball/31f05d3ae61c810ad973d9e90ad0eb3164f37ee4",
+                "reference": "31f05d3ae61c810ad973d9e90ad0eb3164f37ee4",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.5.0",
-                "spatie/crawler": "^1.1.1"
+                "illuminate/support": "^5.3",
+                "php": "^7.0",
+                "spatie/crawler": "^2.0.2"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.1",
-                "phpunit/phpunit": "4.*",
-                "scrutinizer/ocular": "~1.1"
+                "orchestra/testbench": "^3.3",
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "autoload": {
@@ -4718,20 +4725,20 @@
                 "link",
                 "spatie"
             ],
-            "time": "2015-12-03T16:41:38+00:00"
+            "time": "2017-01-19T21:02:07+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "4.11.0",
+            "version": "4.11.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "787d1298e7d3e9ce3c87eaf9bd84b3e83aef8f1d"
+                "reference": "588ea0e3d9eedc4d13b5673816df26b29064bb07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/787d1298e7d3e9ce3c87eaf9bd84b3e83aef8f1d",
-                "reference": "787d1298e7d3e9ce3c87eaf9bd84b3e83aef8f1d",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/588ea0e3d9eedc4d13b5673816df26b29064bb07",
+                "reference": "588ea0e3d9eedc4d13b5673816df26b29064bb07",
                 "shasum": ""
             },
             "require": {
@@ -4785,7 +4792,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-01-10T11:02:57+00:00"
+            "time": "2017-01-20T19:04:13+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -4841,23 +4848,25 @@
         },
         {
             "name": "spatie/laravel-migrate-fresh",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-migrate-fresh.git",
-                "reference": "7c49c12dcc4e9fbf73f8a04fee96912dd8e11839"
+                "reference": "c8614f9ecf3faba5215611dedcf2aed6704b0fb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-migrate-fresh/zipball/7c49c12dcc4e9fbf73f8a04fee96912dd8e11839",
-                "reference": "7c49c12dcc4e9fbf73f8a04fee96912dd8e11839",
+                "url": "https://api.github.com/repos/spatie/laravel-migrate-fresh/zipball/c8614f9ecf3faba5215611dedcf2aed6704b0fb7",
+                "reference": "c8614f9ecf3faba5215611dedcf2aed6704b0fb7",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "^5.3",
+                "illuminate/console": "^5.3.28",
+                "illuminate/events": "^5.3.28",
                 "php": "^7.0"
             },
             "require-dev": {
+                "mockery/mockery": "^0.9.7",
                 "orchestra/testbench": "^3.3",
                 "phpunit/phpunit": "5.*"
             },
@@ -4889,7 +4898,7 @@
                 "migrate",
                 "spatie"
             ],
-            "time": "2017-01-11T15:59:06+00:00"
+            "time": "2017-01-13T22:13:13+00:00"
         },
         {
             "name": "spatie/laravel-missing-page-redirector",
@@ -5209,16 +5218,16 @@
         },
         {
             "name": "spatie/laravel-tail",
-            "version": "1.1.3",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-tail.git",
-                "reference": "87834f3caf783cd599d3d0792c489c3aa4e7f8d7"
+                "reference": "f4365ed5d0724948cbaf9e740bac0664b45b814b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/87834f3caf783cd599d3d0792c489c3aa4e7f8d7",
-                "reference": "87834f3caf783cd599d3d0792c489c3aa4e7f8d7",
+                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/f4365ed5d0724948cbaf9e740bac0664b45b814b",
+                "reference": "f4365ed5d0724948cbaf9e740bac0664b45b814b",
                 "shasum": ""
             },
             "require": {
@@ -5252,7 +5261,7 @@
                 "log",
                 "tail"
             ],
-            "time": "2016-11-26T09:44:08+00:00"
+            "time": "2017-01-20T08:25:12+00:00"
         },
         {
             "name": "spatie/laravel-translatable",
@@ -7198,16 +7207,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a"
+                "reference": "c19cfc7cbb0e9338d8c469c7eedecc2a428b0971"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c14196e64a78570034afd0b7a9f3757ba71c2a0a",
-                "reference": "c14196e64a78570034afd0b7a9f3757ba71c2a0a",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c19cfc7cbb0e9338d8c469c7eedecc2a428b0971",
+                "reference": "c19cfc7cbb0e9338d8c469c7eedecc2a428b0971",
                 "shasum": ""
             },
             "require": {
@@ -7257,7 +7266,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-20T15:22:42+00:00"
+            "time": "2017-01-20T15:06:43+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -7442,16 +7451,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.5",
+            "version": "5.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe"
+                "reference": "caf8141b89691498d91aaac6c82e9cd5f685ae86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/50fd2be8f3e23e91da825f36f08e5f9633076ffe",
-                "reference": "50fd2be8f3e23e91da825f36f08e5f9633076ffe",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/caf8141b89691498d91aaac6c82e9cd5f685ae86",
+                "reference": "caf8141b89691498d91aaac6c82e9cd5f685ae86",
                 "shasum": ""
             },
             "require": {
@@ -7463,7 +7472,7 @@
                 "myclabs/deep-copy": "~1.3",
                 "php": "^5.6 || ^7.0",
                 "phpspec/prophecy": "^1.6.2",
-                "phpunit/php-code-coverage": "^4.0.3",
+                "phpunit/php-code-coverage": "^4.0.4",
                 "phpunit/php-file-iterator": "~1.4",
                 "phpunit/php-text-template": "~1.2",
                 "phpunit/php-timer": "^1.0.6",
@@ -7520,7 +7529,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-12-28T07:18:51+00:00"
+            "time": "2017-01-22T08:39:59+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
