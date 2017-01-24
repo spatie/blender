@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.tags.title'),
+])
 
-@section('pageTitle', fragment('back.tags.title'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment('back.tags.title') }}</h1>
@@ -21,7 +20,7 @@
 
                     @foreach($type as $tag)
 
-                        <tr data-row-id="{{ $tag->id }}" >
+                        <tr data-row-id="{{ $tag->id }}">
                             <td>
                                 <a href="{{ Url::action('Back\TagsController@edit', [$tag->id]) }}">
                                     {{ $tag->name }}
@@ -41,4 +40,5 @@
 
         </div>
     </section>
-@stop
+
+@endcomponent

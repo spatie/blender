@@ -1,8 +1,6 @@
-@extends('back._layouts.master')
-
-@section('pageTitle', 'Log')
-
-@section('content')
+@component('back._layouts.master', [
+    'pageTitle' => 'Log'
+])
 
     <section>
         <div class="grid">
@@ -42,4 +40,4 @@
         </div>
     </section>
 
-@stop
+@endcomponent

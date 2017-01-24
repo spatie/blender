@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.administrators.title')
+])
 
-@section('pageTitle', fragment('back.administrators.title'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment('back.administrators.title') }}</h1>
@@ -11,21 +10,21 @@
             </a>
             <table data-datatable data-order='[[ 0, "asc" ]]'>
                 <thead>
-                    <tr>
-                        <th>E-mail</th>
-                        <th>{{ fragment('back.administrators.name') }}</th>
-                        <th>{{ fragment('back.administrators.lastActivity') }}</th>
-                        <th data-orderable="false"></th>
-                    </tr>
+                <tr>
+                    <th>E-mail</th>
+                    <th>{{ fragment('back.administrators.name') }}</th>
+                    <th>{{ fragment('back.administrators.lastActivity') }}</th>
+                    <th data-orderable="false"></th>
+                </tr>
                 </thead>
                 <tbody>
-                    @foreach($users as $user)
+                @foreach($users as $user)
                     <tr>
                         <td>
                             <a href="{{ action('Back\AdministratorsController@edit', [$user->id]) }}">{{ $user->email }}</a>
                         </td>
                         <td>
-                            {!! Html::avatar($user, '-small') !!}  <span>{{ $user->name }}</span>
+                            {!! Html::avatar($user, '-small') !!} <span>{{ $user->name }}</span>
                         </td>
                         <td>
                             {{ $user->lastActivityDate }}
@@ -36,9 +35,10 @@
                             @endunless
                         </td>
                     </tr>
-                    @endforeach
+                @endforeach
                 </tbody>
             </table>
         </div>
     </section>
-@endsection
+
+@endcomponent

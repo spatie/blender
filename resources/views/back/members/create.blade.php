@@ -1,10 +1,8 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.members.new'),
+    'breadcrumbs' => Html::backToIndex('Back\MembersController@index'),
+])
 
-@section('pageTitle', fragment('back.members.new'))
-
-@section('breadcrumbs', Html::backToIndex('Back\MembersController@index'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment("back.members.new") }}</h1>
@@ -13,8 +11,9 @@
                 'url' => action('Back\MembersController@store'),
                 'class' =>'-stacked'
             ]) !!}
-                @include("back.members._partials.form")
+            @include("back.members._partials.form")
             {!! Form::close() !!}
         </div>
     </section>
-@endsection
+
+@endcomponent

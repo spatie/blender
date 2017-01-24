@@ -1,23 +1,22 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.people.title'),
+    'breadcrumbs' => Html::backToIndex('Back\PeopleController@index'),
+])
 
-@section('breadcrumbs', Html::backToIndex('Back\PeopleController@index'))
+    <section>
+        <div class="grid">
+            <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.people.new') }}</h1>
 
-@section('pageTitle', fragment('back.people.title'))
+            {!! Form::openDraftable([
+                'method' =>'PATCH',
+                'action' => ['Back\PeopleController@update', $model->id],
+                'class' => '-stacked',
+            ], $model) !!}
 
-@section('content')
-<section>
-    <div class="grid">
-        <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.people.new') }}</h1>
+            @include('back.people._partials.form')
 
-        {!! Form::openDraftable([
-            'method' =>'PATCH',
-            'action' => ['Back\PeopleController@update', $model->id],
-            'class' => '-stacked',
-        ], $model) !!}
+            {!! Form::close() !!}
+        </div>
+    </section>
 
-        @include('back.people._partials.form')
-
-        {!! Form::close() !!}
-    </div>
-</section>
-@stop
+@endcomponent

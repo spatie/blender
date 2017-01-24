@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.fragments.title'),
+])
 
-@section('pageTitle', fragment('back.fragments.title'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment('back.fragments.title') }}</h1>
@@ -17,8 +16,10 @@
                 <tbody>
                 @foreach($fragments as $fragment)
                     <tr>
-                        <td><a href="{{ action('Back\FragmentsController@edit', [$fragment->id]) }}">{{ $fragment->fullName }}</a></td>
-                        <td  class="-small">{!! $fragment->tease !!}</td>
+                        <td>
+                            <a href="{{ action('Back\FragmentsController@edit', [$fragment->id]) }}">{{ $fragment->fullName }}</a>
+                        </td>
+                        <td class="-small">{!! $fragment->tease !!}</td>
                     </tr>
                 @endforeach
                 </tbody>
@@ -29,9 +30,10 @@
                     'action' => 'Back\FragmentsController@download',
                     'method' => 'post'
                 ]) !!}
-                    {{ fragment('back.fragments.download') }}
+                {{ fragment('back.fragments.download') }}
                 {!! Form::closeButton() !!}
             </div>
         </div>
     </section>
-@stop
+
+@endcomponent

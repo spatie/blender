@@ -24,7 +24,7 @@
         <div class="grid">
             @include('back._layouts._partials.flashMessage')
             <nav class="breadcrumbs">
-                @yield('breadcrumbs')
+                {{ $breadcrumbs ?? '' }}
             </nav>
         </div>
     @endif

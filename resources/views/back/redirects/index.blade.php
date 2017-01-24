@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.redirects.title'),
+])
 
-@section('pageTitle', fragment('back.redirects.title'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment('back.redirects.title') }}</h1>
@@ -23,7 +22,7 @@
                     <tr data-row-id="{{ $redirect->id }}">
                         <td>
                             <a href="{{ action('Back\RedirectsController@edit', [$redirect->id]) }}">{{ $redirect->old_url }}</a>
-                            <td>{{ $redirect->new_url }}</td>
+                        <td>{{ $redirect->new_url }}</td>
                         </td>
                         <td class="-right">
                             {!! Html::deleteButton(action('Back\RedirectsController@destroy', $redirect->id)) !!}
@@ -37,4 +36,5 @@
 
         </div>
     </section>
-@stop
+
+@endcomponent

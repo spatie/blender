@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.people.title'),
+])
 
-@section('pageTitle', fragment('back.people.title'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment('back.people.title') }}</h1>
@@ -18,7 +17,7 @@
 
                 <tbody>
                 @foreach($models as $person)
-                    <tr data-row-id="{{ $person->id }}" >
+                    <tr data-row-id="{{ $person->id }}">
                         <td>
                             {!! Html::onlineIndicator($person->online) !!}
                             <a href="{!! action('Back\PeopleController@edit', [$person->id]) !!}">{{ $person->name }}</a>
@@ -32,4 +31,5 @@
             </table>
         </div>
     </section>
-@stop
+
+@endcomponent

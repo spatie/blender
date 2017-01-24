@@ -1,10 +1,8 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => 'Nieuwe gebruiker',
+    'breadcrumbs' => Html::backToIndex('Back\AdministratorsController@index'),
+])
 
-@section('pageTitle', 'Nieuwe gebruiker')
-
-@section('breadcrumbs', Html::backToIndex('Back\AdministratorsController@index'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment("back.administrators.new") }}</h1>
@@ -13,8 +11,9 @@
                 'url' => action('Back\AdministratorsController@store'),
                 'class' =>'-stacked'
             ]) !!}
-                @include("back.administrators._partials.form")
+            @include("back.administrators._partials.form")
             {!! Form::close() !!}
         </div>
     </section>
-@endsection
+
+@endcomponent

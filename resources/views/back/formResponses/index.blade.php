@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.formResponses.title'),
+])
 
-@section('pageTitle', fragment('back.formResponses.title'))
-
-@section('content')
     <section>
         <div class="grid">
 
@@ -19,9 +18,10 @@
                     'action' => 'Back\FormResponsesController@download',
                     'method' => 'post',
                 ]) !!}
-                    {{ fragment('back.formResponses.download') }}
+                {{ fragment('back.formResponses.download') }}
                 {!! Form::closeButton() !!}
             </div>
         </div>
     </section>
-@stop
+
+@endcomponent
