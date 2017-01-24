@@ -15,7 +15,7 @@
     @endslot
 
     @slot('mainDownloads')
-        @include('front._partials.downloads', ['item' => $article])
+        @include('front._partials.downloads',  ['item' => $article])
     @endslot
 
     {!! $article->text !!}

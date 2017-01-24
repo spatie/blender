@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('pageDescription')">
-    <title>@yield('pageTitle') | Blender</title>
+    <title>{{ isset($pageTitle) ? $pageTitle  . ' | ' : '' }} Blender</title>
 
     <link rel="stylesheet" href="{{ elixir('back.style.css') }}">
 
@@ -29,7 +29,7 @@
         </div>
     @endif
     <main class="main" id="app">
-        @yield('content')
+        {{ $slot }}
     </main>
     @if (current_user())
         @include('back._layouts._partials.footer')
