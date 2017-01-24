@@ -11,9 +11,9 @@
             <table class="-datatable -compact">
                 <thead>
                 <tr>
-                    <th>{{ fragment('back.log.time') }}</th>
-                    <th>{{ fragment('back.log.description') }}</th>
-                    <th>{{ fragment('back.log.user') }}</th>
+                    <th>{{ __('Tijdstip') }}</th>
+                    <th>{{ __('Omschrijving') }}</th>
+                    <th>{{ __('Gebruiker')}}</th>
                 </tr>
                 </thead>
                 <tbody>

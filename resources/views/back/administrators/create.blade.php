@@ -1,11 +1,11 @@
 @component('back._layouts.master', [
-    'pageTitle' => 'Nieuwe gebruiker',
+    'pageTitle' => __('Nieuwe administrator'),
     'breadcrumbs' => Html::backToIndex('Back\AdministratorsController@index'),
 ])
 
     <section>
         <div class="grid">
-            <h1>{{ fragment("back.administrators.new") }}</h1>
+            <h1>{{ __('Nieuwe administrator') }}</h1>
 
             {!! Form::open([
                 'url' => action('Back\AdministratorsController@store'),
