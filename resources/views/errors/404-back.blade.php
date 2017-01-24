@@ -1,8 +1,6 @@
-@extends('back._layouts.master')
-
-@section('title', fragment('error.title') )
-
-@section('content')
+@component('back._layouts.master', [
+    'title' => fragment('error.title'),
+])
 
     <h1>{{ fragment('error.title') }}</h1>
     <p>
@@ -11,4 +9,5 @@
     <p>
         <a class=button href="/blender">{{ fragment('error.button') }}</a>
     </p>
-@endsection
+
+@endcomponent
