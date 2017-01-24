@@ -35,7 +35,7 @@ class RouteServiceProvider extends ServiceProvider
 
     public function map(Router $router)
     {
-        Route::group(['namespace' => $this->namespace], function () {
+        Route::namespace($this->namespace)->group(function () {
 
             /*
              * Special routes
