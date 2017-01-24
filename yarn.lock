@@ -13,9 +13,9 @@
     dropzone "^4.3.0"
     font-awesome-filetypes "^1.0.1"
 
-"@spatie/blender-css@^3.1.0":
-  version "3.1.4"
-  resolved "https://registry.npmjs.org/@spatie/blender-css/-/blender-css-3.1.4.tgz#f9e0aa82ee22d71ed1cbc3e4de4af4bd97903f86"
+"@spatie/blender-css@^3.1.5":
+  version "3.1.5"
+  resolved "https://registry.npmjs.org/@spatie/blender-css/-/blender-css-3.1.5.tgz#dd67f75cabeedb978ca0375eeca78093f2020fd4"
 
 abbrev@1:
   version "1.0.9"
