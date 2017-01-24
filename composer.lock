@@ -1910,12 +1910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "55843b715fe3d2d4f1878e41258f7d19becdd9ca"
+                "reference": "7f36ae486df02fb5f56ac64ddf8488a3a441f308"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/55843b715fe3d2d4f1878e41258f7d19becdd9ca",
-                "reference": "55843b715fe3d2d4f1878e41258f7d19becdd9ca",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7f36ae486df02fb5f56ac64ddf8488a3a441f308",
+                "reference": "7f36ae486df02fb5f56ac64ddf8488a3a441f308",
                 "shasum": ""
             },
             "require": {
@@ -2031,7 +2031,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-01-24T01:15:24+00:00"
+            "time": "2017-01-24T13:12:44+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3567,16 +3567,16 @@
         },
         {
             "name": "spatie/blender-model",
-            "version": "4.2.8",
+            "version": "4.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie-custom/blender-model.git",
-                "reference": "962742bc2f785cdd1306284b30649f609bfcf4ab"
+                "reference": "d49f1aecccb9f7cd0814735958c4654e95246082"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/962742bc2f785cdd1306284b30649f609bfcf4ab",
-                "reference": "962742bc2f785cdd1306284b30649f609bfcf4ab",
+                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/d49f1aecccb9f7cd0814735958c4654e95246082",
+                "reference": "d49f1aecccb9f7cd0814735958c4654e95246082",
                 "shasum": ""
             },
             "require": {
@@ -3623,10 +3623,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/blender-model/tree/4.2.8",
+                "source": "https://github.com/spatie-custom/blender-model/tree/4.2.9",
                 "issues": "https://github.com/spatie-custom/blender-model/issues"
             },
-            "time": "2017-01-13T14:07:24+00:00"
+            "time": "2017-01-24T13:36:28+00:00"
         },
         {
             "name": "spatie/color",

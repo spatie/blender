@@ -1,5 +1,7 @@
 @extends('front._layouts.master')
 
+
+
 @section('main')
     <main class="h-padding-medium">
         <div class="grid">

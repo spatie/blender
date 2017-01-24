@@ -19,7 +19,9 @@
 
     @include('front._layouts._partials.header')
     @include('front._layouts._partials.flashMessage')
+
     @yield('main')
+
     @include('cookieConsent::index')
     @include('front._layouts._partials.footer')
 

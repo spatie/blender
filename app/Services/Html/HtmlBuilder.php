@@ -104,7 +104,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         );
     }
 
-    public function backToIndex(string $action, array $parameters = []): string
+    public function backToIndex(string $action, array $parameters = [])
     {
         return el('a.breadcrumb--back', ['href' => action($action, $parameters)], fragment('back.backToIndex'));
     }

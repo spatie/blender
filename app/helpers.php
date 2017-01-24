@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use App\Models\Fragment;
 use Illuminate\Support\Collection;
+use Illuminate\Support\HtmlString;
 
 function article(string $specialArticle): App\Models\Article
 {
@@ -61,9 +62,9 @@ function diff_date_for_humans(Carbon $date): string
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
 }
 
-function el(string $tag, $attributes = null, $contents = null): string
+function el(string $tag, $attributes = null, $contents = null)
 {
-    return \Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents);
+    return new HtmlString(\Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents));
 }
 
 function fragment($name, array $replacements = []): string
