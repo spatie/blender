@@ -34,8 +34,6 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        die('front auth not active');
-
         return view('front.auth.login');
     }
 

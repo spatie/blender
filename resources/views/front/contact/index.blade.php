@@ -1,12 +1,18 @@
-@extends('front._layouts.main')
+@component('front._layouts.main', [
+    'title' => $article->seo('title'),
+    'seo' => $article->renderSeoTags(),
+    'subMenu' => Menu::articleSiblings($article),
+])
 
-@section('title', $article->seo('title'))
-@section('seo', $article->renderSeoTags())
+    @slot('mainTitle')
+        <h1>{{ $article->name }}</h1>
+    @endslot
 
-@section('mainTitle')
-    <h1>{{ $article->name }}</h1>
-@endsection
+    @slot('mainDownloads')
+        @include('front._partials.downloads', ['item' => $article])
+    @endslot
 
-@section('mainContent')
     @include('front.contact._partials.form')
-@endsection
+
+@endcomponent
+

@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="{{ elixir('front.style.css') }}">
     <script src="{{ elixir('front.head.js') }}"></script>
 
-    @include('front._layouts._partials.head.title')
+    <title>{{ isset($title) ? $title  . ' - ' : '' }} {{ fragment('site.title') }}</title>
+
     @include('front._layouts._partials.head.seo')
     @include('front._layouts._partials.head.hreflang')
     @include('front._layouts._partials.head.favicons')
@@ -20,7 +21,7 @@
     @include('front._layouts._partials.header')
     @include('front._layouts._partials.flashMessage')
 
-    @yield('main')
+    {{ $slot }}
 
     @include('cookieConsent::index')
     @include('front._layouts._partials.footer')

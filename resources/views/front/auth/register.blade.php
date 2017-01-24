@@ -1,8 +1,7 @@
-@extends('front._layouts.main')
+@component('front._layouts.main', [
+'title' => fragment('auth.titleRegister')
+])
 
-@section('title', fragment('auth.titleRegister'))
-
-@section('mainContent')
     <p>
         <a href="{{ URL::action('Front\Auth\LoginController@showLoginForm') }}">{{ fragment('auth.toLogin') }}</a>
     </p>
@@ -65,4 +64,4 @@
 
     {!! Form::close() !!}
 
-@endsection
+@endcomponent

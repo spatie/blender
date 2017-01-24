@@ -1,19 +1,18 @@
-@extends('front._layouts.master')
+@component('front._layouts.master', [
+    'title' => $title
+])
 
-
-
-@section('main')
     <main class="h-padding-medium">
         <div class="grid">
             <div class="grid__col">
-                @yield('mainTitle')
+                {{ $mainTitle ?? '' }}
 
-                @yield('mainImages')
+                {{ $mainImages ?? '' }}
 
-                @yield('mainContent')
+                {{ $slot ?? '' }}
 
-                @yield('mainDownloads')
+                {{ $mainDownloads ?? '' }}
             </div>
         </div>
     </main>
-@endsection
+@endcomponent

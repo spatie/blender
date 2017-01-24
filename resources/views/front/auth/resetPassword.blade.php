@@ -1,15 +1,13 @@
-@extends('front._layouts.main')
+@component('front._layouts.main', [
+'title' => fragment('auth.titleChangePassword')
+])
 
-@section('title', fragment('auth.titleChangePassword'))
-
-@section('mainTitle')
-    <h1 class="v-auth__title -small">
-        {!! Html::avatar($user, '-large v-auth__gravatar') !!}<br>
-        {{ fragment('auth.titleChangePassword') }}
-    </h1>
-@endsection
-
-@section('mainContent')
+    @slot('mainTitle')
+        <h1 class="v-auth__title -small">
+            {!! Html::avatar($user, '-large v-auth__gravatar') !!}<br>
+            {{ fragment('auth.titleChangePassword') }}
+        </h1>
+    @endslot
 
     {!! Form::open(['action' => 'Front\Auth\ResetPasswordController@reset']) !!}
     {!! Form::hidden('token', $token) !!}
@@ -32,4 +30,4 @@
 
     {!! Form::close() !!}
 
-@stop
+@endcomponent

@@ -1,8 +1,6 @@
-@extends('front._layouts.main')
-
-@section('title', fragment('auth.titleResetPassword'))
-
-@section('mainContent')
+@component('front._layouts.main', [
+'title' => fragment('auth.titleResetPassword')
+])
 
     {!! Form::open(['action' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
 
@@ -29,4 +27,4 @@
 
     {!! Form::close() !!}
 
-@endsection
+@endcomponent
