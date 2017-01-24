@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'DashboardController@index')->name('dashboard');
+Route::name('dashboard')->get('/', 'DashboardController@index');
 Route::get('log', 'ActivitylogController@index');
 
 Route::resource('fragments', 'FragmentsController', ['except' => 'show']);
@@ -10,7 +10,7 @@ Route::post('fragments/download', 'FragmentsController@download');
 Route::get('formresponses', 'FormResponsesController@showDownloadButton');
 Route::post('formresponses', 'FormResponsesController@download');
 
-Route::get('statistics', 'StatisticsController@index')->name('statistics');
+Route::name('statistics')->get('statistics', 'StatisticsController@index');
 
 Route::module('administrators');
 Route::module('members');
@@ -21,7 +21,7 @@ Route::module('people', true);
 Route::module('tags', true);
 Route::module('redirects', true);
 
-Route::group(['prefix' => 'api'], function () {
+Route::prefix('api')->group(function () {
     Route::get('media', 'Api\MediaLibraryController@index');
     Route::post('media', 'Api\MediaLibraryController@add');
 
