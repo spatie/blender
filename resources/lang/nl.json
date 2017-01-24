@@ -1,0 +1,6 @@
+{
+  "hi": "hello",
+  "contact": {
+      "nested": "yes"
+  }
+}
