@@ -40,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
             /*
              * Special routes
              */
-            Route::group(['middleware' => 'web'], function () {
+            Route::middleware('web')->group(function () {
                 Route::demoAccess('/demo');
 
                 Route::get('coming-soon', function () {
