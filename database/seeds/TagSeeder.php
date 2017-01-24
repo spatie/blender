@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Tag;
+use Illuminate\Support\Collection;
 
 class TagSeeder extends DatabaseSeeder
 {
@@ -8,29 +9,36 @@ class TagSeeder extends DatabaseSeeder
     {
         $this->truncate((new Tag())->getTable(), 'taggables');
 
-        $this->seedTags('newsCategory', [
+        $this->createTags('newsCategory', [
             'Categorie 1',
             'Categorie 2',
             'Categorie 3',
         ]);
 
-        $this->seedTags('newsTag', [
+        $this->createTags('newsTag', [
             'Tag 1',
             'Tag 2',
             'Tag 3',
         ]);
     }
 
-    public function seedTags($type, array $names)
+    public function createTags(string $type, array $names): Collection
     {
-        foreach ($names as $i => $name) {
-            Tag::create([
-                'type' => $type,
+        return collect($names)->each(function ($name) use ($type) {
+            $this->createTag([
                 'name' => faker()->translate($name),
-                'draft' => 0,
-                'online' => 1,
-                'order_column' => $i,
+                'type' => $type,
             ]);
-        }
+        });
+    }
+
+    public function createTag(array $attributes = []): Tag
+    {
+        return Tag::create($attributes + [
+            'type' => 'default',
+            'name' => faker()->translate(faker()->name()),
+            'draft' => 0,
+            'online' => 1,
+        ]);
     }
 }
