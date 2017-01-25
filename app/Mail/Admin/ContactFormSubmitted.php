@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Mail;
+namespace App\Mail\Admin;
 
 use App\Models\FormResponse;
 use Illuminate\Bus\Queueable;
