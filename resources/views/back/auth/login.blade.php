@@ -15,7 +15,7 @@
             </h1>
 
             <div class="form__group">
-                {!! Form::label('email', fragment('back.auth.email') ) !!}
+                {!! Form::label('email', __('Email')) !!}
                 {!! Form::email('email', Input::old('email'), ['autofocus' => true ]) !!}
                 {!! Html::error($errors->first('email')) !!}
             </div>
