@@ -22,9 +22,9 @@ class RouteServiceProvider extends ServiceProvider
     protected function registerMacros(Router $router)
     {
         $router->macro('module', function ($module, $sortable = false) use ($router) {
-            $controller = ucfirst($module) . 'Controller';
+            $controller = ucfirst($module).'Controller';
             if ($sortable) {
-                $router->patch("{$module}/changeOrder", $controller . '@changeOrder');
+                $router->patch("{$module}/changeOrder", $controller.'@changeOrder');
             }
 
             $router->resource($module, $controller);
@@ -68,7 +68,6 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::namespace('Front')
                 ->group(function () {
-
                     Route::prefix('api')
                         ->middleware('api')
                         ->namespace('Api')

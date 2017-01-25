@@ -12,8 +12,8 @@
                 <thead>
                 <tr>
                     <th>E-mail</th>
-                    <th>{{ fragment('back.administrators.name') }}</th>
-                    <th>{{ fragment('back.administrators.lastActivity') }}</th>
+                    <th>{{ __('Naam') }}</th>
+                    <th>{{ __('Laatste activiteit') }}</th>
                     <th data-orderable="false"></th>
                 </tr>
                 </thead>

@@ -5,7 +5,7 @@
 
 <section>
     <div class="grid">
-        <h1>Administrator {{ $user->email }}</h1>
+        <h1>{{ __('Administrator') }} {{ $user->email }}</h1>
         <div>
             {!! Html::avatar($user) !!}
             <span class="help -small">

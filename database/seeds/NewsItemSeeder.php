@@ -8,17 +8,24 @@ class NewsItemSeeder extends DatabaseSeeder
     {
         $this->truncate((new NewsItem())->getTable());
 
-        $this->seedRandomNewsItems();
+        collect()->range(0, 10)->each(function () {
+            $this->createNewsItem();
+        });
     }
 
-    public function seedRandomNewsItems($amount = 10)
+    public function createNewsItem(array $attributes = []): NewsItem
     {
-        return factory(NewsItem::class, $amount)
-            ->create()
-            ->each(function ($newsItem) {
-                if (static::$withMedia) {
-                    $this->addImages($newsItem, 1, 3);
-                }
-            });
+        $newsItem = NewsItem::create($attributes + [
+            'name' => faker()->translate(faker()->title()),
+            'text' => faker()->translate(faker()->text()),
+            'seo_values' => collect([]),
+            'publish_date' => faker()->futureDate(),
+            'online' => faker()->mostly(),
+            'draft' => false,
+        ]);
+
+        $this->addImages($newsItem, 1, 1);
+
+        return $newsItem;
     }
 }
