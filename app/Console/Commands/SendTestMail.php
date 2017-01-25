@@ -7,11 +7,11 @@ use Exception;
 use Illuminate\Console\Command;
 use Mail;
 
-class SendFakeMail extends Command
+class SendTestMail extends Command
 {
     protected $signature = 'mail:fake {mailableClass} {recipient}';
 
-    protected $description = 'Clear a Beanstalkd queue, by deleting all pending jobs.';
+    protected $description = 'Send a test email';
 
     public function handle()
     {
@@ -19,7 +19,7 @@ class SendFakeMail extends Command
 
         $mailable = MailableFactory::create($this->argument('mailableClass'));
 
-        Mail::to('freek@spatie.be')->send($mailable);
+        Mail::to($this->argument('recipient'))->send($mailable);
 
         $this->comment('Mail sent!');
     }

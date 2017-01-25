@@ -20,7 +20,7 @@ class Kernel extends ConsoleKernel
         \Spatie\FragmentImporter\Commands\ImportFragments::class,
         \App\Console\Commands\PrefetchAnalyticsData::class,
         \Spatie\MigrateFresh\Commands\MigrateFresh::class,
-        SendFakeMail::class,
+        \App\Console\Commands\SendTestMail::class,
     ];
 
     /**
