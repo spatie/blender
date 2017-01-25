@@ -1,8 +1,9 @@
 @php
-$transKey = 'auth.passwordMail.'.($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser');
+    $transKey = 'auth.passwordMail.'.($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser');
 @endphp
 
 @component('mail::message')
+
 # {{ trans($transKey.'.resetButton', [], null, $user->locale) }}
 
 {{ trans('auth.passwordMail.compellation', [], null, $user->locale) }} {{ $user->first_name }},
