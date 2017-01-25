@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\DB;
 use Spatie\Tags\Tag as SpatieTag;
-use App\Models\Presenters\TagPresenter;
 use Spatie\Blender\Model\Traits\Draftable;
 
 class Tag extends SpatieTag
 {
-    use TagPresenter, Draftable;
+    use Draftable;
 
     /**
      * @param string $type
@@ -22,7 +22,7 @@ class Tag extends SpatieTag
 
     public static function findOrCreate($name, string $type = null, string $locale = null): Tag
     {
-        if ($existingTag = parent::findFromString($name, $type)) {
+        if ($existingTag = parent::findFromString($name, $type, $locale)) {
             return $existingTag;
         }
 
@@ -33,5 +33,24 @@ class Tag extends SpatieTag
         $tag->save();
 
         return $tag;
+    }
+
+    public function getTaggableCountAttribute(): int
+    {
+        return DB::table('taggables')
+            ->where('tag_id', $this->id)
+            ->count();
+    }
+
+    public static function types(): array
+    {
+        return (new static)->types;
+    }
+
+    public static function typesForSelect(): array
+    {
+        return collect(static::types())->mapWithKeys(function (string $type) {
+            return [$type => fragment("back.tags.types.{$type}")];
+        })->toArray();
     }
 }
