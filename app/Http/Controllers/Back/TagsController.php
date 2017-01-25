@@ -19,13 +19,16 @@ class TagsController extends Controller
     protected function updateFromRequest(Tag $tag, TagRequest $request)
     {
         $tag->type = $request->get('type');
+        $tag->online = true;
 
-        $this->updateModel($tag, $request);
+        $this->updateTranslations($tag, $request);
+
+        $tag->save();
     }
 
     public function index()
     {
-        $tags = Tag::get()->reduce(function (Collection $carry, Tag $tag) {
+        $tags = Tag::orderBy('order_column')->get()->reduce(function (Collection $carry, Tag $tag) {
             if (! $carry->has($tag->type)) {
                 $carry->put($tag->type, new Collection());
             }
@@ -36,5 +39,10 @@ class TagsController extends Controller
         }, new Collection());
 
         return view('back.tags.index', compact('tags'));
+    }
+
+    public function edit(int $id)
+    {
+        return parent::edit($id)->withTypes(Tag::typesForSelect());
     }
 }
