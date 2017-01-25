@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\SendFakeMail;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
         \Spatie\FragmentImporter\Commands\ImportFragments::class,
         \App\Console\Commands\PrefetchAnalyticsData::class,
         \Spatie\MigrateFresh\Commands\MigrateFresh::class,
+        SendFakeMail::class,
     ];
 
     /**
