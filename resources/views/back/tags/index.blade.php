@@ -33,7 +33,9 @@
                                 </a>
                             </td>
                             <td class="-remark">
-                                Gekoppeld aan {{ $tag->taggable_count }} item(s)
+                                @if($tag->taggable_count > 0)
+                                    Gekoppeld aan {{ $tag->taggable_count }} item(s)
+                                @endif
                             </td>
                             <td class="-right">
                                 @if($tag->taggable_count === 0)

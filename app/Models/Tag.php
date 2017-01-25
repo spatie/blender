@@ -3,12 +3,19 @@
 namespace App\Models;
 
 use Illuminate\Support\Facades\DB;
+use Spatie\EloquentSortable\Sortable;
+use Spatie\EloquentSortable\SortableTrait;
 use Spatie\Tags\Tag as SpatieTag;
 use Spatie\Blender\Model\Traits\Draftable;
 
-class Tag extends SpatieTag
+class Tag extends SpatieTag implements Sortable
 {
-    use Draftable;
+    use Draftable, SortableTrait;
+
+    protected $types = [
+        'newsCategory',
+        'newsTag',
+    ];
 
     /**
      * @param string $type

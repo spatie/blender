@@ -21,12 +21,14 @@ class TagsController extends Controller
         $tag->type = $request->get('type');
         $tag->online = true;
 
-        $this->updateModel($tag, $request);
+        $this->updateTranslations($tag, $request);
+
+        $tag->save();
     }
 
     public function index()
     {
-        $tags = Tag::get()->reduce(function (Collection $carry, Tag $tag) {
+        $tags = Tag::orderBy('order_column')->get()->reduce(function (Collection $carry, Tag $tag) {
             if (! $carry->has($tag->type)) {
                 $carry->put($tag->type, new Collection());
             }
