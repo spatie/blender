@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
+use Spatie\Tags\Tag as SpatieTag;
 use Illuminate\Support\Facades\DB;
 use Spatie\EloquentSortable\Sortable;
-use Spatie\EloquentSortable\SortableTrait;
-use Spatie\Tags\Tag as SpatieTag;
 use Spatie\Blender\Model\Traits\Draftable;
+use Spatie\EloquentSortable\SortableTrait;
 
 class Tag extends SpatieTag implements Sortable
 {
