@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Dotenv\Dotenv;
 use Exception;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Cache\MemcachedConnector;
