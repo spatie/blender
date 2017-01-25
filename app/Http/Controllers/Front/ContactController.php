@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use Mail;
 use App\Models\FormResponse;
-use App\Mail\ContactFormSubmitted;
+use App\Mail\Admin\ContactFormSubmitted;
 use App\Http\Controllers\Controller;
 use App\Models\Enums\SpecialArticle;
 use App\Http\Requests\Front\FormResponseRequest;

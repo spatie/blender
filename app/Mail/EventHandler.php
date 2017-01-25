@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Mail\Member\Welcome;
 use Mail;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Password;
