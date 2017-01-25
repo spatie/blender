@@ -8,11 +8,9 @@
 
             <h1>{{ fragment('back.formResponses.title') }}</h1>
 
-            @if(config('mail.questionFormRecipients')=="")
-                {!! Html::info(fragment('back.formResponses.mailConfigMissing'))  !!}
-            @else
-                {!! Html::info(fragment('back.formResponses.info', ['recipients' => implode(', ', (new Illuminate\Support\Collection(config('mail.questionFormRecipients')))->toArray() )]))  !!}
-            @endif
+            {!! Html::info(fragment('back.formResponses.info', [
+                'recipients' => collect(config('mail.recipients.questionForm'))->implode(', '),
+            ])) !!}
 
             <div class="form__group -buttons">
                 {!! Form::openButton([
