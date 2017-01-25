@@ -53,7 +53,7 @@ class MailableFactory
         }
 
         if ($type === 'string') {
-            return faker()->sentence;
+            return faker()->sentence();
         }
 
         if ($type === 'bool') {
