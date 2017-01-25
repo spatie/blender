@@ -33,6 +33,6 @@ class Welcome extends Mailable implements ShouldQueue
         return $this
             ->to($this->user->email)
             ->subject('Welkom bij'.config('app.url'))
-            ->view('mails.auth.front.welcome');
+            ->markdown('mails.auth.front.welcome');
     }
 }
