@@ -3,9 +3,9 @@
 namespace App\Services;
 
 use Exception;
-use Illuminate\Contracts\Mail\Mailable;
 use ReflectionClass;
 use ReflectionParameter;
+use Illuminate\Contracts\Mail\Mailable;
 
 class MailableFactory
 {
@@ -19,7 +19,7 @@ class MailableFactory
 
     public function __construct(string $mailableClass)
     {
-        if (!class_exists($mailableClass)) {
+        if (! class_exists($mailableClass)) {
             throw new Exception("Class `{$mailableClass}` does not exist.");
         }
 
@@ -63,7 +63,6 @@ class MailableFactory
             return $this->getModel($type);
         }
 
-
         return app($type);
     }
 
@@ -74,7 +73,6 @@ class MailableFactory
         if (! $model) {
             throw new Exception("Could not find a model of class `{$modelClass}`.");
         }
-
 
         return $model;
     }
