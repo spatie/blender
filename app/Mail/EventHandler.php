@@ -2,8 +2,8 @@
 
 namespace App\Mail;
 
-use App\Mail\Member\Welcome;
 use Mail;
+use App\Mail\Member\Welcome;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Contracts\Events\Dispatcher;
