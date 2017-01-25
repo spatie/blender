@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Exception;
 use Illuminate\Contracts\Mail\Mailable;
+use Illuminate\Database\Eloquent\Model;
 use ReflectionClass;
 use ReflectionParameter;
 
@@ -20,7 +21,7 @@ class MailableFactory
     public function __construct(string $mailableClass)
     {
         if (!class_exists($mailableClass)) {
-            throw new Exception("Class `{$mailableClass}` does not exist.");
+            throw new Exception("Mailable `{$mailableClass}` does not exist.");
         }
 
         $this->mailableClass = $mailableClass;
@@ -59,22 +60,23 @@ class MailableFactory
             return faker()->sometimes();
         }
 
-        if (starts_with($type, 'App\Models')) {
-            return $this->getModel($type);
+        $argumentValue = app($type);
+
+        if ($argumentValue instanceof Model) {
+            $argumentValue = $this->getModelInstance($argumentValue);
         }
 
-
-        return app($type);
+        return $argumentValue;
     }
 
-    protected function getModel(string $modelClass)
+    protected function getModelInstance(Model $model)
     {
-        $model = app($modelClass)->first();
+        $model = $model->first();
 
         if (! $model) {
+            $modelClass = get_class($model);
             throw new Exception("Could not find a model of class `{$modelClass}`.");
         }
-
 
         return $model;
     }
