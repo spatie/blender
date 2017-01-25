@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Services\MailableFactory;
-use Illuminate\Console\Command;
 use Mail;
+use Illuminate\Console\Command;
+use App\Services\MailableFactory;
 
 class SendFakeMail extends Command
 {
