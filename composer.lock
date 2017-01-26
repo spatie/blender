@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfd44fc28b48d384caf456d6762af8d1",
+    "content-hash": "1ad9428a1b499f19a3744844277d51d2",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.21.3",
+            "version": "3.21.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3f371482c631b24c6e7168e745653f4b47942481"
+                "reference": "adaabe1e1b2c29a8748e52146194ab42222df8b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3f371482c631b24c6e7168e745653f4b47942481",
-                "reference": "3f371482c631b24c6e7168e745653f4b47942481",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/adaabe1e1b2c29a8748e52146194ab42222df8b5",
+                "reference": "adaabe1e1b2c29a8748e52146194ab42222df8b5",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-01-20T21:24:50+00:00"
+            "time": "2017-01-25T22:06:08+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1105,16 +1105,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.0.1",
+            "version": "8.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "2ca74e98ddfb2780057b1a5654616f1179be85e0"
+                "reference": "ba82f4f7e9bb9509e6bcddd42e07bebf6f6b2e92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/2ca74e98ddfb2780057b1a5654616f1179be85e0",
-                "reference": "2ca74e98ddfb2780057b1a5654616f1179be85e0",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/ba82f4f7e9bb9509e6bcddd42e07bebf6f6b2e92",
+                "reference": "ba82f4f7e9bb9509e6bcddd42e07bebf6f6b2e92",
                 "shasum": ""
             },
             "require": {
@@ -1163,7 +1163,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2017-01-11T11:40:50+00:00"
+            "time": "2017-01-25T11:07:04+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -1906,16 +1906,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.0",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7212b1e9620c36bf806e444f6931cf5f379c68ff"
+                "reference": "9fa94bf77272ea7f920292c6f016b0f6e0853f98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7212b1e9620c36bf806e444f6931cf5f379c68ff",
-                "reference": "7212b1e9620c36bf806e444f6931cf5f379c68ff",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9fa94bf77272ea7f920292c6f016b0f6e0853f98",
+                "reference": "9fa94bf77272ea7f920292c6f016b0f6e0853f98",
                 "shasum": ""
             },
             "require": {
@@ -2031,7 +2031,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-01-24T15:59:31+00:00"
+            "time": "2017-01-25T16:40:49+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -2404,7 +2404,7 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "2.1.x-dev",
+            "version": "2.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
@@ -2875,123 +2875,6 @@
                 "php"
             ],
             "time": "2016-09-16T12:04:44+00:00"
-        },
-        {
-            "name": "orchestra/database",
-            "version": "3.4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/orchestral/database.git",
-                "reference": "8fe082aeaee485a01fe240d54287856bab6c204d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/database/zipball/8fe082aeaee485a01fe240d54287856bab6c204d",
-                "reference": "8fe082aeaee485a01fe240d54287856bab6c204d",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "~5.4.0",
-                "illuminate/database": "~5.4.0",
-                "php": ">=5.6.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Orchestra\\Database\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com",
-                    "homepage": "https://github.com/crynobone"
-                },
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com",
-                    "homepage": "https://github.com/taylorotwell"
-                }
-            ],
-            "description": "Database Component for Orchestra Platform",
-            "keywords": [
-                "database",
-                "orchestra-platform",
-                "orchestral"
-            ],
-            "time": "2017-01-21T06:08:08+00:00"
-        },
-        {
-            "name": "orchestra/testbench",
-            "version": "3.4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/orchestral/testbench.git",
-                "reference": "d633e3bcfa791ab20b59cadb193edc77bb7228e1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/d633e3bcfa791ab20b59cadb193edc77bb7228e1",
-                "reference": "d633e3bcfa791ab20b59cadb193edc77bb7228e1",
-                "shasum": ""
-            },
-            "require": {
-                "fzaninotto/faker": "~1.4",
-                "laravel/framework": "~5.4.0",
-                "orchestra/database": "~3.4.0",
-                "php": ">=5.6.0",
-                "symfony/css-selector": "~3.2",
-                "symfony/dom-crawler": "~3.2"
-            },
-            "require-dev": {
-                "mockery/mockery": "^0.9.4",
-                "phpunit/phpunit": "~5.0"
-            },
-            "suggest": {
-                "phpunit/phpunit": "Allow to use PHPUnit for testing your Laravel Application/Package (~4.0|~5.0)."
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Orchestra\\Testbench\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mior Muhammad Zaki",
-                    "email": "crynobone@gmail.com",
-                    "homepage": "https://github.com/crynobone"
-                }
-            ],
-            "description": "Laravel Testing Helper for Packages Development",
-            "homepage": "http://orchestraplatform.com/docs/latest/components/testbench/",
-            "keywords": [
-                "BDD",
-                "TDD",
-                "laravel",
-                "orchestra-platform",
-                "orchestral",
-                "testing"
-            ],
-            "time": "2017-01-01T15:57:48+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3570,12 +3453,12 @@
             "version": "4.2.12",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie-custom/blender-model.git",
+                "url": "https://github.com/spatie/blender-model.git",
                 "reference": "655cdf3323dffe85859a89274400749ae5d1a31d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/blender-model/zipball/655cdf3323dffe85859a89274400749ae5d1a31d",
+                "url": "https://api.github.com/repos/spatie/blender-model/zipball/655cdf3323dffe85859a89274400749ae5d1a31d",
                 "reference": "655cdf3323dffe85859a89274400749ae5d1a31d",
                 "shasum": ""
             },
@@ -3884,26 +3767,26 @@
         },
         {
             "name": "spatie/fragment-importer",
-            "version": "3.1.0",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie-custom/fragment-importer.git",
-                "reference": "9dde3aa0b5c61dff618f8c069e6ec98c9848a719"
+                "url": "https://github.com/spatie/fragment-importer.git",
+                "reference": "f0a848c35fe40bbfb3d8896180a857e7a875bb1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/fragment-importer/zipball/9dde3aa0b5c61dff618f8c069e6ec98c9848a719",
-                "reference": "9dde3aa0b5c61dff618f8c069e6ec98c9848a719",
+                "url": "https://api.github.com/repos/spatie/fragment-importer/zipball/f0a848c35fe40bbfb3d8896180a857e7a875bb1e",
+                "reference": "f0a848c35fe40bbfb3d8896180a857e7a875bb1e",
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "~5.2.0|~5.3.0|~5.4.0",
                 "illuminate/support": "~5.2.0|~5.3.0|~5.4.0",
                 "maatwebsite/excel": "^2.1",
-                "orchestra/testbench": "~3.2.0|~3.3.0|~3.4.0",
                 "php": "^7.0"
             },
             "require-dev": {
+                "orchestra/testbench": "~3.2.0|~3.3.0|~3.4.0",
                 "phpunit/phpunit": "4.*",
                 "spatie/laravel-translation-loader": "^1.0"
             },
@@ -3941,10 +3824,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie-custom/fragment-importer/tree/3.1.0",
-                "issues": "https://github.com/spatie-custom/fragment-importer/issues"
+                "source": "https://github.com/spatie/fragment-importer/tree/3.1.1",
+                "issues": "https://github.com/spatie/fragment-importer/issues"
             },
-            "time": "2017-01-23T14:37:33+00:00"
+            "time": "2017-01-26T11:10:23+00:00"
         },
         {
             "name": "spatie/html-element",
@@ -4294,26 +4177,28 @@
         },
         {
             "name": "spatie/laravel-cookie-consent",
-            "version": "1.2.2",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-cookie-consent.git",
-                "reference": "29670f4826b5ee411fd3876028372dd3003c31ef"
+                "reference": "82593c91b5851ec444f507482206905677e8599f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/29670f4826b5ee411fd3876028372dd3003c31ef",
-                "reference": "29670f4826b5ee411fd3876028372dd3003c31ef",
+                "url": "https://api.github.com/repos/spatie/laravel-cookie-consent/zipball/82593c91b5851ec444f507482206905677e8599f",
+                "reference": "82593c91b5851ec444f507482206905677e8599f",
                 "shasum": ""
             },
             "require": {
-                "illuminate/cookie": "^5.1",
-                "illuminate/support": "^5.1",
-                "illuminate/view": "^5.1",
-                "php": "^5.5|^7.0"
+                "illuminate/cookie": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                "illuminate/support": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                "illuminate/view": "~5.1.0|~5.2.0|~5.3.0|~5.4.0",
+                "php": "^5.6|^7.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.2",
+                "fzaninotto/faker": "~1.4",
+                "orchestra/database": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev",
+                "orchestra/testbench": "~3.1.0|~3.2.0|~3.3.0|~3.4.0@dev",
                 "phpunit/phpunit": "4.*"
             },
             "type": "library",
@@ -4350,20 +4235,20 @@
                 "law",
                 "spatie"
             ],
-            "time": "2016-07-13T15:32:16+00:00"
+            "time": "2017-01-24T21:08:15+00:00"
         },
         {
             "name": "spatie/laravel-demo-mode",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-demo-mode.git",
-                "reference": "9ca4ecb5069c57d8bd7b316cce0e4baedc7397ae"
+                "reference": "5080f5917510abab41e829e850c02ae2f97f942c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-demo-mode/zipball/9ca4ecb5069c57d8bd7b316cce0e4baedc7397ae",
-                "reference": "9ca4ecb5069c57d8bd7b316cce0e4baedc7397ae",
+                "url": "https://api.github.com/repos/spatie/laravel-demo-mode/zipball/5080f5917510abab41e829e850c02ae2f97f942c",
+                "reference": "5080f5917510abab41e829e850c02ae2f97f942c",
                 "shasum": ""
             },
             "require": {
@@ -4398,7 +4283,7 @@
                 "laravel-demo-mode",
                 "spatie"
             ],
-            "time": "2017-01-23T15:36:04+00:00"
+            "time": "2017-01-26T11:12:23+00:00"
         },
         {
             "name": "spatie/laravel-failed-job-monitor",
@@ -5329,16 +5214,16 @@
         },
         {
             "name": "spatie/menu",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/menu.git",
-                "reference": "e0532f0a779ca88eb036ac53b7a58b04cb9f63d4"
+                "reference": "5fb1781dcfeb45a2f54b503012b9b6cb5e4465d3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/menu/zipball/e0532f0a779ca88eb036ac53b7a58b04cb9f63d4",
-                "reference": "e0532f0a779ca88eb036ac53b7a58b04cb9f63d4",
+                "url": "https://api.github.com/repos/spatie/menu/zipball/5fb1781dcfeb45a2f54b503012b9b6cb5e4465d3",
+                "reference": "5fb1781dcfeb45a2f54b503012b9b6cb5e4465d3",
                 "shasum": ""
             },
             "require": {
@@ -5374,7 +5259,7 @@
                 "navigation",
                 "spatie"
             ],
-            "time": "2016-11-24T14:40:36+00:00"
+            "time": "2017-01-25T09:50:17+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -5480,12 +5365,12 @@
             "version": "4.4.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/spatie-custom/seeders.git",
+                "url": "https://github.com/spatie/seeders.git",
                 "reference": "daa5e3cb2dbf28a861075e68d86f4cbc3518ddd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie-custom/seeders/zipball/daa5e3cb2dbf28a861075e68d86f4cbc3518ddd1",
+                "url": "https://api.github.com/repos/spatie/seeders/zipball/daa5e3cb2dbf28a861075e68d86f4cbc3518ddd1",
                 "reference": "daa5e3cb2dbf28a861075e68d86f4cbc3518ddd1",
                 "shasum": ""
             },
@@ -7288,16 +7173,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.6",
+            "version": "5.7.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "caf8141b89691498d91aaac6c82e9cd5f685ae86"
+                "reference": "e52551bbc229c6cee26c7a00deef80c2108c5b15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/caf8141b89691498d91aaac6c82e9cd5f685ae86",
-                "reference": "caf8141b89691498d91aaac6c82e9cd5f685ae86",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e52551bbc229c6cee26c7a00deef80c2108c5b15",
+                "reference": "e52551bbc229c6cee26c7a00deef80c2108c5b15",
                 "shasum": ""
             },
             "require": {
@@ -7366,7 +7251,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-01-22T08:39:59+00:00"
+            "time": "2017-01-25T19:19:41+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

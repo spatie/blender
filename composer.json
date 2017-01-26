@@ -11,10 +11,6 @@
         {
             "type": "composer",
             "url": "https://satis.spatie.be/"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/maddhatter/html.git"
         }
     ],
     "require": {
