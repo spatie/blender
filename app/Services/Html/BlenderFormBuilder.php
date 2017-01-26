@@ -275,7 +275,7 @@ class BlenderFormBuilder
                     ]);
                 })
                 ->pipe(function (Collection $fields) use ($locale) {
-                    return $this->languageFieldSet($locale, $fields->toArray());
+                    return (string) $this->languageFieldSet($locale, $fields->toArray());
                 });
         })->implode('');
     }
