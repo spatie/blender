@@ -9,7 +9,7 @@
 
                 {{ $mainImages ?? '' }}
 
-                {{ $slot ?? '' }}
+                {{ $slot }}
 
                 {{ $mainDownloads ?? '' }}
             </div>
