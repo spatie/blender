@@ -208,3 +208,8 @@ function validate($fields, $rules): bool
 
     return Validator::make($fields, $rules)->passes();
 }
+
+function html(): \App\Services\Html\Html
+{
+    return app(\App\Services\Html\Html::class);
+}
