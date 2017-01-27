@@ -3,10 +3,10 @@
 namespace App\Services;
 
 use Exception;
-use Illuminate\Contracts\Mail\Mailable;
-use Illuminate\Database\Eloquent\Model;
 use ReflectionClass;
 use ReflectionParameter;
+use Illuminate\Contracts\Mail\Mailable;
+use Illuminate\Database\Eloquent\Model;
 
 class MailableFactory
 {
@@ -20,7 +20,7 @@ class MailableFactory
 
     public function __construct(string $mailableClass)
     {
-        if (!class_exists($mailableClass)) {
+        if (! class_exists($mailableClass)) {
             throw new Exception("Mailable `{$mailableClass}` does not exist.");
         }
 
