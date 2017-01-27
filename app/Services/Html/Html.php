@@ -2,15 +2,18 @@
 
 namespace App\Services\Html;
 
+use Exception;
 use Spatie\Html\Elements\A;
 use Spatie\Html\Elements\Div;
+use Spatie\Html\Elements\Form;
 use Spatie\Html\Elements\Span;
+use Spatie\Html\Elements\Textarea;
 
 class Html extends \Spatie\Html\Html
 {
     public function alert(string $type, string $message): Div
     {
-        return static::div()
+        return $this->div()
             ->class(['alert', "-{$type}"])
             ->text($message);
     }
@@ -18,10 +21,10 @@ class Html extends \Spatie\Html\Html
     public function flashMessage(): Div
     {
         if (! Session::has('flash_notification.message')) {
-            return static::div();
+            return $this->div();
         }
 
-        return static::alert(
+        return $this->alert(
             Session::get('flash_notification.level'),
             Session::get('flash_notification.message')
         );
@@ -29,67 +32,112 @@ class Html extends \Spatie\Html\Html
 
     public function error(string $message, string $field = ''): Div
     {
-        return static::alert('danger', $message)
+        return $this->alert('danger', $message)
             ->attributeIf($field, 'data-validation-error', $field);
     }
 
     public function message($message): Div
     {
-        return static::alert('success', $message);
+        return $this->alert('success', $message);
     }
 
     public function info($message): Div
     {
-        return static::alert(
+        return $this->alert(
             'info',
-            static::icon('info-circle').' '.$message
+            $this->icon('info-circle').' '.$message
         );
     }
 
     public function warning($message): Div
     {
-        return static::alert(
+        return $this->alert(
             'warning',
-            static::icon('exclamation-triangle').' '.$message
+            $this->icon('exclamation-triangle').' '.$message
         );
     }
 
     public function icon(string $icon): Span
     {
-        return static::span()->class("fa fa-{$icon}");
+        return $this->span()->class("fa fa-{$icon}");
     }
 
     public function avatar(User $user): Span
     {
-        return static::span()
+        return $this->span()
             ->class('avatar')
             ->attribute('style', "background-image: url('{$user->avatar}')");
     }
 
-    //public function deleteButton(string $url): string
-    //{
-    //    return Form::openButton(
-    //            [
-    //                'url' => $url,
-    //                'method' => 'delete',
-    //            ],
-    //            [
-    //                'class' => 'button--delete-row',
-    //            ]
-    //        ).el('span.fa.fa-trash').Form::closeButton();
-    //}
-
     public function onlineIndicator(bool $online): Span
     {
-        return static::icon($online ? 'circle' : 'circle-o')
+        return $this->icon($online ? 'circle' : 'circle-o')
             ->class($online ? 'on' : 'off');
     }
 
     public function backToIndex(string $action, array $parameters = []): A
     {
-        return static::a(
+        return $this->a(
             action($action, $parameters),
             fragment('back.backToIndex')
         )->class('breadcrumb--back');
+    }
+
+    public function redactor(string $name = '', string $value = ''): Textarea
+    {
+        $this->ensureModelIsAvailable();
+
+        $medialibraryUrl = action(
+            'Back\Api\MediaLibraryController@add',
+            [short_class_name($this->model), $this->model->id, 'redactor']
+        );
+
+        $this->textarea($name, $value)
+            ->attributes([
+                'data-editor',
+                'data-editor-medialibrary-url' => $medialibraryUrl,
+            ]);
+    }
+
+    public function datePicker(string $name = '', string $value = ''): string
+    {
+        return $this->text($name, $value)
+            ->attribute('data-datetimepicker')
+            ->class('-datetime');
+    }
+
+    public function category(string $type)
+    {
+        $this->ensureModelIsAvailable();
+
+        return $this->select(
+            "{$type}_tags[]",
+            Tag::getWithType($type)->pluck('name', 'name'),
+            $this->model->tagsWithType($type)->pluck('name', 'name')
+        );
+    }
+
+    public function tags(string $type): string
+    {
+        return $this->category($type)
+            ->attributes(['multiple', 'data-select' => 'tags']);
+    }
+
+    public function old(string $name = '', string $value = '')
+    {
+        $value = parent::old($name, $value);
+
+        if ($value instanceof Carbon) {
+            return $value->format('d/m/Y');
+        }
+
+        return $value;
+    }
+
+    protected function ensureModelIsAvailable()
+    {
+        if (empty($this->model)) {
+            throw new Exception('Method requires a model to be set on the html builder');
+        }
     }
 }
