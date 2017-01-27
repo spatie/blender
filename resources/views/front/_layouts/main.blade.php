@@ -4,7 +4,7 @@
 
     <main class="h-padding-medium">
         <div class="grid">
-            <div class="grid__col">
+            <div class="grid__cell">
                 {{ $mainTitle ?? '' }}
 
                 {{ $mainImages ?? '' }}

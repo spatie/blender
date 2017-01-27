@@ -1,13 +1,4 @@
 @charset 'UTF-8';
 
-@import '~normalize-css/normalize';
-
-@import 'utility/**';
-@import 'settings/**';
-@import 'helpers/**';
-@import 'base/**';
-@import 'components/**';
-@import 'patterns/**';
-
-// @import 'vendor/**';
-// @import 'views/**';
+@import '@spatie/scss/settings';
+@import '@spatie/scss/styles';

@@ -1,12 +1,12 @@
 <header class="header h-padding">
     <div class="grid">
-        <div class="grid__col -half">
+        <div class="grid__cell -half">
             <nav class="nav">
                 {!! Menu::main() !!}
             </nav>
             @yield('subMenu')
         </div>
-        <div class="grid__col -half">
+        <div class="grid__cell -half">
             <nav class="nav h-align-right">
                 <ul class="nav__list">
                 @if(current_user())
