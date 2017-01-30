@@ -43,10 +43,8 @@ mix
         ],
 
         stats: {
-            // The "pretty" errors sometimes lack information. Set a `DEBUG`
-            // environment variable to enable a full stack trace.
-            //
-            // E.g. `DEBUG=1 yarn run dev`
+            // The "pretty" errors sometimes lack information. To display full
+            // stack traces, run `DEBUG=1 yarn run dev`.
             errors: process.env.DEBUG,
         },
     });
