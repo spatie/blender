@@ -22,7 +22,7 @@ mix
 
             // Prepend chunks with `chunk.` so we can easily ignore them in
             // the project's version control.
-            chunkFilename: 'chunk.[name]-[chunkhash].js',
+            chunkFilename: 'js/[name]-[chunkhash].js',
         },
 
         module: {

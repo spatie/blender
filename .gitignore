@@ -15,7 +15,6 @@ _ide_helper*.php
 /public/doc/sass
 /public/css
 /public/js
-/public/chunk.*
 /public/mix-manifest.json
 /public/media
 
