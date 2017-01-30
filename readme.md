@@ -20,7 +20,7 @@ This guide assumes you're using [Laravel Homestead](https://github.com/laravel/h
 Download the master branch
 
 ```bash
-git clone git@github.com:spatie-custom/blender.git
+git clone https://github.com/spatie/blender.git
 ```
 
 Edit your Homestead.yaml file and add Blender as a site
