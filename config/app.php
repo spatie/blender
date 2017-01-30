@@ -216,6 +216,7 @@ return [
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
+        Spatie\MailableTest\MailableTestServiceProvider::class,
     ],
 
     /*
