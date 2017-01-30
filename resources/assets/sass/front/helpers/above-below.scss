@@ -1,18 +1,18 @@
 /* Above */
 
-&.h-above-s {
+.h-above-s {
     @include mq-below(s) {
         display: none !important;
     }
 }
 
-&.h-above-m {
+.h-above-m {
     @include mq-below(m) {
         display: none !important;
     }
 }
 
-&.h-above-l {
+.h-above-l {
     @include mq-below(l) {
         display: none !important;
     }
@@ -20,19 +20,19 @@
 
 /* Below */
 
-&.h-below-s {
+.h-below-s {
     @include mq-above(s) {
         display: none !important;
     }
 }
 
-&.h-below-m {
+.h-below-m {
     @include mq-above(m) {
         display: none !important;
     }
 }
 
-&.h-below-l {
+.h-below-l {
     @include mq-above(l) {
         display: none !important;
     }

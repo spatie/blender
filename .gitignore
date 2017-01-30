@@ -12,11 +12,11 @@ _ide_helper*.php
 /node_modules
 /npm-debug.log
 /yarn-error.log
-/public/build
-/resources/assets/css
+/public/doc/sass
 /public/css
 /public/js
-/public/doc/sass
+/public/chunk.*
+/public/mix-manifest.json
 /public/media
 
 # REMOVE THIS LINE IN PROJECTS
