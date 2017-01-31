@@ -17,7 +17,7 @@ mix
     .webpackConfig({
         output: {
             // The public path needs to be set to the root of the site so
-            // Webpack can locate chunks.
+            // Webpack can locate chunks at runtime.
             publicPath: '/',
 
             // Prepend chunks with `chunk.` so we can easily ignore them in
@@ -27,6 +27,8 @@ mix
 
         module: {
             rules: [
+                // With the `import-glob-loader` we can use globs in our import
+                // statements in scss.
                 {
                     test: /\.scss/,
                     loader: 'import-glob-loader',
@@ -36,6 +38,8 @@ mix
         },
 
         plugins: [
+            // We'll replace files we want to ignore with a `noop` so webpack
+            // won't complain that they can't be resolved.
             new NormalModuleReplacementPlugin(
                 /\.(jpe?g|png|gif|svg)$/,
                 'node-noop'
