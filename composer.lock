@@ -2147,16 +2147,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.33",
+            "version": "1.0.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c"
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/5c7f98498b12d47f9de90ec9186a90000125777c",
-                "reference": "5c7f98498b12d47f9de90ec9186a90000125777c",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
+                "reference": "469ad53c13ea19a0e54e3e5d70f61227ddcc0299",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2226,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2017-01-23T10:32:09+00:00"
+            "time": "2017-01-30T17:41:17+00:00"
         },
         {
             "name": "league/flysystem-aws-s3-v3",
@@ -6464,16 +6464,16 @@
         },
         {
             "name": "themsaid/laravel-mail-preview",
-            "version": "v1.2.6",
+            "version": "v1.2.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/themsaid/laravel-mail-preview.git",
-                "reference": "d55a69c9547ac6129ed614b4595e9a2deda2522f"
+                "reference": "1aa0411ebee65c0a3f540e8f62a748e097106b23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/themsaid/laravel-mail-preview/zipball/d55a69c9547ac6129ed614b4595e9a2deda2522f",
-                "reference": "d55a69c9547ac6129ed614b4595e9a2deda2522f",
+                "url": "https://api.github.com/repos/themsaid/laravel-mail-preview/zipball/1aa0411ebee65c0a3f540e8f62a748e097106b23",
+                "reference": "1aa0411ebee65c0a3f540e8f62a748e097106b23",
                 "shasum": ""
             },
             "require": {
@@ -6512,7 +6512,7 @@
                 "laravel",
                 "mail"
             ],
-            "time": "2017-01-23T15:32:50+00:00"
+            "time": "2017-01-31T13:51:28+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
