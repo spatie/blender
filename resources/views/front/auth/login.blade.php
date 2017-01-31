@@ -15,15 +15,14 @@
         {!! Html::error($errors->first('password')) !!}
     </p>
     <p>
-        <a href="{{ action('Front\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ fragment('auth.forgotPassword') }}</a>
-    </p>
-    <p>
-        {!! Form::button(fragment('auth.login'), ['type'=>'submit']) !!}
+        {!! Form::button(fragment('auth.login'), ['type'=>'submit', 'class'=>'button--primary']) !!}
     </p>
 
     {!! Form::close() !!}
 
     <p>
+        <a href="{{ action('Front\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ fragment('auth.forgotPassword') }}</a>
+        |
         <a href="{{ register_url() }}">{{ fragment('auth.noAccount') }}</a>
     </p>
 

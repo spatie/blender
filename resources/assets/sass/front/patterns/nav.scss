@@ -1,0 +1,15 @@
+.nav {
+    @include font-bold;
+}
+
+.nav__list {
+    @include list-horizontal;
+
+    a {
+        padding: .65em 1em;
+        vertical-align: middle;
+
+        background-color: gray(lighter);
+        border-radius: 3px;
+    }
+}

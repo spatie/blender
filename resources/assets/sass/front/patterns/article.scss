@@ -1,0 +1,22 @@
+.article {
+    padding: gutter(s) 0;
+
+    &.has-html {
+        h1, h2, h3 {
+            @include font-bold;
+            margin-bottom: .5em;
+        }
+
+        .p--intro {
+            font-size: font-size(m);
+        }
+
+        a {
+            @include text-underline(link-color());
+
+            &:hover {
+                @include text-underline(link-color(hover));
+            }
+        }
+    }
+}

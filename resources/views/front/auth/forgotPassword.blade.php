@@ -5,11 +5,11 @@
     {!! Form::open(['action' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
 
     @if(session('status'))
-    <p class="alert -info">
+    <p class="alert--info">
         {{ session('status') }}
     </p>
     @else
-    <p class="alert -info">
+    <p class="alert--info">
         {{ fragment('auth.resetPassword.intro') }}
     </p>
     @endif
@@ -19,7 +19,7 @@
         {!! Html::error($errors->first('email')) !!}
     </p>
     <p>
-        {!! Form::button( fragment('auth.resetPassword.button')) !!}
+        {!! Form::button( fragment('auth.resetPassword.button'), ['type'=>'submit', 'class'=>'button--primary']) !!}
     </p>
     <p>
         <a href="{{ login_url() }}">{{ fragment('auth.toLogin') }}</a>

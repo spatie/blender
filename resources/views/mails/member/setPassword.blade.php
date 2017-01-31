@@ -3,9 +3,9 @@
 
 Beste {{ $user->first_name }},
 
-Je bent nu administrator op [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}).
+Je hebt toegang gekregen tot [{{ Request::getHost() }}]({{ action('Front\Auth\ResetPasswordController@showResetForm', [$token]) }}).
 
-@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token])])
+@component('mail::button', ['url' => action('Front\Auth\ResetPasswordController@showResetForm', [$token])])
 Stel je wachtwoord in
 @endcomponent
 

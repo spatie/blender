@@ -1,17 +1,17 @@
 {!! Form::open(['data-validate']) !!}
 
 <p>
-    {!! Form::label('name', fragment('form.name'), ['class'=>'required']) !!}
+    {!! Form::label('name', fragment('form.name'), ['class'=>'label--required']) !!}
     {!! Form::text('name', null, ['required', 'min' => 5, 'max' => '10', 'autocomplete' => 'off']) !!}
     {!! Html::error($errors->first('name'), 'name') !!}
 </p>
 <p>
-    {!! Form::label('telephone', fragment('form.telephone'), ['class'=>'required']) !!}
+    {!! Form::label('telephone', fragment('form.telephone'), ['class'=>'label--required']) !!}
     {!! Form::text('telephone') !!}
     {!! Html::error($errors->first('telephone'), 'telephone') !!}
 </p>
 <p>
-    {!! Form::label('email', fragment('form.email'), ['class'=>'required']) !!}
+    {!! Form::label('email', fragment('form.email'), ['class'=>'label--required']) !!}
     {!! Form::email('email') !!}
     {!! Html::error($errors->first('email'), 'email') !!}
 </p>
@@ -21,9 +21,16 @@
     {!! Html::error($errors->first('address'), 'address') !!}
 </p>
 <p>
-    {!! Form::label('postal', fragment('form.postal').' + '.fragment('form.city')) !!}
-    {!! Form::text('postal') !!}
-    {!! Form::text('city') !!}
+    <div class="grid">
+        <div class="grid__cell -width-1/4">
+            {!! Form::label('postal', fragment('form.postal')) !!}
+            {!! Form::text('postal') !!}
+        </div>
+        <div class="grid__cell  -width-3/4">
+            {!! Form::label('city', fragment('form.city')) !!}
+            {!! Form::text('city') !!}
+        </div>
+    </div>
     {!! Html::error($errors->first('postal'), 'postal') !!}
     {!! Html::error($errors->first('city')) !!}
 </p>
@@ -37,11 +44,11 @@
 {!! HTML::error($errors->first('g-recaptcha-response')) !!}
 </p>
 <p>
-    {!! Form::button(fragment('contact.button'), ['type'=>'submit']) !!}
+    {!! Form::button(fragment('contact.button'), ['type'=>'submit', 'class'=>'button--primary']) !!}
 </p>
 
 {!! Form::close() !!}
 
-<p class="alert -info">
+<p class="alert--info">
     {!! fragment('form.fieldsAreRequired') !!}
 </p>

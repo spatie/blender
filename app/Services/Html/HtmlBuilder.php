@@ -17,7 +17,7 @@ class HtmlBuilder extends BaseHtmlBuilder
 
         $level = Session::get('flash_notification.level');
 
-        return el("div.alert.-{$level}", Session::get('flash_notification.message'));
+        return el("div.alert--{$level}", Session::get('flash_notification.message'));
     }
 
     public function error($message, $name = ''): string
@@ -29,7 +29,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         $attributes = empty($name) ? [] : ['data-validation-error' => $name];
 
         return el(
-            'div.alert.-danger',
+            'div.alert--danger',
             $attributes,
             $message
         );
@@ -41,7 +41,7 @@ class HtmlBuilder extends BaseHtmlBuilder
             return '';
         }
 
-        return el('div.alert.-success', ['class' => $classes], $message);
+        return el('div.alert--success', ['class' => $classes], $message);
     }
 
     public function info($message, string $classes = ''): string
@@ -51,7 +51,7 @@ class HtmlBuilder extends BaseHtmlBuilder
         }
 
         return el(
-            'div.alert.-info',
+            'div.alert--info',
             ['class' => $classes],
             el('span.fa.fa-info-circle').' '.$message
         );

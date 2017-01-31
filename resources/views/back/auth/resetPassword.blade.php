@@ -13,7 +13,7 @@
             {!! Form::open(['action' => 'Back\Auth\ResetPasswordController@reset', 'class'=>'-stacked v-auth__form']) !!}
             {!! Form::hidden('token', $token) !!}
             {!! Form::hidden('email', $user->email) !!}
-            <p class="alert -info">
+            <p class="alert--info">
                 {{ fragment('back.auth.resetInstructions') }}
             </p>
 
