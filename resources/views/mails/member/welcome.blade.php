@@ -1,5 +1,12 @@
 @component('mail::message')
-Welkom, {{ $user->first_name }}
+    # Welkom
 
-U kunt [hier]({{ action('Front\Auth\LoginController@login') }}) inloggen.
+    Beste {{ $user->first_name }},
+
+    Je hebt nu toegang tot [{{ Request::getHost() }}]({{ url('/') }}).
+
+    @component('mail::button', ['url' => action('Front\Auth\LoginController@login')])
+        Log in
+    @endcomponent
+
 @endcomponent
