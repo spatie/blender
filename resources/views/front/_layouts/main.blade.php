@@ -2,16 +2,20 @@
     'title' => $title
 ])
 
-    <main class="h-padding-medium">
-        <div class="grid">
-            <div class="grid__col">
-                {{ $mainTitle ?? '' }}
+    {{ $mainImages ?? '' }}
 
-                {{ $mainImages ?? '' }}
+    <main class="main h-padding-medium">
+        <div class="layout">
+            <div class="grid">
+                <div class="grid__cell">
+                    <article class="article has-html">
+                    {{ $mainTitle ?? '' }}
 
-                {{ $slot }}
+                    {{ $slot }}
 
-                {{ $mainDownloads ?? '' }}
+                    {{ $mainDownloads ?? '' }}
+                    </article>
+                </div>
             </div>
         </div>
     </main>

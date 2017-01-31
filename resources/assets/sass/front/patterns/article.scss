@@ -2,14 +2,9 @@
     padding: gutter(s) 0;
 
     &.has-html {
-        h1 {
+        h1, h2, h3 {
+            @include font-bold;
             margin-bottom: .5em;
-        }
-
-        p {
-            font-size: font-size();
-
-            margin-bottom: 1em;
         }
 
         .p--intro {

@@ -1,5 +1,5 @@
 .nav {
-    @include font-sans-bold;
+    @include font-bold;
 }
 
 .nav__list {
@@ -9,8 +9,7 @@
         padding: .65em 1em;
         vertical-align: middle;
 
-        color: blue(darker);
-        background: white();
+        background-color: gray(lighter);
         border-radius: 3px;
     }
 }

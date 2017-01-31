@@ -175,7 +175,7 @@ return [
         Spatie\TranslationLoader\TranslationServiceProvider::class,
         App\Services\Navigation\NavigationServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
-        //Themsaid\MailPreview\MailPreviewServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
         App\Providers\AuthServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
@@ -216,6 +216,7 @@ return [
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
+        Spatie\MailableTest\MailableTestServiceProvider::class,
     ],
 
     /*

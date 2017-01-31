@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ locale() }}" data-viewport>
+<html lang="{{ locale() }}" class="js-viewport | html--stretched">
 @include('front._layouts._partials.hiddenCredits')
 <head>
     @include('front._layouts._partials.head.meta')

@@ -25,7 +25,7 @@
         {!! Html::error($errors->first('password')) !!}
     </p>
     <p>
-        {!! Form::button(trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton'), ['type'=>'submit']) !!}
+        {!! Form::button(trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton'), ['type'=>'submit', 'class'=>'button--primary']) !!}
     </p>
 
     {!! Form::close() !!}

@@ -2,10 +2,6 @@
 'title' => fragment('auth.titleRegister')
 ])
 
-    <p>
-        <a href="{{ URL::action('Front\Auth\LoginController@showLoginForm') }}">{{ fragment('auth.toLogin') }}</a>
-    </p>
-
     {!! Form::open() !!}
 
     <p>
@@ -24,14 +20,18 @@
         {!! Html::error($errors->first('address')) !!}
     </p>
     <p>
-        {!! Form::label('postal', fragment('auth.postal'), ['class'=>'label--required']) !!}
-        {!! Form::text('postal') !!}
-        {!! Html::error($errors->first('postal')) !!}
-    </p>
-    <p>
-        {!! Form::label('city', fragment('auth.city'), ['class'=>'label--required']) !!}
-        {!! Form::text('city') !!}
-        {!! Html::error($errors->first('city')) !!}
+    <div class="grid">
+        <div class="grid__cell -width-1/4">
+            {!! Form::label('postal', fragment('form.postal'), ['class'=>'label--required']) !!}
+            {!! Form::text('postal') !!}
+        </div>
+        <div class="grid__cell  -width-3/4">
+            {!! Form::label('city', fragment('form.city'), ['class'=>'label--required']) !!}
+            {!! Form::text('city') !!}
+        </div>
+    </div>
+    {!! Html::error($errors->first('postal'), 'postal') !!}
+    {!! Html::error($errors->first('city')) !!}
     </p>
     <p>
         {!! Form::label('country', fragment('auth.country'), ['class'=>'label--required']) !!}
@@ -59,7 +59,10 @@
         {!! Html::error($errors->first('password_confirmation')) !!}
     </p>
     <p>
-        {!! Form::button(fragment('auth.register'), ['type'=>'submit']) !!}
+        {!! Form::button(fragment('auth.register'), ['type'=>'submit', 'class'=>'button--primary']) !!}
+    </p>
+    <p>
+        <a href="{{ login_url() }}">{{ fragment('auth.toLogin') }}</a>
     </p>
 
     {!! Form::close() !!}

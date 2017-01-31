@@ -1,6 +1,5 @@
 {
   "name": "Blender",
-  "version": "5.4.7",
   "private": true,
   "license": "MIT",
   "authors": [
@@ -19,7 +18,8 @@
   },
   "dependencies": {
     "@spatie/blender-content-blocks": "^1.0.0",
-    "@spatie/blender-css": "^3.1.5",
+    "@spatie/blender-css": "^4.0.0",
+    "@spatie/scss": "^1.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
