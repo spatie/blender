@@ -1,7 +1,11 @@
 @charset 'UTF-8';
 
+<<<<<<< HEAD
+@import 'node_modules/normalize-css/normalize';
+=======
 @import '@spatie/scss/settings';
 @import '@spatie/scss/styles';
+>>>>>>> feature-laravel54
 
 @import 'components/*';
 @import 'patterns/*';

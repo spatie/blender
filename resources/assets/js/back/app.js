@@ -21,7 +21,7 @@ if (query('blender-media')) {
 if (query('blender-content-blocks')) {
     require.ensure([], () => {
         require('./modules/contentBlocks').default();
-    }, 'back.contentBlocks');
+    }, 'back.blocks');
 }
 
 if (query('blender-chart')) {
@@ -30,12 +30,9 @@ if (query('blender-chart')) {
     }, 'back.chart');
 }
 
-/*
-*  uncomment when redactor is installed
-*
-if (query('[data-editor]')) {
-    require.ensure([], () => {
-        require('./modules/editor').default();
-    }, 'back.editor');
-}
-*/
+// uncomment when redactor is installed
+// if (query('[data-editor]')) {
+//     require.ensure([], () => {
+//         require('./modules/editor').default();
+//     }, 'back.editor');
+// }
