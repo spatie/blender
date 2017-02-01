@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.news.title'),
+])
 
-@section('pageTitle', fragment('back.news.title'))
-
-@section('content')
 <section>
     <div class="grid">
         <h1>{{ fragment('back.news.title') }}</h1>
@@ -38,4 +37,5 @@
         </table>
     </div>
 </section>
-@stop
+
+    @endcomponent

@@ -1,6 +1,6 @@
 @if($item->hasMedia('downloads'))
     <section>
-        <h2>{{ fragment('downloads') }}</h2>
+        <h2>{{ $title ?? fragment('downloads') }}</h2>
         @foreach($item->getMedia('downloads') as $download)
 
             <a href="{{ $download->getUrl() }}">
@@ -17,3 +17,5 @@
         @endforeach
     </section>
 @endif
+
+

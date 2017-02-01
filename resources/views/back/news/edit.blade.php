@@ -1,25 +1,22 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.news.title'),
+    'breadcrumbs' => Html::backToIndex('Back\NewsController@index'),
+])
 
-@section('breadcrumbs', Html::backToIndex('Back\NewsController@index'))
+    <section>
+        <div class="grid">
+            <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.news.new') }}</h1>
 
-@section('pageTitle', fragment('back.news.title'))
+            {!! Form::openDraftable([
+                'method'=>'PATCH',
+                'action'=> ['Back\NewsController@update', $model->id],
+                'class' => '-stacked'
+            ], $model) !!}
 
-@section('content')
+            @include('back.news._partials.form')
 
-<section>
-    <div class="grid">
-        <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.news.new') }}</h1>
+            {!! Form::close() !!}
+        </div>
+    </section>
 
-        {!! Form::openDraftable([
-            'method'=>'PATCH',
-            'action'=> ['Back\NewsController@update', $model->id],
-            'class' => '-stacked'
-        ], $model) !!}
-
-        @include('back.news._partials.form')
-
-        {!! Form::close() !!}
-    </div>
-</section>
-
-@stop
+@endcomponent

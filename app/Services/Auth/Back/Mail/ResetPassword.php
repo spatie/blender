@@ -40,6 +40,6 @@ class ResetPassword extends Mailable implements ShouldQueue
     {
         return $this
             ->subject('Toegang tot '.config('app.url'))
-            ->view('mails.auth.back.resetPassword');
+            ->markdown($this->user->hasNeverLoggedIn() ? 'mails.admin.setPassword' : 'mails.admin.resetPassword');
     }
 }

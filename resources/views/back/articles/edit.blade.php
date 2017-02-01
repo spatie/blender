@@ -1,28 +1,27 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.articles.title'),
+    'breadcrumbs' => Html::backToIndex('Back\ArticlesController@index'),
+])
 
-@section('breadcrumbs', Html::backToIndex('Back\ArticlesController@index'))
+    <section>
+        <div class="grid">
+            <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.articles.new') }}</h1>
 
-@section('pageTitle', fragment('back.articles.title'))
+            {!! Form::openDraftable([
+                'method'=>'PATCH',
+                'action'=> ['Back\ArticlesController@update', $model->id],
+                'class' => '-stacked'
+            ], $model) !!}
 
-@section('content')
-<section>
-    <div class="grid">
-    <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.articles.new') }}</h1>
+            @if($model->technical_name && view()->exists("back.articles._partials.{$model->technical_name}Form"))
+                @include("back.articles._partials.{$model->technical_name}Form")
+            @else
+                @include('back.articles._partials.form')
+            @endif
 
-    {!! Form::openDraftable([
-        'method'=>'PATCH',
-        'action'=> ['Back\ArticlesController@update', $model->id],
-        'class' => '-stacked'
-    ], $model) !!}
+            {!! Form::close() !!}
 
-    @if($model->technical_name && view()->exists("back.articles._partials.{$model->technical_name}Form"))
-        @include("back.articles._partials.{$model->technical_name}Form")
-    @else
-        @include('back.articles._partials.form')
-    @endif
+        </div>
+    </section>
 
-    {!! Form::close() !!}
-
-    </div>
-</section>
-@stop
+@endcomponent

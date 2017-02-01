@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'version' => '5.4.7',
-    'installDate' => '10/2016',
+    'version' => '5.5.0',
+    'installDate' => '01/2017',
 ];

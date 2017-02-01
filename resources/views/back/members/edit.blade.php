@@ -1,10 +1,8 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => $user->email,
+    'breadcrumbs' => Html::backToIndex('Back\MembersController@index'),
+])
 
-@section('pageTitle', $user->email)
-
-@section('breadcrumbs', Html::backToIndex('Back\MembersController@index'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment('back.members.member') }} {{ $user->email }}</h1>
@@ -13,8 +11,9 @@
                 ['method' => 'PATCH', 'action' => ['Back\MembersController@update', $user->id] ,
                 'class' => '-stacked'
             ]) !!}
-                @include("back.members._partials.form")
+            @include("back.members._partials.form")
             {!! Form::close() !!}
         </div>
     </section>
-@endsection
+
+@endcomponent

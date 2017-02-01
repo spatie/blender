@@ -1,14 +1,13 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.tags.title'),
+])
 
-@section('pageTitle', fragment('back.tags.title'))
-
-@section('content')
     <section>
         <div class="grid">
             <h1>{{ fragment('back.tags.title') }}</h1>
             <a href="{{ URL::action('Back\TagsController@create') }}" class="button">{{ fragment('back.tags.new') }}</a>
 
-            <div class="alert -info -small h-margin-top">
+            <div class="alert--info -small h-margin-top">
                 Zorg ervoor dat alle items van een tag ontkoppeld zijn alvorens hem te verwijderen.
             </div>
 
@@ -26,7 +25,7 @@
 
                     @foreach($type as $tag)
 
-                        <tr data-row-id="{{ $tag->id }}" >
+                        <tr data-row-id="{{ $tag->id }}">
                             <td>
                                 <a href="{{ Url::action('Back\TagsController@edit', [$tag->id]) }}">
                                     {{ $tag->name }}
@@ -53,4 +52,5 @@
 
         </div>
     </section>
-@stop
+
+@endcomponent

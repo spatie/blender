@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.auth.titleChangePassword')
+])
 
-@section('pageTitle', fragment('back.auth.titleChangePassword'))
-
-@section('content')
     <section class="v-auth">
         {{-- @include('auth._partials.lang') --}}
         <div class="v-auth__card">
@@ -14,7 +13,7 @@
             {!! Form::open(['action' => 'Back\Auth\ResetPasswordController@reset', 'class'=>'-stacked v-auth__form']) !!}
             {!! Form::hidden('token', $token) !!}
             {!! Form::hidden('email', $user->email) !!}
-            <p class="alert -info">
+            <p class="alert--info">
                 {{ fragment('back.auth.resetInstructions') }}
             </p>
 
@@ -36,4 +35,4 @@
         </div>
     </section>
 
-@stop
+@endcomponent

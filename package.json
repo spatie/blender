@@ -1,42 +1,43 @@
 {
   "name": "Blender",
-  "version": "5.4.7",
+  "private": true,
+  "license": "MIT",
   "authors": [
     "Sebastian De Deyne <sebastian@spatie.be>",
     "Freek Van der Herten <freek@spatie.be>",
     "Willem Van Bockstal <willem@spatie.be>"
   ],
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:spatie-custom/blender.git"
   },
+  "scripts": {
+    "dev": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "node node_modules/cross-env/bin/cross-env.js NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
   "dependencies": {
     "@spatie/blender-content-blocks": "^1.0.0",
-    "@spatie/blender-css": "^3.1.5",
+    "@spatie/blender-css": "^4.0.0",
+    "@spatie/scss": "^1.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-polyfill": "^6.16.0",
     "babel-preset-latest": "^6.16.0",
-    "blender-gulp": "^3.0.0",
     "blender-media": "^3.3.2",
     "blender.js": "^1.3.0",
     "browsernizr": "1.0.2",
     "chart.js": "^1.0.2",
-    "css-loader": "^0.26.0",
-    "dom-storage": "^2.0.2",
-    "dotenv": "^1.2.0",
     "eslint": "^3.7.1",
     "eslint-config-spatie": "^1.2.7",
-    "gulp": "^3.9.0",
+    "import-glob-loader": "^1.1.0",
     "jquery": "^3.0.0",
+    "laravel-mix": "^0.5.16",
     "lodash": "^4.16.6",
+    "node-noop": "^1.0.0",
     "normalize-css": "^2.3.1",
     "spatie-dom": "^1.0.0",
     "viewport-utility": "^1.2.2",
     "vue": "^2.0.0",
-    "vue-loader": "^10.0.2",
-    "vue-template-compiler": "^2.1.3",
-    "webfontloader": "^1.6.10",
-    "webpack": "^1.12"
+    "webfontloader": "^1.6.10"
   }
 }

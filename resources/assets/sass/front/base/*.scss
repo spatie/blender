@@ -1,9 +1,0 @@
-* {
-    box-sizing: border-box;
-    position: relative;
-
-    &:after,
-    &:before {
-        box-sizing: border-box;
-    }
-}

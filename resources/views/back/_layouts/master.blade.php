@@ -8,11 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="@yield('pageDescription')">
-    <title>@yield('pageTitle') | Blender</title>
+    <title>{{ isset($pageTitle) ? $pageTitle  . ' | ' : '' }} Blender</title>
 
-    <link rel="stylesheet" href="{{ elixir('back.style.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/back.css') }}">
 
-    <script src="{{ elixir('back.head.js') }}"></script>
+    <script src="{{ mix('js/back.head.js') }}"></script>
 
     @include('front._layouts._partials.head.favicons')
 </head>
@@ -24,17 +24,17 @@
         <div class="grid">
             @include('back._layouts._partials.flashMessage')
             <nav class="breadcrumbs">
-                @yield('breadcrumbs')
+                {{ $breadcrumbs ?? '' }}
             </nav>
         </div>
     @endif
     <main class="main" id="app">
-        @yield('content')
+        {{ $slot }}
     </main>
     @if (current_user())
         @include('back._layouts._partials.footer')
     @endif
-    <script src="{{ elixir('back.app.js') }}" defer></script>
+    <script src="{{ mix('js/back.app.js') }}" defer></script>
     @yield('extraJs')
 </body>
 </html>

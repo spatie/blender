@@ -1,8 +1,7 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => 'Dashboard'
+])
 
-@section('pageTitle', 'Dashboard')
-
-@section('content')
     <section>
         <div class="grid">
 
@@ -27,23 +26,24 @@
                     </tr>
                     </thead>
                     <tbody>
-                        @foreach($logItems as $logItem)
-                            <tr>
-                                <td>{{ diff_date_for_humans($logItem->created_at) }}</td>
-                                <td>{!! $logItem->description !!}</td>
-                                <td>
-                                    @if($logItem->causer)
-                                        <a href="{{ action('Back\AdministratorsController@edit', $logItem->causer->id) }}">
-                                            {{ $logItem->causer->email }}
-                                        </a>
-                                    @endif
-                                </td>
-                            </tr>
-                        @endforeach
+                    @foreach($logItems as $logItem)
+                        <tr>
+                            <td>{{ diff_date_for_humans($logItem->created_at) }}</td>
+                            <td>{!! $logItem->description !!}</td>
+                            <td>
+                                @if($logItem->causer)
+                                    <a href="{{ action('Back\AdministratorsController@edit', $logItem->causer->id) }}">
+                                        {{ $logItem->causer->email }}
+                                    </a>
+                                @endif
+                            </td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
                 <a href="{{ URL::action('Back\ActivitylogController@index') }}">{{ fragment('back.log.fullLog') }}</a>
             @endif
         </div>
     </section>
-@endsection
+
+@endcomponent

@@ -1,11 +1,11 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => 'Statistieken',
+])
 
-@section('pageTitle', 'Statistieken')
+    <section>
+        <div class="grid">
+            {!! Html::info(fragment('back.statistics.notConfigured')) !!}
+        </div>
+    </section>
 
-@section('content')
-<section>
-    <div class="grid">
-        {!! Html::info(fragment('back.statistics.notConfigured')) !!}
-    </div>
-</section>
-@stop
+@endcomponent

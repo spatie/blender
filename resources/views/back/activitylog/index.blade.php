@@ -1,8 +1,6 @@
-@extends('back._layouts.master')
-
-@section('pageTitle', 'Log')
-
-@section('content')
+@component('back._layouts.master', [
+    'pageTitle' => 'Log'
+])
 
     <section>
         <div class="grid">
@@ -13,9 +11,9 @@
             <table class="-datatable -compact">
                 <thead>
                 <tr>
-                    <th>{{ fragment('back.log.time') }}</th>
-                    <th>{{ fragment('back.log.description') }}</th>
-                    <th>{{ fragment('back.log.user') }}</th>
+                    <th>{{ __('Tijdstip') }}</th>
+                    <th>{{ __('Omschrijving') }}</th>
+                    <th>{{ __('Gebruiker')}}</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -42,4 +40,4 @@
         </div>
     </section>
 
-@stop
+@endcomponent

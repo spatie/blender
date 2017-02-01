@@ -1,16 +1,17 @@
-@extends('front._layouts.main')
+@component('front._layouts.main', [
+    'title' => fragment('error.title'),
+])
 
-@section('title', fragment('error.title') )
 
-@section('mainTitle')
-    <h1>{{ fragment('error.title') }}</h1>
-@endsection
+    @slot('mainTitle')
+        <h1>{{ fragment('error.title') }}</h1>
+    @endslot
 
-@section('mainContent')
     <p>
         {{ fragment('error.text.404') }}
     </p>
     <p>
         <a class=button href="{{ route('home') }}">{{ fragment('error.button') }}</a>
     </p>
-@endsection
+
+@endcomponent

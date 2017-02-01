@@ -1,30 +1,29 @@
-@extends('back._layouts.master')
+@component('back._layouts.master', [
+    'pageTitle' => fragment('back.redirects.title'),
+    'breadcrumbs' => Html::backToIndex('Back\RedirectsController@index'),
+])
 
-@section('breadcrumbs', Html::backToIndex('Back\RedirectsController@index'))
+    <section>
+        <div class="grid">
+            <h1>
+                {{ $model->old_url ?: fragment('back.redirects.new') }}
+            </h1>
 
-@section('pageTitle', fragment('back.redirects.title'))
+            {!! Form::openDraftable([
+                'method'=>'PATCH',
+                'action'=> ['Back\RedirectsController@update', $model->id],
+                'class' => '-stacked'
+            ], $model) !!}
 
-@section('content')
-<section>
-    <div class="grid">
-        <h1>
-            {{ $model->old_url ?: fragment('back.redirects.new') }}
-        </h1>
+            @if($model->technical_name && view()->exists("back.redirects._partials.{$model->technical_name}Form"))
+                @include("back.redirects._partials.{$model->technical_name}Form")
+            @else
+                @include('back.redirects._partials.form')
+            @endif
 
-        {!! Form::openDraftable([
-            'method'=>'PATCH',
-            'action'=> ['Back\RedirectsController@update', $model->id],
-            'class' => '-stacked'
-        ], $model) !!}
+            {!! Form::close() !!}
 
-        @if($model->technical_name && view()->exists("back.redirects._partials.{$model->technical_name}Form"))
-            @include("back.redirects._partials.{$model->technical_name}Form")
-        @else
-            @include('back.redirects._partials.form')
-        @endif
+        </div>
+    </section>
 
-        {!! Form::close() !!}
-
-    </div>
-</section>
-@stop
+@endcomponent

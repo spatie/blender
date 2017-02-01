@@ -1,13 +1,8 @@
 @charset 'UTF-8';
 
-@import '~normalize-css/normalize';
+@import 'node_modules/@spatie/scss/settings';
+@import 'node_modules/@spatie/scss/styles';
 
-@import 'utility/**';
-@import 'settings/**';
-@import 'helpers/**';
-@import 'base/**';
-@import 'components/**';
-@import 'patterns/**';
-
-// @import 'vendor/**';
-// @import 'views/**';
+@import 'components/*';
+@import 'patterns/*';
+//@import 'vendor/*';
