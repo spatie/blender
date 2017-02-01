@@ -1,0 +1,13 @@
+{
+  "back.app.js": "back.app.js",
+  "back.media.js": "back.media.js",
+  "back.contentBlocks.js": "back.contentBlocks.js",
+  "back.chart.js": "back.chart.js",
+  "back.head.js": "back.head.js",
+  "back.style.js": "back.style.js",
+  "back.style.css": "back.style.css",
+  "front.app.js": "front.app.js",
+  "front.head.js": "front.head.js",
+  "front.style.js": "front.style.js",
+  "front.style.css": "front.style.css"
+}
