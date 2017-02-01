@@ -41,7 +41,7 @@ mix
             // We'll replace files we want to ignore with a `noop` so webpack
             // won't complain that they can't be resolved.
             new NormalModuleReplacementPlugin(
-                /\.(jpe?g|png|gif|svg)$/,
+                /\.(jpe?g|png|gif|svg|woff2?|ttf|eot|svg|otf)$/,
                 'node-noop'
             ),
         ],
