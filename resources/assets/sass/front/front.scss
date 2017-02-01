@@ -1,7 +1,7 @@
 @charset 'UTF-8';
 
-@import '@spatie/scss/settings';
-@import '@spatie/scss/styles';
+@import 'node_modules/@spatie/scss/settings';
+@import 'node_modules/@spatie/scss/styles';
 
 @import 'components/*';
 @import 'patterns/*';
