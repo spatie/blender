@@ -22,7 +22,7 @@
     "@spatie/scss": "^1.1.2",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-polyfill": "^6.16.0",
-    "babel-preset-latest": "^6.16.0",
+    "babel-preset-env": "^1.1.8",
     "blender-media": "^3.3.2",
     "blender.js": "^1.3.0",
     "browsernizr": "1.0.2",
