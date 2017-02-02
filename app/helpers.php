@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use App\Models\Fragment;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
+use App\Services\Seo\Schema;
 
 function article(string $specialArticle): App\Models\Article
 {
@@ -207,4 +208,9 @@ function validate($fields, $rules): bool
     }
 
     return Validator::make($fields, $rules)->passes();
+}
+
+function schema(): Schema
+{
+    return new Schema();
 }
