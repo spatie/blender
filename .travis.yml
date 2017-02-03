@@ -7,6 +7,7 @@ before_script:
   - travis_retry composer self-update
   - composer install
   - nvm install 7
+  - npm install -g yarn
   - yarn
   - yarn run dev
 
