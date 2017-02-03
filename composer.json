@@ -64,6 +64,7 @@
         "spatie/laravel-translatable": "^1.2.1",
         "spatie/laravel-translation-loader": "^1.1",
         "spatie/regex": "^1.0.0",
+        "spatie/schema-org": "^1.1",
         "spatie/seeders": "^4.4",
         "spatie/string": "^2.0",
         "themsaid/laravel-mail-preview": "^1.2"
