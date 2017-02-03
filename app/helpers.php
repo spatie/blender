@@ -2,9 +2,9 @@
 
 use Carbon\Carbon;
 use App\Models\Fragment;
+use App\Services\Seo\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
-use App\Services\Seo\Schema;
 
 function article(string $specialArticle): App\Models\Article
 {
