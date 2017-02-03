@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e13f461412141d377a2ed6980b469ee2",
+    "content-hash": "8ac166f478b6afa2ed58a09af8b818c2",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3447,16 +3447,16 @@
         },
         {
             "name": "spatie/blender-model",
-            "version": "4.2.13",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/blender-model.git",
-                "reference": "b02ff959aabea15012a608d3c057b2a40d00ae48"
+                "reference": "f5b7423d81f8a77c95628d21b7f5e587bdf294cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/blender-model/zipball/b02ff959aabea15012a608d3c057b2a40d00ae48",
-                "reference": "b02ff959aabea15012a608d3c057b2a40d00ae48",
+                "url": "https://api.github.com/repos/spatie/blender-model/zipball/f5b7423d81f8a77c95628d21b7f5e587bdf294cb",
+                "reference": "f5b7423d81f8a77c95628d21b7f5e587bdf294cb",
                 "shasum": ""
             },
             "require": {
@@ -3503,10 +3503,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/blender-model/tree/4.2.13",
+                "source": "https://github.com/spatie/blender-model/tree/5.0.0",
                 "issues": "https://github.com/spatie/blender-model/issues"
             },
-            "time": "2017-02-03T12:33:45+00:00"
+            "time": "2017-02-03T12:49:24+00:00"
         },
         {
             "name": "spatie/color",
@@ -4608,12 +4608,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "8a10a4bd125ab254e594ae28af7a8212d5aae415"
+                "reference": "dc8d13d173dcb375e42aea8476fea8fae638b739"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/8a10a4bd125ab254e594ae28af7a8212d5aae415",
-                "reference": "8a10a4bd125ab254e594ae28af7a8212d5aae415",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/dc8d13d173dcb375e42aea8476fea8fae638b739",
+                "reference": "dc8d13d173dcb375e42aea8476fea8fae638b739",
                 "shasum": ""
             },
             "require": {
@@ -4669,7 +4669,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-02-03T11:43:40+00:00"
+            "time": "2017-02-03T12:41:54+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -5469,16 +5469,16 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "4.4.0",
+            "version": "4.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/seeders.git",
-                "reference": "daa5e3cb2dbf28a861075e68d86f4cbc3518ddd1"
+                "reference": "6eb5563f2efdb80fa810f00181d6e97972ac6394"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/seeders/zipball/daa5e3cb2dbf28a861075e68d86f4cbc3518ddd1",
-                "reference": "daa5e3cb2dbf28a861075e68d86f4cbc3518ddd1",
+                "url": "https://api.github.com/repos/spatie/seeders/zipball/6eb5563f2efdb80fa810f00181d6e97972ac6394",
+                "reference": "6eb5563f2efdb80fa810f00181d6e97972ac6394",
                 "shasum": ""
             },
             "require": {
@@ -5522,10 +5522,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/seeders/tree/4.4.0",
+                "source": "https://github.com/spatie/seeders/tree/4.4.1",
                 "issues": "https://github.com/spatie/seeders/issues"
             },
-            "time": "2017-01-11T15:28:18+00:00"
+            "time": "2017-02-03T12:44:48+00:00"
         },
         {
             "name": "spatie/string",
