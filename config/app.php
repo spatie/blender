@@ -197,7 +197,6 @@ return [
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
-        Spatie\Glide\GlideServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,

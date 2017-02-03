@@ -15,17 +15,17 @@ class CreateMediaTable extends Migration
     {
         Schema::create('media', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('model_type');
-            $table->integer('model_id');
+            $table->morphs('model');
             $table->string('collection_name');
             $table->string('name');
             $table->string('file_name');
+            $table->string('mime_type')->nullable();
             $table->string('disk');
-            $table->integer('size');
+            $table->unsignedInteger('size');
             $table->json('manipulations');
             $table->json('custom_properties');
-            $table->integer('order_column');
-            $table->timestamps();
+            $table->unsignedInteger('order_column')->nullable();
+            $table->nullableTimestamps();
         });
     }
 }

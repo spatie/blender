@@ -51,7 +51,7 @@
         "spatie/laravel-googletagmanager": "^2.0",
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-mailable-test": "^1.0",
-        "spatie/laravel-medialibrary": "^4.0.0",
+        "spatie/laravel-medialibrary": "v5.x-dev@dev",
         "spatie/laravel-menu": "^2.0.0",
         "spatie/laravel-migrate-fresh": "^1.0",
         "spatie/laravel-missing-page-redirector": "^1.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfa2b46d183cb27f3eb14951eef05762",
+    "content-hash": "e13f461412141d377a2ed6980b469ee2",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3447,16 +3447,16 @@
         },
         {
             "name": "spatie/blender-model",
-            "version": "4.2.12",
+            "version": "4.2.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/blender-model.git",
-                "reference": "655cdf3323dffe85859a89274400749ae5d1a31d"
+                "reference": "b02ff959aabea15012a608d3c057b2a40d00ae48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/blender-model/zipball/655cdf3323dffe85859a89274400749ae5d1a31d",
-                "reference": "655cdf3323dffe85859a89274400749ae5d1a31d",
+                "url": "https://api.github.com/repos/spatie/blender-model/zipball/b02ff959aabea15012a608d3c057b2a40d00ae48",
+                "reference": "b02ff959aabea15012a608d3c057b2a40d00ae48",
                 "shasum": ""
             },
             "require": {
@@ -3467,7 +3467,7 @@
                 "php": "^7.0",
                 "spatie/eloquent-sortable": "^2.1|^3.0",
                 "spatie/fractalistic": "^1.0",
-                "spatie/laravel-medialibrary": "^4.9",
+                "spatie/laravel-medialibrary": "^4.9|^5.0",
                 "spatie/laravel-model-cleanup": "^1.1",
                 "spatie/laravel-translatable": "^1.1",
                 "spatie/regex": "^1.1"
@@ -3503,10 +3503,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/blender-model/tree/4.2.12",
+                "source": "https://github.com/spatie/blender-model/tree/4.2.13",
                 "issues": "https://github.com/spatie/blender-model/issues"
             },
-            "time": "2017-01-24T14:49:03+00:00"
+            "time": "2017-02-03T12:33:45+00:00"
         },
         {
             "name": "spatie/color",
@@ -3871,6 +3871,55 @@
                 "spatie"
             ],
             "time": "2016-03-11T13:14:56+00:00"
+        },
+        {
+            "name": "spatie/image",
+            "version": "0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/image.git",
+                "reference": "ca2913870138f28a25e98e24d79d77f940241e76"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/image/zipball/ca2913870138f28a25e98e24d79d77f940241e76",
+                "reference": "ca2913870138f28a25e98e24d79d77f940241e76",
+                "shasum": ""
+            },
+            "require": {
+                "league/glide": "^1.2",
+                "php": "^7.0",
+                "spatie/temporary-directory": "^1.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "5.*",
+                "symfony/var-dumper": "^3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Manipulate images with an expressive API",
+            "homepage": "https://github.com/spatie/image",
+            "keywords": [
+                "image",
+                "spatie"
+            ],
+            "time": "2017-02-02T14:02:20+00:00"
         },
         {
             "name": "spatie/laravel-activitylog",
@@ -4399,49 +4448,6 @@
             "time": "2017-01-28T08:37:24+00:00"
         },
         {
-            "name": "spatie/laravel-glide",
-            "version": "3.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-glide.git",
-                "reference": "a75f9069a04a1337e7c5308fd4975821f8177f23"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-glide/zipball/a75f9069a04a1337e7c5308fd4975821f8177f23",
-                "reference": "a75f9069a04a1337e7c5308fd4975821f8177f23",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.3.0|~5.4.0",
-                "league/glide": "^1.0",
-                "php": "^7.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "~3.3.0|~3.4.0",
-                "phpunit/phpunit": "5.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Glide\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be"
-                }
-            ],
-            "description": "Easily convert images with Glide",
-            "homepage": "https://github.com/spatie/laravel-glide",
-            "time": "2017-01-24T10:51:47+00:00"
-        },
-        {
             "name": "spatie/laravel-googletagmanager",
             "version": "2.2.1",
             "source": {
@@ -4598,31 +4604,29 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "4.13.0",
+            "version": "v5.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "89432693fa66aa101499f0f89cfcdec51a620471"
+                "reference": "8a10a4bd125ab254e594ae28af7a8212d5aae415"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/89432693fa66aa101499f0f89cfcdec51a620471",
-                "reference": "89432693fa66aa101499f0f89cfcdec51a620471",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/8a10a4bd125ab254e594ae28af7a8212d5aae415",
+                "reference": "8a10a4bd125ab254e594ae28af7a8212d5aae415",
                 "shasum": ""
             },
             "require": {
-                "illuminate/bus": "~5.2.0|~5.3.0|~5.4.0",
-                "illuminate/console": "~5.2.0|~5.3.0|~5.4.0",
-                "illuminate/container": "~5.2.0|~5.3.28|~5.4.0",
-                "illuminate/contracts": "~5.2.0|~5.3.28|~5.4.0",
-                "illuminate/database": "~5.2.0|~5.3.0|~5.4.0",
-                "illuminate/filesystem": "~5.2.0|~5.3.0|~5.4.0",
-                "illuminate/support": "~5.2.0|~5.3.0|~5.4.0",
-                "league/flysystem": "^1.0.13",
+                "illuminate/bus": "~5.4.0",
+                "illuminate/console": "~5.4.0",
+                "illuminate/database": "~5.4.0",
+                "illuminate/pipeline": "~5.4.0",
+                "illuminate/support": "~5.4.0",
                 "php": "^7.0",
-                "spatie/laravel-glide": "^3.0.0",
+                "spatie/image": "^0.0.4",
                 "spatie/pdf-to-image": "^1.2",
-                "spatie/string": "^2.0.0"
+                "spatie/string": "^2.0.0",
+                "spatie/temporary-directory": "^1.1"
             },
             "conflict": {
                 "php-ffmpeg/php-ffmpeg": "<0.6.1"
@@ -4631,8 +4635,8 @@
                 "doctrine/dbal": "^2.5.2",
                 "league/flysystem-aws-s3-v3": "^1.0.13",
                 "mockery/mockery": "^0.9.4",
-                "orchestra/testbench": "~3.2.0|~3.3.0|~3.4.0",
-                "phpunit/phpunit": "^5.7.0"
+                "orchestra/testbench": "~3.4.0",
+                "phpunit/phpunit": "^6.0"
             },
             "suggest": {
                 "league/flysystem-aws-s3-v3": "Required to use AWS S3 file storage",
@@ -4665,7 +4669,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-01-30T13:33:03+00:00"
+            "time": "2017-02-03T11:43:40+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -8183,7 +8187,8 @@
     "stability-flags": {
         "barryvdh/laravel-ide-helper": 20,
         "laravel/framework": 20,
-        "laravelcollective/html": 20
+        "laravelcollective/html": 20,
+        "spatie/laravel-medialibrary": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

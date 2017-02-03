@@ -28,8 +28,8 @@ class MediaLibraryController extends Controller
             ->map(function (UploadedFile $file) use ($model, $request) {
                 return $model
                     ->addMedia($file)
-                    ->withCustomProperties(['draft' => $request->has('redactor') ? false : true])
-                    ->toCollection($request->get('collection_name', 'default'));
+                    ->setCustomProperty('draft', $request->has('redactor') ? false : true)
+                    ->toMediaLibrary($request->get('collection_name', 'default'));
             });
 
         if ($request->has('redactor')) {
