@@ -6,11 +6,9 @@ php:
 before_script:
   - travis_retry composer self-update
   - composer install
-  - nvm install 6
-  - npm install -g yarn
-  - yarn config set "https://npm.spatie.be"
+  - nvm install 7
   - yarn
-  - gulp
+  - yarn run dev
 
 script:
  - phpunit
