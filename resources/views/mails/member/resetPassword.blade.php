@@ -3,7 +3,7 @@
 
 Beste {{ $user->first_name }},
 
-Je vroeg om je paswoord te wijzigen op [{{ Request::getHost() }}]({{ action('Front\Auth\ResetPasswordController@showResetForm', [$token]) }}).
+Je vroeg om je paswoord te wijzigen op [{{ Request::getHost() }}]({{ action('Front\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ $user->email }}).
 
 @component('mail::button', ['url' => action('Front\Auth\ResetPasswordController@showResetForm', [$token])])
 Wijzig je wachtwoord

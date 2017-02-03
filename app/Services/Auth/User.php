@@ -70,22 +70,6 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     }
 
     /**
-     * @param string $token
-     *
-     * @return \App\Services\Auth\User|null
-     */
-    public static function findByToken(string $token)
-    {
-        $resetRecord = app('db')->table('password_resets')->where('token', $token)->first();
-
-        if (empty($resetRecord)) {
-            return;
-        }
-
-        return static::where('email', $resetRecord->email)->first();
-    }
-
-    /**
      * @param string $email
      *
      * @return \App\Services\Auth\User|null
