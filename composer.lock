@@ -4608,12 +4608,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "dc8d13d173dcb375e42aea8476fea8fae638b739"
+                "reference": "793c0c7527be0e21794952b03e629ab3eb40e70d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/dc8d13d173dcb375e42aea8476fea8fae638b739",
-                "reference": "dc8d13d173dcb375e42aea8476fea8fae638b739",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/793c0c7527be0e21794952b03e629ab3eb40e70d",
+                "reference": "793c0c7527be0e21794952b03e629ab3eb40e70d",
                 "shasum": ""
             },
             "require": {
@@ -4669,7 +4669,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-02-03T12:41:54+00:00"
+            "time": "2017-02-03T13:06:21+00:00"
         },
         {
             "name": "spatie/laravel-menu",
