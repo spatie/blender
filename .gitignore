@@ -17,6 +17,7 @@ _ide_helper*.php
 /public/js
 /public/mix-manifest.json
 /public/media
+/public/build
 
 # REMOVE THIS LINE IN PROJECTS
 /resources/assets/js/back/redactor
