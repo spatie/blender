@@ -28,7 +28,7 @@ class BlenderFormBuilder
 
     public function label(string $name, bool $required = false, array $options = []): string
     {
-        return Form::label($name, ("back.{$this->module}.{$name}").($required ? '*' : ''), $options);
+        return Form::label($name, (fragment("back.{$this->module}.{$name}")).($required ? '*' : ''), $options);
     }
 
     public function error(string $name): string

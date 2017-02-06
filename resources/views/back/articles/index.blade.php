@@ -11,7 +11,7 @@
             <table data-sortable="{{ action('Back\ArticlesController@changeOrder') }}">
                 <thead>
                 <tr>
-                    <th>{{ fragment('back.articles.name') }}</th>
+                    <th>{{ __('Naam') }}</th>
                     <th data-orderable="false"></th>
                     <th data-orderable="false"></th>
                 </tr>
