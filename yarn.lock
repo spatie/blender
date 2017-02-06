@@ -41,19 +41,23 @@ acorn-dynamic-import@^2.0.0:
   dependencies:
     acorn "^4.0.3"
 
-acorn-jsx@^3.0.0, acorn-jsx@^3.0.1:
+acorn-jsx@^3.0.0:
   version "3.0.1"
   resolved "https://npm.spatie.be/acorn-jsx/-/acorn-jsx-3.0.1.tgz#afdf9488fb1ecefc8348f6fb22f464e32a58b36b"
   dependencies:
     acorn "^3.0.4"
 
+acorn@4.0.4:
+  version "4.0.4"
+  resolved "https://npm.spatie.be/acorn/-/acorn-4.0.4.tgz#17a8d6a7a6c4ef538b814ec9abac2779293bf30a"
+
 acorn@^3.0.4:
   version "3.3.0"
   resolved "https://npm.spatie.be/acorn/-/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
-acorn@^4.0.1, acorn@^4.0.3, acorn@^4.0.4:
-  version "4.0.4"
-  resolved "https://npm.spatie.be/acorn/-/acorn-4.0.4.tgz#17a8d6a7a6c4ef538b814ec9abac2779293bf30a"
+acorn@^4.0.3, acorn@^4.0.4:
+  version "4.0.8"
+  resolved "https://npm.spatie.be/acorn/-/acorn-4.0.8.tgz#f41e52020ce78118a3c68ed0e9215eb8fc68b5b1"
 
 ajv-keywords@^1.0.0, ajv-keywords@^1.1.1:
   version "1.5.1"
@@ -89,6 +93,10 @@ amdefine@>=0.0.4:
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://npm.spatie.be/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
+
+ansi-html@0.0.7:
+  version "0.0.7"
+  resolved "https://npm.spatie.be/ansi-html/-/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
 
 ansi-regex@^2.0.0:
   version "2.1.1"
@@ -1022,8 +1030,8 @@ caniuse-api@^1.5.2:
     lodash.uniq "^4.3.0"
 
 caniuse-db@^1.0.30000346, caniuse-db@^1.0.30000617, caniuse-db@^1.0.30000618:
-  version "1.0.30000618"
-  resolved "https://npm.spatie.be/caniuse-db/-/caniuse-db-1.0.30000618.tgz#821258ff484f662864f28ffbcf849a6247acf1fa"
+  version "1.0.30000619"
+  resolved "https://npm.spatie.be/caniuse-db/-/caniuse-db-1.0.30000619.tgz#bffaa8150637c3182d3914a9718369b079299529"
 
 cardinal@^1.0.0:
   version "1.0.0"
@@ -1723,8 +1731,8 @@ encodeurl@~1.0.1:
   resolved "https://npm.spatie.be/encodeurl/-/encodeurl-1.0.1.tgz#79e3d58655346909fe6f0f45a5de68103b294d20"
 
 enhanced-resolve@^3.0.0:
-  version "3.0.3"
-  resolved "https://npm.spatie.be/enhanced-resolve/-/enhanced-resolve-3.0.3.tgz#df14c06b5fc5eecade1094c9c5a12b4b3edc0b62"
+  version "3.1.0"
+  resolved "https://npm.spatie.be/enhanced-resolve/-/enhanced-resolve-3.1.0.tgz#9f4b626f577245edcf4b2ad83d86e17f4f421dec"
   dependencies:
     graceful-fs "^4.1.2"
     memory-fs "^0.4.0"
@@ -1907,10 +1915,10 @@ eslint@^3.7.1:
     user-home "^2.0.0"
 
 espree@^3.3.1:
-  version "3.3.2"
-  resolved "https://npm.spatie.be/espree/-/espree-3.3.2.tgz#dbf3fadeb4ecb4d4778303e50103b3d36c88b89c"
+  version "3.4.0"
+  resolved "https://npm.spatie.be/espree/-/espree-3.4.0.tgz#41656fa5628e042878025ef467e78f125cb86e1d"
   dependencies:
-    acorn "^4.0.1"
+    acorn "4.0.4"
     acorn-jsx "^3.0.0"
 
 esprima@^2.6.0:
@@ -2176,7 +2184,7 @@ fresh@0.3.0:
   version "0.3.0"
   resolved "https://npm.spatie.be/fresh/-/fresh-0.3.0.tgz#651f838e22424e7566de161d8358caa199f83d4f"
 
-friendly-errors-webpack-plugin@^1.1.2:
+friendly-errors-webpack-plugin@^1.1.3:
   version "1.1.3"
   resolved "https://npm.spatie.be/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.1.3.tgz#402ac39b40d5d6b1b922c6636a68857b9c5c6fb7"
   dependencies:
@@ -2454,6 +2462,10 @@ hpack.js@^2.1.6:
 html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "https://npm.spatie.be/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
+
+html-entities@^1.2.0:
+  version "1.2.0"
+  resolved "https://npm.spatie.be/html-entities/-/html-entities-1.2.0.tgz#41948caf85ce82fed36e4e6a0ed371a6664379e2"
 
 htmlparser2@^3.8.2:
   version "3.9.2"
@@ -2904,10 +2916,9 @@ jsprim@^1.2.2:
     verror "1.3.6"
 
 jsx-ast-utils@^1.3.4:
-  version "1.3.5"
-  resolved "https://npm.spatie.be/jsx-ast-utils/-/jsx-ast-utils-1.3.5.tgz#9ba6297198d9f754594d62e59496ffb923778dd4"
+  version "1.4.0"
+  resolved "https://npm.spatie.be/jsx-ast-utils/-/jsx-ast-utils-1.4.0.tgz#5afe38868f56bc8cc7aeaef0100ba8c75bd12591"
   dependencies:
-    acorn-jsx "^3.0.1"
     object-assign "^4.1.0"
 
 kind-of@^3.0.2:
@@ -2922,9 +2933,9 @@ klaw@^1.0.0:
   optionalDependencies:
     graceful-fs "^4.1.9"
 
-laravel-mix@^0.5.16:
-  version "0.5.16"
-  resolved "https://npm.spatie.be/laravel-mix/-/laravel-mix-0.5.16.tgz#a3b8ed4a836e006757922fd8eeb41ab9fcb6e0a6"
+laravel-mix@^0.6.0:
+  version "0.6.1"
+  resolved "https://npm.spatie.be/laravel-mix/-/laravel-mix-0.6.1.tgz#4ce2634207a09b0c353a19e720783c5ba6c0dffb"
   dependencies:
     babel-core "^6.20.0"
     babel-loader "^6.2.9"
@@ -2936,7 +2947,7 @@ laravel-mix@^0.5.16:
     css-loader "^0.26.1"
     extract-text-webpack-plugin "^2.0.0-beta.4"
     file-loader "^0.9.0"
-    friendly-errors-webpack-plugin "^1.1.2"
+    friendly-errors-webpack-plugin "^1.1.3"
     fs "0.0.1-security"
     less "^2.7.1"
     less-loader "^2.2.3"
@@ -2947,7 +2958,7 @@ laravel-mix@^0.5.16:
     postcss-load-config "^1.0.0"
     postcss-loader "^1.2.1"
     resolve-url-loader "^1.6.1"
-    sass-loader "^4.0.2"
+    sass-loader "^4.1.1"
     style-loader "^0.13.1"
     uglify-js "^2.7.5"
     vue-loader "^10.0.2"
@@ -4435,7 +4446,7 @@ sass-graph@^2.1.1:
     lodash "^4.0.0"
     yargs "^4.7.1"
 
-sass-loader@^4.0.2:
+sass-loader@^4.1.1:
   version "4.1.1"
   resolved "https://npm.spatie.be/sass-loader/-/sass-loader-4.1.1.tgz#79ef9468cf0bf646c29529e1f2cba6bd6e51c7bc"
   dependencies:
@@ -5036,8 +5047,8 @@ vue-hot-reload-api@^2.0.1:
   resolved "https://npm.spatie.be/vue-hot-reload-api/-/vue-hot-reload-api-2.0.8.tgz#b3ba6a9a443d561b14f2785c8ea056618cb2faa3"
 
 vue-loader@^10.0.2:
-  version "10.2.1"
-  resolved "https://npm.spatie.be/vue-loader/-/vue-loader-10.2.1.tgz#ac043092c91eb5bf24ccea99bfed848886d06c60"
+  version "10.2.3"
+  resolved "https://npm.spatie.be/vue-loader/-/vue-loader-10.2.3.tgz#462d837da5b501e4b339e4c48db8ad726121be85"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
@@ -5101,13 +5112,15 @@ webpack-dev-middleware@^1.9.0:
     range-parser "^1.0.3"
 
 webpack-dev-server@^2.2.0:
-  version "2.2.1"
-  resolved "https://npm.spatie.be/webpack-dev-server/-/webpack-dev-server-2.2.1.tgz#91c442161afe9b5334e0bf1869b143880ece92fa"
+  version "2.3.0"
+  resolved "https://npm.spatie.be/webpack-dev-server/-/webpack-dev-server-2.3.0.tgz#0437704bbd4d941a6e4c061eb3cc232ed7d06101"
   dependencies:
+    ansi-html "0.0.7"
     chokidar "^1.6.0"
     compression "^1.5.2"
     connect-history-api-fallback "^1.3.0"
     express "^4.13.3"
+    html-entities "^1.2.0"
     http-proxy-middleware "~0.17.1"
     opn "4.0.2"
     portfinder "^1.0.9"

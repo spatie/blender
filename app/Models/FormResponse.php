@@ -4,10 +4,18 @@ namespace App\Models;
 
 use Excel;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Referer\Referer;
 
 class FormResponse extends Model
 {
     protected $guarded = ['id'];
+
+    public static function boot()
+    {
+        static::creating(function (FormResponse $formResponse) {
+            $formResponse->referer = app(Referer::class)->get();
+        });
+    }
 
     public static function downloadAll()
     {
