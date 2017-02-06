@@ -22,6 +22,7 @@ class CreateFormResponseTable extends Migration
             $table->string('postal', 255)->nullable();
             $table->string('city', 255)->nullable();
             $table->text('remarks', 64)->nullable();
+            $table->string('referer')->nullable();
             $table->timestamps();
         });
     }
