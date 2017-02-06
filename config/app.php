@@ -189,6 +189,7 @@ return [
         App\Providers\EventServiceProvider::class,
 
         Spatie\Blender\Model\BlenderModelServiceProvider::class,
+
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
@@ -217,6 +218,7 @@ return [
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
         Spatie\MailableTest\MailableTestServiceProvider::class,
+        Spatie\Referer\RefererServiceProvider::class,
     ],
 
     /*

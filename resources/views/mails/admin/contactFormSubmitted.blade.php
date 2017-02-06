@@ -1,7 +1,7 @@
 @component('mail::message')
 # Nieuwe reactie
 
-Beste {{ $user->first_name }},
+Beste,
 
 Een bezoeker liet zijn gegevens achter op [{{ Request::getHost() }}]({{ url('/') }}).
 
