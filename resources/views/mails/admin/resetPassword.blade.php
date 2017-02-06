@@ -5,7 +5,7 @@ Beste {{ $user->first_name }},
 
 Je vroeg om je paswoord te wijzigen op [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ $user->email }}).
 
-@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token])])
+@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]) . '?email=' . $user->email])
 Wijzig je wachtwoord
 @endcomponent
 
