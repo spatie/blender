@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3b1fff24fa7280500a25d3caa91bb80",
+    "content-hash": "b68544a1da6450e86d2dc03aed383d2c",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -3874,16 +3874,16 @@
         },
         {
             "name": "spatie/image",
-            "version": "0.0.4",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image.git",
-                "reference": "ca2913870138f28a25e98e24d79d77f940241e76"
+                "reference": "6045902990805f85a00efd0d4cd2e80263e587f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image/zipball/ca2913870138f28a25e98e24d79d77f940241e76",
-                "reference": "ca2913870138f28a25e98e24d79d77f940241e76",
+                "url": "https://api.github.com/repos/spatie/image/zipball/6045902990805f85a00efd0d4cd2e80263e587f9",
+                "reference": "6045902990805f85a00efd0d4cd2e80263e587f9",
                 "shasum": ""
             },
             "require": {
@@ -3892,7 +3892,7 @@
                 "spatie/temporary-directory": "^1.0.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "5.*",
+                "phpunit/phpunit": "^6.0",
                 "symfony/var-dumper": "^3.2"
             },
             "type": "library",
@@ -3919,7 +3919,7 @@
                 "image",
                 "spatie"
             ],
-            "time": "2017-02-02T14:02:20+00:00"
+            "time": "2017-02-06T09:33:27+00:00"
         },
         {
             "name": "spatie/laravel-activitylog",
@@ -4604,16 +4604,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "v5.x-dev",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "793c0c7527be0e21794952b03e629ab3eb40e70d"
+                "reference": "00427e51ebd3663f425a45c89303ec36bd898656"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/793c0c7527be0e21794952b03e629ab3eb40e70d",
-                "reference": "793c0c7527be0e21794952b03e629ab3eb40e70d",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/00427e51ebd3663f425a45c89303ec36bd898656",
+                "reference": "00427e51ebd3663f425a45c89303ec36bd898656",
                 "shasum": ""
             },
             "require": {
@@ -4623,9 +4623,8 @@
                 "illuminate/pipeline": "~5.4.0",
                 "illuminate/support": "~5.4.0",
                 "php": "^7.0",
-                "spatie/image": "^0.0.4",
+                "spatie/image": "^1.0.0",
                 "spatie/pdf-to-image": "^1.2",
-                "spatie/string": "^2.0.0",
                 "spatie/temporary-directory": "^1.1"
             },
             "conflict": {
@@ -4664,12 +4663,15 @@
             "homepage": "https://github.com/spatie/laravel-medialibrary",
             "keywords": [
                 "cms",
+                "conversion",
+                "downloads",
+                "images",
                 "laravel",
                 "laravel-medialibrary",
                 "media",
                 "spatie"
             ],
-            "time": "2017-02-03T13:06:21+00:00"
+            "time": "2017-02-06T13:54:06+00:00"
         },
         {
             "name": "spatie/laravel-menu",
@@ -8237,8 +8239,7 @@
     "stability-flags": {
         "barryvdh/laravel-ide-helper": 20,
         "laravel/framework": 20,
-        "laravelcollective/html": 20,
-        "spatie/laravel-medialibrary": 20
+        "laravelcollective/html": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
