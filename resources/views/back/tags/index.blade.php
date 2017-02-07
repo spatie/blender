@@ -7,7 +7,7 @@
             <h1>{{ fragment('back.tags.title') }}</h1>
             <a href="{{ URL::action('Back\TagsController@create') }}" class="button">{{ fragment('back.tags.new') }}</a>
 
-            <div class="alert -info -small h-margin-top">
+            <div class="alert--info -small h-margin-top">
                 Zorg ervoor dat alle items van een tag ontkoppeld zijn alvorens hem te verwijderen.
             </div>
 

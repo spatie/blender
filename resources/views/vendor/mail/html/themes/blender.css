@@ -1,0 +1,271 @@
+/* Base */
+
+body, body *:not(html):not(style):not(br):not(tr):not(code) {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f6;
+    color: #222;
+    height: 100%;
+    line-height: 1.4;
+    margin: 0;
+    width: 100% !important;
+    -webkit-text-size-adjust: none;
+}
+
+p,
+ul,
+ol,
+blockquote {
+    line-height: 1.4;
+    text-align: left;
+}
+
+a {
+    color: #007593;
+}
+
+a img {
+    border: none;
+}
+
+/* Typography */
+
+h1 {
+    color: #222;
+    font-size: 24px;
+    margin-bottom: 36px;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: left;
+}
+
+h2 {
+    color: #222;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: left;
+}
+
+h3 {
+    color: #222;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 0;
+    text-align: left;
+}
+
+p {
+    color: #222;
+    font-size: 16px;
+    line-height: 1.5em;
+    margin-top: 0;
+    text-align: left;
+}
+
+p.sub {
+    font-size: 12px;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Layout */
+
+.wrapper {
+    background-color: #f5f5f6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+/* Header */
+
+.header {
+    padding: 25px 0;
+    text-align: center;
+}
+
+.header a {
+    color: #d8d8da;
+    font-size: 21px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Body */
+
+.body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.inner-body {
+    margin: 0 auto;
+    padding: 0;
+    width: 570px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 570px;
+}
+
+.content-cell {
+    padding: 35px;
+    background-color: #FFFFFF;
+    border: 1px solid #EDEFF2;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, .05);
+    border-radius: 3px;
+}
+
+/* Subcopy */
+
+.subcopy {
+    border-top: 2px solid #d8d8da;
+    margin-top: 50px;
+    padding-top: 10px;
+}
+
+.subcopy p {
+    font-size: 14px;
+    color: #6f6d70;
+}
+
+/* Footer */
+
+.footer-cell {
+    padding: 35px;
+}
+
+.footer {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    width: 570px;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 570px;
+}
+
+.footer p {
+    color: #d8d8da;
+    font-size: 12px;
+    text-align: center;
+}
+
+.footer a {
+    color: #d8d8da;
+    text-decoration: none;
+}
+
+/* Tables */
+
+.table table {
+    margin: 30px auto;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.table th {
+    border-bottom: 1px solid #EDEFF2;
+    padding-bottom: 8px;
+}
+
+.table td {
+    color: #74787E;
+    font-size: 15px;
+    line-height: 18px;
+    padding: 10px 0;
+}
+
+/* Buttons */
+
+.action {
+    margin: 30px auto;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+    -premailer-cellpadding: 0;
+    -premailer-cellspacing: 0;
+    -premailer-width: 100%;
+}
+
+.button {
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.16);
+    color: #FFF;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    -webkit-text-size-adjust: none;
+}
+
+.button--blue {
+    background-color: #007593;
+    border-top: 10px solid #007593;
+    border-right: 18px solid #007593;
+    border-bottom: 10px solid #007593;
+    border-left: 18px solid #007593;
+}
+
+.button--green {
+    background-color: #5ebbae;
+    border-top: 10px solid #5ebbae;
+    border-right: 18px solid #5ebbae;
+    border-bottom: 10px solid #5ebbae;
+    border-left: 18px solid #5ebbae;
+}
+
+.button--red {
+    background-color: #e83134;
+    border-top: 10px solid #e83134;
+    border-right: 18px solid #e83134;
+    border-bottom: 10px solid #e83134;
+    border-left: 18px solid #e83134;
+}
+
+/* Panels */
+
+.panel {
+    margin: 0 0 21px;
+}
+
+.panel-content {
+    background-color: #e5f4f8;
+    border-left: solid 5px #007593;
+    padding: 16px;
+}
+
+.panel-content p {
+    color: #007593;
+}
+
+.panel-item {
+    padding: 0;
+}
+
+.panel-item p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}

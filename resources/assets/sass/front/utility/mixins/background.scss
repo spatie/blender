@@ -1,5 +1,0 @@
-@mixin background-image-tinted($image, $rgba, $background-position: center center) {
-    background: linear-gradient($rgba, $rgba), url('#{$image}');
-    background-position: $background-position;
-    background-size: cover;
-}

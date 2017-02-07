@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="{{ locale() }}" data-viewport>
+<html lang="{{ locale() }}" class="js-viewport | html--stretched">
 @include('front._layouts._partials.hiddenCredits')
 <head>
     @include('front._layouts._partials.head.meta')
 
-    <link rel="stylesheet" href="{{ elixir('front.style.css') }}">
-    <script src="{{ elixir('front.head.js') }}"></script>
+    <link rel="stylesheet" href="{{ mix('css/front.css') }}">
+    <script src="{{ mix('js/front.head.js') }}"></script>
 
     <title>{{ isset($title) ? $title  . ' - ' : '' }} {{ fragment('site.title') }}</title>
 
@@ -26,7 +26,7 @@
     @include('cookieConsent::index')
     @include('front._layouts._partials.footer')
 
-    <script src="{{ elixir('front.app.js') }}"></script>
+    <script src="{{ mix('js/front.app.js') }}"></script>
 
 </body>
 </html>

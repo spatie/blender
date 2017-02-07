@@ -1,27 +1,19 @@
-@php
-    $transKey = 'auth.passwordMail.'.($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser');
-@endphp
-
 @component('mail::message')
+# Wijzig je wachtwoord
 
-# {{ trans($transKey.'.resetButton', [], null, $user->locale) }}
+Beste {{ $user->first_name }},
 
-{{ trans('auth.passwordMail.compellation', [], null, $user->locale) }} {{ $user->first_name }},
-
-{{ trans($transKey.'.intro', [], null, $user->locale) }} [{{ config('app.url') }}]({{ url('blender') }}).
+Je vroeg om je paswoord te wijzigen op [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ $user->email }}).
 
 @component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token])])
-{{ trans($transKey.'.resetButton', [], null, $user->locale) }}
+Wijzig je wachtwoord
 @endcomponent
 
 @component('mail::panel')
-{{ trans('auth.passwordMail.linkValidUntil', [], null, $user->locale) }} {{ Carbon\Carbon::now()->addDays(3)->format('d/m/Y') }}.
+Was het een foutieve aanvraag? Negeer dan deze e-mail, je oude wachtwoord blijft gewoon werken.
 @endcomponent
 
-@unless($user->hasNeverLoggedIn())
-@component('mail::subcopy')
-{{ trans('auth.passwordMail.oldUser.outro', [], null, $user->locale) }}
-@endcomponent
-@endunless
-
+@slot('subcopy')
+Wijzig je paswoord vòòr {{ Carbon\Carbon::now()->addDays(3)->format('d/m/Y') }}.
+@endslot
 @endcomponent

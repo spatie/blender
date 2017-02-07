@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use App\Models\Fragment;
+use App\Services\Seo\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
 
@@ -212,4 +213,9 @@ function validate($fields, $rules): bool
 function html(): \App\Services\Html\Html
 {
     return app(\App\Services\Html\Html::class);
+}
+
+function schema(): Schema
+{
+    return new Schema();
 }

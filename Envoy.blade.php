@@ -84,7 +84,7 @@ yarn
 @task('generateAssets', ['on' => 'remote'])
 {{ logMessage("\u{1F305}  Generating assets...") }}
 cd {{ $newReleaseDir }};
-gulp --production
+yarn run production
 @endtask
 
 @task('updateSymlinks', ['on' => 'remote'])

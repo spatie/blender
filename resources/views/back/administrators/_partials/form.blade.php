@@ -23,7 +23,7 @@
 
 @if($user->isCurrentUser())
     <fieldset class="-info">
-        <div class="alert -info">
+        <div class="alert--info">
             <span class="fa fa-info-circle"></span> {{ fragment('back.administrators.passwordChangeInfo') }}
         </div>
         <div class="grid__col -width-1/2">

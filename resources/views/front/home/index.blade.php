@@ -10,7 +10,8 @@
 
     @slot('mainImages')
         @if($cover = $article->getFirstMedia('images'))
-            <img src="{{ $cover->getUrl('thumb') }}" alt="{{ $cover->name }}">
+            <div class="banner" style="background-image: url('{{ $cover->getUrl() }}')" alt="{{ $cover->name }}">
+            </div>
         @endif
     @endslot
 

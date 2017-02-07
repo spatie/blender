@@ -13,11 +13,11 @@
             {!! Form::open(['class'=>'-stacked v-auth__form', 'action' => 'Back\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
             <h1 class="v-auth__title -small">{{ fragment('back.auth.resetPassword.title') }}</h1>
             @if(session('status'))
-                <p class="alert -info">
+                <p class="alert--info">
                     {{ session('status') }}
                 </p>
             @else
-                <p class="alert -info">
+                <p class="alert--info">
                     {{ fragment('back.auth.resetPassword.intro') }}
                 </p>
             @endif
