@@ -279,7 +279,6 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Fractal' => Spatie\Fractal\FractalFacade::class,
-        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
         'GoogleTagManager' => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
         'Menu' => Spatie\Menu\Laravel\MenuFacade::class,
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
