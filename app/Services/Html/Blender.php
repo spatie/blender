@@ -2,8 +2,8 @@
 
 namespace App\Services\Html;
 
-use Spatie\Html\Elements\Div;
 use Spatie\Html\HtmlElement;
+use Spatie\Html\Elements\Div;
 
 class Blender
 {
