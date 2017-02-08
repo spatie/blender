@@ -2,7 +2,7 @@
 
 namespace App\Services\Html;
 
-use Collective\Html\HtmlServiceProvider as ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 class HtmlServiceProvider extends ServiceProvider
 {

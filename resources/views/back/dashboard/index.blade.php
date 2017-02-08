@@ -11,7 +11,7 @@
                 @include('back.dashboard._partials.visitors')
             @else
                 <div class="alerts">
-                    {!! Html::info(fragment('back.statistics.notConfigured')) !!}
+                    {{ html()->info('Analytics is nog niet geconfigureerd...') }}
                 </div>
             @endif
 
@@ -41,7 +41,7 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{ URL::action('Back\ActivitylogController@index') }}">{{ fragment('back.log.fullLog') }}</a>
+                <a href="{{ action('Back\ActivitylogController@index') }}">{{ fragment('back.log.fullLog') }}</a>
             @endif
         </div>
     </section>

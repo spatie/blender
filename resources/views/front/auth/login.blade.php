@@ -1,24 +1,28 @@
 @component('front._layouts.main', [
-'title' => fragment('auth.titleLogin')
+    'title' => fragment('auth.titleLogin')
 ])
 
-    {!! Form::open() !!}
+    {{ html()->form()->open() }}
 
     <p>
-        {!! Form::label('email', fragment('auth.email')) !!}
-        {!! Form::email('email', old('email'), ['autofocus' => true ]) !!}
-        {!! Html::error($errors->first('email')) !!}
+        {{ html()->label('email', fragment('auth.email')) }}
+        {{ html()->email('email')->attribute('autofocus') }}
+        {{ html()->error($errors->first('email')) }}
     </p>
     <p>
-        {!! Form::label('password', fragment('auth.password')) !!}
-        {!! Form::password('password', [ ]) !!}
-        {!! Html::error($errors->first('password')) !!}
+        {{ html()->label('password', fragment('auth.password')) }}
+        {{ html()->password('password') }}
+        {{ html()->error($errors->first('password')) }}
     </p>
     <p>
-        {!! Form::button(fragment('auth.login'), ['type'=>'submit', 'class'=>'button--primary']) !!}
+        {{ html()
+            ->button(fragment('auth.login'))
+            ->type('submit')
+            ->class('button--primary')
+        }}
     </p>
 
-    {!! Form::close() !!}
+    {{ html()->form()->close() }}
 
     <p>
         <a href="{{ action('Front\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ fragment('auth.forgotPassword') }}</a>

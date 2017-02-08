@@ -2,7 +2,6 @@
 
 namespace App\Services\Navigation\Menu;
 
-use Html;
 use Spatie\Menu\Laravel\Link;
 use Spatie\Menu\Laravel\Menu;
 
@@ -51,8 +50,8 @@ class BackMenus
         });
 
         Menu::macro('backUser', function () {
-            $avatar = Html::avatar(current_user(), '-small').
-                el('span.:response-desktop-only', current_user()->email);
+            $avatar = html()->avatar(current_user())->class('-small').
+                html()->span(current_user()->email)->class(':response-desktop-only');
 
             return Menu::new()
                 ->action('Back\AdministratorsController@edit', $avatar, [current_user()->id])

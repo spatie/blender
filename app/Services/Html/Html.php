@@ -2,15 +2,54 @@
 
 namespace App\Services\Html;
 
+use App\Services\Auth\User;
 use Exception;
 use Spatie\Html\Elements\A;
 use Spatie\Html\Elements\Div;
-use Spatie\Html\Elements\Form;
 use Spatie\Html\Elements\Span;
 use Spatie\Html\Elements\Textarea;
 
 class Html extends \Spatie\Html\Html
 {
+    /** @var string */
+    protected $locale = null;
+
+    /**
+     * @param string $locale
+     *
+     * @return static
+     */
+    public function locale(string $locale)
+    {
+        $this->locale = $locale;
+
+        return $this;
+    }
+
+    /**
+     * @return static
+     */
+    public function endLocale()
+    {
+        $this->locale = null;
+
+        return $this;
+    }
+
+    public function translations(callable $callback)
+    {
+        $fieldsets = locales()->map(function ($locale) use ($callback) {
+            return $this
+                ->locale($locale)
+                ->fieldset($locale)
+                ->addChildren($callback($this));
+        });
+
+        $this->endLocale();
+
+        return $this->div()->children($fieldsets);
+    }
+
     public function alert(string $type, string $message): Div
     {
         return $this->div()
@@ -18,20 +57,27 @@ class Html extends \Spatie\Html\Html
             ->text($message);
     }
 
-    public function flashMessage(): Div
+    public function flashMessage(): ?Div
     {
-        if (! Session::has('flash_notification.message')) {
-            return $this->div();
+        if (
+            ! $this->request->session()->get('flash_notification.level') ||
+            ! $this->request->session()->get('flash_notification.message')
+        ) {
+            return null;
         }
 
         return $this->alert(
-            Session::get('flash_notification.level'),
-            Session::get('flash_notification.message')
+            $this->request->session()->get('flash_notification.level'),
+            $this->request->session()->get('flash_notification.message')
         );
     }
 
-    public function error(string $message, string $field = ''): Div
+    public function error(?string $message, string $field = ''): ?Div
     {
+        if (! $message) {
+            return null;
+        }
+
         return $this->alert('danger', $message)
             ->attributeIf($field, 'data-validation-error', $field);
     }
@@ -89,10 +135,10 @@ class Html extends \Spatie\Html\Html
 
         $medialibraryUrl = action(
             'Back\Api\MediaLibraryController@add',
-            [short_class_name($this->model), $this->model->id, 'redactor']
+            [class_basename($this->model), $this->model->id, 'redactor']
         );
 
-        $this->textarea($name, $value)
+        return $this->textarea($name, $value)
             ->attributes([
                 'data-editor',
                 'data-editor-medialibrary-url' => $medialibraryUrl,
