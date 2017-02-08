@@ -2,10 +2,9 @@
 
 namespace App\Services\Html;
 
+use Carbon\Carbon;
 use App\Models\Tag;
 use App\Services\Auth\User;
-use Carbon\Carbon;
-use Illuminate\Support\ViewErrorBag;
 use Spatie\Html\Elements\A;
 use Spatie\Html\Elements\Div;
 use Spatie\Html\Elements\Span;
@@ -66,7 +65,7 @@ class Html extends \Spatie\Html\Html
             ! $this->request->session()->get('flash_notification.level') ||
             ! $this->request->session()->get('flash_notification.message')
         ) {
-            return null;
+            return;
         }
 
         return $this->alert(
@@ -78,7 +77,7 @@ class Html extends \Spatie\Html\Html
     public function error(?string $message, string $field = ''): ?Div
     {
         if (! $message) {
-            return null;
+            return;
         }
 
         return $this->alert('danger', $message)
