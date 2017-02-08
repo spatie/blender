@@ -1,4 +1,10 @@
-{{ html()->model($model)->form('PATCH')->class('-stacked')->open() }}
+{{ html()
+    ->model($model)
+    ->form('PATCH', action('Back\NewsController@update', $model->id))
+    ->class('-stacked')
+    ->open() }}
+
+{{ html()->formGroup()->submit('Bewaar nieuws') }}
 
 <div data-tabs class="tabs">
     <nav class="tabs__menu">
@@ -11,21 +17,20 @@
     <div id="content">
         {{ html()->translations(function () {
             return [
-                html()->blender()->text('name', 'Naam'),
-                html()->blender()->redactor('text', 'Tekst'),
+                html()->formGroup()->text('name', 'Naam'),
+                html()->formGroup()->redactor('text', 'Tekst'),
             ];
         }) }}
 
-        {{ html()->blender()->category('news_category') }}
-
-        {{--{!! BlenderForm::tags('news_tag') !!}--}}
+        {{ html()->formGroup()->category('newsCategory', 'Categorie') }}
+        {{ html()->formGroup()->tags('newsTag', 'Tags') }}
 
         {{--{!! BlenderForm::media('images', 'images') !!}--}}
         {{--{!! BlenderForm::media('downloads', 'downloads') !!}--}}
     </div>
     <div id="settings">
-        {{ html()->blender()->checkbox('online', 'Online') }}
-        {{ html()->blender()->date('publish_date', 'Publicatiedatum') }}
+        {{ html()->formGroup()->checkbox('online', 'Online') }}
+{{--        {{ html()->blender()->date('publish_date', 'Publicatiedatum') }}--}}
     </div>
     <div id="seo">
         {{--{!! BlenderForm::seo() !!}--}}
@@ -33,6 +38,6 @@
     </div>
 </div>
 
-{{--{!! BlenderForm::submit() !!}--}}
+{{ html()->formGroup()->submit('Bewaar nieuws') }}
 
 {{ html()->endModel()->form()->close() }}

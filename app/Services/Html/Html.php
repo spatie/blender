@@ -2,8 +2,10 @@
 
 namespace App\Services\Html;
 
+use App\Models\Tag;
 use App\Services\Auth\User;
 use Exception;
+use Illuminate\Support\ViewErrorBag;
 use Spatie\Html\Elements\A;
 use Spatie\Html\Elements\Div;
 use Spatie\Html\Elements\Span;
@@ -164,10 +166,9 @@ class Html extends \Spatie\Html\Html
         );
     }
 
-    public function tags(string $type): string
+    public function tags(string $type)
     {
-        return $this->category($type)
-            ->attributes(['multiple', 'data-select' => 'tags']);
+        return $this->category($type)->attributes(['multiple', 'data-select' => 'tags']);
     }
 
     public function old(string $name = '', string $value = '')
@@ -181,9 +182,19 @@ class Html extends \Spatie\Html\Html
         return $value;
     }
 
-    public function blender(): Blender
+    public function blender(): FormGroup
     {
-        return new Blender($this);
+        return new FormGroup($this);
+    }
+
+    public function formGroup(): FormGroup
+    {
+        return new FormGroup($this);
+    }
+
+    public function errors(): ViewErrorBag
+    {
+        return $this->request->session()->get('errors', new ViewErrorBag());
     }
 
     protected function ensureModelIsAvailable()
