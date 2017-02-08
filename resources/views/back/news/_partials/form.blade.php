@@ -11,21 +11,21 @@
     <div id="content">
         {{ html()->translations(function () {
             return [
-                html()->text('name'),
-                html()->redactor('text'),
+                html()->blender()->text('name', 'Naam'),
+                html()->blender()->redactor('text', 'Tekst'),
             ];
         }) }}
 
-        {{--{!! BlenderForm::category('news_category') !!}--}}
+        {{ html()->blender()->category('news_category') }}
+
         {{--{!! BlenderForm::tags('news_tag') !!}--}}
 
         {{--{!! BlenderForm::media('images', 'images') !!}--}}
         {{--{!! BlenderForm::media('downloads', 'downloads') !!}--}}
     </div>
     <div id="settings">
-        {{--{!! BlenderForm::checkbox('online') !!}--}}
-
-        {{--{!! BlenderForm::date('publish_date') !!}--}}
+        {{ html()->blender()->checkbox('online', 'Online') }}
+        {{ html()->blender()->date('publish_date', 'Publicatiedatum') }}
     </div>
     <div id="seo">
         {{--{!! BlenderForm::seo() !!}--}}

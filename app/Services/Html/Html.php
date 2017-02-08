@@ -41,7 +41,8 @@ class Html extends \Spatie\Html\Html
         $fieldsets = locales()->map(function ($locale) use ($callback) {
             return $this
                 ->locale($locale)
-                ->fieldset($locale)
+                ->fieldset()
+                ->addChild($this->legend($locale)->class('legend__lang'))
                 ->addChildren($callback($this));
         });
 
@@ -178,6 +179,11 @@ class Html extends \Spatie\Html\Html
         }
 
         return $value;
+    }
+
+    public function blender(): Blender
+    {
+        return new Blender($this);
     }
 
     protected function ensureModelIsAvailable()
