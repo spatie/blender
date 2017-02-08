@@ -120,8 +120,12 @@ class Html extends \Spatie\Html\Html
 
     public function onlineIndicator(bool $online): Span
     {
-        return $this->icon($online ? 'circle' : 'circle-o')
-            ->class($online ? 'on' : 'off');
+        return $this->span()
+            ->html(
+                $this->icon($online ? 'circle' : 'circle-o')->class($online ? 'on' : 'off')
+            )
+            ->attribute('title', $online ? 'Online' : 'Offline')
+            ->class(['status', $online ? '-on' : '-off']);
     }
 
     public function backToIndex(string $action, array $parameters = []): A

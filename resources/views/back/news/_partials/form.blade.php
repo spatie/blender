@@ -1,11 +1,3 @@
-{{ html()
-    ->model($model)
-    ->form('PATCH', action('Back\NewsController@update', $model->id))
-    ->class('-stacked')
-    ->open() }}
-
-{{ html()->formGroup()->submit('Bewaar nieuws') }}
-
 <div data-tabs class="tabs">
     <nav class="tabs__menu">
         <ul>
@@ -37,7 +29,3 @@
         {{--{!! Html::info(fragment('back.seo.help')) !!}--}}
     </div>
 </div>
-
-{{ html()->formGroup()->submit('Bewaar nieuws') }}
-
-{{ html()->endModel()->form()->close() }}

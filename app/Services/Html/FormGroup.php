@@ -26,7 +26,8 @@ class FormGroup
         return $this->wrapper()->children([
             $this->html->label()
                 ->for($name)
-                ->html($this->html->checkbox($name).' '.__($label)),
+                ->html($this->html->checkbox($name)->class('form-control').' '.__($label))
+                ->class('-checkbox'),
         ]);
     }
 
