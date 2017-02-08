@@ -2,9 +2,9 @@
 
 namespace App\Services\Html;
 
-use Illuminate\Support\ViewErrorBag;
-use Spatie\Html\Elements\Div;
 use Spatie\Html\HtmlElement;
+use Spatie\Html\Elements\Div;
+use Illuminate\Support\ViewErrorBag;
 
 class FormGroup
 {
