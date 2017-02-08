@@ -2,6 +2,7 @@
 
 namespace App\Services\Html;
 
+use Illuminate\Support\ViewErrorBag;
 use Spatie\Html\Elements\Div;
 use Spatie\Html\HtmlElement;
 
@@ -27,6 +28,11 @@ class FormGroup
                 ->for($name)
                 ->html($this->html->checkbox($name).' '.__($label)),
         ]);
+    }
+
+    public function date(string $name, string $label): Div
+    {
+        return $this->assemble($name, $label, $this->html->date($name));
     }
 
     public function redactor(string $name, string $label): Div
@@ -61,7 +67,12 @@ class FormGroup
         return $this->wrapper()->children([
             $this->html->label(__($label), $name),
             $contents,
-            $this->html->error($this->html->errors()->first($name)),
+            $this->html->error($this->errors()->first($name)),
         ]);
+    }
+
+    protected function errors(): ViewErrorBag
+    {
+        return session('errors', new ViewErrorBag());
     }
 }

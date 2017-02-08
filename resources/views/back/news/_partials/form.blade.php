@@ -30,7 +30,7 @@
     </div>
     <div id="settings">
         {{ html()->formGroup()->checkbox('online', 'Online') }}
-{{--        {{ html()->blender()->date('publish_date', 'Publicatiedatum') }}--}}
+        {{ html()->formGroup()->date('publish_date', 'Publicatiedatum') }}
     </div>
     <div id="seo">
         {{--{!! BlenderForm::seo() !!}--}}

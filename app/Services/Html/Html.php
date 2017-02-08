@@ -4,7 +4,7 @@ namespace App\Services\Html;
 
 use App\Models\Tag;
 use App\Services\Auth\User;
-use Exception;
+use Carbon\Carbon;
 use Illuminate\Support\ViewErrorBag;
 use Spatie\Html\Elements\A;
 use Spatie\Html\Elements\Div;
@@ -148,7 +148,7 @@ class Html extends \Spatie\Html\Html
             ]);
     }
 
-    public function datePicker(string $name = '', string $value = ''): string
+    public function date(string $name = '', string $value = '')
     {
         return $this->text($name, $value)
             ->attribute('data-datetimepicker')
@@ -171,36 +171,32 @@ class Html extends \Spatie\Html\Html
         return $this->category($type)->attributes(['multiple', 'data-select' => 'tags']);
     }
 
-    public function old(string $name = '', string $value = '')
-    {
-        $value = parent::old($name, $value);
-
-        if ($value instanceof Carbon) {
-            return $value->format('d/m/Y');
-        }
-
-        return $value;
-    }
-
-    public function blender(): FormGroup
-    {
-        return new FormGroup($this);
-    }
-
     public function formGroup(): FormGroup
     {
         return new FormGroup($this);
     }
 
-    public function errors(): ViewErrorBag
+    protected function old(string $name, string $value = '')
     {
-        return $this->request->session()->get('errors', new ViewErrorBag());
+        if (empty($value) && $this->model) {
+            $value = $this->locale ?
+                $this->model->getTranslation($name, $this->locale) ?? '' :
+                $this->model[$name] ?? '';
+        }
+
+        if ($value instanceof Carbon) {
+            return $value->format('d/m/Y');
+        }
+
+        return $this->request->old($this->name($name), $value);
     }
 
-    protected function ensureModelIsAvailable()
+    protected function name(string $name): string
     {
-        if (empty($this->model)) {
-            throw new Exception('Method requires a model to be set on the html builder');
+        if ($this->locale) {
+            return translate_field_name($name, $this->locale);
         }
+
+        return $name;
     }
 }
