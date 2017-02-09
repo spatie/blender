@@ -34,7 +34,6 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\LoginAs::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \App\Http\Middleware\RobotsMiddleware::class,
-            \App\Http\Middleware\SanitizeInput::class,
         ],
 
         'api' => [
