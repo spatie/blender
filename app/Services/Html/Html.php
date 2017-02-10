@@ -45,12 +45,12 @@ class Html extends \Spatie\Html\Html
                 ->locale($locale)
                 ->fieldset()
                 ->addChild($this->legend($locale)->class('legend__lang'))
-                ->addChildren($callback($this));
+                ->addChildren($callback());
         });
 
         $this->endLocale();
 
-        return $this->div()->children($fieldsets);
+        return $this->div()->addChildren($fieldsets);
     }
 
     public function alert(string $type, string $message): Div

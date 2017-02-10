@@ -36,6 +36,11 @@ class FormGroup
         return $this->assemble($name, $label, $this->html->date($name));
     }
 
+    public function email(string $name, string $label): Div
+    {
+        return $this->assemble($name, $label, $this->html->email($name));
+    }
+
     public function redactor(string $name, string $label): Div
     {
         return $this->assemble($name, $label, $this->html->redactor($name));

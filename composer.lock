@@ -722,16 +722,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.11",
+            "version": "v2.5.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "1b1effbddbdc0f40d1c8f849f44bcddac4f52a48"
+                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/1b1effbddbdc0f40d1c8f849f44bcddac4f52a48",
-                "reference": "1b1effbddbdc0f40d1c8f849f44bcddac4f52a48",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/7b9e911f9d8b30d43b96853dab26898c710d8f44",
+                "reference": "7b9e911f9d8b30d43b96853dab26898c710d8f44",
                 "shasum": ""
             },
             "require": {
@@ -789,7 +789,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-02-04 21:20:13"
+            "time": "2017-02-08 12:53:47"
         },
         {
             "name": "doctrine/inflector",
@@ -1907,16 +1907,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.9",
+            "version": "v5.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "600330ae1d218919b3b307e0578461a2df248663"
+                "reference": "4c8837046c998925972c8010bfac435c4be5facc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/600330ae1d218919b3b307e0578461a2df248663",
-                "reference": "600330ae1d218919b3b307e0578461a2df248663",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/4c8837046c998925972c8010bfac435c4be5facc",
+                "reference": "4c8837046c998925972c8010bfac435c4be5facc",
                 "shasum": ""
             },
             "require": {
@@ -2032,7 +2032,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-02-03 19:47:35"
+            "time": "2017-02-08 15:01:52"
         },
         {
             "name": "laravel/tinker",
@@ -4501,12 +4501,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-html.git",
-                "reference": "5997784c726d57eb09c6d16cd901111bdd604a94"
+                "reference": "0ec06216797e15733aef6ea2b5ba177a56ce2094"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/5997784c726d57eb09c6d16cd901111bdd604a94",
-                "reference": "5997784c726d57eb09c6d16cd901111bdd604a94",
+                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/0ec06216797e15733aef6ea2b5ba177a56ce2094",
+                "reference": "0ec06216797e15733aef6ea2b5ba177a56ce2094",
                 "shasum": ""
             },
             "require": {
@@ -4548,7 +4548,7 @@
                 "html",
                 "spatie"
             ],
-            "time": "2017-02-08 12:36:52"
+            "time": "2017-02-08 15:01:36"
         },
         {
             "name": "spatie/laravel-link-checker",
