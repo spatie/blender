@@ -1,18 +1,16 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.news.title'),
+    'pageTitle' => __('Nieuws'),
     'breadcrumbs' => html()->backToIndex('Back\NewsController@index'),
 ])
-
     <section>
         <div class="grid">
             <h1>
                 {{ html()->onlineIndicator($model->online) }}
-                {{ $model->name ?: __('Nieuw nieuws') }}
+                {{ $model->name ?: __('Nieuw nieuwsbericht') }}
             </h1>
 
             {{ html()
-                ->model($model)
-                ->form('PATCH', action('Back\NewsController@update', $model->id))
+                ->modelForm($model, 'PATCH', action('Back\NewsController@update', $model->id))
                 ->class('-stacked')
                 ->open() }}
 
@@ -22,8 +20,7 @@
 
             {{ html()->formGroup()->submit('Bewaar nieuws') }}
 
-            {{ html()->endModel()->form()->close() }}
+            {{ html()->endModelForm() }}
         </div>
     </section>
-
 @endcomponent

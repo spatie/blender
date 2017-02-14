@@ -5,9 +5,9 @@ namespace App\Services\Html;
 use App\Models\Tag;
 use App\Services\Auth\User;
 use Carbon\Carbon;
-use Illuminate\Support\ViewErrorBag;
 use Spatie\Html\Elements\A;
 use Spatie\Html\Elements\Div;
+use Spatie\Html\Elements\Form;
 use Spatie\Html\Elements\Span;
 use Spatie\Html\Elements\Textarea;
 
@@ -57,7 +57,7 @@ class Html extends \Spatie\Html\Html
     {
         return $this->div()
             ->class(['alert', "-{$type}"])
-            ->text($message);
+            ->html($message);
     }
 
     public function flashMessage(): ?Div
@@ -136,7 +136,18 @@ class Html extends \Spatie\Html\Html
         )->class('breadcrumb--back');
     }
 
-    public function redactor(string $name = '', string $value = ''): Textarea
+    public function deleteButton(string $action): Form
+    {
+        return $this->form('DELETE', $action)
+            ->attribute('data-confirm', 'true')
+            ->child(
+                $this->button()
+                    ->html($this->icon('trash'))
+                    ->class('button -danger -small')
+            );
+    }
+
+    public function redactor(string $name = '', ?string $value = ''): Textarea
     {
         $this->ensureModelIsAvailable();
 
@@ -152,7 +163,7 @@ class Html extends \Spatie\Html\Html
             ]);
     }
 
-    public function date(string $name = '', string $value = '')
+    public function date(string $name = '', ?string $value = '')
     {
         return $this->text($name, $value)
             ->attribute('data-datetimepicker')
@@ -180,7 +191,7 @@ class Html extends \Spatie\Html\Html
         return new FormGroup($this);
     }
 
-    protected function old(string $name, string $value = '')
+    protected function old(string $name, ?string $value = '')
     {
         if (empty($value) && $this->model) {
             $value = $this->locale ?
@@ -192,10 +203,10 @@ class Html extends \Spatie\Html\Html
             return $value->format('d/m/Y');
         }
 
-        return $this->request->old($this->name($name), $value);
+        return $this->request->old($this->fieldName($name), $value);
     }
 
-    protected function name(string $name): string
+    protected function fieldName(string $name): string
     {
         if ($this->locale) {
             return translate_field_name($name, $this->locale);
