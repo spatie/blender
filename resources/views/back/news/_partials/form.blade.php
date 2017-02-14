@@ -17,8 +17,8 @@
         {{ html()->formGroup()->category('newsCategory', 'Categorie') }}
         {{ html()->formGroup()->tags('newsTag', 'Tags') }}
 
-        {{--{!! BlenderForm::media('images', 'images') !!}--}}
-        {{--{!! BlenderForm::media('downloads', 'downloads') !!}--}}
+        {{ html()->media('images', 'images') }}
+        {{ html()->media('downloads', 'downloads') }}
     </div>
     <div id="settings">
         {{ html()->formGroup()->checkbox('online', 'Online') }}

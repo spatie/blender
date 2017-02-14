@@ -63,7 +63,12 @@ class FormGroup
         return $this->assemble($name, $label, $this->html->text($name));
     }
 
-    public function wrapper(): Div
+    public function withContents($contents): Div
+    {
+        return $this->wrapper()->children($contents);
+    }
+
+    protected function wrapper(): Div
     {
         return $this->html->div()->class('form__group');
     }

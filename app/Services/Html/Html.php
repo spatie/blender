@@ -2,17 +2,14 @@
 
 namespace App\Services\Html;
 
-use App\Models\Tag;
-use App\Services\Auth\User;
 use Carbon\Carbon;
-use Spatie\Html\Elements\A;
-use Spatie\Html\Elements\Div;
-use Spatie\Html\Elements\Form;
-use Spatie\Html\Elements\Span;
-use Spatie\Html\Elements\Textarea;
 
 class Html extends \Spatie\Html\Html
 {
+    use Concerns\Alerts;
+    use Concerns\Forms;
+    use Concerns\Inline;
+
     /** @var string */
     protected $locale = null;
 
@@ -51,139 +48,6 @@ class Html extends \Spatie\Html\Html
         $this->endLocale();
 
         return $this->div()->addChildren($fieldsets);
-    }
-
-    public function alert(string $type, string $message): Div
-    {
-        return $this->div()
-            ->class(['alert', "-{$type}"])
-            ->html($message);
-    }
-
-    public function flashMessage(): ?Div
-    {
-        if (
-            ! $this->request->session()->get('flash_notification.level') ||
-            ! $this->request->session()->get('flash_notification.message')
-        ) {
-            return null;
-        }
-
-        return $this->alert(
-            $this->request->session()->get('flash_notification.level'),
-            $this->request->session()->get('flash_notification.message')
-        );
-    }
-
-    public function error(?string $message, string $field = ''): ?Div
-    {
-        if (! $message) {
-            return null;
-        }
-
-        return $this->alert('danger', $message)
-            ->attributeIf($field, 'data-validation-error', $field);
-    }
-
-    public function message($message): Div
-    {
-        return $this->alert('success', $message);
-    }
-
-    public function info($message): Div
-    {
-        return $this->alert(
-            'info',
-            $this->icon('info-circle').' '.$message
-        );
-    }
-
-    public function warning($message): Div
-    {
-        return $this->alert(
-            'warning',
-            $this->icon('exclamation-triangle').' '.$message
-        );
-    }
-
-    public function icon(string $icon): Span
-    {
-        return $this->span()->class("fa fa-{$icon}");
-    }
-
-    public function avatar(User $user): Span
-    {
-        return $this->span()
-            ->class('avatar')
-            ->attribute('style', "background-image: url('{$user->avatar}')");
-    }
-
-    public function onlineIndicator(bool $online): Span
-    {
-        return $this->span()
-            ->html(
-                $this->icon($online ? 'circle' : 'circle-o')->class($online ? 'on' : 'off')
-            )
-            ->attribute('title', $online ? 'Online' : 'Offline')
-            ->class(['status', $online ? '-on' : '-off']);
-    }
-
-    public function backToIndex(string $action, array $parameters = []): A
-    {
-        return $this->a(
-            action($action, $parameters),
-            fragment('back.backToIndex')
-        )->class('breadcrumb--back');
-    }
-
-    public function deleteButton(string $action): Form
-    {
-        return $this->form('DELETE', $action)
-            ->attribute('data-confirm', 'true')
-            ->child(
-                $this->button()
-                    ->html($this->icon('trash'))
-                    ->class('button -danger -small')
-            );
-    }
-
-    public function redactor(string $name = '', ?string $value = ''): Textarea
-    {
-        $this->ensureModelIsAvailable();
-
-        $medialibraryUrl = action(
-            'Back\Api\MediaLibraryController@add',
-            [class_basename($this->model), $this->model->id, 'redactor']
-        );
-
-        return $this->textarea($name, $value)
-            ->attributes([
-                'data-editor',
-                'data-editor-medialibrary-url' => $medialibraryUrl,
-            ]);
-    }
-
-    public function date(string $name = '', ?string $value = '')
-    {
-        return $this->text($name, $value)
-            ->attribute('data-datetimepicker')
-            ->class('-datetime');
-    }
-
-    public function category(string $type)
-    {
-        $this->ensureModelIsAvailable();
-
-        return $this->select(
-            "{$type}_tags[]",
-            Tag::getWithType($type)->pluck('name', 'name'),
-            $this->model->tagsWithType($type)->pluck('name', 'name')
-        );
-    }
-
-    public function tags(string $type)
-    {
-        return $this->category($type)->attributes(['multiple', 'data-select' => 'tags']);
     }
 
     public function formGroup(): FormGroup
