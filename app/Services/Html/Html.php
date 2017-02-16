@@ -63,7 +63,7 @@ class Html extends \Spatie\Html\Html
     protected function old(string $name, ?string $value = '')
     {
         if (empty($name)) {
-            return null;
+            return;
         }
 
         if (empty($value) && $this->model) {
