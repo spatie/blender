@@ -1,18 +1,14 @@
-<h2>{{ fragment('back.statistics.visitors') }}</h2>
+<h2>@lang('Bezoekers')</h2>
 
-<blender-chart class="chart">
-    <canvas id="visitors" width=1000 height=250></canvas>
-    <div class="chart__legend" id="visitors-legend">
-    </div>
-</blender-chart>
+<blender-chart class="chart"></blender-chart>
 
 @section('extraJs')
     @parent
     <script>
-        var chartData = {
-            graphName : 'visitors',
-            ctx : document.getElementById('visitors').getContext('2d'),
-            chart : {
+        window.chartData = {
+            graphName: 'visitors',
+            ctx: document.getElementById('visitors').getContext('2d'),
+            chart: {
                 labels: {!! json_encode($visitors->pluck('date')->toArray()) !!},
                 datasets: [
                     {

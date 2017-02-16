@@ -9,7 +9,7 @@ trait Alerts
     public function alert(string $type, string $message): Div
     {
         return $this->div()
-            ->class(['alert', "-{$type}"])
+            ->class("alert--{$type}")
             ->html($message);
     }
 
@@ -28,7 +28,7 @@ trait Alerts
         );
     }
 
-    public function error(?string $message, string $field = ''): ?Div
+    public function error(?string $message = '', string $field = ''): ?Div
     {
         if (! $message) {
             return null;
@@ -38,12 +38,12 @@ trait Alerts
             ->attributeIf($field, 'data-validation-error', $field);
     }
 
-    public function message($message): Div
+    public function message($message = ''): Div
     {
         return $this->alert('success', $message);
     }
 
-    public function info($message): Div
+    public function info($message = ''): Div
     {
         return $this->alert(
             'info',
@@ -51,7 +51,7 @@ trait Alerts
         );
     }
 
-    public function warning($message): Div
+    public function warning($message = ''): Div
     {
         return $this->alert(
             'warning',

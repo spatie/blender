@@ -10,7 +10,7 @@ class RedirectRequest extends Request
     {
         return [
             'old_url' => 'required',
-            'new_url' => 'required',
+            'new_url' => 'required|different:old_url',
         ];
     }
 }

@@ -1,48 +1,25 @@
-<div class="form__group">
-    {!! Form::label('email', 'E-mail') !!}
-    {!! Form::text('email', Input::old('email'), [ ]) !!}
-    {!! Html::error($errors->first('email')) !!}
-</div>
+{{ html()->formGroup()->email('email', 'E-mail') }}
 
 <div class="grid__row">
     <div class="grid__col -width-1/3">
-        <div class="form__group">
-            {!! Form::label('first_name', __('Voornaam')) !!}
-            {!! Form::text('first_name', Input::old('first_name'), [ ]) !!}
-            {!! Html::error($errors->first('first_name')) !!}
-        </div>
+        {{ html()->formGroup()->text('first_name', 'Voornaam') }}
     </div>
     <div class="grid__col -width-2/3 -last">
-        <div class="form__group">
-            {!! Form::label('last_name', __('Achternaam')) !!}
-            {!! Form::text('last_name', Input::old('last_name'), [ ]) !!}
-            {!! Html::error($errors->first('lastName')) !!}
-        </div>
+        {{ html()->formGroup()->text('last_name', 'Familienaam') }}
     </div>
 </div>
 
 @if($user->isCurrentUser())
+    <div class="alert--info h-margin-top h-margin-bottom">
+        <span class="fa fa-info-circle"></span>
+        @lang('Vul onderstaande velden enkel in als je het wachtwoord wil wijzigen.')
+    </div>
     <fieldset class="-info">
-        <div class="alert--info">
-            <span class="fa fa-info-circle"></span> {{ fragment('back.administrators.passwordChangeInfo') }}
-        </div>
         <div class="grid__col -width-1/2">
-            <div class="form__group">
-                {!! Form::label('password', __('Wachtwoord')) !!}
-                {!! Form::password('password', [ ]) !!}
-                {!! Html::error($errors->first('password')) !!}
-            </div>
+            {{ html()->formGroup()->password('password', 'Wachtwoord') }}
         </div>
         <div class="grid__col -width-1/2 -last">
-            <div class="form__group">
-                {!! Form::label('password_confirmation', __('Wachtwoord (nogmaals)')) !!}
-                {!! Form::password('password_confirmation', [ ]) !!}
-                {!! Html::error($errors->first('password_confirmation')) !!}
-            </div>
+            {{ html()->formGroup()->password('password_confirmation', 'Wachtwoord (nogmaals)') }}
         </div>
     </fieldset>
 @endif
-
-<div class="form__group -buttons">
-    {!! Form::submit(__('Bewaar administrator'), ['class' => 'button -default']) !!}
-</div>

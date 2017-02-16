@@ -20,6 +20,8 @@
                 ->class('-stacked')
                 ->open() }}
 
+            {{ html()->formGroup()->submit('Bewaar fragment') }}
+
             @include('back.fragments._partials.form')
 
             {{ html()->formGroup()->submit('Bewaar fragment') }}

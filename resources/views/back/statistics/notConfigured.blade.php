@@ -1,11 +1,9 @@
 @component('back._layouts.master', [
     'pageTitle' => 'Statistieken',
 ])
-
     <section>
         <div class="grid">
-            {!! Html::info(fragment('back.statistics.notConfigured')) !!}
+            {{ html()->info(__('Analytics is nog niet geconfigureerd')) }}
         </div>
     </section>
-
 @endcomponent

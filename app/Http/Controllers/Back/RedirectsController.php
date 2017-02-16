@@ -18,6 +18,6 @@ class RedirectsController extends Controller
         $redirect->old_url = $request->get('old_url');
         $redirect->new_url = $request->get('new_url');
 
-        $this->updateModel($redirect, $request);
+        $redirect->save();
     }
 }

@@ -57,6 +57,11 @@ class FormGroup
         return $this->assemble($name, $label, $this->html->email($name));
     }
 
+    public function password(string $name, string $label): Div
+    {
+        return $this->assemble($name, $label, $this->html->password($name));
+    }
+
     public function redactor(string $name, string $label): Div
     {
         return $this->assemble($name, $label, $this->html->redactor($name));

@@ -11,7 +11,7 @@
                 @include('back.dashboard._partials.visitors')
             @else
                 <div class="alerts">
-                    {{ html()->info('Analytics is nog niet geconfigureerd...') }}
+                    {{ html()->info(__('Analytics is nog niet geconfigureerd')) }}
                 </div>
             @endif
 

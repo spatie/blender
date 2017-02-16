@@ -1,18 +1,23 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.members.new'),
-    'breadcrumbs' => Html::backToIndex('Back\MembersController@index'),
+    'pageTitle' => __('Leden'),
+    'breadcrumbs' => html()->backToIndex('Back\MembersController@index'),
 ])
-
     <section>
         <div class="grid">
-            <h1>{{ fragment("back.members.new") }}</h1>
+            <h1>@lang('Nieuw lid')</h1>
 
-            {!! Form::open([
-                'url' => action('Back\MembersController@store'),
-                'class' =>'-stacked'
-            ]) !!}
-            @include("back.members._partials.form")
-            {!! Form::close() !!}
+            {{ html()
+                ->modelForm($user, 'POST', action('Back\MembersController@store'))
+                ->class('-stacked')
+                ->open() }}
+
+            {{ html()->formGroup()->submit('Bewaar lid') }}
+
+            @include('back.members._partials.form')
+
+            {{ html()->formGroup()->submit('Bewaar lid') }}
+
+            {{ html()->endModelForm() }}
         </div>
     </section>
 

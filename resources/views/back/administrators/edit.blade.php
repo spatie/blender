@@ -1,25 +1,30 @@
 @component('back._layouts.master', [
-    'pageTitle' => $user->email,
-    'breadcrumbs' => Html::backToIndex('Back\AdministratorsController@index'),
+    'pageTitle' => __('Administrators'),
+    'breadcrumbs' => html()->backToIndex('Back\AdministratorsController@index'),
 ])
+    <section>
+        <div class="grid">
+            <h1>{{ $user->email }}</h1>
 
-<section>
-    <div class="grid">
-        <h1>{{ __('Administrator') }} {{ $user->email }}</h1>
-        <div>
-            {!! Html::avatar($user) !!}
-            <span class="help -small">
-                    {{ fragment('back.administrators.gravatarInfo') }} <a href="https://gravatar.com">gravatar.com</a>
-                </span>
+            <div>
+                {{ html()->avatar($user) }}
+                <span class="help -small">
+                {!! __('Je kan deze avatar instellen op :link', ['link' => '<a href="https://gravatar.com">gravatar.com</a>']) !!}
+            </span>
+            </div>
+
+            {{ html()
+                ->modelForm($user, 'PATCH', action('Back\AdministratorsController@update', $user->id))
+                ->class('-stacked')
+                ->open() }}
+
+            {{ html()->formGroup()->submit('Bewaar administrator') }}
+
+            @include('back.administrators._partials.form')
+
+            {{ html()->formGroup()->submit('Bewaar administrator') }}
+
+            {{ html()->endModelForm() }}
         </div>
-        {!! Form::model(
-            $user,
-            ['method' => 'PATCH', 'action' => ['Back\AdministratorsController@update', $user->id] ,
-            'class' => '-stacked'
-        ]) !!}
-        @include("back.administrators._partials.form")
-        {!! Form::close() !!}
-    </div>
-</section>
-
+    </section>
 @endcomponent

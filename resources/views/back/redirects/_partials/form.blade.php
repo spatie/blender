@@ -1,9 +1,2 @@
-{!! BlenderForm::submit() !!}
-
-<div id="content">
-    {!! BlenderForm::text('old_url') !!}
-
-    {!! BlenderForm::text('new_url') !!}
-</div>
-
-{!! BlenderForm::submit() !!}
+{{ html()->formGroup()->text('old_url', 'Van') }}
+{{ html()->formGroup()->text('new_url', 'Naar') }}
