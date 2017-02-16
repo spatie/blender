@@ -19,7 +19,7 @@ trait Alerts
             ! $this->request->session()->get('flash_notification.level') ||
             ! $this->request->session()->get('flash_notification.message')
         ) {
-            return;
+            return null;
         }
 
         return $this->alert(
@@ -31,7 +31,7 @@ trait Alerts
     public function error(?string $message = '', string $field = ''): ?Div
     {
         if (! $message) {
-            return;
+            return null;
         }
 
         return $this->alert('danger', $message)

@@ -1,38 +1,34 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.auth.titleChangePassword')
+    'title' => $user->hasNeverLoggedIn() ? __('Wachtwoord instellen') : __('Wachtwoord wijzigen')
 ])
-
     <section class="v-auth">
-        {{-- @include('auth._partials.lang') --}}
         <div class="v-auth__card">
             <h1 class="v-auth__title -small">
-                {!! Html::avatar($user, '-large v-auth__gravatar') !!}<br>
-                {{ fragment('back.auth.resetPassword.title') }}
+                {{ html()->avatar($user, '-large v-auth__gravatar') }}<br>
+                {{ __('Wachtwoord wijzigen') }}
             </h1>
 
-            {!! Form::open(['action' => 'Back\Auth\ResetPasswordController@reset', 'class'=>'-stacked v-auth__form']) !!}
-            {!! Form::hidden('token', $token) !!}
-            {!! Form::hidden('email', $user->email) !!}
-            <p class="alert--info">
-                {{ fragment('back.auth.resetInstructions') }}
-            </p>
+            {{ html()
+                ->modelForm($user, 'POST', 'Back\Auth\ResetPasswordController@reset')
+                ->class('-stacked v-auth__form')
+                ->open() }}
 
-            <div class="form__group">
-                {!! Form::label('password', fragment('back.auth.password') ) !!}
-                {!! Form::password('password', null, ['autofocus' ]) !!}
-            </div>
+            {{ html()->hidden('token', $token) }}
+            {{ html()->hidden('email') }}
 
-            <div class="form__group">
-                {!! Form::label('password_confirmation', fragment('back.auth.passwordConfirm')) !!}
-                {!! Form::password('password_confirmation', [null]) !!}
-                {!! Html::error($errors->first('password')) !!}
-            </div>
+            {{ html()->info(__('Je nieuwe wachtwoord moet minstens 8 karakters lang zijn.')) }}
 
-            <div class="form__group -buttons">
-                {!! Form::button(trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton'), ['type'=>'submit', 'class'=>'button -default']) !!}
-            </div>
-            {!! Form::close() !!}
+            {{ html()->formGroup()->password('password', 'Wachtwoord') }}
+            {{ html()->formGroup()->password('password_confirmation', 'Wachtwoord (nogmaals)') }}
+
+            {{ html()->formGroup()->withContents(
+                html()->button()
+                    ->type('submit')
+                    ->text($user->hasNeverLoggedIn() ? __('Wachtwoord instellen') : __('Wachtwoord wijzigen'))
+                    ->class('button -default')
+            )->class('-buttons') }}
+
+            {{ html()->endModelForm() }}
         </div>
     </section>
-
 @endcomponent

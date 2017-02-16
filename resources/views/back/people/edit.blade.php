@@ -1,5 +1,5 @@
 @component('back._layouts.master', [
-    'pageTitle' => __('Team'),
+    'title' => __('Team'),
     'breadcrumbs' => html()->backToIndex('Back\PeopleController@index'),
 ])
     <section>

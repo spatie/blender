@@ -1,5 +1,5 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.auth.titleLogin')
+    'title' => __('Log in')
 ])
     <section class="v-auth">
 
@@ -25,7 +25,9 @@
                 {{ html()->error($errors->first('password')) }}
 
                 <div class="form__group__help">
-                    <a href="{{ action('Back\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ fragment('back.auth.forgotPassword') }}</a>
+                    <a href="{{ action('Back\Auth\ForgotPasswordController@showLinkRequestForm') }}">
+                        @lang('Wachtwoord vergeten?')
+                    </a>
                 </div>
             </div>
 

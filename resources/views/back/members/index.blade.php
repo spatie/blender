@@ -1,5 +1,5 @@
 @component('back._layouts.master', [
-    'pageTitle' => __('Leden'),
+    'title' => __('Leden'),
 ])
     <section>
         <div class="grid">

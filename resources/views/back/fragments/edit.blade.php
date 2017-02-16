@@ -1,5 +1,5 @@
 @component('back._layouts.master', [
-    'pageTitle' => __('Wijzig vaste tekst'),
+    'title' => __('Wijzig vaste tekst'),
     'breadcrumbs' => html()->backToIndex('Back\FragmentsController@index'),
 ])
 

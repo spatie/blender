@@ -1,10 +1,8 @@
 @component('back._layouts.master', [
-    'pageTitle' => 'Dashboard'
+    'title' => 'Dashboard'
 ])
-
     <section>
         <div class="grid">
-
             <h1>Dashboard</h1>
 
             @if (isset($visitors))
@@ -16,13 +14,13 @@
             @endif
 
             @if(count($logItems))
-                <h2>{{ fragment('back.log.recentActivity') }}</h2>
+                <h2>@lang('Recente activiteit')</h2>
                 <table class="-datatable -compact">
                     <thead>
                     <tr>
-                        <th>{{ fragment('back.log.time') }}</th>
-                        <th>{{ fragment('back.log.description') }}</th>
-                        <th>{{ fragment('back.log.user') }}</th>
+                        <th>@lang('Tijdstip')</th>
+                        <th>@lang('Beschrijving')</th>
+                        <th>@lang('Gebruiker')</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -41,9 +39,10 @@
                     @endforeach
                     </tbody>
                 </table>
-                <a href="{{ action('Back\ActivitylogController@index') }}">{{ fragment('back.log.fullLog') }}</a>
+                <a href="{{ action('Back\ActivitylogController@index') }}">
+                    @lang('Bekijk het hele log')
+                </a>
             @endif
         </div>
     </section>
-
 @endcomponent

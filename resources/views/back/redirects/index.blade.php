@@ -1,5 +1,5 @@
 @component('back._layouts.master', [
-    'pageTitle' => __('Redirects'),
+    'title' => __('Redirects'),
 ])
     <section>
         <div class="grid">

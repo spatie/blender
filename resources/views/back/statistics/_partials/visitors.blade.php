@@ -1,6 +1,9 @@
 <h2>@lang('Bezoekers')</h2>
 
-<blender-chart class="chart"></blender-chart>
+<blender-chart class="chart">
+    <canvas id="daily-visitors" width=1000 height=250></canvas>
+    <div class="chart__legend" id="daily-visitors-legend"></div>
+</blender-chart>
 
 @section('extraJs')
     @parent
@@ -12,7 +15,7 @@
                 labels: {!! json_encode($visitors->pluck('date')->toArray()) !!},
                 datasets: [
                     {
-                        label: '{{ fragment('back.statistics.visitors') }}',
+                        label: '@lang('Bezoekers')',
                         data: {!! json_encode($visitors->pluck('visitors')->toArray())  !!},
                         fillColor: "rgba(151,187,205,0.2)",
                         strokeColor: "rgba(151,187,205,1)",
