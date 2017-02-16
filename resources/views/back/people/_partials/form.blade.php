@@ -1,5 +1,3 @@
-{!! BlenderForm::submit() !!}
-
 <div data-tabs class="tabs">
     <nav class="tabs__menu">
         <ul>
@@ -8,13 +6,11 @@
         </ul>
     </nav>
     <div id="content">
-        {!! BlenderForm::text('name') !!}
+        {{ html()->formGroup()->text('name', 'Naam') }}
 
-        {!! BlenderForm::media('images', 'images') !!}
+        {{ html()->media('images', 'images') }}
     </div>
     <div id="settings">
-        {!! BlenderForm::checkbox('online') !!}
+        {{ html()->formGroup()->checkbox('online', 'Online') }}
     </div>
 </div>
-
-{!! BlenderForm::submit() !!}

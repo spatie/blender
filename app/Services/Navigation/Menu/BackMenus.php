@@ -18,35 +18,35 @@ class BackMenus
         Menu::macro('moduleGroup', function ($title) {
             return Menu::back()
                 ->addParentClass('menu__group')
-                ->setParentAttribute('data-menu-group', fragment($title))
+                ->setParentAttribute('data-menu-group', __($title))
                 ->registerFilter(function (Link $link) {
                     $link->addParentClass('menu__group__item');
                 });
         });
 
         Menu::macro('module', function (string $action, string $name) {
-            return $this->action("Back\\{$action}", $name);
+            return $this->action("Back\\{$action}", __($name));
         });
 
         Menu::macro('backMain', function () {
             return Menu::back()
                 ->addClass('menu__groups')
                 ->setAttribute('data-menu-groups')
-                ->add(Menu::moduleGroup(__('Inhoud'))
-                    ->module('ArticlesController@index', __('Artikels'))
-                    ->module('NewsController@index', __('Artikels'))
-                    ->module('PeopleController@index', __('Team')))
-                ->add(Menu::moduleGroup(__('Modules'))
-                    ->module('FragmentsController@index', __('Fragmenten'))
-                    ->module('FormResponsesController@showDownloadButton', __('Reacties'))
-                    ->module('TagsController@index', __('Tags')))
-                ->add(Menu::moduleGroup(__('Profielen'))
-                    ->module('MembersController@index', __('Leden'))
-                    ->module('AdministratorsController@index', __('Administrators')))
-                ->add(Menu::moduleGroup(__('Systeem'))
-                    ->module('ActivitylogController@index', __('Log'))
-                    ->module('RedirectsController@index', __('Redirects'))
-                    ->module('StatisticsController@index', __('Statistieken')));
+                ->add(Menu::moduleGroup('Inhoud')
+                    ->module('ArticlesController@index', 'Artikels')
+                    ->module('NewsController@index', 'Nieuws')
+                    ->module('PeopleController@index', 'Team'))
+                ->add(Menu::moduleGroup('Modules')
+                    ->module('FragmentsController@index', 'Fragmenten')
+                    ->module('FormResponsesController@showDownloadButton', 'Reacties')
+                    ->module('TagsController@index', 'Tags'))
+                ->add(Menu::moduleGroup('Profielen')
+                    ->module('MembersController@index', 'Leden')
+                    ->module('AdministratorsController@index', 'Administrators'))
+                ->add(Menu::moduleGroup('Systeem')
+                    ->module('ActivitylogController@index', 'Log')
+                    ->module('RedirectsController@index', 'Redirects')
+                    ->module('StatisticsController@index', 'Statistieken'));
         });
 
         Menu::macro('backUser', function () {

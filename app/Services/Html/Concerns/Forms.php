@@ -4,6 +4,7 @@ namespace App\Services\Html\Concerns;
 
 use App\Models\ContentBlock;
 use App\Models\Tag;
+use Illuminate\Support\Collection;
 use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
 use Spatie\Blender\Model\Transformers\MediaTransformer;
 use Spatie\Html\Elements\Div;
@@ -50,6 +51,11 @@ trait Forms
     public function tags(string $type): Select
     {
         return $this->category($type)->attributes(['multiple', 'data-select' => 'tags']);
+    }
+
+    public function searchableSelect(string $name = '', iterable $options = [], ?string $value = '')
+    {
+        return $this->select($name, $options, $value)->attribute('data-select', 'search');
     }
 
     public function media(string $collection, string $type, array $associated = []): Div
@@ -110,5 +116,39 @@ trait Forms
             'name' => get_class($this->model),
             'id' => $this->model->id,
         ])->toJson();
+    }
+
+    public function seo(): string
+    {
+        $this->ensureModelIsAvailable();
+
+        return locales()->map(function ($locale) {
+            return collect($this->model->defaultSeoValues())
+                ->keys()
+                ->map(function ($attribute) use ($locale) {
+                    $this->locale($locale);
+
+                    return $this->formGroup()->withContents([
+                        $this->label($this->seoLabel($attribute), $attribute),
+                        $this->text()
+                            ->name($attribute)
+                            ->value($this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
+                            ->placeholder($this->model->defaultSeoValues()[$attribute]),
+                    ]);
+                })
+                ->pipe(function (Collection $fields) use ($locale) {
+                    $this->endLocale();
+                    return $this->translatedFieldset($locale, $fields->toArray());
+                });
+        })->implode('');
+    }
+
+    protected function seoLabel(string $attribute): string
+    {
+        if (starts_with($attribute, 'meta_')) {
+            return 'Meta: '.substr($attribute, 5);
+        }
+
+        return $attribute;
     }
 }

@@ -2,13 +2,11 @@
 
 namespace App\Models\Presenters;
 
-use Spatie\String\Str;
-
 trait FragmentPresenter
 {
-    public function getExcerptAttribute(): Str
+    public function getExcerptAttribute(): string
     {
-        return string($this->text)->tease(200);
+        return str_limit($this->getTranslation(content_locale()), 200);
     }
 
     public function getFullNameAttribute(): string

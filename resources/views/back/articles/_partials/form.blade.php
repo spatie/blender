@@ -1,5 +1,3 @@
-{!! BlenderForm::submit() !!}
-
 <div data-tabs class="tabs">
     <nav class="tabs__menu">
         <ul>
@@ -9,23 +7,25 @@
         </ul>
     </nav>
     <div id="content">
-        {!! BlenderForm::translated([
-            'name' => 'text',
-            'text' => 'redactor',
-        ]) !!}
-        {!! BlenderForm::media('images', 'images') !!}
-        {!! BlenderForm::media('downloads', 'downloads') !!}
+        {{ html()->translations(function () {
+            return [
+                html()->formGroup()->required()->text('name', 'Naam'),
+                html()->formGroup()->required()->redactor('text', 'Tekst'),
+            ];
+        }) }}
+
+        {{ html()->media('images', 'images') }}
+        {{ html()->media('downloads', 'downloads') }}
     </div>
     <div id="settings">
         @if(! $model->isSpecialArticle())
-            {!! BlenderForm::checkbox('online') !!}
+            {{ html()->formGroup()->checkbox('online', 'Online') }}
         @endif
-        {!! BlenderForm::select('parent_id', $parentMenuItems) !!}
+
+        {{ html()->formGroup()->searchableSelect('parent_id', 'Kind van...', $parentMenuItems) }}
     </div>
     <div id="seo">
-        {!! BlenderForm::seo() !!}
-        {!! Html::info(fragment('back.seo.help')) !!}
+        {{ html()->seo() }}
+        {{ html()->info(trans('back.seo.help')) }}
     </div>
 </div>
-
-{!! BlenderForm::submit() !!}

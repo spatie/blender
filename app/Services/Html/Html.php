@@ -3,6 +3,7 @@
 namespace App\Services\Html;
 
 use Carbon\Carbon;
+use Spatie\Html\Elements\Fieldset;
 
 class Html extends \Spatie\Html\Html
 {
@@ -38,16 +39,21 @@ class Html extends \Spatie\Html\Html
     public function translations(callable $callback)
     {
         $fieldsets = locales()->map(function ($locale) use ($callback) {
-            return $this
-                ->locale($locale)
-                ->fieldset()
-                ->addChild($this->legend($locale)->class('legend__lang'))
-                ->addChildren($callback());
+            return $this->translatedFieldset($locale, $callback());
         });
 
         $this->endLocale();
 
         return $this->div()->addChildren($fieldsets);
+    }
+
+    public function translatedFieldset(string $locale, $contents): Fieldset
+    {
+        return $this
+            ->locale($locale)
+            ->fieldset()
+            ->addChild($this->legend($locale)->class('legend__lang'))
+            ->addChildren($contents);
     }
 
     public function formGroup(): FormGroup
@@ -57,6 +63,10 @@ class Html extends \Spatie\Html\Html
 
     protected function old(string $name, ?string $value = '')
     {
+        if (empty($name)) {
+            return null;
+        }
+
         if (empty($value) && $this->model) {
             $value = $this->locale ?
                 $this->model->getTranslation($name, $this->locale) ?? '' :

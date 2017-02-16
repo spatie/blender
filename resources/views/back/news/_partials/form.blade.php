@@ -9,12 +9,12 @@
     <div id="content">
         {{ html()->translations(function () {
             return [
-                html()->formGroup()->text('name', 'Naam'),
-                html()->formGroup()->redactor('text', 'Tekst'),
+                html()->formGroup()->required()->text('name', 'Naam'),
+                html()->formGroup()->required()->redactor('text', 'Tekst'),
             ];
         }) }}
 
-        {{ html()->formGroup()->category('newsCategory', 'Categorie') }}
+        {{ html()->formGroup()->required()->category('newsCategory', 'Categorie') }}
         {{ html()->formGroup()->tags('newsTag', 'Tags') }}
 
         {{ html()->media('images', 'images') }}
@@ -25,7 +25,7 @@
         {{ html()->formGroup()->date('publish_date', 'Publicatiedatum') }}
     </div>
     <div id="seo">
-        {{--{!! BlenderForm::seo() !!}--}}
-        {{--{!! Html::info(fragment('back.seo.help')) !!}--}}
+        {{ html()->seo() }}
+        {{ html()->info(trans('back.seo.help')) }}
     </div>
 </div>

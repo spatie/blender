@@ -1,17 +1,21 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.articles.title'),
-    'breadcrumbs' => Html::backToIndex('Back\ArticlesController@index'),
+    'pageTitle' => __('Artikels'),
+    'breadcrumbs' => html()->backToIndex('Back\ArticlesController@index'),
 ])
 
     <section>
         <div class="grid">
-            <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.articles.new') }}</h1>
+            <h1>
+                {{ html()->onlineIndicator($model->online) }}
+                {{ $model->name ?: __('Nieuw artikel') }}
+            </h1>
 
-            {!! Form::openDraftable([
-                'method'=>'PATCH',
-                'action'=> ['Back\ArticlesController@update', $model->id],
-                'class' => '-stacked'
-            ], $model) !!}
+            {{ html()
+                ->modelForm($model, 'PATCH', action('Back\ArticlesController@update', $model->id))
+                ->class('-stacked')
+                ->open() }}
+
+            {{ html()->formGroup()->submit('Bewaar artikel') }}
 
             @if($model->technical_name && view()->exists("back.articles._partials.{$model->technical_name}Form"))
                 @include("back.articles._partials.{$model->technical_name}Form")
@@ -19,9 +23,9 @@
                 @include('back.articles._partials.form')
             @endif
 
-            {!! Form::close() !!}
+            {{ html()->formGroup()->submit('Bewaar artikel') }}
 
+            {{ html()->endModelForm() }}
         </div>
     </section>
-
 @endcomponent
