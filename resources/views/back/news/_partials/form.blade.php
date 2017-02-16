@@ -17,8 +17,8 @@
         {{ html()->formGroup()->required()->category('newsCategory', 'Categorie') }}
         {{ html()->formGroup()->tags('newsTag', 'Tags') }}
 
-        {{ html()->media('images', 'images') }}
-        {{ html()->media('downloads', 'downloads') }}
+        {{ html()->formGroup()->media('images', 'images', 'Afbeeldingen') }}
+        {{ html()->formGroup()->media('downloads', 'downloads', 'Downloads') }}
     </div>
     <div id="settings">
         {{ html()->formGroup()->checkbox('online', 'Online') }}

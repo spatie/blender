@@ -7,7 +7,7 @@ use App\Models\Tag;
 use Illuminate\Support\Collection;
 use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
 use Spatie\Blender\Model\Transformers\MediaTransformer;
-use Spatie\Html\Elements\Div;
+use Spatie\Html\Elements\Element;
 use Spatie\Html\Elements\Input;
 use Spatie\Html\Elements\Select;
 use Spatie\Html\Elements\Textarea;
@@ -58,7 +58,7 @@ trait Forms
         return $this->select($name, $options, $value)->attribute('data-select', 'search');
     }
 
-    public function media(string $collection, string $type, array $associated = []): Div
+    public function media(string $collection, string $type, array $associated = []): Element
     {
         $this->ensureModelIsAvailable();
 
@@ -72,7 +72,7 @@ trait Forms
             'contentLocale' => content_locale(),
         ])->toJson();
 
-        return $this->formGroup()->withContents($this->element('blender-media')->attributes([
+        return $this->element('blender-media')->attributes([
             'collection' => $collection,
             'type' => $type,
             'upload-url' => action('Back\Api\MediaLibraryController@add'),
@@ -80,10 +80,10 @@ trait Forms
             ':initial' => htmlspecialchars($initial),
             ':data' => htmlspecialchars(collect($associatedData)),
             ':debug' => htmlspecialchars(json_encode(config('app.debug', false))),
-        ]));
+        ]);
     }
 
-    public function contentBlocks(string $collectionName, string $editor, array $associated = []): Div
+    public function contentBlocks(string $collectionName, string $editor, array $associated = []): Element
     {
         $this->ensureModelIsAvailable();
 

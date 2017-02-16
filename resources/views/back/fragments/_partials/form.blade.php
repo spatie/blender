@@ -3,7 +3,7 @@
 
     <div class="form__group">
         @if ($fragment->contains_image)
-            {{ html()->media('images', 'image') }}
+            {{ html()->formGroup()->media('images', 'image', 'Afbeelding') }}
         @elseif($fragment->contains_html)
             {{ html()->formGroup()->redactor('text', html()->span($locale)->class('label--lang')) }}
             {!! Form::redactor($fragment, 'text', $locale) !!}

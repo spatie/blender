@@ -14,8 +14,8 @@
             ];
         }) }}
 
-        {{ html()->media('images', 'images') }}
-        {{ html()->media('downloads', 'downloads') }}
+        {{ html()->formGroup()->media('images', 'images', 'Afbeeldingen') }}
+        {{ html()->formGroup()->media('downloads', 'downloads', 'Downloads') }}
     </div>
     <div id="settings">
         @if(! $model->isSpecialArticle())

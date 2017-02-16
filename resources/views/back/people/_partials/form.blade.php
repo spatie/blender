@@ -8,7 +8,7 @@
     <div id="content">
         {{ html()->formGroup()->text('name', 'Naam') }}
 
-        {{ html()->media('images', 'images') }}
+        {{ html()->formGroup()->media('images', 'image', 'Afbeelding') }}
     </div>
     <div id="settings">
         {{ html()->formGroup()->checkbox('online', 'Online') }}

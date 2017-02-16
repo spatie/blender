@@ -46,6 +46,11 @@ class FormGroup
         ]);
     }
 
+    public function contentBlocks(string $collection, string $type, string $label, array $associated = []): Div
+    {
+        return $this->assemble($collection, $label, $this->html->contentBlocks($collection, $type, $associated));
+    }
+
     public function date(string $name, string $label): Div
     {
         return $this->assemble($name, $label, $this->html->date($name));
@@ -54,6 +59,11 @@ class FormGroup
     public function email(string $name, string $label): Div
     {
         return $this->assemble($name, $label, $this->html->email($name));
+    }
+
+    public function media(string $collection, string $type, string $label, array $associated = []): Div
+    {
+        return $this->assemble($collection, $label, $this->html->media($collection, $type, $associated));
     }
 
     public function password(string $name, string $label): Div
