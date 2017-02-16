@@ -2,7 +2,6 @@
 
 namespace App\Services\Html;
 
-use Carbon\Carbon;
 use Spatie\Html\Elements\Fieldset;
 
 class Html extends \Spatie\Html\Html
