@@ -2,15 +2,15 @@
 
 namespace App\Services\Html\Concerns;
 
-use App\Models\ContentBlock;
 use App\Models\Tag;
-use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
-use Spatie\Blender\Model\Transformers\MediaTransformer;
-use Spatie\Html\Elements\Element;
+use App\Models\ContentBlock;
 use Spatie\Html\Elements\Input;
 use Spatie\Html\Elements\Select;
+use Spatie\Html\Elements\Element;
+use Illuminate\Support\Collection;
 use Spatie\Html\Elements\Textarea;
+use Spatie\Blender\Model\Transformers\MediaTransformer;
+use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
 
 trait Forms
 {
@@ -138,6 +138,7 @@ trait Forms
                 })
                 ->pipe(function (Collection $fields) use ($locale) {
                     $this->endLocale();
+
                     return $this->translatedFieldset($locale, $fields->toArray());
                 });
         })->implode('');
