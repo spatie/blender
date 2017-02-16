@@ -2,8 +2,11 @@
     'title' => __('Log in')
 ])
     <section class="v-auth">
-
-        @include('back._layouts._partials.flashMessage', ['extraClass' => 'alerts--fixed'])
+        @if(html()->flashMessage())
+            <div class="alerts--fixed">
+                {{ html()->flashMessage() }}
+            </div>
+        @endif
 
         <div class="v-auth__card">
             {{ html()->form()->class('-stacked v-auth__form')->open() }}
@@ -41,6 +44,4 @@
             {{ html()->form()->close() }}
         </div>
     </section>
-
-    {{--<div class="v-auth__credit">picture: Folkert Gorter</div>--}}
 @endcomponent

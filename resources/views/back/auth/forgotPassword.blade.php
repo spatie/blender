@@ -1,29 +1,31 @@
 @component('back._layouts.master', [
-    'title' => $user->hasNeverLoggedIn() ? __('Wachtwoord instellen') : __('Wachtwoord wijzigen')
+    'title' => __('Wachtwoord vergeten')
 ])
     <section class="v-auth">
         @if(html()->flashMessage())
-            {{ html()->flashMessage()->class('alerts--fixed') }}
+            <div class="alerts--fixed">
+                {{ html()->flashMessage() }}
+            </div>
         @endif
 
         <div class="v-auth__card">
             {{ html()
-                ->modelForm($user, 'POST', 'Back\Auth\ForgotPasswordController@sendResetLinkEmail')
+                ->form('POST', 'Back\Auth\ForgotPasswordController@sendResetLinkEmail')
                 ->class('-stacked v-auth__form')
                 ->open() }}
 
             <h1 class="v-auth__title -small">
-                {{ $user->hasNeverLoggedIn() ? __('Wachtwoord instellen') : __('Wachtwoord wijzigen') }}
+                @lang('Wachtwoord vergeten')
             </h1>
 
             {{ html()->info(session('status') ?: __('Geef je e-mailadres op en we sturen je een link waarmee je je wachtwoord kan wijzigen')) }}
 
-            {{ html()->formGroup()->email('email') }}
+            {{ html()->formGroup()->email('email', 'E-mail') }}
 
             {{ html()->formGroup()->withContents(
                 html()->button()
                     ->type('submit')
-                    ->text($user->hasNeverLoggedIn() ? __('Wachtwoord instellen') : __('Wachtwoord wijzigen'))
+                    ->text(__('Link verzenden'))
                     ->class('button -default')
             )->class('-buttons') }}
 
@@ -33,7 +35,7 @@
                 </a>
             </div>
 
-            {{ html()->endModelForm() }}
+            {{ html()->form()->close() }}
         </div>
     </section>
 @endcomponent
