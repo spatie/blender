@@ -42,7 +42,7 @@ class AdministratorsController
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity()->on($user)->log($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.fragment('back.administrators.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.__('back.administrators.passwordMailSent'));
 
         event(new UserCreated($user));
 
@@ -117,6 +117,6 @@ class AdministratorsController
             $name = $user->email;
         }
 
-        return trans("back.events.$event", ['model' => fragment('back.administrators.administrator'), 'name' => $name]);
+        return trans("back.events.$event", ['model' => __('back.administrators.administrator'), 'name' => $name]);
     }
 }

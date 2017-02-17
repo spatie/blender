@@ -1,12 +1,16 @@
 <?php
 
+use App\Models\Article;
+use App\Services\Auth\User;
+use App\Services\Html\Html;
 use Carbon\Carbon;
 use App\Models\Fragment;
 use App\Services\Seo\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
+use Spatie\HtmlElement\HtmlElement;
 
-function article(string $specialArticle): App\Models\Article
+function article(string $specialArticle): Article
 {
     return App\Repositories\ArticleRepository::findSpecialArticle($specialArticle);
 }
@@ -21,41 +25,17 @@ function content_locale(): string
  *
  * @throws \Exception
  */
-function current_user()
+function current_user(): ?User
 {
     if (request()->isFront()) {
-        return current_front_user();
+        return auth()->guard('front')->user();
     }
 
     if (request()->isBack()) {
-        return current_back_user();
+        return auth()->guard('back')->user();
     }
 
     throw new \Exception('Coud not determine current user');
-}
-
-/**
- * @return \App\Services\Auth\Front\User|null
- */
-function current_front_user()
-{
-    if (! auth()->guard('front')->check()) {
-        return;
-    }
-
-    return auth()->guard('front')->user();
-}
-
-/**
- * @return \App\Services\Auth\Back\User|null
- */
-function current_back_user()
-{
-    if (! auth()->guard('back')->check()) {
-        return;
-    }
-
-    return auth()->guard('back')->user();
 }
 
 function diff_date_for_humans(Carbon $date): string
@@ -65,19 +45,7 @@ function diff_date_for_humans(Carbon $date): string
 
 function el(string $tag, $attributes = null, $contents = null)
 {
-    return new HtmlString(\Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents));
-}
-
-function fragment($name, array $replacements = []): string
-{
-    return trans($name, $replacements);
-}
-
-function fragment_slug($name, array $replacements = []): string
-{
-    $translation = fragment($name, $replacements);
-
-    return str_slug($translation);
+    return new HtmlString(HtmlElement::render($tag, $attributes, $contents));
 }
 
 function fragment_image($name, $conversion = 'thumb'): string
@@ -210,9 +178,9 @@ function validate($fields, $rules): bool
     return Validator::make($fields, $rules)->passes();
 }
 
-function html(): \App\Services\Html\Html
+function html(): Html
 {
-    return app(\App\Services\Html\Html::class);
+    return app(Html::class);
 }
 
 function schema(): Schema

@@ -17,13 +17,13 @@ trait UserPresenter
     public function getLastActivityDateAttribute(): string
     {
         if ($this->last_activity === null || $this->last_activity->year == -1) {
-            return fragment('back.users.neverLoggedIn');
+            return __('back.users.neverLoggedIn');
         }
 
         $lastActivityDate = diff_date_for_humans($this->last_activity);
 
         if (str_contains($lastActivityDate, 'second')) {
-            $lastActivityDate = fragment('back.users.justNow');
+            $lastActivityDate = __('back.users.justNow');
         }
 
         return $lastActivityDate;

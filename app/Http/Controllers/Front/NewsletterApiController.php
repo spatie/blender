@@ -18,17 +18,17 @@ class NewsletterApiController extends ApiController
         $email = strtolower($request->get('email'));
 
         if (Newsletter::hasMember($email)) {
-            return $this->respond(['message' => fragment('newsletter.subscription.result.alreadySubscribed'), 'type' => 'info']);
+            return $this->respond(['message' => __('newsletter.subscription.result.alreadySubscribed'), 'type' => 'info']);
         }
 
         $result = Newsletter::subscribe($email);
 
         if (! $result) {
-            return $this->respondWithBadRequest(['message' => fragment('newsletter.subscription.result.error'), 'type' => 'error']);
+            return $this->respondWithBadRequest(['message' => __('newsletter.subscription.result.error'), 'type' => 'error']);
         }
 
         activity()->log("{$email} schreef zich in op de nieuwsbrief");
 
-        return $this->respond(['message' => fragment('newsletter.subscription.result.ok'), 'type' => 'success']);
+        return $this->respond(['message' => __('newsletter.subscription.result.ok'), 'type' => 'success']);
     }
 }

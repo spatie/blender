@@ -47,14 +47,14 @@ class BlenderFormBuilder
             el('input', [
                 'type' => 'text',
                 'class' => 'locationpicker_search',
-                'placeholder' => fragment('back.locationpicker.search'),
+                'placeholder' => __('back.locationpicker.search'),
                 'data-locationpicker-search',
             ], ''),
             el('button', [
                 'class' => 'locationpicker_button',
                 'type' => 'button',
                 'data-locationpicker-button',
-            ], fragment('back.locationpicker.submit')),
+            ], __('back.locationpicker.submit')),
         ]);
 
         $form[] = el('div', [
