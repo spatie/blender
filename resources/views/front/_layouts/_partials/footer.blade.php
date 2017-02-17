@@ -1,10 +1,10 @@
 <section>
-    <strong>{{ fragment('company.name') }}</strong> <br>
-    {{ fragment('company.address') }} <br>
-    {{ fragment('company.postal') }} {{ fragment('company.city') }} <br>
-    {{ fragment('company.country') }} <br>
-    tel. <a href="tel:{{ fragment('company.telephone') }}">{{ fragment('company.telephone') }}</a>
-    <a href="mailto:{{ fragment('company.email') }}">{{ fragment('company.email') }}</a>
+    <strong>@lang('company.name')</strong> <br>
+    @lang('company.address') <br>
+    @lang('company.postal') @lang('company.city') <br>
+    @lang('company.country') <br>
+    tel. <a href="tel:@lang('company.telephone')">@lang('company.telephone')</a>
+    <a href="mailto:@lang('company.email')">@lang('company.email')</a>
     {!! schema()->company() !!}
 </section>
 

@@ -3,7 +3,6 @@
     'seo' => $article->renderSeoTags(),
     'subMenu' => Menu::articleSiblings($article),
 ])
-
     @slot('mainTitle')
         <h1>{{ $article->name }}</h1>
     @endslot
@@ -25,6 +24,5 @@
     </section>
 
     @include('front.contact._partials.form')
-
 @endcomponent
 

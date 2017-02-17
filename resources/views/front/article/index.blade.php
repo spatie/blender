@@ -3,7 +3,6 @@
     'seo' => $article->renderSeoTags(),
     'subMenu' => Menu::articleSiblings($article),
 ])
-
     @slot('mainTitle')
         <h1>{{ $article->name }}</h1>
     @endslot
@@ -17,5 +16,4 @@
     @endslot
 
     {!! $article->text !!}
-
 @endcomponent

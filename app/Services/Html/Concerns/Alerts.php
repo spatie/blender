@@ -9,7 +9,7 @@ trait Alerts
     public function alert(string $type, string $message): Div
     {
         return $this->div()
-            ->class("alert--{$type}")
+            ->class($type ? "alert--{$type}" : 'alert')
             ->html($message);
     }
 
