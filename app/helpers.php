@@ -1,10 +1,10 @@
 <?php
 
+use Carbon\Carbon;
 use App\Models\Article;
+use App\Models\Fragment;
 use App\Services\Auth\User;
 use App\Services\Html\Html;
-use Carbon\Carbon;
-use App\Models\Fragment;
 use App\Services\Seo\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
