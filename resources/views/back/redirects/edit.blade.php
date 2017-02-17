@@ -19,7 +19,7 @@
 
             {{ html()->formGroup()->submit('Bewaar redirect') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 @endcomponent

@@ -26,7 +26,7 @@
 
             {{ html()->formGroup()->submit('Bewaar fragment') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 

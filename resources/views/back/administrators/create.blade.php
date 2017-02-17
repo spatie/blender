@@ -15,7 +15,7 @@
 
             {{ html()->formGroup()->submit('Bewaar administrator') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 @endcomponent

@@ -17,7 +17,7 @@
 
             {{ html()->formGroup()->submit('Bewaar lid') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 @endcomponent

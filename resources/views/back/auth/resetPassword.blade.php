@@ -28,7 +28,7 @@
                     ->class('button -default')
             )->class('-buttons') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 @endcomponent

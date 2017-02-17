@@ -25,7 +25,7 @@
 
             {{ html()->formGroup()->submit('Bewaar artikel') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 @endcomponent

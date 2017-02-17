@@ -20,7 +20,7 @@
 
             {{ html()->formGroup()->submit('Bewaar nieuws') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 @endcomponent

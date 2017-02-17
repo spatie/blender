@@ -19,7 +19,7 @@
 
             {{ html()->formGroup()->submit('Bewaar tag') }}
 
-            {{ html()->endModelForm() }}
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 
