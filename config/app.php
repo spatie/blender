@@ -189,6 +189,7 @@ return [
         App\Providers\EventServiceProvider::class,
 
         Spatie\Blender\Model\BlenderModelServiceProvider::class,
+
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
@@ -197,7 +198,6 @@ return [
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
-        Spatie\Glide\GlideServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,
@@ -217,6 +217,7 @@ return [
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
         Spatie\MailableTest\MailableTestServiceProvider::class,
+        Spatie\Referer\RefererServiceProvider::class,
     ],
 
     /*
@@ -278,7 +279,6 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Fractal' => Spatie\Fractal\FractalFacade::class,
-        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
         'GoogleTagManager' => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
         'Menu' => Spatie\Menu\Laravel\MenuFacade::class,
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,

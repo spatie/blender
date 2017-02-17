@@ -1,7 +1,7 @@
 @component('mail::message')
 # Nieuwe reactie
 
-Beste {{ $user->first_name }},
+Beste,
 
 Een bezoeker liet zijn gegevens achter op [{{ Request::getHost() }}]({{ url('/') }}).
 
@@ -13,6 +13,7 @@ Adres: {{ $formResponse->address }} <br>
 Postcode: {{ $formResponse->postal }} <br>
 Stad: {{ $formResponse->city }} <br>
 Opmerkingen: {{ $formResponse->remarks }} <br>
+Verwijzer: {{ $formResponse->referer ?? 'Onbekend' }} <br>
 @endcomponent
 
 @slot('subcopy')

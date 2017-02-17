@@ -29,7 +29,7 @@ class MediaLibraryController extends Controller
                 return $model
                     ->addMedia($file)
                     ->withCustomProperties(['draft' => $request->has('redactor') ? false : true])
-                    ->toCollection($request->get('collection_name', 'default'));
+                    ->toMediaLibrary($request->get('collection_name', 'default'));
             });
 
         if ($request->has('redactor')) {

@@ -34,8 +34,8 @@ class Article extends Model implements Sortable
         parent::registerMediaConversions();
 
         $this->addMediaConversion('thumb')
-            ->setWidth(368)
-            ->setHeight(232)
+            ->width(368)
+            ->height(232)
             ->performOnCollections('images');
     }
 

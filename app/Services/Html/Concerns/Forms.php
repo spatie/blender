@@ -118,30 +118,79 @@ trait Forms
         ])->toJson();
     }
 
+    public function map(string $name): string
+    {
+        return '';
+        //$form = [];
+        //
+        //$form[] = el('div', ['class' => 'locationpicker_tools :align-right'], [
+        //    el('input', [
+        //        'type' => 'text',
+        //        'class' => 'locationpicker_search',
+        //        'placeholder' => __('back.locationpicker.search'),
+        //        'data-locationpicker-search',
+        //    ], ''),
+        //    el('button', [
+        //        'class' => 'locationpicker_button',
+        //        'type' => 'button',
+        //        'data-locationpicker-button',
+        //    ], __('back.locationpicker.submit')),
+        //]);
+        //
+        //$form[] = el('div', [
+        //    'class' => 'locationpicker_map',
+        //    'data-locationpicker-map',
+        //], '');
+        //
+        //$form[] = Form::hidden(
+        //    "{$name}_lat",
+        //    Form::useInitialValue($this->model, "{$name}_lat"),
+        //    ['data-locationpicker-lat']
+        //);
+        //
+        //$form[] = Form::hidden(
+        //    "{$name}_lng",
+        //    Form::useInitialValue($this->model, "{$name}_lng"),
+        //    ['data-locationpicker-lng']
+        //);
+        //
+        //$form[] = Form::hidden(
+        //    "{$name}_zoom",
+        //    Form::useInitialValue($this->model, "{$name}_zoom"),
+        //    ['data-locationpicker-zoom']
+        //);
+        //
+        //return $this->group([
+        //    $this->label($name),
+        //    el('div.locationpicker', ['data-locationpicker', 'data-api-key' => env('GOOGLE_MAPS_API_KEY')], $form),
+        //]);
+    }
+
     public function seo(): string
     {
-        $this->ensureModelIsAvailable();
-
-        return locales()->map(function ($locale) {
-            return collect($this->model->defaultSeoValues())
-                ->keys()
-                ->map(function ($attribute) use ($locale) {
-                    $this->locale($locale);
-
-                    return $this->formGroup()->withContents([
-                        $this->label($this->seoLabel($attribute), $attribute),
-                        $this->text()
-                            ->name($attribute)
-                            ->value($this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
-                            ->placeholder($this->model->defaultSeoValues()[$attribute]),
-                    ]);
-                })
-                ->pipe(function (Collection $fields) use ($locale) {
-                    $this->endLocale();
-
-                    return $this->translatedFieldset($locale, $fields->toArray());
-                });
-        })->implode('');
+        return '';
+        //$this->ensureModelIsAvailable();
+        //
+        //return locales()->map(function ($locale) {
+        //    return collect($this->model->defaultSeoValues())
+        //        ->keys()
+        //        ->map(function ($attribute) use ($locale) {
+        //            $this->locale($locale);
+        //
+        //            return $this->formGroup()->withContents([
+        //                $this->label($this->seoLabel($attribute), $attribute),
+        //                $this->text()
+        //                    ->name($attribute)
+        //                    ->value($this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
+        //                    ->placeholder($this->model->defaultSeoValues()[$attribute]),
+        //            ]);
+        //        })
+        //        ->pipe(function (Collection $fields) use ($locale) {
+        //            $this->endLocale();
+        //
+        //            return $this->translatedFieldset($locale, $fields->toArray());
+        //        });
+        //})->implode('');
     }
 
     protected function seoLabel(string $attribute): string
