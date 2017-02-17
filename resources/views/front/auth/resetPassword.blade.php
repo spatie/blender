@@ -20,7 +20,7 @@
 
     {{ html()->button()
         ->type('submit')
-        ->text(trans('auth.passwordMail.'.($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser').'.resetButton'))
+        ->text(__('auth.passwordMail.'.($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser').'.resetButton'))
         ->class('button--primary') }}
 
     {{ html()->form()->open() }}

@@ -26,6 +26,6 @@
     </div>
     <div id="seo">
         {{ html()->seo() }}
-        {{ html()->info(trans('back.seo.help')) }}
+        {{ html()->info(__('back.seo.help')) }}
     </div>
 </div>

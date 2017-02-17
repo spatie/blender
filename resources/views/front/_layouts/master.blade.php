@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ mix('css/front.css') }}">
     <script src="{{ mix('js/front.head.js') }}"></script>
 
-    <title>{{ isset($title) ? $title  . ' - ' : '' }} {{ trans('site.title') }}</title>
+    <title>{{ isset($title) ? $title  . ' - ' : '' }} {{ __('site.title') }}</title>
 
     @include('front._layouts._partials.head.seo')
     @include('front._layouts._partials.head.hreflang')
