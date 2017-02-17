@@ -204,7 +204,6 @@ return [
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\Newsletter\NewsletterServiceProvider::class,
-        Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
         Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
         Spatie\ModelCleanup\ModelCleanupServiceProvider::class,

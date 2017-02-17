@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f628f6394685eb7fb9948acdb42cad72",
-    "content-hash": "385dbb706d3302c7734e097150b9c3df",
+    "hash": "8cc0ef37db142cd6fbca6f8ddfda1aa0",
+    "content-hash": "282dea2f1e9f634d6c2481abc1cea63c",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4514,12 +4514,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-html.git",
-                "reference": "04ab76c616b0ce4bfb247e0bbaf46789765de959"
+                "reference": "8cb0ee4dcd2ab9c7f7e053ee7c989c028b7659ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/04ab76c616b0ce4bfb247e0bbaf46789765de959",
-                "reference": "04ab76c616b0ce4bfb247e0bbaf46789765de959",
+                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/8cb0ee4dcd2ab9c7f7e053ee7c989c028b7659ab",
+                "reference": "8cb0ee4dcd2ab9c7f7e053ee7c989c028b7659ab",
                 "shasum": ""
             },
             "require": {
@@ -4561,7 +4561,7 @@
                 "html",
                 "spatie"
             ],
-            "time": "2017-02-17 10:57:18"
+            "time": "2017-02-17 11:32:13"
         },
         {
             "name": "spatie/laravel-link-checker",
@@ -5003,64 +5003,6 @@
                 "newsletter"
             ],
             "time": "2017-01-23 15:55:47"
-        },
-        {
-            "name": "spatie/laravel-paginateroute",
-            "version": "2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-paginateroute.git",
-                "reference": "c3cdb0017665fbbd63982e371c5fdbd31956a7e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-paginateroute/zipball/c3cdb0017665fbbd63982e371c5fdbd31956a7e6",
-                "reference": "c3cdb0017665fbbd63982e371c5fdbd31956a7e6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "illuminate/contracts": "~5.4.0",
-                "illuminate/routing": "~5.4.0",
-                "illuminate/translation": "~5.4.0",
-                "orchestra/testbench": "^3.4",
-                "phpunit/phpunit": "^5.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\PaginateRoute\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Sebastian De Deyne",
-                    "email": "sebastian@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Laravel outer extension to easily use laravel's paginator without the query string",
-            "homepage": "https://github.com/spatie/laravel-paginateroute",
-            "keywords": [
-                "laravel",
-                "laravel-paginateroute",
-                "pagination",
-                "routing",
-                "spatie"
-            ],
-            "time": "2017-02-01 14:53:07"
         },
         {
             "name": "spatie/laravel-referer",
