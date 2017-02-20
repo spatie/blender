@@ -45,6 +45,7 @@ trait Inline
             ->attribute('data-confirm', 'true')
             ->child(
                 $this->button()
+                    ->type('submit')
                     ->html($this->icon('trash'))
                     ->class('button -danger -small')
             );

@@ -2,6 +2,7 @@
 
 namespace App\Services\Html;
 
+use Carbon\Carbon;
 use Spatie\Html\Elements\Fieldset;
 
 class Html extends \Spatie\Html\Html
@@ -38,6 +39,8 @@ class Html extends \Spatie\Html\Html
     public function translations(callable $callback)
     {
         $fieldsets = locales()->map(function ($locale) use ($callback) {
+            $this->locale($locale);
+
             return $this->translatedFieldset($locale, $callback());
         });
 
@@ -49,7 +52,6 @@ class Html extends \Spatie\Html\Html
     public function translatedFieldset(string $locale, $contents): Fieldset
     {
         return $this
-            ->locale($locale)
             ->fieldset()
             ->addChild($this->legend($locale)->class('legend__lang'))
             ->addChildren($contents);

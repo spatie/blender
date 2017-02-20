@@ -11,10 +11,6 @@
         {
             "type": "composer",
             "url": "https://satis.spatie.be/"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/maddhatter/html.git"
         }
     ],
     "require": {
@@ -38,7 +34,7 @@
         "pda/pheanstalk": "^3.0",
         "propaganistas/laravel-phone": "^2.6",
         "spatie/array-functions": "^1.1",
-        "spatie/blender-model": "^5.0.0",
+        "spatie/blender-model": "^5.1.0",
         "spatie/color": "^1.0",
         "spatie/eloquent-sortable": "^3.0",
         "spatie/fragment-importer": "^3.0",
@@ -52,7 +48,7 @@
         "spatie/laravel-failed-job-monitor": "^2.0",
         "spatie/laravel-fractal": "^3.0.0",
         "spatie/laravel-googletagmanager": "^2.0",
-        "spatie/laravel-html": "dev-master",
+        "spatie/laravel-html": "^0.2.0",
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-mailable-test": "^1.0",
         "spatie/laravel-medialibrary": "5.0.0",

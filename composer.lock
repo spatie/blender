@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff6e403327143d061c94d774f8ed41fd",
-    "content-hash": "92bf7b0eaf1a647eb280d42ce0124f51",
+    "hash": "ce6d04e461da3931f0e41bdd3201feb2",
+    "content-hash": "06d5b211a7354dbf637996b35cf16ee0",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -193,16 +193,16 @@
         },
         {
             "name": "barryvdh/laravel-ide-helper",
-            "version": "v2.3.0",
+            "version": "v2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-ide-helper.git",
-                "reference": "555d3e37009bdb78f5d8bcea6eb8a816529a5cfa"
+                "reference": "25c8de637ddf79567d721c1856616be01db7b960"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/555d3e37009bdb78f5d8bcea6eb8a816529a5cfa",
-                "reference": "555d3e37009bdb78f5d8bcea6eb8a816529a5cfa",
+                "url": "https://api.github.com/repos/barryvdh/laravel-ide-helper/zipball/25c8de637ddf79567d721c1856616be01db7b960",
+                "reference": "25c8de637ddf79567d721c1856616be01db7b960",
                 "shasum": ""
             },
             "require": {
@@ -225,7 +225,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.2-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -255,7 +255,7 @@
                 "phpstorm",
                 "sublime"
             ],
-            "time": "2017-02-13 19:20:12"
+            "time": "2017-02-20 12:54:53"
         },
         {
             "name": "barryvdh/reflection-docblock",
@@ -3400,16 +3400,16 @@
         },
         {
             "name": "spatie/blender-model",
-            "version": "5.0.2",
+            "version": "5.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/blender-model.git",
-                "reference": "8d95cebdc5c4b4c22d8931b8c3f2d9e417e72a36"
+                "reference": "cfdd70bbe8a04b4b5576151aeb84df0c81b6597c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/blender-model/zipball/8d95cebdc5c4b4c22d8931b8c3f2d9e417e72a36",
-                "reference": "8d95cebdc5c4b4c22d8931b8c3f2d9e417e72a36",
+                "url": "https://api.github.com/repos/spatie/blender-model/zipball/cfdd70bbe8a04b4b5576151aeb84df0c81b6597c",
+                "reference": "cfdd70bbe8a04b4b5576151aeb84df0c81b6597c",
                 "shasum": ""
             },
             "require": {
@@ -3456,10 +3456,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/blender-model/tree/5.0.2",
+                "source": "https://github.com/spatie/blender-model/tree/5.1.1",
                 "issues": "https://github.com/spatie/blender-model/issues"
             },
-            "time": "2017-02-16 12:28:39"
+            "time": "2017-02-20 13:40:51"
         },
         {
             "name": "spatie/color",
@@ -4453,16 +4453,16 @@
         },
         {
             "name": "spatie/laravel-html",
-            "version": "dev-master",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-html.git",
-                "reference": "8cb0ee4dcd2ab9c7f7e053ee7c989c028b7659ab"
+                "reference": "225008d0d93119eb3ba70a52555675b91348a5c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/8cb0ee4dcd2ab9c7f7e053ee7c989c028b7659ab",
-                "reference": "8cb0ee4dcd2ab9c7f7e053ee7c989c028b7659ab",
+                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/225008d0d93119eb3ba70a52555675b91348a5c1",
+                "reference": "225008d0d93119eb3ba70a52555675b91348a5c1",
                 "shasum": ""
             },
             "require": {
@@ -4504,7 +4504,7 @@
                 "html",
                 "spatie"
             ],
-            "time": "2017-02-17 11:32:13"
+            "time": "2017-02-20 13:26:06"
         },
         {
             "name": "spatie/laravel-link-checker",
@@ -4684,28 +4684,28 @@
         },
         {
             "name": "spatie/laravel-menu",
-            "version": "2.1.1",
+            "version": "2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "f832b4aa4e62a6c3524628bcb7346b3b488a84c1"
+                "reference": "61a41e6e008d5a11055dfc94fe57f218ddab053b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/f832b4aa4e62a6c3524628bcb7346b3b488a84c1",
-                "reference": "f832b4aa4e62a6c3524628bcb7346b3b488a84c1",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/61a41e6e008d5a11055dfc94fe57f218ddab053b",
+                "reference": "61a41e6e008d5a11055dfc94fe57f218ddab053b",
                 "shasum": ""
             },
             "require": {
-                "illuminate/auth": "~5.2.0|~5.3.0|~5.4.0",
-                "illuminate/contracts": "~5.2.0|~5.3.0|~5.4.0",
-                "illuminate/support": "~5.2.0|~5.3.0|~5.4.0",
+                "illuminate/auth": "~5.3.28|~5.4.0",
+                "illuminate/contracts": "~5.3.28|~5.4.0",
+                "illuminate/support": "~5.3.28|~5.4.0",
                 "php": "^7.0",
                 "spatie/menu": "^2.0.0"
             },
             "require-dev": {
                 "fzaninotto/faker": "^1.6",
-                "orchestra/testbench": "3.2.0|3.3.0|~3.4.0",
+                "orchestra/testbench": "3.3.3|~3.4.0",
                 "phpunit/phpunit": "^5.2"
             },
             "type": "library",
@@ -4732,7 +4732,7 @@
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2017-01-23 13:40:30"
+            "time": "2017-02-20 09:36:46"
         },
         {
             "name": "spatie/laravel-migrate-fresh",
@@ -5421,16 +5421,16 @@
         },
         {
             "name": "spatie/schema-org",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/schema-org.git",
-                "reference": "62fc2293fed7a0e4bdc86b3491a78f0c1d35f99e"
+                "reference": "bf98ec789cd263b2f674e0b7ed57940de380fbe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/schema-org/zipball/62fc2293fed7a0e4bdc86b3491a78f0c1d35f99e",
-                "reference": "62fc2293fed7a0e4bdc86b3491a78f0c1d35f99e",
+                "url": "https://api.github.com/repos/spatie/schema-org/zipball/bf98ec789cd263b2f674e0b7ed57940de380fbe8",
+                "reference": "bf98ec789cd263b2f674e0b7ed57940de380fbe8",
                 "shasum": ""
             },
             "require": {
@@ -5468,7 +5468,7 @@
                 "schema-org",
                 "spatie"
             ],
-            "time": "2017-02-07 09:34:22"
+            "time": "2017-02-20 09:46:06"
         },
         {
             "name": "spatie/seeders",
@@ -8187,9 +8187,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-html": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

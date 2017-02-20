@@ -4,6 +4,7 @@ namespace App\Services\Html\Concerns;
 
 use App\Models\Tag;
 use App\Models\ContentBlock;
+use Illuminate\Support\Collection;
 use Spatie\Html\Elements\Div;
 use Spatie\Html\Elements\Input;
 use Spatie\Html\Elements\Select;
@@ -140,31 +141,32 @@ trait Forms
             ]);
     }
 
-    public function seo(): string
+    public function seo(): Div
     {
-        return '';
-        //$this->ensureModelIsAvailable();
-        //
-        //return locales()->map(function ($locale) {
-        //    return collect($this->model->defaultSeoValues())
-        //        ->keys()
-        //        ->map(function ($attribute) use ($locale) {
-        //            $this->locale($locale);
-        //
-        //            return $this->formGroup()->withContents([
-        //                $this->label($this->seoLabel($attribute), $attribute),
-        //                $this->text()
-        //                    ->name($attribute)
-        //                    ->value($this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
-        //                    ->placeholder($this->model->defaultSeoValues()[$attribute]),
-        //            ]);
-        //        })
-        //        ->pipe(function (Collection $fields) use ($locale) {
-        //            $this->endLocale();
-        //
-        //            return $this->translatedFieldset($locale, $fields->toArray());
-        //        });
-        //})->implode('');
+        $this->ensureModelIsAvailable();
+
+        $languageFields = locales()->map(function ($locale) {
+            return collect($this->model->defaultSeoValues())
+                ->keys()
+                ->map(function ($attribute) use ($locale) {
+                    $this->locale($locale);
+
+                    return $this->formGroup()->withContents([
+                        $this->label($this->seoLabel($attribute), $attribute),
+                        $this->text()
+                            ->name($attribute)
+                            ->value($this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
+                            ->placeholder($this->model->defaultSeoValues()[$attribute]),
+                    ]);
+                })
+                ->pipe(function (Collection $fields) use ($locale) {
+                    $this->endLocale();
+
+                    return $this->translatedFieldset($locale, $fields->toArray());
+                });
+        });
+
+        return $this->div()->children($languageFields);
     }
 
     protected function seoLabel(string $attribute): string
