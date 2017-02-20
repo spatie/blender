@@ -1,6 +1,5 @@
 const process = require('process');
 const { mix } = require('laravel-mix');
-const { NormalModuleReplacementPlugin } = require('webpack');
 
 mix
 
@@ -13,6 +12,13 @@ mix
     .sass('resources/assets/sass/back/back.scss', 'public/css/back.css')
 
     .version()
+
+    .options({
+        // Since we don't do any image preprocessing and write url's that are
+        // relative to the site root, we don't want the sass loader to try to
+        // follow paths in `url()` functions.
+        processCssUrls: false,
+    })
 
     .webpackConfig({
         output: {
@@ -36,15 +42,6 @@ mix
                 },
             ],
         },
-
-        plugins: [
-            // We'll replace files we want to ignore with a `noop` so webpack
-            // won't complain that they can't be resolved.
-            new NormalModuleReplacementPlugin(
-                /\.(jpe?g|png|gif|svg|woff2?|ttf|eot|svg|otf)$/,
-                'node-noop'
-            ),
-        ],
 
         stats: {
             // The "pretty" errors sometimes lack information. To display full
