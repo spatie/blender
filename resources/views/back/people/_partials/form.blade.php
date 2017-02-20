@@ -8,8 +8,6 @@
     <div id="content">
         {{ html()->formGroup()->text('name', 'Naam') }}
 
-        {{ html()->formGroup()->map('location', 'Location') }}
-
         {{ html()->formGroup()->media('images', 'image', 'Afbeelding') }}
     </div>
     <div id="settings">
