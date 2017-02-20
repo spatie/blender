@@ -59,16 +59,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.22.6",
+            "version": "3.22.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "011cabd6e7755a8671fb338951d53abc5d24deef"
+                "reference": "eea83aaac2b6c86f72a5c85c54d1839b70d4fd21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/011cabd6e7755a8671fb338951d53abc5d24deef",
-                "reference": "011cabd6e7755a8671fb338951d53abc5d24deef",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eea83aaac2b6c86f72a5c85c54d1839b70d4fd21",
+                "reference": "eea83aaac2b6c86f72a5c85c54d1839b70d4fd21",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-02-17 00:07:30"
+            "time": "2017-02-17 20:09:40"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -914,16 +914,16 @@
         },
         {
             "name": "drewm/mailchimp-api",
-            "version": "v2.3",
+            "version": "v2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/drewm/mailchimp-api.git",
-                "reference": "6a5373378f8e61284be81d6424d22fb2a3a1ff9e"
+                "reference": "fe480bb652f85270227bf6d639b0026a531f21fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drewm/mailchimp-api/zipball/6a5373378f8e61284be81d6424d22fb2a3a1ff9e",
-                "reference": "6a5373378f8e61284be81d6424d22fb2a3a1ff9e",
+                "url": "https://api.github.com/repos/drewm/mailchimp-api/zipball/fe480bb652f85270227bf6d639b0026a531f21fc",
+                "reference": "fe480bb652f85270227bf6d639b0026a531f21fc",
                 "shasum": ""
             },
             "require": {
@@ -953,7 +953,7 @@
             ],
             "description": "Super-simple, minimum abstraction MailChimp API v3 wrapper",
             "homepage": "https://github.com/drewm/mailchimp-api",
-            "time": "2016-12-21 14:50:24"
+            "time": "2017-02-16 13:24:20"
         },
         {
             "name": "erusev/parsedown",
@@ -4053,16 +4053,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.6.4",
+            "version": "4.6.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "e6345a28cbe7a09f17648782ddda8e115453441e"
+                "reference": "40ba5879a0f7134a3991ad220d2b08c4d75cb1c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/e6345a28cbe7a09f17648782ddda8e115453441e",
-                "reference": "e6345a28cbe7a09f17648782ddda8e115453441e",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/40ba5879a0f7134a3991ad220d2b08c4d75cb1c1",
+                "reference": "40ba5879a0f7134a3991ad220d2b08c4d75cb1c1",
                 "shasum": ""
             },
             "require": {
@@ -4115,7 +4115,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2017-02-17 00:05:17"
+            "time": "2017-02-19 12:54:38"
         },
         {
             "name": "spatie/laravel-blade-javascript",
@@ -7386,16 +7386,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "5.7.13",
+            "version": "5.7.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "60ebeed87a35ea46fd7f7d8029df2d6f013ebb34"
+                "reference": "4906b8faf23e42612182fd212eb6f4c0f2954b57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/60ebeed87a35ea46fd7f7d8029df2d6f013ebb34",
-                "reference": "60ebeed87a35ea46fd7f7d8029df2d6f013ebb34",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4906b8faf23e42612182fd212eb6f4c0f2954b57",
+                "reference": "4906b8faf23e42612182fd212eb6f4c0f2954b57",
                 "shasum": ""
             },
             "require": {
@@ -7419,7 +7419,7 @@
                 "sebastian/global-state": "^1.1",
                 "sebastian/object-enumerator": "~2.0",
                 "sebastian/resource-operations": "~1.0",
-                "sebastian/version": "~1.0|~2.0",
+                "sebastian/version": "~1.0.3|~2.0",
                 "symfony/yaml": "~2.1|~3.0"
             },
             "conflict": {
@@ -7464,7 +7464,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2017-02-10 09:05:10"
+            "time": "2017-02-19 07:22:16"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -7856,16 +7856,16 @@
         },
         {
             "name": "sebastian/object-enumerator",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/object-enumerator.git",
-                "reference": "96f8a3f257b69e8128ad74d3a7fd464bcbaa3b35"
+                "reference": "1311872ac850040a79c3c058bea3e22d0f09cbb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/96f8a3f257b69e8128ad74d3a7fd464bcbaa3b35",
-                "reference": "96f8a3f257b69e8128ad74d3a7fd464bcbaa3b35",
+                "url": "https://api.github.com/repos/sebastianbergmann/object-enumerator/zipball/1311872ac850040a79c3c058bea3e22d0f09cbb7",
+                "reference": "1311872ac850040a79c3c058bea3e22d0f09cbb7",
                 "shasum": ""
             },
             "require": {
@@ -7898,7 +7898,7 @@
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
             "homepage": "https://github.com/sebastianbergmann/object-enumerator/",
-            "time": "2016-11-19 07:35:10"
+            "time": "2017-02-18 15:18:39"
         },
         {
             "name": "sebastian/recursion-context",
