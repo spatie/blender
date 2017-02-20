@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8cc0ef37db142cd6fbca6f8ddfda1aa0",
-    "content-hash": "282dea2f1e9f634d6c2481abc1cea63c",
+    "hash": "ff6e403327143d061c94d774f8ed41fd",
+    "content-hash": "92bf7b0eaf1a647eb280d42ce0124f51",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -2097,63 +2097,6 @@
                 "psysh"
             ],
             "time": "2016-12-30 18:13:17"
-        },
-        {
-            "name": "laravelcollective/html",
-            "version": "5.4.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/maddhatter/html.git",
-                "reference": "23223c6e283002f6f092d65015b82d6e3e746206"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/maddhatter/html/zipball/23223c6e283002f6f092d65015b82d6e3e746206",
-                "reference": "23223c6e283002f6f092d65015b82d6e3e746206",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "5.4.*",
-                "illuminate/routing": "5.4.*",
-                "illuminate/session": "5.4.*",
-                "illuminate/support": "5.4.*",
-                "illuminate/view": "5.4.*",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "illuminate/database": "5.4.*",
-                "mockery/mockery": "~0.9.4",
-                "phpunit/phpunit": "~5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Collective\\Html\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Adam Engebretson",
-                    "email": "adam@laravelcollective.com"
-                },
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                }
-            ],
-            "description": "HTML and Form Builders for the Laravel Framework",
-            "homepage": "http://laravelcollective.com",
-            "support": {
-                "issues": "https://github.com/LaravelCollective/html/issues",
-                "source": "https://github.com/LaravelCollective/html"
-            },
-            "time": "2017-01-23 15:09:39"
         },
         {
             "name": "league/flysystem",
@@ -8245,9 +8188,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "barryvdh/laravel-ide-helper": 20,
-        "laravel/framework": 20,
-        "laravelcollective/html": 20,
         "spatie/laravel-html": 20
     },
     "prefer-stable": true,
