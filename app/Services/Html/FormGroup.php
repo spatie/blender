@@ -61,6 +61,11 @@ class FormGroup
         return $this->assemble($name, $label, $this->html->email($name));
     }
 
+    public function map(string $name, string $label): Div
+    {
+        return $this->assemble($name, $label, $this->html->map($name));
+    }
+
     public function media(string $collection, string $type, string $label, array $associated = []): Div
     {
         return $this->assemble($collection, $label, $this->html->media($collection, $type, $associated));

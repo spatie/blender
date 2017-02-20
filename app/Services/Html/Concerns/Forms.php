@@ -4,10 +4,10 @@ namespace App\Services\Html\Concerns;
 
 use App\Models\Tag;
 use App\Models\ContentBlock;
+use Spatie\Html\Elements\Div;
 use Spatie\Html\Elements\Input;
 use Spatie\Html\Elements\Select;
 use Spatie\Html\Elements\Element;
-use Illuminate\Support\Collection;
 use Spatie\Html\Elements\Textarea;
 use Spatie\Blender\Model\Transformers\MediaTransformer;
 use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
@@ -70,7 +70,7 @@ trait Forms
         $associatedData = collect($associated)->merge([
             'locales' => config('app.locales'),
             'contentLocale' => content_locale(),
-        ])->toJson();
+        ])->toArray();
 
         return $this->element('blender-media')->attributes([
             'collection' => $collection,
@@ -78,7 +78,7 @@ trait Forms
             'upload-url' => action('Back\Api\MediaLibraryController@add'),
             ':model' => htmlspecialchars($this->getComponentModel()),
             ':initial' => htmlspecialchars($initial),
-            ':data' => htmlspecialchars(collect($associatedData)),
+            ':data' => htmlspecialchars(json_encode($associatedData, JSON_FORCE_OBJECT)),
             ':debug' => htmlspecialchars(json_encode(config('app.debug', false))),
         ]);
     }
@@ -97,7 +97,7 @@ trait Forms
             'contentLocale' => content_locale(),
             'mediaModel' => ContentBlock::class,
             'mediaUploadUrl' => action('Back\Api\MediaLibraryController@add'),
-        ])->toJson();
+        ])->toArray();
 
         return $this->formGroup()->withContents($this->element('blender-content-blocks')->attributes([
             'collection' => $collectionName,
@@ -105,7 +105,7 @@ trait Forms
             'create-url' => action('Back\Api\ContentBlockController@add'),
             ':model' => htmlspecialchars($this->getComponentModel()),
             ':input' => htmlspecialchars($initial),
-            ':data' => htmlspecialchars($associatedData),
+            ':data' => htmlspecialchars(json_encode($associatedData, JSON_FORCE_OBJECT)),
             ':debug' => htmlspecialchars(json_encode(config('app.debug', false))),
         ]));
     }
@@ -118,52 +118,26 @@ trait Forms
         ])->toJson();
     }
 
-    public function map(string $name): string
+    public function map(string $name): Div
     {
-        return '';
-        //$form = [];
-        //
-        //$form[] = el('div', ['class' => 'locationpicker_tools :align-right'], [
-        //    el('input', [
-        //        'type' => 'text',
-        //        'class' => 'locationpicker_search',
-        //        'placeholder' => __('back.locationpicker.search'),
-        //        'data-locationpicker-search',
-        //    ], ''),
-        //    el('button', [
-        //        'class' => 'locationpicker_button',
-        //        'type' => 'button',
-        //        'data-locationpicker-button',
-        //    ], __('back.locationpicker.submit')),
-        //]);
-        //
-        //$form[] = el('div', [
-        //    'class' => 'locationpicker_map',
-        //    'data-locationpicker-map',
-        //], '');
-        //
-        //$form[] = Form::hidden(
-        //    "{$name}_lat",
-        //    Form::useInitialValue($this->model, "{$name}_lat"),
-        //    ['data-locationpicker-lat']
-        //);
-        //
-        //$form[] = Form::hidden(
-        //    "{$name}_lng",
-        //    Form::useInitialValue($this->model, "{$name}_lng"),
-        //    ['data-locationpicker-lng']
-        //);
-        //
-        //$form[] = Form::hidden(
-        //    "{$name}_zoom",
-        //    Form::useInitialValue($this->model, "{$name}_zoom"),
-        //    ['data-locationpicker-zoom']
-        //);
-        //
-        //return $this->group([
-        //    $this->label($name),
-        //    el('div.locationpicker', ['data-locationpicker', 'data-api-key' => env('GOOGLE_MAPS_API_KEY')], $form),
-        //]);
+        return $this->div()
+            ->class('locationpicker')
+            ->attribute('data-locationpicker')
+            ->attribute('data-api-key', config('google_maps.api_key'))
+            ->children([
+                $this->div()
+                    ->class('locationpicker_tools :align-right')
+                    ->children([
+                        $this->text()->class('locationpicker_search')->placeholder(__('Zoeken...'))->attribute('data-locationpicker-search'),
+                        $this->button(__('Zoeken'), 'button')->class('locationpicker_button')->attribute('data-locationpicker-button'),
+                    ]),
+
+                $this->div()->class('locationpicker_map')->attribute('data-locationpicker-map'),
+
+                $this->hidden("{$name}_lat")->attribute('data-locationpicker-lat'),
+                $this->hidden("{$name}_lng")->attribute('data-locationpicker-lng'),
+                $this->hidden("{$name}_zoom")->attribute('data-locationpicker-zoom'),
+            ]);
     }
 
     public function seo(): string
