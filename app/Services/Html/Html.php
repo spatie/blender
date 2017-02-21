@@ -79,7 +79,7 @@ class Html extends \Spatie\Html\Html
             return $value->format('d/m/Y');
         }
 
-        if (! is_string($value)) {
+        if (is_array($value)) {
             $value = '';
         }
 
