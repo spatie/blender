@@ -6,10 +6,7 @@
     @include list-horizontal;
 
     a {
-        padding: .65em 1em;
-        vertical-align: middle;
-
-        background-color: gray(lighter);
-        border-radius: 3px;
+        //@extend for demo pruposes only
+        @extend .button--primary;
     }
 }

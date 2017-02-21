@@ -3,27 +3,45 @@
 ])
     {{ html()->form()->open() }}
 
-    {{ html()->formGroup()->required()->text('first_name', __('auth.firstName')) }}
-    {{ html()->formGroup()->required()->text('last_name', __('auth.lastName')) }}
-    {{ html()->formGroup()->required()->text('address', __('auth.address')) }}
+    {{ html()->formGroup()->required()->text('email', __('auth.email')) }}
 
     <div class="grid">
-        <div class="grid__cell -width-1/4">
-            {{ html()->formGroup()->required()->text('postal', __('auth.postal')) }}
+        <div class="grid__cell -width-1/2--s">
+            {{ html()->formGroup()->required()->password('password', __('auth.password')) }}
         </div>
-        <div class="grid__cell  -width-3/4">
-            {{ html()->formGroup()->required()->text('city', __('auth.city')) }}
+        <div class="grid__cell  -width-1/2--s">
+            {{ html()->formGroup()->required()->password('password_confirmation', __('auth.passwordConfirm')) }}
         </div>
     </div>
 
-    {{ html()->formGroup()->required()->text('country', __('auth.country')) }}
-    {{ html()->formGroup()->required()->text('telephone', __('auth.telephone')) }}
-    {{ html()->formGroup()->required()->text('email', __('auth.email')) }}
-    {{ html()->formGroup()->required()->password('password', __('auth.password')) }}
-    {{ html()->formGroup()->required()->password('password_confirmation', __('auth.passwordConfirm')) }}
-    {{ html()->button(__('auth.register'), 'submit')->class('button--primary') }}
+    <div class="grid">
+        <div class="grid__cell -width-1/4--s">
+            {{ html()->formGroup()->required()->text('first_name', __('auth.firstName')) }}
+        </div>
+        <div class="grid__cell  -width-3/4--s">
+            {{ html()->formGroup()->required()->text('last_name', __('auth.lastName')) }}
+        </div>
+    </div>
 
-    <a href="{{ login_url() }}">@lang('auth.toLogin')</a>
+    {{ html()->formGroup()->text('address', __('auth.address')) }}
+
+    <div class="grid">
+        <div class="grid__cell -width-1/4--s">
+            {{ html()->formGroup()->text('postal', __('auth.postal')) }}
+        </div>
+        <div class="grid__cell  -width-3/4--s">
+            {{ html()->formGroup()->text('city', __('auth.city')) }}
+        </div>
+    </div>
+
+    {{ html()->formGroup()->text('country', __('auth.country')) }}
+    {{ html()->formGroup()->text('telephone', __('auth.telephone')) }}
+
+    {{ html()->formGroup()->submit(__('auth.register')) }}
 
     {{ html()->form()->close() }}
+
+    <p>
+        <a href="{{ login_url() }}">@lang('auth.toLogin')</a>
+    </p>
 @endcomponent

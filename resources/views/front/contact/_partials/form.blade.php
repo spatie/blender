@@ -7,10 +7,10 @@
 
 <p>
     <div class="grid">
-        <div class="grid__cell -width-1/4">
+        <div class="grid__cell -width-1/4--s">
             {{ html()->formGroup()->text('postal', __('form.postal')) }}
         </div>
-        <div class="grid__cell  -width-3/4">
+        <div class="grid__cell  -width-3/4--s">
             {{ html()->formGroup()->text('city', __('form.city')) }}
         </div>
     </div>

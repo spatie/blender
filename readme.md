@@ -53,7 +53,7 @@ node -v
 npm -v
 ```
 
-We use a custom npm registry at [npm.spatie.be](https://npm.spatie.be) via [Sinopia](https://github.com/rlidwka/sinopia) for our private packages.
+We use a custom npm registry at [npm.spatie.be](https://npm.spatie.be) via [Sinopia](https://github.com/rlidwka/sinopia) for our private packages. 
 
 ```bash
 npm set registry http://npm.spatie.be
@@ -69,17 +69,16 @@ Don't forget to remove the registry line from your `~/.npmrc` if you're planning
 - Most of our projects are in Dutch. You can change the language in `config/app.php` and manage translations in `database/seeds/data/fragments.xlsx`
 - We use [Redactor](https://imperavi.com/redactor/) from Imperavi as text editor but are not licensed to open source this. The text editor is hence degraded to a standard text area unless you comment out this part in `resources/assets/back/app.js`
 
-### Gulp
+### Assets
 
-Run `gulp help` to see available options. 
-
-Blender uses our [blender-gulp](https://github.com/spatie-custom/blender-gulp) package for gulp tasks & setup, you will need to have [webpack](https://webpack.github.io/) installed globaly in order for gulp to work correctly `npm install -g webpack`.
-
-To get you started for both front and back-end assets, run:
+Blender uses [Laravel Mix](https://laravel.com/docs/5.4/mix) to build assets.
+To build assets run:
 
 ```bash
-gulp
+npm run dev
 ```
+
+Available build tasks are defined in `package.json`
 
 ## Colofon
 
