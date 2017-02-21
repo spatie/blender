@@ -10,6 +10,13 @@ return [
     'models.redirects' => 'Redirect',
     'models.tags' => 'Tag',
 
+    'tags' => [
+        'types' => [
+            'newsCategory' => 'Nieuws categorie',
+            'newsTag' => 'Nieuws tag',
+        ],
+    ],
+
     'tagTypes.newsCategory' => 'Nieuws categorie',
     'tagTypes.newsTag' => 'Nieuws tag',
 
