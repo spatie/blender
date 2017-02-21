@@ -72,7 +72,7 @@ class AdministratorsController
         $user->save();
 
         $eventDescription = $this->getEventDescriptionFor('updated', $user);
-        activity()->log($eventDescription);
+        activity()->on($user)->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\AdministratorsController@index');
@@ -99,7 +99,7 @@ class AdministratorsController
 
         $user->delete();
 
-        activity($eventDescription);
+        activity()->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\AdministratorsController@index');
@@ -113,10 +113,21 @@ class AdministratorsController
             $user->email
         );
 
-        if ($event === 'deleted') {
-            $name = $user->email;
+        $action = '';
+
+        if ($event === 'created') {
+            $action = __('werd aangemaakt');
         }
 
-        return trans("back.events.$event", ['model' => __('back.administrators.administrator'), 'name' => $name]);
+        if ($event === 'updated') {
+            $action = __('werd gewijzigd');
+        }
+
+        if ($event === 'deleted') {
+            $name = $user->email;
+            $action = __('werd verwijderd');
+        }
+
+        return __('Administrator').' '.$name.' '.$action;
     }
 }
