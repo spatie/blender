@@ -21,7 +21,7 @@ trait Forms
 
         $medialibraryUrl = action(
             'Back\Api\MediaLibraryController@add',
-            [class_basename($this->model), $this->model->id, 'redactor']
+            ['model_name' => get_class($this->model), 'model_id' => $this->model->id, 'redactor']
         );
 
         return $this->textarea($name, $value)
