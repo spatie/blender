@@ -4,7 +4,6 @@ namespace App\Services\Html;
 
 use Spatie\Html\HtmlElement;
 use Spatie\Html\Elements\Div;
-use Illuminate\Support\ViewErrorBag;
 
 class FormGroup
 {
@@ -123,12 +122,7 @@ class FormGroup
         return $this->wrapper()->children([
             $this->html->label(__($label).($this->required ? '*' : ''), $name),
             $contents,
-            $this->html->error($this->errors()->first($name)),
+            $this->html->errorFor($name),
         ]);
-    }
-
-    protected function errors(): ViewErrorBag
-    {
-        return session('errors', new ViewErrorBag());
     }
 }
