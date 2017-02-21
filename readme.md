@@ -46,11 +46,11 @@ php artisan migrate --seed
 
 ### NPM
 
-Installing Blender's npm dependecies requries Node ^4.4 and NPM ^3. Check your versions to be sure.
+Installing Blender's npm dependecies requries Node ^4.4 and NPM ^3 or yarn ^0.16. Check your versions to be sure.
 
 ```bash
 node -v
-npm -v
+yarn --version
 ```
 
 We use a custom npm registry at [npm.spatie.be](https://npm.spatie.be) via [Sinopia](https://github.com/rlidwka/sinopia) for our private packages. 
@@ -59,10 +59,8 @@ We use a custom npm registry at [npm.spatie.be](https://npm.spatie.be) via [Sino
 npm set registry http://npm.spatie.be
 npm set ca null
 
-npm install
+yarn install
 ```
-
-Don't forget to remove the registry line from your `~/.npmrc` if you're planning to publish to npm at some point.
 
 ### Customisation
 
@@ -75,7 +73,7 @@ Blender uses [Laravel Mix](https://laravel.com/docs/5.4/mix) to build assets.
 To build assets run:
 
 ```bash
-npm run dev
+yarn run dev
 ```
 
 Available build tasks are defined in `package.json`

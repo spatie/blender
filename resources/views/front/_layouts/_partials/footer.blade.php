@@ -9,6 +9,7 @@
         {!! schema()->company() !!}
     </section>
 
+
     <small>
         © {{ date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
     </small>
