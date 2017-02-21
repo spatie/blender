@@ -4460,16 +4460,16 @@
         },
         {
             "name": "spatie/laravel-html",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-html.git",
-                "reference": "32f13d5495b29319beda0b689b267dbd0858b4e1"
+                "reference": "d343390bc223687ed00708441735a710e7db2787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/32f13d5495b29319beda0b689b267dbd0858b4e1",
-                "reference": "32f13d5495b29319beda0b689b267dbd0858b4e1",
+                "url": "https://api.github.com/repos/spatie/laravel-html/zipball/d343390bc223687ed00708441735a710e7db2787",
+                "reference": "d343390bc223687ed00708441735a710e7db2787",
                 "shasum": ""
             },
             "require": {
@@ -4511,7 +4511,7 @@
                 "html",
                 "spatie"
             ],
-            "time": "2017-02-21 09:49:50"
+            "time": "2017-02-21 09:53:18"
         },
         {
             "name": "spatie/laravel-link-checker",
