@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'invalidToken' => 'Deze link is ongeldig'
+    'invalidToken' => 'Deze link is ongeldig',
 ];
