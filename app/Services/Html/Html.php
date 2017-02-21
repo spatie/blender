@@ -4,6 +4,7 @@ namespace App\Services\Html;
 
 use Carbon\Carbon;
 use Spatie\Html\Elements\Fieldset;
+use Spatie\Translatable\HasTranslations;
 
 class Html extends \Spatie\Html\Html
 {
@@ -69,13 +70,17 @@ class Html extends \Spatie\Html\Html
         }
 
         if (empty($value) && $this->model) {
-            $value = $this->locale ?
+            $value = $this->locale && is_object($this->model) && in_array(HasTranslations::class, class_uses_recursive($this->model)) ?
                 $this->model->getTranslation($name, $this->locale) ?? '' :
                 $this->model[$name] ?? '';
         }
 
         if ($value instanceof Carbon) {
             return $value->format('d/m/Y');
+        }
+
+        if (! is_string($value)) {
+            $value = '';
         }
 
         return $this->request->old($this->fieldName($name), $value);

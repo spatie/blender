@@ -4,11 +4,13 @@
     <div class="form__group">
         @if ($fragment->contains_image)
             {{ html()->formGroup()->media('images', 'image', 'Afbeelding') }}
-        @elseif($fragment->contains_html)
-            {{ html()->formGroup()->redactor('text', html()->span($locale)->class('label--lang')) }}
-            {!! Form::redactor($fragment, 'text', $locale) !!}
         @else
-            {{ html()->formGroup()->text('text', html()->span($locale)->class('label--lang')) }}
+            {{ html()->label(html()->span($locale)->class('label--lang'), 'text') }}
+            {{ html()
+                ->{$fragment->contains_html ? 'redactor' : 'text'}('text')
+                ->value(old(translate_field_name('text'), $fragment->getTranslation($locale)))
+            }}
+            {{ html()->errorFor('text') }}
         @endif
         {{ html()->error($errors->first(translate_field_name('text', $locale))) }}
     </div>
