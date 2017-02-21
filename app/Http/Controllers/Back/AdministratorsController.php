@@ -42,7 +42,7 @@ class AdministratorsController
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity()->on($user)->log($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.__('back.administrators.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.__('Er werd een mail verstuurd naar de gebruiker waarmee een wachtwoord kan ingesteld worden'));
 
         event(new UserCreated($user));
 

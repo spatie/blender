@@ -3,7 +3,7 @@
 ])
     <section>
         <div class="grid">
-            <h1>@trans('Log')</h1>
+            <h1>@lang('Log')</h1>
             {!! $logItems->render() !!}
             <table class="-datatable -compact">
                 <thead>

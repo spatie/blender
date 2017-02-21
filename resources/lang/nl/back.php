@@ -14,4 +14,5 @@ return [
     'tagTypes.newsTag' => 'Nieuws tag',
 
     'backToIndex' => 'Terug naar de lijst',
+
 ];

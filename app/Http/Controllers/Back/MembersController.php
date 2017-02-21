@@ -38,7 +38,7 @@ class MembersController
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.__('back.members.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.__('Er werd een mail verstuurd naar de gebruiker waarmee een wachtwoord kan ingesteld worden'));
 
         event(new UserCreatedThroughBack($user));
 
