@@ -24,6 +24,6 @@ return [
 
     'seo' => [
         'help' => 'Deze velden worden standaard afgeleid uit de inhoud. Vul een veld in om te overschrijven.',
-    ]
+    ],
 
 ];
