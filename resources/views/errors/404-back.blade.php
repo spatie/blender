@@ -1,13 +1,11 @@
 @component('back._layouts.master', [
-    'title' => fragment('error.title'),
+    'title' => __('Er liep iets mis'),
 ])
-
-    <h1>{{ fragment('error.title') }}</h1>
+    <h1>@lang('Er liep iets mis')</h1>
     <p>
-        {{ fragment('error.text.404') }}
+        @lang('Deze pagina kon niet gevonden worden')
     </p>
     <p>
-        <a class=button href="/blender">{{ fragment('error.button') }}</a>
+        <a class=button href="/blender">@lang('Terug naar Blender')</a>
     </p>
-
 @endcomponent

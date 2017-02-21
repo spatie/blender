@@ -5,7 +5,7 @@
 
                 <a class="menu__home__dashboard" href="{{ URL::action('Back\DashboardController@index') }}">
                     <span class="menu__home__dashboard__icon"></span>
-                    {{ fragment('back.dashboard.title') }}
+                    @lang('Dashboard')
                 </a>
 
                 <a class="menu__home__front" href="{{ URL::to('/') }}" target="blender">

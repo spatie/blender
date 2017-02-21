@@ -29,8 +29,6 @@ class RouteServiceProvider extends ServiceProvider
 
             $router->resource($module, $controller);
         });
-
-        $this->app['paginateroute']->registerMacros();
     }
 
     public function map(Router $router)

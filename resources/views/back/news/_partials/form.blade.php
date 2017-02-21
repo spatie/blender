@@ -1,5 +1,3 @@
-{!! BlenderForm::submit() !!}
-
 <div data-tabs class="tabs">
     <nav class="tabs__menu">
         <ul>
@@ -9,26 +7,25 @@
         </ul>
     </nav>
     <div id="content">
-       {!! BlenderForm::translated([
-         'name' => 'text',
-         'text' => 'redactor',
-        ]) !!}
+        {{ html()->translations(function () {
+            return [
+                html()->formGroup()->required()->text('name', 'Naam'),
+                html()->formGroup()->required()->redactor('text', 'Tekst'),
+            ];
+        }) }}
 
-        {!! BlenderForm::category('news_category') !!}
-        {!! BlenderForm::tags('news_tag') !!}
+        {{ html()->formGroup()->required()->category('newsCategory', 'Categorie') }}
+        {{ html()->formGroup()->tags('newsTag', 'Tags') }}
 
-        {!! BlenderForm::media('images', 'images') !!}
-        {!! BlenderForm::media('downloads', 'downloads') !!}
+        {{ html()->formGroup()->media('images', 'images', 'Afbeeldingen') }}
+        {{ html()->formGroup()->media('downloads', 'downloads', 'Downloads') }}
     </div>
     <div id="settings">
-        {!! BlenderForm::checkbox('online') !!}
-
-        {!! BlenderForm::date('publish_date') !!}
+        {{ html()->formGroup()->checkbox('online', 'Online') }}
+        {{ html()->formGroup()->date('publish_date', 'Publicatiedatum') }}
     </div>
     <div id="seo">
-        {!! BlenderForm::seo() !!}
-        {!! Html::info(fragment('back.seo.help')) !!}
+        {{ html()->seo() }}
+        {{ html()->info(__('back.seo.help')) }}
     </div>
 </div>
-
-{!! BlenderForm::submit() !!}

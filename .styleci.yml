@@ -4,3 +4,4 @@ linting: true
 
 disabled:
   - single_class_element_per_statement
+  - simplified_null_return

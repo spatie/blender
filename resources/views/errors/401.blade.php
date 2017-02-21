@@ -1,16 +1,14 @@
 @component('front._layouts.master', [
-    'title' => fragment('error.title'),
+    'title' => __('Er liep iets mis'),
 ])
-
     @slot('mainTitle')
-        <h1>{{ fragment('error.title') }}</h1>
+        <h1>@lang('Er liep iets mis')</h1>
     @endslot
 
     <p>
-        {{ fragment('error.text.401') }}
+        @lang('U heeft geen toegang tot deze pagina')
     </p>
     <p>
-        <a class=button href="{{ route('home') }}">{{ fragment('error.button') }}</a>
+        <a class=button href="{{ route('home') }}">@lang('Naar home')</a>
     </p>
-
 @endcomponent

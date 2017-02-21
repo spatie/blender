@@ -1,29 +1,32 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.people.title'),
+    'title' => __('Team'),
 ])
-
     <section>
         <div class="grid">
-            <h1>{{ fragment('back.people.title') }}</h1>
+            <h1>@lang('Team')</h1>
 
-            <a href="{{ action('Back\PeopleController@create') }}" class="button">{{ fragment('back.people.new') }}</a>
+            <a href="{{ action('Back\PeopleController@create') }}" class="button">
+                @lang('Nieuw persoon')
+            </a>
 
             <table data-sortable="{{ action('Back\PeopleController@changeOrder') }}">
                 <thead>
                 <tr>
-                    <th>{{ fragment('back.people.name') }}</th>
+                    <th>@lang('Naam')</th>
                     <th data-orderable="false"></th>
                 </tr>
-
+                </thead>
                 <tbody>
                 @foreach($models as $person)
                     <tr data-row-id="{{ $person->id }}">
                         <td>
-                            {!! Html::onlineIndicator($person->online) !!}
-                            <a href="{!! action('Back\PeopleController@edit', [$person->id]) !!}">{{ $person->name }}</a>
+                            {{ html()->onlineIndicator($person->online) }}
+                            <a href="{{ action('Back\PeopleController@edit', [$person->id]) }}">
+                                {{ $person->name }}
+                            </a>
                         </td>
                         <td class="-right">
-                            {!! Html::deleteButton(action('Back\PeopleController@destroy', $person->id)) !!}
+                            {{ html()->deleteButton(action('Back\PeopleController@destroy', $person->id)) }}
                         </td>
                     </tr>
                 @endforeach
@@ -31,5 +34,4 @@
             </table>
         </div>
     </section>
-
 @endcomponent

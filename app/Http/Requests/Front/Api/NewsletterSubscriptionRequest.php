@@ -31,6 +31,6 @@ class NewsletterSubscriptionRequest extends Request
 
     protected function failedValidation(Validator $validator)
     {
-        return response()->json(string('newsletter.subscription.error.invalidEmail'), 400);
+        return response()->json(__('newsletter.subscription.error.invalidEmail'), 400);
     }
 }

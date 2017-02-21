@@ -1,22 +1,26 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.news.title'),
-    'breadcrumbs' => Html::backToIndex('Back\NewsController@index'),
+    'title' => __('Nieuws'),
+    'breadcrumbs' => html()->backToIndex('Back\NewsController@index'),
 ])
-
     <section>
         <div class="grid">
-            <h1>{!! Html::onlineIndicator($model->online) !!}{{ $model->name ?: fragment('back.news.new') }}</h1>
+            <h1>
+                {{ html()->onlineIndicator($model->online) }}
+                {{ $model->name ?: __('Nieuw nieuwsbericht') }}
+            </h1>
 
-            {!! Form::openDraftable([
-                'method'=>'PATCH',
-                'action'=> ['Back\NewsController@update', $model->id],
-                'class' => '-stacked'
-            ], $model) !!}
+            {{ html()
+                ->modelForm($model, 'PATCH', action('Back\NewsController@update', $model->id))
+                ->class('-stacked')
+                ->open() }}
+
+            {{ html()->formGroup()->submit('Bewaar nieuws') }}
 
             @include('back.news._partials.form')
 
-            {!! Form::close() !!}
+            {{ html()->formGroup()->submit('Bewaar nieuws') }}
+
+            {{ html()->closeModelForm() }}
         </div>
     </section>
-
 @endcomponent

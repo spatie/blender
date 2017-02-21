@@ -1,7 +1,7 @@
-{!! BlenderForm::select('type', $types) !!}
+{{ html()->formGroup()->required()->select('type', 'Type', $types) }}
 
-{!! BlenderForm::translated([
-    'name' => 'text',
-]) !!}
-
-{!! BlenderForm::submit() !!}
+{{ html()->translations(function () {
+    return [
+        html()->formGroup()->required()->text('name', 'Naam'),
+    ];
+}) }}

@@ -1,29 +1,25 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.redirects.title'),
-    'breadcrumbs' => Html::backToIndex('Back\RedirectsController@index'),
+    'title' => __('Redirects'),
+    'breadcrumbs' => html()->backToIndex('Back\RedirectsController@index'),
 ])
-
     <section>
         <div class="grid">
             <h1>
-                {{ $model->old_url ?: fragment('back.redirects.new') }}
+                {{ $model->old_url ?: __('Nieuwe redirect') }}
             </h1>
 
-            {!! Form::openDraftable([
-                'method'=>'PATCH',
-                'action'=> ['Back\RedirectsController@update', $model->id],
-                'class' => '-stacked'
-            ], $model) !!}
+            {{ html()
+                ->modelForm($model, 'PATCH', action('Back\RedirectsController@update', $model->id))
+                ->class('-stacked')
+                ->open() }}
 
-            @if($model->technical_name && view()->exists("back.redirects._partials.{$model->technical_name}Form"))
-                @include("back.redirects._partials.{$model->technical_name}Form")
-            @else
-                @include('back.redirects._partials.form')
-            @endif
+            {{ html()->formGroup()->submit('Bewaar redirect') }}
 
-            {!! Form::close() !!}
+            @include('back.redirects._partials.form')
 
+            {{ html()->formGroup()->submit('Bewaar redirect') }}
+
+            {{ html()->closeModelForm() }}
         </div>
     </section>
-
 @endcomponent

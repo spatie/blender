@@ -38,7 +38,7 @@ class MembersController
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.fragment('back.members.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.__('back.members.passwordMailSent'));
 
         event(new UserCreatedThroughBack($user));
 
@@ -95,6 +95,6 @@ class MembersController
             $name = $user->email;
         }
 
-        return trans("back.events.$event", ['model' => fragment('back.members.member'), 'name' => $name]);
+        return trans("back.events.$event", ['model' => __('back.members.member'), 'name' => $name]);
     }
 }

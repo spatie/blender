@@ -89,7 +89,7 @@ return [
     |
     */
 
-    'locales' => ['nl'],
+    'locales' => ['nl', 'en'],
     'backLocales' => ['nl'],
     'fragmentLocales' => ['nl'],
 
@@ -175,7 +175,7 @@ return [
         Spatie\TranslationLoader\TranslationServiceProvider::class,
         App\Services\Navigation\NavigationServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
-        Themsaid\MailPreview\MailPreviewServiceProvider::class,
+        //Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
         App\Providers\AuthServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
@@ -204,7 +204,6 @@ return [
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\Newsletter\NewsletterServiceProvider::class,
-        Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
         Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
         Spatie\ModelCleanup\ModelCleanupServiceProvider::class,

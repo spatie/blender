@@ -52,7 +52,7 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        $frontLink = '<a href="/">'.fragment('back.auth.frontLink').'</a>';
+        $frontLink = '<a href="/">'.__('back.auth.frontLink').'</a>';
 
         flash()->info(trans('auth.loggedOut').' '.$frontLink);
 
