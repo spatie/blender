@@ -2,6 +2,7 @@
 
 namespace App\Services\Html\Concerns;
 
+use Illuminate\Support\ViewErrorBag;
 use Spatie\Html\Elements\Div;
 
 trait Alerts
@@ -36,6 +37,14 @@ trait Alerts
 
         return $this->alert('danger', $message)
             ->attributeIf($field, 'data-validation-error', $field);
+    }
+
+    public function errorFor(string $field): ?Div
+    {
+        return $this->error(
+            session('errors', new ViewErrorBag())->first($this->fieldName($field)),
+            $this->fieldName($field)
+        );
     }
 
     public function message($message = ''): Div
