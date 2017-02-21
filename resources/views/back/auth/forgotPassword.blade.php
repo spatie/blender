@@ -10,7 +10,7 @@
 
         <div class="v-auth__card">
             {{ html()
-                ->form('POST', 'Back\Auth\ForgotPasswordController@sendResetLinkEmail')
+                ->form('POST', action('Back\Auth\ForgotPasswordController@sendResetLinkEmail'))
                 ->class('-stacked v-auth__form')
                 ->open() }}
 
