@@ -217,6 +217,7 @@ return [
         Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
         Spatie\MailableTest\MailableTestServiceProvider::class,
         Spatie\Referer\RefererServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class,
     ],
 
     /*
