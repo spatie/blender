@@ -12,4 +12,6 @@ return [
 
     'tagTypes.newsCategory' => 'Nieuws categorie',
     'tagTypes.newsTag' => 'Nieuws tag',
+
+    'backToIndex' => 'Terug naar de lijst',
 ];
