@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Back\Api;
 
-use Response;
 use Exception;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\Media;
@@ -33,7 +32,12 @@ class MediaLibraryController extends Controller
             });
 
         if ($request->has('redactor')) {
-            return Response::json(['filelink' => $media->first()->getUrl('redactor')]);
+            $media = $media->first();
+
+            return response()->json([
+                'url' => $request->get('redactor') === 'file' ? $media->getUrl() : $media->getUrl('redactor'),
+                'name' => $media->file_name,
+            ]);
         }
 
         return fractal()->collection($media)->transformWith(new MediaTransformer());
