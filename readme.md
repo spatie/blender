@@ -13,7 +13,7 @@ follow semver for this project and won't guarantee that the code (especially the
 
 ## Install
 
-This guide assumes you're using [Laravel Homestead](https://github.com/laravel/homestead)
+This guide assumes you're using [Laravel Valet](https://github.com/laravel/valet)
 
 ### Laravel App
 
@@ -21,13 +21,6 @@ Download the master branch
 
 ```bash
 git clone https://github.com/spatie/blender.git
-```
-
-Edit your Homestead.yaml file and add Blender as a site
-
-```bash
-sites:
-    - { map: blender.dev, to: /home/vagrant/Sites/blender/public }
 ```
 
 Install the composer dependencies
@@ -38,36 +31,19 @@ composer install
 
 Make a copy `.env.example` and rename to `.env`
 
-Finally make sure you have a database named `blender` in Homestead, and run the migrations and seeds
+Finally make sure you have a database named `blender`, and run the migrations and seeds
 
 ```bash
 php artisan migrate --seed
 ```
 
-### NPM
-
-Installing Blender's npm dependecies requries Node ^4.4 and NPM ^3 or yarn ^0.16. Check your versions to be sure.
-
-```bash
-node -v
-yarn --version
-```
-
-We use a custom npm registry at [npm.spatie.be](https://npm.spatie.be) via [Sinopia](https://github.com/rlidwka/sinopia) for our private packages. 
-
-```bash
-npm set registry http://npm.spatie.be
-npm set ca null
-
-yarn install
-```
-
-### Customisation
-
-- Most of our projects are in Dutch. You can change the language in `config/app.php` and manage translations in `database/seeds/data/fragments.xlsx`
-- We use [Redactor](https://imperavi.com/redactor/) from Imperavi as text editor but are not licensed to open source this. The text editor is hence degraded to a standard text area unless you comment out this part in `resources/assets/back/app.js`
-
 ### Assets
+
+Installing Blender's front end dependecies requries `yarn`.
+
+```
+yarn
+```
 
 Blender uses [Laravel Mix](https://laravel.com/docs/5.4/mix) to build assets.
 To build assets run:
@@ -77,6 +53,12 @@ yarn run dev
 ```
 
 Available build tasks are defined in `package.json`
+
+
+### Customisation
+
+- Most of our projects are in Dutch. You can change the language in `config/app.php` and manage translations in `database/seeds/data/fragments.xlsx`
+- We use [Redactor](https://imperavi.com/redactor/) from Imperavi as text editor but are not licensed to open source this. The text editor is hence degraded to a standard text area unless you comment out this part in `resources/assets/back/app.js`
 
 ## Colofon
 
