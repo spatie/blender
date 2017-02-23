@@ -51,7 +51,7 @@
         "spatie/laravel-html": "^0.2.0",
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-mailable-test": "^1.0",
-        "spatie/laravel-medialibrary": "5.0.0",
+        "spatie/laravel-medialibrary": "^5.0.0",
         "spatie/laravel-menu": "^2.0.0",
         "spatie/laravel-migrate-fresh": "^1.0",
         "spatie/laravel-missing-page-redirector": "^1.0",
