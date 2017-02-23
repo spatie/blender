@@ -2,6 +2,6 @@
 
 return [
 
-    'fallback_locale' => content_locale(),
+    'fallback_locale' => 'nl',
 
 ];
