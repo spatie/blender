@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use ArticleSeeder;
 use FragmentSeeder;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Facades\Hash;
@@ -23,5 +24,6 @@ trait CreatesApplication
     {
         $this->artisan('migrate:fresh');
         $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
+        $this->artisan('db:seed', ['--class' => ArticleSeeder::class]);
     }
 }
