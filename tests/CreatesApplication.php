@@ -3,6 +3,7 @@
 namespace Tests;
 
 use ArticleSeeder;
+use ErrorException;
 use FragmentSeeder;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Console\Kernel;
@@ -22,6 +23,12 @@ trait CreatesApplication
 
     protected function setUpDatabase()
     {
+        try {
+            unlink(config('database.sqlite.database'));
+        } catch (ErrorException $e) {}
+
+        touch(config('database.sqlite.database'));
+
         $this->artisan('migrate:fresh');
         $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
         $this->artisan('db:seed', ['--class' => ArticleSeeder::class]);
