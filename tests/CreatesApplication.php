@@ -25,7 +25,8 @@ trait CreatesApplication
     {
         try {
             unlink(config('database.sqlite.database'));
-        } catch (ErrorException $e) {}
+        } catch (ErrorException $e) {
+        }
 
         touch(config('database.sqlite.database'));
 
