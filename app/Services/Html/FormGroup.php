@@ -107,6 +107,11 @@ class FormGroup
         return $this->assemble($name, $label, $this->html->text($name));
     }
 
+    public function textarea(string $name, string $label): Div
+    {
+        return $this->assemble($name, $label, $this->html->textarea($name));
+    }
+
     public function withContents($contents): Div
     {
         return $this->wrapper()->children($contents);
