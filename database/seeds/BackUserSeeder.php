@@ -13,7 +13,6 @@ class BackUserSeeder extends DatabaseSeeder
         collect([
             ['Freek', 'Van der Herten'],
             ['Jef', 'Van der Voort'],
-            ['Rogier', 'De Boevé'],
             ['Sebastian', 'De Deyne'],
             ['Willem', 'Van Bockstal'],
         ])->each(function ($name) {
