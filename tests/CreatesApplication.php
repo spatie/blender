@@ -24,11 +24,11 @@ trait CreatesApplication
     protected function setUpDatabase()
     {
         try {
-            unlink(config('database.sqlite.database'));
+            unlink(config('database.connections.sqlite.database'));
         } catch (ErrorException $e) {
         }
 
-        touch(config('database.sqlite.database'));
+        touch(config('database.connections.sqlite.database'));
 
         $this->artisan('migrate:fresh');
         $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
