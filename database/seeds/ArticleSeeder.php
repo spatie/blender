@@ -14,11 +14,6 @@ class ArticleSeeder extends DatabaseSeeder
         ])->each(function ($attributes) {
             $this->seedArticle(...$attributes);
         });
-
-        $parent = $this->seedArticle('Parent');
-
-        $this->seedArticle('Child 1', null, $parent);
-        $this->seedArticle('Child 2', null, $parent);
     }
 
     public function seedArticle(string $name, string $technicalName = null, Article $parent = null): Article
@@ -34,7 +29,7 @@ class ArticleSeeder extends DatabaseSeeder
 
         $this->addImages($article);
 
-        $this->addContentBlocks($article);
+        //$this->addContentBlocks($article);
 
         return $article;
     }
