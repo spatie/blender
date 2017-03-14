@@ -125,7 +125,7 @@ class FormGroup
     protected function assemble(string $name, string $label, HtmlElement $contents): Div
     {
         return $this->wrapper()->children([
-            $this->html->label(__($label), $name)->class($this->required ? 'label--required': ''),
+            $this->html->label(__($label), $name)->class($this->required ? 'label--required' : ''),
             $contents,
             $this->html->errorFor($name),
         ]);
