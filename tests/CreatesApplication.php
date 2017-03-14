@@ -3,7 +3,6 @@
 namespace Tests;
 
 use ArticleSeeder;
-use ErrorException;
 use FragmentSeeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
