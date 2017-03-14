@@ -5,6 +5,7 @@ namespace Tests;
 use ArticleSeeder;
 use ErrorException;
 use FragmentSeeder;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Console\Kernel;
 
@@ -23,15 +24,23 @@ trait CreatesApplication
 
     protected function setUpDatabase()
     {
-        try {
-            unlink(config('database.connections.sqlite.database'));
-        } catch (ErrorException $e) {
-        }
-
-        touch(config('database.connections.sqlite.database'));
+        $this->setUpSqlite();
 
         $this->artisan('migrate:fresh');
         $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
         $this->artisan('db:seed', ['--class' => ArticleSeeder::class]);
+    }
+
+    protected function setUpSqlite()
+    {
+        DB::getPdo()->sqliteCreateFunction('regexp',
+            function ($pattern, $data, $delimiter = '~', $modifiers = 'isuS') {
+                if (isset($pattern, $data) !== true) {
+                    return null;
+                }
+
+                return preg_match(sprintf('%1$s%2$s%1$s%3$s', $delimiter, $pattern, $modifiers), $data) > 0;
+            }
+        );
     }
 }
