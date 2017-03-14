@@ -89,7 +89,7 @@ return [
     |
     */
 
-    'locales' => ['nl'],
+    'locales' => ['nl', 'en'],
     'backLocales' => ['nl'],
     'fragmentLocales' => ['nl'],
 
@@ -175,7 +175,7 @@ return [
         Spatie\TranslationLoader\TranslationServiceProvider::class,
         App\Services\Navigation\NavigationServiceProvider::class,
         App\Providers\ConfigServiceProvider::class,
-        Themsaid\MailPreview\MailPreviewServiceProvider::class,
+        //Themsaid\MailPreview\MailPreviewServiceProvider::class,
 
         App\Providers\AuthServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
@@ -189,6 +189,7 @@ return [
         App\Providers\EventServiceProvider::class,
 
         Spatie\Blender\Model\BlenderModelServiceProvider::class,
+
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
@@ -197,14 +198,12 @@ return [
         Spatie\Activitylog\ActivitylogServiceProvider::class,
         Spatie\Backup\BackupServiceProvider::class,
         Spatie\Fractal\FractalServiceProvider::class,
-        Spatie\Glide\GlideServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
         Spatie\Analytics\AnalyticsServiceProvider::class,
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\Newsletter\NewsletterServiceProvider::class,
-        Spatie\PaginateRoute\PaginateRouteServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
         Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
         Spatie\ModelCleanup\ModelCleanupServiceProvider::class,
@@ -217,6 +216,8 @@ return [
         Spatie\CollectionMacros\CollectionMacroServiceProvider::class,
         Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
         Spatie\MailableTest\MailableTestServiceProvider::class,
+        Spatie\Referer\RefererServiceProvider::class,
+        Themsaid\MailPreview\MailPreviewServiceProvider::class,
     ],
 
     /*
@@ -278,7 +279,6 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Fractal' => Spatie\Fractal\FractalFacade::class,
-        'GlideImage' => Spatie\Glide\GlideImageFacade::class,
         'GoogleTagManager' => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
         'Menu' => Spatie\Menu\Laravel\MenuFacade::class,
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,

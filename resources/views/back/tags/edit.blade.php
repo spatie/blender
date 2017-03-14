@@ -1,21 +1,25 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.tags.title'),
-    'breadcrumbs' => Html::backToIndex('Back\TagsController@index'),
+    'title' => __('Tags'),
+    'breadcrumbs' => html()->backToIndex('Back\TagsController@index'),
 ])
-
     <section>
         <div class="grid">
-            <h1>{{ $model->name ?: fragment('back.tags.new') }}</h1>
+            <h1>
+                {{ $model->name ?: __('Nieuwe tag') }}
+            </h1>
 
-            {!! Form::openDraftable([
-                'method'=>'PATCH',
-                'action'=> ['Back\TagsController@update', $model->id],
-                'class' => '-stacked'
-            ], $model) !!}
+            {{ html()
+                ->modelForm($model, 'PATCH', action('Back\TagsController@update', $model->id))
+                ->class('-stacked')
+                ->open() }}
+
+            {{ html()->formGroup()->submit('Bewaar tag') }}
 
             @include('back.tags._partials.form')
 
-            {!! Form::close() !!}
+            {{ html()->formGroup()->submit('Bewaar tag') }}
+
+            {{ html()->closeModelForm() }}
         </div>
     </section>
 

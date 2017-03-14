@@ -28,7 +28,7 @@ class TagsController extends Controller
 
     public function index()
     {
-        $tags = Tag::orderBy('order_column')->get()->reduce(function (Collection $carry, Tag $tag) {
+        $tags = Tag::where('draft', false)->orderBy('order_column')->get()->reduce(function (Collection $carry, Tag $tag) {
             if (! $carry->has($tag->type)) {
                 $carry->put($tag->type, new Collection());
             }

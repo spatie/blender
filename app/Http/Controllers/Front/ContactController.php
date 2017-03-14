@@ -26,7 +26,7 @@ class ContactController extends Controller
 
         activity()->log("{$formResponse->email} vulde het contactformulier in");
 
-        flash()->success(fragment('contact.response'));
+        flash()->success(__('contact.response'));
 
         return redirect()->action('Front\ContactController@index');
     }

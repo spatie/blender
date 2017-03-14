@@ -90,7 +90,7 @@ class User extends BaseUser
 
     public function delete()
     {
-        if (current_back_user() && current_back_user()->id === $this->id) {
+        if (current_user() && current_user()->id === $this->id) {
             abort(406);
         }
 

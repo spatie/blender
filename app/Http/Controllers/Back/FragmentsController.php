@@ -54,7 +54,7 @@ class FragmentsController
         $this->updateMedia($fragment, $request);
         app('cache')->flush();
 
-        $eventDescription = fragment('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);
+        $eventDescription = __('back.events.updated', ['model' => 'Fragment', 'name' => $fragment->name]);
 
         flash()->success(strip_tags($eventDescription));
 

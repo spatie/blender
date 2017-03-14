@@ -1,29 +1,23 @@
 @component('front._layouts.main', [
-'title' => fragment('auth.titleLogin')
+    'title' => __('auth.titleLogin')
 ])
+    {{ html()->form()->open() }}
 
-    {!! Form::open() !!}
+    <div class="form__group">
+        {{ html()->label(__('auth.email'), 'email')->class('label--required') }}
+        {{ html()->email('email')->attribute('autofocus') }}
+        {{ html()->error($errors->first('email')) }}
+    </div>
 
-    <p>
-        {!! Form::label('email', fragment('auth.email')) !!}
-        {!! Form::email('email', old('email'), ['autofocus' => true ]) !!}
-        {!! Html::error($errors->first('email')) !!}
-    </p>
-    <p>
-        {!! Form::label('password', fragment('auth.password')) !!}
-        {!! Form::password('password', [ ]) !!}
-        {!! Html::error($errors->first('password')) !!}
-    </p>
-    <p>
-        {!! Form::button(fragment('auth.login'), ['type'=>'submit', 'class'=>'button--primary']) !!}
-    </p>
+    {{ html()->formGroup()->required()->password('password', __('auth.password')) }}
 
-    {!! Form::close() !!}
+    {{ html()->formGroup()->submit(__('auth.login')) }}
+
+    {{ html()->form()->close() }}
 
     <p>
-        <a href="{{ action('Front\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ fragment('auth.forgotPassword') }}</a>
+        <a href="{{ action('Front\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ __('auth.forgotPassword') }}</a>
         |
-        <a href="{{ register_url() }}">{{ fragment('auth.noAccount') }}</a>
+        <a href="{{ register_url() }}">{{ __('auth.noAccount') }}</a>
     </p>
-
 @endcomponent

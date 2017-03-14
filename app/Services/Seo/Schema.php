@@ -9,18 +9,18 @@ class Schema
     public function company()
     {
         return Builder::localBusiness()
-            ->name(fragment('company.name'))
-            ->email(fragment('company.email'))
-            ->telephone(fragment('company.telephone'))
+            ->name(__('company.name'))
+            ->email(__('company.email'))
+            ->telephone(__('company.telephone'))
             ->url(url('/'))
             ->address(Builder::postalAddress()
-                ->streetAddress(fragment('company.address'))
-                ->postalCode(fragment('company.postal'))
-                ->addressLocality(fragment('company.city'))
+                ->streetAddress(__('company.address'))
+                ->postalCode(__('company.postal'))
+                ->addressLocality(__('company.city'))
                 ->addressCountry('BE')
             )
             ->sameAs([
-                fragment('company.googleMyBusinessUrl'),
+                __('company.googleMyBusinessUrl'),
             ]);
     }
 }

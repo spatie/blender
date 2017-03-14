@@ -2,12 +2,10 @@
 
 namespace App\Models\Presenters;
 
-use Spatie\String\Str;
-
 trait NewsItemPresenter
 {
-    public function getExcerptAttribute(): Str
+    public function getExcerptAttribute(): string
     {
-        return string($this->text)->tease(200);
+        return str_tease($this->text);
     }
 }

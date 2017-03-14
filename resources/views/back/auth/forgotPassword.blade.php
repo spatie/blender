@@ -1,39 +1,41 @@
 @component('back._layouts.master', [
-    'pageTitle' => fragment('back.auth.titleResetPassword')
+    'title' => __('Wachtwoord vergeten')
 ])
-
-
-
     <section class="v-auth">
-        {{-- @include('auth._partials.lang') --}}
-
-        @include('back._layouts._partials.flashMessage', ['extraClass' => 'alerts--fixed'])
+        @if(html()->flashMessage())
+            <div class="alerts--fixed">
+                {{ html()->flashMessage() }}
+            </div>
+        @endif
 
         <div class="v-auth__card">
-            {!! Form::open(['class'=>'-stacked v-auth__form', 'action' => 'Back\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
-            <h1 class="v-auth__title -small">{{ fragment('back.auth.resetPassword.title') }}</h1>
-            @if(session('status'))
-                <p class="alert--info">
-                    {{ session('status') }}
-                </p>
-            @else
-                <p class="alert--info">
-                    {{ fragment('back.auth.resetPassword.intro') }}
-                </p>
-            @endif
-            <div class="form__group">
-                {!! Form::label('email', fragment('back.auth.email')) !!}
-                {!! Form::email('email', null, ['autofocus' => true]) !!}
-                {!! Html::error($errors->first('email')) !!}
+            {{ html()
+                ->form('POST', action('Back\Auth\ForgotPasswordController@sendResetLinkEmail'))
+                ->class('-stacked v-auth__form')
+                ->open() }}
+
+            <h1 class="v-auth__title -small">
+                @lang('Wachtwoord vergeten')
+            </h1>
+
+            {{ html()->info(session('status') ?: __('Geef je e-mailadres op en we sturen je een link waarmee je je wachtwoord kan wijzigen')) }}
+
+            {{ html()->formGroup()->email('email', 'E-mail') }}
+
+            {{ html()->formGroup()->withContents(
+                html()->button()
+                    ->type('submit')
+                    ->text(__('Link verzenden'))
+                    ->class('button -default')
+            )->class('-buttons') }}
+
+            <div class="form__group__help">
+                <a href="{{ login_url() }}">
+                    @lang('Terug naar login')
+                </a>
             </div>
 
-            <div class="form__group -buttons">
-                {!! Form::button( fragment('back.auth.resetPassword.button'), ['type'=>'submit', 'class'=>'button -default']) !!}
-            </div>
-            <div class="form__group__help">
-                <a href="{{ login_url()  }}">{{ fragment('back.auth.toLogin') }}</a>
-            </div>
-            {!! Form::close() !!}
+            {{ html()->form()->close() }}
         </div>
     </section>
 @endcomponent

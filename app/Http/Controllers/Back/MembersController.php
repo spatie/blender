@@ -37,8 +37,8 @@ class MembersController
         $user->save();
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
-        activity($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.fragment('back.members.passwordMailSent'));
+        activity()->on($user)->log($eventDescription);
+        flash()->success(strip_tags($eventDescription).'. '.__('Er werd een mail verstuurd naar de gebruiker waarmee een wachtwoord kan ingesteld worden'));
 
         event(new UserCreatedThroughBack($user));
 
@@ -74,9 +74,10 @@ class MembersController
     {
         $user = User::findOrFail($id);
 
+        $eventDescription = $this->getEventDescriptionFor('deleted', $user);
+
         $user->delete();
 
-        $eventDescription = $this->getEventDescriptionFor('deleted', $user);
         activity()->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
@@ -91,10 +92,21 @@ class MembersController
             $user->email
         );
 
-        if ($event === 'deleted') {
-            $name = $user->email;
+        $action = '';
+
+        if ($event === 'created') {
+            $action = __('werd aangemaakt');
         }
 
-        return trans("back.events.$event", ['model' => fragment('back.members.member'), 'name' => $name]);
+        if ($event === 'updated') {
+            $action = __('werd gewijzigd');
+        }
+
+        if ($event === 'deleted') {
+            $name = $user->email;
+            $action = __('werd verwijderd');
+        }
+
+        return __('Lid').' '.$name.' '.$action;
     }
 }

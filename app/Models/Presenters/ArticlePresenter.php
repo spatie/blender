@@ -2,17 +2,15 @@
 
 namespace App\Models\Presenters;
 
-use Spatie\String\Str;
-
 trait ArticlePresenter
 {
-    public function getExcerptAttribute(): Str
+    public function getExcerptAttribute(): string
     {
-        return string($this->text)->tease(200);
+        return str_tease($this->text, 200);
     }
 
-    public function getMetaAttribute(): Str
+    public function getMetaAttribute(): string
     {
-        return $this->tease(155);
+        return str_tease($this->text, 155);
     }
 }

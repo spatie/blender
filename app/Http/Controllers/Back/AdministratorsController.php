@@ -32,7 +32,7 @@ class AdministratorsController
         $user->locale = $request->get('locale', 'nl');
 
         if ($request->has('password')) {
-            $user->password = $request->get('password');
+            $user->password = bryct($request->get('password'));
         }
 
         $user->role = UserRole::ADMIN;
@@ -42,7 +42,7 @@ class AdministratorsController
 
         $eventDescription = $this->getEventDescriptionFor('created', $user);
         activity()->on($user)->log($eventDescription);
-        flash()->success(strip_tags($eventDescription).'. '.fragment('back.administrators.passwordMailSent'));
+        flash()->success(strip_tags($eventDescription).'. '.__('Er werd een mail verstuurd naar de gebruiker waarmee een wachtwoord kan ingesteld worden'));
 
         event(new UserCreated($user));
 
@@ -72,7 +72,7 @@ class AdministratorsController
         $user->save();
 
         $eventDescription = $this->getEventDescriptionFor('updated', $user);
-        activity()->log($eventDescription);
+        activity()->on($user)->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\AdministratorsController@index');
@@ -99,7 +99,7 @@ class AdministratorsController
 
         $user->delete();
 
-        activity($eventDescription);
+        activity()->log($eventDescription);
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\AdministratorsController@index');
@@ -113,10 +113,21 @@ class AdministratorsController
             $user->email
         );
 
-        if ($event === 'deleted') {
-            $name = $user->email;
+        $action = '';
+
+        if ($event === 'created') {
+            $action = __('werd aangemaakt');
         }
 
-        return trans("back.events.$event", ['model' => fragment('back.administrators.administrator'), 'name' => $name]);
+        if ($event === 'updated') {
+            $action = __('werd gewijzigd');
+        }
+
+        if ($event === 'deleted') {
+            $name = $user->email;
+            $action = __('werd verwijderd');
+        }
+
+        return __('Administrator').' '.$name.' '.$action;
     }
 }

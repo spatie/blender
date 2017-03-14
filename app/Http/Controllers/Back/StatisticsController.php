@@ -10,7 +10,7 @@ class StatisticsController
     public function index()
     {
         if (empty(config('laravel-analytics.view_id'))) {
-            return view('back.statistics.notconfigured');
+            return view('back.statistics.notConfigured');
         }
 
         $visitors = Analytics::fetchTotalVisitorsAndPageViews(Period::days(365))

@@ -1,25 +1,20 @@
+<h2>@lang('Meest bezochte pagina\'s')</h2>
 
-<h2>{{ fragment('back.statistics.mostVisitedPages') }}</h2>
-
-@if (count($pages))
-    <table  class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
+@if(count($pages))
+    <table class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
-        <th>{{ fragment('back.statistics.page') }}</th>
-        <th>{{ fragment('back.statistics.numberOfVisitors') }}</th>
+        <th>@lang('Pagina')</th>
+        <th>@lang('Aantal bezoekers')</th>
         </thead>
         <tbody>
         @foreach($pages as $page)
             <tr>
-                <td>
-                    {{ $page['url'] }}
-                </td>
-                <td>
-                    {{ $page['pageViews'] }}
-                </td>
+                <td>{{ $page['url'] }}</td>
+                <td>{{ $page['pageViews'] }}</td>
             </tr>
         @endforeach
         </tbody>
     </table>
 @else
-    {!! Html::info(fragment('back.statistics.noData')) !!}
+    {{ html()->info(__('Er zijn nog geen gegevens beschikbaar.')) }}
 @endif

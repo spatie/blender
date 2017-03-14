@@ -1,30 +1,21 @@
 @component('front._layouts.main', [
-'title' => fragment('auth.titleResetPassword')
+    'title' => __('auth.titleResetPassword')
 ])
 
-    {!! Form::open(['action' => 'Front\Auth\ForgotPasswordController@sendResetLinkEmail']) !!}
+    {{ html()->form('POST', action('Front\Auth\ForgotPasswordController@sendResetLinkEmail'))->open() }}
 
-    @if(session('status'))
-    <p class="alert--info">
-        {{ session('status') }}
-    </p>
-    @else
-    <p class="alert--info">
-        {{ fragment('auth.resetPassword.intro') }}
-    </p>
-    @endif
-    <p>
-        {!! Form::label('email', fragment('auth.email')) !!}
-        {!! Form::email('email', null, ['autofocus' => true]) !!}
-        {!! Html::error($errors->first('email')) !!}
-    </p>
-    <p>
-        {!! Form::button( fragment('auth.resetPassword.button'), ['type'=>'submit', 'class'=>'button--primary']) !!}
-    </p>
-    <p>
-        <a href="{{ login_url() }}">{{ fragment('auth.toLogin') }}</a>
-    </p>
+    {{ html()->formGroup()->withContents(
+        html()->info(session('status') ?: __('auth.resetPassword.intro'))
+       )
+    }}
 
-    {!! Form::close() !!}
+    {{ html()->formGroup()->required()->email('email', __('auth.email')) }}
 
+    {{ html()->formGroup()->submit(__('auth.resetPassword.button')) }}
+
+    {{ html()->form()->close() }}
+
+    <p>
+        <a href="{{ login_url() }}">@lang('auth.toLogin')</a>
+    </p>
 @endcomponent

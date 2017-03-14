@@ -1,33 +1,25 @@
 @component('front._layouts.main', [
-'title' => fragment('auth.titleChangePassword')
+    'title' => __('auth.titleChangePassword')
 ])
+    <h1>
+        {{ html()->avatar($user, '-large') }} <br>
+        @lang('auth.titleChangePassword')
+    </h1>
 
-    @slot('mainTitle')
-        <h1 class="v-auth__title -small">
-            {!! Html::avatar($user, '-large v-auth__gravatar') !!}<br>
-            {{ fragment('auth.titleChangePassword') }}
-        </h1>
-    @endslot
+    {{ html()->form('POST', 'Front\Auth\ResetPasswordController@reset')->open() }}
 
-    {!! Form::open(['action' => 'Front\Auth\ResetPasswordController@reset']) !!}
-    {!! Form::hidden('token', $token) !!}
-    {!! Form::hidden('email', $user->email) !!}
-    <p class="alert">
-        {{ fragment('auth.resetInstructions') }}
-    </p>
-    <p>
-        {!! Form::label('password', fragment('auth.password') ) !!}
-        {!! Form::password('password', null, ['autofocus' ]) !!}
-    </p>
-    <p>
-        {!! Form::label('password_confirmation', fragment('auth.passwordConfirm')) !!}
-        {!! Form::password('password_confirmation', [null]) !!}
-        {!! Html::error($errors->first('password')) !!}
-    </p>
-    <p>
-        {!! Form::button(trans('auth.passwordMail.' . ($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser') . '.resetButton'), ['type'=>'submit', 'class'=>'button--primary']) !!}
-    </p>
+    {{ html()->hidden('token', $token) }}
+    {{ html()->hidden('email', $user->email) }}
 
-    {!! Form::close() !!}
+    {{ html()->formGroup()->withContents(
+        html()->info(__('auth.resetInstructions'))
+       )
+    }}
 
+    {{ html()->formGroup()->required()->password('password', __('auth.password')) }}
+    {{ html()->formGroup()->required()->password('password_confirmation', __('auth.passwordConfirm')) }}
+
+    {{ html()->formGroup()->submit(__('auth.passwordMail.'.($user->hasNeverLoggedIn() ? 'newUser' : 'oldUser').'.resetButton')) }}
+
+    {{ html()->form()->close() }}
 @endcomponent

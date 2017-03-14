@@ -11,7 +11,7 @@ function init() {
 }
 
 function initializeEditor($textarea) {
-    const apiUrl = $textarea.data('redactor-medialibrary-url');
+    const apiUrl = $textarea.data('editor-medialibrary-url');
 
     function triggerChange() {
         $textarea.trigger('change'); //trigger change for sisyphus script
@@ -20,6 +20,7 @@ function initializeEditor($textarea) {
     function setUiIcons(redactor) {
         // font awesome is used
         redactor.button.set('image', '<i class="fa fa-image"></i>');
+        redactor.button.set('file', '<i class="fa fa-file"></i>');
         redactor.button.set('video', '<i class="fa fa-video-camera"></i>');
         redactor.button.set('link', '<i class="fa fa-link"></i>');
         redactor.button.set('lists', '<i class="fa fa-list"></i>');
@@ -43,7 +44,8 @@ function initializeEditor($textarea) {
                 args: ['p', 'class', 'p--intro'],
             },
         },
-        imageUpload: apiUrl,
+        fileUpload: apiUrl + '&redactor=file',
+        imageUpload: apiUrl + '&redactor=image',
         imageCaption: false,
         lang: 'nl',
         pastePlainText: true,

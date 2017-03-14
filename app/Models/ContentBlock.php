@@ -26,16 +26,16 @@ class ContentBlock extends Model implements HasMediaConversions
     public function registerMediaConversions()
     {
         $this->addMediaConversion('admin')
-            ->setWidth(368)
-            ->setHeight(232)
+            ->width(368)
+            ->height(232)
             ->nonQueued();
 
         $this->addMediaConversion('thumb')
-            ->setWidth(368)
-            ->setHeight(232);
+            ->width(368)
+            ->height(232);
 
         $this->addMediaConversion('detail')
-            ->setWidth(740);
+            ->width(740);
     }
 
     public function mediaLibraryCollections(): array

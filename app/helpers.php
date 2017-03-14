@@ -1,12 +1,16 @@
 <?php
 
 use Carbon\Carbon;
+use App\Models\Article;
 use App\Models\Fragment;
+use App\Services\Auth\User;
+use App\Services\Html\Html;
 use App\Services\Seo\Schema;
 use Illuminate\Support\Collection;
 use Illuminate\Support\HtmlString;
+use Spatie\HtmlElement\HtmlElement;
 
-function article(string $specialArticle): App\Models\Article
+function article(string $specialArticle): Article
 {
     return App\Repositories\ArticleRepository::findSpecialArticle($specialArticle);
 }
@@ -21,41 +25,17 @@ function content_locale(): string
  *
  * @throws \Exception
  */
-function current_user()
+function current_user(): ?User
 {
     if (request()->isFront()) {
-        return current_front_user();
+        return auth()->guard('front')->user();
     }
 
     if (request()->isBack()) {
-        return current_back_user();
+        return auth()->guard('back')->user();
     }
 
     throw new \Exception('Coud not determine current user');
-}
-
-/**
- * @return \App\Services\Auth\Front\User|null
- */
-function current_front_user()
-{
-    if (! auth()->guard('front')->check()) {
-        return;
-    }
-
-    return auth()->guard('front')->user();
-}
-
-/**
- * @return \App\Services\Auth\Back\User|null
- */
-function current_back_user()
-{
-    if (! auth()->guard('back')->check()) {
-        return;
-    }
-
-    return auth()->guard('back')->user();
 }
 
 function diff_date_for_humans(Carbon $date): string
@@ -65,19 +45,7 @@ function diff_date_for_humans(Carbon $date): string
 
 function el(string $tag, $attributes = null, $contents = null)
 {
-    return new HtmlString(\Spatie\HtmlElement\HtmlElement::render($tag, $attributes, $contents));
-}
-
-function fragment($name, array $replacements = []): string
-{
-    return trans($name, $replacements);
-}
-
-function fragment_slug($name, array $replacements = []): string
-{
-    $translation = fragment($name, $replacements);
-
-    return str_slug($translation);
+    return new HtmlString(HtmlElement::render($tag, $attributes, $contents));
 }
 
 function fragment_image($name, $conversion = 'thumb'): string
@@ -210,7 +178,56 @@ function validate($fields, $rules): bool
     return Validator::make($fields, $rules)->passes();
 }
 
+function html(): Html
+{
+    return app(Html::class);
+}
+
 function schema(): Schema
 {
     return new Schema();
 }
+
+/**
+ * Shortens a string in a pretty way. It will clean it by trimming
+ * it, remove all double spaces and html. If the string is then still
+ * longer than the specified $length it will be shortened. The end
+ * of the string is always a full word concatinated with the
+ * specified moreTextIndicator.
+ *
+ * @param string $string
+ * @param int    $length
+ * @param string $moreTextIndicator
+ *
+ * @return string
+ */
+function str_tease(string $string, $length = 200, $moreTextIndicator = '...')
+{
+    $string = trim($string);
+
+    //remove html
+    $string = strip_tags($string);
+
+    //replace multiple spaces
+    $string = preg_replace("/\s+/", ' ', $string);
+
+    if (strlen($string) == 0) {
+        return '';
+    }
+
+    if (strlen($string) <= $length) {
+        return $string;
+    }
+
+    $ww = wordwrap($string, $length, "\n");
+
+    $string = substr($ww, 0, strpos($ww, "\n")).$moreTextIndicator;
+
+    return $string;
+}
+
+function fragment($id = null, $replace = [], $locale = null)
+{
+    return trans($id, $replace, $locale);
+}
+
