@@ -11,7 +11,7 @@
     <testsuites>
         <testsuite name="Application Test Suite">
             <directory suffix="Test.php">./tests</directory>
-            <exclude>./tests/browser</exclude>
+            <exclude>./tests/Browser</exclude>
         </testsuite>
     </testsuites>
     <filter>
@@ -28,8 +28,8 @@
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
         <env name="DB_CONNECTION" value="sqlite"/>
-        <env name="DB_DATABASE" value="database/database.sqlite"/>
         <env name="COOKIE_CONSENT_ENABLED" value="false"/>
         <env name="MEDIA_FILESYSTEM" value="local"/>
+        <env name="MAIL_DRIVER" value="log"/>
     </php>
 </phpunit>
