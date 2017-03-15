@@ -3,10 +3,14 @@ language: php
 php:
   - 7.1
 
+branches:
+  except:
+    - /^analysis-/
+
 before_script:
   - travis_retry composer self-update
   - composer install
-  - nvm install 7
+  - nvm install latest
   - npm install -g yarn
   - yarn
   - yarn run dev
