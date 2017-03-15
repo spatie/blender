@@ -12,22 +12,19 @@ trait UsesDatabase
 
     protected static $migrated = false;
 
-    protected function setUpDatabase()
+    protected function setUpDatabase(callable $afterMigration = null)
     {
-        if (static::$migrated) {
-            $this->beginDatabaseTransaction();
-            return;
-        }
-
         $this->setUpSqlite();
 
         $this->artisan('migrate');
 
-        $this->app[Kernel::class]->setArtisan(null);
+        $this->app->make(Kernel::class)->setArtisan(null);
+
+        if ($afterMigration) {
+            $afterMigration();
+        }
 
         static::$migrated = true;
-
-        $this->beginDatabaseTransaction();
     }
 
     protected function setUpSqlite()
