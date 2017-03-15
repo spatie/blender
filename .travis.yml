@@ -15,10 +15,10 @@ cache:
 before_script:
   - travis_retry composer self-update
   - composer install --prefer-dist
-  # - nvm install node
-  # - npm isntall -g yarn
-  # - yarn
-  # - npm run dev -- --progress=false
+  - nvm install node
+  - npm isntall -g yarn
+  - yarn
+  - npm run dev -- --progress=false
 
 script:
  - ./vendor/bin/phpunit
