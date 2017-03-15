@@ -14,6 +14,11 @@ class ArticleSeeder extends DatabaseSeeder
         ])->each(function ($attributes) {
             $this->seedArticle(...$attributes);
         });
+
+        $parent = $this->seedArticle('Parent');
+
+        $this->seedArticle('Child 1', null, $parent);
+        $this->seedArticle('Child 2', null, $parent);
     }
 
     public function seedArticle(string $name, string $technicalName = null, Article $parent = null): Article
@@ -27,9 +32,15 @@ class ArticleSeeder extends DatabaseSeeder
             'parent_id' => $parent ? $parent->id : null,
         ]);
 
-        $this->addImages($article);
+        // Articles are sometimes required to get our site up and running,
+        // which means this seeder sometimes gets run in test scenarios.
+        // to speed up our tests, we're going to disables image and content
+        // blocks seeding when testing.
 
-        //$this->addContentBlocks($article);
+        if (! app()->environment('testing')) {
+            $this->addImages($article);
+            $this->addContentBlocks($article);
+        }
 
         return $article;
     }
