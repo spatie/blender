@@ -15,10 +15,6 @@ cache:
 before_script:
   - travis_retry composer self-update
   - composer install --prefer-dist
-  - nvm install node
-  - npm install -g yarn
-  - yarn
-  - yarn run dev
 
 script:
  - ./vendor/bin/phpunit
