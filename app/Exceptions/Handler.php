@@ -33,7 +33,9 @@ class Handler extends ExceptionHandler
             return parent::render($request, $e);
         }
 
-        if (config('app.debug') && app()->environment('local', 'testing')) {
+        dd(app()->environment(), $e);
+
+        if (config('app.debug') && app()->environment('local')) {
             return $this->renderExceptionWithWhoops($e);
         }
 
