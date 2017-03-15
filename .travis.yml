@@ -8,8 +8,12 @@ branches:
     - /^analysis-/
 
 cache:
+  yarn: true
   directories:
     - $HOME/.composer/cache/files
+
+env:
+  - APP_ENV=testing
 
 before_script:
   - travis_retry composer self-update
