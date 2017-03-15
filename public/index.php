@@ -5,8 +5,6 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
-var_dump($_ENV);
-
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader

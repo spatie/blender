@@ -14,6 +14,8 @@ abstract class TestCase extends BaseTestCase
 
     public function setUp()
     {
+        var_dump($_ENV);
+
         parent::setUp();
 
         $this->setUpDatabase();
