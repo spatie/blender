@@ -7,10 +7,14 @@ branches:
   except:
     - /^analysis-/
 
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
 before_script:
   - travis_retry composer self-update
-  - composer install
-  - nvm install latest
+  - composer install --prefer-dist
+  - nvm install node
   - npm install -g yarn
   - yarn
   - yarn run dev
