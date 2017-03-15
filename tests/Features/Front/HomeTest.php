@@ -7,7 +7,11 @@ class HomeTest extends TestCase
     /** @test */
     public function it_can_display_the_home_page()
     {
-        $this->get('/nl');
+        $article = article('home');
+
+        $this->get('/nl')
+             ->assertSee($article->name)
+             ->assertSee($article->text);
     }
 
     /** @test */
