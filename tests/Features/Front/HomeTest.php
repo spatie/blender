@@ -2,6 +2,8 @@
 
 namespace Tests\Features\Front;
 
+use Tests\Features\TestCase;
+
 class HomeTest extends TestCase
 {
     /** @test */
