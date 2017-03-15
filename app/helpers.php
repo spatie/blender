@@ -230,4 +230,3 @@ function fragment($id = null, $replace = [], $locale = null)
 {
     return trans($id, $replace, $locale);
 }
-
