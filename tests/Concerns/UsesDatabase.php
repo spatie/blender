@@ -12,12 +12,12 @@ trait UsesDatabase
     /** @var bool */
     protected static $migrated = false;
 
-    protected function prepareDatabase()
+    public function prepareDatabase($force = false)
     {
         // The database needs to be deleted before the application gets boted
         // to avoid having the database in a weird read-only state.
 
-        if (static::$migrated) {
+        if (! $force && static::$migrated) {
             return;
         }
 
@@ -25,7 +25,7 @@ trait UsesDatabase
         touch($this->database);
     }
 
-    protected function setUpDatabase(callable $afterMigrations = null)
+    public function setUpDatabase(callable $afterMigrations = null)
     {
         if (static::$migrated) {
             return;

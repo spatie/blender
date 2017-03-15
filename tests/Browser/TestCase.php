@@ -17,12 +17,14 @@ abstract class TestCase extends BaseTestCase
 
     public function setUp()
     {
+        $this->prepareDatabase(true);
+
         parent::setUp();
 
-        $this->setUpDatabase(function () {
-            $this->artisan('db:seed', ['--class' => ArticleSeeder::class]);
-            $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
-        });
+        $this->artisan('migrate');
+
+        $this->artisan('db:seed', ['--class' => ArticleSeeder::class]);
+        $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
     }
 
     /**
