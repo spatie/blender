@@ -14,6 +14,17 @@ return [
 
     'name' => 'Blender',
 
+    /*
+    |--------------------------------------------------------------------------
+    | Application Environment
+    |--------------------------------------------------------------------------
+    |
+    | This value determines the "environment" your application is currently
+    | running in. This may determine how you prefer to configure various
+    | services your application utilizes. Set this in your ".env" file.
+    |
+    */
+
     'env' => env('APP_ENV', 'production'),
 
     /*
@@ -39,6 +50,7 @@ return [
     | first visit /demo.
     |
     */
+
     'demo' => env('APP_DEMO', false),
 
     /*
@@ -179,6 +191,7 @@ return [
 
         App\Providers\AuthServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
+        App\Providers\DuskServiceProvider::class,
         App\Providers\LocaleServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
@@ -218,6 +231,7 @@ return [
         Spatie\MailableTest\MailableTestServiceProvider::class,
         Spatie\Referer\RefererServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
+
     ],
 
     /*
@@ -268,10 +282,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
 
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
-        'BlenderForm' => App\Services\Html\BlenderFormFacade::class,
-
         'Activity' => Spatie\Activitylog\ActivitylogFacade::class,
         'Analytics' => Spatie\Analytics\AnalyticsFacade::class,
         'Bugsnag' => Bugsnag\BugsnagLaravel\BugsnagFacade::class,
@@ -284,5 +294,6 @@ return [
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
         'PaginateRoute' => Spatie\PaginateRoute\PaginateRouteFacade::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
+
     ],
 ];
