@@ -2,17 +2,24 @@
 
 namespace Tests\Features;
 
-use Tests\Concerns\RunsSeeders;
-use Tests\TestCase as BaseTestCase;
+use ArticleSeeder;
+use FragmentSeeder;
+use Tests\Concerns\CreatesApplication;
+use Tests\Concerns\UsesDatabase;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
-    use RunsSeeders;
+    use CreatesApplication;
+    use UsesDatabase;
 
     public function setUp()
     {
         parent::setUp();
 
-        $this->runSeeders();
+        $this->setUpDatabase(function () {
+            $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
+            $this->artisan('db:seed', ['--class' => ArticleSeeder::class]);
+        });
     }
 }
