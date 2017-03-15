@@ -21,4 +21,4 @@ before_script:
   # - npm run dev -- --progress=false
 
 script:
- - ./vendor/bin/phpunit -c phpunit.xml
+ - ./vendor/bin/phpunit
