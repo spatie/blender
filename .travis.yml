@@ -16,7 +16,7 @@ before_script:
   - travis_retry composer self-update
   - composer install --prefer-dist
   - nvm install node
-  - npm isntall -g yarn
+  - npm install -g yarn
   - yarn
   - npm run dev -- --progress=false
 
