@@ -16,4 +16,4 @@ before_script:
   - yarn run dev
 
 script:
- - phpunit
+ - ./vendor/bin/phpunit

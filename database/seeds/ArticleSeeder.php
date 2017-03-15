@@ -37,8 +37,6 @@ class ArticleSeeder extends DatabaseSeeder
         // to speed up our tests, we're going to disables image and content
         // blocks seeding when testing.
 
-        echo app()->environment();
-
         if (! app()->environment('testing')) {
             $this->addImages($article);
             $this->addContentBlocks($article);
