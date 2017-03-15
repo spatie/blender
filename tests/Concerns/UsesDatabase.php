@@ -2,8 +2,6 @@
 
 namespace Tests\Concerns;
 
-use ArticleSeeder;
-use FragmentSeeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -24,9 +22,6 @@ trait UsesDatabase
         $this->setUpSqlite();
 
         $this->artisan('migrate');
-
-        $this->artisan('db:seed', ['--class' => FragmentSeeder::class]);
-        $this->artisan('db:seed', ['--class' => ArticleSeeder::class]);
 
         $this->app[Kernel::class]->setArtisan(null);
 
