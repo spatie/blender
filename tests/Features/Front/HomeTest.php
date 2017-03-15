@@ -12,8 +12,8 @@ class HomeTest extends TestCase
         $article = article('home');
 
         $this->get('/nl')
-             ->assertSee($article->name)
-             ->assertSee($article->text);
+            ->assertSee($article->name)
+            ->assertSee($article->text);
     }
 
     /** @test */
