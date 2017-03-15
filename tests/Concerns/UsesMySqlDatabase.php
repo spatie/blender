@@ -12,6 +12,7 @@ trait UsesMySqlDatabase
     {
         if (static::$migrated) {
             $this->beginDatabaseTransaction();
+
             return;
         }
 
