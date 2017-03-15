@@ -18,6 +18,8 @@ abstract class TestCase extends BaseTestCase
 
         $this->setUpDatabase();
 
+        var_dump($this->app->environment());
+
         $this->artisan('db:seed', ['--class' => ArticleSeeder::class, '--env' => $this->app->environment()]);
     }
 }
