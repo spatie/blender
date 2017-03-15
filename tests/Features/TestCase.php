@@ -3,8 +3,8 @@
 namespace Tests\Features;
 
 use ArticleSeeder;
-use Tests\Concerns\CreatesApplication;
 use Tests\Concerns\UsesDatabase;
+use Tests\Concerns\CreatesApplication;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
