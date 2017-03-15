@@ -5,7 +5,7 @@ namespace Tests\Concerns;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Contracts\Console\Kernel;
 
-trait UsesDatabase
+trait UsesInMemoryDatabase
 {
     protected function setUpDatabase()
     {
