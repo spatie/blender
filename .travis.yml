@@ -8,7 +8,6 @@ branches:
     - /^analysis-/
 
 cache:
-  yarn: true
   directories:
     - $HOME/.composer/cache/files
 
