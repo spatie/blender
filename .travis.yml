@@ -8,12 +8,17 @@ branches:
     - /^analysis-/
 
 cache:
+  yarn: true
   directories:
     - $HOME/.composer/cache/files
 
 before_script:
   - travis_retry composer self-update
   - composer install --prefer-dist
+  - nvm install node
+  - npm isntall -g yarn
+  - yarn
+  - npm run dev
 
 script:
  - ./vendor/bin/phpunit
