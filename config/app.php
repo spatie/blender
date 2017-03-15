@@ -14,7 +14,7 @@ return [
 
     'name' => 'Blender',
 
-    'env' => 'testing', // env('APP_ENV', 'production'),
+    'env' => env('APP_ENV', 'production'),
 
     /*
     |--------------------------------------------------------------------------
