@@ -7,17 +7,13 @@ use Illuminate\Contracts\Console\Kernel;
 
 trait UsesDatabase
 {
-    protected function setUpDatabase(callable $afterMigration = null)
+    protected function setUpDatabase()
     {
         $this->setUpSqlite();
 
         $this->artisan('migrate');
 
         $this->app->make(Kernel::class)->setArtisan(null);
-
-        if ($afterMigration) {
-            $afterMigration();
-        }
     }
 
     protected function setUpSqlite()
