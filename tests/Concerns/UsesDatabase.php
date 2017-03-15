@@ -16,6 +16,7 @@ trait UsesDatabase
     {
         if (static::$migrated) {
             $this->beginDatabaseTransaction();
+
             return;
         }
 
