@@ -4,7 +4,7 @@ namespace Tests\Browser;
 
 use ArticleSeeder;
 use FragmentSeeder;
-use Tests\Concerns\UsesMySqlDatabase;
+use Tests\Concerns\UsesDatabase;
 use Tests\Concerns\CreatesApplication;
 use Laravel\Dusk\TestCase as BaseTestCase;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
@@ -13,7 +13,7 @@ use Facebook\WebDriver\Remote\DesiredCapabilities;
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
-    use UsesMySqlDatabase;
+    use UsesDatabase;
 
     public function setUp()
     {

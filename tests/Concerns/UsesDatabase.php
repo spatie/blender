@@ -4,29 +4,42 @@ namespace Tests\Concerns;
 
 use Illuminate\Contracts\Console\Kernel;
 
-trait UsesMySqlDatabase
+trait UsesDatabase
 {
+    /** @var string */
+    protected $database = __DIR__.'/../../database/database.sqlite';
+
+    /** @var bool */
     protected static $migrated = false;
 
-    protected function setUpDatabase(callable $afterMigrating = null)
+    protected function prepareDatabase()
+    {
+        // The database needs to be deleted before the application gets boted
+        // to avoid having the database in a weird read-only state.
+
+        if (static::$migrated) {
+            return;
+        }
+
+        @unlink($this->database);
+        touch($this->database);
+    }
+
+    protected function setUpDatabase(callable $afterMigrations = null)
     {
         if (static::$migrated) {
-            $this->beginDatabaseTransaction();
-
             return;
         }
 
         $this->artisan('migrate');
 
-        $this->app->make(Kernel::class)->setArtisan(null);
+        $this->app[Kernel::class]->setArtisan(null);
 
-        if ($afterMigrating) {
-            $afterMigrating();
+        if ($afterMigrations) {
+            $afterMigrations();
         }
 
         static::$migrated = true;
-
-        $this->beginDatabaseTransaction();
     }
 
     public function beginDatabaseTransaction()
@@ -46,8 +59,7 @@ trait UsesMySqlDatabase
 
     protected function connectionsToTransact(): array
     {
-        return property_exists($this, 'connectionsToTransact') ?
-            $this->connectionsToTransact :
-            [null];
+        return property_exists($this, 'connectionsToTransact')
+            ? $this->connectionsToTransact : [null];
     }
 }
