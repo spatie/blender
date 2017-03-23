@@ -43,6 +43,14 @@ class Handler extends ExceptionHandler
             return $this->renderHttpException($e);
         }
 
+        if (app()->isDownForMaintenance()) {
+            return response()->view('errors.503', [], 503);
+        }
+
+        if(app()->environment('production')) {
+            return response()->view('errors.500', [], 500);
+        }
+
         return parent::render($request, $e);
     }
 
