@@ -45,6 +45,7 @@
         "spatie/laravel-blade-javascript": "^1.0",
         "spatie/laravel-collection-macros": "^2.0",
         "spatie/laravel-cookie-consent": "^1.0",
+        "spatie/laravel-db-snapshots": "dev-master",
         "spatie/laravel-demo-mode": "^1.0",
         "spatie/laravel-failed-job-monitor": "^2.0",
         "spatie/laravel-fractal": "^3.0.0",

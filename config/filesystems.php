@@ -58,6 +58,11 @@ return [
             'root'   => public_path().'/media',
         ],
 
+        'snapshots' => [
+            'driver' => 'local',
+            'root' => database_path('snapshots'),
+        ],
+
         's3' => [
             'driver' => 's3',
             'key'    => env('S3_KEY'),

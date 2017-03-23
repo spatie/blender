@@ -231,6 +231,7 @@ return [
         Spatie\MailableTest\MailableTestServiceProvider::class,
         Spatie\Referer\RefererServiceProvider::class,
         Themsaid\MailPreview\MailPreviewServiceProvider::class,
+        Spatie\DbSnapshots\DbSnapshotsServiceProvider::class,
 
     ],
 

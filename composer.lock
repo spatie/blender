@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eaad603e6c956a2cf36fb1d9a7005be5",
+    "content-hash": "8f66bc494de5ac2d10d97967bfb777f1",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -2940,6 +2940,72 @@
             "time": "2017-03-05T18:23:57+00:00"
         },
         {
+            "name": "orchestra/testbench",
+            "version": "v3.4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/orchestral/testbench.git",
+                "reference": "94e5cfc27f2e0ff9fff5b8811c6c926564499ee7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/94e5cfc27f2e0ff9fff5b8811c6c926564499ee7",
+                "reference": "94e5cfc27f2e0ff9fff5b8811c6c926564499ee7",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "~1.4",
+                "laravel/framework": "~5.4.15",
+                "php": ">=5.6.0",
+                "symfony/css-selector": "~3.2.0",
+                "symfony/dom-crawler": "~3.2.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "orchestra/database": "~3.4.0",
+                "phpunit/phpunit": "~5.7"
+            },
+            "suggest": {
+                "mockery/mockery": "Allow to use Mockery for testing (^0.9.4).",
+                "orchestra/database": "Allow to use --realpath migration for testing (~3.4).",
+                "orchestra/testbench-browser-kit": "Allow to use legacy BrowserKit for testing (~3.4).",
+                "phpunit/phpunit": "Allow to use PHPUnit for testing (~5.7)."
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Orchestra\\Testbench\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mior Muhammad Zaki",
+                    "email": "crynobone@gmail.com",
+                    "homepage": "https://github.com/crynobone"
+                }
+            ],
+            "description": "Laravel Testing Helper for Packages Development",
+            "homepage": "http://orchestraplatform.com/docs/latest/components/testbench/",
+            "keywords": [
+                "BDD",
+                "TDD",
+                "laravel",
+                "orchestra-platform",
+                "orchestral",
+                "testing"
+            ],
+            "time": "2017-03-10T06:58:53+00:00"
+        },
+        {
             "name": "paragonie/random_compat",
             "version": "v2.0.10",
             "source": {
@@ -4350,6 +4416,60 @@
                 "spatie"
             ],
             "time": "2017-01-24T21:08:15+00:00"
+        },
+        {
+            "name": "spatie/laravel-db-snapshots",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-db-snapshots.git",
+                "reference": "200051a4ab926d85772a45688402caaacc6c87cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-db-snapshots/zipball/200051a4ab926d85772a45688402caaacc6c87cc",
+                "reference": "200051a4ab926d85772a45688402caaacc6c87cc",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.4.16",
+                "league/flysystem": "^1.0.27",
+                "orchestra/testbench": "^3.4.5",
+                "php": "^7.0",
+                "spatie/db-dumper": "^2.4",
+                "spatie/laravel-migrate-fresh": "^1.4.1",
+                "spatie/temporary-directory": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.8",
+                "orchestra/testbench": "^3.4.5",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\DbSnapshots\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "An artisan command to dump and load databases",
+            "homepage": "https://github.com/spatie/laravel-db-snapshots",
+            "keywords": [
+                "laravel-db-snapshots",
+                "spatie"
+            ],
+            "time": "2017-03-23 20:15:49"
         },
         {
             "name": "spatie/laravel-demo-mode",
@@ -8309,7 +8429,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "spatie/laravel-db-snapshots": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
