@@ -7,16 +7,16 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="false"
-         syntaxCheck="false">
+         stopOnFailure="false">
     <testsuites>
         <testsuite name="Application Test Suite">
-            <directory>./tests/</directory>
+            <directory suffix="Test.php">./tests</directory>
+            <exclude>./tests/Browser</exclude>
         </testsuite>
     </testsuites>
     <filter>
-        <whitelist>
-            <directory suffix=".php">app/</directory>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
         </whitelist>
     </filter>
     <php>
@@ -24,9 +24,7 @@
         <env name="CACHE_DRIVER" value="array"/>
         <env name="SESSION_DRIVER" value="array"/>
         <env name="QUEUE_DRIVER" value="sync"/>
-        <env name="CACHE_DRIVER" value="array"/>
-        <env name="USE_WHOOPS" value="false"/>
-        <env name="DB_DEFAULT_CONNECTION" value="sqlite"/>
+        <env name="DB_CONNECTION" value="sqlite"/>
         <env name="MAIL_DRIVER" value="log"/>
     </php>
 </phpunit>

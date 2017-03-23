@@ -32,9 +32,15 @@ class ArticleSeeder extends DatabaseSeeder
             'parent_id' => $parent ? $parent->id : null,
         ]);
 
-        $this->addImages($article);
+        // Articles are sometimes required to get our site up and running,
+        // which means this seeder sometimes gets run in test scenarios.
+        // to speed up our tests, we're going to disables image and content
+        // blocks seeding when testing.
 
-        $this->addContentBlocks($article);
+        if (! app()->environment('testing')) {
+            $this->addImages($article);
+            $this->addContentBlocks($article);
+        }
 
         return $article;
     }
