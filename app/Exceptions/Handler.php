@@ -47,7 +47,7 @@ class Handler extends ExceptionHandler
             return response()->view('errors.503', [], 503);
         }
 
-        if(app()->environment('production')) {
+        if (app()->environment('production')) {
             return response()->view('errors.500', [], 500);
         }
 
