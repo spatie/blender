@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8f66bc494de5ac2d10d97967bfb777f1",
+    "content-hash": "2f585a34ca871f15e56b1de03413ba69",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.24.6",
+            "version": "3.24.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "b9b3adfe54f0b59f2842847056a592100f60c9cf"
+                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/b9b3adfe54f0b59f2842847056a592100f60c9cf",
-                "reference": "b9b3adfe54f0b59f2842847056a592100f60c9cf",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
+                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-03-22T23:54:24+00:00"
+            "time": "2017-03-23T22:17:20+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1797,6 +1797,64 @@
             "time": "2017-03-12T09:26:50+00:00"
         },
         {
+            "name": "jeremeamia/SuperClosure",
+            "version": "2.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeremeamia/super_closure.git",
+                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeremeamia/super_closure/zipball/443c3df3207f176a1b41576ee2a66968a507b3db",
+                "reference": "443c3df3207f176a1b41576ee2a66968a507b3db",
+                "shasum": ""
+            },
+            "require": {
+                "nikic/php-parser": "^1.2|^2.0|^3.0",
+                "php": ">=5.4",
+                "symfony/polyfill-php56": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SuperClosure\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeremy Lindblom",
+                    "email": "jeremeamia@gmail.com",
+                    "homepage": "https://github.com/jeremeamia",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Serialize Closure objects, including their context and binding",
+            "homepage": "https://github.com/jeremeamia/super_closure",
+            "keywords": [
+                "closure",
+                "function",
+                "lambda",
+                "parser",
+                "serializable",
+                "serialize",
+                "tokenizer"
+            ],
+            "time": "2016-12-07T09:37:55+00:00"
+        },
+        {
             "name": "julien-c/iso3166",
             "version": "2.0.1",
             "source": {
@@ -2467,16 +2525,16 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "2.1.10",
+            "version": "2.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "a544a9b45b971499fb3b0fb7499ba0ac3b430233"
+                "reference": "4b0f3033ee339426810d4aeb497b862db78fa83f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/a544a9b45b971499fb3b0fb7499ba0ac3b430233",
-                "reference": "a544a9b45b971499fb3b0fb7499ba0ac3b430233",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/4b0f3033ee339426810d4aeb497b862db78fa83f",
+                "reference": "4b0f3033ee339426810d4aeb497b862db78fa83f",
                 "shasum": ""
             },
             "require": {
@@ -2484,6 +2542,7 @@
                 "illuminate/config": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
                 "illuminate/filesystem": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
                 "illuminate/support": "5.0.*|5.1.*|5.2.*|5.3.*|5.4.*",
+                "jeremeamia/superclosure": "^2.3",
                 "nesbot/carbon": "~1.0",
                 "php": ">=5.5",
                 "phpoffice/phpexcel": "1.8.*",
@@ -2530,7 +2589,7 @@
                 "import",
                 "laravel"
             ],
-            "time": "2017-01-20T16:16:51+00:00"
+            "time": "2017-03-23T20:30:30+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -4419,16 +4478,16 @@
         },
         {
             "name": "spatie/laravel-db-snapshots",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-db-snapshots.git",
-                "reference": "200051a4ab926d85772a45688402caaacc6c87cc"
+                "reference": "a04fa9b304351b1698921d8a13c29677f7d99478"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-db-snapshots/zipball/200051a4ab926d85772a45688402caaacc6c87cc",
-                "reference": "200051a4ab926d85772a45688402caaacc6c87cc",
+                "url": "https://api.github.com/repos/spatie/laravel-db-snapshots/zipball/a04fa9b304351b1698921d8a13c29677f7d99478",
+                "reference": "a04fa9b304351b1698921d8a13c29677f7d99478",
                 "shasum": ""
             },
             "require": {
@@ -4469,7 +4528,7 @@
                 "laravel-db-snapshots",
                 "spatie"
             ],
-            "time": "2017-03-23 20:15:49"
+            "time": "2017-03-24T09:14:18+00:00"
         },
         {
             "name": "spatie/laravel-demo-mode",
@@ -6553,6 +6612,114 @@
             "time": "2016-11-14T01:06:16+00:00"
         },
         {
+            "name": "symfony/polyfill-php56",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php56.git",
+                "reference": "1dd42b9b89556f18092f3d1ada22cb05ac85383c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php56/zipball/1dd42b9b89556f18092f3d1ada22cb05ac85383c",
+                "reference": "1dd42b9b89556f18092f3d1ada22cb05ac85383c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/polyfill-util": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php56\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 5.6+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2016-11-14T01:06:16+00:00"
+        },
+        {
+            "name": "symfony/polyfill-util",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-util.git",
+                "reference": "746bce0fca664ac0a575e465f65c6643faddf7fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-util/zipball/746bce0fca664ac0a575e465f65c6643faddf7fb",
+                "reference": "746bce0fca664ac0a575e465f65c6643faddf7fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Util\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony utilities for portability of PHP codes",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compat",
+                "compatibility",
+                "polyfill",
+                "shim"
+            ],
+            "time": "2016-11-14T01:06:16+00:00"
+        },
+        {
             "name": "symfony/process",
             "version": "v3.2.6",
             "source": {
@@ -8429,9 +8596,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "spatie/laravel-db-snapshots": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
