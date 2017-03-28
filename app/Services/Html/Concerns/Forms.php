@@ -84,7 +84,7 @@ trait Forms
         ]);
     }
 
-    public function contentBlocks(string $collectionName, string $editor, array $associated = []): Element
+    public function contentBlocks(string $collectionName, array $types = null): Div
     {
         $this->ensureModelIsAvailable();
 
@@ -93,7 +93,7 @@ trait Forms
             ->transformWith(ContentBlockTransformer::class)
             ->toJson();
 
-        $associatedData = collect($associated)->merge([
+        $associatedData = collect($types ? ['types' => $types] : [])->merge([
             'locales' => config('app.locales'),
             'contentLocale' => content_locale(),
             'mediaModel' => ContentBlock::class,
@@ -102,11 +102,10 @@ trait Forms
 
         return $this->formGroup()->withContents($this->element('blender-content-blocks')->attributes([
             'collection' => $collectionName,
-            'editor' => $editor,
             'create-url' => action('Back\Api\ContentBlockController@add'),
             ':model' => htmlspecialchars($this->getComponentModel()),
             ':input' => htmlspecialchars($initial),
-            ':data' => htmlspecialchars(json_encode($associatedData, JSON_FORCE_OBJECT)),
+            ':data' => htmlspecialchars(json_encode($associatedData)),
             ':debug' => htmlspecialchars(json_encode(config('app.debug', false))),
         ]));
     }
