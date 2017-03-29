@@ -1,23 +1,23 @@
 <?php
 
-namespace Tests\Concerns;
+namespace App\Providers;
 
 use Illuminate\Support\Facades\DB;
-use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Support\ServiceProvider;
 
-trait UsesInMemoryDatabase
+class DatabaseServiceProvider extends ServiceProvider
 {
-    protected function setUpDatabase()
+    public function register()
     {
-        $this->setUpSqlite();
-
-        $this->artisan('migrate');
-
-        $this->app->make(Kernel::class)->setArtisan(null);
+        $this->registerRegexFunctionForSqlite();
     }
 
-    protected function setUpSqlite()
+    private function registerRegexFunctionForSqlite()
     {
+        if (config('database.default') !== 'sqlite') {
+            return;
+        }
+
         DB::getPdo()->sqliteCreateFunction('regexp',
             function ($pattern, $data, $delimiter = '~', $modifiers = 'isuS') {
                 if (isset($pattern, $data) !== true) {
