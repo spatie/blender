@@ -39,7 +39,7 @@ class ArticleSeeder extends DatabaseSeeder
 
         if (! app()->environment('testing')) {
             $this->addImages($article);
-            $this->addContentBlocks($article);
+            //$this->addContentBlocks($article);
         }
 
         return $article;

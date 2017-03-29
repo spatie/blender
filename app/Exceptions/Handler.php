@@ -33,8 +33,6 @@ class Handler extends ExceptionHandler
             return parent::render($request, $e);
         }
 
-        dd(app()->environment(), $e);
-
         if (config('app.debug') && app()->environment('local')) {
             return $this->renderExceptionWithWhoops($e);
         }
@@ -47,7 +45,7 @@ class Handler extends ExceptionHandler
             return response()->view('errors.503', [], 503);
         }
 
-        if(app()->environment('production')) {
+        if (app()->environment('production')) {
             return response()->view('errors.500', [], 500);
         }
 
