@@ -13,7 +13,6 @@ cache:
     - $HOME/.composer/cache/files
 
 before_script:
-  - travis_retry composer self-update
   - composer install --prefer-dist --ignore-platform-reqs
   - nvm install node
   - npm install -g yarn
