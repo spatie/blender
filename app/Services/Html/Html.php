@@ -39,7 +39,7 @@ class Html extends \Spatie\Html\Html
 
     public function translations(callable $callback)
     {
-        if(locales()->count() === 1) {
+        if (locales()->count() === 1) {
             $elements = $this->translatedElements(locales()->first(), $callback);
 
             return $this->div()->addChildren($elements);
