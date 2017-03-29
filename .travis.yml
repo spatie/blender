@@ -13,9 +13,8 @@ cache:
     - $HOME/.composer/cache/files
 
 before_script:
-  - pecl install imagick -y
   - travis_retry composer self-update
-  - composer install --prefer-dist
+  - composer install --prefer-dist --ignore-platform-reqs
   - nvm install node
   - npm install -g yarn
   - yarn
