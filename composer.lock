@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.24.7",
+            "version": "3.24.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c"
+                "reference": "26212252dcd0f9b9b7b19702577d0b0b364888df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
-                "reference": "f062d7ea2123fe2aefef91da855c10ef8ff3af1c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/26212252dcd0f9b9b7b19702577d0b0b364888df",
+                "reference": "26212252dcd0f9b9b7b19702577d0b0b364888df",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-03-23T22:17:20+00:00"
+            "time": "2017-03-28T20:19:24+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1157,21 +1157,21 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.3.3.1",
+            "version": "8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "4336e5c695ed8574f402304634bdda943dfaa27c"
+                "reference": "0613731935f03a799c28c5313fb647109a56d2be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/4336e5c695ed8574f402304634bdda943dfaa27c",
-                "reference": "4336e5c695ed8574f402304634bdda943dfaa27c",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/0613731935f03a799c28c5313fb647109a56d2be",
+                "reference": "0613731935f03a799c28c5313fb647109a56d2be",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "giggsey/locale": "^1.0",
+                "giggsey/locale": "^1.2",
                 "php": ">=5.3.2"
             },
             "require-dev": {
@@ -1221,7 +1221,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2017-03-15T09:50:58+00:00"
+            "time": "2017-03-28T19:11:25+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -2525,16 +2525,16 @@
         },
         {
             "name": "maatwebsite/excel",
-            "version": "2.1.11",
+            "version": "2.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
-                "reference": "4b0f3033ee339426810d4aeb497b862db78fa83f"
+                "reference": "655def96b5e98d1fe0974d9c4e2ec5f2b591a322"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/4b0f3033ee339426810d4aeb497b862db78fa83f",
-                "reference": "4b0f3033ee339426810d4aeb497b862db78fa83f",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/655def96b5e98d1fe0974d9c4e2ec5f2b591a322",
+                "reference": "655def96b5e98d1fe0974d9c4e2ec5f2b591a322",
                 "shasum": ""
             },
             "require": {
@@ -2589,7 +2589,7 @@
                 "import",
                 "laravel"
             ],
-            "time": "2017-03-23T20:30:30+00:00"
+            "time": "2017-03-28T10:47:04+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -3507,16 +3507,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458"
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/0b7bdfb180e72c8d76e75a649ced67e392201458",
-                "reference": "0b7bdfb180e72c8d76e75a649ced67e392201458",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
+                "reference": "4ae32dd9ab8860a4bbd750ad269cba7f06f7934e",
                 "shasum": ""
             },
             "require": {
@@ -3528,9 +3528,9 @@
             },
             "require-dev": {
                 "apigen/apigen": "^4.1",
-                "codeception/aspect-mock": "1.0.0",
+                "codeception/aspect-mock": "^1.0 | ^2.0",
                 "doctrine/annotations": "~1.2.0",
-                "goaop/framework": "1.0.0-alpha.2",
+                "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
                 "mockery/mockery": "^0.9.4",
@@ -3585,7 +3585,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2017-03-18T15:38:09+00:00"
+            "time": "2017-03-26T20:37:53+00:00"
         },
         {
             "name": "spatie/array-functions",
@@ -4905,16 +4905,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "5.7.0",
+            "version": "5.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "cf9a9e4e2c0b1da7809ca6b743e6a5936e885ffd"
+                "reference": "72fbfa940d4dabf847bbceb5fff524d8e84229a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/cf9a9e4e2c0b1da7809ca6b743e6a5936e885ffd",
-                "reference": "cf9a9e4e2c0b1da7809ca6b743e6a5936e885ffd",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/72fbfa940d4dabf847bbceb5fff524d8e84229a5",
+                "reference": "72fbfa940d4dabf847bbceb5fff524d8e84229a5",
                 "shasum": ""
             },
             "require": {
@@ -4972,7 +4972,7 @@
                 "media",
                 "spatie"
             ],
-            "time": "2017-03-23T18:56:47+00:00"
+            "time": "2017-03-24T13:26:33+00:00"
         },
         {
             "name": "spatie/laravel-menu",
