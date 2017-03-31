@@ -48,6 +48,7 @@ class FragmentsController
             $requestAttribute = "translated_{$locale}_text";
 
             $fragment->setTranslation($locale, $request->get($requestAttribute));
+            $fragment->setTranslation($locale, $request->get($requestAttribute) ?? '');
         }
 
         $fragment->save();
