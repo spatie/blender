@@ -8,7 +8,6 @@ use App\Models\Enums\SpecialArticle;
 use Spatie\Blender\Model\Controller;
 use App\Repositories\ArticleRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Http\Requests\Back\ArticleRequest;
 
 class ArticlesController extends Controller
 {

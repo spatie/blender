@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Back;
 
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Services\Auth\Back\User;
 use App\Services\Auth\Back\Enums\UserRole;
 use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\Events\UserCreated;
 use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Validation\Rule;
 
 class AdministratorsController
 {
