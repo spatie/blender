@@ -8,8 +8,8 @@ use Spatie\MediaLibrary\Media;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use App\Http\Controllers\Controller;
-use Illuminate\Validation\ValidationException;
 use App\Models\Transformers\MediaTransformer;
+use Illuminate\Validation\ValidationException;
 
 class MediaLibraryController extends Controller
 {

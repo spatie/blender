@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Support\Arr;
-use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 use App\Models\Traits\HasMedia;
 use App\Models\Traits\Draftable;
+use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 use Spatie\EloquentSortable\SortableTrait;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;

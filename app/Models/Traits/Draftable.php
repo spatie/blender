@@ -3,8 +3,8 @@
 namespace App\Models\Traits;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\Scopes\NonDraftScope;
+use Illuminate\Database\Eloquent\Builder;
 
 trait Draftable
 {

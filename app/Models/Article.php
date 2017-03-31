@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Exception;
+use App\Models\Traits\HasSlug;
 use Illuminate\Support\Collection;
 use App\Models\Enums\SpecialArticle;
 use Spatie\EloquentSortable\Sortable;
-use App\Models\Traits\HasSlug;
 use Spatie\EloquentSortable\SortableTrait;
 use App\Models\Presenters\ArticlePresenter;
 use Illuminate\Database\Eloquent\Relations\HasMany;
