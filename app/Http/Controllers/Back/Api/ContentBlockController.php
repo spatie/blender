@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Back\Api;
 
 use App\Models\ContentBlock;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Model;
