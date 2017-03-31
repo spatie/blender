@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Http\Response;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Validation\ValidationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as BugsnagExceptionHandler;
 
@@ -29,6 +30,10 @@ class Handler extends ExceptionHandler
 
     public function render($request, Exception $e)
     {
+        if ($e instanceof ValidationException) {
+            flash()->error(trans('validation.failedForm'));
+        }
+
         if ($this->shouldntReport($e)) {
             return parent::render($request, $e);
         }

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Fragment;
+use Illuminate\Http\Request;
 use Spatie\FragmentImporter\Exporter;
-use App\Http\Requests\Back\FragmentRequest;
 use Spatie\Blender\Model\Updaters\UpdateMedia;
 
 class FragmentsController
@@ -40,14 +40,14 @@ class FragmentsController
         return view('back.fragments.edit')->with(compact('fragment'));
     }
 
-    public function update($id, FragmentRequest $request)
+    public function update($id, Request $request)
     {
         $fragment = Fragment::find($id);
 
         foreach (locales() as $locale) {
             $requestAttribute = "translated_{$locale}_text";
 
-            $fragment->setTranslation($locale, $request->get($requestAttribute));
+            $fragment->setTranslation($locale, $request->get($requestAttribute) ?? '');
         }
 
         $fragment->save();
