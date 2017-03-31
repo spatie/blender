@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Back;
 use Carbon\Carbon;
 use App\Models\NewsItem;
 use Illuminate\Http\Request;
-use Spatie\Blender\Model\Controller;
 
 class NewsController extends Controller
 {

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Spatie\Blender\Model\Model;
 use Illuminate\Support\Collection;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;

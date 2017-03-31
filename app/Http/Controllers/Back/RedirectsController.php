@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Back;
 
 use App\Models\Redirect;
 use Illuminate\Http\Request;
-use Spatie\Blender\Model\Controller;
 
 class RedirectsController extends Controller
 {

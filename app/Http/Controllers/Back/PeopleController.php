@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Back;
 
 use App\Models\Person;
 use Illuminate\Http\Request;
-use Spatie\Blender\Model\Controller;
 
 class PeopleController extends Controller
 {

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Back;
 use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Models\Enums\SpecialArticle;
-use Spatie\Blender\Model\Controller;
 use App\Repositories\ArticleRepository;
 use Illuminate\Database\Eloquent\Model;
 

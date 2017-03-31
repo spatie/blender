@@ -9,7 +9,7 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
-use Spatie\Blender\Model\Transformers\MediaTransformer;
+use App\Models\Transformers\MediaTransformer;
 
 class MediaLibraryController extends Controller
 {

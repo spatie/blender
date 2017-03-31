@@ -3,8 +3,7 @@
 namespace App\Models;
 
 use Spatie\Tags\HasTags;
-use Spatie\Blender\Model\Model;
-use Spatie\Blender\Model\Traits\HasSlug;
+use App\Models\Traits\HasSlug;
 use App\Models\Presenters\NewsItemPresenter;
 
 class NewsItem extends Model

@@ -10,8 +10,8 @@ use Spatie\Html\Elements\Select;
 use Spatie\Html\Elements\Element;
 use Illuminate\Support\Collection;
 use Spatie\Html\Elements\Textarea;
-use Spatie\Blender\Model\Transformers\MediaTransformer;
-use Spatie\Blender\Model\Transformers\ContentBlockTransformer;
+use App\Models\Transformers\MediaTransformer;
+use App\Models\Transformers\ContentBlockTransformer;
 
 trait Forms
 {
