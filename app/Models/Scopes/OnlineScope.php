@@ -2,10 +2,10 @@
 
 namespace App\Models\Scopes;
 
+use App\Models\Traits\Draftable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Database\Eloquent\Builder;
-use App\Models\Traits\Draftable;
 
 class OnlineScope implements Scope
 {
