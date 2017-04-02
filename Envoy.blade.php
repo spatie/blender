@@ -128,6 +128,7 @@ php artisan migrate --force;
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
 php artisan cache:clear
+php artisan config:cache
 
 sudo service php7.1-fpm restart
 sudo supervisorctl restart all
@@ -156,6 +157,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 cd {{ $currentDir }}
 git pull origin master
 php artisan cache:clear
+php artisan config:cache
 sudo supervisorctl restart all
 @endtask
 
