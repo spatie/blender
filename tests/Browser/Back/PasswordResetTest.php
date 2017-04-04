@@ -55,8 +55,6 @@ class PasswordResetTest extends TestCase
                 ->assertSee(__('passwords.reset'));
         });
 
-        $user = User::where('email', $user->email)->first()->makeVisible('password');
-
-        $this->assertTrue(Hash::check($newPassword, $user->password));
+        $this->assertTrue(Hash::check($newPassword, $user->fresh()->password));
     }
 }
