@@ -30,7 +30,7 @@ class PasswordResetTest extends TestCase
             'email' => 'test@example.com',
             'first_name' => 'Test',
             'last_name' => 'Test',
-            'status' => 'active'
+            'status' => 'active',
         ]);
 
         $this->browse(function (Browser $browser) use ($user, $newPassword) {
