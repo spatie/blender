@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Back;
 use App\Models\Fragment;
 use Illuminate\Http\Request;
 use Spatie\FragmentImporter\Exporter;
-use Spatie\Blender\Model\Updaters\UpdateMedia;
+use App\Http\Controllers\Back\Traits\UpdateMedia;
 
 class FragmentsController
 {

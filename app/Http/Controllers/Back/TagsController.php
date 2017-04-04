@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Back;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Controller;
 
 class TagsController extends Controller
 {

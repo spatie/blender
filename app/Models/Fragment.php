@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Spatie\Blender\Model\Traits\HasMedia;
+use App\Models\Traits\HasMedia;
 use Spatie\TranslationLoader\LanguageLine;
 use App\Models\Presenters\FragmentPresenter;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
