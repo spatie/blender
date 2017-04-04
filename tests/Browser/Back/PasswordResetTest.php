@@ -1,7 +1,8 @@
 <?php
 
-namespace Tests\Browser\Front;
+namespace Tests\Browser\Back;
 
+use Hash;
 use Laravel\Dusk\Browser;
 use Tests\Browser\TestCase;
 use App\Services\Auth\Back\User;
@@ -23,9 +24,16 @@ class PasswordResetTest extends TestCase
     /** @test */
     public function it_can_reset_passwords()
     {
-        $user = User::create(['email' => 'test@example.com', 'first_name' => 'Test', 'last_name' => 'Test', 'status' => 'active']);
+        $newPassword = 'newpassword';
 
-        $this->browse(function (Browser $browser) use ($user) {
+        $user = User::create([
+            'email' => 'test@example.com',
+            'first_name' => 'Test',
+            'last_name' => 'Test',
+            'status' => 'active'
+        ]);
+
+        $this->browse(function (Browser $browser) use ($user, $newPassword) {
             $browser
                 ->visit('/blender/password/reset')
                 ->type('email', $user->email)
@@ -40,11 +48,15 @@ class PasswordResetTest extends TestCase
             $browser
                 ->visit($passwordResetUrl)
                 ->assertSee('WACHTWOORD WIJZIGEN')
-                ->type('password', 'secret')
-                ->type('password_confirmation', 'secret')
+                ->type('password', $newPassword)
+                ->type('password_confirmation', $newPassword)
                 ->press('Wachtwoord instellen')
                 ->assertPathIs('/blender')
                 ->assertSee(__('passwords.reset'));
         });
+
+        $user = User::where('email', $user->email)->first()->makeVisible('password');
+
+        $this->assertTrue(Hash::check($newPassword, $user->password));
     }
 }
