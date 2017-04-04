@@ -9,7 +9,7 @@
             </h1>
 
             {{ html()
-                ->modelForm($user, 'POST', 'Back\Auth\ResetPasswordController@reset')
+                ->modelForm($user, 'POST', action('Back\Auth\ResetPasswordController@reset'))
                 ->class('-stacked v-auth__form')
                 ->open() }}
 
