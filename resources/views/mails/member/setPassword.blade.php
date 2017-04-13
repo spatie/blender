@@ -5,7 +5,7 @@ Beste {{ $user->first_name }},
 
 Je hebt toegang gekregen tot [{{ Request::getHost() }}]({{ action('Front\Auth\ResetPasswordController@showResetForm', [$token]) }}).
 
-@component('mail::button', ['url' => action('Front\Auth\ResetPasswordController@showResetForm', [$token])])
+@component('mail::button', ['url' => action('Front\Auth\ResetPasswordController@showResetForm', [$token]) . '?email=' . $user->email])
 Stel je wachtwoord in
 @endcomponent
 
