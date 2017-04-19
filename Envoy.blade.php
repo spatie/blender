@@ -159,6 +159,7 @@ git pull origin master
 php artisan cache:clear
 php artisan config:cache
 sudo supervisorctl restart all
+sudo service php7.1-fpm restart
 @endtask
 
 @after
