@@ -8,13 +8,15 @@ use Spatie\MediaLibrary\Media;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Collection;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Back\AddMediaRequest;
-use Spatie\Blender\Model\Transformers\MediaTransformer;
+use App\Models\Transformers\MediaTransformer;
+use Illuminate\Validation\ValidationException;
 
 class MediaLibraryController extends Controller
 {
-    public function add(AddMediaRequest $request)
+    public function add(Request $request)
     {
+        $this->validate($request, $this->validationRules());
+
         $model = $this->getModelFromRequest($request);
 
         $files = $request->file('file');
@@ -71,5 +73,18 @@ class MediaLibraryController extends Controller
         }
 
         return call_user_func($request['model_name'].'::findOrFail', $request['model_id']);
+    }
+
+    protected function validationRules(): array
+    {
+        return [
+            'collection_name' => 'required',
+            'file' => 'required|max:'.config('medialibrary.max_file_size'),
+        ];
+    }
+
+    protected function throwValidationException(Request $request, $validator)
+    {
+        throw new ValidationException($validator, response()->json($validator->messages(), 400));
     }
 }

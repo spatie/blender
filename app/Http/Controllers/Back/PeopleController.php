@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Person;
-use Spatie\Blender\Model\Controller;
-use App\Http\Requests\Back\PersonRequest;
+use Illuminate\Http\Request;
 
 class PeopleController extends Controller
 {
@@ -13,10 +12,17 @@ class PeopleController extends Controller
         return Person::create();
     }
 
-    protected function updateFromRequest(Person $person, PersonRequest $request)
+    protected function updateFromRequest(Person $person, Request $request)
     {
         $person->name = $request->get('name');
 
         $this->updateModel($person, $request);
+    }
+
+    protected function validationRules(): array
+    {
+        return [
+            'name' => 'required',
+        ];
     }
 }

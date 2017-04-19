@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\Back;
 
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Services\Auth\Back\User;
 use App\Services\Auth\Back\Enums\UserRole;
-use App\Http\Requests\Back\BackUserRequest;
 use App\Services\Auth\Back\Enums\UserStatus;
 use App\Services\Auth\Back\Events\UserCreated;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class AdministratorsController
 {
+    use ValidatesRequests;
+
     public function index()
     {
         $users = User::all();
@@ -22,8 +26,10 @@ class AdministratorsController
         return view('back.administrators.create', ['user' => new User()]);
     }
 
-    public function store(BackUserRequest $request)
+    public function store(Request $request)
     {
+        $this->validate($request, $this->validationRules());
+
         $user = new User();
 
         $user->email = $request->get('email');
@@ -56,8 +62,10 @@ class AdministratorsController
         return view('back.administrators.edit')->with(compact('user'));
     }
 
-    public function update($id, BackUserRequest $request)
+    public function update($id, Request $request)
     {
+        $this->validate($request, $this->validationRules());
+
         $user = User::findOrFail($id);
 
         $user->email = $request->get('email');
@@ -129,5 +137,28 @@ class AdministratorsController
         }
 
         return __('Administrator').' '.$name.' '.$action;
+    }
+
+    protected function validationRules(): array
+    {
+        return [
+            'email' => $this->getEmailValidationRule(),
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'password' => 'confirmed',
+        ];
+    }
+
+    protected function getEmailValidationRule(): string
+    {
+        $uniqueRule = Rule::unique('users_back', 'email');
+
+        if (request()->method() === 'PATCH') {
+            $userId = request()->route('administrator');
+
+            $uniqueRule = $uniqueRule->ignore($userId);
+        }
+
+        return "required|email|{$uniqueRule}";
     }
 }

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Tag;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Spatie\Blender\Model\Controller;
-use App\Http\Requests\Back\TagRequest;
 
 class TagsController extends Controller
 {
@@ -16,7 +15,7 @@ class TagsController extends Controller
         return Tag::create();
     }
 
-    protected function updateFromRequest(Tag $tag, TagRequest $request)
+    protected function updateFromRequest(Tag $tag, Request $request)
     {
         $tag->type = $request->get('type');
         $tag->online = true;
@@ -44,5 +43,16 @@ class TagsController extends Controller
     public function edit(int $id)
     {
         return parent::edit($id)->withTypes(Tag::typesForSelect());
+    }
+
+    protected function validationRules(): array
+    {
+        $rules = [];
+
+        foreach (config('app.locales') as $locale) {
+            $rules[translate_field_name('name', $locale)] = 'required';
+        }
+
+        return $rules;
     }
 }

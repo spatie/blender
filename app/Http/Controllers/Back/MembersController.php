@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\Back;
 
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Services\Auth\Front\User;
 use App\Services\Auth\Front\Enums\UserRole;
-use App\Http\Requests\Back\FrontUserRequest;
 use App\Services\Auth\Front\Enums\UserStatus;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack;
 
 class MembersController
 {
+    use ValidatesRequests;
+
     public function index()
     {
         $users = User::all();
@@ -22,8 +26,10 @@ class MembersController
         return view('back.members.create', ['user' => new User()]);
     }
 
-    public function store(FrontUserRequest $request)
+    public function store(Request $request)
     {
+        $this->validate($request, $this->validationRules());
+
         $user = new User();
 
         $user->email = $request->get('email');
@@ -52,8 +58,10 @@ class MembersController
         return view('back.members.edit')->with(compact('user'));
     }
 
-    public function update($id, FrontUserRequest $request)
+    public function update($id, Request $request)
     {
+        $this->validate($request, $this->validationRules());
+
         $user = User::findOrFail($id);
 
         $user->email = $request->get('email');
@@ -108,5 +116,27 @@ class MembersController
         }
 
         return __('Lid').' '.$name.' '.$action;
+    }
+
+    protected function validationRules(): array
+    {
+        return [
+            'email' => $this->getEmailValidationRule(),
+            'first_name' => 'required',
+            'last_name' => 'required',
+        ];
+    }
+
+    protected function getEmailValidationRule(): string
+    {
+        $uniqueRule = Rule::unique('users_front', 'email');
+
+        if (request()->method() === 'PATCH') {
+            $userId = request()->route('member');
+
+            $uniqueRule = $uniqueRule->ignore($userId);
+        }
+
+        return "required|email|{$uniqueRule}";
     }
 }

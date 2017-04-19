@@ -5,7 +5,7 @@ Beste {{ $user->first_name }},
 
 Je bent nu administrator op [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}).
 
-@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token])])
+@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]) . '?email=' . $user->email])
 Stel je wachtwoord in
 @endcomponent
 

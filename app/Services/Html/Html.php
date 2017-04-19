@@ -39,6 +39,12 @@ class Html extends \Spatie\Html\Html
 
     public function translations(callable $callback)
     {
+        if (locales()->count() === 1) {
+            $elements = $this->translatedElements(locales()->first(), $callback);
+
+            return $this->div()->addChildren($elements);
+        }
+
         $fieldsets = locales()->map(function ($locale) use ($callback) {
             $this->locale($locale);
 
@@ -58,6 +64,17 @@ class Html extends \Spatie\Html\Html
                 ->addChild($this->div($locale)->class('legend__lang'))
             )
             ->addChildren($contents);
+    }
+
+    private function translatedElements(string $locale, callable $callback)
+    {
+        $this->locale(locales()->first());
+
+        $translatedElements = $callback();
+
+        $this->endLocale();
+
+        return $translatedElements;
     }
 
     public function formGroup(): FormGroup

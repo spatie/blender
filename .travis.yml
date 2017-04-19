@@ -1,4 +1,6 @@
+sudo: required
 language: php
+dist: trusty
 
 php:
   - 7.1
@@ -13,12 +15,17 @@ cache:
     - $HOME/.composer/cache/files
 
 before_script:
-  - travis_retry composer self-update
-  - composer install --prefer-dist
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - composer install --prefer-dist --ignore-platform-reqs
   - nvm install node
   - npm install -g yarn
   - yarn
   - npm run dev -- --progress=false
+  - cp .env.dusk .env
+  - ./vendor/laravel/dusk/bin/chromedriver-linux &
+  - php artisan serve &
 
 script:
  - ./vendor/bin/phpunit
+ - php artisan dusk

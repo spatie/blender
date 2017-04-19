@@ -35,9 +35,9 @@
         "pda/pheanstalk": "^3.0",
         "propaganistas/laravel-phone": "^2.6",
         "spatie/array-functions": "^1.1",
-        "spatie/blender-model": "^5.1.0",
         "spatie/color": "^1.0",
         "spatie/eloquent-sortable": "^3.0",
+        "spatie/fractalistic": "^1.0",
         "spatie/fragment-importer": "^3.0",
         "spatie/laravel-activitylog": "^1.0",
         "spatie/laravel-analytics": "^2.3",
@@ -65,6 +65,7 @@
         "spatie/laravel-tail": "^1.0",
         "spatie/laravel-translatable": "^1.2.1",
         "spatie/laravel-translation-loader": "^1.1",
+        "spatie/regex": "^1.1",
         "spatie/schema-org": "^1.1",
         "spatie/seeders": "^4.4",
         "themsaid/laravel-mail-preview": "^1.2"

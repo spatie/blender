@@ -191,8 +191,10 @@ return [
 
         App\Providers\AuthServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
+        App\Providers\DatabaseServiceProvider::class,
         App\Providers\DuskServiceProvider::class,
         App\Providers\LocaleServiceProvider::class,
+        App\Providers\ModelServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
         App\Providers\ValidationServiceProvider::class,
@@ -200,8 +202,6 @@ return [
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-
-        Spatie\Blender\Model\BlenderModelServiceProvider::class,
 
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,
