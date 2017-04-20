@@ -2,10 +2,11 @@
 
 namespace App\Models\Enums;
 
-class SpecialArticle implements Enumerators
+use ReflectionClass;
+
+class SpecialArticle implements Enumerator
 {
     const __default = self::HOME;
-    
     const HOME = 'home';
     const CONTACT = 'contact';
     
