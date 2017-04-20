@@ -2,11 +2,6 @@
 
 namespace App\Models\Enums;
 
-/**
- * Interface Enumerator
- *
- * @package App\Models\Enums;
- */
 interface Enumerator
 {
     /**
