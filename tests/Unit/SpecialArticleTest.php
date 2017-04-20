@@ -4,11 +4,6 @@ namespace Tests\Unit;
 
 use App\Models\Enums\SpecialArticle;
 
-/**
- * Class SpecialArticleTest
- * 
- * @package Tests\Unit
- */
 class SpecialArticleTest extends TestCase
 {
     /** @test */
