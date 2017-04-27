@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f9dd865495d7250ac88d8ed041cb4c47",
+    "content-hash": "1f26deec4450072ea3e6bcf62faaf181",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.26.2",
+            "version": "3.26.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "05df1887d7b8cea9fba9ad59e1513c3815e883ae"
+                "reference": "a843acca973557ca4fefb7e4d407e6312ff0b9ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/05df1887d7b8cea9fba9ad59e1513c3815e883ae",
-                "reference": "05df1887d7b8cea9fba9ad59e1513c3815e883ae",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/a843acca973557ca4fefb7e4d407e6312ff0b9ed",
+                "reference": "a843acca973557ca4fefb7e4d407e6312ff0b9ed",
                 "shasum": ""
             },
             "require": {
@@ -89,7 +89,7 @@
                 "ext-simplexml": "*",
                 "ext-spl": "*",
                 "nette/neon": "^2.3",
-                "phpunit/phpunit": "~4.0|~5.0",
+                "phpunit/phpunit": "^4.8.35|^5.4.0",
                 "psr/cache": "^1.0"
             },
             "suggest": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-04-21T20:25:16+00:00"
+            "time": "2017-04-26T17:47:01+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1942,16 +1942,16 @@
         },
         {
             "name": "laracasts/flash",
-            "version": "1.3.4",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laracasts/flash.git",
-                "reference": "e0a048b911092e15920ce66f4b6a54b6befa30a3"
+                "reference": "1c7658652e10791d934a37bc0f6f0bd5ce5ac73f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laracasts/flash/zipball/e0a048b911092e15920ce66f4b6a54b6befa30a3",
-                "reference": "e0a048b911092e15920ce66f4b6a54b6befa30a3",
+                "url": "https://api.github.com/repos/laracasts/flash/zipball/1c7658652e10791d934a37bc0f6f0bd5ce5ac73f",
+                "reference": "1c7658652e10791d934a37bc0f6f0bd5ce5ac73f",
                 "shasum": ""
             },
             "require": {
@@ -1959,7 +1959,8 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "mockery/mockery": "dev-master"
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "^6.1"
             },
             "type": "library",
             "autoload": {
@@ -1981,7 +1982,7 @@
                 }
             ],
             "description": "Easy flash notifications",
-            "time": "2015-12-22T15:52:08+00:00"
+            "time": "2017-04-26T16:55:22+00:00"
         },
         {
             "name": "laracasts/utilities",
@@ -2085,16 +2086,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.19",
+            "version": "v5.4.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "02444b7450350db17a7607c8a52f7268ebdb0dad"
+                "reference": "851aad458bcc904178ded02954d55d36c2c35f8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/02444b7450350db17a7607c8a52f7268ebdb0dad",
-                "reference": "02444b7450350db17a7607c8a52f7268ebdb0dad",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/851aad458bcc904178ded02954d55d36c2c35f8b",
+                "reference": "851aad458bcc904178ded02954d55d36c2c35f8b",
                 "shasum": ""
             },
             "require": {
@@ -2210,7 +2211,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-04-16T13:33:34+00:00"
+            "time": "2017-04-27T13:04:35+00:00"
         },
         {
             "name": "laravel/tinker",
