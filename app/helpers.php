@@ -3,6 +3,7 @@
 use Carbon\Carbon;
 use App\Models\Article;
 use App\Models\Fragment;
+use App\Services\Seo\Meta;
 use App\Services\Auth\User;
 use App\Services\Html\Html;
 use App\Services\Seo\Schema;
@@ -231,7 +232,7 @@ function fragment($id = null, $replace = [], $locale = null)
     return trans($id, $replace, $locale);
 }
 
-function meta($with = [])
+function meta(): Meta
 {
-    return app('meta')->with($with);
+    return app(Meta::class);
 }

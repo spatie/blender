@@ -14,6 +14,5 @@ class SeoServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(Meta::class);
-        $this->app->alias(Meta::class, 'meta');
     }
 }
