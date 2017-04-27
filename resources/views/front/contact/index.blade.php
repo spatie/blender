@@ -1,10 +1,9 @@
 @component('front._layouts.main', [
-    'title' => $article->seo('title'),
-    'seo' => $article->renderSeoTags(),
+    'meta' => $article->meta(),
     'subMenu' => Menu::articleSiblings($article),
 ])
     @slot('mainTitle')
-        <h1>{{ $article->name }}</h1>
+        <h1>{{ $article->name }}zzzz</h1>
     @endslot
 
     @slot('mainDownloads')
