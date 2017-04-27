@@ -1,4 +1,5 @@
 @component('front._layouts.main', [
+    'meta' => array_merge($article->meta(), ['og:image' => 'lfkngn']),
     'subMenu' => Menu::articleSiblings($article),
 ])
     @slot('mainTitle')

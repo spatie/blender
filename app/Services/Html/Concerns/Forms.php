@@ -154,7 +154,7 @@ trait Forms
                         $this->label($this->seoLabel($attribute), $attribute),
                         $this->text()
                             ->name($this->fieldName("seo_{$attribute}"))
-                            ->value($this->model->getTranslation('seo_values', $locale)[$attribute] ?? '')
+                            ->value($this->model->getTranslation('meta_values', $locale)[$attribute] ?? '')
                             ->placeholder($this->model->defaultSeoValues()[$attribute]),
                     ]);
                 })

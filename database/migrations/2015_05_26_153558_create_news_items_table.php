@@ -18,7 +18,7 @@ class CreateNewsItemsTable extends Migration
             $table->json('name')->nullable();
             $table->json('text')->nullable();
             $table->json('slug')->nullable();
-            $table->json('seo_values')->nullable();
+            $table->json('meta_values')->nullable();
             $table->datetime('publish_date');
             $table->boolean('draft')->default(true);
             $table->boolean('online')->default(true);

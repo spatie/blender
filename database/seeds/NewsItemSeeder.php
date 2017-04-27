@@ -18,7 +18,7 @@ class NewsItemSeeder extends DatabaseSeeder
         $newsItem = NewsItem::create($attributes + [
             'name' => faker()->translate(faker()->title()),
             'text' => faker()->translate(faker()->text()),
-            'seo_values' => collect([]),
+            'meta_values' => collect([]),
             'publish_date' => faker()->futureDate(),
             'online' => faker()->mostly(),
             'draft' => false,

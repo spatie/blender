@@ -10,7 +10,7 @@ trait HasMetaValues
     {
         return array_merge(
             $this->defaultMetaValues(),
-            array_filter($this->seo_values ?: [])
+            array_filter($this->meta_values ?: [])
         );
     }
 }
