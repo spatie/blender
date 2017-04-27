@@ -37,7 +37,9 @@ class Meta implements Htmlable
 
     public function with(array $properties)
     {
-        $this->properties = array_merge($this->properties, $properties);
+        foreach ($properties as $name => $value) {
+            $this->set($name, $value);
+        }
 
         return $this;
     }
