@@ -9,7 +9,7 @@ class StatisticsController
 {
     public function index()
     {
-        if (empty(config('laravel-analytics.view_id'))) {
+        if (empty(config('analytics.view_id'))) {
             return view('back.statistics.notConfigured');
         }
 
