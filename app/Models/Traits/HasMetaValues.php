@@ -2,8 +2,6 @@
 
 namespace App\Models\Traits;
 
-use Illuminate\Support\HtmlString;
-
 trait HasMetaValues
 {
     public function meta(): array
