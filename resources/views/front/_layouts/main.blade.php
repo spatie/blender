@@ -1,5 +1,5 @@
 @component('front._layouts.master', [
-    'title' => $title
+    'meta' => $meta ?? []
 ])
     {{ $mainImages ?? '' }}
 

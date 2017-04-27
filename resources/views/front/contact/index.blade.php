@@ -1,6 +1,5 @@
 @component('front._layouts.main', [
-    'title' => $article->seo('title'),
-    'seo' => $article->renderSeoTags(),
+    'meta' => $article->meta(),
     'subMenu' => Menu::articleSiblings($article),
 ])
     @slot('mainTitle')

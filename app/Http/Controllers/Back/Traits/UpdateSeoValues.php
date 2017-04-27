@@ -39,7 +39,7 @@ trait UpdateSeoValues
                 });
             })
             ->each(function ($values, $locale) use ($model) {
-                $model->setTranslation('seo_values', $locale, $values);
+                $model->setTranslation('meta_values', $locale, $values);
             });
     }
 }
