@@ -61,7 +61,7 @@ class Meta implements Htmlable
             return "<meta name=\"{$name}\" content=\"{$content}\">";
         }, $properties, array_keys($properties));
 
-        return implode("\n", $tags); 
+        return implode("\n", $tags);
     }
 
     public function toHtml()
