@@ -145,7 +145,7 @@ trait Forms
         $this->ensureModelIsAvailable();
 
         $languageFields = locales()->map(function ($locale) {
-            return collect($this->model->defaultSeoValues())
+            return collect($this->model->defaultMetaValues())
                 ->keys()
                 ->map(function ($attribute) use ($locale) {
                     $this->locale($locale);
@@ -155,7 +155,7 @@ trait Forms
                         $this->text()
                             ->name($this->fieldName("seo_{$attribute}"))
                             ->value($this->model->getTranslation('meta_values', $locale)[$attribute] ?? '')
-                            ->placeholder($this->model->defaultSeoValues()[$attribute]),
+                            ->placeholder($this->model->defaultMetaValues()[$attribute]),
                     ]);
                 })
                 ->pipe(function (Collection $fields) use ($locale) {
