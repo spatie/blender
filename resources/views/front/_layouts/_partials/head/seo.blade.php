@@ -1,13 +1,15 @@
-@section('seo')
-    <meta name="description" content="@yield('pageDescription')">
+@php
+    meta()->defaultTitle(__('site.title'));
+    meta()->suffixTitleWith(' - '.__('site.title'));
+@endphp
 
-    <meta property="og:url" content="@yield('canonical', request()->url())">
-    <meta property="og:type" content="website">
-    @if($hasTitle)
-        <meta property="og:title" content="@yield('title') - @lang('site.title')">
-    @else
-        <meta property="og:title" content="@lang('site.title')">
-    @endif
-    <meta property="og:description" content="@yield('pageDescription')">
-    <meta property="og:image" content="{{ url('/images/og-image.png') }}">
-@show
+<title>{{ meta()->title() }}</title>
+
+{{ meta()->with([
+    'description' => __('site.description'),
+    'og:url' => request()->url(),
+    'og:title' => meta()->title(),
+    'og:description' => __('site.description'),
+    'og:type' => 'website',
+    'og:image' => url('/images/og-image.png'),
+])->with($meta ?? []) }}

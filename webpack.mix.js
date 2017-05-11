@@ -1,4 +1,3 @@
-const process = require('process');
 const { mix } = require('laravel-mix');
 
 mix
@@ -25,10 +24,6 @@ mix
             // The public path needs to be set to the root of the site so
             // Webpack can locate chunks at runtime.
             publicPath: '/',
-
-            // Prepend chunks with `chunk.` so we can easily ignore them in
-            // the project's version control.
-            chunkFilename: 'js/[name]-[chunkhash].js',
         },
 
         module: {
@@ -44,8 +39,8 @@ mix
         },
 
         stats: {
-            // The "pretty" errors sometimes lack information. To display full
-            // stack traces, run `DEBUG=1 yarn run dev`.
-            errors: process.env.DEBUG,
+            // The "pretty" errors sometimes lack information. Let's just 
+            // always display full stack traces.
+            errors: true,
         },
     });

@@ -17,7 +17,7 @@ abstract class Model extends Eloquent implements HasMediaConversions, GetsCleane
     use HasTranslations;
     use Traits\Draftable;
     use Traits\HasMedia;
-    use Traits\HasSeoValues;
+    use Traits\HasMetaValues;
 
     protected $guarded = ['id'];
 
@@ -53,15 +53,15 @@ abstract class Model extends Eloquent implements HasMediaConversions, GetsCleane
             ->where('created_at', '<', Carbon::now()->subWeek());
     }
 
-    public function defaultSeoValues(): array
+    public function defaultMetaValues(): array
     {
         return [
             'title' => $this->name,
-            'meta_description' => (string) string($this->text)->tease(155),
-            'meta_og:title' => $this->name,
-            'meta_og:type' => 'website',
-            'meta_og:description' => (string) string($this->text)->tease(155),
-            'meta_og:image' => $this->hasMedia('images') ?
+            'description' => (string) string($this->text)->tease(155),
+            'og:title' => $this->name,
+            'og:type' => 'website',
+            'og:description' => (string) string($this->text)->tease(155),
+            'og:image' => $this->hasMedia('images') ?
                 url($this->getFirstMediaUrl('images')) :
                 url('/images/og-image.png'),
         ];

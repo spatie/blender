@@ -15,7 +15,6 @@
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "debug": "NODE_ENV=development DEBUG=1 node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "eslint resources/assets/js --ext .js,.vue --fix && exit 0"
   },
   "dependencies": {
@@ -33,7 +32,7 @@
     "eslint-config-spatie": "^1.2.7",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.0.0",
-    "laravel-mix": "^0.8.0",
+    "laravel-mix": "^0.11.0",
     "lodash": "^4.16.6",
     "normalize-css": "^2.3.1",
     "spatie-dom": "^1.0.0",

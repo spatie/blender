@@ -17,15 +17,15 @@ trait Alerts
     public function flashMessage(): ?Div
     {
         if (
-            ! $this->request->session()->get('flash_notification.level') ||
-            ! $this->request->session()->get('flash_notification.message')
+            ! $this->request->session()->get('flash_notification.0.level') ||
+            ! $this->request->session()->get('flash_notification.0.message')
         ) {
             return null;
         }
 
         return $this->alert(
-            $this->request->session()->get('flash_notification.level'),
-            $this->request->session()->get('flash_notification.message')
+            $this->request->session()->get('flash_notification.0.level'),
+            $this->request->session()->get('flash_notification.0.message')
         );
     }
 

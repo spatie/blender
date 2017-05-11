@@ -15,7 +15,7 @@ class DashboardController
 
         $view = view('back.dashboard.index')->with(compact('logItems'));
 
-        if (empty(config('laravel-analytics.view_id'))) {
+        if (empty(config('analytics.view_id'))) {
             return $view;
         }
 

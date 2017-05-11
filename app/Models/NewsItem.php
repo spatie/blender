@@ -14,7 +14,7 @@ class NewsItem extends Model
     protected $dates = ['publish_date'];
 
     public $tagTypes = ['newsCategory', 'newsTag'];
-    public $translatable = ['name', 'text', 'slug', 'seo_values'];
+    public $translatable = ['name', 'text', 'slug', 'meta_values'];
 
     protected $mediaLibraryCollections = ['images', 'downloads'];
 
