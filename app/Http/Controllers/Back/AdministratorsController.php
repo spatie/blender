@@ -38,7 +38,7 @@ class AdministratorsController
         $user->locale = $request->get('locale', 'nl');
 
         if ($request->has('password')) {
-            $user->password = bryct($request->get('password'));
+            $user->password = bcrypt($request->get('password'));
         }
 
         $user->role = UserRole::ADMIN;
@@ -74,7 +74,7 @@ class AdministratorsController
         $user->locale = $request->get('locale', 'nl');
 
         if ($request->has('password')) {
-            $user->password = $request->get('password');
+            $user->password = bcrypt($request->get('password'));
         }
 
         $user->save();
