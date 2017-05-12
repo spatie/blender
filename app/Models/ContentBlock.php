@@ -68,6 +68,12 @@ class ContentBlock extends Model implements HasMediaConversions
 
             $updatedMedia = $this->updateMedia($media, $collection);
 
+            $updatedMedia->each(function (Media $media) {
+                $media
+                    ->setCustomProperty('draft', false)
+                    ->save();
+            });
+
             $this->media()
                 ->whereCollectionName($collection)
                 ->whereNotIn('id', Arr::pluck($updatedMedia, 'id'))
