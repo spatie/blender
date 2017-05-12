@@ -2,15 +2,15 @@
 
 /**
  * Automatically alias Laravel Model's to their base classname.
- * Ex: "App\Models\User" now can just be accessed by "User"
+ * Ex: "App\Models\User" now can just be accessed by "User".
  */
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
-if (!function_exists('aliasModels')) {
+if (! function_exists('aliasModels')) {
     function aliasModels()
     {
-        collect((new Finder())->files()->name('*.php')->in(base_path() . '/app/Models'))
+        collect((new Finder())->files()->name('*.php')->in(base_path().'/app/Models'))
             ->map(function (SplFileInfo $file) {
                 $name = determineAliasModelClass($file);
 
@@ -35,10 +35,10 @@ function determineAliasModelClass(SplFileInfo $file): string
     $namespace = 'App\\Models\\';
 
     if ($relativePath = $file->getRelativePath()) {
-        $namespace .= strtr($relativePath, '/', '\\') . '\\';
+        $namespace .= strtr($relativePath, '/', '\\').'\\';
     }
 
-    $class = $namespace . $file->getBasename('.php');
+    $class = $namespace.$file->getBasename('.php');
 
     return $class;
 }
