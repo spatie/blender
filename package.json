@@ -39,5 +39,8 @@
     "viewport-utility": "^1.2.2",
     "vue": "^2.1.0",
     "webfontloader": "^1.6.10"
+  },
+  "devDependencies": {
+    "jest": "^20.0.1"
   }
 }
