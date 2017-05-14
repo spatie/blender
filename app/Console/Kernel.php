@@ -19,6 +19,7 @@ class Kernel extends ConsoleKernel
         \Spatie\FragmentImporter\Commands\ImportFragments::class,
         \App\Console\Commands\PrefetchAnalyticsData::class,
         \Spatie\MigrateFresh\Commands\MigrateFresh::class,
+        \Spatie\ArtisanDd\DdCommand::class,
     ];
 
     /**
