@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "daf65fe8b57ca6b0098d420648a1265d",
+    "content-hash": "bac4723fb48d1175f2951404b21429ec",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -4439,25 +4439,25 @@
         },
         {
             "name": "spatie/laravel-artisan-dd",
-            "version": "0.0.1",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-artisan-dd.git",
-                "reference": "b7d31697008c4dfc3a6fecbc495c1f49af261a37"
+                "reference": "123695325fe05331b983d6d70c686e0af4a00c4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-artisan-dd/zipball/b7d31697008c4dfc3a6fecbc495c1f49af261a37",
-                "reference": "b7d31697008c4dfc3a6fecbc495c1f49af261a37",
+                "url": "https://api.github.com/repos/spatie/laravel-artisan-dd/zipball/123695325fe05331b983d6d70c686e0af4a00c4c",
+                "reference": "123695325fe05331b983d6d70c686e0af4a00c4c",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "~5.1|~5.2|~5.3|~5.4",
-                "illuminate/support": "~5.1|~5.2|~5.3|~5.4",
+                "illuminate/console": "~5.3|~5.4",
+                "illuminate/support": "~5.3|~5.4",
                 "php": "^7.0"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.1|~3.2|~3.3|~3.4",
+                "orchestra/testbench": "~3.3|~3.4",
                 "phpunit/phpunit": "^5.7"
             },
             "type": "library",
@@ -4487,7 +4487,7 @@
                 "laravel-artisan-dd",
                 "spatie"
             ],
-            "time": "2017-05-14T22:45:56+00:00"
+            "time": "2017-05-15T08:08:20+00:00"
         },
         {
             "name": "spatie/laravel-backup",

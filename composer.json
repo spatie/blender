@@ -38,7 +38,7 @@
         "spatie/color": "^1.0",
         "spatie/eloquent-sortable": "^3.0",
         "spatie/fragment-importer": "^3.0",
-        "spatie/laravel-artisan-dd": "0.0.1",
+        "spatie/laravel-artisan-dd": "^1.0",
         "spatie/laravel-activitylog": "^1.0",
         "spatie/laravel-analytics": "^3.0",
         "spatie/laravel-backup": "^4.0",
