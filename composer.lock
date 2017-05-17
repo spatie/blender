@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.27.2",
+            "version": "3.27.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8"
+                "reference": "3f313d2bfb7c56fecf58fc728701f7282a39e318"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8",
-                "reference": "eb10e43cccf8e868f9622ab8ce2beb9fb756b5a8",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3f313d2bfb7c56fecf58fc728701f7282a39e318",
+                "reference": "3f313d2bfb7c56fecf58fc728701f7282a39e318",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-05-11T21:23:43+00:00"
+            "time": "2017-05-16T20:49:25+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -3701,16 +3701,16 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.8.4",
+            "version": "v0.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82"
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/17cf432bb80d9198df239b80d00a29155bd74d82",
-                "reference": "17cf432bb80d9198df239b80d00a29155bd74d82",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/38a9d21406597a0440690eafbcb0222f528c8ac6",
+                "reference": "38a9d21406597a0440690eafbcb0222f528c8ac6",
                 "shasum": ""
             },
             "require": {
@@ -3770,7 +3770,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2017-05-12T15:41:55+00:00"
+            "time": "2017-05-17T06:49:19+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -4007,16 +4007,16 @@
         },
         {
             "name": "spatie/db-dumper",
-            "version": "2.6.0",
+            "version": "2.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/db-dumper.git",
-                "reference": "ab73fe5230541438caf1597b585c09f540c7243e"
+                "reference": "3495a15545643a4fc19e914cd5e55d35f2734a88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/ab73fe5230541438caf1597b585c09f540c7243e",
-                "reference": "ab73fe5230541438caf1597b585c09f540c7243e",
+                "url": "https://api.github.com/repos/spatie/db-dumper/zipball/3495a15545643a4fc19e914cd5e55d35f2734a88",
+                "reference": "3495a15545643a4fc19e914cd5e55d35f2734a88",
                 "shasum": ""
             },
             "require": {
@@ -4053,7 +4053,7 @@
                 "mysqldump",
                 "spatie"
             ],
-            "time": "2017-04-13T18:13:10+00:00"
+            "time": "2017-05-15T14:52:41+00:00"
         },
         {
             "name": "spatie/eloquent-sortable",
@@ -4491,16 +4491,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.14.0",
+            "version": "4.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "09585a737029001bb0f994ed0531712f1da646e5"
+                "reference": "7d452a9eb5cecaef742f0a8833120f95532eeac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/09585a737029001bb0f994ed0531712f1da646e5",
-                "reference": "09585a737029001bb0f994ed0531712f1da646e5",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/7d452a9eb5cecaef742f0a8833120f95532eeac0",
+                "reference": "7d452a9eb5cecaef742f0a8833120f95532eeac0",
                 "shasum": ""
             },
             "require": {
@@ -4553,7 +4553,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2017-05-09T15:33:55+00:00"
+            "time": "2017-05-15T15:00:27+00:00"
         },
         {
             "name": "spatie/laravel-blade-javascript",
@@ -5763,16 +5763,16 @@
         },
         {
             "name": "spatie/laravel-translation-loader",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-translation-loader.git",
-                "reference": "bac6e41a00b49d13ecece518a6be7634d995c96e"
+                "reference": "0edb31e56275c9971e729cc621fa29372b29ad0b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-translation-loader/zipball/bac6e41a00b49d13ecece518a6be7634d995c96e",
-                "reference": "bac6e41a00b49d13ecece518a6be7634d995c96e",
+                "url": "https://api.github.com/repos/spatie/laravel-translation-loader/zipball/0edb31e56275c9971e729cc621fa29372b29ad0b",
+                "reference": "0edb31e56275c9971e729cc621fa29372b29ad0b",
                 "shasum": ""
             },
             "require": {
@@ -5817,7 +5817,7 @@
                 "spatie",
                 "translate"
             ],
-            "time": "2017-01-23T09:14:49+00:00"
+            "time": "2017-05-16T12:41:12+00:00"
         },
         {
             "name": "spatie/menu",
