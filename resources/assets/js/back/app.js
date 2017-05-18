@@ -1,14 +1,16 @@
 import 'babel-polyfill';
 
-import '@spatie/blender-js/modules/ajax.csrf';
-import '@spatie/blender-js/modules/interface.confirm';
-import '@spatie/blender-js/modules/form.input.datetimepicker';
-import '@spatie/blender-js/modules/form.select';
-import '@spatie/blender-js/modules/form.textarea.autosize';
-import '@spatie/blender-js/modules/form.locationpicker';
-import '@spatie/blender-js/modules/table.datatables';
-import '@spatie/blender-js/modules/table.sortable';
-import '@spatie/blender-js/modules/tabs';
+window.jQuery = window.$ = require('jquery');
+
+require('@spatie/blender-js/modules/ajax.csrf');
+require('@spatie/blender-js/modules/interface.confirm');
+require('@spatie/blender-js/modules/form.input.datetimepicker');
+require('@spatie/blender-js/modules/form.select');
+require('@spatie/blender-js/modules/form.textarea.autosize');
+require('@spatie/blender-js/modules/form.locationpicker');
+require('@spatie/blender-js/modules/table.datatables');
+require('@spatie/blender-js/modules/table.sortable');
+require('@spatie/blender-js/modules/tabs');
 
 import { query } from 'spatie-dom';
 
