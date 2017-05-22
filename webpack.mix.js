@@ -37,10 +37,4 @@ mix
                 },
             ],
         },
-
-        stats: {
-            // The "pretty" errors sometimes lack information. Let's just 
-            // always display full stack traces.
-            errors: true,
-        },
     });
