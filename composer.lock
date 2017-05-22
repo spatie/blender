@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bac4723fb48d1175f2951404b21429ec",
+    "content-hash": "bfe24e37bf2e13df12aa2ce00f2cdcb6",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.27.4",
+            "version": "3.28.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "3f313d2bfb7c56fecf58fc728701f7282a39e318"
+                "reference": "af653f256d99ff372ce3e3be3048e7e5373ab1bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3f313d2bfb7c56fecf58fc728701f7282a39e318",
-                "reference": "3f313d2bfb7c56fecf58fc728701f7282a39e318",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/af653f256d99ff372ce3e3be3048e7e5373ab1bc",
+                "reference": "af653f256d99ff372ce3e3be3048e7e5373ab1bc",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-05-16T20:49:25+00:00"
+            "time": "2017-05-18T20:44:27+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -4491,16 +4491,16 @@
         },
         {
             "name": "spatie/laravel-backup",
-            "version": "4.14.1",
+            "version": "4.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-backup.git",
-                "reference": "7d452a9eb5cecaef742f0a8833120f95532eeac0"
+                "reference": "d9b70073d32eb7ec96b885e0c25563e78f9bdb19"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/7d452a9eb5cecaef742f0a8833120f95532eeac0",
-                "reference": "7d452a9eb5cecaef742f0a8833120f95532eeac0",
+                "url": "https://api.github.com/repos/spatie/laravel-backup/zipball/d9b70073d32eb7ec96b885e0c25563e78f9bdb19",
+                "reference": "d9b70073d32eb7ec96b885e0c25563e78f9bdb19",
                 "shasum": ""
             },
             "require": {
@@ -4553,7 +4553,7 @@
                 "laravel-backup",
                 "spatie"
             ],
-            "time": "2017-05-15T15:00:27+00:00"
+            "time": "2017-05-20T08:03:14+00:00"
         },
         {
             "name": "spatie/laravel-blade-javascript",
@@ -5694,6 +5694,57 @@
                 "tail"
             ],
             "time": "2017-03-21T14:36:45+00:00"
+        },
+        {
+            "name": "spatie/laravel-tinker-tools",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-tinker-tools.git",
+                "reference": "d3a32874883cb953207b782745ccb8f357abcc91"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-tinker-tools/zipball/d3a32874883cb953207b782745ccb8f357abcc91",
+                "reference": "d3a32874883cb953207b782745ccb8f357abcc91",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.3.*|5.4.*",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\TinkerTools\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Flysystem Adapter for the Dropbox v2 API",
+            "homepage": "https://github.com/spatie/laravel-tinker-tools",
+            "keywords": [
+                "Flysystem",
+                "api",
+                "dropbox",
+                "laravel-tinker-tools",
+                "spatie",
+                "v2"
+            ],
+            "time": "2017-05-21T19:14:03+00:00"
         },
         {
             "name": "spatie/laravel-translatable",
@@ -8246,23 +8297,23 @@
         },
         {
             "name": "sebastian/diff",
-            "version": "1.4.1",
+            "version": "1.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e"
+                "reference": "3c7d21999e815cdfac70c6c7d79d3a9cb1bc7bc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/13edfd8706462032c2f52b4b862974dd46b71c9e",
-                "reference": "13edfd8706462032c2f52b4b862974dd46b71c9e",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3c7d21999e815cdfac70c6c7d79d3a9cb1bc7bc2",
+                "reference": "3c7d21999e815cdfac70c6c7d79d3a9cb1bc7bc2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.3"
+                "php": "^5.3.3 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.8"
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
             },
             "type": "library",
             "extra": {
@@ -8294,7 +8345,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2015-12-08T07:14:41+00:00"
+            "time": "2017-05-18T13:44:30+00:00"
         },
         {
             "name": "sebastian/environment",
