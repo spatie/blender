@@ -127,6 +127,7 @@ php artisan migrate --force;
 {{ logMessage("🙏  Blessing new release...") }}
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
+php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
 
@@ -156,6 +157,7 @@ ls -dt {{ $releasesDir }}/* | tail -n +6 | xargs -d "\n" rm -rf;
 {{ logMessage("💻  Deploying code changes...") }}
 cd {{ $currentDir }}
 git pull origin master
+php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
 sudo supervisorctl restart all
