@@ -1,8 +1,8 @@
 <h2>@lang('Bezoekers')</h2>
 
 <blender-chart class="chart">
-    <canvas id="daily-visitors" width=1000 height=250></canvas>
-    <div class="chart__legend" id="daily-visitors-legend"></div>
+    <canvas id="visitors" width=1000 height=250></canvas>
+    <div class="chart__legend" id="visitors-legend"></div>
 </blender-chart>
 
 @section('extraJs')
