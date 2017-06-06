@@ -3,6 +3,7 @@ require __DIR__.'/vendor/autoload.php';
 (new \Dotenv\Dotenv(__DIR__, '.env'))->load();
 
 $server = "";
+$userAndServer = 'forge@'. $server;
 $repository = "spatie/{$server}";
 $baseDir = "/home/forge/{$server}";
 $releasesDir = "{$baseDir}/releases";
@@ -16,7 +17,7 @@ return "echo '\033[32m" .$message. "\033[0m';\n";
 }
 @endsetup
 
-@servers(['local' => '127.0.0.1', 'remote' => $server])
+@servers(['local' => '127.0.0.1', 'remote' => $userAndServer])
 
 @macro('deploy')
 startDeployment
