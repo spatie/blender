@@ -26,7 +26,7 @@ function content_locale(): string
  *
  * @throws \Exception
  */
-function current_user(): ?User
+function current_user(): ? User
 {
     if (request()->isFront()) {
         return auth()->guard('front')->user();
@@ -39,7 +39,7 @@ function current_user(): ?User
     throw new \Exception('Coud not determine current user');
 }
 
-function diff_date_for_humans(Carbon $date): string
+function diff_date_for_humans(Carbon $date) : string
 {
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
 }

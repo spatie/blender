@@ -2,23 +2,24 @@
 .env
 .env.backup
 .idea
-_ide_helper*.php
+.php_cs.cache
 .phpstorm.meta.php
+_ide_helper*.php
 
 # BACK END
-/vendor
 /database/seeds/data/~$fragments*.xlsx
+/vendor
 
 # FRONT END
 /node_modules
 /npm-debug.log
-/yarn-error.log
-/public/doc/sass
-/public/css
-/public/js
-/public/mix-manifest.json
-/public/media
 /public/build
+/public/css
+/public/doc/sass
+/public/js
+/public/media
+/public/mix-manifest.json
+/yarn-error.log
 
 # REMOVE THIS LINE IN PROJECTS
 /resources/assets/js/back/redactor

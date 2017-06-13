@@ -21,7 +21,8 @@ abstract class Controller
     use Traits\UpdateTranslations;
 
     /** @var string */
-    protected $modelClass, $moduleName;
+    protected $modelClass;
+    protected $moduleName;
 
     /** @var bool */
     protected $redirectToIndex = false;

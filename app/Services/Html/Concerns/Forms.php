@@ -54,12 +54,12 @@ trait Forms
         return $this->category($type)->attributes(['multiple', 'data-select' => 'tags']);
     }
 
-    public function searchableSelect(string $name = '', iterable $options = [], ?string $value = '')
+    public function searchableSelect(string $name = '', iterable $options = [], ? string $value = '')
     {
         return $this->select($name, $options, $value)->attribute('data-select', 'search');
     }
 
-    public function media(string $collection, string $type, array $associated = []): Element
+    public function media(string $collection, string $type, array $associated = []) : Element
     {
         $this->ensureModelIsAvailable();
 

@@ -82,7 +82,7 @@ class Html extends \Spatie\Html\Html
         return new FormGroup($this);
     }
 
-    protected function old(string $name, ?string $value = '')
+    protected function old(string $name, ? string $value = '')
     {
         if (empty($name)) {
             return;
@@ -105,7 +105,7 @@ class Html extends \Spatie\Html\Html
         return $this->request->old($this->fieldName($name), $value);
     }
 
-    protected function fieldName(string $name): string
+    protected function fieldName(string $name) : string
     {
         if ($this->locale) {
             return translate_field_name($name, $this->locale);
