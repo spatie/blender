@@ -39,7 +39,7 @@ php artisan migrate --seed
 
 ### Assets
 
-Installing Blender's front end dependecies requries `yarn`.
+Installing Blender's front end dependencies requries `yarn`.
 
 ```
 yarn
