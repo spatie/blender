@@ -23,6 +23,7 @@ class Person extends Model implements Sortable
         $this->addMediaConversion('thumb')
             ->width(368)
             ->height(232)
+            ->optimize()
             ->performOnCollections('images');
     }
 
