@@ -151,7 +151,7 @@ function register_url(): string
     return action('Front\Auth\RegisterController@showRegistrationForm');
 }
 
-function translate_field_name(string $name, string $locale = ''): string
+function translate_field_name($name, $locale = '')
 {
     $locale = $locale ?? content_locale();
 
@@ -177,11 +177,6 @@ function validate($fields, $rules): bool
     }
 
     return Validator::make($fields, $rules)->passes();
-}
-
-function html(): Html
-{
-    return app(Html::class);
 }
 
 function schema(): Schema

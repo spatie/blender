@@ -3,7 +3,6 @@
 namespace App\Services\Html;
 
 use Carbon\Carbon;
-use Spatie\Html\Elements\Fieldset;
 use Spatie\Translatable\HasTranslations;
 
 class Html extends \Spatie\Html\Html
@@ -20,7 +19,7 @@ class Html extends \Spatie\Html\Html
      *
      * @return static
      */
-    public function locale(string $locale)
+    public function locale($locale)
     {
         $this->locale = $locale;
 
@@ -37,7 +36,7 @@ class Html extends \Spatie\Html\Html
         return $this;
     }
 
-    public function translations(callable $callback)
+    public function translations($callback)
     {
         if (locales()->count() === 1) {
             $elements = $this->translatedElements(locales()->first(), $callback);
@@ -56,7 +55,7 @@ class Html extends \Spatie\Html\Html
         return $this->div()->addChildren($fieldsets);
     }
 
-    public function translatedFieldset(string $locale, $contents): Fieldset
+    public function translatedFieldset($locale, $contents)
     {
         return $this
             ->fieldset()
@@ -66,7 +65,7 @@ class Html extends \Spatie\Html\Html
             ->addChildren($contents);
     }
 
-    private function translatedElements(string $locale, callable $callback)
+    private function translatedElements($locale, $callback)
     {
         $this->locale(locales()->first());
 
@@ -77,12 +76,12 @@ class Html extends \Spatie\Html\Html
         return $translatedElements;
     }
 
-    public function formGroup(): FormGroup
+    public function formGroup()
     {
         return new FormGroup($this);
     }
 
-    protected function old(string $name, ? string $value = '')
+    protected function old($name, $value = '')
     {
         if (empty($name)) {
             return;
@@ -105,9 +104,9 @@ class Html extends \Spatie\Html\Html
         return $this->request->old($this->fieldName($name), $value);
     }
 
-    protected function fieldName(string $name) : string
+    protected function fieldName($name)
     {
-        if ($this->locale) {
+        if ($name && $this->locale) {
             return translate_field_name($name, $this->locale);
         }
 
