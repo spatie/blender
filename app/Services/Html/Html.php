@@ -3,7 +3,6 @@
 namespace App\Services\Html;
 
 use Carbon\Carbon;
-use Spatie\Html\Elements\Fieldset;
 use Spatie\Translatable\HasTranslations;
 
 class Html extends \Spatie\Html\Html
