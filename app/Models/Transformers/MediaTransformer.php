@@ -2,8 +2,8 @@
 
 namespace App\Models\Transformers;
 
-use Spatie\MediaLibrary\Media;
 use League\Fractal\TransformerAbstract;
+use Spatie\MediaLibrary\Media;
 
 class MediaTransformer extends TransformerAbstract
 {

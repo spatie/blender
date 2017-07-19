@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
-use App\Models\Scopes\OnlineScope;
 use App\Models\Scopes\NonDraftScope;
+use App\Models\Scopes\OnlineScope;
 use App\Models\Scopes\SortableScope;
-use Spatie\ModelCleanup\GetsCleanedUp;
-use Spatie\Translatable\HasTranslations;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
+use Spatie\ModelCleanup\GetsCleanedUp;
+use Spatie\Translatable\HasTranslations;
 
 abstract class Model extends Eloquent implements HasMediaConversions, GetsCleanedUp
 {

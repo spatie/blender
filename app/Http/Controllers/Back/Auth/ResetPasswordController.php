@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Back\Auth;
 
-use Auth;
-use Password;
-use Illuminate\Http\Request;
-use App\Services\Auth\Back\User;
 use App\Http\Controllers\Controller;
+use App\Services\Auth\Back\User;
+use Auth;
 use Illuminate\Foundation\Auth\ResetsPasswords;
+use Illuminate\Http\Request;
+use Password;
 
 class ResetPasswordController extends Controller
 {

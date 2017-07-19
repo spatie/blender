@@ -2,10 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Traits\HasMedia;
-use Spatie\TranslationLoader\LanguageLine;
 use App\Models\Presenters\FragmentPresenter;
+use App\Models\Traits\HasMedia;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
+use Spatie\TranslationLoader\LanguageLine;
 
 class Fragment extends LanguageLine implements HasMediaConversions
 {

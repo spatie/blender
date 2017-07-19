@@ -3,10 +3,10 @@
 namespace App\Providers;
 
 use Auth;
-use Route;
 use Exception;
-use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Routing\Router;
+use Route;
 
 class RouteServiceProvider extends ServiceProvider
 {

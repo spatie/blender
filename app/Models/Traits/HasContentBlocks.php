@@ -2,10 +2,10 @@
 
 namespace App\Models\Traits;
 
-use App\Models\ContentBlock;
 use App\Http\Requests\Request;
-use Illuminate\Support\Collection;
+use App\Models\ContentBlock;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Support\Collection;
 
 trait HasContentBlocks
 {

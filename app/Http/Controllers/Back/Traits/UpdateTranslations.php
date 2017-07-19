@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Back\Traits;
 
-use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 trait UpdateTranslations
 {

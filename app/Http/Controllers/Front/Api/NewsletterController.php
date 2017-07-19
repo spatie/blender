@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Front\Api;
 
-use Newsletter;
 use App\Http\Requests\Front\Api\NewsletterSubscriptionRequest;
+use Newsletter;
 
 class NewsletterController extends Controller
 {

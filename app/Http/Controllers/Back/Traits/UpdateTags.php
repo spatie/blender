@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Back\Traits;
 
 use App\Models\Tag;
-use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 trait UpdateTags
 {

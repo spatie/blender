@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Back;
 
 use Analytics;
-use Spatie\Analytics\Period;
 use Illuminate\Support\Collection;
 use Spatie\Activitylog\Models\Activity;
+use Spatie\Analytics\Period;
 
 class DashboardController
 {

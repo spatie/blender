@@ -2,8 +2,8 @@
 
 namespace App\Services\Html;
 
-use Spatie\Html\Html as BaseHtml;
 use Illuminate\Support\ServiceProvider;
+use Spatie\Html\Html as BaseHtml;
 
 class HtmlServiceProvider extends ServiceProvider
 {

@@ -2,10 +2,10 @@
 
 namespace App\Services\Locale;
 
-use Cache;
-use Schema;
 use App\Models\Fragment;
+use Cache;
 use Illuminate\Translation\FileLoader;
+use Schema;
 
 class TranslationLoader extends FileLoader
 {

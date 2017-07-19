@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Front;
 
-use Mail;
-use App\Models\FormResponse;
 use App\Http\Controllers\Controller;
-use App\Models\Enums\SpecialArticle;
-use App\Mail\Admin\ContactFormSubmitted;
 use App\Http\Requests\Front\FormResponseRequest;
+use App\Mail\Admin\ContactFormSubmitted;
+use App\Models\Enums\SpecialArticle;
+use App\Models\FormResponse;
+use Mail;
 
 class ContactController extends Controller
 {

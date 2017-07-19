@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Article;
-use Illuminate\Http\Request;
 use App\Models\Enums\SpecialArticle;
 use App\Repositories\ArticleRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {

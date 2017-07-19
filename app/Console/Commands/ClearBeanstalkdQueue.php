@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Queue;
 use Illuminate\Console\Command;
+use Queue;
 use Symfony\Component\Console\Input\InputArgument;
 
 class ClearBeanstalkdQueue extends Command

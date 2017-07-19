@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use Exception;
 use App\Models\Article;
+use Exception;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 

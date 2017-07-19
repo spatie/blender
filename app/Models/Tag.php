@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use App\Models\Traits\Draftable;
-use Spatie\Tags\Tag as SpatieTag;
 use Illuminate\Support\Facades\DB;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
+use Spatie\Tags\Tag as SpatieTag;
 
 class Tag extends SpatieTag implements Sortable
 {

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Back\Traits;
 
-use Spatie\Regex\Regex;
-use Illuminate\Http\Request;
-use Spatie\Regex\MatchResult;
-use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Spatie\Regex\MatchResult;
+use Spatie\Regex\Regex;
 
 trait UpdateSeoValues
 {

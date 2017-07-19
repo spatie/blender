@@ -2,10 +2,10 @@
 
 namespace Tests\Browser\Back;
 
+use App\Services\Auth\Back\User;
 use Hash;
 use Laravel\Dusk\Browser;
 use Tests\Browser\TestCase;
-use App\Services\Auth\Back\User;
 
 class PasswordResetTest extends TestCase
 {

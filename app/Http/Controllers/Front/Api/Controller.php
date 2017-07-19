@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Front\Api;
 
-use Symfony\Component\HttpFoundation\Response;
 use App\Http\Controllers\Controller as BaseController;
+use Symfony\Component\HttpFoundation\Response;
 
 class Controller extends BaseController
 {

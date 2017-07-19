@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Analytics;
-use Spatie\Analytics\Period;
 use Illuminate\Console\Command;
+use Spatie\Analytics\Period;
 
 class PrefetchAnalyticsData extends Command
 {

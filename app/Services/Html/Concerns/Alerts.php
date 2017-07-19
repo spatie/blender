@@ -2,8 +2,8 @@
 
 namespace App\Services\Html\Concerns;
 
-use Spatie\Html\Elements\Div;
 use Illuminate\Support\ViewErrorBag;
+use Spatie\Html\Elements\Div;
 
 trait Alerts
 {

@@ -3,8 +3,8 @@
 namespace App\Services\MissingPageRedirector;
 
 use App\Models\Redirect;
-use Symfony\Component\HttpFoundation\Request;
 use Spatie\MissingPageRedirector\Redirector\Redirector;
+use Symfony\Component\HttpFoundation\Request;
 
 class DatabaseRedirector implements Redirector
 {
