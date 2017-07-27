@@ -188,7 +188,7 @@ function schema(): Schema
  * Shortens a string in a pretty way. It will clean it by trimming
  * it, remove all double spaces and html. If the string is then still
  * longer than the specified $length it will be shortened. The end
- * of the string is always a full word concatinated with the
+ * of the string is always a full word concatenated with the
  * specified moreTextIndicator.
  *
  * @param string $string
