@@ -233,7 +233,6 @@ return [
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Seo\SeoServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-
     ],
 
     /*
