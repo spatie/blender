@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Models\Presenters\NewsItemPresenter;
-use App\Models\Traits\HasSlug;
 use Spatie\Tags\HasTags;
+use App\Models\Traits\HasSlug;
+use App\Models\Presenters\NewsItemPresenter;
 
 class NewsItem extends Model
 {

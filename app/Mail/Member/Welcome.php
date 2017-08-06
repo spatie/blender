@@ -2,11 +2,11 @@
 
 namespace App\Mail\Member;
 
-use App\Services\Auth\Front\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use App\Services\Auth\Front\User;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class Welcome extends Mailable implements ShouldQueue
 {
