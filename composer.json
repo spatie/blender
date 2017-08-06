@@ -28,7 +28,7 @@
         "laracasts/flash": "^3.0",
         "laracasts/utilities": "^2.1",
         "laravel/dusk": "^1.0",
-        "laravel/framework": "5.4.*",
+        "laravel/framework": "5.5.x-dev",
         "laravel/tinker": "~1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "maatwebsite/excel": "^2.1",
