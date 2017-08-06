@@ -65,7 +65,7 @@
         "spatie/laravel-tail": "^1.0",
         "spatie/laravel-tinker-tools": "^1.0",
         "spatie/laravel-translatable": "^1.2.1",
-        "spatie/laravel-translation-loader": "^1.1",
+        "spatie/laravel-translation-loader": "laravel-55-dev",
         "spatie/regex": "^1.1",
         "spatie/schema-org": "^1.1",
         "spatie/seeders": "^4.4",
