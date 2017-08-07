@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Front\Auth;
 
-use App\Http\Controllers\Controller;
 use Auth;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
 use Password;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
