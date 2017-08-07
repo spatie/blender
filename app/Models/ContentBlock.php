@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use App\Models\Traits\Draftable;
-use App\Models\Traits\HasMedia;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Arr;
-use Spatie\EloquentSortable\SortableTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
+use App\Models\Traits\HasMedia;
+use App\Models\Traits\Draftable;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
+use Spatie\EloquentSortable\SortableTrait;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class ContentBlock extends Model implements HasMediaConversions
 {
