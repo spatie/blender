@@ -3,8 +3,8 @@
 namespace App\Models;
 
 use Excel;
-use Illuminate\Database\Eloquent\Model;
 use Spatie\Referer\Referer;
+use Illuminate\Database\Eloquent\Model;
 
 class FormResponse extends Model
 {
