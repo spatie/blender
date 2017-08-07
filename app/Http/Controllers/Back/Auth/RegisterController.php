@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Back\Auth;
 
-use App\Http\Controllers\Controller;
-use App\User;
 use Auth;
-use Exception;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\User;
 use Password;
+use Exception;
 use Validator;
+use App\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
