@@ -3,12 +3,12 @@
 namespace Tests\Browser;
 
 use ArticleSeeder;
-use Facebook\WebDriver\Remote\DesiredCapabilities;
-use Facebook\WebDriver\Remote\RemoteWebDriver;
 use FragmentSeeder;
-use Laravel\Dusk\TestCase as BaseTestCase;
-use Tests\Concerns\CreatesApplication;
 use Tests\Concerns\UsesDatabase;
+use Tests\Concerns\CreatesApplication;
+use Laravel\Dusk\TestCase as BaseTestCase;
+use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Facebook\WebDriver\Remote\DesiredCapabilities;
 
 abstract class TestCase extends BaseTestCase
 {
