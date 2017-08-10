@@ -2,6 +2,9 @@ preset: laravel
 
 linting: true
 
+enabled:
+  - alpha_ordered_imports
+
 disabled:
   - single_class_element_per_statement
   - simplified_null_return
