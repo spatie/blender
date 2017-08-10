@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\Scopes\NonDraftScope;
-use Illuminate\Database\Eloquent\Model as Eloquent;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use ReflectionClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use App\Models\Scopes\NonDraftScope;
 use Illuminate\Support\Facades\Cache;
-use ReflectionClass;
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 abstract class Controller
 {
