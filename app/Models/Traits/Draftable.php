@@ -2,8 +2,8 @@
 
 namespace App\Models\Traits;
 
-use App\Models\Scopes\NonDraftScope;
 use Carbon\Carbon;
+use App\Models\Scopes\NonDraftScope;
 use Illuminate\Database\Eloquent\Builder;
 
 trait Draftable
