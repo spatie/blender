@@ -2,11 +2,11 @@
 
 namespace App\Services\Auth\Back\Mail;
 
-use App\Services\Auth\Back\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use App\Services\Auth\Back\User;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ResetPassword extends Mailable implements ShouldQueue
 {

@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\Scopes\NonDraftMediaScope;
+use Spatie\MediaLibrary\Media;
 use App\Models\Scopes\SortableScope;
 use Illuminate\Support\ServiceProvider;
-use Spatie\MediaLibrary\Media;
+use App\Models\Scopes\NonDraftMediaScope;
 
 class ModelServiceProvider extends ServiceProvider
 {
