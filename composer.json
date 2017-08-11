@@ -41,7 +41,7 @@
         "spatie/laravel-artisan-dd": "^1.1",
         "spatie/laravel-activitylog": "^1.0",
         "spatie/laravel-analytics": "laravel-55-dev",
-        "spatie/laravel-backup": "^4.0",
+        "spatie/laravel-backup": "laravel-55-dev",
         "spatie/laravel-blade-javascript": "^1.0",
         "spatie/laravel-collection-macros": "laravel-55-dev",
         "spatie/laravel-cookie-consent": "^1.0",
