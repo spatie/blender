@@ -2,12 +2,12 @@
 
 namespace App\Exceptions;
 
-use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as BugsnagExceptionHandler;
 use Exception;
-use Illuminate\Auth\AuthenticationException;
-use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Response;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Bugsnag\BugsnagLaravel\BugsnagExceptionHandler as BugsnagExceptionHandler;
 
 class Handler extends ExceptionHandler
 {

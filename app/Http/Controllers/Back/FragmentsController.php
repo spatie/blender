@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Http\Controllers\Back\Traits\UpdateMedia;
 use App\Models\Fragment;
 use Illuminate\Http\Request;
 use Spatie\FragmentImporter\Exporter;
+use App\Http\Controllers\Back\Traits\UpdateMedia;
 
 class FragmentsController
 {
