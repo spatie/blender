@@ -50,8 +50,10 @@ trait Forms
     }
 
     public function tags(string $type): Select
-    {
-        return $this->category($type)->attributes(['multiple', 'data-select' => 'tags']);
+    {        
+        return $this->category($type)
+            ->attributes(['multiple', 'data-select' => 'tags'])
+            ->value($this->model->tagsWithType($type)->pluck('name', 'name'));
     }
 
     public function searchableSelect(string $name = '', iterable $options = [], ? string $value = '')
