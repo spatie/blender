@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Excel;
 use Illuminate\Database\Eloquent\Model;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Referer\Referer;
 
 class FormResponse extends Model

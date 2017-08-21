@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Front\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Services\Auth\Front\User;
-use Auth;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Password;
-use Validator;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {

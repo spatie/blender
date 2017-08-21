@@ -8,7 +8,7 @@ use App\Services\Auth\Front\Events\UserRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
 use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\User as BaseUser;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 /**
  * @property string $address

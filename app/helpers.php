@@ -8,6 +8,7 @@ use App\Services\Seo\Meta;
 use App\Services\Seo\Schema;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\HtmlString;
 use Spatie\HtmlElement\HtmlElement;
 

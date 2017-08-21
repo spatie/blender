@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Arr;
 use Spatie\EloquentSortable\SortableTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
+use Spatie\MediaLibrary\Media;
 use Spatie\Translatable\HasTranslations;
 
 class ContentBlock extends Model implements HasMediaConversions

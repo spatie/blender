@@ -24,7 +24,7 @@ class ContentBlockController extends Controller
         return fractal($contentBlock, new ContentBlockTransformer());
     }
 
-    protected function getModelFromRequest(ContentBlockRequest $request): Model
+    protected function getModelFromRequest($request): Model
     {
         return call_user_func($request['model_name'].'::findOrFail', $request['model_id']);
     }
