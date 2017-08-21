@@ -38,7 +38,7 @@
         "spatie/color": "^1.0",
         "spatie/eloquent-sortable": "laravel-55-dev",
         "spatie/fragment-importer": "dev-master",
-        "spatie/laravel-artisan-dd": "^1.1",
+        "spatie/laravel-artisan-dd": "laravel-55-dev",
         "spatie/laravel-activitylog": "^1.0",
         "spatie/laravel-analytics": "laravel-55-dev",
         "spatie/laravel-backup": "laravel-55-dev",
@@ -47,14 +47,12 @@
         "spatie/laravel-cookie-consent": "^1.0",
         "spatie/laravel-db-snapshots": "^1.0",
         "spatie/laravel-demo-mode": "^1.0",
-        "spatie/laravel-failed-job-monitor": "^2.0",
         "spatie/laravel-fractal": "laravel-55-dev",
         "spatie/laravel-googletagmanager": "^2.0",
         "spatie/laravel-html": "^2.0",
         "spatie/laravel-link-checker": "^1.0",
-        "spatie/laravel-mailable-test": "laravel-55-dev",
         "spatie/laravel-medialibrary": "laravel55-dev",
-        "spatie/laravel-menu": "^2.0.0",
+        "spatie/laravel-menu": "laravel-55-dev",
         "spatie/laravel-missing-page-redirector": "laravel-55-dev",
         "spatie/laravel-model-cleanup": "^1.0",
         "spatie/laravel-newsletter": "^3.0.0",
@@ -67,6 +65,7 @@
         "spatie/regex": "^1.1",
         "spatie/schema-org": "^1.1",
         "spatie/seeders": "^4.4",
+
         "themsaid/laravel-mail-preview": "^1.2"
     },
     "require-dev": {
