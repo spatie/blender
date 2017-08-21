@@ -59,7 +59,7 @@
         "spatie/laravel-referer": "laravel-55-dev",
         "spatie/laravel-robots-middleware": "^1.0",
         "spatie/laravel-tags": "laravel-55-dev",
-        "spatie/laravel-tail": "^1.0",
+        "spatie/laravel-tail": "laravel-55-dev",
         "spatie/laravel-translatable": "laravel-55-dev",
         "spatie/laravel-translation-loader": "laravel-55-dev",
         "spatie/regex": "^1.1",

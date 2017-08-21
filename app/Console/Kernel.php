@@ -13,7 +13,6 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\ClearBeanstalkdQueue::class,
         \App\Console\Commands\GenerateModule::class,
         \Spatie\LinkChecker\CheckLinksCommand::class,
         \Spatie\FragmentImporter\Commands\ImportFragments::class,

@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
+use Spatie\MediaLibrary\Media;
 
 class Person extends Model implements Sortable
 {
@@ -16,7 +17,7 @@ class Person extends Model implements Sortable
 
     protected $mediaLibraryCollections = ['images'];
 
-    public function registerMediaConversions()
+    public function registerMediaConversions(Media $media = null)
     {
         parent::registerMediaConversions();
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d932aad2e7838dc8823a1adab4e05d56",
+    "content-hash": "bc9b32305b8e55cb20ead42ed0b2ad73",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -5912,24 +5912,32 @@
         },
         {
             "name": "spatie/laravel-tail",
-            "version": "1.1.5",
+            "version": "dev-laravel-55",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-tail.git",
-                "reference": "f4365ed5d0724948cbaf9e740bac0664b45b814b"
+                "reference": "3760718e5d6414584a6fc0cec680fe79d94cbd3a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/f4365ed5d0724948cbaf9e740bac0664b45b814b",
-                "reference": "f4365ed5d0724948cbaf9e740bac0664b45b814b",
+                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/3760718e5d6414584a6fc0cec680fe79d94cbd3a",
+                "reference": "3760718e5d6414584a6fc0cec680fe79d94cbd3a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "~5.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.6.0"
+                "illuminate/console": "5.5.x-dev",
+                "illuminate/support": "5.5.x-dev",
+                "php": "^7.0",
+                "symfony/process": "^3.3"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Tail\\TailServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Spatie\\Tail\\": "src"
@@ -5947,15 +5955,16 @@
                     "role": "Developer"
                 }
             ],
-            "description": "The missing tail command for Laravel 5",
+            "description": "Easily tail the application log",
             "homepage": "https://github.com/spatie/laravel-tail",
             "keywords": [
-                "laravel 5",
+                "development",
+                "laravel",
                 "laravel-tail",
                 "log",
                 "tail"
             ],
-            "time": "2017-01-20T08:25:12+00:00"
+            "time": "2017-08-21T16:21:39+00:00"
         },
         {
             "name": "spatie/laravel-translatable",
@@ -9391,6 +9400,7 @@
         "spatie/laravel-missing-page-redirector": 20,
         "spatie/laravel-referer": 20,
         "spatie/laravel-tags": 20,
+        "spatie/laravel-tail": 20,
         "spatie/laravel-translatable": 20,
         "spatie/laravel-translation-loader": 20
     },

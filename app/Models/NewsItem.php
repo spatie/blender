@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Presenters\NewsItemPresenter;
 use App\Models\Traits\HasSlug;
+use Spatie\MediaLibrary\Media;
 use Spatie\Tags\HasTags;
 
 class NewsItem extends Model
@@ -18,7 +19,7 @@ class NewsItem extends Model
 
     protected $mediaLibraryCollections = ['images', 'downloads'];
 
-    public function registerMediaConversions()
+    public function registerMediaConversions(Media $media = null)
     {
         parent::registerMediaConversions();
 
