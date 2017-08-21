@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Presenters\FragmentPresenter;
 use App\Models\Traits\HasMedia;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
+use Spatie\MediaLibrary\Media;
 use Spatie\TranslationLoader\LanguageLine;
 
 class Fragment extends LanguageLine implements HasMediaConversions
@@ -37,7 +38,7 @@ class Fragment extends LanguageLine implements HasMediaConversions
         return "{$this->group}.{$this->key}";
     }
 
-    public function registerMediaConversions()
+    public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('admin')
             ->width(368)
