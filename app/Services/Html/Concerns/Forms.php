@@ -50,7 +50,7 @@ trait Forms
     }
 
     public function tags(string $type): Select
-    {        
+    {
         return $this->category($type)
             ->attributes(['multiple', 'data-select' => 'tags'])
             ->value($this->model->tagsWithType($type)->pluck('name', 'name'));
