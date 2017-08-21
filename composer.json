@@ -73,10 +73,11 @@
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.0",
+        "graham-campbell/analyzer": "^1.1",
         "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "~5.0",
-        "symfony/dom-crawler": "~3.0",
-        "symfony/css-selector": "~3.0"
+        "symfony/css-selector": "~3.0",
+        "symfony/dom-crawler": "~3.0"
     },
     "autoload": {
         "classmap": [
