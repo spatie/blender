@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Front;
 
+use Newsletter;
 use App\Http\Controllers\ApiController;
 use App\Http\Requests\Front\NewsletterSubscriptionRequest;
-use Newsletter;
 
 class NewsletterApiController extends ApiController
 {
