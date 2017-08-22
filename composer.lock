@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc9b32305b8e55cb20ead42ed0b2ad73",
+    "content-hash": "2efb279fdae2936a7d6439e5137c762b",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -58,19 +58,23 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.33.3",
+            "version": "3.34.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "2820644f411fa261f126727c1c00de15227b9520"
+                "reference": "df7ddca6872048cc91315c2b4fdb9a57d5fceb84"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/2820644f411fa261f126727c1c00de15227b9520",
-                "reference": "2820644f411fa261f126727c1c00de15227b9520",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/df7ddca6872048cc91315c2b4fdb9a57d5fceb84",
+                "reference": "df7ddca6872048cc91315c2b4fdb9a57d5fceb84",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
+                "ext-pcre": "*",
+                "ext-simplexml": "*",
+                "ext-spl": "*",
                 "guzzlehttp/guzzle": "^5.3.1|^6.2.1",
                 "guzzlehttp/promises": "~1.0",
                 "guzzlehttp/psr7": "^1.4.1",
@@ -83,11 +87,7 @@
                 "behat/behat": "~3.0",
                 "doctrine/cache": "~1.4",
                 "ext-dom": "*",
-                "ext-json": "*",
                 "ext-openssl": "*",
-                "ext-pcre": "*",
-                "ext-simplexml": "*",
-                "ext-spl": "*",
                 "nette/neon": "^2.3",
                 "phpunit/phpunit": "^4.8.35|^5.4.0",
                 "psr/cache": "^1.0"
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-08-18T18:04:40+00:00"
+            "time": "2017-08-22T18:32:28+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -409,6 +409,63 @@
                 "tracking"
             ],
             "time": "2016-07-07T01:35:07+00:00"
+        },
+        {
+            "name": "cakephp/chronos",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cakephp/chronos.git",
+                "reference": "0621b191334d8dcb56907688986dd24eb8c38234"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cakephp/chronos/zipball/0621b191334d8dcb56907688986dd24eb8c38234",
+                "reference": "0621b191334d8dcb56907688986dd24eb8c38234",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "athletic/athletic": "~0.1",
+                "cakephp/cakephp-codesniffer": "~2.3",
+                "phpbench/phpbench": "@dev",
+                "phpstan/phpstan": "^0.6.4",
+                "phpunit/phpunit": "<6.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Cake\\Chronos\\": "src"
+                },
+                "files": [
+                    "src/carbon_compat.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brian Nesbitt",
+                    "email": "brian@nesbot.com",
+                    "homepage": "http://nesbot.com"
+                },
+                {
+                    "name": "The CakePHP Team",
+                    "homepage": "http://cakephp.org"
+                }
+            ],
+            "description": "A simple API extension for DateTime.",
+            "homepage": "http://cakephp.org",
+            "keywords": [
+                "date",
+                "datetime",
+                "time"
+            ],
+            "time": "2017-04-27T01:27:49+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1270,16 +1327,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.7.1",
+            "version": "8.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "9395508cb66af96a07453df073195e6e3767b42d"
+                "reference": "54c69fcb45c3a39d9a206398f57fe18809401eda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/9395508cb66af96a07453df073195e6e3767b42d",
-                "reference": "9395508cb66af96a07453df073195e6e3767b42d",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/54c69fcb45c3a39d9a206398f57fe18809401eda",
+                "reference": "54c69fcb45c3a39d9a206398f57fe18809401eda",
                 "shasum": ""
             },
             "require": {
@@ -1334,7 +1391,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2017-08-03T09:07:02+00:00"
+            "time": "2017-08-22T10:35:52+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -2333,12 +2390,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "72e97f6408001ca0707f4de25649966431512039"
+                "reference": "3c888b6c7b89c3d3f90e9024ffbebed3ee80bd23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/72e97f6408001ca0707f4de25649966431512039",
-                "reference": "72e97f6408001ca0707f4de25649966431512039",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/3c888b6c7b89c3d3f90e9024ffbebed3ee80bd23",
+                "reference": "3c888b6c7b89c3d3f90e9024ffbebed3ee80bd23",
                 "shasum": ""
             },
             "require": {
@@ -2401,7 +2458,7 @@
             "require-dev": {
                 "aws/aws-sdk-php": "~3.0",
                 "doctrine/dbal": "~2.5",
-                "filp/whoops": "~2.0",
+                "filp/whoops": "^2.1.4",
                 "mockery/mockery": "~0.9.4",
                 "orchestra/testbench-core": "3.5.*",
                 "pda/pheanstalk": "~3.0",
@@ -2457,7 +2514,71 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-08-21T02:01:04+00:00"
+            "time": "2017-08-22T19:33:36+00:00"
+        },
+        {
+            "name": "laravel/horizon",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/horizon.git",
+                "reference": "1960c5f273c713e93d6988d888e7ecbb7ceb7fe1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/1960c5f273c713e93d6988d888e7ecbb7ceb7fe1",
+                "reference": "1960c5f273c713e93d6988d888e7ecbb7ceb7fe1",
+                "shasum": ""
+            },
+            "require": {
+                "cakephp/chronos": "^1.0",
+                "ext-pcntl": "*",
+                "illuminate/contracts": "~5.5",
+                "illuminate/queue": "~5.5",
+                "illuminate/support": "~5.5",
+                "php": ">=7.1.0",
+                "predis/predis": "^1.1",
+                "ramsey/uuid": "^3.5",
+                "symfony/debug": "~3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "orchestra/database": "~3.5",
+                "orchestra/testbench": "~3.5",
+                "phpunit/phpunit": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Laravel\\Horizon\\HorizonServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Horizon\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Dashboard and code-driven configuration for Laravel queues.",
+            "keywords": [
+                "laravel",
+                "queue"
+            ],
+            "time": "2017-08-16T13:09:06+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3616,6 +3737,56 @@
                 "x509"
             ],
             "time": "2017-06-05T06:31:10+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16T16:22:20+00:00"
         },
         {
             "name": "propaganistas/laravel-phone",
@@ -4909,12 +5080,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-collection-macros.git",
-                "reference": "70f35e6007eb920434f453a0b9ad7659f6cb2ec8"
+                "reference": "46a5a2a58fdad72b473896f4f8259e5c75bfb03d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/70f35e6007eb920434f453a0b9ad7659f6cb2ec8",
-                "reference": "70f35e6007eb920434f453a0b9ad7659f6cb2ec8",
+                "url": "https://api.github.com/repos/spatie/laravel-collection-macros/zipball/46a5a2a58fdad72b473896f4f8259e5c75bfb03d",
+                "reference": "46a5a2a58fdad72b473896f4f8259e5c75bfb03d",
                 "shasum": ""
             },
             "require": {
@@ -4967,7 +5138,7 @@
                 "laravel-collection-macros",
                 "spatie"
             ],
-            "time": "2017-08-04T11:51:55+00:00"
+            "time": "2017-08-22T17:43:44+00:00"
         },
         {
             "name": "spatie/laravel-cookie-consent",
@@ -5091,26 +5262,34 @@
         },
         {
             "name": "spatie/laravel-demo-mode",
-            "version": "1.0.2",
+            "version": "dev-laravel-55",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-demo-mode.git",
-                "reference": "f1b512c4966ff8c16301431619f6ec5d881edec4"
+                "reference": "526ec52cc484a50630233cf8ffe51e54fb0185a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-demo-mode/zipball/f1b512c4966ff8c16301431619f6ec5d881edec4",
-                "reference": "f1b512c4966ff8c16301431619f6ec5d881edec4",
+                "url": "https://api.github.com/repos/spatie/laravel-demo-mode/zipball/526ec52cc484a50630233cf8ffe51e54fb0185a0",
+                "reference": "526ec52cc484a50630233cf8ffe51e54fb0185a0",
                 "shasum": ""
             },
             "require": {
+                "illuminate/support": "5.5.x-dev",
                 "php": "^7.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^3.2",
-                "phpunit/phpunit": "^5.0"
+                "orchestra/testbench": "3.5.x-dev",
+                "phpunit/phpunit": "^6.3"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\DemoMode\\DemoModeServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Spatie\\DemoMode\\": "src"
@@ -5134,7 +5313,7 @@
                 "laravel-demo-mode",
                 "spatie"
             ],
-            "time": "2016-04-04T08:58:48+00:00"
+            "time": "2017-08-22T22:10:46+00:00"
         },
         {
             "name": "spatie/laravel-fractal",
@@ -5142,12 +5321,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-fractal.git",
-                "reference": "d85c3e55f9d3b731f76affdb7ec4d766684dd8a1"
+                "reference": "7ca0a2abea12280ca1713b93fc597d5eeaecb7b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/d85c3e55f9d3b731f76affdb7ec4d766684dd8a1",
-                "reference": "d85c3e55f9d3b731f76affdb7ec4d766684dd8a1",
+                "url": "https://api.github.com/repos/spatie/laravel-fractal/zipball/7ca0a2abea12280ca1713b93fc597d5eeaecb7b4",
+                "reference": "7ca0a2abea12280ca1713b93fc597d5eeaecb7b4",
                 "shasum": ""
             },
             "require": {
@@ -5202,7 +5381,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2017-08-20T21:59:55+00:00"
+            "time": "2017-08-22T18:01:54+00:00"
         },
         {
             "name": "spatie/laravel-googletagmanager",
@@ -5466,12 +5645,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-menu.git",
-                "reference": "07883029ff2dc8b935d0da6f53d08d582941d426"
+                "reference": "f9f557db0594a5dd8d28eda1744e069941024832"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/07883029ff2dc8b935d0da6f53d08d582941d426",
-                "reference": "07883029ff2dc8b935d0da6f53d08d582941d426",
+                "url": "https://api.github.com/repos/spatie/laravel-menu/zipball/f9f557db0594a5dd8d28eda1744e069941024832",
+                "reference": "f9f557db0594a5dd8d28eda1744e069941024832",
                 "shasum": ""
             },
             "require": {
@@ -5520,7 +5699,7 @@
                 "laravel-menu",
                 "spatie"
             ],
-            "time": "2017-08-21T15:03:54+00:00"
+            "time": "2017-08-22T08:34:39+00:00"
         },
         {
             "name": "spatie/laravel-migrate-fresh",
@@ -5916,12 +6095,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-tail.git",
-                "reference": "3760718e5d6414584a6fc0cec680fe79d94cbd3a"
+                "reference": "9f88b8a651953dee75935df1f54166a6ce79e9a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/3760718e5d6414584a6fc0cec680fe79d94cbd3a",
-                "reference": "3760718e5d6414584a6fc0cec680fe79d94cbd3a",
+                "url": "https://api.github.com/repos/spatie/laravel-tail/zipball/9f88b8a651953dee75935df1f54166a6ce79e9a1",
+                "reference": "9f88b8a651953dee75935df1f54166a6ce79e9a1",
                 "shasum": ""
             },
             "require": {
@@ -5964,7 +6143,7 @@
                 "log",
                 "tail"
             ],
-            "time": "2017-08-21T16:21:39+00:00"
+            "time": "2017-08-21T16:25:37+00:00"
         },
         {
             "name": "spatie/laravel-translatable",
@@ -7738,16 +7917,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.4.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "63661f3add3609e90e4ab8115113e189ae547bb4"
+                "reference": "63aad575ec2a29d50eb6c3b5cbc17430b28895b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/63661f3add3609e90e4ab8115113e189ae547bb4",
-                "reference": "63661f3add3609e90e4ab8115113e189ae547bb4",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/63aad575ec2a29d50eb6c3b5cbc17430b28895b2",
+                "reference": "63aad575ec2a29d50eb6c3b5cbc17430b28895b2",
                 "shasum": ""
             },
             "require": {
@@ -7757,7 +7936,7 @@
                 "gecko-packages/gecko-php-unit": "^2.0",
                 "php": "^5.6 || >=7.0 <7.2",
                 "sebastian/diff": "^1.4",
-                "symfony/console": "^3.0",
+                "symfony/console": "^3.2",
                 "symfony/event-dispatcher": "^3.0",
                 "symfony/filesystem": "^3.0",
                 "symfony/finder": "^3.0",
@@ -7773,6 +7952,7 @@
             "require-dev": {
                 "johnkary/phpunit-speedtrap": "^1.1",
                 "justinrainbow/json-schema": "^5.0",
+                "php-cs-fixer/accessible-object": "^1.0",
                 "phpunit/phpunit": "^4.8.35 || ^5.4.3",
                 "satooshi/php-coveralls": "^1.0",
                 "symfony/phpunit-bridge": "^3.2.2"
@@ -7785,11 +7965,6 @@
                 "php-cs-fixer"
             ],
             "type": "application",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.4-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "PhpCsFixer\\": "src/"
@@ -7817,7 +7992,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2017-07-18T15:35:40+00:00"
+            "time": "2017-08-22T14:15:09+00:00"
         },
         {
             "name": "gecko-packages/gecko-php-unit",
@@ -9390,10 +9565,11 @@
         "laravel/framework": 20,
         "spatie/eloquent-sortable": 20,
         "spatie/fragment-importer": 20,
-        "spatie/laravel-artisan-dd": 20,
         "spatie/laravel-analytics": 20,
+        "spatie/laravel-artisan-dd": 20,
         "spatie/laravel-backup": 20,
         "spatie/laravel-collection-macros": 20,
+        "spatie/laravel-demo-mode": 20,
         "spatie/laravel-fractal": 20,
         "spatie/laravel-medialibrary": 20,
         "spatie/laravel-menu": 20,
