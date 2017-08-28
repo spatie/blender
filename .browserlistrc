@@ -1,0 +1,5 @@
+# Browsers we support via Babel, Autoprefixer etc.
+# https://github.com/ai/browserslist
+
+last 2 versions
+> 5% in BE

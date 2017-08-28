@@ -13,9 +13,7 @@ _ide_helper*.php
 # FRONT END
 /node_modules
 /npm-debug.log
-/public/build
 /public/css
-/public/doc/sass
 /public/js
 /public/media
 /public/mix-manifest.json
