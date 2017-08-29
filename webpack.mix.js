@@ -26,5 +26,6 @@ mix
             // The public path needs to be set to the root of the site so
             // Webpack can locate chunks at runtime.
             publicPath: '/',
+            chunkFilename: 'js/[name]-[chunkhash].js',
         },
     });

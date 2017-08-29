@@ -228,7 +228,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
         App\Providers\ValidationServiceProvider::class,
-        App\Providers\ViewComposerServiceProvider::class,
+        App\Providers\ViewServiceProvider::class,
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Seo\SeoServiceProvider::class,
