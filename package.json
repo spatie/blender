@@ -16,7 +16,7 @@
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "lint": "eslint resources/assets/js --ext .js,.vue --fix && exit 0",
-    "lint-css": "stylelint resources/assets/css/**/*.css --fix -r"
+    "lint-css": "stylelint \"resources/assets/css/**/*.css\" --fix"
   },
   "dependencies": {
     "@spatie/blender-content-blocks": "^1.0.2",
