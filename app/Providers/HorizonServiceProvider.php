@@ -21,7 +21,7 @@ class HorizonServiceProvider extends ServiceProvider
 
             $backUser = auth('back')->user();
 
-            if(! $backUser) {
+            if (! $backUser) {
                 return false;
             }
 
