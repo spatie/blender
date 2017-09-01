@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "607cbc13158b8013305b9247d43d3f31",
+    "content-hash": "43d2e3376ab1f1179db409759f0ba4c4",
     "packages": [
         {
             "name": "anahkiasen/underscore-php",
@@ -7774,30 +7774,37 @@
         },
         {
             "name": "themsaid/laravel-mail-preview",
-            "version": "v1.2.8",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/themsaid/laravel-mail-preview.git",
-                "reference": "d525632f01b96760a3a51d64a42b924df7daabf0"
+                "reference": "6095319d74ec3a77b1f6919c382dd38da2ed176a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/themsaid/laravel-mail-preview/zipball/d525632f01b96760a3a51d64a42b924df7daabf0",
-                "reference": "d525632f01b96760a3a51d64a42b924df7daabf0",
+                "url": "https://api.github.com/repos/themsaid/laravel-mail-preview/zipball/6095319d74ec3a77b1f6919c382dd38da2ed176a",
+                "reference": "6095319d74ec3a77b1f6919c382dd38da2ed176a",
                 "shasum": ""
             },
             "require": {
-                "illuminate/filesystem": "~5.1",
-                "illuminate/mail": "~5.1",
-                "illuminate/support": "~5.1",
+                "illuminate/filesystem": "~5.5",
+                "illuminate/mail": "~5.5",
+                "illuminate/support": "~5.5",
                 "mockery/mockery": "~0.9.2",
                 "php": ">=5.5.9"
             },
             "require-dev": {
                 "orchestra/testbench": "~3.0",
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "~6.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Themsaid\\MailPreview\\MailPreviewServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Themsaid\\MailPreview\\": "src"
@@ -7822,7 +7829,7 @@
                 "laravel",
                 "mail"
             ],
-            "time": "2017-06-29T17:39:46+00:00"
+            "time": "2017-09-01T10:59:41+00:00"
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
