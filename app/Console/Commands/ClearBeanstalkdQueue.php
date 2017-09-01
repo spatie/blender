@@ -37,7 +37,7 @@ class ClearBeanstalkdQueue extends Command
     /**
      * Execute the console command.
      */
-    public function fire()
+    public function handle()
     {
         $queue = ($this->argument('queue')) ?
             $this->argument('queue') :
