@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Http\Request;
-use Laravel\Horizon\Horizon;
 
 class AuthServiceProvider extends ServiceProvider
 {
