@@ -60,8 +60,7 @@ class Html extends \Spatie\Html\Html
         return $this
             ->fieldset()
             ->addChild($this->legend()
-                ->addChild($this->div($locale)->class('legend__lang'))
-            )
+                ->addChild($this->div($locale)->class('legend__lang')))
             ->addChildren($contents);
     }
 

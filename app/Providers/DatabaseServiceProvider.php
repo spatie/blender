@@ -18,7 +18,8 @@ class DatabaseServiceProvider extends ServiceProvider
             return;
         }
 
-        DB::getPdo()->sqliteCreateFunction('regexp',
+        DB::getPdo()->sqliteCreateFunction(
+            'regexp',
             function ($pattern, $data, $delimiter = '~', $modifiers = 'isuS') {
                 if (isset($pattern, $data) !== true) {
                     return;
