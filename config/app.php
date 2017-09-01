@@ -205,8 +205,6 @@ return [
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
         Spatie\DbSnapshots\DbSnapshotsServiceProvider::class,
         Spatie\DemoMode\DemoModeServiceProvider::class,
-        Spatie\FailedJobMonitor\FailedJobMonitorServiceProvider::class,
-        Spatie\Fractal\FractalServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
         Spatie\Html\HtmlServiceProvider::class,
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,
