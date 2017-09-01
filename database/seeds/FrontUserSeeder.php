@@ -1,8 +1,8 @@
 <?php
 
+use App\Services\Auth\Front\User;
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
-use App\Services\Auth\Front\User;
 
 class FrontUserSeeder extends DatabaseSeeder
 {

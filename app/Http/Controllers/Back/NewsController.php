@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\NewsItem;
 use Carbon\Carbon;
+use App\Models\NewsItem;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
