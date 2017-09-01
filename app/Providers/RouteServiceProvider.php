@@ -2,15 +2,15 @@
 
 namespace App\Providers;
 
-use Auth;
 use Exception;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
-use Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = \App\Http\Controllers::class;
+    protected $namespace = '\App\Http\Controllers';
 
     public function boot()
     {
@@ -53,7 +53,14 @@ class RouteServiceProvider extends ServiceProvider
                 ->middleware('web')
                 ->namespace('Back')
                 ->group(function () {
-                    Auth::routes();
+                    Route::get('login', 'Auth\LoginController@showLoginForm');
+                    Route::post('login', 'Auth\LoginController@login');
+                    Route::post('logout', 'Auth\LoginController@logout');
+
+                    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+                    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+                    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+                    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
                     Route::middleware('auth')->group(function () {
                         require base_path('routes/back.php');

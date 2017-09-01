@@ -15,7 +15,8 @@
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "lint": "eslint resources/assets/js --ext .js,.vue --fix && exit 0"
+    "lint": "eslint resources/assets/js --ext .js,.vue --fix && exit 0",
+    "lint-css": "stylelint \"resources/assets/css/**/*.css\" --fix"
   },
   "dependencies": {
     "@spatie/blender-content-blocks": "^1.0.2",
@@ -32,10 +33,14 @@
     "eslint-config-spatie": "^1.2.7",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.0.0",
-    "laravel-mix": "^0.11.0",
+    "laravel-mix": "^1.4",
     "lodash": "^4.16.6",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-easy-import": "^2.1.0",
     "normalize-css": "^2.3.1",
     "spatie-dom": "^1.0.0",
+    "stylelint": "^8.0.0",
+    "stylelint-config-standard": "^17.0.0",
     "viewport-utility": "^1.2.2",
     "vue": "^2.1.0",
     "webfontloader": "^1.6.10"

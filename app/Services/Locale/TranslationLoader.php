@@ -3,9 +3,9 @@
 namespace App\Services\Locale;
 
 use App\Models\Fragment;
-use Cache;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Translation\FileLoader;
-use Schema;
 
 class TranslationLoader extends FileLoader
 {

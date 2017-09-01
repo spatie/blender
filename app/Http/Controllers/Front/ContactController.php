@@ -7,7 +7,7 @@ use App\Http\Requests\Front\FormResponseRequest;
 use App\Mail\Admin\ContactFormSubmitted;
 use App\Models\Enums\SpecialArticle;
 use App\Models\FormResponse;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {

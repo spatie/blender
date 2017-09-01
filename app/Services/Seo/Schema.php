@@ -17,8 +17,7 @@ class Schema
                 ->streetAddress(__('company.address'))
                 ->postalCode(__('company.postal'))
                 ->addressLocality(__('company.city'))
-                ->addressCountry('BE')
-            )
+                ->addressCountry('BE'))
             ->sameAs([
                 __('company.googleMyBusinessUrl'),
             ]);

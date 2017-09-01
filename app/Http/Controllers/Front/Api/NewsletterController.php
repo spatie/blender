@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Front\Api;
 
 use App\Http\Requests\Front\Api\NewsletterSubscriptionRequest;
-use Newsletter;
+use Spatie\Newsletter\NewsletterFacade as Newsletter;
 
 class NewsletterController extends Controller
 {

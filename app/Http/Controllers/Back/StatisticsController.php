@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
-use Analytics;
+use Spatie\Analytics\AnalyticsFacade as Analytics;
 use Spatie\Analytics\Period;
 
 class StatisticsController

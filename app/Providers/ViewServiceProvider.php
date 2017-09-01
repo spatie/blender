@@ -2,10 +2,11 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use View;
 
-class ViewComposerServiceProvider extends ServiceProvider
+class ViewServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -13,6 +14,10 @@ class ViewComposerServiceProvider extends ServiceProvider
         $this->addComposer('*._layouts.*', \App\Http\ViewComposers\Shared\EncryptedCsrfTokenComposer::class);
 
         $this->addComposer('front._layouts.*', \App\Http\ViewComposers\Front\SeoViewComposer::class);
+
+        Blade::directive('svg', function ($expression) {
+            return "<?php echo svg({$expression}); ?>";
+        });
     }
 
     protected function addComposer($views, $callback)

@@ -1,6 +1,6 @@
 This site was made by these wonderful humans:
 
-- Rogier De Boevé (@rdbok)
+- Alex Vanderbist (@alexvanderbist)
 - Sebastian De Deyne (@sebdedeyne)
 - Willem Van Bockstal (@willemvbockstal)
 - Jef Van der Voort (@spatie_be)

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Back;
 
-use Analytics;
 use Illuminate\Support\Collection;
 use Spatie\Activitylog\Models\Activity;
+use Spatie\Analytics\AnalyticsFacade as Analytics;
 use Spatie\Analytics\Period;
 
 class DashboardController

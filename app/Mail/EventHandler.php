@@ -8,8 +8,8 @@ use App\Services\Auth\Front\Events\UserCreatedThroughBack as FrontUserCreatedThr
 use App\Services\Auth\Front\Events\UserRegistered as FrontUserRegistered;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Mail\Message;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Password;
-use Mail;
 
 class EventHandler
 {

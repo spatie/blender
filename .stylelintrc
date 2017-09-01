@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": "resources/assets/css/**/vendor/*.css",
+  "rules": {
+      "indentation": [4],
+      "number-leading-zero": null,
+      "selector-pseudo-element-colon-notation": "single"
+    }
+}
