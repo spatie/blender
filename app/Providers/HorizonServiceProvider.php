@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Horizon;
+use Illuminate\Support\ServiceProvider;
 
 class HorizonServiceProvider extends ServiceProvider
 {
@@ -21,7 +21,7 @@ class HorizonServiceProvider extends ServiceProvider
 
             $backUser = auth('back')->user();
 
-            if(! $backUser) {
+            if (! $backUser) {
                 return false;
             }
 

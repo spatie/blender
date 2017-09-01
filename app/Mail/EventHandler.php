@@ -2,14 +2,14 @@
 
 namespace App\Mail;
 
+use Mail;
 use App\Mail\Member\Welcome;
-use App\Services\Auth\Back\Events\UserCreated as BackUserCreated;
-use App\Services\Auth\Front\Events\UserCreatedThroughBack as FrontUserCreatedThroughBack;
-use App\Services\Auth\Front\Events\UserRegistered as FrontUserRegistered;
-use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Mail\Message;
 use Illuminate\Support\Facades\Password;
-use Mail;
+use Illuminate\Contracts\Events\Dispatcher;
+use App\Services\Auth\Back\Events\UserCreated as BackUserCreated;
+use App\Services\Auth\Front\Events\UserRegistered as FrontUserRegistered;
+use App\Services\Auth\Front\Events\UserCreatedThroughBack as FrontUserCreatedThroughBack;
 
 class EventHandler
 {
