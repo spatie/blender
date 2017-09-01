@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Exception;
-use Illuminate\Cache\MemcachedConnector;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Cache\MemcachedConnector;
 
 class ConfigServiceProvider extends ServiceProvider
 {

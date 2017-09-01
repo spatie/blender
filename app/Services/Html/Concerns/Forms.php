@@ -2,16 +2,16 @@
 
 namespace App\Services\Html\Concerns;
 
-use App\Models\ContentBlock;
 use App\Models\Tag;
-use App\Models\Transformers\ContentBlockTransformer;
-use App\Models\Transformers\MediaTransformer;
-use Illuminate\Support\Collection;
+use App\Models\ContentBlock;
 use Spatie\Html\Elements\Div;
-use Spatie\Html\Elements\Element;
 use Spatie\Html\Elements\Input;
 use Spatie\Html\Elements\Select;
+use Spatie\Html\Elements\Element;
+use Illuminate\Support\Collection;
 use Spatie\Html\Elements\Textarea;
+use App\Models\Transformers\MediaTransformer;
+use App\Models\Transformers\ContentBlockTransformer;
 
 trait Forms
 {
