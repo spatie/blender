@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use App\Models\Traits\HasSlug;
+use Spatie\MediaLibrary\Media;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-use Spatie\MediaLibrary\Media;
 
 class Person extends Model implements Sortable
 {
