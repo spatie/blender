@@ -13,12 +13,10 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        \App\Console\Commands\ClearBeanstalkdQueue::class,
         \App\Console\Commands\GenerateModule::class,
         \Spatie\LinkChecker\CheckLinksCommand::class,
         \Spatie\FragmentImporter\Commands\ImportFragments::class,
         \App\Console\Commands\PrefetchAnalyticsData::class,
-        \Spatie\MigrateFresh\Commands\MigrateFresh::class,
         \Spatie\ArtisanDd\DdCommand::class,
     ];
 
@@ -30,11 +28,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command(\Spatie\Backup\Commands\BackupCommand::class)->dailyAt('03:00');
-        $schedule->command(\Spatie\Backup\Commands\CleanupCommand::class)->dailyAt('04:00');
-        $schedule->command(\Spatie\LinkChecker\CheckLinksCommand::class)->monthly();
-        $schedule->command(\Spatie\ModelCleanup\CleanUpModelsCommand::class)->daily();
-        $schedule->command(\Spatie\Activitylog\CleanActivitylogCommand::class)->daily();
-        $schedule->command(\App\Console\Commands\PrefetchAnalyticsData::class)->dailyAt('06:00');
+        $schedule->command(\Spatie\Backup\Commands\BackupCommand::class, ['--only-db'])->hourly();
     }
 
     /**

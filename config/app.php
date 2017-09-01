@@ -205,10 +205,10 @@ return [
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
         Spatie\DbSnapshots\DbSnapshotsServiceProvider::class,
         Spatie\DemoMode\DemoModeServiceProvider::class,
+        Spatie\Fractal\FractalServiceProvider::class,
         Spatie\GoogleTagManager\GoogleTagManagerServiceProvider::class,
         Spatie\Html\HtmlServiceProvider::class,
         Spatie\LinkChecker\LinkCheckerServiceProvider::class,
-        Spatie\MailableTest\MailableTestServiceProvider::class,
         Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
         Spatie\Menu\Laravel\MenuServiceProvider::class,
         Spatie\MissingPageRedirector\MissingPageRedirectorServiceProvider::class,
@@ -216,7 +216,6 @@ return [
         Spatie\Newsletter\NewsletterServiceProvider::class,
         Spatie\Referer\RefererServiceProvider::class,
         Spatie\Tail\TailServiceProvider::class,
-
         App\Providers\AuthServiceProvider::class,
         App\Providers\CollectionServiceProvider::class,
         App\Providers\DatabaseServiceProvider::class,
@@ -231,6 +230,7 @@ return [
         App\Services\Html\HtmlServiceProvider::class,
         App\Services\Seo\SeoServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\HorizonServiceProvider::class,
     ],
 
     /*
@@ -291,7 +291,6 @@ return [
         'GoogleTagManager' => Spatie\GoogleTagManager\GoogleTagManagerFacade::class,
         'Menu' => Spatie\Menu\Laravel\MenuFacade::class,
         'Newsletter' => Spatie\Newsletter\NewsletterFacade::class,
-        'PaginateRoute' => Spatie\PaginateRoute\PaginateRouteFacade::class,
         'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
     ],
