@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
-use App\Models\Enums\SpecialArticle;
-use App\Models\Presenters\ArticlePresenter;
-use App\Models\Traits\HasSlug;
 use Exception;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\Traits\HasSlug;
+use Spatie\MediaLibrary\Media;
 use Illuminate\Support\Collection;
+use App\Models\Enums\SpecialArticle;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-use Spatie\MediaLibrary\Media;
+use App\Models\Presenters\ArticlePresenter;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property \App\Models\Article $parent
