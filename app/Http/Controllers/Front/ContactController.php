@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Front\FormResponseRequest;
 use App\Mail\Admin\ContactFormSubmitted;
 use App\Models\Enums\SpecialArticle;
 use App\Models\FormResponse;
