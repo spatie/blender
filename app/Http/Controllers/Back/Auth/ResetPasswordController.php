@@ -36,7 +36,7 @@ class ResetPasswordController extends Controller
     public function showResetForm(Request $request, $token = null)
     {
         if (! $user = User::where('email', $request->email)->first()) {
-            flash()->error(trans('passwordReset.invalidToken'));
+            flash()->error(trans('passwords.invalidToken'));
 
             return redirect()->to(login_url());
         }
@@ -55,7 +55,7 @@ class ResetPasswordController extends Controller
      */
     protected function sendResetFailedResponse(Request $request, $response)
     {
-        flash()->error(trans('passwordReset.invalidToken'));
+        flash()->error(trans('passwords.invalidToken'));
 
         return redirect()->back()
             ->withInput($request->only('email'))
