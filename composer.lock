@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.35.3",
+            "version": "3.36.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "47856d436ad8eb172c43c88b1861cd645882de56"
+                "reference": "104d1895fa8c661d0ac5f99567b6831b1436ec90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/47856d436ad8eb172c43c88b1861cd645882de56",
-                "reference": "47856d436ad8eb172c43c88b1861cd645882de56",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/104d1895fa8c661d0ac5f99567b6831b1436ec90",
+                "reference": "104d1895fa8c661d0ac5f99567b6831b1436ec90",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-08-31T21:23:59+00:00"
+            "time": "2017-09-05T19:05:30+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1325,16 +1325,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php",
-            "version": "8.8.0",
+            "version": "8.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php.git",
-                "reference": "54c69fcb45c3a39d9a206398f57fe18809401eda"
+                "reference": "d234fc851e71443f20325501d1b764af488b0a66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/54c69fcb45c3a39d9a206398f57fe18809401eda",
-                "reference": "54c69fcb45c3a39d9a206398f57fe18809401eda",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php/zipball/d234fc851e71443f20325501d1b764af488b0a66",
+                "reference": "d234fc851e71443f20325501d1b764af488b0a66",
                 "shasum": ""
             },
             "require": {
@@ -1345,7 +1345,7 @@
             "require-dev": {
                 "pear/pear-core-minimal": "^1.9",
                 "pear/pear_exception": "^1.0",
-                "pear/versioncontrol_git": "dev-master",
+                "pear/versioncontrol_git": "^0.5",
                 "phing/phing": "^2.7",
                 "phpunit/phpunit": "^4.8|^5.0",
                 "satooshi/php-coveralls": "^1.0",
@@ -1389,7 +1389,7 @@
                 "phonenumber",
                 "validation"
             ],
-            "time": "2017-08-22T10:35:52+00:00"
+            "time": "2017-09-06T08:32:29+00:00"
         },
         {
             "name": "giggsey/locale",
@@ -1501,16 +1501,16 @@
         },
         {
             "name": "google/apiclient-services",
-            "version": "v0.21",
+            "version": "v0.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "b8282036684f2989e820b7830e8270f337304f23"
+                "reference": "f3cc7456ec878086ee6b53591e979a022e24ac27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/b8282036684f2989e820b7830e8270f337304f23",
-                "reference": "b8282036684f2989e820b7830e8270f337304f23",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/f3cc7456ec878086ee6b53591e979a022e24ac27",
+                "reference": "f3cc7456ec878086ee6b53591e979a022e24ac27",
                 "shasum": ""
             },
             "require": {
@@ -1534,7 +1534,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2017-08-28T00:23:45+00:00"
+            "time": "2017-09-02T00:25:09+00:00"
         },
         {
             "name": "google/auth",
@@ -2384,16 +2384,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.1",
+            "version": "v5.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fad090f6e14b97df91489803644ac88b5321864e"
+                "reference": "65da63c8ad4836e2bcddcff75becd49c71c5041c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fad090f6e14b97df91489803644ac88b5321864e",
-                "reference": "fad090f6e14b97df91489803644ac88b5321864e",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/65da63c8ad4836e2bcddcff75becd49c71c5041c",
+                "reference": "65da63c8ad4836e2bcddcff75becd49c71c5041c",
                 "shasum": ""
             },
             "require": {
@@ -2512,7 +2512,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-09-01T06:33:38+00:00"
+            "time": "2017-09-04T14:09:04+00:00"
         },
         {
             "name": "laravel/horizon",
@@ -3380,16 +3380,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.1.0",
+            "version": "v3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "4d4896e553f2094e657fe493506dc37c509d4e2b"
+                "reference": "a1e8e1a30e1352f118feff1a8481066ddc2f234a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/4d4896e553f2094e657fe493506dc37c509d4e2b",
-                "reference": "4d4896e553f2094e657fe493506dc37c509d4e2b",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/a1e8e1a30e1352f118feff1a8481066ddc2f234a",
+                "reference": "a1e8e1a30e1352f118feff1a8481066ddc2f234a",
                 "shasum": ""
             },
             "require": {
@@ -3427,7 +3427,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-07-28T14:45:09+00:00"
+            "time": "2017-09-02T17:10:46+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -4498,16 +4498,16 @@
         },
         {
             "name": "spatie/fractalistic",
-            "version": "2.5.0",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/fractalistic.git",
-                "reference": "fdd536f8c1b172edfc3a742f6074680b80db2606"
+                "reference": "14c0025bf42c4710a9eac1f4edb20f949b90208f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/fractalistic/zipball/fdd536f8c1b172edfc3a742f6074680b80db2606",
-                "reference": "fdd536f8c1b172edfc3a742f6074680b80db2606",
+                "url": "https://api.github.com/repos/spatie/fractalistic/zipball/14c0025bf42c4710a9eac1f4edb20f949b90208f",
+                "reference": "14c0025bf42c4710a9eac1f4edb20f949b90208f",
                 "shasum": ""
             },
             "require": {
@@ -4516,7 +4516,7 @@
             },
             "require-dev": {
                 "illuminate/pagination": "~5.3.0|~5.4.0",
-                "phpunit/phpunit": "^5.7"
+                "phpunit/phpunit": "^5.7.21"
             },
             "type": "library",
             "autoload": {
@@ -4545,7 +4545,7 @@
                 "spatie",
                 "transform"
             ],
-            "time": "2017-08-18T23:58:17+00:00"
+            "time": "2017-09-06T11:54:34+00:00"
         },
         {
             "name": "spatie/fragment-importer",
@@ -6451,16 +6451,16 @@
         },
         {
             "name": "spatie/regex",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/regex.git",
-                "reference": "e62f3628d49e18d80ead79663b5e4b60baba105c"
+                "reference": "af4d7f44888b4a794768e8a9ab0392d9d8366b81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/regex/zipball/e62f3628d49e18d80ead79663b5e4b60baba105c",
-                "reference": "e62f3628d49e18d80ead79663b5e4b60baba105c",
+                "url": "https://api.github.com/repos/spatie/regex/zipball/af4d7f44888b4a794768e8a9ab0392d9d8366b81",
+                "reference": "af4d7f44888b4a794768e8a9ab0392d9d8366b81",
                 "shasum": ""
             },
             "require": {
@@ -6496,7 +6496,7 @@
                 "regular",
                 "spatie"
             ],
-            "time": "2016-09-15T14:29:02+00:00"
+            "time": "2017-09-04T18:27:24+00:00"
         },
         {
             "name": "spatie/schema-org",
@@ -8325,16 +8325,16 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "3.2.3",
+            "version": "4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
-                "reference": "86e24012a3139b42a7b71155cfaa325389f00f1f"
+                "reference": "2d3d238c433cf69caeb4842e97a3223a116f94b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/86e24012a3139b42a7b71155cfaa325389f00f1f",
-                "reference": "86e24012a3139b42a7b71155cfaa325389f00f1f",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/2d3d238c433cf69caeb4842e97a3223a116f94b2",
+                "reference": "2d3d238c433cf69caeb4842e97a3223a116f94b2",
                 "shasum": ""
             },
             "require": {
@@ -8366,7 +8366,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2017-08-29T19:37:41+00:00"
+            "time": "2017-08-30T18:51:59+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -8417,22 +8417,22 @@
         },
         {
             "name": "phpspec/prophecy",
-            "version": "v1.7.0",
+            "version": "v1.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpspec/prophecy.git",
-                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073"
+                "reference": "c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/93d39f1f7f9326d746203c7c056f300f7f126073",
-                "reference": "93d39f1f7f9326d746203c7c056f300f7f126073",
+                "url": "https://api.github.com/repos/phpspec/prophecy/zipball/c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6",
+                "reference": "c9b8c6088acd19d769d4cc0ffa60a9fe34344bd6",
                 "shasum": ""
             },
             "require": {
                 "doctrine/instantiator": "^1.0.2",
                 "php": "^5.3|^7.0",
-                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2",
+                "phpdocumentor/reflection-docblock": "^2.0|^3.0.2|^4.0",
                 "sebastian/comparator": "^1.1|^2.0",
                 "sebastian/recursion-context": "^1.0|^2.0|^3.0"
             },
@@ -8443,7 +8443,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.7.x-dev"
                 }
             },
             "autoload": {
@@ -8476,7 +8476,7 @@
                 "spy",
                 "stub"
             ],
-            "time": "2017-03-02T20:05:34+00:00"
+            "time": "2017-09-04T11:05:03+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
