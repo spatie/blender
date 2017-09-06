@@ -30,5 +30,4 @@ return [
         'neverLoggedIn' => 'Nog niet ingelogd',
         'justNow' => 'Zonet',
     ],
-
 ];
