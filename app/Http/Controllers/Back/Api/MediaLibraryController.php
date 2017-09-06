@@ -30,7 +30,7 @@ class MediaLibraryController extends Controller
                 return $model
                     ->addMedia($file)
                     ->withCustomProperties(['draft' => $request->has('redactor') ? false : true])
-                    ->toMediaLibrary($request->get('collection_name', 'default'));
+                    ->toMediaCollection($request->get('collection_name', 'default'));
             });
 
         if ($request->has('redactor')) {
@@ -72,7 +72,7 @@ class MediaLibraryController extends Controller
             throw new Exception('No model id provided');
         }
 
-        return call_user_func($request['model_name'].'::findOrFail', $request['model_id']);
+        return $request['model_name']::withoutGlobalScopes()->findOrFail($request['model_id']);
     }
 
     protected function validationRules(): array

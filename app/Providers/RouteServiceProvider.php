@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = '\App\Http\Controllers';
+    protected $namespace = 'App\Http\Controllers';
 
     public function boot()
     {
@@ -70,7 +70,6 @@ class RouteServiceProvider extends ServiceProvider
             /*
              * Frontsite
              */
-
             Route::namespace('Front')
                 ->group(function () {
                     Route::prefix('api')
