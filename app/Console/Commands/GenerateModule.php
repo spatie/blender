@@ -6,25 +6,10 @@ use Illuminate\Console\Command;
 
 class GenerateModule extends Command
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
     protected $signature = 'module:generate {singular} {plural?}';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Generate a Blender module.';
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
         $singular = ucfirst($this->argument('singular'));

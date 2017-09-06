@@ -4,14 +4,10 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Spatie\Backup\Commands\BackupCommand;
 
 class Kernel extends ConsoleKernel
 {
-    /**
-     * The Artisan commands provided by your application.
-     *
-     * @var array
-     */
     protected $commands = [
         \App\Console\Commands\GenerateModule::class,
         \Spatie\LinkChecker\CheckLinksCommand::class,
@@ -20,15 +16,10 @@ class Kernel extends ConsoleKernel
         \Spatie\ArtisanDd\DdCommand::class,
     ];
 
-    /**
-     * Define the application's command schedule.
-     *
-     * @param \Illuminate\Console\Scheduling\Schedule $schedule
-     */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(\Spatie\Backup\Commands\BackupCommand::class)->dailyAt('03:00');
-        $schedule->command(\Spatie\Backup\Commands\BackupCommand::class, ['--only-db'])->hourly();
+        $schedule->command(BackupCommand::class)->dailyAt('03:00');
+        $schedule->command(BackupCommand::class, ['--only-db'])->hourly();
     }
 
     /**

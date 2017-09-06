@@ -8,25 +8,10 @@ use Spatie\Analytics\Period;
 
 class PrefetchAnalyticsData extends Command
 {
-    /**
-     * The console command name.
-     *
-     * @var string
-     */
     protected $signature = 'analytics:prefetch';
 
-    /**
-     * The console command description.
-     *
-     * @var string
-     */
     protected $description = 'Prefetch the analytics data.';
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
     public function handle()
     {
         $this->info('Prefetching analytics data...');

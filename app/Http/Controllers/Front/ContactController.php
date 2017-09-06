@@ -7,6 +7,7 @@ use App\Http\Requests\Front\FormResponseRequest;
 use App\Mail\Admin\ContactFormSubmitted;
 use App\Models\Enums\SpecialArticle;
 use App\Models\FormResponse;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
@@ -18,9 +19,16 @@ class ContactController extends Controller
         return view('front.contact.index', compact('article'));
     }
 
-    public function handleResponse(FormResponseRequest $request)
+    public function handleResponse(Request $request)
     {
-        $formResponse = FormResponse::create($request->except(['g-recaptcha-response']));
+        $validatedAttributes = $request->validate([
+            'name' => 'required',
+            'telephone' => 'required',
+            'email' => 'required|email',
+            //'g-recaptcha-response' => 'required|recaptcha'
+        ]);
+
+        $formResponse = FormResponse::create($validatedAttributes);
 
         Mail::send(new ContactFormSubmitted($formResponse));
 
