@@ -207,7 +207,6 @@ return [
         App\Providers\ModelServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\QueryBuilderServiceProvider::class,
-        App\Providers\ValidationServiceProvider::class,
         App\Providers\ViewServiceProvider::class,
         App\Services\Auth\AuthServiceProvider::class,
         App\Services\Html\HtmlServiceProvider::class,
