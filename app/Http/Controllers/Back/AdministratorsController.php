@@ -18,7 +18,7 @@ class AdministratorsController
     {
         $users = User::all();
 
-        return view('back.administrators.index')->with(compact('users'));
+        return view('back.administrators.index', compact('users'));
     }
 
     public function create()
@@ -59,7 +59,7 @@ class AdministratorsController
     {
         $user = User::findOrFail($id);
 
-        return view('back.administrators.edit')->with(compact('user'));
+        return view('back.administrators.edit', compact('user'));
     }
 
     public function update($id, Request $request)

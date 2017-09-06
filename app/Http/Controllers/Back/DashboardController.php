@@ -13,7 +13,7 @@ class DashboardController
     {
         $logItems = $this->getLatestActivityItems();
 
-        $view = view('back.dashboard.index')->with(compact('logItems'));
+        $view = view('back.dashboard.index', compact('logItems'));
 
         if (empty(config('analytics.view_id'))) {
             return $view;

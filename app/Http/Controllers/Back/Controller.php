@@ -37,7 +37,7 @@ abstract class Controller
     {
         $models = $this->all();
 
-        return view("back.{$this->moduleName}.index")->with('models', $models);
+        return view("back.{$this->moduleName}.index", compact('models'));
     }
 
     public function create()
@@ -76,7 +76,9 @@ abstract class Controller
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->to(
-            $this->redirectToIndex ? $this->action('index') : $this->action('edit', $model->id)
+            $this->redirectToIndex
+                ? $this->action('index')
+                : $this->action('edit', $model->id)
         );
     }
 

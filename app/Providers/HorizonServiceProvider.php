@@ -15,7 +15,7 @@ class HorizonServiceProvider extends ServiceProvider
         Horizon::routeSlackNotificationsTo(config('horizon.slack_webhook_url'));
 
         Horizon::auth(function (Request $request) {
-            if (app()->environment('locale')) {
+            if (app()->environment('local')) {
                 return true;
             }
 

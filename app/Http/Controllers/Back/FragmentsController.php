@@ -15,14 +15,14 @@ class FragmentsController
     {
         $fragments = Fragment::where('hidden', false)->get();
 
-        return view('back.fragments.index')->with(compact('fragments'));
+        return view('back.fragments.index', compact('fragments'));
     }
 
     public function hidden()
     {
         $fragments = Fragment::where('hidden', true)->get();
 
-        return view('back.fragments.index')->with(compact('fragments'));
+        return view('back.fragments.index', compact('fragments'));
     }
 
     public function create()

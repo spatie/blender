@@ -11,7 +11,7 @@ class ActivitylogController
     {
         $logItems = $this->getPaginatedActivityLogItems();
 
-        return view('back.activitylog.index')->with(compact('logItems'));
+        return view('back.activitylog.index', compact('logItems'));
     }
 
     protected function getPaginatedActivityLogItems(): Paginator
