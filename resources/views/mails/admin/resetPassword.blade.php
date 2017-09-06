@@ -3,9 +3,9 @@
 
 Beste {{ $user->first_name }},
 
-Je vroeg om je paswoord te wijzigen op [{{ Request::getHost() }}]({{ action('Front\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ urlencode($user->email) }}).
+Je vroeg om je paswoord te wijzigen op [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ urlencode($user->email) }}).
 
-@component('mail::button', ['url' => action('Front\Auth\ResetPasswordController@showResetForm', [$token]). '?email=' . urlencode($user->email)])
+@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]). '?email=' . urlencode($user->email)])
 Wijzig je wachtwoord
 @endcomponent
 
