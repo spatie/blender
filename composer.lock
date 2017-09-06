@@ -58,16 +58,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.36.1",
+            "version": "3.36.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "104d1895fa8c661d0ac5f99567b6831b1436ec90"
+                "reference": "98bff6b24863bb0da970449d18f6745b9270add9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/104d1895fa8c661d0ac5f99567b6831b1436ec90",
-                "reference": "104d1895fa8c661d0ac5f99567b6831b1436ec90",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/98bff6b24863bb0da970449d18f6745b9270add9",
+                "reference": "98bff6b24863bb0da970449d18f6745b9270add9",
                 "shasum": ""
             },
             "require": {
@@ -134,7 +134,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2017-09-05T19:05:30+00:00"
+            "time": "2017-09-06T16:44:34+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -6401,24 +6401,24 @@
         },
         {
             "name": "spatie/pdf-to-image",
-            "version": "1.4.5",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/pdf-to-image.git",
-                "reference": "6a0938462f5a39cd9c9d582a41affc14ffe07940"
+                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/6a0938462f5a39cd9c9d582a41affc14ffe07940",
-                "reference": "6a0938462f5a39cd9c9d582a41affc14ffe07940",
+                "url": "https://api.github.com/repos/spatie/pdf-to-image/zipball/9a5cb264a99e87e010c65d4ece03b51f821d55bd",
+                "reference": "9a5cb264a99e87e010c65d4ece03b51f821d55bd",
                 "shasum": ""
             },
             "require": {
-                "ext-imagick": "*",
-                "php": "^7.0"
+                "php": ">=5.5.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^6.2"
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
             },
             "type": "library",
             "autoload": {
@@ -6447,7 +6447,7 @@
                 "pdf-to-image",
                 "spatie"
             ],
-            "time": "2017-07-18T15:41:52+00:00"
+            "time": "2016-12-14T15:37:00+00:00"
         },
         {
             "name": "spatie/regex",
@@ -6551,16 +6551,16 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "4.6.0",
+            "version": "4.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/seeders.git",
-                "reference": "b48fae6d1607339e8d6053d9197acde908dfd934"
+                "reference": "b1fc417725fb337b84a1f7b6ef607d99edc632c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/seeders/zipball/b48fae6d1607339e8d6053d9197acde908dfd934",
-                "reference": "b48fae6d1607339e8d6053d9197acde908dfd934",
+                "url": "https://api.github.com/repos/spatie/seeders/zipball/b1fc417725fb337b84a1f7b6ef607d99edc632c5",
+                "reference": "b1fc417725fb337b84a1f7b6ef607d99edc632c5",
                 "shasum": ""
             },
             "require": {
@@ -6604,10 +6604,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/seeders/tree/4.6.0",
+                "source": "https://github.com/spatie/seeders/tree/master",
                 "issues": "https://github.com/spatie/seeders/issues"
             },
-            "time": "2017-03-30T08:00:08+00:00"
+            "time": "2017-09-01T11:52:28+00:00"
         },
         {
             "name": "spatie/string",
