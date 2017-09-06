@@ -32,6 +32,11 @@ class StatisticsController
         $referrers = Analytics::fetchTopReferrers(Period::days(365));
         $browsers = Analytics::fetchTopBrowsers(Period::days(365));
 
-        return view('back.statistics.index')->with(compact('visitors', 'pages', 'referrers', 'browsers'));
+        return view('back.statistics.index', compact(
+            'visitors',
+            'pages',
+            'referrers',
+            'browsers')
+        );
     }
 }

@@ -12,7 +12,7 @@
                 <tr>
                     <th>@lang('E-mail')</th>
                     <th>@lang('Naam')</th>
-                    <th>@lang('Laatste activiteit')}</th>
+                    <th>@lang('Laatste activiteit')</th>
                     <th data-orderable="false"></th>
                 </tr>
                 </thead>

@@ -109,7 +109,6 @@ ln -nfs {{ $baseDir }}/.env .env;
 {{ logMessage("✨  Optimizing installation...") }}
 cd {{ $newReleaseDir }};
 php artisan clear-compiled;
-php artisan optimize;
 @endtask
 
 @task('backupDatabase', ['on' => 'remote'])
@@ -128,12 +127,15 @@ php artisan migrate --force;
 {{ logMessage("🙏  Blessing new release...") }}
 ln -nfs {{ $newReleaseDir }} {{ $currentDir }};
 cd {{ $newReleaseDir }}
+
+php artisan horizon:terminate
 php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
 
 sudo service php7.1-fpm restart
 sudo supervisorctl restart all
+php artisan horizon
 @endtask
 
 @task('insertNewFragments', ['on' => 'remote'])

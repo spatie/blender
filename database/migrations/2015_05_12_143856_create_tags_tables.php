@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTagsTables extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('tags', function (Blueprint $table) {

@@ -18,7 +18,7 @@ class MembersController
     {
         $users = User::all();
 
-        return view('back.members.index')->with(compact('users'));
+        return view('back.members.index', compact('users'));
     }
 
     public function create()
@@ -55,7 +55,7 @@ class MembersController
     {
         $user = User::findOrFail($id);
 
-        return view('back.members.edit')->with(compact('user'));
+        return view('back.members.edit', compact('user'));
     }
 
     public function update($id, Request $request)

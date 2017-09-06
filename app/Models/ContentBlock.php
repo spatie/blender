@@ -24,7 +24,7 @@ class ContentBlock extends Model implements HasMediaConversions
         return $this->morphTo('model');
     }
 
-    public function registerMediaConversions()
+    public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('admin')
             ->width(368)

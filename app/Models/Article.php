@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
+use Spatie\MediaLibrary\Media;
 
 /**
  * @property \App\Models\Article $parent
@@ -28,7 +29,7 @@ class Article extends Model implements Sortable
 
     public $translatable = ['name', 'text', 'slug', 'meta_values'];
 
-    public function registerMediaConversions()
+    public function registerMediaConversions(Media $media = null)
     {
         parent::registerMediaConversions();
 

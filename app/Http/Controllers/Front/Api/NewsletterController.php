@@ -7,11 +7,6 @@ use Spatie\Newsletter\NewsletterFacade as Newsletter;
 
 class NewsletterController extends Controller
 {
-    /**
-     * @param \App\Http\Requests\Front\NewsletterSubscriptionRequest $request
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
     public function subscribe(NewsletterSubscriptionRequest $request)
     {
         $email = strtolower($request->get('email'));

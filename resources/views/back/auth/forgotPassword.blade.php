@@ -18,7 +18,7 @@
                 @lang('Wachtwoord vergeten')
             </h1>
 
-            {{ html()->info(session('status') ?: __('Geef je e-mailadres op en we sturen je een link waarmee je je wachtwoord kan wijzigen')) }}
+            {{ html()->info(__(session('status')) ?: __('Geef je e-mailadres op en we sturen je een link waarmee je je wachtwoord kan wijzigen')) }}
 
             {{ html()->formGroup()->email('email', 'E-mail') }}
 

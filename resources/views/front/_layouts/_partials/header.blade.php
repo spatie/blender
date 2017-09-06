@@ -10,6 +10,7 @@
             <div class="grid__cell -width-1/2">
                 <nav class="nav h-align-right">
                     <ul class="nav__list">
+                        {{--
                         @if(current_user())
                             <li>
                                 <a href="{{ current_user()->getProfileUrl() }}">
@@ -27,6 +28,7 @@
                                 <a href="{{ login_url() }}">@lang('auth.login')</a>
                             </li>
                         @endif
+                        --}}
                     </ul>
                 </nav>
             </div>

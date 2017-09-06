@@ -17,6 +17,6 @@ class ArticleController extends Controller
             return redirect($article->first_child->url);
         }
 
-        return view('front.article.index')->with(compact('article'));
+        return view('front.article.index', compact('article'));
     }
 }
