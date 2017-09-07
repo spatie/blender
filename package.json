@@ -35,14 +35,16 @@
     "jquery": "^3.0.0",
     "laravel-mix": "^1.4",
     "lodash": "^4.16.6",
+    "normalize-css": "^2.3.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-easy-import": "^2.1.0",
-    "normalize-css": "^2.3.1",
     "spatie-dom": "^1.0.0",
     "stylelint": "^8.0.0",
     "stylelint-config-standard": "^17.0.0",
     "viewport-utility": "^1.2.2",
     "vue": "^2.1.0",
+    "vue-table-component": "^1.4.3",
+    "vue-tabs-component": "^1.1.0",
     "webfontloader": "^1.6.10"
   },
   "devDependencies": {
