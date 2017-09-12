@@ -1,6 +1,7 @@
 @php
     meta()->defaultTitle(__('site.title'));
     meta()->suffixTitleWith(' - '.__('site.title'));
+    meta()->with($meta ?? []);
 @endphp
 
 <title>{{ meta()->title() }}</title>
@@ -12,4 +13,4 @@
     'og:description' => __('site.description'),
     'og:type' => 'website',
     'og:image' => url('/images/og-image.png'),
-])->with($meta ?? []) }}
+]) }}
