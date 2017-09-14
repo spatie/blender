@@ -70,6 +70,11 @@ class FormGroup
         return $this->assemble($collection, $label, $this->html->media($collection, $type, $associated));
     }
 
+    public function associatedModelsSelect(string $name, string $label, string $nameProperty = 'name', ?iterable $models = null): Div
+    {
+        return $this->assemble($name, $label, $this->html->associatedModelsSelect($name, $nameProperty, $models));
+    }
+
     public function password(string $name, string $label): Div
     {
         return $this->assemble($name, $label, $this->html->password($name));
