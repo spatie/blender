@@ -16,6 +16,7 @@ class BackUserSeeder extends DatabaseSeeder
             ['Sebastian', 'De Deyne'],
             ['Willem', 'Van Bockstal'],
             ['Alex', 'Van der Bist'],
+            ['Harish', 'Toshniwal'],
         ])->each(function ($name) {
             [$firstName, $lastName] = $name;
 
