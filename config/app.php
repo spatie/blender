@@ -213,6 +213,7 @@ return [
         App\Services\Seo\SeoServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\HorizonServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
     ],
 
     /*

@@ -2,10 +2,10 @@
 
 namespace App\Services\Html\Concerns;
 
+use App\Http\Resources\Media as MediaResource;
 use App\Models\ContentBlock;
 use App\Models\Tag;
 use App\Models\Transformers\ContentBlockTransformer;
-use App\Models\Transformers\MediaTransformer;
 use Illuminate\Support\Collection;
 use Spatie\Html\Elements\Div;
 use Spatie\Html\Elements\Element;
@@ -65,9 +65,7 @@ trait Forms
     {
         $this->ensureModelIsAvailable();
 
-        $initial = fractal()
-            ->collection($this->model->getMedia($collection))
-            ->transformWith(MediaTransformer::class)
+        $initial = MediaResource::collection($this->model->getMedia($collection))
             ->toJson();
 
         $associatedData = collect($associated)->merge([
