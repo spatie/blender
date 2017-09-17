@@ -50,6 +50,8 @@ git pull origin master
 {{ logMessage("🌀  Cloning repository...") }}
 [ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
 [ -d {{ $persistentDir }} ] || mkdir {{ $persistentDir }};
+[ -d {{ $persistentDir }}/media ] || mkdir {{ $persistentDir }}/media;
+[ -d {{ $persistentDir }}/storage ] || mkdir {{ $persistentDir }}/storage;
 cd {{ $releasesDir }};
 
 # Create the release dir
