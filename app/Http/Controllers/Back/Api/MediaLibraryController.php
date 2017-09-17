@@ -78,7 +78,6 @@ class MediaLibraryController extends Controller
     protected function validationRules(): array
     {
         return [
-            'collection_name' => 'required',
             'file' => 'required|max:'.config('medialibrary.max_file_size'),
         ];
     }
