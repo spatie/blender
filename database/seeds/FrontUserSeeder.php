@@ -16,6 +16,7 @@ class FrontUserSeeder extends DatabaseSeeder
             ['Alex', 'Van der Bist'],
             ['Sebastian', 'De Deyne'],
             ['Willem', 'Van Bockstal'],
+            ['Harish', 'Toshniwal'],
         ])->each(function ($name) {
             [$firstName, $lastName] = $name;
 
