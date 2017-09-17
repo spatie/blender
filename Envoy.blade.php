@@ -7,6 +7,7 @@ $userAndServer = 'forge@'. $server;
 $repository = "spatie/{$server}";
 $baseDir = "/home/forge/{$server}";
 $releasesDir = "{$baseDir}/releases";
+$persistentDor = "{$baseDir}/persistent";
 $currentDir = "{$baseDir}/current";
 $newReleaseName = date('Ymd-His');
 $newReleaseDir = "{$releasesDir}/{$newReleaseName}";
@@ -48,6 +49,7 @@ git pull origin master
 @task('cloneRepository', ['on' => 'remote'])
 {{ logMessage("🌀  Cloning repository...") }}
 [ -d {{ $releasesDir }} ] || mkdir {{ $releasesDir }};
+[ -d {{ $persistentDir }} ] || mkdir {{ $persistentDir }};
 cd {{ $releasesDir }};
 
 # Create the release dir
