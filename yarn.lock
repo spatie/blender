@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@spatie/blender-content-blocks@^1.0.2":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@spatie/blender-content-blocks/-/blender-content-blocks-1.0.5.tgz#eb6e4787e9626c304ae54c7a99f6e9f0faf0b0ef"
+"@spatie/blender-content-blocks@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@spatie/blender-content-blocks/-/blender-content-blocks-2.0.1.tgz#26f7f6163274bd2ba3988d2b40d198fd15491238"
   dependencies:
     axios "^0.15.3"
     babel-core "^6.18.2"
@@ -13,9 +13,9 @@
     dropzone "^4.3.0"
     font-awesome-filetypes "^1.0.1"
 
-"@spatie/blender-css@^4.0.3":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@spatie/blender-css/-/blender-css-4.0.3.tgz#649a75c69cb8c85c22bbf1df29aae3d2f648f824"
+"@spatie/blender-css@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@spatie/blender-css/-/blender-css-5.0.3.tgz#26231da639067d0c6badf89ffc39e01352c7a56f"
 
 "@spatie/blender-js@^1.4.0":
   version "1.4.0"

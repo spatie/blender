@@ -2,6 +2,10 @@ const { mix } = require('laravel-mix');
 
 mix.config.postCss = require('./postcss.config').plugins;
 
+mix.autoload({
+    'jquery': ['$', 'window.jQuery', 'jQuery'],
+});
+
 mix
 
     .js('resources/assets/js/front/head.js', 'public/js/front.head.js')

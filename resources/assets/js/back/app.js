@@ -1,7 +1,5 @@
 import 'babel-polyfill';
 
-window.jQuery = window.$ = require('jquery');
-
 require('@spatie/blender-js/modules/ajax.csrf');
 require('@spatie/blender-js/modules/interface.confirm');
 require('@spatie/blender-js/modules/form.input.datetimepicker');
@@ -32,8 +30,8 @@ if (query('blender-chart')) {
     }, 'back.chart');
 }
 
-// if (query('[data-editor]')) {
-//     require.ensure([], () => {
-//         require('./modules/editor').default();
-//     }, 'back.editor');
-// }
+if (query('[data-editor]')) {
+    require.ensure([], () => {
+        require('./modules/editor').default();
+    }, 'back.editor');
+}
