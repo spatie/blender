@@ -7,6 +7,9 @@
     ],
     "license": "MIT",
     "type": "project",
+    "platform": {
+        "php": "7.1"
+    },
     "repositories": [
         {
             "type": "composer",
