@@ -43,7 +43,7 @@ Installing Blender's front end dependencies requires `yarn`.
 yarn
 ```
 
-Blender uses [Laravel Mix](https://laravel.com/docs/5.4/mix) to build assets.
+Blender uses [Laravel Mix](https://laravel.com/docs/5.5/mix) to build assets.
 To build assets run:
 
 ```bash
