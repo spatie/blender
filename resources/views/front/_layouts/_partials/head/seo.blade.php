@@ -13,4 +13,4 @@
     'og:description' => __('site.description'),
     'og:type' => 'website',
     'og:image' => url('/images/og-image.png'),
-]) }}
+])->with($meta ?? []) }}
