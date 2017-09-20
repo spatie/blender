@@ -17,7 +17,7 @@ class RobotsMiddleware extends BaseRobotsMiddleware
             return false;
         }
 
-        if (! env('ALLOW_ROBOTS')) {
+        if (! config('app.allow_robots')) {
             return false;
         }
 
