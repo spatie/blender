@@ -22,7 +22,7 @@ class PersonSeeder extends DatabaseSeeder
             'draft' => false,
         ]);
 
-        $this->addImages($person, 1, 1);
+        $this->addImages($person, 1, 1, 'images', 'people');
 
         return $person;
     }
