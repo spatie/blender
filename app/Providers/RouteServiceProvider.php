@@ -84,7 +84,6 @@ class RouteServiceProvider extends ServiceProvider
                     Route::middleware(['web', 'demoMode', 'rememberLocale'])->group(function () {
                         $multiLingual = count(config('app.locales')) > 1;
 
-
                         Route::group($multiLingual ? ['prefix' => locale()] : [], function () {
                             try {
                                 Auth::routes();
