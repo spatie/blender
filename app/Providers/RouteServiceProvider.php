@@ -65,6 +65,8 @@ class RouteServiceProvider extends ServiceProvider
                     Route::middleware('auth')->group(function () {
                         require base_path('routes/back.php');
                     });
+
+                    Route::fallback('NotFoundController');
                 });
 
             /*
@@ -82,6 +84,7 @@ class RouteServiceProvider extends ServiceProvider
                     Route::middleware(['web', 'demoMode', 'rememberLocale'])->group(function () {
                         $multiLingual = count(config('app.locales')) > 1;
 
+
                         Route::group($multiLingual ? ['prefix' => locale()] : [], function () {
                             try {
                                 Auth::routes();
@@ -96,6 +99,8 @@ class RouteServiceProvider extends ServiceProvider
                                 return redirect(locale());
                             });
                         }
+
+                        Route::fallback('NotFoundController');
                     });
                 });
         });
