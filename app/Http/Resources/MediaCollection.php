@@ -10,7 +10,7 @@ class MediaCollection extends ResourceCollection
     {
         return [
             'data' => $this->collection,
-            'links' => ['self' => 'value']
+            'links' => ['self' => 'value'],
         ];
     }
 }
