@@ -56,7 +56,7 @@ trait Forms
             ->value($this->model->tagsWithType($type)->pluck('name', 'name'));
     }
 
-    public function associatedModelsSelect(string $name, string $nameProperty = 'name', ?iterable $options = null)
+    public function relatedModelsSelect(string $name, string $nameProperty = 'name', ?iterable $options = null)
     {
         $this->ensureModelIsAvailable();
 
