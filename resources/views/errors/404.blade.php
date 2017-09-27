@@ -1,1 +1,1 @@
-@include('errors.404-'.(request()->isBack() ? 'back' : 'front'))
+@include((request()->isBack() ? 'back' : 'front').'.errors.404')
