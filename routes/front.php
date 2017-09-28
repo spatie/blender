@@ -2,9 +2,9 @@
 
 use App\Models\Enums\SpecialArticle;
 
-Route::name('home')->get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
-Route::name('contact')->get(article(SpecialArticle::CONTACT)->slug, 'ContactController@index');
+Route::get(article(SpecialArticle::CONTACT)->slug, 'ContactController@index')->name('contact');
 Route::post(article(SpecialArticle::CONTACT)->slug, 'ContactController@handleResponse');
 
 Route::get('{articleUrl}/{subArticleUrl}', 'ArticleController@index');
