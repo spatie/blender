@@ -54,7 +54,7 @@ class FragmentsController
         $this->updateMedia($fragment, $request);
         app('cache')->flush();
 
-        $eventDescription = "Fragment <a href=\"".action('Back\FragmentsController@edit', $fragment->id).
+        $eventDescription = 'Fragment <a href="'.action('Back\FragmentsController@edit', $fragment->id).
             "\">`{$fragment->group}.{$fragment->key}`</a> was saved.";
 
         activity()->on($fragment)->log($eventDescription);
