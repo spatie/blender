@@ -3,7 +3,7 @@
 
     <div class="form__group">
         @if ($fragment->contains_image)
-            {{ html()->formGroup()->media('images', 'image', 'Afbeelding') }}
+            {{ html()->formGroup()->media('images', 'image', 'Image') }}
         @else
             {{ html()->label(html()->span($locale)->class('label--lang'), 'text') }}
             {{ html()

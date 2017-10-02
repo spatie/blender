@@ -9,18 +9,20 @@
                 @include('back.dashboard._partials.visitors')
             @else
                 <div class="alerts">
-                    {{ html()->info(__('Analytics is nog niet geconfigureerd')) }}
+                    <div class="alert--info">
+                        Analytics hasn't been configured yet.
+                    </div>
                 </div>
             @endif
 
             @if(count($logItems))
-                <h2>@lang('Recente activiteit')</h2>
+                <h2>@lang('Recent activity')</h2>
                 <table class="-datatable -compact">
                     <thead>
                     <tr>
-                        <th>@lang('Tijdstip')</th>
-                        <th>@lang('Beschrijving')</th>
-                        <th>@lang('Gebruiker')</th>
+                        <th>Time</th>
+                        <th>Description</th>
+                        <th>User</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -40,7 +42,7 @@
                     </tbody>
                 </table>
                 <a href="{{ action('Back\ActivitylogController@index') }}">
-                    @lang('Bekijk het hele log')
+                    View the entire log
                 </a>
             @endif
         </div>

@@ -1,12 +1,12 @@
 @component('back._layouts.master', [
-    'title' => __('Team'),
+    'title' => 'Team',
     'breadcrumbs' => html()->backToIndex('Back\PeopleController@index'),
 ])
     <section>
         <div class="grid">
             <h1>
                 {{ html()->onlineIndicator($model->online) }}
-                {{ $model->name ?: __('Nieuw persoon') }}
+                {{ $model->name ?: 'New team member' }}
             </h1>
 
             {{ html()
@@ -14,11 +14,11 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar persoon') }}
+            {{ html()->formGroup()->submit('Save team member') }}
 
             @include('back.people._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar persoon') }}
+            {{ html()->formGroup()->submit('Save team member') }}
 
             {{ html()->closeModelForm() }}
         </div>

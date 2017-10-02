@@ -1,10 +1,10 @@
 @component('back._layouts.master', [
-    'title' => __('Administrators'),
+    'title' => 'Administrators',
     'breadcrumbs' => html()->backToIndex('Back\AdministratorsController@index'),
 ])
     <section>
         <div class="grid">
-            <h1>{{ __('Nieuwe administrator') }}</h1>
+            <h1>New administrator</h1>
 
             {{ html()
                 ->modelForm($user, 'POST', action('Back\AdministratorsController@store', $user->id))
@@ -13,7 +13,7 @@
 
             @include('back.administrators._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar administrator') }}
+            {{ html()->formGroup()->submit('Save administrator') }}
 
             {{ html()->closeModelForm() }}
         </div>

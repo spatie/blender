@@ -1,10 +1,10 @@
-<h2>@lang('Meeste gebruikte browsers')</h2>
+<h2>Top browsers</h2>
 
 @if (count($browsers))
     <table class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
-        <th>@lang('Browsers')</th>
-        <th>@lang('Sessies')</th>
+        <th>Browsers</th>
+        <th>Sessions</th>
         </thead>
         <tbody>
         @foreach($browsers as $browser)
@@ -16,5 +16,7 @@
         </tbody>
     </table>
 @else
-    {{ html()->info(__('Er zijn nog geen gegevens beschikbaar.')) }}
+    <div class="alert--info">
+        There's no data available yet.
+    </div>
 @endif

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    protected $modelName = 'Article';
+
     protected function make(): NewsItem
     {
         return NewsItem::create([

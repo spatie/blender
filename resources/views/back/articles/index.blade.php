@@ -1,18 +1,18 @@
 @component('back._layouts.master', [
-    'title' => __('Artikels'),
+    'title' => 'Articles',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Artikels')</h1>
+            <h1>Articles</h1>
 
             <a href="{{ action('Back\ArticlesController@create') }}" class="button">
-                @lang('Nieuw artikel')
+                New article
             </a>
 
             <table data-sortable="{{ action('Back\ArticlesController@changeOrder') }}">
                 <thead>
                 <tr>
-                    <th>@lang('Naam')</th>
+                    <th>Name</th>
                     <th data-orderable="false"></th>
                     <th data-orderable="false"></th>
                 </tr>
@@ -29,7 +29,7 @@
                         </td>
                         <td class="-remark">
                             @if($article->parent)
-                                Kind van "{{ $article->parent->name }}"
+                                Child of "{{ $article->parent->name }}"
                             @endif
                         </td>
                         <td class="-right">

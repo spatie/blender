@@ -1,19 +1,19 @@
 @component('back._layouts.master', [
-    'title' => __('Redirects'),
+    'title' => 'Redirects',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Redirects')</h1>
+            <h1>Redirects</h1>
 
             <a href="{{ action('Back\RedirectsController@create') }}" class="button">
-                @lang('Nieuwe redirect')
+                New redirect
             </a>
 
             <table data-sortable="{{ action('Back\RedirectsController@changeOrder') }}">
                 <thead>
                 <tr>
-                    <th>@lang('Van')</th>
-                    <th>@lang('Naar')</th>
+                    <th>From</th>
+                    <th>To</th>
                     <th data-orderable="false"></th>
                 </tr>
                 </thead>

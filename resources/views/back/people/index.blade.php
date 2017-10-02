@@ -1,18 +1,18 @@
 @component('back._layouts.master', [
-    'title' => __('Team'),
+    'title' => 'Team',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Team')</h1>
+            <h1>Team</h1>
 
             <a href="{{ action('Back\PeopleController@create') }}" class="button">
-                @lang('Nieuw persoon')
+                New team member
             </a>
 
             <table data-sortable="{{ action('Back\PeopleController@changeOrder') }}">
                 <thead>
                 <tr>
-                    <th>@lang('Naam')</th>
+                    <th>Name</th>
                     <th data-orderable="false"></th>
                 </tr>
                 </thead>

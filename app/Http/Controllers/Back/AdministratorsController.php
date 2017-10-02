@@ -121,22 +121,11 @@ class AdministratorsController
             $user->email
         );
 
-        $action = '';
-
-        if ($event === 'created') {
-            $action = __('werd aangemaakt');
-        }
-
-        if ($event === 'updated') {
-            $action = __('werd gewijzigd');
-        }
-
         if ($event === 'deleted') {
             $name = $user->email;
-            $action = __('werd verwijderd');
         }
 
-        return __('Administrator').' '.$name.' '.$action;
+        return "Administrator {$name} was {$action}.";
     }
 
     protected function validationRules(): array

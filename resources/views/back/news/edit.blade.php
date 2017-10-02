@@ -1,12 +1,12 @@
 @component('back._layouts.master', [
-    'title' => __('Nieuws'),
+    'title' => 'News',
     'breadcrumbs' => html()->backToIndex('Back\NewsController@index'),
 ])
     <section>
         <div class="grid">
             <h1>
                 {{ html()->onlineIndicator($model->online) }}
-                {{ $model->name ?: __('Nieuw nieuwsbericht') }}
+                {{ $model->name ?: 'New article' }}
             </h1>
 
             {{ html()
@@ -14,11 +14,11 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar nieuws') }}
+            {{ html()->formGroup()->submit('Save article') }}
 
             @include('back.news._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar nieuws') }}
+            {{ html()->formGroup()->submit('Save article') }}
 
             {{ html()->closeModelForm() }}
         </div>

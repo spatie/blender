@@ -32,21 +32,21 @@ class BackMenus
             return Menu::back()
                 ->addClass('menu__groups')
                 ->setAttribute('data-menu-groups')
-                ->add(Menu::moduleGroup('Inhoud')
-                    ->module('ArticlesController@index', 'Artikels')
-                    ->module('NewsController@index', 'Nieuws')
+                ->add(Menu::moduleGroup('Content')
+                    ->module('ArticlesController@index', 'Articles')
+                    ->module('NewsController@index', 'News')
                     ->module('PeopleController@index', 'Team'))
                 ->add(Menu::moduleGroup('Modules')
-                    ->module('FragmentsController@index', 'Fragmenten')
-                    ->module('FormResponsesController@showDownloadButton', 'Reacties')
+                    ->module('FragmentsController@index', 'Fragments')
+                    ->module('FormResponsesController@showDownloadButton', 'Responses')
                     ->module('TagsController@index', 'Tags'))
-                ->add(Menu::moduleGroup('Profielen')
-                    ->module('MembersController@index', 'Leden')
+                ->add(Menu::moduleGroup('Profiles')
+                    ->module('MembersController@index', 'Members')
                     ->module('AdministratorsController@index', 'Administrators'))
-                ->add(Menu::moduleGroup('Systeem')
+                ->add(Menu::moduleGroup('System')
                     ->module('ActivitylogController@index', 'Log')
                     ->module('RedirectsController@index', 'Redirects')
-                    ->module('StatisticsController@index', 'Statistieken'));
+                    ->module('StatisticsController@index', 'Statistics'));
         });
 
         Menu::macro('backUser', function () {

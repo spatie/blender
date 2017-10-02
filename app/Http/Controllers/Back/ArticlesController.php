@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+    protected $modelName = 'Article';
+
     protected function make(): Article
     {
         return Article::create();
@@ -43,7 +45,7 @@ class ArticlesController extends Controller
                 return $article->id === $id;
             })
             ->pluck('name', 'id')
-            ->prepend('Geen', 0);
+            ->prepend('(None)', 0);
 
         return parent::edit($id)->with(compact('parentMenuItems'));
     }

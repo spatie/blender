@@ -1,4 +1,4 @@
-<h2>@lang('Bezoekers')</h2>
+<h2>Visitors</h2>
 
 <blender-chart class="chart">
     <canvas id="visitors" width=1000 height=250></canvas>
@@ -15,7 +15,7 @@
                 labels: {!! json_encode($visitors->pluck('date')->toArray()) !!},
                 datasets: [
                     {
-                        label: '@lang('Bezoekers')',
+                        label: 'Visitors',
                         data: {!! json_encode($visitors->pluck('visitors')->toArray())  !!},
                         fillColor: "rgba(151,187,205,0.2)",
                         strokeColor: "rgba(151,187,205,1)",

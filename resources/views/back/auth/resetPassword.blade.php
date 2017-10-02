@@ -1,11 +1,11 @@
 @component('back._layouts.master', [
-    'title' => $user->hasNeverLoggedIn() ? __('Wachtwoord instellen') : __('Wachtwoord wijzigen')
+    'title' => $user->hasNeverLoggedIn() ? 'Set password' : 'Change password',
 ])
     <section class="v-auth">
         <div class="v-auth__card">
             <h1 class="v-auth__title -small">
                 {{ html()->avatar($user, '-large v-auth__gravatar') }}<br>
-                {{ __('Wachtwoord wijzigen') }}
+                Change password
             </h1>
 
             {{ html()
@@ -16,17 +16,16 @@
             {{ html()->hidden('token', $token) }}
             {{ html()->hidden('email') }}
 
-            {{ html()->info(__('Je nieuwe wachtwoord moet minstens 8 karakters lang zijn.')) }}
+            {{ html()->info('Your new password must contain at least 8 characters') }}
 
-            {{ html()->formGroup()->password('password', 'Wachtwoord') }}
-            {{ html()->formGroup()->password('password_confirmation', 'Wachtwoord (nogmaals)') }}
+            {{ html()->formGroup()->password('password', 'Password') }}
+            {{ html()->formGroup()->password('password_confirmation', 'Password (repeat)') }}
 
-            {{ html()->formGroup()->withContents(
-                html()->button()
-                    ->type('submit')
-                    ->text($user->hasNeverLoggedIn() ? __('Wachtwoord instellen') : __('Wachtwoord wijzigen'))
-                    ->class('button -default')
-            )->class('-buttons') }}
+            <div class="form__group -buttons">
+                <button type="submit" class="button -default">
+                    {{ $user->hasNeverLoggedIn() ? 'Set password' : 'Password wijzigen' }}
+                </button>
+            </div>
 
             {{ html()->closeModelForm() }}
         </div>

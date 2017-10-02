@@ -1,5 +1,5 @@
 @component('back._layouts.master', [
-    'title' => __('Leden'),
+    'title' => 'Members',
     'breadcrumbs' => html()->backToIndex('Back\MembersController@index'),
 ])
     <section>
@@ -11,11 +11,11 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar lid') }}
+            {{ html()->formGroup()->submit('Save member') }}
 
             @include('back.members._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar lid') }}
+            {{ html()->formGroup()->submit('Save member') }}
 
             {{ html()->closeModelForm() }}
         </div>

@@ -1,2 +1,2 @@
-{{ html()->formGroup()->text('old_url', 'Van') }}
-{{ html()->formGroup()->text('new_url', 'Naar') }}
+{{ html()->formGroup()->text('old_url', 'From') }}
+{{ html()->formGroup()->text('new_url', 'To') }}

@@ -1,15 +1,15 @@
 @component('back._layouts.master', [
-    'title' => __('Fragmenten'),
+    'title' => 'Fragments',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Fragmenten')</h1>
+            <h1>Fragments</h1>
 
             <table data-datatable data-order='[[ 0, "asc" ]]'>
                 <thead>
                 <tr>
-                    <th>@lang('Naam')</th>
-                    <th>@lang('Inhoud')</th>
+                    <th>Name</th>
+                    <th>Contents</th>
                 </tr>
                 </thead>
                 <tbody>

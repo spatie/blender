@@ -1,16 +1,16 @@
 @component('back._layouts.master', [
-    'title' => __('Administrators'),
+    'title' => 'Administrators',
     'breadcrumbs' => html()->backToIndex('Back\AdministratorsController@index'),
 ])
     <section>
         <div class="grid">
             <h1>{{ $user->email }}</h1>
 
-            <div>
+            <div class="h-margin-bottom">
                 {{ html()->avatar($user) }}
                 <span class="help -small">
-                {!! __('Je kan deze avatar instellen op :link', ['link' => '<a href="https://gravatar.com">gravatar.com</a>']) !!}
-            </span>
+                    You can specify your profile image on <a href="https://gravatar.com">gravatar.com</a>.
+                </span>
             </div>
 
             {{ html()
@@ -18,11 +18,11 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar administrator') }}
+            {{ html()->formGroup()->submit('Save administrator') }}
 
             @include('back.administrators._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar administrator') }}
+            {{ html()->formGroup()->submit('Save administrator') }}
 
             {{ html()->closeModelForm() }}
         </div>

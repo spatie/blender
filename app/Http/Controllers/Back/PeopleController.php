@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class PeopleController extends Controller
 {
+    protected $modelName = 'Member';
+
     protected function make(): Person
     {
         return Person::create();

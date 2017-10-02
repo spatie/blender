@@ -2,6 +2,6 @@
 
 {{ html()->translations(function () {
     return [
-        html()->formGroup()->required()->text('name', 'Naam'),
+        html()->formGroup()->required()->text('name', 'Name'),
     ];
 }) }}

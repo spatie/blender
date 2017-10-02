@@ -8,6 +8,8 @@ use Illuminate\Support\Collection;
 
 class TagsController extends Controller
 {
+    protected $modelName = 'Tag';
+
     protected $redirectToIndex = true;
 
     protected function make(): Tag

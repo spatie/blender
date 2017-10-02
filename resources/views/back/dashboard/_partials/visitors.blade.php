@@ -1,4 +1,4 @@
-<h2>@lang('Bezoekers')</h2>
+<h2>Visitors</h2>
 
 <blender-chart class="chart">
     <canvas id="daily-visitors" width=1000 height=250></canvas>
