@@ -29,5 +29,5 @@
 {{ html()->form()->close() }}
 
 <p class="alert--info">
-    @lang('form.fieldsAreRequired')
+    {{ __('form.fieldsAreRequired') }}
 </p>

@@ -1,11 +1,11 @@
 <footer class="footer h-padding h-align-center">
     <section>
-        <strong>@lang('company.name')</strong> <br>
-        @lang('company.address') <br>
-        @lang('company.postal') @lang('company.city') <br>
-        @lang('company.country') <br>
-        tel. <a href="tel:@lang('company.telephone')">@lang('company.telephone')</a>
-        <a href="mailto:@lang('company.email')">@lang('company.email')</a>
+        <strong>{{ __('company.name') }}</strong> <br>
+        {{ __('company.address') }} <br>
+        {{ __('company.postal') }} {{ __('company.city') }} <br>
+        {{ __('company.country') }} <br>
+        tel. <a href="tel:{{ __('company.telephone') }}">{{ __('company.telephone') }}</a>
+        <a href="mailto:{{ __('company.email') }}">{{ __('company.email') }}</a>
         {!! schema()->company() !!}
     </section>
 

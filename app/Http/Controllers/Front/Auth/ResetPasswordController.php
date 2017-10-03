@@ -38,7 +38,7 @@ class ResetPasswordController extends Controller
         if (! $user = User::where('email', $request->email)->first()) {
             flash()->error(__('passwords.token'));
 
-            return redirect()->to(login_url());
+            return redirect()->to(route('login'));
         }
 
         return view('front.auth.resetPassword')->with(

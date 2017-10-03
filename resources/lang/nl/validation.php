@@ -88,10 +88,6 @@ return [
     'uploaded'             => 'Het uploaden van :attribute is mislukt.',
     'url'                  => ':attribute is geen geldige URL.',
 
-    'form'                 =>  [
-        'failed' => 'Corrigeer de fouten in het formulier.',
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

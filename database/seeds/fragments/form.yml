@@ -16,7 +16,12 @@ city:
 email:
     en: E-mail
     nl: E-mail
-    fr: E-mail
+    fr: Email
+
+failed:
+    en: Correct the errors in the form.
+    nl: Corrigeer de fouten in het formulier.
+    fr: Corrigez les erreurs dans le formulaire.
 
 fieldsAreRequired:
     en: These fields are required

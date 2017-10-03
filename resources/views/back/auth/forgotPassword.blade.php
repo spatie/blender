@@ -31,7 +31,7 @@
             </div>
 
             <div class="form__group__help">
-                <a href="{{ login_url() }}">
+                <a href="{{ route('back.login') }}">
                     Back to login
                 </a>
             </div>

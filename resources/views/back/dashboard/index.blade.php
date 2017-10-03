@@ -16,7 +16,7 @@
             @endif
 
             @if(count($logItems))
-                <h2>@lang('Recent activity')</h2>
+                <h2>Recent activity</h2>
                 <table class="-datatable -compact">
                     <thead>
                     <tr>

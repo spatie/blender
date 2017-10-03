@@ -31,7 +31,7 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $e)
     {
         if ($e instanceof ValidationException) {
-            flash()->error(__('validation.failedForm'));
+            flash()->error(__('form.failed'));
         }
 
         if ($this->shouldntReport($e)) {

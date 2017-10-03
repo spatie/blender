@@ -56,7 +56,7 @@ class LoginController extends Controller
 
         flash()->info(__('auth.loggedOut').' '.$frontLink);
 
-        return redirect(login_url());
+        return redirect(route('back.login'));
     }
 
     protected function guard()

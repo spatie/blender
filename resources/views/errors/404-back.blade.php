@@ -1,11 +1,13 @@
 @component('back._layouts.master', [
-    'title' => __('Er liep iets mis'),
+    'title' => 'Page not found',
 ])
-    <h1>@lang('Er liep iets mis')</h1>
+    <h1>Something went wrong</h1>
     <p>
-        @lang('Deze pagina kon niet gevonden worden')
+        Page not found.
     </p>
     <p>
-        <a class=button href="/blender">@lang('Terug naar Blender')</a>
+        <a class="button" href="/blender">
+            Terug naar Blender
+        </a>
     </p>
 @endcomponent

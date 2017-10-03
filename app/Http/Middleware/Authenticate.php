@@ -23,6 +23,6 @@ class Authenticate
             return response('Unauthorized.', 401);
         }
 
-        return redirect()->guest(login_url());
+        return redirect()->guest($request->isFront() ? route('login') : route('back.login'));
     }
 }

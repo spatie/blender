@@ -17,7 +17,7 @@
     {{ html()->form()->close() }}
 
     <p>
-        <a href="{{ login_url() }}">
+        <a href="{{ route('login') }}">
             {{ __('auth.toLogin') }}
         </a>
     </p>

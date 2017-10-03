@@ -89,10 +89,6 @@ return [
     'uploaded'             => "Le fichier du champ :attribute n'a pu être téléversé.",
     'url'                  => "Le format de l'URL de :attribute n'est pas valide.",
 
-    'form'                 =>  [
-        'failed' => 'Corrigez les erreurs dans le formulaire.',
-    ],
-
     /*
     |--------------------------------------------------------------------------
     | Custom Validation Language Lines

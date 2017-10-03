@@ -10,7 +10,6 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\HtmlString;
-use Spatie\HtmlElement\HtmlElement;
 
 function article(string $specialArticle): Article
 {
@@ -27,7 +26,7 @@ function content_locale(): string
  *
  * @throws \Exception
  */
-function current_user(): ? User
+function current_user(): ?User
 {
     if (request()->isFront()) {
         return auth()->guard('front')->user();
@@ -37,17 +36,12 @@ function current_user(): ? User
         return auth()->guard('back')->user();
     }
 
-    throw new \Exception('Coud not determine current user');
+    throw new Exception('Coud not determine current user');
 }
 
 function diff_date_for_humans(Carbon $date) : string
 {
     return (new Jenssegers\Date\Date($date->timestamp))->ago();
-}
-
-function el(string $tag, $attributes = null, $contents = null)
-{
-    return new HtmlString(HtmlElement::render($tag, $attributes, $contents));
 }
 
 function fragment_image($name, $conversion = 'thumb'): string
@@ -80,18 +74,9 @@ function locales(): Collection
     return collect(config('app.locales'));
 }
 
-function login_url(): string
+function meta(): Meta
 {
-    return request()->isFront() ?
-        action('Front\Auth\LoginController@showLoginForm') :
-        action('Back\Auth\LoginController@showLoginForm');
-}
-
-function logout_url(): string
-{
-    return request()->isFront() ?
-        action('Front\Auth\LoginController@logout') :
-        action('Back\Auth\LoginController@logout');
+    return app(Meta::class);
 }
 
 function roman_year(int $year = null): string
@@ -130,29 +115,57 @@ function roman_year(int $year = null): string
     return $result;
 }
 
-function carbon(string $date = null, string $format = null): Carbon
+function schema(): Schema
 {
-    if (func_num_args() === 0) {
-        return Carbon::now();
-    }
-
-    if (is_null($date)) {
-        throw new InvalidArgumentException("Date can't be null");
-    }
-
-    if (is_null($format)) {
-        return Carbon::parse($date);
-    }
-
-    return Carbon::createFromFormat($format, $date);
+    return new Schema();
 }
 
-function register_url(): string
+/**
+ * Shortens a string in a pretty way. It will clean it by trimming
+ * it, remove all double spaces and html. If the string is then still
+ * longer than the specified $length it will be shortened. The end
+ * of the string is always a full word concatenated with the
+ * specified moreTextIndicator.
+ *
+ * @param string $string
+ * @param int    $length
+ * @param string $moreTextIndicator
+ *
+ * @return string
+ */
+function str_tease(string $string, int $length = 200, string $moreTextIndicator = '...'): string
 {
-    return action('Front\Auth\RegisterController@showRegistrationForm');
+    $string = trim($string);
+
+    //remove html
+    $string = strip_tags($string);
+
+    //replace multiple spaces
+    $string = preg_replace("/\s+/", ' ', $string);
+
+    if (strlen($string) == 0) {
+        return '';
+    }
+
+    if (strlen($string) <= $length) {
+        return $string;
+    }
+
+    $ww = wordwrap($string, $length, "\n");
+
+    $string = substr($ww, 0, strpos($ww, "\n")).$moreTextIndicator;
+
+    return $string;
 }
 
-function translate_field_name($name, $locale = '')
+function svg($filename): HtmlString
+{
+    return new HtmlString(
+        file_get_contents(resource_path("assets/svg/{$filename}.svg"))
+    );
+}
+
+function translate_field_name($name, $locale = ''): string
 {
     $locale = $locale ?? content_locale();
 
@@ -180,57 +193,3 @@ function validate($fields, $rules): bool
     return Validator::make($fields, $rules)->passes();
 }
 
-function schema(): Schema
-{
-    return new Schema();
-}
-
-/**
- * Shortens a string in a pretty way. It will clean it by trimming
- * it, remove all double spaces and html. If the string is then still
- * longer than the specified $length it will be shortened. The end
- * of the string is always a full word concatenated with the
- * specified moreTextIndicator.
- *
- * @param string $string
- * @param int    $length
- * @param string $moreTextIndicator
- *
- * @return string
- */
-function str_tease(string $string, $length = 200, $moreTextIndicator = '...')
-{
-    $string = trim($string);
-
-    //remove html
-    $string = strip_tags($string);
-
-    //replace multiple spaces
-    $string = preg_replace("/\s+/", ' ', $string);
-
-    if (strlen($string) == 0) {
-        return '';
-    }
-
-    if (strlen($string) <= $length) {
-        return $string;
-    }
-
-    $ww = wordwrap($string, $length, "\n");
-
-    $string = substr($ww, 0, strpos($ww, "\n")).$moreTextIndicator;
-
-    return $string;
-}
-
-function meta(): Meta
-{
-    return app(Meta::class);
-}
-
-function svg($filename): HtmlString
-{
-    return new HtmlString(
-        file_get_contents(resource_path("assets/svg/{$filename}.svg"))
-    );
-}
