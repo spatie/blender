@@ -16,7 +16,7 @@ class ImportFragments extends Command
     {
         $root = database_path('seeds/fragments');
 
-        $fragments = collect()->glob("{$root}/*.yml")->flatMap(function (string $path) use ($root) {
+        $fragments = collect()->glob("{$root}/*.yml")->map(function (string $path) use ($root) {
             $fragments = Yaml::parse(file_get_contents($path));
 
             $group = str_before(str_after($path, "{$root}/"), '.yml');
@@ -51,6 +51,6 @@ class ImportFragments extends Command
             $fragment->save();
 
             return $fragment;
-        });
+        })->values();
     }
 }

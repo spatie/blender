@@ -10,7 +10,7 @@ failed:
 
 invalidEmail:
     en: Please provide a valid e-mail address
-    en: Gelieve een geldig e-mail adres in te vullen
+    nl: Gelieve een geldig e-mail adres in te vullen
     fr: Veuillez fournir une adresse email valide
 
 newsletter:
