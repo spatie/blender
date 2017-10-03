@@ -1,9 +1,9 @@
 @component('front._layouts.main', [
-    'title' => __('auth.changePassword')
+    'title' => __('auth.resetPassword')
 ])
     <h1>
         {{ html()->avatar($user, '-large') }} <br>
-        {{ __('auth.changePassword') }}
+        {{ __('auth.resetPassword') }}
     </h1>
 
     {{ html()->form('POST', 'Front\Auth\ResetPasswordController@reset')->open() }}

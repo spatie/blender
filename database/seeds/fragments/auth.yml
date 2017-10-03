@@ -1,12 +1,17 @@
+access:
+    en: You have been granted access to
+    nl: Je hebt nu toegang tot
+    fr: Vous avez eu accès à
+
 address:
     en: Address
     nl: Adres
     fr: Addresse
 
-changePassword:
-    en: Change password
-    nl: Verander wachtwoord
-    fr: Changer le mot de passe
+changePasswordBefore:
+    en: Change your password before
+    nl: Wijzig je paswoord vòòr
+    fr: Changez votre mot de passe avant
 
 city:
     en: City
@@ -89,14 +94,29 @@ register:
     fr: Créer un profil
 
 resetPassword:
-    en: Request password reset
-    nl: Wachtwoord reset opvragen
-    fr: Récupérer le mot de passe
+    en: Change password
+    nl: Wijzig wachtwoord
+    fr: Changer le mot de passe
+
+resetPasswordAccidental:
+    en: Didn't mean to reset your password? Simply ignore this e-mail, you're old one still works!
+    nl: Was het een foutieve aanvraag? Negeer dan deze e-mail, je oude wachtwoord blijft gewoon werken.
+    fr: Était-ce une application incorrecte? Ignorez ce courrier électronique, votre ancien mot de passe continuera de fonctionner.
 
 resetPasswordInstructions:
     en: Your new password must contain at least 8 characters.
     nl: Je nieuwe wachtwoord moet minstens 8 karakters lang zijn.
     fr: Votre nouveau mot de passe doit comporter au moins 8 caractères.
+
+resetPasswordRequested:
+    en: You requested
+    nl: Je vroeg om je paswoord te wijzigen op
+    fr: Vous avez demandé de modifier votre mot de passe
+
+setPassword:
+    en: Set password
+    nl: Wachtwoord instellen
+    fr: Définer le mot de passe
 
 telephone:
     en: Telephone
@@ -107,3 +127,8 @@ toLogin:
     en: Log in?
     nl: Inloggen?
     fr: Se connecter?
+
+welcome:
+    en: welcome
+    nl: Welkom
+    fr: Bienvenue
