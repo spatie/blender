@@ -10,7 +10,7 @@ Change password
 @endcomponent
 
 @component('mail::panel')
-Didn't mean to reset your password? Simply ignore this e-mail, you're old one still works!
+Didn't mean to reset your password? Simply ignore this message, your old one still works!
 @endcomponent
 
 @slot('subcopy')

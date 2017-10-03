@@ -99,8 +99,8 @@ resetPassword:
     fr: Changer le mot de passe
 
 resetPasswordAccidental:
-    en: Didn't mean to reset your password? Simply ignore this e-mail, you're old one still works!
-    nl: Was het een foutieve aanvraag? Negeer dan deze e-mail, je oude wachtwoord blijft gewoon werken.
+    en: Didn't mean to reset your password? Simply ignore this email, your old one still works!
+    nl: Was het een foutieve aanvraag? Negeer dan deze mail, je oude wachtwoord blijft gewoon werken.
     fr: Était-ce une application incorrecte? Ignorez ce courrier électronique, votre ancien mot de passe continuera de fonctionner.
 
 resetPasswordInstructions:
