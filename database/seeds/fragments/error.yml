@@ -1,0 +1,19 @@
+text401:
+    en: You don't have access to this page.
+    nl: U heeft geen toegang tot deze pagina.
+    fr: Vous ne pouvez pas accéder à cette page.
+
+text404:
+    en: Page not found.
+    nl: Deze pagina kon niet gevonden worden.
+    fr: Cette page n'a pas pu être trouvé.
+
+title:
+    en: Something went wrong
+    nl: Er liep iets mis
+    fr: Quelque chose a mal tourné
+
+toHome:
+    en: Back home
+    nl: Naar home
+    fr: Vers home

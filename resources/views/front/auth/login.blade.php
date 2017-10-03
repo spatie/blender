@@ -1,5 +1,5 @@
 @component('front._layouts.main', [
-    'title' => __('auth.titleLogin')
+    'title' => __('auth.login')
 ])
     {{ html()->form()->open() }}
 
