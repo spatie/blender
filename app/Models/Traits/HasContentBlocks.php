@@ -2,9 +2,9 @@
 
 namespace App\Models\Traits;
 
-use Illuminate\Http\Request;
 use App\Models\ContentBlock;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 
 trait HasContentBlocks

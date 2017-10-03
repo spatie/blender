@@ -116,6 +116,7 @@ class ContentBlock extends Model implements HasMediaConversions
         if (array_key_exists($key, $this->getAttribute('properties') ?? [])) {
             return $this->properties[$key][locale()];
         }
+
         return parent::__get($key);
     }
 }

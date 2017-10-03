@@ -192,4 +192,3 @@ function validate($fields, $rules): bool
 
     return Validator::make($fields, $rules)->passes();
 }
-
