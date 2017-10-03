@@ -17,7 +17,10 @@ class ContentBlock extends Model implements HasMediaConversions
     use Draftable, SortableTrait, HasTranslations, HasMedia;
 
     public $translatable = ['name', 'text'];
-    protected $guarded = [];
+    protected $guarded = ['id'];
+    protected $casts = [
+        'properties' => 'array',
+    ];
 
     public function subject(): MorphTo
     {
@@ -84,9 +87,19 @@ class ContentBlock extends Model implements HasMediaConversions
                 ->delete();
         }
 
+        $this->properties = $this->getNonDefaultProperties($values);
+
         $this->save();
 
         return $this;
+    }
+
+    protected function getNonDefaultProperties(array $values): array
+    {
+        return collect($values)
+            ->except('id', 'type', 'orderColumn', 'text', 'name')
+            ->except(...$this->mediaLibraryCollections())
+            ->toArray();
     }
 
     public function setOrder(int $i)
@@ -96,5 +109,13 @@ class ContentBlock extends Model implements HasMediaConversions
         $this->save();
 
         return $this;
+    }
+
+    public function __get($key)
+    {
+        if (array_key_exists($key, $this->getAttribute('properties') ?? [])) {
+            return $this->properties[$key][locale()];
+        }
+        return parent::__get($key);
     }
 }

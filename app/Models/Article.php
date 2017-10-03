@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Enums\SpecialArticle;
 use App\Models\Presenters\ArticlePresenter;
+use App\Models\Traits\HasContentBlocks;
 use App\Models\Traits\HasSlug;
 use Exception;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -21,11 +22,12 @@ use Spatie\MediaLibrary\Media;
  */
 class Article extends Model implements Sortable
 {
-    use ArticlePresenter, HasSlug, SortableTrait;
+    use ArticlePresenter, HasSlug, SortableTrait, HasContentBlocks;
 
     protected $with = ['media'];
 
     protected $mediaLibraryCollections = ['images', 'downloads'];
+    protected $contentBlockMediaLibraryCollections = ['images'];
 
     public $translatable = ['name', 'text', 'slug', 'meta_values'];
 

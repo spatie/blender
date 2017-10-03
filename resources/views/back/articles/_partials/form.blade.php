@@ -3,6 +3,8 @@
         <ul>
             <li><a href="#content" class="js-tabs-nav"><i class="fa fa-edit"></i> Content</a></li>
             <li><a href="#settings" class="js-tabs-nav"><i class="fa fa-cog"></i> Settings</a></li>
+            <li><a href="#blocks" class="js-tabs-nav"><i class="fa fa-cube"></i> Blocks</a></li>
+            <li><a href="#settings" class="js-tabs-nav"><i class="fa fa-cog"></i> Instellingen</a></li>
             <li><a href="#seo" class="js-tabs-nav"><i class="fa fa-code"></i> SEO</a></li>
         </ul>
     </nav>
@@ -16,6 +18,24 @@
 
         {{ html()->formGroup()->media('images', 'images', 'Images') }}
         {{ html()->formGroup()->media('downloads', 'downloads', 'Downloads') }}
+    </div>
+    <div id="blocks">
+        {{ html()->formGroup()->contentBlocks('default', 'Blocks', [
+            'types' => [
+                'image_left' => 'Block with an image to the left',
+                'image_right' => 'Block with an image to the right',
+            ],
+            'translatableAttributes' => [
+                'name' => 'text',
+                'text' => 'redactor',
+            ],
+            'mediaLibraryCollections' => [
+                'images' => 'images',
+            ],
+            'labels' => [
+                'images' => 'Image(s)',
+            ],
+        ]) }}
     </div>
     <div id="settings">
         @if(! $model->isSpecialArticle())

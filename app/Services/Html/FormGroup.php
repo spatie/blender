@@ -45,9 +45,9 @@ class FormGroup
         ]);
     }
 
-    public function contentBlocks(string $collection, string $label, array $types = []): Div
+    public function contentBlocks(string $collection, string $label, array $fields = []): Div
     {
-        return $this->assemble($collection, $label, $this->html->contentBlocks($collection, $types));
+        return $this->assemble($collection, $label, $this->html->contentBlocks($collection, $fields));
     }
 
     public function date(string $name, string $label): Div
