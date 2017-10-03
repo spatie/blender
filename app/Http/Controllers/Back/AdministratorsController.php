@@ -35,7 +35,6 @@ class AdministratorsController
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
-        $user->locale = $request->get('locale', 'nl');
 
         if ($request->has('password')) {
             $user->password = bryct($request->get('password'));
@@ -71,7 +70,6 @@ class AdministratorsController
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
-        $user->locale = $request->get('locale', 'nl');
 
         if ($request->has('password')) {
             $user->password = $request->get('password');

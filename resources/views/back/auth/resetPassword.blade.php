@@ -9,25 +9,25 @@
             </h1>
 
             {{ html()
-                ->modelForm($user, 'POST', action('Back\Auth\ResetPasswordController@reset'))
+                ->form('POST', action('Back\Auth\ResetPasswordController@reset'))
                 ->class('-stacked v-auth__form')
                 ->open() }}
 
             {{ html()->hidden('token', $token) }}
-            {{ html()->hidden('email') }}
+            {{ html()->hidden('email', $user->email) }}
 
-            {{ html()->info('Your new password must contain at least 8 characters') }}
+            {{ html()->info(session('status') ?: 'Your new password must contain at least 8 characters') }}
 
             {{ html()->formGroup()->password('password', 'Password') }}
             {{ html()->formGroup()->password('password_confirmation', 'Password (repeat)') }}
 
             <div class="form__group -buttons">
                 <button type="submit" class="button -default">
-                    {{ $user->hasNeverLoggedIn() ? 'Set password' : 'Password wijzigen' }}
+                    {{ $user->hasNeverLoggedIn() ? 'Set password' : 'Change password' }}
                 </button>
             </div>
 
-            {{ html()->closeModelForm() }}
+            {{ html()->form()->close() }}
         </div>
     </section>
 @endcomponent

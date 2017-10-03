@@ -10,7 +10,7 @@ class CurrentLocale
     public static function determine(): string
     {
         if (request()->isBack()) {
-            return config('app.backLocales')[0];
+            return 'en';
         }
 
         $urlLocale = app()->request->segment(1);
@@ -55,12 +55,5 @@ class CurrentLocale
         $locales = config('app.locales');
 
         return in_array($locale, $locales);
-    }
-
-    protected static function isValidBackLocale(string $locale): bool
-    {
-        $backLocales = config('app.backLocales');
-
-        return in_array($locale, $backLocales);
     }
 }

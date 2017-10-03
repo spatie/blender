@@ -12,7 +12,7 @@
 @if($user->isCurrentUser())
     <div class="alert--info h-margin-top h-margin-bottom">
         <span class="fa fa-info-circle"></span>
-        Only fill the below fields if you want to chang the password.
+        Only fill the below fields if you wish to change the password.
     </div>
     <fieldset class="-info">
         <div class="grid__col -width-1/2">

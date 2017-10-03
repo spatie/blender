@@ -12,14 +12,7 @@ class FragmentsController
 
     public function index()
     {
-        $fragments = Fragment::where('hidden', false)->get();
-
-        return view('back.fragments.index', compact('fragments'));
-    }
-
-    public function hidden()
-    {
-        $fragments = Fragment::where('hidden', true)->get();
+        $fragments = Fragment::all();
 
         return view('back.fragments.index', compact('fragments'));
     }

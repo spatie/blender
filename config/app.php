@@ -97,13 +97,13 @@ return [
     | Supported locales
     |--------------------------------------------------------------------------
     |
-    | This is not a default Laravel option, but custom made for Spatie
+    | A list of locales the public site supports. Used to determine valid
+    | localized urls and to generate form fields in multiple languages in
+    | Blender.
     |
     */
 
     'locales' => ['nl', 'en'],
-    'backLocales' => ['nl'],
-    'fragmentLocales' => ['nl'],
 
     /*
     |--------------------------------------------------------------------------

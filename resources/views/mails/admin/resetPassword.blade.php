@@ -1,19 +1,19 @@
 @component('mail::message')
-# Wijzig je wachtwoord
+# Change your password
 
-Beste {{ $user->first_name }},
+Hello {{ $user->first_name }},
 
-Je vroeg om je paswoord te wijzigen op [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ urlencode($user->email) }}).
+You requested a password change on [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ urlencode($user->email) }}).
 
 @component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]). '?email=' . urlencode($user->email)])
-Wijzig je wachtwoord
+Change password
 @endcomponent
 
 @component('mail::panel')
-Was het een foutieve aanvraag? Negeer dan deze e-mail, je oude wachtwoord blijft gewoon werken.
+Didn't mean to reset your password? Simply ignore this e-mail, you're old one still works!
 @endcomponent
 
 @slot('subcopy')
-Wijzig je paswoord vòòr {{ Carbon\Carbon::now()->addDays(3)->format('d/m/Y') }}.
+Change your password before {{ Carbon\Carbon::now()->addDays(3)->format('d/m/Y') }}.
 @endslot
 @endcomponent
