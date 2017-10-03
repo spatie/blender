@@ -2,7 +2,7 @@
 
 namespace App\Models\Traits;
 
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use App\Models\ContentBlock;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Support\Collection;
@@ -32,9 +32,13 @@ trait HasContentBlocks
         return $this->contentBlockMediaLibraryCollections ?? ['image'];
     }
 
-    public function getContentBlocks($collection = 'default'): Collection
+    public function getContentBlocks($collection = 'default', ?string $type = null): Collection
     {
-        return $this->contentBlocks->where('collection_name', $collection);
+        return $this->contentBlocks
+            ->where('collection_name', $collection)
+            ->when($type, function (Collection $contentBlocks) use ($type) {
+                return $contentBlocks->where('type', $type);
+            });
     }
 
     public function syncContentBlocks(Request $request)

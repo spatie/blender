@@ -20,6 +20,7 @@ class ArticlesController extends Controller
         $article->parent_id = $request->get('parent_id') ?: null;
 
         $this->updateModel($article, $request);
+        $article->syncContentBlocks($request);
     }
 
     protected function updateOnlineToggle(Model $model, Request $request)
