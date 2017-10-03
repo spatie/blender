@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class RedirectsController extends Controller
 {
-    protected $modelName = 'Redirect';
-
     protected function make(): Redirect
     {
         return Redirect::create();

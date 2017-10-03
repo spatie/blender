@@ -21,17 +21,18 @@ abstract class Controller
     use Traits\UpdateTranslations;
 
     /** @var string */
+    protected $moduleName;
     protected $modelClass;
     protected $modelName;
-    protected $moduleName;
 
     /** @var bool */
     protected $redirectToIndex = false;
 
     public function __construct()
     {
-        $this->modelClass = $this->determineModelClass();
         $this->moduleName = $this->determineModuleName();
+        $this->modelClass = $this->determineModelClass();
+        $this->modelName = __("back.models.{$this->moduleName}");
     }
 
     public function index()

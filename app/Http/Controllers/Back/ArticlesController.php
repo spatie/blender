@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
-    protected $modelName = 'Article';
-
     protected function make(): Article
     {
         return Article::create();

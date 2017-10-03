@@ -23,14 +23,4 @@ class CreateContentBlocksTable extends Migration
             $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::drop('content_blocks');
-    }
 }

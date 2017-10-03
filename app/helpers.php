@@ -223,11 +223,6 @@ function str_tease(string $string, $length = 200, $moreTextIndicator = '...')
     return $string;
 }
 
-function fragment($id = null, $replace = [], $locale = null)
-{
-    return trans($id, $replace, $locale);
-}
-
 function meta(): Meta
 {
     return app(Meta::class);

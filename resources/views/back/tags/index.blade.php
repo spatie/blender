@@ -16,7 +16,7 @@
             @foreach($tags as $name => $type)
                 <table data-sortable="{{ action('Back\TagsController@changeOrder') }}">
                     <caption>
-                        {{ trans("back.tagTypes.{$name}") }}
+                        {{ __("back.tags.{$name}") }}
                     </caption>
                     <thead>
                     <tr>

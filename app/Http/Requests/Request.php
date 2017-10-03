@@ -27,7 +27,7 @@ abstract class Request extends FormRequest
      */
     protected function failedValidation(Validator $validator)
     {
-        flash()->error(trans('validation.failedForm'));
+        flash()->error(__('validation.failedForm'));
 
         parent::failedValidation($validator);
     }

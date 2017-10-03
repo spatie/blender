@@ -57,7 +57,7 @@ class Tag extends SpatieTag implements Sortable
     public static function typesForSelect(): array
     {
         return collect(static::types())->mapWithKeys(function (string $type) {
-            return [$type => __("back.tags.types.{$type}")];
+            return [$type => __("back.tags.{$type}")];
         })->toArray();
     }
 }
