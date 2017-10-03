@@ -2,12 +2,12 @@
     @php(html()->locale($locale))
 
     <div class="form__group">
-        @if ($fragment->contains_image)
+        @if ($fragment->image)
             {{ html()->formGroup()->media('images', 'image', 'Image') }}
         @else
             {{ html()->label(html()->span($locale)->class('label--lang'), 'text') }}
             {{ html()
-                ->{$fragment->contains_html ? 'redactor' : 'text'}('text')
+                ->{$fragment->html ? 'redactor' : 'text'}('text')
                 ->value(old(translate_field_name('text'), $fragment->getTranslation($locale)))
             }}
             {{ html()->errorFor('text') }}

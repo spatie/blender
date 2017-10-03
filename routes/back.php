@@ -4,8 +4,6 @@ Route::name('dashboard')->get('/', 'DashboardController@index');
 Route::get('log', 'ActivitylogController@index');
 
 Route::resource('fragments', 'FragmentsController', ['except' => 'show']);
-Route::get('fragments/hidden', 'FragmentsController@hidden');
-Route::post('fragments/download', 'FragmentsController@download');
 
 Route::get('formresponses', 'FormResponsesController@showDownloadButton');
 Route::post('formresponses', 'FormResponsesController@download');

@@ -10,10 +10,10 @@ class Kernel extends ConsoleKernel
 {
     protected $commands = [
         \App\Console\Commands\GenerateModule::class,
-        \Spatie\LinkChecker\CheckLinksCommand::class,
-        \Spatie\FragmentImporter\Commands\ImportFragments::class,
+        \App\Console\Commands\ImportFragments::class,
         \App\Console\Commands\PrefetchAnalyticsData::class,
         \Spatie\ArtisanDd\DdCommand::class,
+        \Spatie\LinkChecker\CheckLinksCommand::class,
     ];
 
     protected function schedule(Schedule $schedule)

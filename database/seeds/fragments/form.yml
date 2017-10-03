@@ -42,3 +42,5 @@ telephone:
     en: Telephone
     nl: Telefoon
     fr: Téléphone
+    description: Yoyo
+    html: true

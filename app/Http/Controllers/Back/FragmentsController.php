@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Back\Traits\UpdateMedia;
 use App\Models\Fragment;
 use Illuminate\Http\Request;
-use Spatie\FragmentImporter\Exporter;
 
 class FragmentsController
 {
@@ -62,10 +61,5 @@ class FragmentsController
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\FragmentsController@index');
-    }
-
-    public function download()
-    {
-        Exporter::sendExportToBrowser();
     }
 }
