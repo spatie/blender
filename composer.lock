@@ -6527,16 +6527,16 @@
         },
         {
             "name": "spatie/seeders",
-            "version": "4.7.1",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/seeders.git",
-                "reference": "cf3e9c1a0645efa68707274437264eeae4007357"
+                "reference": "f5c5e7bdb1a84fdecfd70995d9d5845d286b6d99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/seeders/zipball/cf3e9c1a0645efa68707274437264eeae4007357",
-                "reference": "cf3e9c1a0645efa68707274437264eeae4007357",
+                "url": "https://api.github.com/repos/spatie/seeders/zipball/f5c5e7bdb1a84fdecfd70995d9d5845d286b6d99",
+                "reference": "f5c5e7bdb1a84fdecfd70995d9d5845d286b6d99",
                 "shasum": ""
             },
             "require": {
@@ -6580,10 +6580,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/seeders/tree/4.7.1",
+                "source": "https://github.com/spatie/seeders/tree/4.7.2",
                 "issues": "https://github.com/spatie/seeders/issues"
             },
-            "time": "2017-09-13T08:07:17+00:00"
+            "time": "2017-10-03T14:04:02+00:00"
         },
         {
             "name": "spatie/string",
