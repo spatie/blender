@@ -1,15 +1,15 @@
 @component('mail::message')
-# Stel je wachtwoord in
+# Set Password
 
-Beste {{ $user->first_name }},
+Hello {{ $user->first_name }},
 
-Je hebt toegang gekregen tot [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ urlencode($user->email) }}).
+You've been granted administrator access to [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ urlencode($user->email) }}).
 
-@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]) . '?email=' . urlencode($user->email)])
-Stel je wachtwoord in
+@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]).'?email='.urlencode($user->email)])
+Set password
 @endcomponent
 
 @slot('subcopy')
-Stel je paswoord in vòòr {{ Carbon\Carbon::now()->addDays(3)->format('d/m/Y') }}.
+Set your password before {{ Carbon\Carbon::now()->addDays(3)->format('d/m/Y') }}.
 @endslot
 @endcomponent

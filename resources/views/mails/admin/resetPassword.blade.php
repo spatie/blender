@@ -1,11 +1,11 @@
 @component('mail::message')
-# Change your password
+# Change Password
 
 Hello {{ $user->first_name }},
 
 You requested a password change on [{{ Request::getHost() }}]({{ action('Back\Auth\ResetPasswordController@showResetForm', [$token]) }}?email={{ urlencode($user->email) }}).
 
-@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]). '?email=' . urlencode($user->email)])
+@component('mail::button', ['url' => action('Back\Auth\ResetPasswordController@showResetForm', [$token]).'?email='.urlencode($user->email)])
 Change password
 @endcomponent
 
