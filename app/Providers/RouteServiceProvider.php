@@ -65,6 +65,8 @@ class RouteServiceProvider extends ServiceProvider
                     Route::middleware('auth')->group(function () {
                         require base_path('routes/back.php');
                     });
+
+                    Route::fallback('NotFoundController');
                 });
 
             /*
@@ -96,6 +98,8 @@ class RouteServiceProvider extends ServiceProvider
                                 return redirect(locale());
                             });
                         }
+
+                        Route::fallback('NotFoundController');
                     });
                 });
         });

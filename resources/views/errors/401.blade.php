@@ -1,5 +1,5 @@
 @component('front._layouts.master', [
-    'title' => __('Er liep iets mis'),
+    'title' => __('error.title'),
 ])
     @slot('mainTitle')
         <h1>{{ __('error.title') }}</h1>
