@@ -1,4 +1,4 @@
-<h2>@lang('Bezoekers')</h2>
+<h2>Visitors</h2>
 
 <blender-chart class="chart">
     <canvas id="daily-visitors" width=1000 height=250></canvas>
@@ -12,11 +12,11 @@
             graphName : 'daily-visitors',
             ctx : document.getElementById('daily-visitors').getContext('2d'),
             chart : {
-                labels: {!! json_encode($dates->map(function($date) { return $date->format('d/m'); })) !!},
+                labels: @json($dates->map->format('d/m')),
                 datasets: [
                     {
-                        label: '@lang('Bezoekers')',
-                        data: {!! json_encode($visitors) !!},
+                        label: 'Visitors',
+                        data: @json($visitors),
                         fillColor: "rgba(151,187,205,0.2)",
                         strokeColor: "rgba(151,187,205,1)",
                         pointColor: "rgba(151,187,205,1)",
@@ -24,8 +24,8 @@
                         pointHighlightFill: "#fff",
                     },
                     {
-                        label: 'Pageviews',
-                        data: {!! json_encode($pageViews) !!},
+                        label: 'Views',
+                        data: @json($pageViews),
                         fillColor: "rgba(220,220,220,0.2)",
                         strokeColor: "rgba(220,220,220,1)",
                         pointColor: "rgba(220,220,220,1)",

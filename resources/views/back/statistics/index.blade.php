@@ -1,9 +1,9 @@
 @component('back._layouts.master', [
-    'title' => __('Statistieken'),
+    'title' => 'Statistics',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Statistieken')</h1>
+            <h1>Statistics</h1>
 
             <div class="statistic">
                 @include('back.statistics._partials.visitors')

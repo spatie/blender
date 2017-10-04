@@ -53,9 +53,9 @@ class RouteServiceProvider extends ServiceProvider
                 ->middleware('web')
                 ->namespace('Back')
                 ->group(function () {
-                    Route::get('login', 'Auth\LoginController@showLoginForm');
+                    Route::get('login', 'Auth\LoginController@showLoginForm')->name('back.login');
                     Route::post('login', 'Auth\LoginController@login');
-                    Route::post('logout', 'Auth\LoginController@logout');
+                    Route::post('logout', 'Auth\LoginController@logout')->name('back.logout');
 
                     Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
                     Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');

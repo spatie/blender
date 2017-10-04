@@ -1,5 +1,5 @@
 @component('front._layouts.main', [
-    'title' => __('auth.titleLogin')
+    'title' => __('auth.login')
 ])
     {{ html()->form()->open() }}
 
@@ -18,6 +18,6 @@
     <p>
         <a href="{{ action('Front\Auth\ForgotPasswordController@showLinkRequestForm') }}">{{ __('auth.forgotPassword') }}</a>
         |
-        <a href="{{ register_url() }}">{{ __('auth.noAccount') }}</a>
+        <a href="{{ route('register') }}">{{ __('auth.noAccount') }}</a>
     </p>
 @endcomponent

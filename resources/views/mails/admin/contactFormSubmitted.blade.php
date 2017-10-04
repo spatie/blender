@@ -1,23 +1,23 @@
 @component('mail::message')
 # Nieuwe reactie
 
-Beste,
+Hello,
 
-Een bezoeker liet zijn gegevens achter op [{{ Request::getHost() }}]({{ url('/') }}).
+A visitor submitted a new response on [{{ Request::getHost() }}]({{ url('/') }}).
 
 @component('mail::panel')
-Naam: {{ $formResponse->name }} <br>
-Telefoon: {{ $formResponse->telephone }} <br>
-Email: {{ $formResponse->email }} <br>
-Adres: {{ $formResponse->address }} <br>
-Postcode: {{ $formResponse->postal }} <br>
-Stad: {{ $formResponse->city }} <br>
-Opmerkingen: {{ $formResponse->remarks }} <br>
-Verwijzer: {{ $formResponse->referer ?? 'Onbekend' }} <br>
+Name: {{ $formResponse->name }} <br>
+Telephone: {{ $formResponse->telephone }} <br>
+E-mail: {{ $formResponse->email }} <br>
+Address: {{ $formResponse->address }} <br>
+Postal: {{ $formResponse->postal }} <br>
+City: {{ $formResponse->city }} <br>
+Remarks: {{ $formResponse->remarks }} <br>
+Referer: {{ $formResponse->referer ?? 'Onbekend' }} <br>
 @endcomponent
 
 @slot('subcopy')
-Bekijk alle reacties op [{{ config('app.url') }}]({{ action('Back\FormResponsesController@showDownloadButton') }}).
+Download all previous responses on [{{ config('app.url') }}]({{ action('Back\FormResponsesController@showDownloadButton') }}).
 @endslot
 @endcomponent
 

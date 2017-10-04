@@ -1,21 +1,21 @@
 @component('back._layouts.master', [
-    'title' => __('Leden'),
+    'title' => 'Members',
     'breadcrumbs' => html()->backToIndex('Back\MembersController@index'),
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Nieuw lid')</h1>
+            <h1>New member</h1>
 
             {{ html()
                 ->modelForm($user, 'POST', action('Back\MembersController@store'))
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar lid') }}
+            {{ html()->formGroup()->submit('Save member') }}
 
             @include('back.members._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar lid') }}
+            {{ html()->formGroup()->submit('Save member') }}
 
             {{ html()->closeModelForm() }}
         </div>

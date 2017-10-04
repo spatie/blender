@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Back;
 use App\Http\Controllers\Back\Traits\UpdateMedia;
 use App\Models\Fragment;
 use Illuminate\Http\Request;
-use Spatie\FragmentImporter\Exporter;
 
 class FragmentsController
 {
@@ -13,14 +12,7 @@ class FragmentsController
 
     public function index()
     {
-        $fragments = Fragment::where('hidden', false)->get();
-
-        return view('back.fragments.index', compact('fragments'));
-    }
-
-    public function hidden()
-    {
-        $fragments = Fragment::where('hidden', true)->get();
+        $fragments = Fragment::all();
 
         return view('back.fragments.index', compact('fragments'));
     }
@@ -54,15 +46,13 @@ class FragmentsController
         $this->updateMedia($fragment, $request);
         app('cache')->flush();
 
-        $eventDescription = 'Het fragment werd bewaard';
+        $eventDescription = 'Fragment <a href="'.action('Back\FragmentsController@edit', $fragment->id).
+            "\">`{$fragment->group}.{$fragment->key}`</a> was saved.";
+
+        activity()->on($fragment)->log($eventDescription);
 
         flash()->success(strip_tags($eventDescription));
 
         return redirect()->action('Back\FragmentsController@index');
-    }
-
-    public function download()
-    {
-        Exporter::sendExportToBrowser();
     }
 }

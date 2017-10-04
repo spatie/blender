@@ -41,8 +41,6 @@ class BackUserSeeder extends DatabaseSeeder
             'email' => $person['email'],
             'password' => faker()->password,
 
-            'locale' => 'nl',
-
             'role' => UserRole::ADMIN,
             'status' => UserStatus::ACTIVE,
         ]);

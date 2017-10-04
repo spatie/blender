@@ -1,10 +1,10 @@
-<h2>@lang('Meest bezochte pagina\'s')</h2>
+<h2>Most visited pages</h2>
 
 @if(count($pages))
     <table class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
-        <th>@lang('Pagina')</th>
-        <th>@lang('Aantal bezoekers')</th>
+        <th>Page</th>
+        <th>Visitors</th>
         </thead>
         <tbody>
         @foreach($pages as $page)
@@ -16,5 +16,7 @@
         </tbody>
     </table>
 @else
-    {{ html()->info(__('Er zijn nog geen gegevens beschikbaar.')) }}
+    <div class="alert--info">
+        There's no data available yet.
+    </div>
 @endif

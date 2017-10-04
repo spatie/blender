@@ -1,19 +1,19 @@
 @component('back._layouts.master', [
-    'title' => __('Nieuws'),
+    'title' => 'News',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Nieuws')</h1>
+            <h1>News</h1>
 
             <a href="{{ action('Back\NewsController@create') }}" class="button">
-                @lang('Nieuw nieuwsbericht')
+                New article
             </a>
 
             <table data-datatable data-order='[[ 1, "desc" ]]'>
                 <thead>
                 <tr>
-                    <th>@lang('Naam')</th>
-                    <th>@lang('Publicatiedatum')</th>
+                    <th>Name</th>
+                    <th>Publish date</th>
                     <th data-orderable="false"></th>
                 </tr>
                 </thead>

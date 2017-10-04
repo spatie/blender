@@ -1,6 +1,8 @@
-<h3>@lang('newsletter.form.title')</h3>
+<h3>{{ __('newsletter.title') }}</h3>
 
-@lang('newsletter.form.description')
+<p>
+    {{ __('newsletter.description') }}
+</p>
 
 <form
     class="newsletter"
@@ -9,11 +11,11 @@
     action="{{ action('Front\NewsletterApiController@subscribe') }}"
 >
     <input data-newsletter-email type="email" name="email">
-    <button class="button">@lang('newsletter.form.button')</button>
+    <button class="button">{{ __('newsletter.subscribe') }}</button>
     <div
         data-newsletter-message
-        data-newsletter-error-email="@lang('newsletter.form.invalidEmail')"
-        data-newsletter-error-ajax="@lang('newsletter.form.submissionFailed')"
+        data-newsletter-error-email="{{ __('newsletter.invalidEmail') }}"
+        data-newsletter-error-ajax="{{ __('newsletter.failed') }}"
     ></div>
 </form>
 

@@ -8,7 +8,7 @@ class NewsItemSeeder extends DatabaseSeeder
     {
         $this->truncate((new NewsItem())->getTable());
 
-        collect()->range(0, 10)->each(function () {
+        collect()->range(0, 5)->each(function () {
             $this->createNewsItem();
         });
     }

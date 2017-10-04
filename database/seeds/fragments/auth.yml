@@ -1,0 +1,134 @@
+access:
+    en: You have been granted access to
+    nl: Je hebt nu toegang tot
+    fr: Vous avez eu accès à
+
+address:
+    en: Address
+    nl: Adres
+    fr: Addresse
+
+changePasswordBefore:
+    en: Change your password before
+    nl: Wijzig je paswoord vòòr
+    fr: Changez votre mot de passe avant
+
+city:
+    en: City
+    nl: Plaats
+    fr: Ville
+
+confirmPassword:
+    en: Confirm password
+    nl: Bevestig wachtwoord
+    fr: Confirmez le mot de passe
+
+country:
+    en: Country
+    nl: Land
+    fr: Pays
+
+email:
+    en: E-mail
+    nl: E-mail
+    fr: Email
+
+firstName:
+    en: First name
+    nl: Voornaam
+    fr: Prénom
+
+forgotPassword:
+    en: Forgot password
+    nl: Wachtwoord vergeten
+    fr: Mot de passe oublié
+
+forgotPasswordInstructions:
+    en: Enter your e-mail address and we'll send you a link to reset your password.
+    nl: Geef je e-mailadres op en we sturen je een link waarmee je je wachtwoord kan wijzigen.
+    fr: Entrez votre adresse e-mail et nous vous enverrons un lien pour modifier votre mot de passe.
+
+lastName:
+    en: Last name
+    nl: Naam
+    fr: Nom
+
+loggedOut:
+    en: You are logged out
+    nl: Je bent nu uitgelogd.
+    fr: Vous êtes déconnecté
+
+login:
+    en: Log in
+    nl: Log in
+    fr: Se connecter
+
+logout:
+    en: Log out
+    nl: Uitloggen
+    fr: Se déconnecter
+
+mailMe:
+    en: Mail me
+    nl: Mail me
+    fr: M'envoyer un mail
+
+noAccount:
+    en: No account yet?
+    nl: Nog geen account?
+    fr: Pas encore de compte?
+
+password:
+    en: Password
+    nl: Wachtwoord
+    fr: Mot de passe
+
+postal:
+    en: Postal
+    nl: Postcode
+    fr: Code postal
+
+register:
+    en: Create your profile
+    nl: Maak profiel aan
+    fr: Créer un profil
+
+resetPassword:
+    en: Change password
+    nl: Wijzig wachtwoord
+    fr: Changer le mot de passe
+
+resetPasswordAccidental:
+    en: Didn't mean to reset your password? Simply ignore this email, your old one still works!
+    nl: Was het een foutieve aanvraag? Negeer dan deze mail, je oude wachtwoord blijft gewoon werken.
+    fr: Était-ce une application incorrecte? Ignorez ce courrier électronique, votre ancien mot de passe continuera de fonctionner.
+
+resetPasswordInstructions:
+    en: Your new password must contain at least 8 characters.
+    nl: Je nieuwe wachtwoord moet minstens 8 karakters lang zijn.
+    fr: Votre nouveau mot de passe doit comporter au moins 8 caractères.
+
+resetPasswordRequested:
+    en: You requested
+    nl: Je vroeg om je paswoord te wijzigen op
+    fr: Vous avez demandé de modifier votre mot de passe
+
+setPassword:
+    en: Set password
+    nl: Wachtwoord instellen
+    fr: Définer le mot de passe
+
+telephone:
+    en: Telephone
+    nl: Telefoon
+    fr: Téléphone
+
+toLogin:
+    en: Log in?
+    nl: Inloggen?
+    fr: Se connecter?
+
+welcome:
+    en: welcome
+    nl: Welkom
+    fr: Bienvenue

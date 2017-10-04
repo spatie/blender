@@ -1,11 +1,11 @@
 @component('mail::message')
-# Welkom
+# {{ __('auth.welcome') }}
 
-Beste {{ $user->first_name }},
+{{ __('mail.salutation') }} {{ $user->first_name }},
 
-Je hebt nu toegang tot [{{ Request::getHost() }}]({{ action('Front\Auth\LoginController@login') }}).
+{{ __('auth.access') }} [{{ Request::getHost() }}]({{ action('Front\Auth\LoginController@login') }}).
 
 @component('mail::button', ['url' => action('Front\Auth\LoginController@login')])
-Log in
+{{ __('auth.login') }}
 @endcomponent
 @endcomponent

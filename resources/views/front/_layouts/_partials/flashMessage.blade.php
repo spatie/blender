@@ -1,3 +1,3 @@
-@if(html()->flashMessage())
+@if(request()->hasSession() && html()->flashMessage())
     {{ html()->flashMessage() }}
 @endif

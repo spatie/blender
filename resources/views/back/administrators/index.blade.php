@@ -1,18 +1,20 @@
 @component('back._layouts.master', [
-    'title' => __('Administrators')
+    'title' => 'Administrators'
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Administrators')</h1>
+            <h1>Administrators</h1>
+
             <a href="{{ action('Back\AdministratorsController@create') }}" class="button">
-                @lang('Nieuwe administrator')
+                New administrator
             </a>
+
             <table data-datatable data-order='[[ 0, "asc" ]]'>
                 <thead>
                 <tr>
-                    <th>@lang('E-mail')</th>
-                    <th>@lang('Naam')</th>
-                    <th>@lang('Laatste activiteit')</th>
+                    <th>E-mail</th>
+                    <th>Name</th>
+                    <th>Last activity</th>
                     <th data-orderable="false"></th>
                 </tr>
                 </thead>

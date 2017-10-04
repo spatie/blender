@@ -1,11 +1,11 @@
 @component('back._layouts.master', [
-    'title' => __('Tags'),
+    'title' => 'Tags',
     'breadcrumbs' => html()->backToIndex('Back\TagsController@index'),
 ])
     <section>
         <div class="grid">
             <h1>
-                {{ $model->name ?: __('Nieuwe tag') }}
+                {{ $model->name ?: 'New tag' }}
             </h1>
 
             {{ html()
@@ -13,11 +13,11 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar tag') }}
+            {{ html()->formGroup()->submit('Save tag') }}
 
             @include('back.tags._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar tag') }}
+            {{ html()->formGroup()->submit('Save tag') }}
 
             {{ html()->closeModelForm() }}
         </div>

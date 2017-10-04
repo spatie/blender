@@ -1,21 +1,24 @@
 @component('front._layouts.main', [
-    'title' => __('auth.titleResetPassword')
+    'title' => __('auth.forgotPassword')
 ])
 
     {{ html()->form('POST', action('Front\Auth\ForgotPasswordController@sendResetLinkEmail'))->open() }}
 
-    {{ html()->formGroup()->withContents(
-        html()->info(session('status') ?: __('auth.resetPassword.intro'))
-       )
-    }}
+    <div class="form__group">
+        <div class="alert--info">
+            {{ session('status') ?: __('auth.forgotPasswordInstructions') }}
+        </div>
+    </div>
 
     {{ html()->formGroup()->required()->email('email', __('auth.email')) }}
 
-    {{ html()->formGroup()->submit(__('auth.resetPassword.button')) }}
+    {{ html()->formGroup()->submit(__('auth.mailMe')) }}
 
     {{ html()->form()->close() }}
 
     <p>
-        <a href="{{ login_url() }}">@lang('auth.toLogin')</a>
+        <a href="{{ route('login') }}">
+            {{ __('auth.toLogin') }}
+        </a>
     </p>
 @endcomponent

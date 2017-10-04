@@ -44,7 +44,7 @@ class ArticlesController extends Controller
                 return $article->id === $id;
             })
             ->pluck('name', 'id')
-            ->prepend('Geen', 0);
+            ->prepend('(None)', 0);
 
         return parent::edit($id)->with(compact('parentMenuItems'));
     }

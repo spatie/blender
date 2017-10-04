@@ -19,21 +19,28 @@
 <body>
     @include('front._layouts._partials.deprecatedBrowser')
 
-    @if (current_user())
+    @auth
         @include('back._layouts._partials.menu')
         <div class="grid">
-            @include('back._layouts._partials.flashMessage')
+            @if(html()->flashMessage())
+                <div class="h-margin-bottom">
+                    {{ html()->flashMessage() }}
+                </div>
+            @endif
             <nav class="breadcrumbs">
                 {{ $breadcrumbs ?? '' }}
             </nav>
         </div>
-    @endif
-    <main class="main" id="app">
+    @endauth
+    <main cla
+    ss="main" id="app">
         {{ $slot }}
     </main>
-    @if (current_user())
+
+    @auth
         @include('back._layouts._partials.footer')
-    @endif
+    @endauth
+
     <script src="{{ mix('js/back.app.js') }}" defer></script>
     @yield('extraJs')
 </body>

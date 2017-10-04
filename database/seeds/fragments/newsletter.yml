@@ -1,0 +1,24 @@
+description:
+    en: Subscribe to our newsletter
+    nl: Schrijf je in voor onze niewsbrief
+    fr: Abonnez-vous à notre newsletter
+
+failed:
+    en: Something went wrong
+    nl: Er liep iets mis
+    fr: Quelque chose a mal tourné
+
+invalidEmail:
+    en: Please provide a valid e-mail address
+    nl: Gelieve een geldig e-mail adres in te vullen
+    fr: Veuillez fournir une adresse email valide
+
+newsletter:
+    en: Newsletter
+    nl: Niewsbrief
+    fr: Newsletter
+
+subscribe:
+    en: Subscribe
+    nl: Inschrijven
+    fr: S'inscrire

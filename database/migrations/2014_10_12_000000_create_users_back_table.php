@@ -14,7 +14,6 @@ class CreateUsersBackTable extends Migration
             $table->string('password', 60)->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
-            $table->string('locale')->default('nl');
             $table->datetime('last_activity')->nullable();
             $table->string('role')->nullable();
             $table->string('status')->nullable();

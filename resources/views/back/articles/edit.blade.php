@@ -1,5 +1,5 @@
 @component('back._layouts.master', [
-    'title' => __('Artikels'),
+    'title' => 'Articles',
     'breadcrumbs' => html()->backToIndex('Back\ArticlesController@index'),
 ])
 
@@ -7,7 +7,7 @@
         <div class="grid">
             <h1>
                 {{ html()->onlineIndicator($model->online) }}
-                {{ $model->name ?: __('Nieuw artikel') }}
+                {{ $model->name ?: 'New article' }}
             </h1>
 
             {{ html()
@@ -15,7 +15,7 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar artikel') }}
+            {{ html()->formGroup()->submit('Save article') }}
 
             @if($model->technical_name && view()->exists("back.articles._partials.{$model->technical_name}Form"))
                 @include("back.articles._partials.{$model->technical_name}Form")
@@ -23,7 +23,7 @@
                 @include('back.articles._partials.form')
             @endif
 
-            {{ html()->formGroup()->submit('Bewaar artikel') }}
+            {{ html()->formGroup()->submit('Save article') }}
 
             {{ html()->closeModelForm() }}
         </div>

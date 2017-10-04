@@ -19,8 +19,8 @@ class Fragment extends LanguageLine implements HasMediaConversions
     protected $mediaLibraryCollections = ['images'];
 
     public $casts = [
-        'contains_html' => 'boolean',
-        'hidden' => 'boolean',
+        'html' => 'boolean',
+        'image' => 'boolean',
         'text' => 'array',
     ];
 

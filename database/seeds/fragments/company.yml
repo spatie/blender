@@ -1,0 +1,39 @@
+address:
+    en: Samberstraat 69D
+    nl: Samberstraat 69D
+    fr: Samberstraat 69D
+
+city:
+    en: Antwerp
+    nl: Antwerpen
+    fr: Anvers
+
+country:
+    en: Belgium
+    nl: België
+    fr: Belgique
+
+email:
+    en: info@spatie.be
+    nl: info@spatie.be
+    fr: info@spatie.be
+
+googleMyBusinessUrl:
+    en:
+    nl:
+    fr:
+
+name:
+    en: Spatie
+    nl: Spatie
+    fr: Spatie
+
+postal:
+    en: 2060
+    nl: 2060
+    fr: 2060
+
+telephone:
+    en: +32 3 292 56 79
+    nl: +32 3 292 56 79
+    fr: +32 3 292 56 79

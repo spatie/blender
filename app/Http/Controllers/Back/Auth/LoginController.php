@@ -54,9 +54,9 @@ class LoginController extends Controller
 
         $frontLink = html()->a('/', 'Naar frontsite.');
 
-        flash()->info(trans('auth.loggedOut').' '.$frontLink);
+        flash()->info(__('auth.loggedOut').' '.$frontLink);
 
-        return redirect(login_url());
+        return redirect(route('back.login'));
     }
 
     protected function guard()

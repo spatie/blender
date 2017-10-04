@@ -35,7 +35,7 @@ trait Inline
     {
         return $this->a(
             action($action, $parameters),
-            __('back.backToIndex')
+            'Return to index'
         )->class('breadcrumb--back');
     }
 

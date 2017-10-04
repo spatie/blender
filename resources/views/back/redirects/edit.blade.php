@@ -1,11 +1,11 @@
 @component('back._layouts.master', [
-    'title' => __('Redirects'),
+    'title' => 'Redirects',
     'breadcrumbs' => html()->backToIndex('Back\RedirectsController@index'),
 ])
     <section>
         <div class="grid">
             <h1>
-                {{ $model->old_url ?: __('Nieuwe redirect') }}
+                {{ $model->old_url ?: 'New redirect' }}
             </h1>
 
             {{ html()
@@ -13,11 +13,11 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar redirect') }}
+            {{ html()->formGroup()->submit('Save redirect') }}
 
             @include('back.redirects._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar redirect') }}
+            {{ html()->formGroup()->submit('Save redirect') }}
 
             {{ html()->closeModelForm() }}
         </div>

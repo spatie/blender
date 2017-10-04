@@ -1,5 +1,5 @@
 @component('front._layouts.main', [
-    'title' => __('auth.titleRegister')
+    'title' => __('auth.register')
 ])
     {{ html()->form()->open() }}
 
@@ -10,7 +10,7 @@
             {{ html()->formGroup()->required()->password('password', __('auth.password')) }}
         </div>
         <div class="grid__cell  -width-1/2--s">
-            {{ html()->formGroup()->required()->password('password_confirmation', __('auth.passwordConfirm')) }}
+            {{ html()->formGroup()->required()->password('password_confirmation', __('auth.confirmPassword')) }}
         </div>
     </div>
 
@@ -42,6 +42,8 @@
     {{ html()->form()->close() }}
 
     <p>
-        <a href="{{ login_url() }}">@lang('auth.toLogin')</a>
+        <a href="{{ route('login') }}">
+            {{ __('auth.toLogin') }}
+        </a>
     </p>
 @endcomponent

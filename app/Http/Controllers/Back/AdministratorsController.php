@@ -35,7 +35,6 @@ class AdministratorsController
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
-        $user->locale = $request->get('locale', 'nl');
 
         if ($request->has('password')) {
             $user->password = bryct($request->get('password'));
@@ -71,7 +70,6 @@ class AdministratorsController
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
         $user->last_name = $request->get('last_name');
-        $user->locale = $request->get('locale', 'nl');
 
         if ($request->has('password')) {
             $user->password = $request->get('password');
@@ -121,22 +119,11 @@ class AdministratorsController
             $user->email
         );
 
-        $action = '';
-
-        if ($event === 'created') {
-            $action = __('werd aangemaakt');
-        }
-
-        if ($event === 'updated') {
-            $action = __('werd gewijzigd');
-        }
-
         if ($event === 'deleted') {
             $name = $user->email;
-            $action = __('werd verwijderd');
         }
 
-        return __('Administrator').' '.$name.' '.$action;
+        return "Administrator {$name} was {$event}.";
     }
 
     protected function validationRules(): array

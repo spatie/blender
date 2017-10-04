@@ -100,22 +100,11 @@ class MembersController
             $user->email
         );
 
-        $action = '';
-
-        if ($event === 'created') {
-            $action = __('werd aangemaakt');
-        }
-
-        if ($event === 'updated') {
-            $action = __('werd gewijzigd');
-        }
-
         if ($event === 'deleted') {
             $name = $user->email;
-            $action = __('werd verwijderd');
         }
 
-        return __('Lid').' '.$name.' '.$action;
+        return "Member {$name} was {$event}.";
     }
 
     protected function validationRules(): array

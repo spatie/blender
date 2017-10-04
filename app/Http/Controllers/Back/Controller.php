@@ -21,16 +21,18 @@ abstract class Controller
     use Traits\UpdateTranslations;
 
     /** @var string */
-    protected $modelClass;
     protected $moduleName;
+    protected $modelClass;
+    protected $modelName;
 
     /** @var bool */
     protected $redirectToIndex = false;
 
     public function __construct()
     {
-        $this->modelClass = $this->determineModelClass();
         $this->moduleName = $this->determineModuleName();
+        $this->modelClass = $this->determineModelClass();
+        $this->modelName = __("back.models.{$this->moduleName}");
     }
 
     public function index()
@@ -148,22 +150,18 @@ abstract class Controller
 
     protected function updatedEventDescriptionFor(Eloquent $model): string
     {
-        $modelName = ucfirst(__("back.models.{$this->moduleName}"));
-
         $linkToModel = '"<a href="'.$this->action('edit', $model->id).'">'.$model->name.'</a>"';
 
         if ($model->wasDraft) {
-            return $modelName.' '.$linkToModel.' '.__('werd aangemaakt');
+            return "{$this->modelName} {$linkToModel} was created.";
         }
 
-        return $modelName.' '.$linkToModel.' '.__('werd gewijzigd');
+        return "{$this->modelName} {$linkToModel} was edited.";
     }
 
     protected function deletedEventDescriptionFor(Eloquent $model): string
     {
-        $modelName = ucfirst(__("back.models.{$this->moduleName}"));
-
-        return $modelName.' "'.$model->name.'" '.__('werd verwijderd');
+        return "{$this->modelName} {$model->name} was deleted.";
     }
 
     protected function action(string $action, $parameters = []): string

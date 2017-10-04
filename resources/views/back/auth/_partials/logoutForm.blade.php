@@ -1,4 +1,4 @@
-<form id="logout-form" action="{{ logout_url() }}" method="POST">
+<form id="logout-form" action="{{ route('back.logout') }}" method="POST">
     <button type=submit title="log out" class="menu__log-out">
         <span class="fa fa-power-off"></span>
     </button>

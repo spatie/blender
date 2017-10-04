@@ -1,0 +1,49 @@
+address:
+    en: Address
+    nl: Adres
+    fr: Addresse
+
+submit:
+    en: Submit
+    nl: Verstuur
+    fr: Soumettre
+
+city:
+    en: City
+    nl: Plaats
+    fr: Ville
+
+email:
+    en: E-mail
+    nl: E-mail
+    fr: Email
+
+failed:
+    en: Correct the errors in the form.
+    nl: Corrigeer de fouten in het formulier.
+    fr: Corrigez les erreurs dans le formulaire.
+
+fieldsAreRequired:
+    en: These fields are required
+    nl: Deze velden zijn verplicht
+    fr: Ces fichiers sont obligatoires
+
+name:
+    en: Name
+    nl: Naam
+    fr: Nom
+
+postal:
+    en: Postal
+    nl: Postcode
+    fr: Code postal
+
+remarks:
+    en: Remarks
+    nl: Opmerkingen
+    fr: Commentaires
+
+telephone:
+    en: Telephone
+    nl: Telefoon
+    fr: Téléphone

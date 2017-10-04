@@ -52,7 +52,7 @@ class LoginController extends Controller
 
         $request->session()->regenerate();
 
-        flash()->info(trans('auth.loggedOut'));
+        flash()->info(__('auth.loggedOut'));
 
         return redirect('/');
     }

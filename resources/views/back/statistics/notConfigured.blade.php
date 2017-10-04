@@ -1,9 +1,11 @@
 @component('back._layouts.master', [
-    'title' => __('Statistieken'),
+    'title' => 'Statistics',
 ])
     <section>
         <div class="grid">
-            {{ html()->info(__('Analytics is nog niet geconfigureerd')) }}
+            <div class="alert--info">
+                Analytics hasn't been configured yet.
+            </div>
         </div>
     </section>
 @endcomponent

@@ -1,24 +1,26 @@
 @component('back._layouts.master', [
-    'title' => __('Reacties'),
+    'title' => 'Responses',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Reacties')</h1>
+            <h1>Responses</h1>
 
             {{ html()->info()->open() }}
-            @php($recipients = collect(config('mail.recipients.questionForm'))->implode(', '))
+            @php($recipients = collect()->implode(', '))
 
             @if(! $recipients)
-                @lang('Momenteel worden reacties nog niet gemaild omdat er geen bestemming werd ingesteld.')
+                Responses aren't sent by mail because there are no recipients specified.
             @else
-                {{ __('Reacties worden gemaild naar :recipients.', compact('recipients')) }}
+                Responses will be sent to {{ implode(', ', config('mail.recipients.questionForm')) }}.
             @endif
             {{ html()->info()->close() }}
 
             <div class="form__group -buttons">
                 {{ html()->form('POST', action('Back\FormResponsesController@download'))->open() }}
 
-                {{ html()->submit(__('Download reacties'))->class('button') }}
+                <button type="submit" class="button">
+                    Download responses
+                </button>
 
                 {{ html()->form()->close() }}
             </div>

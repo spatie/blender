@@ -1,22 +1,22 @@
 @component('back._layouts.master', [
-    'title' => __('Tags'),
+    'title' => 'Tags',
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Tags')</h1>
+            <h1>Tags</h1>
 
             <a href="{{ action('Back\TagsController@create') }}" class="button">
-                @lang('Nieuwe tag')
+                New tag
             </a>
 
-            {{ html()->info()
-                ->text(__('Zorg ervoor dat alle items van een tag ontkoppeld zijn alvorens hem te verwijderen.'))
-                ->class('h-margin-top') }}
+            <div class="alert--info h-margin-top">
+                Make sure all associated items are removed from a tag before deleting it.
+            </div>
 
             @foreach($tags as $name => $type)
                 <table data-sortable="{{ action('Back\TagsController@changeOrder') }}">
                     <caption>
-                        {{ trans("back.tagTypes.{$name}") }}
+                        {{ __("back.tags.{$name}") }}
                     </caption>
                     <thead>
                     <tr>
@@ -35,7 +35,7 @@
                             </td>
                             <td class="-remark">
                                 @if($tag->taggable_count)
-                                    {{ __('Gekoppeld aan :amount item(s)', ['amount' => $tag->taggable_count]) }}
+                                    Associated to {{ $tag->taggable_count }} {{ $tag->taggable_count == 1 ? 'item' : 'items' }}
                                 @endif
                             </td>
                             <td class="-right">

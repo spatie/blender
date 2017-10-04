@@ -1,8 +1,7 @@
 @component('back._layouts.master', [
-    'title' => __('Wijzig vaste tekst'),
+    'title' => 'Edit fragment',
     'breadcrumbs' => html()->backToIndex('Back\FragmentsController@index'),
 ])
-
     <section>
         <div class="grid">
             <h1 class=":text-ellipsis">
@@ -11,7 +10,9 @@
 
             @if($fragment->description)
                 <div class="alerts">
-                    {{ html()->info($fragment->description, '-small -inline') }}
+                    <div class="alert--info -small -inline">
+                        {{ $fragment->description }}
+                    </div>
                 </div>
             @endif
 
@@ -20,14 +21,13 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar fragment') }}
+            {{ html()->formGroup()->submit('Save fragment') }}
 
             @include('back.fragments._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar fragment') }}
+            {{ html()->formGroup()->submit('Save fragment') }}
 
             {{ html()->closeModelForm() }}
         </div>
     </section>
-
 @endcomponent

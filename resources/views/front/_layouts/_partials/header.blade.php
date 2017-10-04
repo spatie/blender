@@ -10,8 +10,7 @@
             <div class="grid__cell -width-1/2">
                 <nav class="nav h-align-right">
                     <ul class="nav__list">
-                        {{--
-                        @if(current_user())
+                        {{-- @auth
                             <li>
                                 <a href="{{ current_user()->getProfileUrl() }}">
                                     {{ current_user()->first_name }}
@@ -22,13 +21,12 @@
                             </li>
                         @else
                             <li>
-                                <a href="{{ register_url() }}">@lang('auth.register')</a>
+                                <a href="{{ route('register') }}">{{ __('auth.register') }}</a>
                             </li>
                             <li>
-                                <a href="{{ login_url() }}">@lang('auth.login')</a>
+                                <a href="{{ route('login') }}">{{ __('auth.login') }}</a>
                             </li>
-                        @endif
-                        --}}
+                        @endauth --}}
                     </ul>
                 </nav>
             </div>

@@ -5,9 +5,11 @@
         <h1>{{ __('error.title') }}</h1>
     @endslot
     <p>
-        {{ __('error.text.404') }}
+        {{ __('error.text404') }}
     </p>
     <p>
-        <a class=button href="{{ route('home') }}">{{ __('error.button') }}</a>
+        <a class=button href="{{ route('home') }}">
+            {{ __('error.toHome') }}
+        </a>
     </p>
 @endcomponent

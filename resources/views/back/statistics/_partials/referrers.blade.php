@@ -1,9 +1,9 @@
-<h2>@lang('Bronnen')</h2>
+<h2>Referrers</h2>
 @if (count($referrers))
     <table class="-compact" data-datatable data-order='[[ 1, "desc" ]]'>
         <thead>
-        <th>@lang('Bron')</th>
-        <th>@lang('Aantal bezoekers')</th>
+        <th>Referrer</th>
+        <th>Visitors</th>
         </thead>
         <tbody>
         @foreach($referrers as $referrer)
@@ -15,6 +15,8 @@
         </tbody>
     </table>
 @else
-    {{ html()->info(__('Er zijn nog geen gegevens beschikbaar.')) }}
+    <div class="alert--info">
+        There's no data available yet.
+    </div>
 @endif
 

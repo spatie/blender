@@ -1,16 +1,16 @@
 @component('back._layouts.master', [
-    'title' => __('Log')
+    'title' => 'Log'
 ])
     <section>
         <div class="grid">
-            <h1>@lang('Log')</h1>
+            <h1>Log</h1>
             {!! $logItems->render() !!}
             <table class="-datatable -compact">
                 <thead>
                 <tr>
-                    <th>{{ __('Tijdstip') }}</th>
-                    <th>{{ __('Omschrijving') }}</th>
-                    <th>{{ __('Gebruiker')}}</th>
+                    <th>Time</th>
+                    <th>Description</th>
+                    <th>User</th>
                 </tr>
                 </thead>
                 <tbody>

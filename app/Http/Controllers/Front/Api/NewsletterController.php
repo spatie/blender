@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Front\Api;
 
 use App\Http\Request;
+use Illuminate\Validation\Validator;
 use Spatie\Newsletter\NewsletterFacade as Newsletter;
 
 class NewsletterController extends Controller
