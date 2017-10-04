@@ -123,7 +123,7 @@ class AdministratorsController
             $name = $user->email;
         }
 
-        return "Administrator {$name} was {$action}.";
+        return "Administrator {$name} was {$event}.";
     }
 
     protected function validationRules(): array
