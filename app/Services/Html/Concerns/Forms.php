@@ -56,6 +56,24 @@ trait Forms
             ->value($this->model->tagsWithType($type)->pluck('name', 'name'));
     }
 
+    public function relatedModelsSelect(string $name, string $nameProperty = 'name', ?iterable $options = null)
+    {
+        $this->ensureModelIsAvailable();
+
+        $relatedModel = $this->model->{$name}()->getRelated();
+
+        $options = $options ?? $relatedModel->get()->pluck($nameProperty, 'id');
+
+        $selectedOptions = $this->model->{$name} ?? collect();
+
+        return $this->multiselect(
+            "{$name}[]",
+            $options,
+            $selectedOptions->pluck('id')
+        )
+            ->attribute('data-select', 'tags');
+    }
+
     public function searchableSelect(string $name = '', iterable $options = [], ? string $value = '')
     {
         return $this->select($name, $options, $value)->attribute('data-select', 'search');
