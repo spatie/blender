@@ -171,6 +171,6 @@ sudo supervisorctl restart all
 sudo service php7.1-fpm restart
 @endtask
 
-@after
-@slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "{$server}: {$baseDir} release {$newReleaseName} by {$user}: {$task} done")
-@endafter
+@finished
+    @slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "{$server}: {$baseDir} release {$newReleaseName} by {$user}")
+@endfinished
