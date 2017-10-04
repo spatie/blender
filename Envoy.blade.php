@@ -139,7 +139,6 @@ php artisan config:cache
 
 sudo service php7.1-fpm restart
 sudo supervisorctl restart all
-php artisan horizon
 @endtask
 
 @task('insertNewFragments', ['on' => 'remote'])
