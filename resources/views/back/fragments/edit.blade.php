@@ -21,11 +21,11 @@
                 ->class('-stacked')
                 ->open() }}
 
-            {{ html()->formGroup()->submit('Bewaar fragment') }}
+            {{ html()->formGroup()->submit('Save fragment') }}
 
             @include('back.fragments._partials.form')
 
-            {{ html()->formGroup()->submit('Bewaar fragment') }}
+            {{ html()->formGroup()->submit('Save fragment') }}
 
             {{ html()->closeModelForm() }}
         </div>
