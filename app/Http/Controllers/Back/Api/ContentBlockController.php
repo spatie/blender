@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Back\Api;
 
-use Exception;
 use App\Http\Controllers\Controller;
 use App\Models\ContentBlock;
 use App\Models\Transformers\ContentBlockTransformer;
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
