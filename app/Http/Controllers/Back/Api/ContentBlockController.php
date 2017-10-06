@@ -26,7 +26,15 @@ class ContentBlockController extends Controller
 
     protected function getModelFromRequest($request): Model
     {
-        return call_user_func($request['model_name'].'::findOrFail', $request['model_id']);
+        if (! isset($request['model_name'])) {
+            throw new Exception('No model name provided');
+        }
+
+        if (! isset($request['model_id'])) {
+            throw new Exception('No model id provided');
+        }
+
+        return $request['model_name']::withoutGlobalScopes()->findOrFail($request['model_id']);
     }
 
     protected function validationRules(): array

@@ -24,7 +24,7 @@ class ContentBlock extends Model implements HasMediaConversions
 
     public function subject(): MorphTo
     {
-        return $this->morphTo('model');
+        return $this->morphTo('model')->withoutGlobalScopes();
     }
 
     public function registerMediaConversions(Media $media = null)
