@@ -46,7 +46,7 @@
         "spatie/laravel-collection-macros": "^3.0",
         "spatie/laravel-cookie-consent": "^1.0",
         "spatie/laravel-db-snapshots": "^1.0",
-        "spatie/laravel-demo-mode": "^1.0",
+        "spatie/laravel-demo-mode": "^2.0",
         "spatie/laravel-fractal": "^5.0",
         "spatie/laravel-googletagmanager": "^2.0",
         "spatie/laravel-html": "^2.0",

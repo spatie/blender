@@ -1,6 +1,8 @@
 This site was made by these wonderful humans:
 
 - Alex Vanderbist (@alexvanderbist)
+- Brent Roose (@brendt_gd)
+- Harish Toshniwal (@introwit)
 - Sebastian De Deyne (@sebdedeyne)
 - Willem Van Bockstal (@willemvbockstal)
 - Jef Van der Voort (@spatie_be)
