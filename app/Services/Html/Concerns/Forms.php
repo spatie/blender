@@ -38,7 +38,7 @@ trait Forms
             ->class('-datetime');
     }
 
-    public function category(string $type, bool $required): Select
+    public function category(string $type, bool $required = true): Select
     {
         $this->ensureModelIsAvailable();
 
