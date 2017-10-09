@@ -14,9 +14,11 @@ trait UpdateTags
 
         foreach ($model->tagTypes as $type) {
             collect($request->get("{$type}_tags"))->each(function ($name) use ($model, $type) {
-                $tag = Tag::findOrCreate($name, $type);
+                if (! empty($name)) {
+                    $tag = Tag::findOrCreate($name, $type);
 
-                $model->tags()->attach($tag);
+                    $model->tags()->attach($tag);
+                }
             });
         }
     }

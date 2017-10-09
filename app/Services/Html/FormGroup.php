@@ -32,7 +32,7 @@ class FormGroup
 
     public function category(string $name, string $label): Div
     {
-        return $this->assemble($name, $label, $this->html->category($name));
+        return $this->assemble($name, $label, $this->html->category($name, $this->required));
     }
 
     public function checkbox(string $name, string $label): Div

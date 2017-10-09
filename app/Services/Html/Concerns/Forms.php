@@ -38,13 +38,19 @@ trait Forms
             ->class('-datetime');
     }
 
-    public function category(string $type): Select
+    public function category(string $type, bool $required = true): Select
     {
         $this->ensureModelIsAvailable();
 
+        $tags = Tag::getWithType($type)->pluck('name', 'name');
+
+        if (! $required) {
+            $tags->prepend('None', '');
+        }
+
         return $this->select(
             "{$type}_tags[]",
-            Tag::getWithType($type)->pluck('name', 'name'),
+            $tags,
             $this->model->tagsWithType($type)->pluck('name', 'name')
         );
     }
