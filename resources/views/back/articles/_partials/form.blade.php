@@ -2,9 +2,8 @@
     <nav class="tabs__menu">
         <ul>
             <li><a href="#content" class="js-tabs-nav"><i class="fa fa-edit"></i> Content</a></li>
-            <li><a href="#settings" class="js-tabs-nav"><i class="fa fa-cog"></i> Settings</a></li>
             <li><a href="#blocks" class="js-tabs-nav"><i class="fa fa-cube"></i> Blocks</a></li>
-            <li><a href="#settings" class="js-tabs-nav"><i class="fa fa-cog"></i> Instellingen</a></li>
+            <li><a href="#settings" class="js-tabs-nav"><i class="fa fa-cog"></i> Settings</a></li>
             <li><a href="#seo" class="js-tabs-nav"><i class="fa fa-code"></i> SEO</a></li>
         </ul>
     </nav>
