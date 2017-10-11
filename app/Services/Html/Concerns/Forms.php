@@ -149,7 +149,7 @@ trait Forms
         return $this->div()
             ->class('locationpicker')
             ->attribute('data-locationpicker')
-            ->attribute('data-api-key', config('google_maps.api_key'))
+            ->attribute('data-api-key', config('services.google_maps.api_key'))
             ->children([
                 $this->div()
                     ->class('locationpicker_tools :align-right')
