@@ -103,7 +103,7 @@ trait Forms
             'upload-url' => action('Back\Api\MediaLibraryController@add'),
             ':model' => htmlspecialchars($this->getComponentModel()),
             ':initial' => htmlspecialchars($initial),
-            ':data' => htmlspecialchars(json_encode($associatedData, JSON_FORCE_OBJECT)),
+            ':data' => htmlspecialchars(json_encode($associatedData)),
             ':debug' => htmlspecialchars(json_encode(config('app.debug', false))),
         ]);
     }
