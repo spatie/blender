@@ -66,18 +66,18 @@
         "spatie/regex": "^1.1",
         "spatie/schema-org": "^1.1",
         "spatie/seeders": "^4.4",
-        "themsaid/laravel-mail-preview": "^2.0",
         "fideloper/proxy": "~3.3",
         "symfony/yaml": "^3.3"
     },
     "require-dev": {
+        "filp/whoops": "2.0.*",
         "friendsofphp/php-cs-fixer": "^2.0",
         "graham-campbell/analyzer": "^1.1",
         "mockery/mockery": "^0.9.4",
         "phpunit/phpunit": "~5.0",
         "symfony/css-selector": "~3.0",
         "symfony/dom-crawler": "~3.0",
-        "filp/whoops": "2.0.*"
+        "themsaid/laravel-mail-preview": "^2.0"
     },
     "autoload": {
         "classmap": [
