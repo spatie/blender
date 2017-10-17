@@ -84,7 +84,7 @@ class Article extends Model implements Sortable
 
     public function hasParent(): bool
     {
-        return ! is_null($this->parent);
+        return ! is_null($this->parent_id);
     }
 
     public function getUrlAttribute(): string
