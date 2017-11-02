@@ -57,7 +57,7 @@ class ImportFragments extends Command
     private function translationsContainHtml(array $translations): bool
     {
         foreach ($translations as $translation) {
-            if ($translation != strip_tags($translation)) {
+            if ((string) $translation !== strip_tags($translation)) {
                 return true;
             }
         }
