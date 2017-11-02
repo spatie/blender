@@ -45,12 +45,23 @@ class ImportFragments extends Command
                 $fragment->setTranslation($locale, $text ?: '');
             }
 
-            $fragment->html = $attributes['html'] ?? false;
+            $fragment->html = $attributes['html'] ?? $this->translationsContainHtml($translations);
             $fragment->description = $attributes['description'] ?? null;
 
             $fragment->save();
 
             return $fragment;
         })->values();
+    }
+
+    private function translationsContainHtml(array $translations): bool
+    {
+        foreach ($translations as $translation) {
+            if ((string) $translation !== strip_tags($translation)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
