@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ArticleSeeder::class);
         $this->call(PersonSeeder::class);
         $this->call(NewsItemSeeder::class);
+        $this->call(RecipientSeeder::class);
     }
 
     protected function times(int $times, callable $callback)

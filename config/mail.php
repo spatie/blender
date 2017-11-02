@@ -2,10 +2,11 @@
 
 return [
 
-    // Note: this is overwritten for non-production environments in the ConfigServiceProvider
-    'recipients' => [
-        'questionForm' => 'technical@spatie.be',
-    ],
+    /*
+    | This will be returned by the `recipients()` helper for all forms in
+    | non-production environments.
+    */
+    'development_recipient' => 'technical@spatie.be',
 
     /*
     |--------------------------------------------------------------------------
