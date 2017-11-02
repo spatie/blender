@@ -194,7 +194,6 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         App\Services\Navigation\NavigationServiceProvider::class,
-        App\Providers\ConfigServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
         Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider::class,

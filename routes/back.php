@@ -18,6 +18,7 @@ Route::module('news');
 Route::module('people', true);
 Route::module('tags', true);
 Route::module('redirects', true);
+Route::module('recipients');
 
 Route::prefix('api')->group(function () {
     Route::get('media', 'Api\MediaLibraryController@index');

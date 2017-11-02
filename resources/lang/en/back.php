@@ -20,6 +20,7 @@ return [
         'people' => 'Member',
         'redirects' => 'Redirect',
         'tags' => 'Tag',
+        'recipients' => 'Recipient',
     ],
 
     'tags' => [

@@ -2,6 +2,7 @@
 
 use App\Models\Article;
 use App\Models\Fragment;
+use App\Models\Recipient;
 use App\Services\Auth\User;
 use App\Services\Html\Html;
 use App\Services\Seo\Meta;
@@ -118,6 +119,11 @@ function roman_year(int $year = null): string
 function schema(): Schema
 {
     return new Schema();
+}
+
+function recipients(string $formName): array
+{
+    return Recipient::forForm($formName);
 }
 
 /**
