@@ -24,6 +24,7 @@
     "@spatie/blender-js": "^1.4.0",
     "@spatie/blender-media": "^3.3.1",
     "@spatie/scss": "^1.1.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-object-rest-spread": "^6.20.2",
     "babel-polyfill": "^6.16.0",
     "babel-preset-env": "^1.1.8",
@@ -32,9 +33,11 @@
     "eslint": "^3.7.1",
     "eslint-config-spatie": "^1.2.7",
     "import-glob-loader": "^1.1.0",
+    "jest": "^20.0.1",
     "jquery": "^3.0.0",
     "laravel-mix": "^1.4",
     "lodash": "^4.16.6",
+    "moment": "^2.19.1",
     "normalize-css": "^2.3.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-easy-import": "^2.1.0",
@@ -46,9 +49,5 @@
     "vue-table-component": "^1.4.3",
     "vue-tabs-component": "^1.1.0",
     "webfontloader": "^1.6.10"
-  },
-  "devDependencies": {
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "jest": "^20.0.1"
   }
 }

@@ -11,11 +11,11 @@
 
             <table data-sortable="{{ action('Back\ArticlesController@changeOrder') }}">
                 <thead>
-                <tr>
-                    <th>Name</th>
-                    <th data-orderable="false"></th>
-                    <th data-orderable="false"></th>
-                </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
                 </thead>
                 <tbody>
 

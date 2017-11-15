@@ -12,7 +12,6 @@ mix
     .js('resources/assets/js/front/app.js', 'public/js/front.app.js')
     .postCss('resources/assets/css/front/front.css', 'public/css/front.css')
 
-    .js('resources/assets/js/back/head.js', 'public/js/back.head.js')
     .js('resources/assets/js/back/app.js', 'public/js/back.app.js')
     .postCss('resources/assets/css/back/back.css', 'public/css/back.css')
 

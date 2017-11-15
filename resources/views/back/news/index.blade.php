@@ -9,33 +9,21 @@
                 New article
             </a>
 
-            <table data-datatable data-order='[[ 1, "desc" ]]'>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Publish date</th>
-                    <th data-orderable="false"></th>
-                </tr>
-                </thead>
-                <tbody>
-                @foreach($models as $newsItem)
-                    <tr data-row-id="{{ $newsItem->id }}">
-                        <td>
-                            {{ html()->onlineIndicator($newsItem->online) }}
-                            <a href="{{ action('Back\NewsController@edit', [$newsItem->id]) }}">
-                                {{ $newsItem->name }}
-                            </a>
-                        </td>
-                        <td data-order="{{ $newsItem->publish_date }}">
-                            {{ $newsItem->publish_date->format('d/m/Y') }}
-                        </td>
-                        <td class="-right">
-                            {{ html()->deleteButton(action('Back\NewsController@destroy', $newsItem->id)) }}
-                        </td>
-                    </tr>
-                @endforeach
-                </tbody>
-            </table>
+            <table-component :data="{{ json_encode($models) }}">
+                <table-column show="name" label="Name">
+                    <template scope="row">
+                        <a :href="'/back/news/edit/' + row.id">
+                            @{{ row.name.nl }}
+                        </a>
+                    </template>
+                </table-column>
+                <table-column show="publish_date" label="Publish date" data-type="date:DD/MM/YYYY"></table-column>
+                <table-column sortable="false" filterable="false">
+                    <template scope="row">
+                        {{ html()->deleteButton("/back/news/") }}
+                    </template>
+                </table-column>
+            </table-component>
         </div>
     </section>
 @endcomponent

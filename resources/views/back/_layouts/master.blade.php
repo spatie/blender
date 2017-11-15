@@ -12,36 +12,32 @@
 
     <link rel="stylesheet" href="{{ mix('css/back.css') }}">
 
-    <script src="{{ mix('js/back.head.js') }}"></script>
-
     @include('front._layouts._partials.head.favicons')
+
+    <script defer src="{{ mix('js/back.app.js') }}"></script>
 </head>
 <body>
     @include('front._layouts._partials.deprecatedBrowser')
-
-    @auth
-        @include('back._layouts._partials.menu')
-        <div class="grid">
-            @if(html()->flashMessage())
-                <div class="h-margin-bottom">
-                    {{ html()->flashMessage() }}
-                </div>
-            @endif
-            <nav class="breadcrumbs">
-                {{ $breadcrumbs ?? '' }}
-            </nav>
-        </div>
-    @endauth
-    <main cla
-    ss="main" id="app">
-        {{ $slot }}
-    </main>
-
-    @auth
-        @include('back._layouts._partials.footer')
-    @endauth
-
-    <script src="{{ mix('js/back.app.js') }}" defer></script>
-    @yield('extraJs')
+    <div id="app">
+        @auth
+            @include('back._layouts._partials.menu')
+            <div class="grid">
+                @if(html()->flashMessage())
+                    <div class="h-margin-bottom">
+                        {{ html()->flashMessage() }}
+                    </div>
+                @endif
+                <nav class="breadcrumbs">
+                    {{ $breadcrumbs ?? '' }}
+                </nav>
+            </div>
+        @endauth
+        <main class="main">
+            {{ $slot }}
+        </main>
+        @auth
+            @include('back._layouts._partials.footer')
+        @endauth
+    </div>
 </body>
 </html>
