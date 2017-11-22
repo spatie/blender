@@ -77,6 +77,7 @@
         "mockery/mockery": "^0.9.4",
         "nunomaduro/collision": "^1.1",
         "phpunit/phpunit": "~5.0",
+        "sensiolabs/security-checker": "^4.1",
         "symfony/css-selector": "~3.0",
         "symfony/dom-crawler": "~3.0",
         "themsaid/laravel-mail-preview": "^2.0"
@@ -101,6 +102,9 @@
     "scripts": {
         "fix-cs": [
             "vendor/bin/php-cs-fixer fix ."
+        ],
+        "check-security": [
+            "vendor/bin/security-checker security:check"
         ],
         "post-root-package-install": [
             "php -r \"copy('.env.example', '.env');\""
