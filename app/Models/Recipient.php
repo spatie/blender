@@ -8,7 +8,7 @@ class Recipient extends Model
     {
         if (! app()->environment('production')) {
             return [
-                config('mail.development_recipient')
+                config('mail.development_recipient'),
             ];
         }
 
@@ -18,7 +18,7 @@ class Recipient extends Model
     }
 
     /**
-     * Needed by `updatedEventDescriptionFor` in `Controller`
+     * Needed by `updatedEventDescriptionFor` in `Controller`.
      */
     public function getNameAttribute(): ?string
     {
