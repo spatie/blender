@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Recipient;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class RecipientsController extends Controller
@@ -13,15 +12,24 @@ class RecipientsController extends Controller
         return Recipient::create();
     }
 
+    public function edit(int $id)
+    {
+        $formTypes = config('mail.forms');
+        $formTypes = array_combine($formTypes, $formTypes);
+
+        return parent::edit($id)->with(compact('formTypes'));
+    }
+
     protected function updateFromRequest(Recipient $model, Request $request)
     {
-        $this->updateFields($model, $request, ['form', 'email']);
+        $this->updateFields($model, $request, ['name', 'form', 'email']);
         $model->save();
     }
 
     protected function validationRules(): array
     {
         return [
+            'name' => 'required',
             'form' => 'required',
             'email' => 'required|email',
         ];

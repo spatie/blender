@@ -12,6 +12,7 @@
             <table data-datatable data-order='[[ 1, "desc" ]]'>
                 <thead>
                 <tr>
+                    <th>Name</th>
                     <th>Form</th>
                     <th>Email</th>
                     <th data-orderable="false"></th>
@@ -22,8 +23,11 @@
                     <tr data-row-id="{{ $recipient->id }}">
                         <td>
                             <a href="{{ action('Back\RecipientsController@edit', [$recipient->id]) }}">
-                                {{ $recipient->form }}
+                                {{ $recipient->name }}
                             </a>
+                        </td>
+                        <td>
+                            {{ $recipient->form }}
                         </td>
                         <td>
                             {{ $recipient->email }}

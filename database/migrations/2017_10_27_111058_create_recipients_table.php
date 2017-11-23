@@ -10,6 +10,7 @@ class CreateRecipientsTable extends Migration
     {
         Schema::create('recipients', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->nullable();
             $table->string('form')->nullable();
             $table->string('email')->nullable();
             $table->boolean('draft')->default(true);

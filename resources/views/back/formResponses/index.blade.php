@@ -5,8 +5,10 @@
         <div class="grid">
             <h1>Responses</h1>
 
+            @php($recipients = array_column(recipients('contactForm'), 'email'))
+
             {{ html()->info()->open() }}
-                Responses will be sent to {{ implode(', ', recipients('contactForm')) }}.
+                Responses will be sent to {{ implode(', ', $recipients) }}.
             {{ html()->info()->close() }}
 
             <div class="form__group -buttons">
