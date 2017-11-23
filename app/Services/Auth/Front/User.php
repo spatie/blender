@@ -23,7 +23,7 @@ class User extends BaseUser
 {
     protected $table = 'users_front';
 
-    public static function register(array $input): User
+    public static function register(array $input): self
     {
         $defaults = [
             'role' => UserRole::MEMBER,
@@ -82,7 +82,7 @@ class User extends BaseUser
         return $this->hasStatus(UserStatus::ACTIVE);
     }
 
-    public function activate(): User
+    public function activate(): self
     {
         if ($this->status !== UserStatus::WAITING_FOR_APPROVAL) {
             throw new UserIsAlreadyActivated();
