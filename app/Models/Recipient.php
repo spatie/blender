@@ -16,7 +16,7 @@ class Recipient extends Model
     }
 
     /**
-     * Needed by `updatedEventDescriptionFor` in `Controller`
+     * Needed by `updatedEventDescriptionFor` in `Controller`.
      */
     public function getNameAttribute(): ?string
     {
