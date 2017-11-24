@@ -27,7 +27,7 @@
                             </a>
                         </td>
                         <td>
-                            {{ $recipient->form }}
+                            {{ config('forms.types')[$recipient->form] }}
                         </td>
                         <td>
                             {{ $recipient->email }}

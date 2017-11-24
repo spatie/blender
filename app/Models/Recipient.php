@@ -7,7 +7,7 @@ class Recipient extends Model
     public static function forForm(string $form): array
     {
         if (! app()->environment('production')) {
-            return config('mail.development_recipients');
+            return config('forms.development_recipients');
         }
 
         return static::where('form', $form)

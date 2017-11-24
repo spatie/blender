@@ -14,8 +14,7 @@ class RecipientsController extends Controller
 
     public function edit(int $id)
     {
-        $formTypes = config('mail.forms');
-        $formTypes = array_combine($formTypes, $formTypes);
+        $formTypes = config('forms.types');
 
         return parent::edit($id)->with(compact('formTypes'));
     }
