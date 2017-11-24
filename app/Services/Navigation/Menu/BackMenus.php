@@ -39,6 +39,7 @@ class BackMenus
                 ->add(Menu::moduleGroup('Modules')
                     ->module('FragmentsController@index', 'Fragments')
                     ->module('FormResponsesController@showDownloadButton', 'Responses')
+                    ->module('RecipientsController@index', 'Recipients')
                     ->module('TagsController@index', 'Tags'))
                 ->add(Menu::moduleGroup('Profiles')
                     ->module('MembersController@index', 'Members')
