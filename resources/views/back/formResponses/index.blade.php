@@ -5,14 +5,10 @@
         <div class="grid">
             <h1>Responses</h1>
 
-            {{ html()->info()->open() }}
-            @php($recipients = collect()->implode(', '))
+            @php($recipients = array_column(recipients('contactForm'), 'email'))
 
-            @if(! $recipients)
-                Responses aren't sent by mail because there are no recipients specified.
-            @else
-                Responses will be sent to {{ implode(', ', config('mail.recipients.questionForm')) }}.
-            @endif
+            {{ html()->info()->open() }}
+                Responses will be sent to {{ implode(', ', $recipients) }}.
             {{ html()->info()->close() }}
 
             <div class="form__group -buttons">
