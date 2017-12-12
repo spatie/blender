@@ -6,7 +6,7 @@
                 @if($download->type === $download::TYPE_OTHER)
                     Placeholder
                 @else
-                    <img src="{{ $download->getUrl('thumb') }}" alt="{{ $download->name }}" style="width: 100px;">
+                    <img src="{{ $download->getUrl('thumb') }}" alt="{{ $download->name }}" class="w-24">
                 @endif
             </a>
             <strong>{{ $download->name }}.{{ $download->extension }}</strong>

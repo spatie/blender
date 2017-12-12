@@ -2,7 +2,7 @@
     'title' => __('auth.resetPassword')
 ])
     <h1>
-        {{ html()->avatar($user, '-large') }} <br>
+        {{ html()->avatar($user) }} <br>
         {{ __('auth.resetPassword') }}
     </h1>
 
@@ -11,8 +11,8 @@
     {{ html()->hidden('token', $token) }}
     {{ html()->hidden('email', $user->email) }}
 
-    <div class="form__group">
-        <div class="alert--info">
+    <div class="form-group">
+        <div class="alert is-info">
             {{ __('auth.resetPasswordInstructions') }}
         </div>
     </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ locale() }}" class="js-viewport | html--stretched">
+<html lang="{{ locale() }}" data-viewport>
 @include('front._layouts._partials.hiddenCredits')
 <head>
     @include('front._layouts._partials.head.meta')
@@ -14,7 +14,6 @@
 </head>
 <body>
     @include('googletagmanager::script')
-    @include('front._layouts._partials.deprecatedBrowser')
 
     @include('front._layouts._partials.header')
     @include('front._layouts._partials.flashMessage')

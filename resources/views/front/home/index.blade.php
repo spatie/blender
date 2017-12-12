@@ -2,10 +2,6 @@
     'meta' => $article->meta(),
     'subMenu' => Menu::articleSiblings($article),
 ])
-    @slot('mainTitle')
-        <h1>{{ $article->name }}</h1>
-    @endslot
-
     @slot('mainImages')
         @if($cover = $article->getFirstMedia('images'))
             <div class="banner" style="background-image: url('{{ $cover->getUrl() }}')" alt="{{ $cover->name }}">

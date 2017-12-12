@@ -98,7 +98,7 @@ class FormGroup
     public function submit(string $value): Div
     {
         return $this->wrapper()->children([
-            $this->html->button($value, 'submit')->class('button--primary'),
+            $this->html->button($value, 'submit')->class('button'),
         ]);
     }
 

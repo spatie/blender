@@ -1,4 +1,4 @@
-<footer class="footer h-padding h-align-center">
+<footer class="p-8 bg-grey-light text-grey-dark">
     <section>
         <strong>{{ __('company.name') }}</strong> <br>
         {{ __('company.address') }} <br>
@@ -8,8 +8,6 @@
         <a href="mailto:{{ __('company.email') }}">{{ __('company.email') }}</a>
         {!! schema()->company() !!}
     </section>
-
-
     <small>
         © {{ date('Y') }} <a href="https://spatie.be">spatie.be webdesign, Antwerpen</a>
     </small>
