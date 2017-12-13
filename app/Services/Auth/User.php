@@ -49,7 +49,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
         return empty($this->password);
     }
 
-    public function registerLastActivity(): User
+    public function registerLastActivity(): self
     {
         $this->last_activity = Carbon::now();
 
