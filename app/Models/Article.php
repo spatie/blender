@@ -61,7 +61,7 @@ class Article extends Model implements Sortable
         return count($this->children);
     }
 
-    public function getFirstChildAttribute(): Article
+    public function getFirstChildAttribute(): self
     {
         if (! $this->hasChildren()) {
             throw new Exception("Article `{$this->id}` doesn't have any children.");
