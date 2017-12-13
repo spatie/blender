@@ -36,6 +36,5 @@
     @auth
         @include('back._layouts._partials.footer')
     @endauth
-    @yield('extraJs')
 </body>
 </html>
