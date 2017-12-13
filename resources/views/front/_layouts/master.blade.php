@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ locale() }}" class="js-viewport | html--stretched">
+<html lang="{{ locale() }}" data-viewport>
 @include('front._layouts._partials.hiddenCredits')
 <head>
     @include('front._layouts._partials.head.meta')
 
     <link rel="stylesheet" href="{{ mix('css/front.css') }}">
-    <script src="{{ mix('js/front.head.js') }}"></script>
+
+    <script defer src="{{ mix('js/front.app.js') }}"></script>
 
     @include('front._layouts._partials.head.seo')
     @include('front._layouts._partials.head.hreflang')
@@ -14,7 +15,6 @@
 </head>
 <body>
     @include('googletagmanager::script')
-    @include('front._layouts._partials.deprecatedBrowser')
 
     @include('front._layouts._partials.header')
     @include('front._layouts._partials.flashMessage')
@@ -24,6 +24,5 @@
     @include('cookieConsent::index')
     @include('front._layouts._partials.footer')
 
-    <script src="{{ mix('js/front.app.js') }}"></script>
 </body>
 </html>

@@ -1,4 +1,7 @@
 @charset 'UTF-8';
 
-@import 'normalize-css/normalize.css';
-@import 'dummy/dummy.css';
+@import "./bootstrap.css";
+@import "./components/*";
+@import "./utilities/*";
+
+@tailwind utilities;

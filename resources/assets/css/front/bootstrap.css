@@ -1,0 +1,38 @@
+@tailwind preflight;
+
+* {
+    position: relative;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+
+    &:after,
+    &:before {
+        box-sizing: inherit;
+    }
+}
+
+html {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: inherit; /* Reset normalize 2em */
+}
+
+a {
+    text-decoration: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img,
+svg {
+    display: block;
+    vertical-align: middle;
+}

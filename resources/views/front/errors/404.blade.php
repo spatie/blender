@@ -1,9 +1,8 @@
 @component('front._layouts.main', [
     'title' => __('error.title'),
 ])
-    @slot('mainTitle')
-        <h1>{{ __('error.title') }}</h1>
-    @endslot
+
+    <h1>{{ __('error.title') }}</h1>
     <p>
         {{ __('error.text404') }}
     </p>
