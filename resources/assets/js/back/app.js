@@ -1,5 +1,7 @@
 import 'babel-polyfill';
 
+window.jQuery = window.$ = require('jquery');
+
 require('@spatie/blender-js/modules/ajax.csrf');
 require('@spatie/blender-js/modules/interface.confirm');
 require('@spatie/blender-js/modules/form.input.datetimepicker');
