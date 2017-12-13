@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ mix('css/back.css') }}">
 
     <script src="{{ mix('js/back.head.js') }}"></script>
+    <script defer src="{{ mix('js/back.app.js') }}"></script>
 
     @include('front._layouts._partials.head.favicons')
 </head>
@@ -36,7 +37,6 @@
     @auth
         @include('back._layouts._partials.footer')
     @endauth
-    <script src="{{ mix('js/back.app.js') }}" defer></script>
     @yield('extraJs')
 </body>
 </html>
