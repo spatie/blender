@@ -4,4 +4,8 @@
 @import "./components/*";
 @import "./utilities/*";
 
+.foo {
+    color: red;
+}
+
 @tailwind utilities;
