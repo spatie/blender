@@ -52,7 +52,7 @@ class User extends BaseUser
         return $this->hasStatus(UserStatus::ACTIVE);
     }
 
-    public function activate(): User
+    public function activate(): self
     {
         if ($this->status !== UserStatus::WAITING_FOR_APPROVAL) {
             throw new UserIsAlreadyActivated();
