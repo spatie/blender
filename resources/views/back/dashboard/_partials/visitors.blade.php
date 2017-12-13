@@ -5,8 +5,6 @@
     <div class="chart__legend" id="daily-visitors-legend"></div>
 </blender-chart>
 
-@section('extraJs')
-@parent
 <script>
     window.chartData = {
             graphName : 'daily-visitors',
@@ -37,4 +35,3 @@
             }
     };
 </script>
-@stop
