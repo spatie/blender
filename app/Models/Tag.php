@@ -27,7 +27,7 @@ class Tag extends SpatieTag implements Sortable
         return $this->type === $type;
     }
 
-    public static function findOrCreate($name, string $type = null, string $locale = null): Tag
+    public static function findOrCreate($name, string $type = null, string $locale = null): self
     {
         if ($existingTag = parent::findFromString($name, $type, $locale)) {
             return $existingTag;
