@@ -55,7 +55,7 @@ Available build tasks are defined in `package.json`
 
 ### Customisation
 
-- Most of our projects are in Dutch. You can change the language in `config/app.php` and manage translations in `database/seeds/data/fragments.xlsx`
+- Most of our projects are in Dutch. You can change the language in `config/app.php`.
 - We use [Redactor](https://imperavi.com/redactor/) from Imperavi as text editor but are not licensed to open source this. The text editor is hence degraded to a standard text area unless you comment out this part in `resources/assets/back/app.js`
 
 ## Colofon
