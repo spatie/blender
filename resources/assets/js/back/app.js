@@ -30,8 +30,8 @@ if (query('blender-chart')) {
     }, 'back.chart');
 }
 
-if (query('[data-editor]')) {
-    require.ensure([], () => {
-        require('./modules/editor').default();
-    }, 'back.editor');
-}
+// if (query('[data-editor]')) {
+//     require.ensure([], () => {
+//         require('./modules/editor').default();
+//     }, 'back.editor');
+// }
