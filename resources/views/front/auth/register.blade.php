@@ -35,6 +35,7 @@
     </div>
 
     {{ html()->formGroup()->text('country', __('auth.country')) }}
+ 
     {{ html()->formGroup()->text('telephone', __('auth.telephone')) }}
 
     {{ html()->formGroup()->submit(__('auth.register')) }}

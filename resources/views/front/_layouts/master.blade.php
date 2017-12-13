@@ -5,7 +5,8 @@
     @include('front._layouts._partials.head.meta')
 
     <link rel="stylesheet" href="{{ mix('css/front.css') }}">
-    <script src="{{ mix('js/front.head.js') }}"></script>
+
+    <script defer src="{{ mix('js/front.app.js') }}"></script>
 
     @include('front._layouts._partials.head.seo')
     @include('front._layouts._partials.head.hreflang')
@@ -23,6 +24,5 @@
     @include('cookieConsent::index')
     @include('front._layouts._partials.footer')
 
-    <script src="{{ mix('js/front.app.js') }}"></script>
 </body>
 </html>
