@@ -13,7 +13,7 @@ trait CreatesApplication
 
         $app->make(Kernel::class)->bootstrap();
 
-        $app->make(Hasher::class)->setRounds(5);
+        $app->make(Hasher::class)->setRounds(4);
 
         return $app;
     }
