@@ -106,11 +106,11 @@ class RouteServiceProvider extends ServiceProvider
             /*
              * Mails
              */
-            Route::prefix('mails')->group(function () {
-                if (app()->environment('local')) {
+            if (app()->environment('local')) {
+                Route::prefix('mails')->group(function () {
                     require base_path('routes/mails.php');
-                }
-            });
+                });
+            }
         });
     }
 }
