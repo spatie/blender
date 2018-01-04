@@ -102,6 +102,15 @@ class RouteServiceProvider extends ServiceProvider
                         Route::fallback('NotFoundController');
                     });
                 });
+
+            /*
+             * Mails
+             */
+            Route::prefix('mails')->group(function () {
+                if (app()->environment('local')) {
+                    require base_path('routes/mails.php');
+                }
+            });
         });
     }
 }
