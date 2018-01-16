@@ -13,13 +13,16 @@ mix
     .version()
 
     .options({
+        // Our own set of PostCSS plugins.
+        postCss: [
+            require('postcss-easy-import')(),
+            require('tailwindcss')('./tailwind.js'),
+            require('postcss-cssnext')(),
+        ],
+
         // CSSNext already processes our css with Autoprefixer, so we don't
         // need mix to do it twice.
         autoprefixer: false,
-
-        // Our PostCSS plugins are defined in a standard `postcss.config.js`
-        // file, which we'll read for plugins.
-        postCss: require('./postcss.config').plugins,
 
         // Since we don't do any image preprocessing and write url's that are
         // relative to the site root, we don't want the css loader to try to
