@@ -32,7 +32,7 @@
     "postcss-cssnext": "^3.0.2",
     "postcss-easy-import": "^3.0.0",
     "prettier": "^1.10.2",
-    "purgecss-webpack-plugin": "^0.14.0",
+    "purgecss-webpack-plugin": "^0.18.0",
     "spatie-dom": "^1.0.0",
     "tailwindcss": "^0.4.0",
     "viewport-utility": "^1.2.2",
