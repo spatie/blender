@@ -15,7 +15,7 @@
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "lint": "prettier --write \"**/*.{css,js,vue}\""
+    "format": "prettier --write \"**/*.{css,js,vue}\""
   },
   "dependencies": {
     "@spatie/blender-content-blocks": "^2.0.1",
