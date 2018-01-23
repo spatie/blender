@@ -170,7 +170,3 @@ sudo service php7.1-fpm restart
 php artisan horizon:terminate
 sudo supervisorctl restart all
 @endtask
-
-@finished
-    @slack(env('SLACK_DEPLOYMENT_WEBHOOK_URL'), '#deployments', "{$server}: {$baseDir} release {$newReleaseName} by {$user}")
-@endfinished
