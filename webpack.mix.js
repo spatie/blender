@@ -1,7 +1,6 @@
-const path = require('path');
-const glob = require('glob-all');
 const { mix } = require('laravel-mix');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+
+require('laravel-mix-purgecss');
 
 mix
     .js('resources/assets/js/front/app.js', 'public/js/front.app.js')
@@ -30,10 +29,14 @@ mix
         processCssUrls: false,
     })
 
-    .webpackConfig(() => {
-        const config = {};
+    .babelConfig({
+        plugins: [
+            'syntax-dynamic-import',
+        ],
+    })
 
-        config.output = {
+    .webpackConfig({
+        output: {
             // The public path needs to be set to the root of the site so
             // Webpack can locate chunks at runtime.
             publicPath: '/',
@@ -41,30 +44,10 @@ mix
             // We'll place all chunks in the `js` folder by default so we don't
             // need to worry about ignoring them in our version control system.
             chunkFilename: 'js/[name].js',
-        };
+        },
+    })
 
-        if (mix.inProduction()) {
-            config.plugins = [new PurgecssPlugin({
-                    paths: glob.sync([
-                        path.join(__dirname, 'app/**/*.php'),
-                        path.join(__dirname, 'resources/views/**/*.blade.php'),
-                        path.join(__dirname, 'resources/assets/js/**/*.vue'),
-                        path.join(__dirname, 'resources/assets/js/**/*.js'),
-                        path.join(__dirname, 'vendor/spatie/menu/**/*.php'),
-                    ]),
-                    extractors: [
-                        {
-                            extractor: class {
-                                static extract(content) {
-                                    return content.match(/[A-z0-9-:\/]+/g) || [];
-                                }
-                            },
-                            extensions: ['html', 'js', 'php', 'scss', 'vue'],
-                        },
-                    ],
-                    only: ['css/front.css'],
-                })];
-        }
-
-        return config;
+    .purgeCss({
+        only: ['css/front.css'],
+        whitelistPatterns: [/active/],
     });
