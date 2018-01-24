@@ -1,5 +1,5 @@
 {
-  "name": "Blender",
+  "name": "blender",
   "private": true,
   "license": "MIT",
   "authors": [
@@ -15,38 +15,28 @@
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "lint": "eslint resources/assets/js --ext .js,.vue --fix && exit 0",
-    "lint-css": "stylelint \"resources/assets/css/**/*.css\" --fix"
+    "format": "prettier --write \"**/*.{css,js,vue}\" && composer fix-cs"
   },
   "dependencies": {
     "@spatie/blender-content-blocks": "^2.0.1",
     "@spatie/blender-css": "^5.0.3",
     "@spatie/blender-js": "^1.4.0",
     "@spatie/blender-media": "^3.3.1",
-    "babel-plugin-transform-object-rest-spread": "^6.20.2",
-    "babel-polyfill": "^6.16.0",
-    "babel-preset-env": "^1.1.8",
-    "chart.js": "^1.0.2",
-    "eslint": "^3.7.1",
-    "eslint-config-spatie": "^1.2.7",
-    "glob-all": "^3.1.0",
-    "jquery": "^3.0.0",
-    "laravel-mix": "^1.4",
-    "lodash": "^4.16.6",
-    "postcss-cssnext": "^3.0.2",
-    "postcss-easy-import": "^2.1.0",
-    "purgecss-webpack-plugin": "^0.14.0",
-    "spatie-dom": "^1.0.0",
-    "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0",
-    "tailwindcss": "^0.3.0",
-    "viewport-utility": "^1.2.2",
-    "vue": "^2.1.0",
-    "vue-table-component": "^1.4.3",
-    "vue-tabs-component": "^1.1.0"
-  },
-  "devDependencies": {
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "jest": "^20.0.1"
+    "babel-polyfill": "^6.16.0",
+    "caniuse-lite": "^1.0.30000697",
+    "chart.js": "^1.0.2",
+    "jquery": "^3.0.0",
+    "laravel-mix": "^2.0.0",
+    "laravel-mix-purgecss": "^1.0.0",
+    "lodash": "^4.16.6",
+    "object-fit-images": "^3.2.3",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-easy-import": "^3.0.0",
+    "prettier": "^1.10.2",
+    "spatie-dom": "^1.0.0",
+    "tailwindcss": "^0.4.0",
+    "viewport-utility": "^1.2.2",
+    "vue": "^2.5.0"
   }
 }
