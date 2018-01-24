@@ -4310,15 +4310,15 @@ known-css-properties@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.2.0.tgz#899c94be368e55b42d7db8d5be7d73a4a4a41454"
 
-laravel-mix-purgecss@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/laravel-mix-purgecss/-/laravel-mix-purgecss-0.3.0.tgz#7cf3ff4a779db422e13f1dad880d27556aefc990"
+laravel-mix-purgecss@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/laravel-mix-purgecss/-/laravel-mix-purgecss-1.0.0.tgz#e85de36429b1eca4923bf1cf095b6c6c91f5589c"
   dependencies:
     glob-all "^3.0.0"
     lodash "^4.0.0"
     purgecss-webpack-plugin "^0.19.0"
 
-laravel-mix@^2.0:
+laravel-mix@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-2.0.0.tgz#f688836a0b69da9901c9a53f3b54dc6a4bf77e2c"
   dependencies:
