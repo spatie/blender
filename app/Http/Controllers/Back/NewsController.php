@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    protected $modelName = 'Article';
+    protected $modelName = 'NewsItem';
 
     protected function make(): NewsItem
     {
