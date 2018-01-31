@@ -198,3 +198,8 @@ function validate($fields, $rules): bool
 
     return Validator::make($fields, $rules)->passes();
 }
+
+function class_has_trait(string $className, string $traitName): bool
+{
+    return in_array($traitName, class_uses_recursive($className));
+}
