@@ -199,7 +199,11 @@ function validate($fields, $rules): bool
     return Validator::make($fields, $rules)->passes();
 }
 
-function class_has_trait(string $className, string $traitName): bool
+function class_has_trait($className, string $traitName): bool
 {
+    if (is_object($className)) {
+        $className = get_class($className);
+    }
+
     return in_array($traitName, class_uses_recursive($className));
 }
