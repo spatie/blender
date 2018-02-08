@@ -78,7 +78,8 @@
         "sensiolabs/security-checker": "^4.1",
         "symfony/css-selector": "~3.0",
         "symfony/dom-crawler": "~3.0",
-        "themsaid/laravel-mail-preview": "^2.0"
+        "themsaid/laravel-mail-preview": "^2.0",
+        "nunomaduro/collision": "~1.1"
     },
     "autoload": {
         "classmap": [
