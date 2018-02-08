@@ -32,9 +32,9 @@ class User extends BaseUser
         return action('Back\AdministratorsController@edit', $this->id);
     }
 
-    public function getStatusAttribute(): string
+    public function getStatusAttribute(): UserStatus
     {
-        return new UserStatus($this->attributes['status']);
+        return (new UserStatus($this->attributes['status']));
     }
 
     public function setStatusAttribute(string $status)

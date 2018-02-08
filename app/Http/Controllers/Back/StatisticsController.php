@@ -35,11 +35,11 @@ class StatisticsController
         return view(
             'back.statistics.index',
             compact(
-            'visitors',
-            'pages',
-            'referrers',
-            'browsers'
-        )
+                'visitors',
+                'pages',
+                'referrers',
+                'browsers'
+            )
         );
     }
 }
