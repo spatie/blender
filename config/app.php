@@ -200,7 +200,6 @@ return [
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
         Propaganistas\LaravelPhone\LaravelPhoneServiceProvider::class,
         Spatie\BladeJavaScript\BladeJavaScriptServiceProvider::class,
         Spatie\CookieConsent\CookieConsentServiceProvider::class,
