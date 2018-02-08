@@ -2,5 +2,5 @@
 
 return [
     'version' => '5.6.0',
-    'installDate' => '09/2017',
+    'installDate' => '02/2018',
 ];
