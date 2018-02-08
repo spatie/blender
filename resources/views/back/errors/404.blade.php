@@ -1,4 +1,4 @@
-@component('back._layouts.master', [
+@component('back._layouts.app', [
     'title' => 'Page not found',
 ])
     <h1>Something went wrong</h1>

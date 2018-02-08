@@ -1,4 +1,4 @@
-@component('back._layouts.master', [
+@component('back._layouts.app', [
     'title' => 'News',
     'breadcrumbs' => html()->backToIndex('Back\NewsController@index'),
 ])

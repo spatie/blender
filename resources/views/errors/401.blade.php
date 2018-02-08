@@ -1,4 +1,4 @@
-@component('front._layouts.master', [
+@component('front._layouts.app', [
     'title' => __('error.title'),
 ])
     @slot('mainTitle')

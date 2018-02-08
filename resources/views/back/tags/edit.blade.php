@@ -1,4 +1,4 @@
-@component('back._layouts.master', [
+@component('back._layouts.app', [
     'title' => 'Tags',
     'breadcrumbs' => html()->backToIndex('Back\TagsController@index'),
 ])

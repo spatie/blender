@@ -1,4 +1,4 @@
-@component('back._layouts.master', [
+@component('back._layouts.app', [
     'title' => 'Edit fragment',
     'breadcrumbs' => html()->backToIndex('Back\FragmentsController@index'),
 ])
