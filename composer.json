@@ -74,7 +74,7 @@
         "friendsofphp/php-cs-fixer": "^2.0",
         "graham-campbell/analyzer": "^1.1",
         "mockery/mockery": "^0.9.4",
-        "phpunit/phpunit": "~5.0",
+        "phpunit/phpunit": "^7.0",
         "sensiolabs/security-checker": "^4.1",
         "symfony/css-selector": "~3.0",
         "symfony/dom-crawler": "~3.0",

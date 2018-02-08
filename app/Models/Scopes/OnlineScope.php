@@ -11,7 +11,7 @@ class OnlineScope implements Scope
 {
     public function apply(Builder $builder, Model $model)
     {
-        if ($model instanceof Draftable) {
+        if (class_has_trait($model, Draftable::class)) {
             $builder->where('online', true);
         }
     }
