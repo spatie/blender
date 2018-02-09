@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\Auth\Back\User as BackUser;
-use App\Services\Auth\Front\User as FrontUser;
+use App\Models\Administrator;
+use App\Models\User;
 use Closure;
 use Exception;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -66,9 +66,9 @@ class LoginAs
         }
 
         if (request()->isBack()) {
-            return BackUser::where(['email' => $identifier])->first();
+            return Administrator::where(['email' => $identifier])->first();
         }
 
-        return FrontUser::where(['email' => $identifier])->first();
+        return User::where(['email' => $identifier])->first();
     }
 }

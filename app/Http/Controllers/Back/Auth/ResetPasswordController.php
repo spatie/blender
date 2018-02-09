@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Back\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Services\Auth\Back\User;
+use App\Models\Administrator;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,7 +35,7 @@ class ResetPasswordController extends Controller
      */
     public function showResetForm(Request $request, $token = null)
     {
-        if (! $user = User::where('email', $request->email)->first()) {
+        if (! $user = Administrator::where('email', $request->email)->first()) {
             flash()->error(__('passwords.token'));
 
             return redirect()->to(route('back.login'));

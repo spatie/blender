@@ -23,7 +23,7 @@ function content_locale(): string
 }
 
 /**
- * @return \App\Services\Auth\Back\User|\App\Services\Auth\Front\User|null
+ * @return \App\Models\Administrator|\App\Models\User|null
  *
  * @throws \Exception
  */
@@ -37,7 +37,7 @@ function current_user(): ?User
         return auth()->guard('back')->user();
     }
 
-    throw new Exception('Coud not determine current user');
+    throw new Exception('Could not determine current user');
 }
 
 function diff_date_for_humans(Carbon $date) : string

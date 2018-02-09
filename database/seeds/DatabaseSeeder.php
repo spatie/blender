@@ -10,8 +10,8 @@ class DatabaseSeeder extends Seeder
 
         Cache::flush();
 
-        $this->call(BackUserSeeder::class);
-        $this->call(FrontUserSeeder::class);
+        $this->call(AdministratorSeeder::class);
+        $this->call(UserSeeder::class);
         $this->call(FragmentSeeder::class);
         $this->call(TagSeeder::class);
         $this->call(ArticleSeeder::class);

@@ -2,7 +2,7 @@
 
 namespace App\Services\Auth\Back\Mail;
 
-use App\Services\Auth\Back\User;
+use App\Models\Administrator;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,7 +12,7 @@ class ResetPassword extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    /** @var \App\Services\Auth\Back\User */
+    /** @var \App\Models\Administrator */
     public $user;
 
     /** @var string */
@@ -21,10 +21,10 @@ class ResetPassword extends Mailable implements ShouldQueue
     /**
      * Create a new message instance.
      *
-     * @param \App\Services\Auth\Back\User $user
-     * @param string                       $token
+     * @param \App\Models\Administrator $user
+     * @param string                    $token
      */
-    public function __construct(User $user, string $token)
+    public function __construct(Administrator $user, string $token)
     {
         $this->user = $user;
 

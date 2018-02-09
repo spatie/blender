@@ -1,40 +1,70 @@
 <?php
 
-namespace App\Services\Auth\Back;
+namespace App\Models;
 
-use App\Services\Auth\Back\Enums\UserRole;
-use App\Services\Auth\Back\Enums\UserStatus;
-use App\Services\Auth\Back\Exceptions\UserIsAlreadyActivated;
-use App\Services\Auth\Back\Mail\ResetPassword;
+use App\Services\Auth\Front\Enums\UserRole;
+use App\Services\Auth\Front\Enums\UserStatus;
+use App\Services\Auth\Front\Events\UserRegistered;
+use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
+use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\User as BaseUser;
 use Illuminate\Support\Facades\Mail;
 
 /**
- * @property \App\Services\Auth\Back\Enums\UserRole $role
- * @property \App\Services\Auth\Back\Enums\UserStatus $status
+ * @property string $address
+ * @property string $postal
+ * @property string $city
+ * @property string $country
+ * @property string $telephone
+ * @property \App\Services\Auth\Front\Enums\UserRole $role
+ * @property \App\Services\Auth\Front\Enums\UserStatus $status
  */
 class User extends BaseUser
 {
-    protected $table = 'users_back';
+    protected $table = 'users_front';
+
+    public static function register(array $input): self
+    {
+        $defaults = [
+            'role' => UserRole::MEMBER,
+            'status' => UserStatus::ACTIVE,
+        ];
+
+        $user = static::create($defaults + array_only($input, [
+            'first_name',
+            'last_name',
+            'address',
+            'postal',
+            'city',
+            'country',
+            'telephone',
+            'email',
+            'password',
+        ]));
+
+        event(new UserRegistered($user));
+
+        return $user;
+    }
 
     public function guardDriver(): string
     {
-        return 'back';
+        return 'front';
     }
 
     public function getHomeUrl(): string
     {
-        return url('blender');
+        return url('/');
     }
 
     public function getProfileUrl(): string
     {
-        return action('Back\AdministratorsController@edit', $this->id);
+        return url('/');
     }
 
-    public function getStatusAttribute(): UserStatus
+    public function getStatusAttribute(): string
     {
-        return new UserStatus($this->attributes['status']);
+        return $this->attributes['status'];
     }
 
     public function setStatusAttribute(string $status)
@@ -73,7 +103,7 @@ class User extends BaseUser
         $this->attributes['role'] = $role;
     }
 
-    public function hasRole(UserRole $role): bool
+    public function hasRole($role): bool
     {
         return $this->role === $role;
     }
@@ -86,14 +116,5 @@ class User extends BaseUser
     public function sendPasswordResetNotification($token)
     {
         Mail::to($this->email)->send(new ResetPassword($this, $token));
-    }
-
-    public function delete()
-    {
-        if (current_user() && current_user()->id === $this->id) {
-            abort(406);
-        }
-
-        return parent::delete();
     }
 }

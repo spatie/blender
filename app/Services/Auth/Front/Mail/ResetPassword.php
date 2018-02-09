@@ -2,7 +2,7 @@
 
 namespace App\Services\Auth\Front\Mail;
 
-use App\Services\Auth\Front\User;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,7 +12,7 @@ class ResetPassword extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    /** @var \App\Services\Auth\Back\User */
+    /** @var \App\Models\User */
     public $user;
 
     /** @var string */

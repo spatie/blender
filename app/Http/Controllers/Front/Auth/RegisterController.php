@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Front\Auth;
 
+use App\Models\User;
 use App\Http\Controllers\Controller;
-use App\Services\Auth\Front\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;

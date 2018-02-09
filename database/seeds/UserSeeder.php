@@ -1,10 +1,10 @@
 <?php
 
+use App\Models\User;
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
-use App\Services\Auth\Front\User;
 
-class FrontUserSeeder extends DatabaseSeeder
+class UserSeeder extends DatabaseSeeder
 {
     public function run()
     {
@@ -20,7 +20,7 @@ class FrontUserSeeder extends DatabaseSeeder
         ])->each(function ($name) {
             [$firstName, $lastName] = $name;
 
-            $this->createFrontUser([
+            $this->createUser([
                 'first_name' => $firstName,
                 'last_name' => $lastName,
                 'email' => strtolower($firstName).'@spatie.be',
@@ -30,11 +30,11 @@ class FrontUserSeeder extends DatabaseSeeder
         });
 
         collect()->range(0, 10)->each(function () {
-            $this->createFrontUser();
+            $this->createUser();
         });
     }
 
-    public function createFrontUser(array $attributes = []): User
+    public function createUser(array $attributes = []): User
     {
         $person = faker()->person();
 

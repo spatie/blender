@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Models\User;
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack;
-use App\Services\Auth\Front\User;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;

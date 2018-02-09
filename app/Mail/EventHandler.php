@@ -3,7 +3,7 @@
 namespace App\Mail;
 
 use App\Mail\Member\Welcome;
-use App\Services\Auth\Back\Events\UserCreated as BackUserCreated;
+use App\Services\Auth\Back\Events\UserCreated as AdministratorCreated;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack as FrontUserCreatedThroughBack;
 use App\Services\Auth\Front\Events\UserRegistered as FrontUserRegistered;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -25,7 +25,7 @@ class EventHandler
             });
         });
 
-        $events->listen(BackUserCreated::class, function (BackUserCreated $event) {
+        $events->listen(AdministratorCreated::class, function (AdministratorCreated $event) {
             Password::broker('back')->sendResetLink(['email' => $event->user->email], function (Message $message) {
                 $message->subject('Welkom bij '.config('app.url'));
             });
