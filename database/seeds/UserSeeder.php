@@ -1,8 +1,7 @@
 <?php
 
 use App\Models\User;
-use App\Services\Auth\Front\Enums\UserRole;
-use App\Services\Auth\Front\Enums\UserStatus;
+use App\Services\Auth\User as BaseUser;
 
 class UserSeeder extends DatabaseSeeder
 {
@@ -46,8 +45,8 @@ class UserSeeder extends DatabaseSeeder
 
             'locale' => 'nl',
 
-            'role' => UserRole::MEMBER,
-            'status' => UserStatus::ACTIVE,
+            'role' => BaseUser::ROLE_MEMBER,
+            'status' => BaseUser::ROLE_ACTIVE,
 
             'address' => faker()->address,
             'postal' => faker()->postcode,

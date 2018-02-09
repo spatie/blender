@@ -2,6 +2,7 @@
 
 namespace App\Services\Auth;
 
+use App\Models\Presenters\UserPresenter;
 use Carbon\Carbon;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -28,6 +29,11 @@ use Illuminate\Notifications\Notifiable;
 abstract class User extends Model implements AuthenticatableContract, CanResetPasswordContract, AuthorizableContract
 {
     use Authenticatable, CanResetPassword, Authorizable, Notifiable, UserPresenter;
+
+    const ROLE_MEMBER = 'member';
+    const ROLE_ADMIN = 'admin';
+
+    const STATUS_WAITING_FOR_APPROVAL = 'waiting_for_approval';
 
     protected $guarded = ['id'];
     protected $hidden = ['password', 'remember_token'];
@@ -77,5 +83,15 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     public static function findByEmail(string $email)
     {
         return static::where('email', $email)->first();
+    }
+
+    /**
+     * @param string $role
+     *
+     * @return boolean
+     */
+    public function hasRole(string $role): bool
+    {
+        return $this->role === $role;
     }
 }

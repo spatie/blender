@@ -1,8 +1,7 @@
 <?php
 
 use App\Models\Administrator;
-use App\Services\Auth\Back\Enums\UserRole;
-use App\Services\Auth\Back\Enums\UserStatus;
+use App\Services\Auth\User as BaseUser;
 
 class AdministratorSeeder extends DatabaseSeeder
 {
@@ -26,8 +25,8 @@ class AdministratorSeeder extends DatabaseSeeder
                 'last_name' => $lastName,
                 'email' => strtolower($firstName).'@spatie.be',
                 'password' => bcrypt(strtolower($firstName)),
-                'role' => UserRole::ADMIN,
-                'status' => UserStatus::ACTIVE,
+                'role' => BaseUser::ROLE_ADMIN,
+                'status' => BaseUser::STATUS_ACTIVE,
             ]);
         });
     }
@@ -42,8 +41,8 @@ class AdministratorSeeder extends DatabaseSeeder
             'email' => $person['email'],
             'password' => faker()->password,
 
-            'role' => UserRole::ADMIN,
-            'status' => UserStatus::ACTIVE,
+            'role' => BaseUser::ROLE_ADMIN,
+            'status' => BaseUser::ROLE_ACTIVE,
         ]);
     }
 }

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\Administrator;
-use App\Services\Auth\Back\Enums\UserRole;
-use App\Services\Auth\Back\Enums\UserStatus;
+use App\Services\Auth\User as BaseUser;
 use App\Services\Auth\Back\Events\UserCreated;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -40,8 +39,8 @@ class AdministratorsController
             $user->password = bryct($request->get('password'));
         }
 
-        $user->role = UserRole::ADMIN;
-        $user->status = UserStatus::ACTIVE;
+        $user->role = BaseUser::ROLE_ADMIN;
+        $user->status = BaseUser::STATUS_ACTIVE;
 
         $user->save();
 

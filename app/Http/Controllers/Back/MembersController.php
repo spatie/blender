@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Back;
 
 use App\Models\User;
-use App\Services\Auth\Front\Enums\UserRole;
-use App\Services\Auth\Front\Enums\UserStatus;
+use App\Services\Auth\User as BaseUser;
 use App\Services\Auth\Front\Events\UserCreatedThroughBack;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
@@ -37,8 +36,8 @@ class MembersController
         $user->last_name = $request->get('last_name');
         $user->locale = $request->get('locale', 'nl');
 
-        $user->role = UserRole::MEMBER;
-        $user->status = UserStatus::ACTIVE;
+        $user->role = BaseUser::ROLE_MEMBER;
+        $user->status = BaseUser::ROLE_ACTIVE;
 
         $user->save();
 
