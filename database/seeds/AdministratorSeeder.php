@@ -42,7 +42,7 @@ class AdministratorSeeder extends DatabaseSeeder
             'password' => faker()->password,
 
             'role' => BaseUser::ROLE_ADMIN,
-            'status' => BaseUser::ROLE_ACTIVE,
+            'status' => BaseUser::STATUS_ACTIVE,
         ]);
     }
 }

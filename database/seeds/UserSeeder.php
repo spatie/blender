@@ -24,7 +24,7 @@ class UserSeeder extends DatabaseSeeder
                 'last_name' => $lastName,
                 'email' => strtolower($firstName).'@spatie.be',
                 'password' => bcrypt(strtolower($firstName)),
-                'status' => UserStatus::ACTIVE,
+                'status' => BaseUser::STATUS_ACTIVE,
             ]);
         });
 
@@ -46,7 +46,7 @@ class UserSeeder extends DatabaseSeeder
             'locale' => 'nl',
 
             'role' => BaseUser::ROLE_MEMBER,
-            'status' => BaseUser::ROLE_ACTIVE,
+            'status' => BaseUser::STATUS_ACTIVE,
 
             'address' => faker()->address,
             'postal' => faker()->postcode,

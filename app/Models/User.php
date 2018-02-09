@@ -25,7 +25,7 @@ class User extends BaseUser
     {
         $defaults = [
             'role' => BaseUser::ROLE_MEMBER,
-            'status' => BaseUser::ROLE_ACTIVE,
+            'status' => BaseUser::STATUS_ACTIVE,
         ];
 
         $user = static::create($defaults + array_only($input, [

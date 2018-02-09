@@ -37,7 +37,7 @@ class MembersController
         $user->locale = $request->get('locale', 'nl');
 
         $user->role = BaseUser::ROLE_MEMBER;
-        $user->status = BaseUser::ROLE_ACTIVE;
+        $user->status = BaseUser::STATUS_ACTIVE;
 
         $user->save();
 

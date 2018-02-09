@@ -33,6 +33,7 @@ abstract class User extends Model implements AuthenticatableContract, CanResetPa
     const ROLE_MEMBER = 'member';
     const ROLE_ADMIN = 'admin';
 
+    const STATUS_ACTIVE = 'active';
     const STATUS_WAITING_FOR_APPROVAL = 'waiting_for_approval';
 
     protected $guarded = ['id'];
