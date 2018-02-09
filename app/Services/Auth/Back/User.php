@@ -34,7 +34,7 @@ class User extends BaseUser
 
     public function getStatusAttribute(): UserStatus
     {
-        return (new UserStatus($this->attributes['status']));
+        return new UserStatus($this->attributes['status']);
     }
 
     public function setStatusAttribute(string $status)
