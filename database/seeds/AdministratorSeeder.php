@@ -1,14 +1,13 @@
 <?php
 
-use App\Services\Auth\Back\Enums\UserRole;
-use App\Services\Auth\Back\Enums\UserStatus;
-use App\Services\Auth\Back\User;
+use App\Models\Administrator;
+use App\Services\Auth\User as BaseUser;
 
-class BackUserSeeder extends DatabaseSeeder
+class AdministratorSeeder extends DatabaseSeeder
 {
     public function run()
     {
-        $this->truncate((new User())->getTable());
+        $this->truncate((new Administrator())->getTable());
 
         collect([
             ['Alex', 'Vanderbist'],
@@ -21,29 +20,29 @@ class BackUserSeeder extends DatabaseSeeder
         ])->each(function ($name) {
             [$firstName, $lastName] = $name;
 
-            $this->createBackUser([
+            $this->createAdministrator([
                 'first_name' => $firstName,
                 'last_name' => $lastName,
                 'email' => strtolower($firstName).'@spatie.be',
                 'password' => bcrypt(strtolower($firstName)),
-                'role' => UserRole::ADMIN,
-                'status' => UserStatus::ACTIVE,
+                'role' => BaseUser::ROLE_ADMIN,
+                'status' => BaseUser::STATUS_ACTIVE,
             ]);
         });
     }
 
-    public function createBackUser(array $attributes = []): User
+    public function createAdministrator(array $attributes = []): Administrator
     {
         $person = faker()->person();
 
-        return User::create($attributes + [
+        return Administrator::create($attributes + [
             'first_name' => $person['firstName'],
             'last_name' => $person['lastName'],
             'email' => $person['email'],
             'password' => faker()->password,
 
-            'role' => UserRole::ADMIN,
-            'status' => UserStatus::ACTIVE,
+            'role' => BaseUser::ROLE_ADMIN,
+            'status' => BaseUser::STATUS_ACTIVE,
         ]);
     }
 }

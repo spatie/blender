@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Services\Auth\Front;
+namespace App\Models;
 
-use App\Services\Auth\Front\Enums\UserRole;
-use App\Services\Auth\Front\Enums\UserStatus;
+use App\Mail\Member\ResetPassword;
 use App\Services\Auth\Front\Events\UserRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
-use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\User as BaseUser;
 use Illuminate\Support\Facades\Mail;
 
@@ -16,8 +14,8 @@ use Illuminate\Support\Facades\Mail;
  * @property string $city
  * @property string $country
  * @property string $telephone
- * @property \App\Services\Auth\Front\Enums\UserRole $role
- * @property \App\Services\Auth\Front\Enums\UserStatus $status
+ * @property string $role
+ * @property string $status
  */
 class User extends BaseUser
 {
@@ -26,8 +24,8 @@ class User extends BaseUser
     public static function register(array $input): self
     {
         $defaults = [
-            'role' => UserRole::MEMBER,
-            'status' => UserStatus::ACTIVE,
+            'role' => BaseUser::ROLE_MEMBER,
+            'status' => BaseUser::STATUS_ACTIVE,
         ];
 
         $user = static::create($defaults + array_only($input, [
@@ -62,16 +60,6 @@ class User extends BaseUser
         return url('/');
     }
 
-    public function getStatusAttribute(): string
-    {
-        return $this->attributes['status'];
-    }
-
-    public function setStatusAttribute(string $status)
-    {
-        $this->attributes['status'] = $status;
-    }
-
     public function hasStatus(string $status): bool
     {
         return $this->status === $status;
@@ -79,33 +67,18 @@ class User extends BaseUser
 
     public function isActive(): bool
     {
-        return $this->hasStatus(UserStatus::ACTIVE);
+        return $this->hasStatus(BaseUser::STATUS_ACTIVE);
     }
 
     public function activate(): self
     {
-        if ($this->status !== UserStatus::WAITING_FOR_APPROVAL) {
+        if ($this->status !== BaseUser::STATUS_WAITING_FOR_APPROVAL) {
             throw new UserIsAlreadyActivated();
         }
 
-        $this->status = UserStatus::ACTIVE;
+        $this->status = BaseUser::STATUS_ACTIVE;
 
         return $this;
-    }
-
-    public function getRoleAttribute(): string
-    {
-        return $this->attributes['role'];
-    }
-
-    public function setRoleAttribute(string $role)
-    {
-        $this->attributes['role'] = $role;
-    }
-
-    public function hasRole($role): bool
-    {
-        return $this->role === $role;
     }
 
     /**

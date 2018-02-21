@@ -1,10 +1,9 @@
 <?php
 
-use App\Services\Auth\Front\Enums\UserRole;
-use App\Services\Auth\Front\Enums\UserStatus;
-use App\Services\Auth\Front\User;
+use App\Models\User;
+use App\Services\Auth\User as BaseUser;
 
-class FrontUserSeeder extends DatabaseSeeder
+class UserSeeder extends DatabaseSeeder
 {
     public function run()
     {
@@ -20,21 +19,21 @@ class FrontUserSeeder extends DatabaseSeeder
         ])->each(function ($name) {
             [$firstName, $lastName] = $name;
 
-            $this->createFrontUser([
+            $this->createUser([
                 'first_name' => $firstName,
                 'last_name' => $lastName,
                 'email' => strtolower($firstName).'@spatie.be',
                 'password' => bcrypt(strtolower($firstName)),
-                'status' => UserStatus::ACTIVE,
+                'status' => BaseUser::STATUS_ACTIVE,
             ]);
         });
 
         collect()->range(0, 10)->each(function () {
-            $this->createFrontUser();
+            $this->createUser();
         });
     }
 
-    public function createFrontUser(array $attributes = []): User
+    public function createUser(array $attributes = []): User
     {
         $person = faker()->person();
 
@@ -46,8 +45,8 @@ class FrontUserSeeder extends DatabaseSeeder
 
             'locale' => 'nl',
 
-            'role' => UserRole::MEMBER,
-            'status' => UserStatus::ACTIVE,
+            'role' => BaseUser::ROLE_MEMBER,
+            'status' => BaseUser::STATUS_ACTIVE,
 
             'address' => faker()->address,
             'postal' => faker()->postcode,

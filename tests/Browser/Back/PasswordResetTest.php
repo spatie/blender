@@ -2,7 +2,7 @@
 
 namespace Tests\Browser\Back;
 
-use App\Services\Auth\Back\User;
+use App\Models\Administrtor;
 use Hash;
 use Laravel\Dusk\Browser;
 use Tests\Browser\TestCase;
@@ -26,7 +26,7 @@ class PasswordResetTest extends TestCase
     {
         $newPassword = 'newpassword';
 
-        $user = User::create([
+        $user = Administrtor::create([
             'email' => 'test@example.com',
             'first_name' => 'Test',
             'last_name' => 'Test',

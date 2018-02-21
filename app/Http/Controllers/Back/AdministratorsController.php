@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Services\Auth\Back\Enums\UserRole;
-use App\Services\Auth\Back\Enums\UserStatus;
+use App\Models\Administrator;
+use App\Services\Auth\User as BaseUser;
 use App\Services\Auth\Back\Events\UserCreated;
-use App\Services\Auth\Back\User;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -16,21 +15,21 @@ class AdministratorsController
 
     public function index()
     {
-        $users = User::all();
+        $users = Administrator::all();
 
         return view('back.administrators.index', compact('users'));
     }
 
     public function create()
     {
-        return view('back.administrators.create', ['user' => new User()]);
+        return view('back.administrators.create', ['user' => new Administrator()]);
     }
 
     public function store(Request $request)
     {
         $this->validate($request, $this->validationRules());
 
-        $user = new User();
+        $user = new Administrator();
 
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
@@ -40,8 +39,8 @@ class AdministratorsController
             $user->password = bryct($request->get('password'));
         }
 
-        $user->role = UserRole::ADMIN;
-        $user->status = UserStatus::ACTIVE;
+        $user->role = BaseUser::ROLE_ADMIN;
+        $user->status = BaseUser::STATUS_ACTIVE;
 
         $user->save();
 
@@ -56,7 +55,7 @@ class AdministratorsController
 
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $user = Administrator::findOrFail($id);
 
         return view('back.administrators.edit', compact('user'));
     }
@@ -65,7 +64,7 @@ class AdministratorsController
     {
         $this->validate($request, $this->validationRules());
 
-        $user = User::findOrFail($id);
+        $user = Administrator::findOrFail($id);
 
         $user->email = $request->get('email');
         $user->first_name = $request->get('first_name');
@@ -86,7 +85,7 @@ class AdministratorsController
 
     public function activate($id)
     {
-        $user = User::findOrFail($id);
+        $user = Administrator::findOrFail($id);
 
         $user->activate();
 
@@ -99,7 +98,7 @@ class AdministratorsController
 
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
+        $user = Administrator::findOrFail($id);
 
         $eventDescription = $this->getEventDescriptionFor('deleted', $user);
 
@@ -111,7 +110,7 @@ class AdministratorsController
         return redirect()->action('Back\AdministratorsController@index');
     }
 
-    protected function getEventDescriptionFor(string $event, User $user): string
+    protected function getEventDescriptionFor(string $event, Administrator $user): string
     {
         $name = sprintf(
             '<a href="%s">%s</a>',

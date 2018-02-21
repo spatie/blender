@@ -66,11 +66,11 @@ return [
     'providers' => [
         'front' => [
             'driver' => 'eloquent',
-            'model' => App\Services\Auth\Front\User::class,
+            'model' => App\Models\User::class,
         ],
         'back' => [
             'driver' => 'eloquent',
-            'model' => App\Services\Auth\Back\User::class,
+            'model' => App\Models\Administrator::class,
         ],
     ],
 

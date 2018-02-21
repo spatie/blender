@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Auth;
+namespace App\Models\Presenters;
 
 trait UserPresenter
 {

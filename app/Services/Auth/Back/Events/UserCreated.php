@@ -3,14 +3,14 @@
 namespace App\Services\Auth\Back\Events;
 
 use App\Events\Event;
-use App\Services\Auth\Back\User;
+use App\Models\Administrator;
 
 class UserCreated extends Event
 {
-    /** @var \App\Services\Auth\Back\User */
+    /** @var \App\Models\Administrator */
     public $user;
 
-    public function __construct(User $user)
+    public function __construct(Administrator $user)
     {
         $this->user = $user;
     }

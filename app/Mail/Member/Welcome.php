@@ -2,7 +2,7 @@
 
 namespace App\Mail\Member;
 
-use App\Services\Auth\Front\User;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,7 +12,7 @@ class Welcome extends Mailable implements ShouldQueue
 {
     use Queueable, SerializesModels;
 
-    /** @var \App\Services\Auth\Front\User */
+    /** @var \App\Models\User */
     public $user;
 
     /**
