@@ -21,13 +21,13 @@ class EventHandler
 
         $events->listen(FrontUserCreatedThroughBack::class, function (FrontUserCreatedThroughBack $event) {
             Password::broker('front')->sendResetLink(['email' => $event->user->email], function (Message $message) {
-                $message->subject('Welkom bij '.config('app.url'));
+                $message->subject('Welcome to '.config('app.url'));
             });
         });
 
         $events->listen(BackUserCreated::class, function (BackUserCreated $event) {
             Password::broker('back')->sendResetLink(['email' => $event->user->email], function (Message $message) {
-                $message->subject('Welkom bij '.config('app.url'));
+                $message->subject('Welcome to '.config('app.url'));
             });
         });
     }

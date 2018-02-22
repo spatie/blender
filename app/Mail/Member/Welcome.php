@@ -32,7 +32,7 @@ class Welcome extends Mailable implements ShouldQueue
     {
         return $this
             ->to($this->user->email)
-            ->subject('Welkom bij'.config('app.url'))
+            ->subject('Welcome to '.config('app.url'))
             ->markdown('mails.member.welcome');
     }
 }
