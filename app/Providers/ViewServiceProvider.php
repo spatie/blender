@@ -10,6 +10,8 @@ class ViewServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        Blade::withDoubleEncoding();
+
         $this->addComposer('*', \App\Http\ViewComposers\Shared\GlobalViewComposer::class);
         $this->addComposer('*._layouts.*', \App\Http\ViewComposers\Shared\EncryptedCsrfTokenComposer::class);
 
