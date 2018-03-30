@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ locale() }}">
-@include('front._layouts._partials.hiddenCredits')
+@include('front.layouts.partials.hiddenCredits')
 <head>
     <meta charset="utf-8">
 
@@ -14,11 +14,11 @@
 
     <script defer src="{{ mix('js/back.app.js') }}"></script>
 
-    @include('front._layouts._partials.head.favicons')
+    @include('front.layouts.partials.head.favicons')
 </head>
 <body>
     @auth
-        @include('back._layouts._partials.menu')
+        @include('back.layouts.partials.menu')
         <div class="grid">
             @if(html()->flashMessage())
                 <div class="h-margin-bottom">
@@ -34,7 +34,7 @@
         {{ $slot }}
     </main>
     @auth
-        @include('back._layouts._partials.footer')
+        @include('back.layouts.partials.footer')
     @endauth
 </body>
 </html>

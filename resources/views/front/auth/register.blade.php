@@ -1,4 +1,4 @@
-@component('front._layouts.main', [
+@component('front.layouts.main', [
     'title' => __('auth.register')
 ])
     {{ html()->form()->open() }}
@@ -35,7 +35,7 @@
     </div>
 
     {{ html()->formGroup()->text('country', __('auth.country')) }}
- 
+
     {{ html()->formGroup()->text('telephone', __('auth.telephone')) }}
 
     {{ html()->formGroup()->submit(__('auth.register')) }}

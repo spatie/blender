@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Statistics',
 ])
     <section>
@@ -6,19 +6,19 @@
             <h1>Statistics</h1>
 
             <div class="statistic">
-                @include('back.statistics._partials.visitors')
+                @include('back.statistics.partials.visitors')
             </div>
 
             <div class="statistic">
-                @include('back.statistics._partials.pages')
+                @include('back.statistics.partials.pages')
             </div>
 
             <div class="statistic">
-                @include('back.statistics._partials.referrers')
+                @include('back.statistics.partials.referrers')
             </div>
 
             <div class="statistic">
-                @include('back.statistics._partials.browsers')
+                @include('back.statistics.partials.browsers')
             </div>
         </div>
     </section>

@@ -13,9 +13,9 @@ class ViewServiceProvider extends ServiceProvider
         Blade::withDoubleEncoding();
 
         $this->addComposer('*', \App\Http\ViewComposers\Shared\GlobalViewComposer::class);
-        $this->addComposer('*._layouts.*', \App\Http\ViewComposers\Shared\EncryptedCsrfTokenComposer::class);
+        $this->addComposer('*.layouts.*', \App\Http\ViewComposers\Shared\EncryptedCsrfTokenComposer::class);
 
-        $this->addComposer('front._layouts.*', \App\Http\ViewComposers\Front\SeoViewComposer::class);
+        $this->addComposer('front.layouts.*', \App\Http\ViewComposers\Front\SeoViewComposer::class);
 
         Blade::directive('svg', function ($expression) {
             return "<?php echo svg({$expression}); ?>";

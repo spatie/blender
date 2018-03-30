@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li>
-                @include('front.auth._partials.logoutForm')
+                @include('front.auth.partials.logoutForm')
             </li>
         @else
             <li>

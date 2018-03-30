@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Edit fragment',
     'breadcrumbs' => html()->backToIndex('Back\FragmentsController@index'),
 ])
@@ -23,7 +23,7 @@
 
             {{ html()->formGroup()->submit('Save fragment') }}
 
-            @include('back.fragments._partials.form')
+            @include('back.fragments.partials.form')
 
             {{ html()->formGroup()->submit('Save fragment') }}
 

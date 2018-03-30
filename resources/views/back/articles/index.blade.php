@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Articles',
 ])
     <section>

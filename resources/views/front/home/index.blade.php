@@ -1,4 +1,4 @@
-@component('front._layouts.main', [
+@component('front.layouts.main', [
     'meta' => $article->meta(),
     'subMenu' => Menu::articleSiblings($article),
 ])

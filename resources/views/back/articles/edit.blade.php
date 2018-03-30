@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Articles',
     'breadcrumbs' => html()->backToIndex('Back\ArticlesController@index'),
 ])
@@ -17,10 +17,10 @@
 
             {{ html()->formGroup()->submit('Save article') }}
 
-            @if($model->technical_name && view()->exists("back.articles._partials.{$model->technical_name}Form"))
-                @include("back.articles._partials.{$model->technical_name}Form")
+            @if($model->technical_name && view()->exists("back.articles.partials.{$model->technical_name}Form"))
+                @include("back.articles.partials.{$model->technical_name}Form")
             @else
-                @include('back.articles._partials.form')
+                @include('back.articles.partials.form')
             @endif
 
             {{ html()->formGroup()->submit('Save article') }}
