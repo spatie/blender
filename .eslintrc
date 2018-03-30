@@ -1,7 +1,7 @@
 {
     "extends": [
         "eslint:recommended",
-        "plugin:vue/recommended",
+        "plugin:vue/essential",
         "prettier"
     ],
     "parserOptions": {
