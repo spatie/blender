@@ -1,4 +1,4 @@
-@component('front._layouts.main', [
+@component('front.layouts.main', [
     'meta' => $article->meta(),
     'subMenu' => Menu::articleSiblings($article),
 ])
@@ -7,9 +7,9 @@
 
     {!! schema()->company() !!}
 
-    @include('front.contact._partials.form')
+    @include('front.contact.partials.form')
 
-    @include('front._partials.downloads', ['item' => $article])
+    @include('front.partials.downloads', ['item' => $article])
 
 @endcomponent
 

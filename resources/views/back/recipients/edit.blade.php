@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Recipients',
     'breadcrumbs' => html()->backToIndex('Back\RecipientsController@index'),
 ])
@@ -15,7 +15,7 @@
 
             {{ html()->formGroup()->submit('Save recipient') }}
 
-            @include('back.recipients._partials.form')
+            @include('back.recipients.partials.form')
 
             {{ html()->formGroup()->submit('Save recipient') }}
 

@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Dashboard'
 ])
     <section>
@@ -6,7 +6,7 @@
             <h1>Dashboard</h1>
 
             @if (isset($visitors))
-                @include('back.dashboard._partials.visitors')
+                @include('back.dashboard.partials.visitors')
             @else
                 <div class="alerts">
                     <div class="alert--info">

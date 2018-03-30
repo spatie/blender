@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Team',
     'breadcrumbs' => html()->backToIndex('Back\PeopleController@index'),
 ])
@@ -16,7 +16,7 @@
 
             {{ html()->formGroup()->submit('Save team member') }}
 
-            @include('back.people._partials.form')
+            @include('back.people.partials.form')
 
             {{ html()->formGroup()->submit('Save team member') }}
 

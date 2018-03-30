@@ -56,7 +56,7 @@ class BackMenus
 
             return Menu::new()
                 ->action('Back\AdministratorsController@edit', $avatar, [current_user()->id])
-                ->html(view('back.auth._partials.logoutForm'));
+                ->html(view('back.auth.partials.logoutForm'));
         });
 
         Menu::macro('breadcrumbs', function (array $breadcrumbs) {

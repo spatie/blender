@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => $user->hasNeverLoggedIn() ? 'Set password' : 'Change password',
 ])
     <section class="v-auth">

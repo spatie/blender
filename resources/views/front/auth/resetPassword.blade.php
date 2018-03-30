@@ -1,4 +1,4 @@
-@component('front._layouts.main', [
+@component('front.layouts.main', [
     'title' => __('auth.resetPassword')
 ])
     <h1>

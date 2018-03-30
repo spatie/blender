@@ -1,4 +1,4 @@
-const { mix } = require('laravel-mix');
+const mix = require('laravel-mix');
 
 require('laravel-mix-purgecss');
 
@@ -30,9 +30,7 @@ mix
     })
 
     .babelConfig({
-        plugins: [
-            'syntax-dynamic-import',
-        ],
+        plugins: ['syntax-dynamic-import'],
     })
 
     .webpackConfig({

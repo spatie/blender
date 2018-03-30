@@ -1,4 +1,4 @@
-@component('back._layouts.app', [
+@component('back.layouts.app', [
     'title' => 'Administrators',
     'breadcrumbs' => html()->backToIndex('Back\AdministratorsController@index'),
 ])
@@ -11,7 +11,7 @@
                 ->class('-stacked')
                 ->open() }}
 
-            @include('back.administrators._partials.form')
+            @include('back.administrators.partials.form')
 
             {{ html()->formGroup()->submit('Save administrator') }}
 

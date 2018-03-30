@@ -32,8 +32,8 @@ generate  app/Http/Controllers/Back/NewsController.php      app/Http/Controllers
 generate  app/Http/Requests/Back/NewsItemRequest.php        app/Http/Requests/Back/${singular}Request.php
 
 # Views
-mkdir -p resources/views/back/${lcplural}/_partials
-generate  resources/views/back/news/_partials/form.blade.php  resources/views/back/${lcplural}/_partials/form.blade.php
+mkdir -p resources/views/back/${lcplural}/partials
+generate  resources/views/back/news/partials/form.blade.php  resources/views/back/${lcplural}/partials/form.blade.php
 generate  resources/views/back/news/index.blade.php           resources/views/back/${lcplural}/index.blade.php
 generate  resources/views/back/news/edit.blade.php            resources/views/back/${lcplural}/edit.blade.php
 
