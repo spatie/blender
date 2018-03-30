@@ -100,7 +100,7 @@
         }
     },
     "scripts": {
-        "fix-cs": [
+        "format": [
             "vendor/bin/php-cs-fixer fix"
         ],
         "check-security": [
