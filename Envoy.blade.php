@@ -136,6 +136,7 @@ php artisan horizon:terminate
 php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
+php artisan view:cache
 
 sudo service php7.2-fpm restart
 sudo supervisorctl restart all
@@ -166,6 +167,7 @@ git pull origin master
 php artisan config:clear
 php artisan cache:clear
 php artisan config:cache
+php artisan view:cache
 sudo service php7.2-fpm restart
 php artisan horizon:terminate
 sudo supervisorctl restart all
