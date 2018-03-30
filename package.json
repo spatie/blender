@@ -15,7 +15,8 @@
     "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
     "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "format": "prettier --write \"**/*.{css,js,vue}\" && composer fix-cs"
+    "format": "prettier --write '**/*.{css,js,vue}'",
+    "lint": "eslint resources/assets/js --fix --ext js,vue"
   },
   "dependencies": {
     "@spatie/blender-content-blocks": "^2.0.1",
@@ -26,6 +27,9 @@
     "babel-polyfill": "^6.16.0",
     "caniuse-lite": "^1.0.30000697",
     "chart.js": "^1.0.2",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-vue": "^4.4.0",
     "jquery": "^3.0.0",
     "laravel-mix": "^2.0.0",
     "laravel-mix-purgecss": "^1.0.0",

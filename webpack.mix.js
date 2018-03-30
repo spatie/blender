@@ -30,9 +30,7 @@ mix
     })
 
     .babelConfig({
-        plugins: [
-            'syntax-dynamic-import',
-        ],
+        plugins: ['syntax-dynamic-import'],
     })
 
     .webpackConfig({
