@@ -46,7 +46,7 @@ return [
             'supervisor-1' => [
                 'connection' => 'redis',
                 'queue' => ['default', 'media_queue'],
-                'balance' => 'simple',
+                'balance' => 'auto',
                 'processes' => 10,
                 'tries' => 3,
             ],
