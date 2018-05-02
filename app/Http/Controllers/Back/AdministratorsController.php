@@ -72,7 +72,7 @@ class AdministratorsController
         $user->last_name = $request->get('last_name');
 
         if ($request->has('password')) {
-            $user->password = $request->get('password');
+            $user->password = bcrypt($request->get('password'));
         }
 
         $user->save();
