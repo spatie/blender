@@ -3,6 +3,7 @@
 namespace App\Services\Html;
 
 use Spatie\Html\Elements\Div;
+use Spatie\Html\Elements\Input;
 use Spatie\Html\HtmlElement;
 
 class FormGroup
@@ -77,7 +78,7 @@ class FormGroup
 
     public function password(string $name, string $label): Div
     {
-        return $this->assemble($name, $label, $this->html->password($name));
+        return $this->assemble($name, $label, $this->html->password($name)->value(''));
     }
 
     public function redactor(string $name, string $label): Div
