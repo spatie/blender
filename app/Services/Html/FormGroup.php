@@ -77,7 +77,7 @@ class FormGroup
 
     public function password(string $name, string $label): Div
     {
-        return $this->assemble($name, $label, $this->html->password($name));
+        return $this->assemble($name, $label, $this->html->password($name)->value(''));
     }
 
     public function redactor(string $name, string $label): Div

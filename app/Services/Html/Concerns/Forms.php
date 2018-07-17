@@ -31,7 +31,7 @@ trait Forms
             ]);
     }
 
-    public function date(string $name = '', ?string $value = ''): Input
+    public function date($name = '', $value = ''): Input
     {
         return $this->text($name, $value)
             ->attribute('data-datetimepicker')
