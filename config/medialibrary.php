@@ -6,7 +6,7 @@ return [
      * The filesystems on which to store added files and derived images by default. Choose
      * one or more of the filesystems you configured in app/config/filesystems.php
      */
-    'default_filesystem' => 'media',
+    'disk_name' => 'media',
 
     /*
      * The maximum file size of an item in bytes. Adding a file
@@ -23,7 +23,7 @@ return [
     /*
      * The class name of the media model to be used.
      */
-    'media_model' => Spatie\MediaLibrary\Media::class,
+    'media_model' => Spatie\MediaLibrary\Models\Media::class,
 
     /*
      * The engine that will perform the image conversions.
@@ -35,12 +35,12 @@ return [
      * When urls to files get generated this class will be called. Leave empty
      * if your files are stored locally above the site root or on s3.
      */
-    'custom_url_generator_class' => App\Services\Medialibrary\MediaLibraryUrlGenerator::class,
+    'url_generator' => App\Services\Medialibrary\MediaLibraryUrlGenerator::class,
 
     /*
      * The class that contains the strategy for determining a media file's path.
      */
-    'custom_path_generator_class' => null,
+    'path_generator' => null,
 
     's3' => [
         /*

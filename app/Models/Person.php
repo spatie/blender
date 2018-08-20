@@ -5,7 +5,7 @@ namespace App\Models;
 use App\Models\Traits\HasSlug;
 use Spatie\EloquentSortable\Sortable;
 use Spatie\EloquentSortable\SortableTrait;
-use Spatie\MediaLibrary\Media;
+use Spatie\MediaLibrary\Models\Media;
 
 class Person extends Model implements Sortable
 {

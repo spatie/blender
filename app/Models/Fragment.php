@@ -3,14 +3,14 @@
 namespace App\Models;
 
 use App\Models\Presenters\FragmentPresenter;
-use App\Models\Traits\HasMedia;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
-use Spatie\MediaLibrary\Media;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\Models\Media;
 use Spatie\TranslationLoader\LanguageLine;
 
-class Fragment extends LanguageLine implements HasMediaConversions
+class Fragment extends LanguageLine implements HasMedia
 {
-    use FragmentPresenter, HasMedia;
+    use FragmentPresenter;
+    use Traits\HasMedia;
 
     protected static $logAttributes = ['name', 'text'];
 

@@ -19,7 +19,7 @@
         "barryvdh/laravel-ide-helper": "^2.3",
         "bugsnag/bugsnag-laravel": "^1.4",
         "doctrine/dbal": "^2.5",
-        "fideloper/proxy": "~4.0",
+        "fideloper/proxy": "^4.0",
         "fzaninotto/faker": "^1.4",
         "greggilbert/recaptcha": "^2.1",
         "guzzlehttp/guzzle": "^6.3",
@@ -54,7 +54,7 @@
         "spatie/laravel-http-logger": "^1.0",
         "spatie/laravel-link-checker": "^1.0",
         "spatie/laravel-mailable-test": "^2.0",
-        "spatie/laravel-medialibrary": "^6.0",
+        "spatie/laravel-medialibrary": "^7.4",
         "spatie/laravel-menu": "^3.0.0",
         "spatie/laravel-missing-page-redirector": "^2.0",
         "spatie/laravel-model-cleanup": "^2.0",
@@ -67,7 +67,7 @@
         "spatie/laravel-translation-loader": "^2.0",
         "spatie/regex": "^1.1",
         "spatie/schema-org": "^1.1",
-        "spatie/seeders": "^4.4",
+        "spatie/seeders": "^5.0",
         "symfony/yaml": "^3.3"
     },
     "require-dev": {

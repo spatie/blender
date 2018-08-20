@@ -3,18 +3,18 @@
 namespace App\Models;
 
 use App\Models\Traits\Draftable;
-use App\Models\Traits\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Arr;
 use Spatie\EloquentSortable\SortableTrait;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
-use Spatie\MediaLibrary\Media;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\Models\Media;
 use Spatie\Translatable\HasTranslations;
 
-class ContentBlock extends Model implements HasMediaConversions
+class ContentBlock extends Model implements HasMedia
 {
-    use Draftable, SortableTrait, HasTranslations, HasMedia;
+    use Draftable, SortableTrait, HasTranslations;
+    use Traits\HasMedia;
 
     public $translatable = ['name', 'text'];
     protected $guarded = ['id'];

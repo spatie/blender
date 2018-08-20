@@ -8,12 +8,12 @@ use App\Models\Scopes\SortableScope;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
-use Spatie\MediaLibrary\Media;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\Models\Media;
 use Spatie\ModelCleanup\GetsCleanedUp;
 use Spatie\Translatable\HasTranslations;
 
-abstract class Model extends Eloquent implements HasMediaConversions, GetsCleanedUp
+abstract class Model extends Eloquent implements HasMedia, GetsCleanedUp
 {
     use HasTranslations;
     use Traits\Draftable;

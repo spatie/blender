@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Back\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
-use Spatie\MediaLibrary\Media;
+use Spatie\MediaLibrary\Models\Media;
 
 trait UpdateMedia
 {
