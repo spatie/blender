@@ -2,8 +2,8 @@
 
 namespace App;
 
-use MadWeb\Initializer\Contracts\Runner;
 use Laravel\Horizon\HorizonServiceProvider;
+use MadWeb\Initializer\Contracts\Runner;
 
 class Update
 {

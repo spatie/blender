@@ -2,9 +2,9 @@
 
 namespace App;
 
+use Laravel\Horizon\HorizonServiceProvider;
 use MadWeb\Initializer\Contracts\Runner;
 use MadWeb\Initializer\Jobs\MakeCronTask;
-use Laravel\Horizon\HorizonServiceProvider;
 use MadWeb\Initializer\Jobs\Supervisor\MakeQueueSupervisorConfig;
 
 class Install
