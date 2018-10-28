@@ -15,6 +15,7 @@ _ide_helper*.php
 /npm-debug.log
 /public/css
 /public/js
+/public/vendor
 /public/media
 /public/mix-manifest.json
 /yarn-error.log

@@ -21,37 +21,35 @@ Download the master branch
 git clone https://github.com/spatie/blender.git
 ```
 
-Install the composer dependencies
-
-```bash
-composer install
-```
-
 Make a copy `.env.example` and rename to `.env`
 
 Finally make sure you have a database named `blender`, and run the migrations and seeds
 
+After that just run
+
 ```bash
-php artisan migrate --seed
+composer project-install
+```
+
+If you would like to setup supervisor config to run queue workers, run
+ 
+```bash
+php artisan app:install --root
+```
+
+with root privileges
+
+## Update
+
+Pull latest changes from repository and run
+
+```bash
+php artisan app:update
 ```
 
 ### Assets
 
-Installing Blender's front end dependencies requires `yarn`.
-
-```
-yarn
-```
-
-Blender uses [Laravel Mix](https://laravel.com/docs/5.5/mix) to build assets.
-To build assets run:
-
-```bash
-yarn run dev
-```
-
 Available build tasks are defined in `package.json`
-
 
 ### Customisation
 
