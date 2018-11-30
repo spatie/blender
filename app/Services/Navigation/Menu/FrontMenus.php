@@ -2,7 +2,7 @@
 
 namespace App\Services\Navigation\Menu;
 
-use app\Models\Article;
+use App\Models\Article;
 use Spatie\Menu\Laravel\Menu;
 
 class FrontMenus
