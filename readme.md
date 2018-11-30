@@ -21,13 +21,13 @@ Download the master branch
 git clone https://github.com/spatie/blender.git
 ```
 
+Make a copy `.env.example` and rename to `.env`
+
 Install the composer dependencies
 
 ```bash
 composer install
 ```
-
-Make a copy `.env.example` and rename to `.env`
 
 Finally make sure you have a database named `blender`, and run the migrations and seeds
 
