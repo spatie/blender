@@ -11,13 +11,15 @@ class BackUserSeeder extends DatabaseSeeder
         $this->truncate((new User())->getTable());
 
         collect([
+            ['Adriaan', 'Marain'],
             ['Alex', 'Vanderbist'],
             ['Brent', 'Roose'],
             ['Freek', 'Van der Herten'],
-            ['Harish', 'Toshniwal'],
             ['Jef', 'Van der Voort'],
+            ['Ruben', 'Van Assche'],
             ['Sebastian', 'De Deyne'],
             ['Willem', 'Van Bockstal'],
+            ['Wouter', 'Brouwers'],
         ])->each(function ($name) {
             [$firstName, $lastName] = $name;
 
