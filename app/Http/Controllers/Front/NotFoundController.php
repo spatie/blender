@@ -8,6 +8,6 @@ class NotFoundController extends Controller
 {
     public function __invoke()
     {
-        return view('front.errors.404');
+        return response()->view('front.errors.404', [], 404);
     }
 }
