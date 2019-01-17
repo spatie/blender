@@ -13,10 +13,13 @@ class FrontUserSeeder extends DatabaseSeeder
         collect([
             ['Freek', 'Van der Herten'],
             ['Jef', 'Van der Voort'],
+            ['Adriaan', 'Marain'],
             ['Alex', 'Van der Bist'],
+            ['Brent', 'Roose'],
             ['Sebastian', 'De Deyne'],
+            ['Ruben', 'Van Assche'],
             ['Willem', 'Van Bockstal'],
-            ['Harish', 'Toshniwal'],
+            ['Wouter', 'Brouwers'],
         ])->each(function ($name) {
             [$firstName, $lastName] = $name;
 
