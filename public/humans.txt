@@ -1,12 +1,14 @@
 This site was made by these wonderful humans:
 
+- Adriaan Marain (@adriaanmrn)
 - Alex Vanderbist (@alexvanderbist)
 - Brent Roose (@brendt_gd)
-- Harish Toshniwal (@introwit)
-- Sebastian De Deyne (@sebdedeyne)
-- Willem Van Bockstal (@willemvbockstal)
 - Jef Van der Voort (@spatie_be)
 - Freek Van der Herten (@freekmurze)
+- Sebastian De Deyne (@sebdedeyne)
+- Ruben Van Assche (@rubenvanassche)
+- Willem Van Bockstal (@willemvbockstal)
+- Wouter Brouwers (@brouwerswouter)
 
 Open source software is used in all projects we deliver. Laravel, Nginx,
 Ubuntu are just a few of the free pieces of software we use every single day.
