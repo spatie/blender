@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Fragment;
+use Illuminate\Support\Arr;
 use Illuminate\Console\Command;
 use Symfony\Component\Yaml\Yaml;
 
@@ -39,7 +40,7 @@ class ImportFragments extends Command
                 return $fragment;
             }
 
-            $translations = array_except($attributes, ['html', 'description']);
+            $translations = Arr::except($attributes, ['html', 'description']);
 
             foreach ($translations as $locale => $text) {
                 $fragment->setTranslation($locale, $text ?: '');
