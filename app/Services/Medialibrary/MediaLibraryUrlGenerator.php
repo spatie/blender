@@ -10,7 +10,7 @@ class MediaLibraryUrlGenerator extends LocalUrlGenerator
     {
         return '/media/'.$this->getPathRelativeToRoot();
     }
-    
+
     public function getResponsiveImagesDirectoryUrl(): string
     {
         return url('/media/'.$this->pathGenerator->getPathForResponsiveImages($this->media)).'/';
