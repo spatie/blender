@@ -1,16 +1,17 @@
 <?php
 
+use Carbon\Carbon;
 use App\Models\Article;
 use App\Models\Fragment;
 use App\Models\Recipient;
+use App\Services\Seo\Meta;
 use App\Services\Auth\User;
 use App\Services\Html\Html;
-use App\Services\Seo\Meta;
+use Illuminate\Support\Str;
 use App\Services\Seo\Schema;
-use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\HtmlString;
+use Illuminate\Support\Facades\Validator;
 
 function article(string $specialArticle): Article
 {
@@ -47,7 +48,7 @@ function diff_date_for_humans(Carbon $date) : string
 
 function fragment_image($name, $conversion = 'thumb'): string
 {
-    if (! str_contains($name, '.')) {
+    if (! Str::contains($name, '.')) {
         return $name;
     }
 

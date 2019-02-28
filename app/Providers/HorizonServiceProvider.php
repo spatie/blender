@@ -2,9 +2,10 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Horizon;
+use Illuminate\Support\ServiceProvider;
 
 class HorizonServiceProvider extends ServiceProvider
 {
@@ -25,7 +26,7 @@ class HorizonServiceProvider extends ServiceProvider
                 return false;
             }
 
-            return ends_with($backUser->email, '@spatie.be');
+            return Str::endsWith($backUser->email, '@spatie.be');
         });
     }
 }

@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\Fragment;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Symfony\Component\Yaml\Yaml;
 
@@ -20,7 +21,7 @@ class ImportFragments extends Command
         $fragments = collect()->glob("{$root}/*.yml")->map(function (string $path) use ($root) {
             $fragments = Yaml::parse(file_get_contents($path));
 
-            $group = str_before(str_after($path, "{$root}/"), '.yml');
+            $group = Str::before(Str::after($path, "{$root}/"), '.yml');
 
             return $this->importFragmentGroup($group, $fragments);
         });

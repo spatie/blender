@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Back;
 
-use App\Models\Scopes\NonDraftScope;
-use Illuminate\Database\Eloquent\Model as Eloquent;
-use Illuminate\Foundation\Validation\ValidatesRequests;
+use ReflectionClass;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use App\Models\Scopes\NonDraftScope;
 use Illuminate\Support\Facades\Cache;
-use ReflectionClass;
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 abstract class Controller
 {
@@ -127,7 +128,7 @@ abstract class Controller
 
     protected function determineModuleName(): string
     {
-        return lcfirst(str_replace_last('Controller', '', class_basename($this)));
+        return lcfirst(Str::replaceLast('Controller', '', class_basename($this)));
     }
 
     protected function updateModel(Eloquent $model, Request $request)
