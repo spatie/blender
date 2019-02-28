@@ -1,17 +1,17 @@
 <?php
 
-use Carbon\Carbon;
 use App\Models\Article;
 use App\Models\Fragment;
 use App\Models\Recipient;
-use App\Services\Seo\Meta;
 use App\Services\Auth\User;
 use App\Services\Html\Html;
-use Illuminate\Support\Str;
+use App\Services\Seo\Meta;
 use App\Services\Seo\Schema;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Illuminate\Support\HtmlString;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\HtmlString;
+use Illuminate\Support\Str;
 
 function article(string $specialArticle): Article
 {

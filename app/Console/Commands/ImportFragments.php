@@ -3,9 +3,9 @@
 namespace App\Console\Commands;
 
 use App\Models\Fragment;
+use Illuminate\Console\Command;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Illuminate\Console\Command;
 use Symfony\Component\Yaml\Yaml;
 
 class ImportFragments extends Command

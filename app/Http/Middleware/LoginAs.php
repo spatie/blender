@@ -2,12 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use Exception;
-use Illuminate\Support\Str;
 use App\Services\Auth\Back\User as BackUser;
 use App\Services\Auth\Front\User as FrontUser;
+use Closure;
+use Exception;
 use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Support\Str;
 
 class LoginAs
 {

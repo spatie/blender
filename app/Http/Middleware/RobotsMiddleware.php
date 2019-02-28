@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Spatie\RobotsMiddleware\RobotsMiddleware as BaseRobotsMiddleware;
 
 class RobotsMiddleware extends BaseRobotsMiddleware

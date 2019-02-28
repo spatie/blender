@@ -2,14 +2,14 @@
 
 namespace App\Services\Auth\Front;
 
-use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Mail;
-use App\Services\Auth\User as BaseUser;
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
-use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\Front\Events\UserRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
+use App\Services\Auth\Front\Mail\ResetPassword;
+use App\Services\Auth\User as BaseUser;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
 
 /**
  * @property string $address
