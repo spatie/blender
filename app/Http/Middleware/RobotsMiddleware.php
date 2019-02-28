@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Spatie\RobotsMiddleware\RobotsMiddleware as BaseRobotsMiddleware;
 
@@ -9,7 +10,7 @@ class RobotsMiddleware extends BaseRobotsMiddleware
 {
     protected function shouldIndex(Request $request): bool
     {
-        if (ends_with($request->getHost(), 'spatie.be')) {
+        if (Str::endsWith($request->getHost(), 'spatie.be')) {
             return false;
         }
 

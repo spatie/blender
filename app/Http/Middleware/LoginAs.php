@@ -2,10 +2,11 @@
 
 namespace App\Http\Middleware;
 
-use App\Services\Auth\Back\User as BackUser;
-use App\Services\Auth\Front\User as FrontUser;
 use Closure;
 use Exception;
+use Illuminate\Support\Str;
+use App\Services\Auth\Back\User as BackUser;
+use App\Services\Auth\Front\User as FrontUser;
 use Illuminate\Contracts\Auth\Authenticatable;
 
 class LoginAs
@@ -33,7 +34,7 @@ class LoginAs
             return false;
         }
 
-        if (! ends_with(request()->getHost(), '.dev')) {
+        if (! Str::endsWith(request()->getHost(), '.dev')) {
             return false;
         }
 
@@ -61,7 +62,7 @@ class LoginAs
 
     protected function getUser(string $identifier): Authenticatable
     {
-        if (! str_contains($identifier, '@')) {
+        if (! Str::contains($identifier, '@')) {
             $identifier .= '@spatie.be';
         }
 

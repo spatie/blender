@@ -2,13 +2,14 @@
 
 namespace App\Services\Auth\Front;
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Mail;
+use App\Services\Auth\User as BaseUser;
 use App\Services\Auth\Front\Enums\UserRole;
 use App\Services\Auth\Front\Enums\UserStatus;
+use App\Services\Auth\Front\Mail\ResetPassword;
 use App\Services\Auth\Front\Events\UserRegistered;
 use App\Services\Auth\Front\Exceptions\UserIsAlreadyActivated;
-use App\Services\Auth\Front\Mail\ResetPassword;
-use App\Services\Auth\User as BaseUser;
-use Illuminate\Support\Facades\Mail;
 
 /**
  * @property string $address
@@ -30,7 +31,7 @@ class User extends BaseUser
             'status' => UserStatus::ACTIVE,
         ];
 
-        $user = static::create($defaults + array_only($input, [
+        $user = static::create($defaults + Arr::only($input, [
             'first_name',
             'last_name',
             'address',

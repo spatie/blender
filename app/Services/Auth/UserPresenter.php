@@ -2,6 +2,8 @@
 
 namespace App\Services\Auth;
 
+use Illuminate\Support\Str;
+
 trait UserPresenter
 {
     public function getFullNameAttribute(): string
@@ -22,7 +24,7 @@ trait UserPresenter
 
         $lastActivityDate = diff_date_for_humans($this->last_activity);
 
-        if (str_contains($lastActivityDate, 'second')) {
+        if (Str::contains($lastActivityDate, 'second')) {
             $lastActivityDate = 'Just now';
         }
 
